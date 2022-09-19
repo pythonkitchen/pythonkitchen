@@ -18,6 +18,6 @@ class Blog(PkModel):
     source = db.Column(db.Text(10000000000)) # markdown
 
     slug = db.Column(db.String(500))
-    featured_image = db.Column(db.String) # link
+    featured_image = db.Column(db.String(1000)) # link
     authors = db.relationship('User', secondary=post_user, backref='posts')
     pub = db.Column(db.DateTime)
