@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{current_post.title}}</title>
+    <meta name="description" content="Author: {{[current_post.authors][0]}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link async rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    
+</head>
+
+<body>
+    
+    <main class="container">
+        <h1><a href="/">Python Kitchen</a></h1>
+        
+        <article>
+            <h2>{{ current_post.title }}</h2>
+            <hr>
+            {{md_to_html(current_post.source) | safe}}
+
+            <ul>
+            {% for author in current_post.authors %}
+                <li>-- {{author.name}}</li>
+            {% endfor %}
+            </ul>
+        </article>
+    </main>
+
+    <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
