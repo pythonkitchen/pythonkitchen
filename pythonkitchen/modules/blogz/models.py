@@ -14,10 +14,10 @@ post_user = db.Table('post_user',
 class Blog(PkModel): 
     __tablename__ = "posts"   
 
-    title = db.Column(db.String)
-    source = db.Column(db.Text) # markdown
+    title = db.Column(db.String(500))
+    source = db.Column(db.Text(10000000000)) # markdown
 
-    slug = db.Column(db.String(200))
+    slug = db.Column(db.String(500))
     featured_image = db.Column(db.String) # link
     authors = db.relationship('User', secondary=post_user, backref='posts')
     pub = db.Column(db.DateTime)
