@@ -15,7 +15,7 @@ class Blog(PkModel):
     __tablename__ = "posts"   
 
     title = db.Column(db.String(500))
-    source = db.Column(db.Text(10000000000)) # markdown
+    source = db.Column(db.Text(429496729)) # markdown
 
     slug = db.Column(db.String(500))
     featured_image = db.Column(db.String(1000)) # link
