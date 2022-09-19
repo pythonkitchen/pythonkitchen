@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Python Kitchen: Always Cooking Something Nice</title>
+    <meta name="description" content="Python Kitchen is a hive for great Python articles!">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link async rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+</head>
+
+<body>
+    
+    <main class="container">
+        <h1>Python Kitchen</h1>
+        <article>
+            {% set blog_total = len(get_blog_posts()) %}
+            {% for blog in get_blog_posts() %}
+                {{str(blog_total-loop.index+1).zfill(3)}}. <a href="{{ url_for('www.index', slug=blog.slug) }}">{{ blog.title }}</a><br>
+            {% endfor %}
+        </article>
+    </main>
+</body>
+
+</html>
