@@ -1,6 +1,7 @@
 title: Raspberry-Pi setup – part 2 : establishing ssh connection
 slug: raspberry-pi-setup-establishing-ssh-connection
 pub: Wed, 20 Jun 2018 16:44:45 +0000
+authors: Abdur-RahmaanJ
 
 establishing an ssh connection is incredibly useful to manage your pi from another device/remotely be it your android phone or pc
 

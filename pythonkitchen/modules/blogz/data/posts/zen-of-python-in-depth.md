@@ -1,8 +1,10 @@
 title: The Zen Of Python: A Most In Depth Article
 slug: zen-of-python-in-depth
 pub: Wed, 23 Dec 2020 17:19:28 +0000
+authors: Abdur-RahmaanJ
 
 Note: *I wrote a quite complete article on the Zen but for some reason it went down in seo history. I am tired seeing people write 'in-depth' article with commentaries from the top of their head and materials they pulled out of their pockets. I'm publishing the article in here. The commentary part is built from the sayings of Brett Cannon, Guido, Chris Angelico, Nick Coghlan, Raymond Hettinger & co. Warning: read only if you are a fan of Python. Last notes: I do hope learners will get a great glimpse of how the Zen can help them structure their code and give them better insight and foresight. It's a documentation of how practically the Zen is applied in Python decisions.*
+
 Table of contents
 -----------------
 
@@ -134,7 +136,7 @@ Master Tim heard the plea, approved the demand and responded accordingly [6]
 
 
 
-```python
+```
 Beautiful is better than ugly.
 Explicit is better than implicit.
 Simple is better than complex.
@@ -201,8 +203,10 @@ The Zen only gives the outlines, in contrast to Strunk and White which gives exp
 In a time of fluctuating and steered standards, the reference in the actual PEP8 document to Strunk and White in the usage of the English language caused a bitter, ugly and messy thread [7]. It caused some of the best people of the community to forego following python-list [8], a casual reminder that being too open without limit hurts.
 
 ![](https://images.unsplash.com/photo-1593297372323-2ba78409d0b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)
+
+
 Reality of the Zen
-==================
+------------------
 
 
 
@@ -254,8 +258,10 @@ If ever i myself would have added a 20th one it would have been: "Use your judge
 As for the famous `import this` command, it was Barry Warsaw's pick. He sneaked it in a this.py in 2001 along with the ROT13 obfuscation [16]. He also mentionned that it was a time 'when the Python community had a sense of humor'.
 
 ![](https://images.unsplash.com/photo-1561739091-9d698cb277ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)
+
+
 Authentic Commentary
-====================
+--------------------
 
 
 

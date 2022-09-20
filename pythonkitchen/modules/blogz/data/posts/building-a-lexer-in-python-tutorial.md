@@ -1,9 +1,7 @@
 title: building a lexer in python - a tutorial
 slug: building-a-lexer-in-python-tutorial
 pub: Tue, 01 May 2018 11:48:58 +0000
-
-
-
+authors: Abdur-RahmaanJ
 
 
 knowing how to build a lexer allows you to extend your applications and opens up a whole new world. You can write your own DSLs or your own language or just better separate symbols: in other words, it allows you to have more control over a string

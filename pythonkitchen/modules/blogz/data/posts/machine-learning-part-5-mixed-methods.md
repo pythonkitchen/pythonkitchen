@@ -1,8 +1,7 @@
 title: Machine Learning part 5: mixed methods
 slug: machine-learning-part-5-mixed-methods
 pub: Sat, 26 Jan 2019 14:01:04 +0000
-
-
+authors: Abdur-RahmaanJ
 
 
 #5 mixed methods

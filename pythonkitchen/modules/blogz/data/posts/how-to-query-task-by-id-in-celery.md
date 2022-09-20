@@ -1,6 +1,7 @@
 title: How to query task by id in celery
 slug: how-to-query-task-by-id-in-celery
 pub: Sun, 15 Aug 2021 07:27:43 +0000
+authors: Abdur-RahmaanJ
 
 Using celery 5.1.2 you can get the task id by the following code snippet:
 

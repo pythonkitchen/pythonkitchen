@@ -1,6 +1,7 @@
 title: Packaging An Sqlite db-included CRUD PyQt5 app using PyInstaller
 slug: packaging-an-sqlite-db-included-crud-pyqt5-app-using-pyinstaller
 pub: Tue, 31 Dec 2019 20:17:54 +0000
+authors: Abdur-RahmaanJ
 
 
 The Python programmer's journey inevitably leads him to one of the black belts of the industry: packaging and distribution. But, particularly in Python, distribution can also be a black beast. We've seen slow and steady progress in the field with the advent of tools like cx\_freeze, pyinstaller and protocols like zipapp. In this post we'll see how to package a realistic PyQt5 app.

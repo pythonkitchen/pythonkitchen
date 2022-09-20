@@ -1,7 +1,7 @@
 title: venv usage on windows, activate and deactivate
 slug: venv-usage-on-windows-activate-and-deactivate
 pub: Fri, 10 Aug 2018 18:46:37 +0000
-
+authors: Abdur-RahmaanJ
 
 go on to your project root directory
 

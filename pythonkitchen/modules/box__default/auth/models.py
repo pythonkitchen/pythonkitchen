@@ -73,6 +73,7 @@ class User(UserMixin, PkModel):
     _password = db.Column(db.String(128), nullable=False)
     first_name = db.Column(db.String(128))
     last_name = db.Column(db.String(128))
+    url = db.Column(db.String(300))
     is_admin = db.Column(db.Boolean, default=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     date_registered = db.Column(

@@ -1,6 +1,7 @@
 title: handling curly braces in string formatting - python
 slug: handling-curly-braces-in-string-formatting-python
 pub: Wed, 09 May 2018 08:35:34 +0000
+authors: Abdur-RahmaanJ
 
 let us say you want to print :
 

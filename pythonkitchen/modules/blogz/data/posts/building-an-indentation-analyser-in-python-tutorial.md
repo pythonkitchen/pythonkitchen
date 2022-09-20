@@ -1,7 +1,7 @@
 title: building an indentation lexer in python - a tutorial
 slug: building-an-indentation-analyser-in-python-tutorial
 pub: Fri, 04 May 2018 08:31:13 +0000
-
+authors: Abdur-RahmaanJ
 
 scope by indentation is an alternative to curly braces and is used by languages like python and pug. it certainly is more human-friendly as experience gathered tends to produce more and more friendly syntaxes (like livecode). we'll in this post build an indentation analyser that correctly tells us when we mixed indentation level; just like python does. in fact, we'll analyse python code snippets
 

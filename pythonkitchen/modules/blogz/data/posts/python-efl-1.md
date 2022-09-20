@@ -1,6 +1,7 @@
 title: Python-efl Tutorial 1
 slug: python-efl-1
 pub: Fri, 22 Oct 2021 18:02:40 +0000
+authors: Abdur-RahmaanJ
 
 Simple window
 

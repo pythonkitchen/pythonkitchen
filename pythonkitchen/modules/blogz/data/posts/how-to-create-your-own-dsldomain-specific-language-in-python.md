@@ -1,6 +1,7 @@
 title: how to create your own DSL(Domain Specific Language) in python
 slug: how-to-create-your-own-dsldomain-specific-language-in-python
 pub: Mon, 03 Sep 2018 05:50:09 +0000
+authors: Abdur-RahmaanJ
 
 Sometimes you need more than a cli program. You need more flexibility and control. A Domain Specific Language (DSL) is the right fit for specialised tasks. This post shows how you can build your own.
 

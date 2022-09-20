@@ -1,7 +1,7 @@
 title: Plotting Hotspots in Mauritius with Python and Folium
 slug: plotting-hotspots-in-mauritius-with-python-and-folium
 pub: Wed, 23 Jan 2019 08:01:11 +0000
-
+authors: Abdur-RahmaanJ
 
 geo plotting has never been so easy. thanks dhrumil patel!
 

@@ -1,6 +1,7 @@
 title: An Advanced Flask App: Shopyo
 slug: shopyo-understand-advanced-flask-app
 pub: Tue, 25 Feb 2020 03:43:14 +0000
+authors: Abdur-RahmaanJ
 
 ![](https://raw.githubusercontent.com/Abdur-rahmaanJ/shopyo/master/shopyo.png)
 [Shopyo](https://github.com/Abdur-rahmaanJ/shopyo) is an Open Source Flask-based, Python-powered inventory solution and upcoming point of sales. It's aim is to help small business owners get a nice Python-based product with essential amenities for their businesses. An empty Shopyo project at the very least makes a great Flask base. Shopyo also makes use of advanced flask concepts.

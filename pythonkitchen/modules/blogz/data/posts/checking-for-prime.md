@@ -1,7 +1,7 @@
 title: Checking For Prime
 slug: checking-for-prime
 pub: Sat, 29 Dec 2018 15:00:00 +0000
-
+authors: Abdur-RahmaanJ
 
 prime numbers are surprisingly easy to check for. to check if a number is prime, we divide it by it's factors. 1 is not prime
 

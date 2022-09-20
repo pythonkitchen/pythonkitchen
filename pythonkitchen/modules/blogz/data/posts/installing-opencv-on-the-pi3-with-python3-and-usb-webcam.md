@@ -1,6 +1,7 @@
 title: Installing OpenCv on the Pi3 with python3 (and usb webcam)
 slug: installing-opencv-on-the-pi3-with-python3-and-usb-webcam
 pub: Wed, 20 Jun 2018 17:59:15 +0000
+authors: Abdur-RahmaanJ
 
 opencv is one of the most difficult python package to install. it's not a pip install easy package issue. in this post, we'll see how to painlessly install it.
 Target Os
@@ -41,7 +42,7 @@ manmade2.com notes
 
 1. included wrong make command and reinstall instructions (what if a confused user compiles open cv twice (brr))
 2. missed qt packages install
-3. misses python path in ~/.profile
+3. misses python path in `~/.profile`
 
 
 Install instructions

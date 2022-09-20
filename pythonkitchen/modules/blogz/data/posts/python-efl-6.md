@@ -1,6 +1,7 @@
 title: Python-efl Tutorial 6
 slug: python-efl-6
 pub: Fri, 22 Oct 2021 18:37:03 +0000
+authors: Abdur-RahmaanJ
 
 To follow this tutorial, download/clone [this repo](https://github.com/BodhiDev/python3-elm-extensions) and pip install it
 

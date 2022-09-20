@@ -1,6 +1,7 @@
 title: calculating distance for four features
 slug: calculating-distance-for-four-features
 pub: Sun, 22 Jul 2018 03:37:21 +0000
+authors: Abdur-RahmaanJ
 
 if you want to calculate the distance between 4 features coordinates, you do it like that :
 

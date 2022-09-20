@@ -1,7 +1,7 @@
 title: Upload your package to Pypi
 slug: upload-your-package-to-pypi
 pub: Tue, 07 Jan 2020 19:27:36 +0000
-
+authors: Abdur-RahmaanJ
 
 To upload your project to Pypi, this assumes you have your setup.py ready
 

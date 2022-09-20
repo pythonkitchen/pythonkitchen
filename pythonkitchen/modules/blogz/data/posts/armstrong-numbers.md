@@ -1,7 +1,7 @@
 title: Armstrong Numbers
 slug: armstrong-numbers
 pub: Thu, 27 Dec 2018 19:27:39 +0000
-
+authors: Abdur-RahmaanJ
 
 we start the problem series on PMC (Python Members Club) with Armstrong Numbers. 
 

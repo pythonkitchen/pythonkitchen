@@ -1,6 +1,7 @@
 title: Daily Coding Problem Solution 1
 slug: daily-coding-problem-solution-1
 pub: Mon, 22 Mar 2021 19:19:57 +0000
+authors: Abdur-RahmaanJ
 
 This problem was recently asked by Google.
 

@@ -1,6 +1,7 @@
 title: How to solve celery task has no attribute AsyncResult
 slug: celery-task-asyncresult-no-attribute
 pub: Sun, 15 Aug 2021 07:36:53 +0000
+authors: Abdur-RahmaanJ
 
 I was looking through Grinberg's [tuto](https://blog.miguelgrinberg.com/post/using-celery-with-flask) on celery and flask. I saw querying tasks by
 

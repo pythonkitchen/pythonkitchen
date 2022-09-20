@@ -1,6 +1,7 @@
 title: Daily Coding Problem Solution 5
 slug: daily-coding-problem-solution-5
 pub: Mon, 22 Mar 2021 20:02:41 +0000
+authors: Abdur-RahmaanJ
 
 This problem was asked by Jane Street.
 

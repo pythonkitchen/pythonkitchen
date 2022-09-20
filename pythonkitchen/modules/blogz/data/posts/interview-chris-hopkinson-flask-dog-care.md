@@ -1,6 +1,7 @@
 title: Learning Flask To Help With Dog Care: Interview With Chris Hopkinson
 slug: interview-chris-hopkinson-flask-dog-care
 pub: Fri, 19 Mar 2021 07:48:24 +0000
+authors: Abdur-RahmaanJ
 
 Chris has been learning Flask to help with Dog Care. He felt Flask would help him in his business activities! Let's have a chat with him!
 

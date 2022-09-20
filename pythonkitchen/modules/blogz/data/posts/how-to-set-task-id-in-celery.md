@@ -1,6 +1,7 @@
 title: How to set task id in celery
 slug: how-to-set-task-id-in-celery
 pub: Sun, 15 Aug 2021 07:24:51 +0000
+authors: Abdur-RahmaanJ
 
 Here's a convenient way to set task id in celery:
 

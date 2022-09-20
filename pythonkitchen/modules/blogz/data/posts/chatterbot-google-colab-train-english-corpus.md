@@ -1,6 +1,7 @@
 title: Chatterbot Google Colab Train English Corpus
 slug: chatterbot-google-colab-train-english-corpus
 pub: Mon, 22 Mar 2021 17:39:43 +0000
+authors: Abdur-RahmaanJ
 
 Here's how to solve the file not found for training chatterbot on Google collab:
 

@@ -1,6 +1,7 @@
 title: web mail interface using pi and flask
 slug: web-mail-interface-using-pi-and-flask
 pub: Sun, 01 Jul 2018 07:32:45 +0000
+authors: Abdur-RahmaanJ
 
 have you ever used gmail or hotmail on the web? it seems so natural that we take it for granted. in this post we'll see how to build a basic web mail client to send mail ... using flask and pi as server. this is
 content

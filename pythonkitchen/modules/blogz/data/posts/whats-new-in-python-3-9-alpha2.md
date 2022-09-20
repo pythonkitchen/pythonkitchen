@@ -1,7 +1,7 @@
 title: What's New in Python 3.9 alpha2?
 slug: whats-new-in-python-3-9-alpha2
 pub: Tue, 24 Dec 2019 09:27:17 +0000
-
+authors: Abdur-RahmaanJ
 
 Python is set to release a new version next year, the shiny 3.9. This one omitted the sys.argv change rolled back in alpha2 Here's our take of the most noticeable changes:
 

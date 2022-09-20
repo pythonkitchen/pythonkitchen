@@ -1,6 +1,7 @@
 title: Machine Learning part 3: regression
 slug: machine-learning-part-3-regression
 pub: Wed, 23 Jan 2019 07:38:19 +0000
+authors: Abdur-RahmaanJ
 
 
 **Machine Learning**

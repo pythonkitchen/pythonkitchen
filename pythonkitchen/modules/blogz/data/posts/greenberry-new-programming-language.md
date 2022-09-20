@@ -1,7 +1,7 @@
 title: greenBerry - a new programming language
 slug: greenberry-new-programming-language
 pub: Tue, 01 May 2018 10:38:55 +0000
-
+authors: Abdur-RahmaanJ
 
 
 [caption id="attachment\_95" align="aligncenter" width="149"][![greenBerry's logo](https://www.pythonmembers.club/wp-content/uploads/2018/04/gb_logo.png)](https://abdur-rahmaanj.github.io/greenBerry) greenBerry's logo[/caption]

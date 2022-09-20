@@ -1,6 +1,7 @@
 title: Machine Learning Part 10 Naive Bayes
 slug: machine-learning-part-10-naive-bayes
 pub: Wed, 07 Apr 2021 10:11:56 +0000
+authors: Abdur-RahmaanJ
 
 #10 naive bayes
 

@@ -1,7 +1,7 @@
 title: Pyside2 / PyQt5 Extract Data From QFormLayout
 slug: pyside2-pyqt5-extract-data-from-qformlayout
 pub: Sun, 09 Feb 2020 10:16:21 +0000
-
+authors: Abdur-RahmaanJ
 
 
 ```python
