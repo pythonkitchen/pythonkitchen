@@ -1,6 +1,7 @@
 title: How to get server response from DropzoneJs for chunk uploads
 slug: dropzonejs-server-response-chunck-upload
 pub: Fri, 13 Aug 2021 08:47:49 +0000
+authors: Abdur-RahmaanJ
 
 After much struggling, here's the magical formula we got for getting the server response back for chunck uploads:
 

@@ -1,6 +1,7 @@
 title: Machine Learning part 4: Gradient Descent and cost function
 slug: machine-learning-part-4-gradient-descent-and-cost-function
 pub: Thu, 24 Jan 2019 14:00:21 +0000
+authors: Abdur-RahmaanJ
 
 
 **#4 gradient descent and cost function**

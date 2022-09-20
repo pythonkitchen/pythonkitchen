@@ -1,6 +1,7 @@
 title: Machine Learning Part 12 Association Analysis
 slug: machine-learning-part-12-association-analysis
 pub: Wed, 07 Apr 2021 10:14:26 +0000
+authors: Abdur-RahmaanJ
 
 #12 association analysis
 

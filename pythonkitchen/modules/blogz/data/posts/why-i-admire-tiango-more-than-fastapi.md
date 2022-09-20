@@ -1,6 +1,7 @@
 title: Why i admire tiangolo more than FastAPI
 slug: why-i-admire-tiango-more-than-fastapi
 pub: Fri, 22 Oct 2021 10:05:36 +0000
+authors: Abdur-RahmaanJ
 
 People talk about FastAPI a lot, but they give little attention to Sebastián Ramírez, alias tiangolo. It's so obvious to me that FastAPI is a reflection of someone cool. It's hard to miss the fact that FastAPI is cool but it has lots of details that shine beyond technical ones.
 

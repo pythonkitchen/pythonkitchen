@@ -1,6 +1,7 @@
 title: PyQt5 / PySide2 QTableView how to find out if row is selected and which one in Python?
 slug: pyqt5-pyside2-qtableview-how-to-find-out-if-row-is-selected-and-which-one-in-python
 pub: Wed, 06 Nov 2019 18:19:38 +0000
+authors: Abdur-RahmaanJ
 
 Question: I have a QTableView in PyQT5 / PySide2
 
@@ -21,7 +22,7 @@ select = tableview.selectionModel()
 selected = select.selectedRows()
 
 if selected:
-      print(selected[0].row())
+    print(selected[0].row())
 ```
 
 but that does it well:

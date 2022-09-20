@@ -1,11 +1,12 @@
 title: How to prevent the Open Redirect vulnerability with the next parameter in Flask
 slug: how-prevent-open-redirect-vulnerab-flask
 pub: Wed, 24 Feb 2021 08:24:00 +0000
+authors: Abdur-RahmaanJ
 
 Let's say someone codes a url like this:
 
 
-```python
+```
 http://domain.com/do/something?next=http://domain.com/homepage
 
 ```
@@ -14,7 +15,7 @@ http://domain.com/do/something?next=http://domain.com/homepage
 Now an attacker can craft the url like that:
 
 
-```python
+```
 http://domain.com/do/something?next=http://evildomain.com/homepage
 
 ```

@@ -1,6 +1,7 @@
 title: Why Choose Flask Over FastAPI
 slug: why-choose-flask-over-fastapi
 pub: Sun, 18 Apr 2021 21:48:04 +0000
+authors: Abdur-RahmaanJ
 
 [FastAPI](https://github.com/tiangolo/fastapi) positions itself as one of the best choices for API development in Python. The project is polished for sure, the [docs](https://fastapi.tiangolo.com/) are sleek and the commit messages awesome. It collected some nice parts and pieced them together to produce an artifact infused and driven by pragmatism. But the community is wrong, completely wrong and over hyped in comparing FastAPI with it's father in inspiration: The awesome, one & only, unique Flask
 

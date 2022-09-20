@@ -1,6 +1,7 @@
 title: Raspberry-Pi setup - part 1 : OS installation
 slug: raspberry-pi-setup
 pub: Mon, 18 Jun 2018 11:42:03 +0000
+authors: Abdur-RahmaanJ
 
 In this post we'll cover the software setup part. The raspberry pi is an empty computer, empty of peripherals and os. the first step is to install the os.
 Target Model

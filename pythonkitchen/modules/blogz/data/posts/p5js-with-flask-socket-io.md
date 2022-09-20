@@ -1,6 +1,7 @@
 title: How to integrate P5JS with Flask-SocketIO
 slug: p5js-with-flask-socket-io
 pub: Fri, 15 Apr 2022 20:37:03 +0000
+authors: Abdur-RahmaanJ
 
 [Github Repo](https://github.com/Abdur-rahmaanJ/p5js-socket-io)
 Main codes

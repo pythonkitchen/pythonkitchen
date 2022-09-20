@@ -1,6 +1,7 @@
 title: Python-efl Tutorial 7
 slug: python-efl-7
 pub: Fri, 22 Oct 2021 18:47:44 +0000
+authors: Abdur-RahmaanJ
 
 
 ```python

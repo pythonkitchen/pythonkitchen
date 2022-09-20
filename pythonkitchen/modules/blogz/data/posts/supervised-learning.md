@@ -1,7 +1,7 @@
 title: Machine Learning part 2: supervised learning
 slug: supervised-learning
 pub: Tue, 22 Jan 2019 07:45:06 +0000
-
+authors: Abdur-RahmaanJ
 
 
 

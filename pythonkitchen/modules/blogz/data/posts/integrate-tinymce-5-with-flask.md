@@ -1,6 +1,7 @@
 title: How to Integrate Tinymce 5 with Flask (with csrf)
 slug: integrate-tinymce-5-with-flask
 pub: Thu, 09 Dec 2021 07:32:00 +0000
+authors: Abdur-RahmaanJ
 
 This article shows how to integrate Tinymce 5 with Flask even including csrf protection!
 

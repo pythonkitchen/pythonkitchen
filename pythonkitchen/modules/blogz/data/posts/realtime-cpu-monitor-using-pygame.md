@@ -1,6 +1,7 @@
 title: Realtime CPU monitor using PyGame
 slug: realtime-cpu-monitor-using-pygame
 pub: Thu, 26 Nov 2020 14:26:01 +0000
+authors: Abdur-RahmaanJ
 
 Here's a realtime CPU monitor using PyGame:
 

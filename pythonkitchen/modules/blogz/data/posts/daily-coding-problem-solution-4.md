@@ -1,6 +1,7 @@
 title: Daily Coding Problem Solution 4
 slug: daily-coding-problem-solution-4
 pub: Mon, 22 Mar 2021 20:03:38 +0000
+authors: Abdur-RahmaanJ
 
 This problem was asked by Stripe.
 

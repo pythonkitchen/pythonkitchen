@@ -65,16 +65,68 @@ def create_app(config_name="development"):
 
 
     @app.cli.command("upload-posts")
-    def upload_posts():
+    @click.option('--force', '-f', is_flag=True)
+    @click.argument("slug", required=False)
+    def upload_posts(force=False, slug=None):
         from modules.blogz.models import Blog
         from modules.box__default.auth.models import User
         from init import db
         user = User.query.filter(User.email == 'admin@domain.com').first()
 
         with app.app_context():
-            for file in os.listdir('./modules/blogz/data/posts'):
-                with open(f'./modules/blogz/data/posts/{file}') as f:
-                    
+            if slug is None:
+                for file in os.listdir('./modules/blogz/data/posts'):
+                    with open(f'./modules/blogz/data/posts/{file}') as f:
+                        
+                        l = f.read().split('\n\n')
+                        content = '\n\n'.join(l[1:])
+
+                        meta = l[0].split('\n')
+                        metadata = {}
+                        for line in meta:
+                            metadata[line.split(':')[0].strip()] = ''.join(line.split(':')[1:]).strip()
+
+                        # print(metadata['pub'])
+                        # Wed, 24 Feb 2021 094049 +0000
+
+                        month_map = {'jan':1, 'feb':2, 'mar':3,
+                        'apr':4, 'may':5, 'jun':6, 'jul':7, 'aug':8, 'sep':9,
+                        'oct':10, 'nov':11, 'dec':12}
+                        year = int(metadata['pub'].split()[3])
+
+                        raw_month = metadata['pub'].split()[2]
+                        month = int(month_map[raw_month.casefold()])
+                        day = int(metadata['pub'].split()[1])
+
+                        time_raw = metadata['pub'].split()[4]
+
+                        hour = int(time_raw[0]+time_raw[1])
+                        minute = int(time_raw[2]+time_raw[3])
+                        second = int(time_raw[4]+time_raw[5])
+
+                        # print(year, month, day, hour, minute, second)
+                        pub = datetime.datetime(year, month, day, hour, minute, second) 
+
+                        slug = metadata['slug']
+                        if metadata['slug'].startswith('?p='):
+                            continue
+
+                        post = Blog.query.filter(Blog.slug==slug).first()
+                        if post:
+                            if force:
+                                db.session.delete(post)
+                            else:
+                                continue
+
+                        bpost = Blog(title=metadata['title'],
+                            source=content, slug=metadata['slug'], pub=pub)
+                        bpost.authors.append(user)
+                        db.session.add(bpost)
+                db.session.commit()
+            elif slug:
+
+                with open(f'./modules/blogz/data/posts/{slug}.md') as f:
+                        
                     l = f.read().split('\n\n')
                     content = '\n\n'.join(l[1:])
 
@@ -105,17 +157,12 @@ def create_app(config_name="development"):
                     pub = datetime.datetime(year, month, day, hour, minute, second) 
 
                     slug = metadata['slug']
-                    if metadata['slug'].startswith('?p='):
-                        continue
+                
+                post = Blog.query.filter(Blog.slug==slug).first()
 
-                    post_exists = Blog.query.filter(Blog.slug==slug).first()
-                    if post_exists:
-                        continue
-                    bpost = Blog(title=metadata['title'],
-                        source=content, slug=metadata['slug'], pub=pub)
-                    bpost.authors.append(user)
-                    db.session.add(bpost)
+                post.source = content
             db.session.commit()
+
                 
     return app
 

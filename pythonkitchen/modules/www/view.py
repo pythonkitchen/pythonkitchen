@@ -6,6 +6,7 @@ from flask import render_template
 
 from shopyo.api.module import ModuleHelp
 from shopyo.api.templates import yo_render
+from modules.blogz.models import Blog
 
 # from flask import url_for
 # from flask import redirect
@@ -53,8 +54,10 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: http://www.example.com/sitemap.xml
+Sitemap: http://www.pythonkitchen.com/sitemap.xml
 '''
+
+
 
 @module_blueprint.route("/")
 @module_blueprint.route("/<slug>")
@@ -73,6 +76,27 @@ def index(slug=None):
         return render_template("www/index.html", str=str)
     elif slug == 'robots.txt':
         return robots_txt
+    elif slug == 'sitemap.xml':
+        urls = []
+        posts = Blog.query.all()
+        for post in posts:
+            slug = post.slug
+            pub = str(post.pub)
+            urls.append(f'''
+        <url>
+            <loc>http://www.pythonkitchen.com/{slug}</loc>
+            <lastmod>{pub}</lastmod>
+        </url>
+                ''')
+
+        url_str = '\n'.join(urls)
+        sitemap_xml = f'''
+        <?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+          {url_str}
+        </urlset>
+        '''
+        return sitemap_xml
     else:
         current_post = Blog.query.filter(Blog.slug == slug).first()
         return render_template('blogz/post.html', current_post=current_post)

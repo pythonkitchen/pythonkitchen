@@ -1,6 +1,7 @@
 title: Python-efl Tutorial 2
 slug: python-efl-2
 pub: Fri, 22 Oct 2021 18:07:40 +0000
+authors: Abdur-RahmaanJ
 
 Callback demo
 

@@ -1,6 +1,7 @@
 title: Python Generators:  The In-depth Article You've Always Wanted
 slug: python-generators-in-depth
 pub: Thu, 10 Dec 2020 06:37:27 +0000
+authors: Abdur-RahmaanJ
 
 Table of contents
 =================

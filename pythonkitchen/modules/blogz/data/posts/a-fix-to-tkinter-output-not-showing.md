@@ -1,6 +1,7 @@
 title: a fix to tkinter output not showing
 slug: a-fix-to-tkinter-output-not-showing
 pub: Sun, 29 Apr 2018 21:08:30 +0000
+authors: Abdur-RahmaanJ, tthuma1
 
 tkinter is fine once you understand it. let us see what problem user vikas was having and how to fix it!
 

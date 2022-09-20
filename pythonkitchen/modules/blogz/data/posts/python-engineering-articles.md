@@ -1,6 +1,7 @@
 title: Python Engineering Articles
 slug: python-engineering-articles
 pub: Tue, 09 Nov 2021 22:49:40 +0000
+authors: Abdur-RahmaanJ
 
 This page lists the very best Python engineering articles of the internet, hand-picked to give hours and hours 
 of pure reading joy.

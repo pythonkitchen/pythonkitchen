@@ -1,6 +1,7 @@
 title: Machine Learning Part 8: Support Vector Machines
 slug: machine-learning-part-8-support-vector-machines
 pub: Wed, 07 Apr 2021 10:08:14 +0000
+authors: Abdur-RahmaanJ
 
 #8 support vector machines
 

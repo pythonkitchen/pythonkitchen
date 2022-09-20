@@ -1,6 +1,7 @@
 title: An overview of Python terminal plotting libraries
 slug: an-overview-of-python-terminal-plotting-libraries
 pub: Tue, 06 Sep 2022 07:07:20 +0000
+authors: Abdur-RahmaanJ
 
 There exist many terminal plotting libraries. In Python there are some 3-4 main ones. In this post we'll have an overview of the libraries.
 

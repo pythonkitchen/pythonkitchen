@@ -1,6 +1,7 @@
 title: matplotlib scatter plot annotate / set text at / label each point
 slug: matplotlib-scatter-plot-annotate-set-text-at-label-each-point
 pub: Tue, 08 May 2018 04:32:11 +0000
+authors: Abdur-RahmaanJ
 
 
 a hard question in matplotlib is to annotate each point with a text or label. answers range from ax.annotate to some more weird stuffs. fortunately, the answer is a simple one! this question poses itself quite often in scatter plots

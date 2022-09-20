@@ -1,7 +1,7 @@
 title: Machine Learning part 6: enthropy and gain
 slug: machine-learning-part-6-enthropy-and-gain
 pub: Tue, 29 Jan 2019 05:55:06 +0000
-
+authors: Abdur-RahmaanJ
 
 Machine Learning
 

@@ -1,6 +1,7 @@
 title: Machine Learning Part 9 Neural Networks
 slug: machine-learning-part-9-neural-networks
 pub: Wed, 07 Apr 2021 10:10:40 +0000
+authors: Abdur-RahmaanJ
 
 #9 neural networks
 

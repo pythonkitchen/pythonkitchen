@@ -1,6 +1,7 @@
 title: Free Python Courses List
 slug: free-python-courses-list
 pub: Sun, 19 Jan 2020 12:19:52 +0000
+authors: Abdur-RahmaanJ
 
 
 Here is a list of Python free courses that i maintain

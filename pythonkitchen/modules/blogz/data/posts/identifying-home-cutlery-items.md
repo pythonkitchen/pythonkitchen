@@ -1,6 +1,7 @@
 title: home machine learning project : identifying cutlery items
 slug: identifying-home-cutlery-items
 pub: Tue, 08 May 2018 06:12:23 +0000
+authors: Abdur-RahmaanJ
 
 machine learning is becoming crucial to add to your backpack. this post attempts to show a basic application of machine learning. we need to determine whether some cutlery items are bowls or mugs or plates. this is a practical demonstration of applied theory
 machine learning is just applied maths

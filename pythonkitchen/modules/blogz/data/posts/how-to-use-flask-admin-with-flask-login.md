@@ -1,6 +1,7 @@
 title: How to use Flask-admin with Flask-login
 slug: how-to-use-flask-admin-with-flask-login
 pub: Wed, 24 Feb 2021 07:16:19 +0000
+authors: Abdur-RahmaanJ
 
 Steps:
 

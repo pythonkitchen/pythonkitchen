@@ -1,6 +1,7 @@
 title: processing.py : trails using oop
 slug: processing-py-trails-using-oop
 pub: Thu, 26 Apr 2018 05:13:45 +0000
+authors: Abdur-RahmaanJ
 
 [caption id="attachment\_77" align="aligncenter" width="300"]![trails in processing.py](https://www.pythonmembers.club/wp-content/uploads/2018/04/trail-300x300.png) trails in processing.py[/caption]
 

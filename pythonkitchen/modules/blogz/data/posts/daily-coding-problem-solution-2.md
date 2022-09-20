@@ -1,6 +1,7 @@
 title: Daily Coding Problem Solution 2
 slug: daily-coding-problem-solution-2
 pub: Mon, 22 Mar 2021 19:24:08 +0000
+authors: Abdur-RahmaanJ
 
 This problem was asked by Uber.
 

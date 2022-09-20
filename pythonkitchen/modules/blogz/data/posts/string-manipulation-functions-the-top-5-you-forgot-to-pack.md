@@ -1,7 +1,7 @@
 title: String Manipulation Functions: The Top 5 You Forgot To Pack
 slug: string-manipulation-functions-the-top-5-you-forgot-to-pack
 pub: Mon, 22 Jul 2019 15:20:18 +0000
-
+authors: Abdur-RahmaanJ
 
  String manipulation functions, good ones are available by default in Python. Ignorance make people always re-invent. Python is powerful and … thoughtful. We were strict and choose only 5, the five best. Hope you enjoy it!
 

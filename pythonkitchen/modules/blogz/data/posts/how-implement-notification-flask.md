@@ -1,11 +1,12 @@
 title: How to implement notification in Flask
 slug: how-implement-notification-flask
 pub: Wed, 24 Feb 2021 09:29:14 +0000
+authors: Abdur-RahmaanJ
 
 Implementing notifications in Flask goes way beyond using flash. You have to add this snippet in your templates:
 
 
-```python
+```html
 <div id="flashed-messages">
   {% with messages = get_flashed_messages() %}
     {% if messages %}

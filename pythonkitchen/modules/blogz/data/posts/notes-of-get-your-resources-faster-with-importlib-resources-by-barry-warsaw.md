@@ -1,6 +1,7 @@
 title: Notes of Get your resources faster, with importlib.resources by Barry Warsaw
 slug: notes-of-get-your-resources-faster-with-importlib-resources-by-barry-warsaw
 pub: Sun, 12 Dec 2021 17:53:11 +0000
+authors: Abdur-RahmaanJ
 
 [Talk](https://www.youtube.com/watch?v=ZsGFU2qh73E) notes
 

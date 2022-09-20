@@ -1,6 +1,7 @@
 title: How to implement beautiful notifications in Flask
 slug: how-implement-beautiful-notifications-flask
 pub: Wed, 24 Feb 2021 09:40:49 +0000
+authors: Abdur-RahmaanJ
 
 Since you already know [how to implement notifications](https://www.pythonkitchen.com/how-implement-notification-flask/), let's see how to implement beautiful notifications in Flask.
 

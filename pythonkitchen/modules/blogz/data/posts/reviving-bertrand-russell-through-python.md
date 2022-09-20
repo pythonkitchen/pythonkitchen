@@ -1,7 +1,7 @@
 title: Reviving Bertrand Russell Through Python
 slug: reviving-bertrand-russell-through-python
 pub: Fri, 28 Dec 2018 19:35:04 +0000
-
+authors: Abdur-RahmaanJ
 
 famous authors are praised, respected, admired and missed due to their works. after reading all the titles of an excellent author, one is left wishing for more. curiously enough we now have the ability to produce more books that fit in the literary style, depth and topic tackling techniques of writers. perfection in this field opens a new era, you might hear of ~~mouse~~ cat trap by darwin, russian trip by mark twain and god beyond doubt by hawkins.
 

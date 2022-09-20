@@ -1,6 +1,7 @@
 title: Machine Learning part 1: introduction
 slug: machine-learning-part-1-introduction
 pub: Mon, 21 Jan 2019 07:43:27 +0000
+authors: Abdur-RahmaanJ
 
 
 **what is it?**

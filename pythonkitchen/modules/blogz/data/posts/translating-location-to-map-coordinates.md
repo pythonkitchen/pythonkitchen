@@ -1,6 +1,7 @@
 title: translating location to map coordinates
 slug: translating-location-to-map-coordinates
 pub: Wed, 06 Jun 2018 06:10:46 +0000
+authors: Abdur-RahmaanJ
 
 let us say you have a character moving across the screen, and you want to have it's location in terms of the map coordinate like (0,0), (3,2) instead of the actual location, like if you want to generate some obstacles in his path, here's how you do it :
 demo

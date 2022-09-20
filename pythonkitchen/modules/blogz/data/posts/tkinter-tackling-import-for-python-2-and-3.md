@@ -1,6 +1,7 @@
 title: tkinter : tackling import for python 2 and 3
 slug: tkinter-tackling-import-for-python-2-and-3
 pub: Wed, 25 Apr 2018 11:52:45 +0000
+authors: tthuma1
 
 [caption id="" align="aligncenter" width="480"]![tkinter logo](https://i.ytimg.com/vi/QQv_e61sqxs/hqdefault.jpg) gui package for python[/caption]
 
