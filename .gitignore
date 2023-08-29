@@ -126,3 +126,12 @@ shopyo/static/modules/
 
 # ignore secrets
 config.json
+
+docs/*
+!docs/serve.py
+!docs/assets/
+!docs/js/
+!docs/CNAME
+!docs/slides/
+!docs/css
+!docs/bulma-timeline.min.css
