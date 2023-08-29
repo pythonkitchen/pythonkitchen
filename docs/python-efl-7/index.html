@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    a {
+	word-wrap: break-word !important;
+}
+  </style>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+
+<link rel="stylesheet" href="/post.css"> 
+
+</head>
+<body class="bg-gray-50">
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="/" class="flex items-center">
+          <img src="https://www.pythonkitchen.com/wp-content/uploads/2022/11/cropped-p3-50x50.png" class="h-8 mr-3" alt="PythonKitchen Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PythonKitchen</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="/" 
+            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
+            Home</a>
+          </li>
+          <li>
+            <a href="https://github.com/pythonkitchen/pythonkitchen/tree/source/data/posts" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Write</a>
+          </li>
+          <li>
+            <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Contact</a>
+          </li>
+          <!-- <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+
+<div class="p-8">
+
+</div>
+
+<div class="flex flex-row space-x-2">
+    <div class="basis-3/4">
+        <div class="p-8 pl-12">
+            <div class="ml-2">
+                <div class=" p-12 bg-white rounded-lg shadow-lg">
+                    <p class="text-3xl" style="font-weight: 600;">Python-efl Lists</p>
+                    <br>
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2021-10-22 18:47:44" class="text-gray-500">October 22, 2021</time>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            python-efl
+                        </a>
+                        
+                    </div>
+                    
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="https://github.com/Abdur-rahmaanJ.png?size=200" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                            <p class="font-semibold text-gray-900">
+                                <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Abdur-Rahmaan Janhangeer
+                                </a>
+                            </p>
+                            <p class="text-gray-600">Chef</p>
+                            </div>
+                        </div>
+                    
+                    <br>
+                    <article>
+                        <p>Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.</p>
+<pre><code class="language-python">'''
+Abdur-Ramaan Janhangeer
+Updated from Jeff Hoogland's tutos
+for Python3.9 and Python-elf 1.25.0
+
+https://www.toolbox.com/tech/operating-systems/blogs/pyefl-tutorial-7-lists-111115/
+'''
+
+import efl.elementary as elm
+from efl.elementary.window import StandardWindow
+from efl.elementary.list import List
+
+from elmextensions import StandardPopup
+from efl.evas import EVAS_HINT_EXPAND, EVAS_HINT_FILL
+
+EXPAND_BOTH = EVAS_HINT_EXPAND, EVAS_HINT_EXPAND
+EXPAND_HORIZ = EVAS_HINT_EXPAND, 0.0
+FILL_BOTH = EVAS_HINT_FILL, EVAS_HINT_FILL
+list_items = [&quot;Apples&quot;,
+            &quot;Bananas&quot;,
+            &quot;Cookies&quot;,
+            &quot;Fruit Loops&quot;,
+            &quot;Milk&quot;,
+            &quot;Apple Juice&quot;,
+            &quot;BBQ Sauce&quot;,
+            &quot;Nesquik&quot;,
+            &quot;Trail Mix&quot;,
+            &quot;Chips&quot;,
+            &quot;Crackers&quot;,
+            &quot;Cheese&quot;,
+            &quot;Peanutbutter&quot;,
+            &quot;Jelly&quot;,
+            &quot;Ham&quot;,
+            &quot;Turkey&quot;,
+            &quot;Potatos&quot;,
+            &quot;Stuffing&quot;,
+            &quot;Tomato Sauce&quot;,
+            &quot;Pineapple&quot;,
+            &quot;Hot Dog Chili Sauce&quot;,
+            &quot;Stewed Tomatoes&quot;,
+            &quot;Creamed Corn&quot;,
+            &quot;Cream of Mushroom Soup&quot;,
+            &quot;Peaches&quot;,
+            &quot;Chilies and Tomatoes&quot;,
+            &quot;Cream of Chicken Soup&quot;,    
+            &quot;Cherry Pie Filling&quot;,   
+            &quot;Canned Beans (various)&quot;,
+            &quot;Cream of Tomato Soup&quot;, 
+            &quot;Apple Pie Filling&quot;,
+            &quot;Canned Peas&quot;,
+            &quot;Green Beans&quot;
+            ]
+
+
+class MainWindow(StandardWindow):
+    def __init__(self):
+        StandardWindow.__init__(self, &quot;ex9&quot;, &quot;List&quot;, size=(300, 200))
+        self.callback_delete_request_add(lambda o: elm.exit())
+
+        our_list = List(self)
+        our_list.size_hint_weight = EXPAND_BOTH
+        our_list.callback_activated_add(self.list_item_selected)
+
+        list_items.sort()
+
+        for it in list_items:
+            our_list.item_append(it)
+
+        our_list.go()
+        our_list.show()
+
+        self.resize_object_add(our_list)
+
+    def list_item_selected(self, our_list, our_item):
+        our_popup = StandardPopup(self, &quot;You selected %s&quot;%our_item.text, &quot;ok&quot;)
+        our_popup.show()
+
+if __name__ == &quot;__main__&quot;:
+    elm.init()
+    gui = MainWindow()
+    gui.show()
+    elm.run()
+
+</code></pre>
+<p>Searcheable list</p>
+<pre><code class="language-python">import efl.elementary as elm
+from efl.elementary.window import StandardWindow
+
+from elmextensions import SearchableList
+from elmextensions import StandardPopup
+from efl.evas import EVAS_HINT_EXPAND, EVAS_HINT_FILL
+
+
+EXPAND_BOTH = EVAS_HINT_EXPAND, EVAS_HINT_EXPAND
+EXPAND_HORIZ = EVAS_HINT_EXPAND, 0.0
+FILL_BOTH = EVAS_HINT_FILL, EVAS_HINT_FILL
+list_items = [&quot;Apples&quot;,
+            &quot;Bananas&quot;,
+            &quot;Cookies&quot;,
+            &quot;Fruit Loops&quot;,
+            &quot;Milk&quot;,
+            &quot;Apple Juice&quot;,
+            &quot;BBQ Sauce&quot;,
+            &quot;Nesquik&quot;,
+            &quot;Trail Mix&quot;,
+            &quot;Chips&quot;,
+            &quot;Crackers&quot;,
+            &quot;Cheese&quot;,
+            &quot;Peanutbutter&quot;,
+            &quot;Jelly&quot;,
+            &quot;Ham&quot;,
+            &quot;Turkey&quot;,
+            &quot;Potatos&quot;,
+            &quot;Stuffing&quot;,
+            &quot;Tomato Sauce&quot;,
+            &quot;Pineapple&quot;,
+            &quot;Hot Dog Chili Sauce&quot;,
+            &quot;Stewed Tomatoes&quot;,
+            &quot;Creamed Corn&quot;,
+            &quot;Cream of Mushroom Soup&quot;,
+            &quot;Peaches&quot;,
+            &quot;Chilies and Tomatoes&quot;,
+            &quot;Cream of Chicken Soup&quot;,    
+            &quot;Cherry Pie Filling&quot;,   
+            &quot;Canned Beans (various)&quot;,
+            &quot;Cream of Tomato Soup&quot;, 
+            &quot;Apple Pie Filling&quot;,
+            &quot;Canned Peas&quot;,
+            &quot;Green Beans&quot;
+            ]
+
+
+class MainWindow(StandardWindow):
+    def __init__(self):
+        StandardWindow.__init__(self, &quot;ex10&quot;, &quot;Searchable List&quot;, size=(300, 200))
+        self.callback_delete_request_add(lambda o: elm.exit())
+
+        search_list = SearchableList(self)
+        search_list.size_hint_weight = EXPAND_BOTH
+        search_list.lst.callback_activated_add(self.list_item_selected)
+
+        list_items.sort()
+
+        for it in list_items:
+            search_list.item_append(it)
+
+        search_list.show()
+
+        self.resize_object_add(search_list)
+
+    def list_item_selected(self, ourList, our_item):
+        our_popup = StandardPopup(self, &quot;You selected %s&quot;%our_item.text, &quot;ok&quot;)
+        our_popup.show()
+
+if __name__ == &quot;__main__&quot;:
+    elm.init()
+    gui = MainWindow()
+    gui.show()
+    elm.run()
+
+</code></pre>
+
+                        <script src="https://utteranc.es/client.js"
+        repo="pythonkitchen/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </article>
+                
+                  </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="basis-1/4"></div>
+  </div>
+
+
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+</body>
+</html>

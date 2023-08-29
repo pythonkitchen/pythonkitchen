@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    a {
+	word-wrap: break-word !important;
+}
+  </style>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+
+<link rel="stylesheet" href="/post.css"> 
+
+</head>
+<body class="bg-gray-50">
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="/" class="flex items-center">
+          <img src="https://www.pythonkitchen.com/wp-content/uploads/2022/11/cropped-p3-50x50.png" class="h-8 mr-3" alt="PythonKitchen Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PythonKitchen</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="/" 
+            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
+            Home</a>
+          </li>
+          <li>
+            <a href="https://github.com/pythonkitchen/pythonkitchen/tree/source/data/posts" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Write</a>
+          </li>
+          <li>
+            <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Contact</a>
+          </li>
+          <!-- <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+
+<div class="p-8">
+
+</div>
+
+<div class="flex flex-row space-x-2">
+    <div class="basis-3/4">
+        <div class="p-8 pl-12">
+            <div class="ml-2">
+                <div class=" p-12 bg-white rounded-lg shadow-lg">
+                    <p class="text-3xl" style="font-weight: 600;">Fixing an issue of tkinter tags overlapping</p>
+                    <br>
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2018-06-19 12:00:31" class="text-gray-500">June 19, 2018</time>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            editors and ides
+                        </a>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            gui
+                        </a>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            oop
+                        </a>
+                        
+                    </div>
+                    
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="https://github.com/tthuma1.png?size=200" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                            <p class="font-semibold text-gray-900">
+                                <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Tim thuma
+                                </a>
+                            </p>
+                            <p class="text-gray-600">Coder</p>
+                            </div>
+                        </div>
+                    
+                    <br>
+                    <article>
+                        <p>If you&rsquo;ve worked with tkinter&rsquo;s Text widget, you may notice that when you add many tags to it sometimes things get messed. So let&rsquo;s dive right into this. We will use syntax highlighting as an example.
+Explaining our goal</p>
+<hr />
+<p>Consider we have the following code,</p>
+<pre><code class="language-python">from tkinter import *
+
+class Files(Frame):
+
+    def \_\_init\_\_(self, parent):
+        Frame.\_\_init\_\_(self, parent)
+
+        self.parent = parent
+        self.initUI()
+
+    def initUI(self):
+        self.pack(fill=BOTH, expand=1)
+
+        self.txt = Text(self)
+        self.txt.pack(fill=BOTH, expand=1)
+
+root = Tk()
+top = Frame(root)
+top.pack(fill=BOTH, expand=0)
+
+bottom = Frame(root)
+bottom.pack()
+
+ex = Files(root)
+ex.pack(side=&quot;bottom&quot;)
+
+root.geometry(&quot;600x500-600-150&quot;)
+root.mainloop()
+
+</code></pre>
+<p>which gives us a simple Text widget.</p>
+<p>[caption id=&rdquo;attachment_259&rdquo; align=&rdquo;alignnone&rdquo; width=&rdquo;300&rdquo;]<img alt="tkinter window" src="https://www.pythonmembers.club/wp-content/uploads/2018/06/Screenshot-7-300x266.png" /> The output of our code[/caption]</p>
+<p>Let&rsquo;s say we want to highlight some specific words. And let&rsquo;s do it every time a user enters something.</p>
+<p>We will be highlighting word &ldquo;Hello&rdquo; with red and &ldquo;world&rdquo; with blue. So all we must do is make a function that will run every time a key is pressed and will highlight the words.</p>
+<pre><code class="language-python">[...]
+    def initUI(self):
+        self.pack(fill=BOTH, expand=1)
+
+        self.bind_all(&quot;&lt;Key&gt;&quot;, self.highlight) #this runs 'highlight' function every time a key is pressed
+
+        self.txt = Text(self)
+        self.txt.pack(fill=BOTH, expand=1)
+
+    def highlight(self, event=0):
+
+        file_text = self.txt.get(&quot;1.0&quot;, END+&quot;-1c&quot;) + &quot; &quot; #a blank space at the end is for easier separating words
+        words = [] #we will store words along with their starting point
+        line = 1    #}
+        column = -1 #}these are starting points that will help us in the following 'for' loop
+        word = &quot;&quot;   #}
+
+#now we have to find words and assign them their line and column
+        for char in file_text:
+            word += char
+            column += 1
+
+            if char == &quot;\n&quot;: #here a word stops
+                words.append(word[:-1] + &quot; : &quot; + str(line) + &quot;.&quot; + str(column))
+                word = &quot;&quot;
+                line += 1
+                column = -1
+
+            if char == &quot; &quot;: #here a word stops
+                words.append(word[:-1] + &quot; : &quot; + str(line) + &quot;.&quot; + str(column))
+                word = &quot;&quot;
+        print(words)
+[...]
+
+</code></pre>
+<p>This code will produce the following result as we start typing:</p>
+<p>[video width=&rdquo;1920&rdquo; height=&rdquo;1028&rdquo; webm=&rdquo;https://www.pythonmembers.club/wp-content/uploads/2018/06/highlighting_video1.webm&rdquo;][/video]</p>
+<p>Now you can see, every time we push a key it gives us the list of all words with it&rsquo;s starting points combined in a format similar to dictionary.</p>
+<p>So we have the words, we have the points now we have to use them.
+Highlighting words</p>
+<hr />
+<p>For this we will have to see if the word is &ldquo;Hello&rdquo; or &ldquo;world&rdquo; and add a tag that will highlight it. Now we add this to our &ldquo;highlight&rdquo; function:</p>
+<pre><code class="language-python">[...]
+        for i in words:
+            i = i.split() #this splits an element to i = [&quot;word&quot;, &quot;:&quot;, &quot;starting point&quot;]
+
+            if len(i) &lt; 3: #we need this in case user types double white space which results in i = [&quot;:&quot;, &quot;starting point&quot;]
+                i.insert(0, &quot; &quot;)
+
+            if i[0] == &quot;Hello&quot;: #i[0] stands for &quot;word&quot;
+                self.txt.tag_config(&quot;hlight1&quot;, foreground=&quot;red&quot;) #we named this tag hlight1
+                self.txt.tag_add(&quot;hlight1&quot;, str(i[2].split(&quot;.&quot;)[0]) + &quot;.&quot; + str(int(i[2].split(&quot;.&quot;)[1])-len(i[0])), i[2])
+
+            if i[0] == &quot;world&quot;:
+                self.txt.tag_config(&quot;hlight2&quot;, foreground=&quot;blue&quot;) #we named this tag hlight2
+                self.txt.tag_add(&quot;hlight2&quot;, str(i[2].split(&quot;.&quot;)[0]) + &quot;.&quot; + str(int(i[2].split(&quot;.&quot;)[1])-len(i[0])), i[2])
+[...]
+
+</code></pre>
+<p>And if we run it:</p>
+<p>[video width=&rdquo;1920&rdquo; height=&rdquo;1028&rdquo; webm=&rdquo;https://www.pythonmembers.club/wp-content/uploads/2018/06/highlighting_video2.webm&rdquo;][/video]</p>
+<p>Looks like we don&rsquo;t have any problems here, right! But we do.
+Explaining our issue</p>
+<hr />
+<p>If you experiment a bit more, you can see that in cases like this, the word &ldquo;Hello&rdquo; or any other word gets colored blue:</p>
+<p>[video width=&rdquo;1920&rdquo; height=&rdquo;1028&rdquo; webm=&rdquo;https://www.pythonmembers.club/wp-content/uploads/2018/06/highlighting_video3.webm&rdquo;][/video]</p>
+<p>So how to fix this? To know how to fix it, we must first find out why did it happen!</p>
+<p>It happens because two tags are overlapping, in our case hlight2 is overlapping hlight1. When the for loop runs the hlight1 tag is already there and hlight2 is over it, giving it the priority. And if we want our code to work, we must remove the tag hlight2 (or hlight1, it works vice versa to) every time it gets over a word that isn&rsquo;t &ldquo;world&rdquo;. So what we will do is &ldquo;refresh&rdquo; the tags every time we run highlight function&hellip;
+Fixing the issue</p>
+<hr />
+<p>To achieve this, all we have to do is delete all of the tags and then let them be reassigned.</p>
+<p>So to delete them we just add this before our &lsquo;for&rsquo; loop in &lsquo;highlight&rsquo; function:</p>
+<pre><code class="language-python">[...]
+        for tag in self.txt.tag_names():
+            self.txt.tag_delete(tag)
+
+        for i in words:
+            i = i.split()......
+[...]
+</code></pre>
+<p>And that&rsquo;s it! As simple as that! Here&rsquo;s a look into our new <strong>working</strong> output:</p>
+<p>[video width=&rdquo;1920&rdquo; height=&rdquo;1028&rdquo; webm=&rdquo;https://www.pythonmembers.club/wp-content/uploads/2018/06/highlighting_video4.webm&rdquo;][/video]</p>
+<p>I hope this article was helpful for you and keep coding!
+Complete code</p>
+<hr />
+<pre><code class="language-python">from tkinter import * 
+
+class Files(Frame):
+
+    def \_\_init\_\_(self, parent):
+        Frame.\_\_init\_\_(self, parent)   
+
+        self.parent = parent        
+        self.initUI()
+
+    def initUI(self):
+        self.pack(fill=BOTH, expand=1)
+
+        self.bind_all(&quot;&lt;Key&gt;&quot;, self.highlight)
+
+        self.txt = Text(self)
+        self.txt.pack(fill=BOTH, expand=1)
+
+    def highlight(self, event=0):
+
+        file_text = self.txt.get(&quot;1.0&quot;, END+&quot;-1c&quot;) + &quot; &quot; #a blank space at the end is for easier separating words
+        words = [] #we will store words along with their starting point
+        line = 1    #}
+        column = -1 #}these are starting points that will help us in the following 'for' loop
+        word = &quot;&quot;   #}
+
+#now we have to find words and assign them their line and column
+        for char in file_text:
+            word += char
+            column += 1
+
+            if char == &quot;\n&quot;: #here a word stops
+                words.append(word[:-1] + &quot; : &quot; + str(line) + &quot;.&quot; + str(column))
+                word = &quot;&quot;
+                line += 1
+                column = -1
+
+            if char == &quot; &quot;: #here a word stops
+                words.append(word[:-1] + &quot; : &quot; + str(line) + &quot;.&quot; + str(column))
+                word = &quot;&quot;
+        print(words)
+
+        for tag in self.txt.tag_names(): #deletes all tags so it can refresh them later
+            self.txt.tag_delete(tag)
+
+        for i in words:
+            i = i.split() #this splits an element to i = [&quot;word&quot;, &quot;:&quot;, &quot;starting point&quot;]
+
+            if len(i) &lt; 3: #we need this in case user types double white space which results in i = [&quot;:&quot;, &quot;starting point&quot;]
+                i.insert(0, &quot; &quot;)
+
+            if i[0] == &quot;Hello&quot;: #i[0] stands for &quot;word&quot;
+                self.txt.tag_config(&quot;hlight1&quot;, foreground=&quot;red&quot;) #we named this tag hlight1
+                self.txt.tag_add(&quot;hlight1&quot;, str(i[2].split(&quot;.&quot;)[0]) + &quot;.&quot; + str(int(i[2].split(&quot;.&quot;)[1])-len(i[0])), i[2])
+
+            if i[0] == &quot;world&quot;: #i[0] stands for &quot;word&quot;
+                self.txt.tag_config(&quot;hlight2&quot;, foreground=&quot;blue&quot;) #we named this tag hlight2
+                self.txt.tag_add(&quot;hlight2&quot;, str(i[2].split(&quot;.&quot;)[0]) + &quot;.&quot; + str(int(i[2].split(&quot;.&quot;)[1])-len(i[0])), i[2])
+
+root = Tk()
+top = Frame(root)
+top.pack(fill=BOTH, expand=0)
+
+bottom = Frame(root)
+bottom.pack()
+
+ex = Files(root)
+ex.pack(side=&quot;bottom&quot;)
+
+root.geometry(&quot;600x500-600-150&quot;)
+root.mainloop()
+
+</code></pre>
+
+                        <script src="https://utteranc.es/client.js"
+        repo="pythonkitchen/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </article>
+                
+                  </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="basis-1/4"></div>
+  </div>
+
+
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+</body>
+</html>

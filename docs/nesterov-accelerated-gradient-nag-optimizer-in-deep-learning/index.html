@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    a {
+	word-wrap: break-word !important;
+}
+  </style>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+
+<link rel="stylesheet" href="/post.css"> 
+
+</head>
+<body class="bg-gray-50">
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="/" class="flex items-center">
+          <img src="https://www.pythonkitchen.com/wp-content/uploads/2022/11/cropped-p3-50x50.png" class="h-8 mr-3" alt="PythonKitchen Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PythonKitchen</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="/" 
+            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
+            Home</a>
+          </li>
+          <li>
+            <a href="https://github.com/pythonkitchen/pythonkitchen/tree/source/data/posts" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Write</a>
+          </li>
+          <li>
+            <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Contact</a>
+          </li>
+          <!-- <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+
+<div class="p-8">
+
+</div>
+
+<div class="flex flex-row space-x-2">
+    <div class="basis-3/4">
+        <div class="p-8 pl-12">
+            <div class="ml-2">
+                <div class=" p-12 bg-white rounded-lg shadow-lg">
+                    <p class="text-3xl" style="font-weight: 600;">Nesterov Accelerated Gradient (NAG) Optimizer in Deep Learning</p>
+                    <br>
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2022-11-11 06:33:09" class="text-gray-500">November 11, 2022</time>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            data science
+                        </a>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            machine learning
+                        </a>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            optimisations
+                        </a>
+                        
+                    </div>
+                    
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="https://github.com/ParthShukla211.png?size=200" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                            <p class="font-semibold text-gray-900">
+                                <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Parth Shukla
+                                </a>
+                            </p>
+                            <p class="text-gray-600">Ml wizard</p>
+                            </div>
+                        </div>
+                    
+                    <br>
+                    <article>
+                        <p>In deep learning, optimizers are the type of function which are used to adjust the parameters of the model. The optimizers are used in deep learning to adjust the weights and biases of the neural networks and reduce the overall loss from the model to achieve higher accuracy. There are many types of optimizers used in deep learning to adjust the best weights and biases for the model in terms of overall loss.</p>
+<p>Mostly used optimizers are gradient descent and its 3 types are batch, stochastic, and mini-batch, due to the slow training and high computation power with normal gradient descent there was a need for some advanced optimizers and back then scientists came with momentum optimizers which were faster than gradient descent and work on the concept of momentum, which works as a momentum or velocity while training the model on the desired data.</p>
+<p>Nesterov accelerated gradient optimizer is an optimizer that is an upgraded version of momentum optimizers and mostly it performs well than momentum optimizers.</p>
+<h2>Table of Content</h2>
+<ol>
+<li>The Need for Nag Optimizer</li>
+<li>The Mathematics Behind Nag</li>
+<li>Why Nag is Faster?</li>
+<li>Implementation of Nag: Code</li>
+<li>Conclusion</li>
+<li>References</li>
+</ol>
+<h2>The Need for Nag Optimizer</h2>
+<p>Although the momentum optimizer was fast and more accurate than gradient descent, in some datasets it tends to perform slowly and converges slowly. Changing the value of the decay factor or beta in the momentum optimizer can achieve higher accuracies with faster convergence, but in the case of the non-convex optimization problems, momentum optimizers will not work well if we still tune the decay factor.
+To solve the problem of non-convex optimizations, Nesterov accelerated ingredients were introduced which was an improved or upgraded version of momentum optimizers with faster convergence on non-convex and convex optimization problems.
+In short, NAG is an optimization technique that is similar to momentum optimization but the only change is there are fewer epochs needed than momentum optimizers to converge the solution of the problem.</p>
+<h2>The Mathematics Behind Nag</h2>
+<p>In the case of the normal gradient descent optimization technique, the formula for weight update is</p>
+<p>Wnew = Wold - n (dL/dW)</p>
+<p>Where,
+Wnew = The new updated weight
+Wold = Old weight, which is to be updated
+n = learning rate
+dL/dW = derivative of loss with respect to weight</p>
+<p>In the case of the momentum optimization function, the formula would be</p>
+<p><img alt="" src="https://pythonkitchen.com/wp-content/uploads/2022/11/nag1-1-300x69.png" />
+<a href="https://towardsdatascience.com/learning-parameters-part-2-a190bef2d12" title="Image Source">Image Source</a></p>
+<p>Here the weight update will happen with momentum, where the oscillations of epochs need to converge to the solution can be reduced by tuning the decay factor (Y).
+So here the new weight would be the value obtained from the velocity term subtracted from the old weight. where the velocity term is the form that provides momentum to the optimizer.
+In momentum gradient which is the sum of two terms past velocity and gradient at a particular point. So here in the graph of loss vs weights, the path of the point on the gradient will be decided by these two terms. Basically here there will be longer jumps as there are two terms the normal gradients value and the past velocity push from the point.
+So by wicking the formula of momentum gradient, we can easily achieve the Nesterov gradient, basically, the main difference in these two optimizers is just an update from where it will be calculated. 
+In momentum, the update of the weight is basically calculated with two terms, momentum t that point and past velocity at a single time, but in the case of Nesterov accelerated gradient the weight update is calculated stepwise, basically the weight update will occur first according to the history of velocity and then the gradient at that particular point in step 2.
+So basically, in momentum both of the steps will occur simultaneously whereas in the Nesterov gradient both of the steps will occur step by step and because of this the Nesterov accelerated gradient always performs better than the momentum gradient optimization technique.
+The formula for the NAG optimizer is</p>
+<p><img alt="" src="https://pythonkitchen.com/wp-content/uploads/2022/11/nag2-1-300x78.png" />
+<a href="https://towardsdatascience.com/learning-parameters-part-2-a190bef2d12" title="Image Source">Image Source</a></p>
+<p>As we can see in the formula of the Nesterov gradient, the weight update will occur according to acceleration and the formula for final weight update represents an accelerated term which is a stepwise execution of the history velocity term and the gradient at a particular point.
+The update formula is very similar to the momentum term, just an additional term of look ahead. look ahead is a term that represents the point where we will reach after the jump from the momentum term. mathematically the look ahead term is a term that is obtained by the substation of old weight and the momentum after the first jump.</p>
+<h2>Why Nag is Faster?</h2>
+<p>In the case of the momentum optimization technique, the jump or weight update occur as a result of 2 terms with a single step which is the history of the momentum term and normal gradient at a particular point. Due to this we will surely cross the minima point and will reach the other side of the minima, again there will be a need for some more epochs to come back to the minima point.
+But in the case of the Nesterov gradient optimization technique, the weight update will occur in two steps, in the first step the weight update will occur due to the history of momentum and in the second step, the weight update will occur due to the look-ahead term. So here the minima point will not be crossed and there will be a need for less number of epochs, which will make training fast.</p>
+<p><img alt="" src="https://pythonkitchen.com/wp-content/uploads/2022/11/nag3-300x298.png" />
+<a href="https://www.google.com/search?q=momentum+and+nag+graph+optimization&amp;rlz=1C1CHBD_enIN933IN933&amp;sxsrf=ALiCzsbjYjvWrbLCsNenYHcfpxemvdzngQ:1666497486019&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwiy_bD1uvX6AhUv-jgGHbuzCmgQ_AUoAXoECAIQAw&amp;biw=1220&amp;bih=579&amp;dpr=1.12#imgrc=hokcjp3fue-_NM" title="Image Source">Image Source</a>
+Implementation of Nag: Code</p>
+<hr />
+<p>There is not any specific class in Keras to implement NAG Optimiser but we can use the Nesterov parameter by using the parameters available in other optimizers.</p>
+<p>For example if you want to implement NAG Optimiser in stochastic Gradient descent then there are parameters in it using which NAG can be implemented.</p>
+<p>To implement NAG in SGD, Use the parameter named as &ldquo;Nesterov&rdquo;, and pass the value True in it, by doing this the NAG will be automatically implemented in SGD.</p>
+<h3>Code Example:</h3>
+<pre><code class="language-python"># Without Nag
+tf.keras.optimizers.SGD(
+    learning_rate=0.01, momentum=0.0, nesterov=False, name=&quot;SGD&quot;, **kwargs
+)
+
+# With Nag
+tf.keras.optimizers.SGD(
+    learning_rate=0.01, momentum=0.0, nesterov=True, name=&quot;SGD&quot;, **kwargs
+)
+
+</code></pre>
+<h2>Conclusion</h2>
+<p>In this article, the basic idea of optimizers in deep learning is discussed. momentum and Nesterov accelerated gradient optimizers are discussed with the core intuition and mathematical formulations. The main reason behind the faster convergence of NAG optimizer is discussed with the mathematical formulations and discussions.</p>
+<h3>Some <strong>Key Takeaways</strong> from this article are:</h3>
+<ol>
+<li>Momentum optimization is a faster optimization technique than normal gradient descent with the concept of momentum applying.</li>
+<li>Nesterov accelerated gradient is an optimization technique that is developed to solve the slower convergence of momentum optimizers as weight update occur with 2 terms history velocity and gradient at a point in a single step.</li>
+<li>The Nesterov accelerated gradient ar the faster convergence optimizer with stepwise weight update of history velocity and look ahead velocity.</li>
+</ol>
+<h2>References</h2>
+<ul>
+<li>[1] https://keras.io/api/optimizers/</li>
+<li>[2] https://www.nag.com/content/mathematical-optimization-software</li>
+<li>[3] https://towardsdatascience.com/optimizers-for-training-neural-network-59450d71caf6</li>
+<li>[4] https://jlmelville.github.io/mize/nesterov.html</li>
+<li>[5] https://ruder.io/optimizing-gradient-descent/</li>
+</ul>
+
+                        <script src="https://utteranc.es/client.js"
+        repo="pythonkitchen/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </article>
+                
+                  </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="basis-1/4"></div>
+  </div>
+
+
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+</body>
+</html>

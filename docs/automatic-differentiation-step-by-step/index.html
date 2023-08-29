@@ -1,0 +1,299 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    a {
+	word-wrap: break-word !important;
+}
+  </style>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+
+<link rel="stylesheet" href="/post.css"> 
+
+</head>
+<body class="bg-gray-50">
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="/" class="flex items-center">
+          <img src="https://www.pythonkitchen.com/wp-content/uploads/2022/11/cropped-p3-50x50.png" class="h-8 mr-3" alt="PythonKitchen Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PythonKitchen</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="/" 
+            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
+            Home</a>
+          </li>
+          <li>
+            <a href="https://github.com/pythonkitchen/pythonkitchen/tree/source/data/posts" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Write</a>
+          </li>
+          <li>
+            <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Contact</a>
+          </li>
+          <!-- <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+
+<div class="p-8">
+
+</div>
+
+<div class="flex flex-row space-x-2">
+    <div class="basis-3/4">
+        <div class="p-8 pl-12">
+            <div class="ml-2">
+                <div class=" p-12 bg-white rounded-lg shadow-lg">
+                    <p class="text-3xl" style="font-weight: 600;">Auto-differentiation and Autograd explained step by step</p>
+                    <br>
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2022-11-15 14:34:00" class="text-gray-500">November 15, 2022</time>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            algorithm and data structures
+                        </a>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            data science
+                        </a>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            machine learning
+                        </a>
+                        
+                    </div>
+                    
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="https://github.com/abdullium.png?size=200" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                            <p class="font-semibold text-gray-900">
+                                <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Abdul Khan
+                                </a>
+                            </p>
+                            <p class="text-gray-600">Data scientist</p>
+                            </div>
+                        </div>
+                    
+                    <br>
+                    <article>
+                        <p>We will understand what is automatic differentiation for absolute beginners, although this concept requires a fair amount of theoretical understanding of derivatives and the chain rule, But don&rsquo;t worry I will try to explain in a very practical way, and we will build our knowledge one concept at a time and the end you will be able to compute painful calculus functions in seconds, This concept took me 7 - 8 days to comprehensively understand the importance and use cases in machine learning, so don&rsquo;t feel overwhelmed if you don&rsquo;t understand it even in your 10th attempted, Know this we are automating something which takes months for math graduate to understand!.</p>
+<hr />
+<h2>Table of content:</h2>
+<ul>
+<li>
+<ol>
+<li>Derivative</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>The Chain Rule</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Auto differentiation</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Behind the scenes of auto differentiation</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Reverse mode autodiff</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>what can autodiff differntiatite</li>
+</ol>
+</li>
+</ul>
+<h2>Derivative</h2>
+<p><em>A derivative is the instantaneous rate of change.</em></p>
+<p>I will try to help you understand the derivative with an example provided.</p>
+<p>Let&rsquo;s say we have a graph x2.
+<img alt="" src="https://qph.cf2.quoracdn.net/main-qimg-78715523fe6ed2e94c18fc96fb333ae9-lq" /></p>
+<h6>d/dx [x^2] = 2x</h6>
+<p>The derivative of a function gives the slope at a single point.
+If we plug in the x value of 2 into the derivative function, we get 4.</p>
+<h6>m = 4</h6>
+<p>The slope is defined as “rise over run” or the change in y divided by the change in x</p>
+<p>Or</p>
+<h6>m=ΔyΔx</h6>
+<p><img alt="" src="https://qph.cf2.quoracdn.net/main-qimg-99c8ad7d4050fd06e8a9231015581e6c-lq" /></p>
+<p>The problem with finding the slope of a singular point is that the change in y and the change in x is 0.</p>
+<h6>m=0/0</h6>
+<p>m is undefined, but that does not always mean that it doesn’t exist. We just have to try a different way. Newton and Leibniz created a different way to calculate slopes.</p>
+<p>(If you don’t understand limits then you probably should study up on those before you start learning about derivatives)
+<img alt="Autograd" src="//qph.cf2.quoracdn.net/main-qimg-41de61230502525630a1ac2c11535f1c-lq" /> &ldquo;Autograd&rdquo;)</p>
+<p>This is the limit definition of a derivative.</p>
+<p>As h approaches 0, the change in y and x approaches 0.</p>
+<p>I’ll do this with the function provided.</p>
+<h6>limh→ 0(x+h)2−x2h= limh→0x2+2xh+h2−x2h</h6>
+<h6>limh→ 02xh+h2h= limh→0h(2x+h)h</h6>
+<h6>limh→ 0(2x+h)</h6>
+<p>We can evaluate now.</p>
+<h6>2x+0= 2x</h6>
+<p>Thus, our derivative.</p>
+<h2>The Chain Rule:</h2>
+<p>The rule applied for finding the derivative of the composite function (e.g. cos 2x, log 2x, etc.) is basically known as the chain rule. It is also called the composite function rule.</p>
+<p>I understand the chain rule concept in this way:
+<img alt="" src="https://qph.cf2.quoracdn.net/main-qimg-12a3a28a9283c105d116dd22ca9e474e" /></p>
+<p>Our objective is to go from A to C, we can either go directly and if it&rsquo;s not possible we have to go to a different point B which allows access to point C. Depending on the situation there can be more points B, D, and E….which we have to pass through in order to reach C.</p>
+<p>So I think, for this situation, I can write</p>
+<h6>da/dc = (da/db • db/dc)</h6>
+<p>This is exactly your chain rule.</p>
+<p>The way I understand it while problem-solving:</p>
+<p>Try to focus on the outer function, and take the derivative. Move inside to the immediate next function, and take the derivative. Continue this process until there is nothing left to differentiate. Now, multiply everything you found altogether.</p>
+<p>Let me give you a basic example:</p>
+<h6>f(x) = sinn (2x2 + x + 1)m</h6>
+<ul>
+<li>Outer Function is sin <strong>[(2x2 + x + 1)m]n</strong>,
+the function now resembles an xn format, take the derivative, and we get
+<strong>n sin^n−1(2x2+x+1)m</strong></li>
+<li>We move to the next function, which is <strong>sin(2x2+x+1)m</strong> , take the derivative
+<strong>cos(2x2+x+1)m</strong></li>
+<li>Next function, <strong>(2x2+x+1)m</strong> , take derivative
+<strong>m(2x2+x+1)m−1</strong></li>
+<li>Next function <strong>(2x2+x+1)</strong> , take derivative
+<strong>4x+1</strong></li>
+</ul>
+<p>There are no more functions left to differentiate. Multiply all the derivative results you found.</p>
+<p>We will get</p>
+<p><strong>f′(x) = mn(4x + 1)(2x2 + x+1)m− 1sin^n−1(2x2 + x+1) mcos(2x2 + x+1)m</strong>
+Auto differentiation:</p>
+<hr />
+<p>Imagine you want to test out a new machine-learning model for your data. This usually means coming up with some loss function to capture how well your model fits the data and optimizing that loss with respect to the model parameters. If there are many model parameters (neural nets can have millions) then you need gradients. You then have two options: derive and code them up yourself or implement your model using the syntactic and semantic constraints of a system like Theano or TensorFlow.</p>
+<p>I want to provide a third way: just write down the loss function using a standard numerical library like Numpy, and Autograd will give you its gradient.</p>
+<pre><code class="language-python">import autograd.numpy as np   # Thinly-wrapped version of Numpy
+from autograd import grad
+
+def taylor_sine(x):  # Taylor approximation to sine function
+    ans = currterm = x
+    i = 0
+    while np.abs(currterm) &gt; 0.001:
+        currterm = -currterm * x**2 / ((2 * i + 3) * (2 * i + 2))
+        ans = ans + currterm
+        i += 1
+    return ans
+
+grad_sine = grad(taylor_sine)
+print &quot;Gradient of sin(pi) is&quot;, grad_sine(np.pi)
+
+</code></pre>
+<p>A common use case for automatic differentiation is to train a probabilistic model. Let me present a very simple (but complete) example of specifying and training a logistic regression model for binary classification:</p>
+<pre><code class="language-python">import autograd.numpy as np
+from autograd import grad
+
+def sigmoid(x):
+    return 0.5 * (np.tanh(x / 2.) + 1)
+
+def logistic_predictions(weights, inputs):
+    # Outputs probability of a label being true according to the logistic model.
+    return sigmoid(np.dot(inputs, weights))
+
+def training_loss(weights):
+    # Training loss is the negative log-likelihood of the training labels.
+    preds = logistic_predictions(weights, inputs)
+    label_probabilities = preds * targets + (1 - preds) * (1 - targets)
+    return -np.sum(np.log(label_probabilities))
+
+# Build a toy dataset.
+inputs = np.array([[0.52, 1.12,  0.77],
+                   [0.88, -1.08, 0.15],
+                   [0.52, 0.06, -1.30],
+                   [0.74, -2.49, 1.39]])
+targets = np.array([True, True, False, True])
+
+# Define a function that returns gradients of training loss using Autograd.
+training_gradient_fun = grad(training_loss)
+
+# Optimize weights using gradient descent.
+weights = np.array([0.0, 0.0, 0.0])
+print(&quot;Initial loss:&quot;, training_loss(weights))
+for i in range(100):
+    weights -= training_gradient_fun(weights) * 0.01
+
+print(&quot;Trained loss:&quot;, training_loss(weights))
+
+</code></pre>
+<h2>What going on behind the scenes?</h2>
+<p>To compute the gradient, Autograd first has to record every transformation that was applied to the input as it was turned into the output of your function. To do this, Autograd wraps functions (using the function primitive) so that when they&rsquo;re called, they add themselves to a list of operations performed. Autograd&rsquo;s core has a table mapping these wrapped primitives to their corresponding gradient functions (or, more precisely, their vector-Jacobian product functions). To flag the variables we&rsquo;re taking the gradient with respect to, we wrap them using the Box class. You should never have to think about the Box class, but you might notice it when printing out debugging info.</p>
+<p>After the function is evaluated, Autograd has a graph specifying all operations that were performed on the inputs with respect to which we want to differentiate. This is the computational graph of the function evaluation. To compute the derivative, we simply apply the rules of differentiation to each node in the graph.</p>
+<h2>Reverse mode differentiation</h2>
+<p>Given a function made up of several nested function calls, there are several ways to compute its derivative.</p>
+<p>For example, given <code>L(x) = F(G(H(x)))</code>, the chain rule says that its gradient is <code>dL/dx = dF/dG * dG/dH * dH/dx</code>. If we evaluate this product from right-to-left: <code>(dF/dG * (dG/dH * dH/dx))</code>, the same order as the computations themselves were performed, this is called forward-mode differentiation. If we evaluate this product from left to right: <code>(dF/dG * dG/dH) * dH/dx))</code>, the reverse order as the computations themselves was performed, this is called reverse-mode differentiation.</p>
+<p>Compared to finite differences or forward-mode, reverse-mode differentiation is by far the more practical method for differentiating functions that take in a large vector and output a single number. In the machine learning community, reverse-mode differentiation is known as &lsquo;backpropagation&rsquo;, since the gradients propagate backward through the function. It&rsquo;s particularly nice since you don&rsquo;t need to instantiate the intermediate Jacobian matrices explicitly, and instead only rely on applying a sequence of matrix-free vector-Jacobian product functions (VJPs). Because Autograd supports higher derivatives as well, Hessian-vector products (a form of second-derivative) are also available and efficient to compute.</p>
+<h2>What can Autograd differentiate?</h2>
+<p>The main constraint is that any function that operates on a Box is marked as primitive, and has its gradient implemented. This is taken care of for most functions in the Numpy library, and it&rsquo;s easy to write your own gradients.</p>
+<p>The input can be a scalar, complex number, vector, tuple, a tuple of vectors, a tuple of tuples, etc.</p>
+<p>When using the grad function, the output must be a scalar, but the functions elementwise_grad and jacobian allow gradients of vectors.</p>
+<h2>Conclusion</h2>
+<p>In recent years many universities and schools have changed their teaching method from calculative and theoretical to geometrically intuitive and practical and autodiff is one of the most famous product of this, Rather than spending our energy on computing ridiculous arithmetic operations why not let the machine do it and you focus on inventing concepts and techniques in machine learning.</p>
+<p>I hope this article helps you out, wish you the very best!</p>
+<h2>References:</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=W-aiTln22cA" title="Jon Krohn's autodiff with pytorch">Jon Krohn&rsquo;s autodiff with pytorch</a></li>
+<li><a href="http://videolectures.net/deeplearning2017_johnson_automatic_differentiation/" title="videolectures.net">videolectures.net</a>
+Auto differntiation</li>
+</ul>
+
+                        <script src="https://utteranc.es/client.js"
+        repo="pythonkitchen/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </article>
+                
+                  </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="basis-1/4"></div>
+  </div>
+
+
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+</body>
+</html>

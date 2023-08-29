@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    a {
+	word-wrap: break-word !important;
+}
+  </style>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+
+<link rel="stylesheet" href="/post.css"> 
+
+</head>
+<body class="bg-gray-50">
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="/" class="flex items-center">
+          <img src="https://www.pythonkitchen.com/wp-content/uploads/2022/11/cropped-p3-50x50.png" class="h-8 mr-3" alt="PythonKitchen Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PythonKitchen</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="/" 
+            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
+            Home</a>
+          </li>
+          <li>
+            <a href="https://github.com/pythonkitchen/pythonkitchen/tree/source/data/posts" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Write</a>
+          </li>
+          <li>
+            <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Contact</a>
+          </li>
+          <!-- <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+
+<div class="p-8">
+
+</div>
+
+<div class="flex flex-row space-x-2">
+    <div class="basis-3/4">
+        <div class="p-8 pl-12">
+            <div class="ml-2">
+                <div class=" p-12 bg-white rounded-lg shadow-lg">
+                    <p class="text-3xl" style="font-weight: 600;">Word2Vec Vectorizer in Natural Language Processing</p>
+                    <br>
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2023-04-13 11:09:08" class="text-gray-500">April 13, 2023</time>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            data science
+                        </a>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            machine learning
+                        </a>
+                        
+                    </div>
+                    
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="https://github.com/ParthShukla211.png?size=200" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                            <p class="font-semibold text-gray-900">
+                                <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Parth Shukla
+                                </a>
+                            </p>
+                            <p class="text-gray-600">Ml wizard</p>
+                            </div>
+                        </div>
+                    
+                    <br>
+                    <article>
+                        <p>In natural language processing, Word2Vec is one of the most widely used vectorization techniques used for transferring words or textual data into vector or numerical form to feed it to the machine learning model and train the model. It has certain advantages over the BagofWords and TfIdf vectorizers which make more advanced and accurate vectorization techniques.</p>
+<p>In this article, we will discuss the Word2Vec vectorization techniques, what is the core intuition behind it, how it works, the code example of the same, and the limitations of the technique. This article will help one to understand the Word2Vec vectorizers from scratch and will be able to use them wherever necessary.</p>
+<h1>Table of Content</h1>
+<ol>
+<li>What is Word2Vec?</li>
+<li>How Does Word2Vec Work?</li>
+<li>Types of Word2Vec</li>
+<li>Advantages of Word2Vec</li>
+<li>Key Takeaways</li>
+<li>Conclusion</li>
+</ol>
+<h1>What is Word2Vec?</h1>
+<p>As we know that machine learning algorithms require good quality and quantity of data in order to train and build the most accurate and reliable model. And also, we can not directly feed the textual type of data to the machine learning models, as it is not the acceptable format for the statistical models. Hence we are required to transform the textual type of data into a numerical form or vector form to feed the data to the model and get the model trained on the same.</p>
+<p>For such cases, vectorization techniques are used, which transform these textual data into vector form by applying their own logic. There are many vectorization techniques available, like a bag of words, TfIdf, and Word2Vec, but among all of them, the Word2Vec is one of the most accurate and widely used approaches for vectorization due to its working mechanism and the advantages it offers over other vectorization methods.</p>
+<h1>How Does Word2Vec Work?</h1>
+<p>Unlike other vectorization techniques, Word2Vec vectorization works with the help of neural networks, which makes it more accurate and precise. Here our main aim is not to transform the word or text into a vector but to predict the next word to the middle word.</p>
+<p>Here we take a dummy problem statement in a neural network, where we apply the neural networks to solve the problems, and while solving the problem, we get the vector form of the words as a by-product.</p>
+<p>There are different types of Word2Vec vectorizers where different neural network architectures are used, and different problem states are taken to get the vector representation of the textual data.</p>
+<h1>Types of Word2Vec</h1>
+<p>There are two main types of Word2Vec:
+1. CBOW
+2. Skipgram</p>
+<p>In both of these Word2Vec vectorizers, different neural network architectures and different problem statements are taken.</p>
+<h1>CBOW</h1>
+<p>In the CBOW type of Word2Vec vectorizer, we pride t one word or the ideal word of the sentence with the help of other neighbors&rsquo; words.</p>
+<p>Let us try to understand the same with an example. 
+Let us say we have a sentence:</p>
+<p>**“PythonKitchen is Best”
+**</p>
+<p>Now here, we will not directly feed this sentence to the Word2Vec and get the output from the same; instead, we will create a problem statement here, that we will predict the middle word from the sentence, with the help of left and right words, and the middle word will be dropped by us.</p>
+<p>Now we will apply neural networks in order to solve the same problem, and while predicting the middle word in the sentence, we will get the vector form of the word in the last layer of the neural network itself.</p>
+<p><img alt="" src="https://www.pythonkitchen.com/wp-content/uploads/2023/04/cbow-300x261.png" />
+<a href="https://www.researchgate.net/figure/Illustration-of-the-Skip-gram-and-Continuous-Bag-of-Word-CBOW-models_fig1_281812760" title="Image Source">Image Source</a></p>
+<p>As we can see in the above image, the input words are fed to the neural networks model, and the model will predict the middle or the missing words. Now in the last layer of the network where we are getting the output, we will get the vector form of the word as well.</p>
+<p>In general, the CBOW type of Word2Vec vectorizers works well with larger datasets.</p>
+<h1>Skipgram</h1>
+<p>In Skipgram, a type of vectorizer, we basically drop all the neighboring words and just keep the middle word which will be used to predict all the other words which are missing.</p>
+<p>Let us take an example.</p>
+<p>**“PythonKitchen is Best” 
+**</p>
+<p>In this sentence, we will just keep- the word “is” in the dataset, and all the other neighboring words will be dropped, and the same neural network will be used to predict these words. Now while predicting, we will get the vector forms of the words in the last layer of the neural network itself.</p>
+<p><img alt="" src="https://www.pythonkitchen.com/wp-content/uploads/2023/04/skipgram-300x262.png" />
+<a href="https://www.researchgate.net/figure/Illustration-of-the-Skip-gram-and-Continuous-Bag-of-Word-CBOW-models_fig1_281812760" title="Image Source">Image Source</a></p>
+<p>As we can see in the above image, one word is fed to the neural network model, and the model will predict all the other words where the vector form of the words will be obtained in the last layer.</p>
+<p>In general, the skip-gram type of Word2Vec vectorizes works well with small datasets.</p>
+<h2>Advantages of Word2Vec</h2>
+<h3>Semantic and Synthetic Meaning of Words:</h3>
+<p>The Word2Vec vectorizer can capture the patterns of different words and can, identify similar words and assigns them similar vector representations, which ultimately reduces the dimensionality of the dataset and make the model less complex.</p>
+<h3>Handle Small and Large Datasets:</h3>
+<p>The woprtd2vec can be used for both large and small datasets, where CBOW is mainly used in the case of the larger dataset, and Skipgram is used in the case of smaller datasets.</p>
+<h3>Handling Rare words:</h3>
+<p>Word2Vec can also handle the rare words which are not present in the training data and can generate the vector representations for the same. Here, the Word2Vec uses the subword information techniques technique, where it breaks the words into parts and generates the vector form of the same, with the help of other similar words in the training data.</p>
+<h3>Efficiency:</h3>
+<p>The Word2Vec vectorizer is comparatively efficient as it rains in less amount of time with large datasets, as the neural network used in the vectorizers contains less4er parameters.</p>
+<h1>Key Takeaways</h1>
+<ol>
+<li>Word2Vec is a type of vectorization technique used to transform the textual type of data into vector form.</li>
+<li>CBOW and Skiopgram are the type of Word2Vec vectorizes where different neural network architectures and different problem statements are considered.</li>
+<li>CBOW is preferred for large datasets, and Skipgram is preferred for smaller datasets.</li>
+<li>Word2Vec can identify similar words and can represent them in vector form in a very efficient manner so that the dimensionality can be handled and the model does not become so complex.</li>
+<li>Word2Vec can also handle rare qwords where it uses the subword information in order to generate the vector representations of unseen words.</li>
+</ol>
+<h1>Conclusion</h1>
+<p>In this article, we discussed the word2vec vectorizes, what it is, how it works, the type of Word2Vec, and the advantages of the same. This article will help one to understand the vectorization technique more deeply and will be able to answer interview questions related to the same very easily and efficiently.</p>
+
+                        <script src="https://utteranc.es/client.js"
+        repo="pythonkitchen/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </article>
+                
+                  </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="basis-1/4"></div>
+  </div>
+
+
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+</body>
+</html>
