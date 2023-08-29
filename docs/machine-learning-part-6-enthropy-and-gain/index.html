@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    a {
+	word-wrap: break-word !important;
+}
+  </style>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+
+<link rel="stylesheet" href="/post.css"> 
+
+</head>
+<body class="bg-gray-50">
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="/" class="flex items-center">
+          <img src="https://www.pythonkitchen.com/wp-content/uploads/2022/11/cropped-p3-50x50.png" class="h-8 mr-3" alt="PythonKitchen Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PythonKitchen</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="/" 
+            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
+            Home</a>
+          </li>
+          <li>
+            <a href="https://github.com/pythonkitchen/pythonkitchen/tree/source/data/posts" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Write</a>
+          </li>
+          <li>
+            <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Contact</a>
+          </li>
+          <!-- <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+
+<div class="p-8">
+
+</div>
+
+<div class="flex flex-row space-x-2">
+    <div class="basis-3/4">
+        <div class="p-8 pl-12">
+            <div class="ml-2">
+                <div class=" p-12 bg-white rounded-lg shadow-lg">
+                    <p class="text-3xl" style="font-weight: 600;">Machine Learning part 6: enthropy and gain</p>
+                    <br>
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2019-01-29 05:55:06" class="text-gray-500">January 29, 2019</time>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            machine learning
+                        </a>
+                        
+                    </div>
+                    
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="https://github.com/Abdur-rahmaanJ.png?size=200" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                            <p class="font-semibold text-gray-900">
+                                <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Abdur-Rahmaan Janhangeer
+                                </a>
+                            </p>
+                            <p class="text-gray-600">Chef</p>
+                            </div>
+                        </div>
+                    
+                    <br>
+                    <article>
+                        <p>Machine Learning</p>
+<p>👉 ♡ supervised learning  </p>
+<p>♡ unsupervised learning  </p>
+<p>♡ reinforcement learning</p>
+<p>recap:<br />
+ 🔖 types of supervised learning</p>
+<p>✔ classification 📑</p>
+<p>✔ regression 📈</p>
+<p>✔ mixed ⚗</p>
+<ul>
+<li>tree based :balloon:</li>
+<li>random forest</li>
+<li>neural networks</li>
+<li>support vector machines</li>
+</ul>
+<p>🎗 enthropy</p>
+<p>enthropy is just another word for expected value</p>
+<p>in the past post, we decided what to use to split based on purity index. we can do the same thing mathematically (easier) by</p>
+<p>P+ means probability of target (good day in our case)  </p>
+<p>P- means probability not target (bad day)</p>
+<p>log2(P-) means log(P-) base 2</p>
+<p>H = -(P+)log2(P+) - (P-)log2(P-)</p>
+<p>the above is the formula for the purity of subset. it measures how likely you get a positive element if you select randomly from a particular subset</p>
+<p>let us take teacher&rsquo;s presence. we had</p>
+<p>absent  </p>
+<p>good 5 bad 1  </p>
+<p>present  </p>
+<p>good 2 bad 1</p>
+<p>H(absent) = -(5/6)log2(5/6) - (1/6)log2(1/6)  </p>
+<p>= 0.65</p>
+<p>H(present) = -(2/3)log2(2/3) - (1/3)log2(1/3)  </p>
+<p>= 0.92</p>
+<p>0 is extremely pure and 1 is extremely impure</p>
+<p>so absent is purer than than present</p>
+<p>🎗 gain</p>
+<p>gain is used to determine what to split first by finding the feature with the highrst gain. 0 means irrelevent. 1 means very relevent</p>
+<p>gain is defined by</p>
+<p>gain = H(S) − Σ (SV/S) H(SV)</p>
+<p>S -&gt; total number of points in leaf  </p>
+<p>v is the possible values and SV -&gt; subset for which we have those values  </p>
+<p>H is our enthropy as above</p>
+<p>taking for presence, our gain is</p>
+<p>our S is 9 that is (6+3)</p>
+<p>gain = H(presence) - sum( SV/9 * H(SV))  </p>
+<p>gain = H(presence) - (6/9 * 0.65) - (3/9 * 0.92)</p>
+<p>our H(presence) is -(7/9)log2(7/9) - (2/9)log2(2/9)   </p>
+<p>= 0.76</p>
+<p>gain = 0.76 - (6/9 * 0.65) - (3/9 * 0.92)  </p>
+<p>gain = 0.02</p>
+<p>exercise:  </p>
+<p>google up information gain related to decision trees as well as associated concepts</p>
+<p>next:  </p>
+<p>random forest</p>
+
+                        <script src="https://utteranc.es/client.js"
+        repo="pythonkitchen/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </article>
+                
+                  </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="basis-1/4"></div>
+  </div>
+
+
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    a {
+	word-wrap: break-word !important;
+}
+  </style>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+
+<link rel="stylesheet" href="/post.css"> 
+
+</head>
+<body class="bg-gray-50">
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="/" class="flex items-center">
+          <img src="https://www.pythonkitchen.com/wp-content/uploads/2022/11/cropped-p3-50x50.png" class="h-8 mr-3" alt="PythonKitchen Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PythonKitchen</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="/" 
+            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
+            Home</a>
+          </li>
+          <li>
+            <a href="https://github.com/pythonkitchen/pythonkitchen/tree/source/data/posts" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Write</a>
+          </li>
+          <li>
+            <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Contact</a>
+          </li>
+          <!-- <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+
+<div class="p-8">
+
+</div>
+
+<div class="flex flex-row space-x-2">
+    <div class="basis-3/4">
+        <div class="p-8 pl-12">
+            <div class="ml-2">
+                <div class=" p-12 bg-white rounded-lg shadow-lg">
+                    <p class="text-3xl" style="font-weight: 600;">Reviving Bertrand Russell Through Python</p>
+                    <br>
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2018-12-28 19:35:04" class="text-gray-500">December 28, 2018</time>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            programming problems
+                        </a>
+                        
+                    </div>
+                    
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="https://github.com/Abdur-rahmaanJ.png?size=200" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                            <p class="font-semibold text-gray-900">
+                                <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Abdur-Rahmaan Janhangeer
+                                </a>
+                            </p>
+                            <p class="text-gray-600">Chef</p>
+                            </div>
+                        </div>
+                    
+                    <br>
+                    <article>
+                        <p>famous authors are praised, respected, admired and missed due to their works. after reading all the titles of an excellent author, one is left wishing for more. curiously enough we now have the ability to produce more books that fit in the literary style, depth and topic tackling techniques of writers. perfection in this field opens a new era, you might hear of ~~mouse~~ cat trap by darwin, russian trip by mark twain and god beyond doubt by hawkins.</p>
+<h2>markov?</h2>
+<p>markov chains are probabilistic pattern generating models. &lsquo;patterns&rsquo; can be events, text or geometrical arrangements</p>
+<p>let us take the example of a person going to a fast food outlet where there are only three types of foods, rounder, burger and panini.</p>
+<p>the probability of him taking a rounder after already taking one is 0.2 or 2/10</p>
+<p>after a rounder, the probability of taking a burger is 0.4 or 4/10</p>
+<p>after a rounder, the probability of taking a panini is 0.4 or 4/10</p>
+<p>notice that there are three arrows going out for three choices, which when added make up 1</p>
+<ul>
+<li><img alt="" src="https://www.pythonmembers.club/wp-content/uploads/2018/12/markov.png" /></li>
+</ul>
+<p>let us make up the remaining part for burger</p>
+<p><img alt="" src="https://www.pythonmembers.club/wp-content/uploads/2018/12/markov2.png" /></p>
+<p>now completed it looks like</p>
+<p><img alt="" src="https://www.pythonmembers.club/wp-content/uploads/2018/12/markov2-1.png" /></p>
+<p>B P P R P P &hellip;</p>
+<h2>matrix representation</h2>
+<p>the above can also be written as</p>
+<p><img alt="" src="https://www.pythonmembers.club/wp-content/uploads/2018/12/markov_matrix_python.png" /></p>
+<p>but whatever does that means?</p>
+<p>that&rsquo;s why we have state space to specify from where we begin</p>
+<p><strong>state space {1 = rounder, 2 = burger, 3 = panini}</strong> </p>
+<p>means we start first by rounder, then burger then panini</p>
+<p><img alt="" src="https://www.pythonmembers.club/wp-content/uploads/2018/12/markov_matrix_python2.png" /></p>
+<h2>applying markov to text</h2>
+<p>the idea is to:</p>
+<ul>
+<li>build a markov model</li>
+<li>then to generate text through the model</li>
+</ul>
+<h3>rehearsal</h3>
+<p>we&rsquo;ll have a program that scans every word and records the next word</p>
+<p>let us take the text:</p>
+<p><em>the meadow was green. the sun was shining. the boy went away. the glass was shining</em></p>
+<p>tabulating next words we get:</p>
+<p>the -&gt; meadow, sun, boy, glass</p>
+<p>meadow -&gt; was</p>
+<p>was -&gt; green, shining,shining</p>
+<p>sun -&gt; was</p>
+<p>boy -&gt; went</p>
+<p>went -&gt; away</p>
+<p>glass -&gt; was</p>
+<p>from those we can generate the text</p>
+<p>the sun was green</p>
+<p>with path</p>
+<p><img alt="" src="https://www.pythonmembers.club/wp-content/uploads/2018/12/sunwasgreenpy.png" /></p>
+<hr />
+<p>the meadow was shining</p>
+<p><img alt="" src="https://www.pythonmembers.club/wp-content/uploads/2018/12/meadowwasshiningpy.png" /></p>
+<h3>wait, what about probabilities ?!</h3>
+<p>well see</p>
+<p>was -&gt; green, shining,shining </p>
+<p>when we randomly choose from [ green, shining,shining ] we actually have more chance getting shining than green as they occur twice more, no need of writing up the probabilities. the only draw back is programming efficiency, which we&rsquo;ll clean up in another post</p>
+<h2>the code</h2>
+<pre><code class="language-python">
+def format_text(file_read):
+    # getting the data ready for generation
+    data = {}
+    lines = file_read.replace('\n', ' ').split('.')
+    for line in lines:
+        words = line.split()
+
+        for i,word in enumerate(words):
+            if i+1 &lt; len(words):
+                next_word = words[i+1]
+
+                if word not in data:
+                    data[word] = [next_word]
+                else:
+                    data[word].append(next_word)
+    return data
+
+def rand(data):
+    # chooses random element from dictionary
+    return random.choice(list(data))
+
+def generate(times, data):
+    # specifies length of generated phrase
+    current = rand(data)
+    gens = [current]
+    try:
+        for i in range(times):
+            current = random.choice(data[current])
+            gens.append(current)
+    except:
+        pass
+    return gens
+
+
+with open('source.txt', 'r') as source:
+    file = source.read()
+
+data = format_text(file)
+
+print(' '.join(generate(10, data)))
+
+</code></pre>
+<p>format text returns a dictionary. here is a snapshot:</p>
+<pre><code class="language-python">{
+'is,': ['besides'], 
+'unsupported': ['by'], 
+'one': ['which', 'of', 'at', 'reason', 'proposition', 'form', 'of', 'which', 'thing', 'thing', 'magnitude', 'kind', 'of', 'relation', 'fact,', 'fact,', 'involving', 'case', 'of', 'kind', 'atomic', 'of', 'happens,', 'something', 'is', 'would'],
+...
+
+</code></pre>
+<p>i ran the program over some paragraphs of   </p>
+<p><em>Our Knowledge of the External World as a Field for Scientific Method in Philosophy</em> </p>
+<p>from</p>
+<blockquote>
+<p>Mathematical logic, even in its most modern form, is not <em>directly</em> of<br />
+ philosophical importance except in its beginnings. After &hellip;</p>
+<p>Our Knowledge of the External World as a Field for Scientific Method in Philosophy<br />
+by Bertrand Russell </p>
+</blockquote>
+<p>to</p>
+<blockquote>
+<p>Charles I. and death and his bed<br />
+ are objective, but they are not, except in my thought, put together as<br />
+ my false belief supposes. It is therefore necessary, in analysing a<br />
+ belief, to look for some other logical form than a two-term relation.<br />
+ Failure to realise this necessity has, in my opinion, vitiated almost<br />
+ everything that has hitherto been written on the theory of knowledge,<br />
+ making the problem of error insoluble and the difference between belief<br />
+ and perception inexplicable.</p>
+<p>Our Knowledge of the External World as a Field for Scientific Method in Philosophy <br />
+by Bertrand Russell</p>
+</blockquote>
+<p>the core is here</p>
+<pre><code class="language-python">    current = rand(data)
+    gens = [current]
+    try:
+        for i in range(times):
+            current = random.choice(data[current])
+            gens.append(current)
+    except:
+        pass
+    return gens
+
+</code></pre>
+<p>we start by adding a random word (a random element of the dictionary) to the list</p>
+<pre><code class="language-python">current = rand(data)
+gens = [current]
+
+</code></pre>
+<p>then we choose a random word from the words coming next</p>
+<p><img alt="" src="https://www.pythonmembers.club/wp-content/uploads/2018/12/explanation_markov_code.png" /></p>
+<p>the code produces like</p>
+<p><img alt="" src="https://www.pythonmembers.club/wp-content/uploads/2018/12/markovgen1.png" /></p>
+<p><img alt="" src="https://www.pythonmembers.club/wp-content/uploads/2018/12/markov2-2.png" /></p>
+<p>with length 20</p>
+<p><img alt="" src="https://www.pythonmembers.club/wp-content/uploads/2018/12/markov3-1024x21.png" /></p>
+<p>again length 10</p>
+<p><img alt="" src="https://www.pythonmembers.club/wp-content/uploads/2018/12/markov4.png" /></p>
+<p>the phrase is correct euu yes, it imitates the style for now</p>
+<blockquote>
+<p>infinite number of which we have the one thing having some other terms or opinion about Socrates&ndash;that he feels his insight, we can discover, for example, two classifications we mean that two terms, being equally true when one of the most</p>
+<p>generated text - length 40<br />
+</p>
+<p>inductive principle, which need not known form made space and so that there were none except prejudice, so long as follows that, if they may sometimes know that we saw that I shall bring my umbrella if you could hardly be outlined in the whole theory of general truths by no</p>
+<p>generated text - length 50</p>
+<p>return to asymmetrical relations, such as follows that, if this way to be in the existent world, and red, and pure logic, no particular subject-matter otherwise than the case of the supposed common constituent, but are true or &ldquo;one inch taller&rdquo; or deny this is true, we are more than a &ldquo;fact,&rdquo; I have that membership of have knowledge is any</p>
+<p>generated text - length 60 </p>
+<p>Thus &ldquo;father&rdquo; is the difference between B is something altogether more difficult, and common world would be inferred from sense, and mortality that certain relation is apt to be asserted or deny this hypothetical form, but the second being equally true in order to have accepted and B, and philosophically it is said to properties becomes obviously impossible to infer all propositions are and B, also knew that all things have</p>
+<p>generated text - length 70 </p>
+<p>From poverty in any such as regards the subject-predicate form&ndash;in other thing is in its constituents and were less anxious to deal throughout the other property, then B and most of unreality of the weather had been written on the marks of a certain known objects are indispensable in the everyday world with completely general propositions, and so that there is independent of three things, it should be explained would not transitive, but to give rise to exist</p>
+<p>generated text - length 80 </p>
+</blockquote>
+<h2>room for improvement</h2>
+<p>well we can improve many things such as: first word first, choosing probabilities as numbers rather than from list, be sensitive to punctuations, improve context etc. a rough code lands up a pretty nice result</p>
+
+                        <script src="https://utteranc.es/client.js"
+        repo="pythonkitchen/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </article>
+                
+                  </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="basis-1/4"></div>
+  </div>
+
+
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+</body>
+</html>

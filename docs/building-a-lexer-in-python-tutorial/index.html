@@ -1,0 +1,606 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    a {
+	word-wrap: break-word !important;
+}
+  </style>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+
+<link rel="stylesheet" href="/post.css"> 
+
+</head>
+<body class="bg-gray-50">
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="/" class="flex items-center">
+          <img src="https://www.pythonkitchen.com/wp-content/uploads/2022/11/cropped-p3-50x50.png" class="h-8 mr-3" alt="PythonKitchen Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PythonKitchen</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="/" 
+            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
+            Home</a>
+          </li>
+          <li>
+            <a href="https://github.com/pythonkitchen/pythonkitchen/tree/source/data/posts" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Write</a>
+          </li>
+          <li>
+            <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Contact</a>
+          </li>
+          <!-- <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+
+<div class="p-8">
+
+</div>
+
+<div class="flex flex-row space-x-2">
+    <div class="basis-3/4">
+        <div class="p-8 pl-12">
+            <div class="ml-2">
+                <div class=" p-12 bg-white rounded-lg shadow-lg">
+                    <p class="text-3xl" style="font-weight: 600;">building a lexer in python - a tutorial</p>
+                    <br>
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2018-05-01 11:48:58" class="text-gray-500">May 1, 2018</time>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            compiler theory
+                        </a>
+                        
+                    </div>
+                    
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="https://github.com/Abdur-rahmaanJ.png?size=200" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                            <p class="font-semibold text-gray-900">
+                                <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Abdur-Rahmaan Janhangeer
+                                </a>
+                            </p>
+                            <p class="text-gray-600">Chef</p>
+                            </div>
+                        </div>
+                    
+                    <br>
+                    <article>
+                        <p>knowing how to build a lexer allows you to extend your applications and opens up a whole new world. You can write your own DSLs or your own language or just better separate symbols: in other words, it allows you to have more control over a string</p>
+<h1>what is a lexer?</h1>
+<p>from user input to code execution there are three main steps either for interpreters or compilers:</p>
+<ol>
+<li>lexical analysis (1)</li>
+<li>parsing (2)</li>
+<li>code generation (example: to machine code or bytecode)</li>
+<li>execution (3)</li>
+</ol>
+<p>a lexer is a tool that performs lexical analysis</p>
+<h1>difference between lexical analysis and scanning</h1>
+<p>in the beginning, scanning and lexical analysis were two different steps but due to the increased speed of processors, they now refer to one and the same process and are used interchangeably.</p>
+<h1>what is scanning?</h1>
+<p>scanning means to pass over / scan a string character by character (char by char).</p>
+<h1>what is lexical analysis?</h1>
+<p>it is the process whereby the scanned characters are turned into lexemes</p>
+<h1>what is a lexeme?</h1>
+<p>a lexeme is a recognised piece of string</p>
+<p>let us take:</p>
+<p>ac</p>
+<p>we might build a parser that outputs the following lexemes :</p>
+<ul>
+<li>lexeme 1: <strong>the</strong></li>
+<li>lexeme 2: <strong>quick</strong></li>
+<li>lexeme 3: <strong>brown</strong></li>
+<li>lexeme 4: <strong>fox</strong></li>
+</ul>
+<p>now let us take a simili code:</p>
+<p><strong>for(i; i&lt;arr.length; i++){ }</strong></p>
+<ul>
+<li>lexeme 1: <strong>for</strong></li>
+<li>lexeme 2: <strong>(</strong></li>
+<li>lexeme 3: <strong>i</strong></li>
+<li>lexeme 4: ;</li>
+<li>lexeme 5: i</li>
+<li>lexeme 6: <strong>&lt;</strong></li>
+<li>lexeme 7: <strong>arr</strong></li>
+<li>lexeme 8: <strong>.</strong></li>
+<li>lexeme 9: <strong>length</strong></li>
+<li>lexeme 10: ;</li>
+<li>lexeme 11: <strong>i</strong></li>
+<li>lexeme 12: <strong>++</strong></li>
+<li>lexeme 13: <strong>)</strong></li>
+<li>lexeme 14: <strong>{</strong></li>
+<li>lexeme 15: <strong>}</strong></li>
+</ul>
+<p>so our task for this post will  be to build a program that can separate those pieces</p>
+<p>[sc name=&rdquo;lexer&rdquo;]</p>
+<h1>what does a lexer needs as input?</h1>
+<p>a lexer needs two things : the source code and keywords</p>
+<h1>what is a keyword?</h1>
+<p>a keyword is a lexeme that has a special meaning to the lexer</p>
+<p>normally words like print, from, to are known as keywords, however, symbols such as ( , { can also be considered as keywords</p>
+<h1>types of keywords</h1>
+<p>there are single character keywords e.g. whitespace</p>
+<p>there are multi-char  keywords such as print</p>
+<h1>ignoring keywords</h1>
+<p>there are cases where we might want to ignore keywords as in the case where they appear between &rdquo; &rdquo; or in comments</p>
+<h1>what are ids?</h1>
+<p>ids are user-defined names, like the names of namespaces, variables, classes and functions. functions in the standard library are only predefined ids. normally keyword names are banned from being used as ids</p>
+<h1>some observations</h1>
+<p>let us compare :</p>
+<p><strong>the quick brown fox</strong></p>
+<p>and</p>
+<p><strong>for(i; i&lt;arr.length; i++){ }</strong></p>
+<p>for both of the strings, lexing could be carried out. the first case is simple</p>
+<pre><code class="language-python">lexeme = ''
+add characters to lexeme variable until next char is a white space
+if next is a white space
+    print lexeme
+    lexeme = ''
+</code></pre>
+<p>but for the next case we observe a general rule. we break if the next character is a keyword be it a special word or symbol</p>
+<pre><code class="language-python">lexeme = ''
+add characters to lexeme variable until next char is a white space (single-char keyword)
+if next is a white space single-char keyword
+    print lexeme
+    lexeme = ''
+</code></pre>
+<p>in reality we also add the condition of if the element itself is a keyword</p>
+<h1>special cases</h1>
+<p>now let us take the case of ++, + is a keyword and ++ too but how do we differenciate between them or ==?</p>
+<p>that&rsquo;s when we use flags to determine which context are we in</p>
+<p>flags are just variables that act like switches e.g.</p>
+<p>x = 0</p>
+<p>if &hellip; : x = 1</p>
+<p>if x == 1 : &hellip;</p>
+<p>or use some checks !</p>
+<h1>writing the scanner</h1>
+<p>basically we just need a program that outputs a char at one time. in python it is easy :</p>
+<pre><code class="language-python">string = 'i am coming'
+
+for char in string:
+    print(char)
+</code></pre>
+<p>which outputs:</p>
+<pre><code class="language-python">i
+
+a
+m
+
+c
+o
+m
+i
+n
+g
+</code></pre>
+<p>just some fancy modifications :</p>
+<pre><code class="language-python">string = 'i am coming'
+
+for i, char in enumerate(string): # i gives us index and char the element
+    print('char', str(i+1).rjust(3, ' '), ':', char)
+</code></pre>
+<p>outputting:</p>
+<pre><code class="language-python">char   1 : i
+char   2 :  
+char   3 : a
+char   4 : m
+char   5 :  
+char   6 : c
+char   7 : o
+char   8 : m
+char   9 : i
+char  10 : n
+char  11 : g
+
+</code></pre>
+<h1>writing the basic lexer</h1>
+<p>now that we can read a string char by char, we can now check if next char is a keyword</p>
+<p>let us do it for the phrase:</p>
+<p><strong>the beautiful white moon</strong></p>
+<p>where white space is a keyword, referring to above :</p>
+<pre><code class="language-python">lexeme = ''
+add characters to lexeme variable until next char is a white space
+if next is a white space
+    print lexeme
+    lexeme = ''
+</code></pre>
+<p>we implement something similar to it i.e checking if next char is a white space:</p>
+<pre><code class="language-python">string = 'the beautiful white moon'
+white_space = ' '
+
+lexeme = ''
+for i,char in enumerate(string):
+    lexeme += char # adding a char each time
+    if (i+1 &lt; len(string)): # prevents error
+        if string[i+1] == white_space: # if next char == ' '
+            print(lexeme)
+            lexeme = ''
+</code></pre>
+<p>which outputs :</p>
+<pre><code class="language-python">the
+ beautiful
+ white
+
+</code></pre>
+<p>moon is missing as there is no white space after it, we fix this edge case by printing the lexeme after the loop :</p>
+<pre><code class="language-python">string = 'the beautiful white moon'
+white_space = ' '
+
+lexeme = ''
+for i,char in enumerate(string):
+    lexeme += char # adding a char each time
+    if (i+1 &lt; len(string)): # prevents error
+        if string[i+1] == white_space: # if next char == ' '
+            print(lexeme)
+            lexeme = ''
+print(lexeme)
+</code></pre>
+<p>output :</p>
+<pre><code class="language-python">the
+ beautiful
+ white
+ moon
+
+</code></pre>
+<h3>fixing whitespace addition</h3>
+<p>now white space got added to our lexeme, to fix we just add a character if the current char is not a whitespace :</p>
+<pre><code class="language-python">string = 'the beautiful white moon'
+white_space = ' '
+
+lexeme = ''
+for i,char in enumerate(string):
+    if char != white_space:
+        lexeme += char # adding a char each time
+    if (i+1 &lt; len(string)): # prevents error
+        if string[i+1] == white_space: # if next char == ' '
+            print(lexeme)
+            lexeme = ''
+print(lexeme)
+
+
+</code></pre>
+<p>output :</p>
+<pre><code class="language-python">the
+beautiful
+white
+moon
+</code></pre>
+<h1>running on a real piece of code</h1>
+<p>let us take this piece of java code taken from tutorialspoint:</p>
+<pre><code class="language-python">public class Test {
+   // main function
+   public static void main(String args[]) {
+      int [] numbers = {10, 20, 30, 40, 50};
+
+      for(int x : numbers ) {
+         System.out.print( x );
+         System.out.print(&quot;,&quot;);
+      }
+      /* printing new line
+      */
+      System.out.print(&quot;\n&quot;);
+      String [] names = {&quot;James&quot;, &quot;Larry&quot;, &quot;Tom&quot;, &quot;Lacy&quot;};
+
+      for( String name : names ) {
+         System.out.print( name );
+         System.out.print(&quot;,&quot;);
+      }
+   }
+}
+</code></pre>
+<p>our first task is to identify single-char and multi-char keywords</p>
+<p>MULTI-CHAR KEYWORDS :</p>
+<p>public, class, static, void, main, string, int, for</p>
+<p>SINGLE-CHAR KEYWORD :</p>
+<p>{ } ( ) ; [ ] : . \ &rdquo; *</p>
+<p>we did not consider System as a keyword as in the language, System is the name of an id (user-defined name)</p>
+<p>now we can feed those keywords to our lexer</p>
+<h3>preassumption on whitespace</h3>
+<p>since whitespace still separates between like public and class:</p>
+<pre><code class="language-python">public class Test {
+</code></pre>
+<p>we&rsquo;ll keep the if next == whitespace rule</p>
+<blockquote>
+<p>source codes are just pieces of strings</p>
+</blockquote>
+<p>we could have ignored newline was it not for single line comments</p>
+<p>a first attempt:</p>
+<pre><code class="language-python">string = '''
+public class Test {
+
+   public static void main(String args[]) {
+      int [] numbers = {10, 20, 30, 40, 50};
+      // printing !
+      for(int x : numbers ) {
+         System.out.print( x );
+         System.out.print(&quot;,&quot;);
+      }
+      System.out.print(&quot;\n&quot;);
+      String [] names = {&quot;James&quot;, &quot;Larry&quot;, &quot;Tom&quot;, &quot;Lacy&quot;};
+      /*
+      looping over 
+      */
+      for( String name : names ) {
+         System.out.print( name );
+         System.out.print(&quot;,&quot;);
+      }
+   }
+}
+'''
+
+symbols = ['{', '}', '(', ')', '[', ']', '.', '&quot;', '*', '\n', ':', ','] # single-char keywords
+other_symbols = ['\\', '/*', '*/'] # multi-char keywords
+keywords = ['public', 'class', 'void', 'main', 'String', 'int']
+KEYWORDS = symbols + other_symbols + keywords
+
+white_space = ' '
+lexeme = ''
+
+for i,char in enumerate(string):
+    if char != white_space:
+        lexeme += char # adding a char each time
+    if (i+1 &lt; len(string)): # prevents error
+        if string[i+1] == white_space or string[i+1] in KEYWORDS or lexeme in KEYWORDS: # if next char == ' '
+            if lexeme != '':
+                print(lexeme.replace('\n', '&lt;newline&gt;'))
+                lexeme = ''
+
+</code></pre>
+<p>the added conditions test if the next char is a single-char keyword or if what we already have at hand after adding a char is a keyword, if so, we then check if our variable is not empty else we&rsquo;ll print an empty lexeme. we also replaced newline by <newline> to better distinguish it</p>
+<p>the above code outputs in:</p>
+<pre><code class="language-python">&lt;newline&gt;
+public
+class
+Test
+{
+&lt;newline&gt;
+&lt;newline&gt;
+public
+static
+void
+main
+(
+String
+args
+[
+]
+)
+{
+&lt;newline&gt;
+int
+[
+]
+numbers
+=
+{
+10
+,
+20
+,
+30
+,
+40
+,
+50
+}
+;
+&lt;newline&gt;
+//
+printing
+!
+&lt;newline&gt;
+for
+(
+int
+x
+:
+numbers
+)
+{
+&lt;newline&gt;
+System
+.
+out
+.
+print
+(
+x
+)
+;
+&lt;newline&gt;
+System
+.
+out
+.
+print
+(
+&quot;
+,
+&quot;
+)
+;
+&lt;newline&gt;
+}
+&lt;newline&gt;
+System
+.
+out
+.
+print
+(
+&quot;
+&lt;newline&gt;
+&quot;
+)
+;
+&lt;newline&gt;
+String
+[
+]
+names
+=
+{
+&quot;
+James
+&quot;
+,
+&quot;
+Larry
+&quot;
+,
+&quot;
+Tom
+&quot;
+,
+&quot;
+Lacy
+&quot;
+}
+;
+&lt;newline&gt;
+/
+*
+&lt;newline&gt;
+looping
+over
+&lt;newline&gt;
+*
+/
+&lt;newline&gt;
+for
+(
+String
+name
+:
+names
+)
+{
+&lt;newline&gt;
+System
+.
+out
+.
+print
+(
+name
+)
+;
+&lt;newline&gt;
+System
+.
+out
+.
+print
+(
+&quot;
+,
+&quot;
+)
+;
+&lt;newline&gt;
+}
+&lt;newline&gt;
+}
+&lt;newline&gt;
+}
+</code></pre>
+<p>see how it magically separates 10 and , System and . , String and name &hellip; all perfect but : we have  a glitch</p>
+<h1>a glitch and the introduction the next step!</h1>
+<p>see at /* and */, it considered them as / then * and not as a single entity. that is because we defined * as a keyword, though we did not use it here but we use it in multiplication like : 12 * 12</p>
+<p>so, our basic lexer has a confusion at this junction, we can for the time being tackle it like :</p>
+<p>we modify only the loop :</p>
+<pre><code class="language-python">for i,char in enumerate(string):
+    if char == '*':
+        if string[i-1] == '/':
+            lexeme += '/*'
+        elif string[i+1] == '/':
+            lexeme += '*/'
+        else:
+            lexeme += '*'
+    elif char == '/':
+        if string[i+1] != '*' and string[i-1] != '*':
+            lexeme += '/'
+        else:
+            continue
+    else:
+        if char != white_space:
+            lexeme += char # adding a char each time
+    if (i+1 &lt; len(string)): # prevents error
+        if string[i+1] == white_space or string[i+1] in KEYWORDS or lexeme in KEYWORDS: # if next char == ' '
+            if lexeme != '':
+                print(lexeme.replace('\n', '&lt;newline&gt;'))
+                lexeme = ''
+
+
+</code></pre>
+<p>we just added some checks to make things clear with the result that now the comments are recognised as such :</p>
+<pre><code class="language-python">/*
+&lt;newline&gt;
+looping
+over
+&lt;newline&gt;
+*/
+</code></pre>
+<h1>conclusion</h1>
+<p>we built a lexer by voluntarily leaving out regex given that some lookaheads is a breeze in py. we&rsquo;ll move on next time to the tokeniser.</p>
+<p>in this post, brevity was voluntarily left out, favouring a more complete approach, more programming than jargon usage!</p>
+
+                        <script src="https://utteranc.es/client.js"
+        repo="pythonkitchen/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </article>
+                
+                  </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="basis-1/4"></div>
+  </div>
+
+
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+</body>
+</html>

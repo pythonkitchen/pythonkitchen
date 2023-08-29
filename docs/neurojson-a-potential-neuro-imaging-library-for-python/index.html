@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    a {
+	word-wrap: break-word !important;
+}
+  </style>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+
+<link rel="stylesheet" href="/post.css"> 
+
+</head>
+<body class="bg-gray-50">
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="/" class="flex items-center">
+          <img src="https://www.pythonkitchen.com/wp-content/uploads/2022/11/cropped-p3-50x50.png" class="h-8 mr-3" alt="PythonKitchen Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PythonKitchen</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="/" 
+            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
+            Home</a>
+          </li>
+          <li>
+            <a href="https://github.com/pythonkitchen/pythonkitchen/tree/source/data/posts" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Write</a>
+          </li>
+          <li>
+            <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Contact</a>
+          </li>
+          <!-- <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+
+<div class="p-8">
+
+</div>
+
+<div class="flex flex-row space-x-2">
+    <div class="basis-3/4">
+        <div class="p-8 pl-12">
+            <div class="ml-2">
+                <div class=" p-12 bg-white rounded-lg shadow-lg">
+                    <p class="text-3xl" style="font-weight: 600;">NeuroJSON: A Potential Neuro-Imaging Library For Python</p>
+                    <br>
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2022-10-18 06:40:24" class="text-gray-500">October 18, 2022</time>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            data science
+                        </a>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            machine learning
+                        </a>
+                        
+                    </div>
+                    
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="https://github.com/abdullium.png?size=200" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                            <p class="font-semibold text-gray-900">
+                                <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Abdul Khan
+                                </a>
+                            </p>
+                            <p class="text-gray-600">Data scientist</p>
+                            </div>
+                        </div>
+                    
+                    <br>
+                    <article>
+                        <p>NeuroJson, founded by <a href="https://mail.python.org/archives/users/b550f259b878424ba22e0e86de457b1e/">Qianqian Fang</a>, is an open-source project which aims to create easy-to-adopt, easy-to-extend, and preferably human-readable data formats to help disseminate and exchange <strong>Neuro-imaging data</strong> (and scientific data in general). It primarily uses JSON and binary JSON (specifically, UBJSON <a href="https://ubjson.org/">UBJSON</a> derived <a href="https://json.nlohmann.me/features/binary_formats/bjdata/">Binary JSON</a> format) as the underlying data exchange files.</p>
+<h2>Table of content</h2>
+<ul>
+<li>Caveats of popular tools</li>
+<li>Why NeuroJson</li>
+<li>Testing <code>UBJson(jdata.jdb)</code> VS <code>NumPy.npy</code> File size</li>
+<li>Discussing Pros and Cons of <code>.npy</code> and <code>.jdb</code></li>
+</ul>
+<h2>Caveats of popular tools</h2>
+<p>There are just a handful of Python Libraries involved in Medical/Neurological data. <strong>NumPy is an essential library that is widely employed in Neuro-imaging data analysis.</strong> I have seen discussions about potentially adopting <code>.npy</code> as a standardized way to share Mass Neurological data <a href="https://github.com/bids-standard/bids-specification/issues/197">as seen in this thread</a>.</p>
+<p>However, several limitations were also discussed:</p>
+<ol>
+<li><code>.npy</code> only support a single NumPy array and does not support other metadata or other more complex data records (multiple arrays are only made via multiple files)</li>
+<li>no internal (i.e. data-level) compression, only file-level compression</li>
+<li>Even though the file is simple, it still requires a parser to read/write, and such a parser is not widely available in other environments, making it primarily limited to exchanging data among python programs</li>
+</ol>
+<h2>Why NeuroJson?</h2>
+<p>Since NeuroJson uses binary-JSON (precisely UBJSON file format), <strong>It was able to address most of the Limitations mentioned above ↑.</strong> The generated files are universally parsable in nearly all programming environments with existing parsers and support complex hierarchical data with compression. A <code>UBJSON/BJData</code> parser may not necessarily be longer than a <code>.npy</code> parser. For example, the python parser of full specifications only takes about 500 lines of code (including comments), similarly to a JS parser. Generated files from this parser can readily benefit from the large ecosystem of JSON (JSON-schema, JSONPath, JSON-LD, jq, numerous parsers, web-ready, NoSQL DB). Here is a <a href="https://github.com/NeuroJSON/pybj/blob/master/bjdata/decoder.py">BJson-Parser</a>.</p>
+<p><strong>NeuroJson&rsquo;s team conducted a benchmark test a few months back</strong>. The test workloads were two large 2D numerical arrays (node, face to store surface mesh data). 
+ They compared the parsing speed of various formats in
+Python, MATLAB, and JS. The uncompressed UBJData (BMSHraw) reported a loading speed that was nearly as fast as reading a raw binary dump, and internally compressed UBJData (BMSHz) gives the best balance between small file sizes and loading speed,</p>
+<p>Results</p>
+<p><img alt="Test Results" src="https://pbs.twimg.com/media/FRPEdLGWYAEJe80?format=png&amp;name=large" />
+Testing <code>UBJson(jdata.jdb)</code> VS <code>NumPy.npy</code> File size</p>
+<hr />
+<p>A quick comparison of output file sizes with a 1000x1000 unitary diagonal matrix. I wanted to test and compare these formats against each other on my own PC.
+Here&rsquo;s the code!</p>
+<pre><code class="language-python">    pip install jdata bjdata
+    import numpy as np
+    import jdata as jd 
+
+    x = np.eye(1000) # Creating a large array
+    y = np.vsplit(x, 10)  #Spiliting array in 10 chunks 
+    np.save('eye_10_chunks.npy',y) #Saving as .npy
+
+    jd.save(y, 'eye_10_chunks_bjd_raw.jdb') #saving as uncompressed bjd (binary_Json_Data)
+    jd.save(y, 'eye_10_chunks_bjd_zlib.jdb', {'compression':'zlib'}) #zlib compressed bjd
+    jd.save(y, 'eye_10_chunks_bjd_lzma.jdb', {'compression':'lzma'}) #Lzma compressed bjd
+
+    newy=jd.load('eye_10_chunks_bjd_zlib.jdb') #loading/decoding
+    newx = np.concatenate(newy) #Regrouping chunks
+    newx.dtype
+
+</code></pre>
+<p>Here are the output File sizes in bytes and Loading time in seconds:</p>
+<pre><code class="language-python">    eye_10_chunks.npy - 8000120 Bytes/0.177 Seconds 
+    eye_10_chunks_bjd_raw.jdb - 5004297 Bytes/0.719 Seconds
+    eye_10_chunks_bjd_zlib.jdb 10341 Bytes/1.471 Seconds
+    eye_10_chunks_bjd_lzma.jdb 2205 Bytes/0.638 Seconds
+
+</code></pre>
+<h2>Discussing Pros and Cons of <code>.npy</code> and <code>.jdb</code></h2>
+<p><strong>Pros and Cons of <code>.npy</code> format</strong>
+<strong>Pros:</strong>
+* Simple ndarrays without additional internal metadata.
+* Simple structure lends itself to easy reimplementation whenever needed
+* Existing implementations for multiple languages
+* <code>.npy</code> files with time: 0.13 seconds, This is by far the fastest method of loading data.</p>
+<p><a href="https://towardsdatascience.com/what-is-npy-files-and-why-you-should-use-them-603373c78883#:~:text=npy%20files%20with%20time:%200.13,method%20of%20loading%20in%20data.">Refer to:</a><img alt="enter image description here" src="https://miro.medium.com/max/738/1*xwpjjSdZwiOMnPJtdp9L2w.png" />
+<strong>Cons:</strong>
+* Non-appendable, only possible by using <a href="https://pypi.org/project/npy-append-array/">Third-party_packages</a> that comprises processing speed.</p>
+<ul>
+<li>
+<p>Requires a parser to read/write, and such a parser is not widely available in other environments, making it primarily limited to exchanging data among python programs.</p>
+</li>
+<li>
+<p>No data compression available(Only file), This Leads to big bulky files. For example:
+<img alt="enter image description here" src="https://raw.githubusercontent.com/Abdullium/Data_Analysis/main/Screenshot%202022-09-15%20173041.png" /></p>
+</li>
+<li>
+<p>Only support a single NumPy array data type and does not support other metadata</p>
+</li>
+</ul>
+<p><strong>Pros and Cons of <code>.jdb</code> format</strong>
+<strong>Pros:</strong>
+- Appending data is possible, Requires no external package is required  </p>
+<ul>
+<li>No external parser is Required, <code>.jdb</code> generated files are universally parsable in most the programming environments </li>
+<li>Extremely Compressible, especially using Lzma compressor, it can shrink the data like this:-</li>
+</ul>
+<blockquote>
+<p>a BJData file storing a single eye(10000) array using the ND-array container can be downloaded from here <a href="http://neurojson.org/wiki/upload/eye1e4_bjd_raw_ndsyntax.jdb.zip">http://neurojson.org/wiki/upload/eye1e4_bjd_raw_ndsyntax.jdb.zip</a>(file size: 1MB with zip, if decompressed, it is ~800MB, as the npy file) - this file was generated from a MatLab encoder but can be loaded using Python (see below Re Robert).<a href="https://mail.python.org/archives/list/numpy-discussion@python.org/message/JIT4AIVEYJLSSHTSA7GOUBIVQLT3WPRU/">Read Thread</a> 
+</p>
+</blockquote>
+<p><strong>Cons:</strong>
+- Not Optimized for speed, five times slower loading speed than <code>.npy</code>
+- The Data needs to be stored in chunks in order to be fully compressible</p>
+<h2>Conclusion</h2>
+<p>NeuroJson is emerging as a Major competitor to libraries like Nipy and NumPy in the field of Neuro-Imagery. It is highly compressible and has an established network of JSON/UBJSON files. However, the big challenge is the speed. it is not anywhere near Python&rsquo;s standard, which presents a big challenge for people working on medical/Neuro-Imaging data 
+Still, I have a positive outlook on NeuroJson that it can become the &ldquo;Go-To&rdquo; library for medical-coder and Neuro enthusiasts in the future!</p>
+<h2>References</h2>
+<ul>
+<li><a href="https://mail.python.org/archives/list/numpy-discussion@python.org/message/JIT4AIVEYJLSSHTSA7GOUBIVQLT3WPRU/">Mailman 3 Python.org</a></li>
+</ul>
+
+                        <script src="https://utteranc.es/client.js"
+        repo="pythonkitchen/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </article>
+                
+                  </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="basis-1/4"></div>
+  </div>
+
+
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+</body>
+</html>

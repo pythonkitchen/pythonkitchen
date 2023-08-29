@@ -1,0 +1,570 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    a {
+	word-wrap: break-word !important;
+}
+  </style>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+
+<link rel="stylesheet" href="/post.css"> 
+
+</head>
+<body class="bg-gray-50">
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="/" class="flex items-center">
+          <img src="https://www.pythonkitchen.com/wp-content/uploads/2022/11/cropped-p3-50x50.png" class="h-8 mr-3" alt="PythonKitchen Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PythonKitchen</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="/" 
+            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
+            Home</a>
+          </li>
+          <li>
+            <a href="https://github.com/pythonkitchen/pythonkitchen/tree/source/data/posts" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Write</a>
+          </li>
+          <li>
+            <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Contact</a>
+          </li>
+          <!-- <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+
+<div class="p-8">
+
+</div>
+
+<div class="flex flex-row space-x-2">
+    <div class="basis-3/4">
+        <div class="p-8 pl-12">
+            <div class="ml-2">
+                <div class=" p-12 bg-white rounded-lg shadow-lg">
+                    <p class="text-3xl" style="font-weight: 600;">Packaging An Sqlite db-included CRUD PyQt5 app using PyInstaller</p>
+                    <br>
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2019-12-31 20:17:54" class="text-gray-500">December 31, 2019</time>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            packaging &amp; distribution
+                        </a>
+                        
+                    </div>
+                    
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="https://github.com/Abdur-rahmaanJ.png?size=200" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                            <p class="font-semibold text-gray-900">
+                                <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Abdur-Rahmaan Janhangeer
+                                </a>
+                            </p>
+                            <p class="text-gray-600">Chef</p>
+                            </div>
+                        </div>
+                    
+                    <br>
+                    <article>
+                        <p>The Python programmer&rsquo;s journey inevitably leads him to one of the black belts of the industry: packaging and distribution. But, particularly in Python, distribution can also be a black beast. We&rsquo;ve seen slow and steady progress in the field with the advent of tools like cx_freeze, pyinstaller and protocols like zipapp. In this post we&rsquo;ll see how to package a realistic PyQt5 app.</p>
+<p>As a side note, i was hesitating between titles to choose so i made a poll in our facebook group. This title got far more votes many requests beforehand. I went on with it.</p>
+<h2>Complexity of the demo app</h2>
+<p>Since we are focusing on packaging, we deliberately choose a demo that tackles common headaches. We included picture files and sqlite database. We&rsquo;ll package a CRUD app which uses SqlAlchemy. You can use this as a basis for more ambitious projects. Moreover we used some &lsquo;good&rsquo; PyQt5 practices like custom widgets, OOP approach and namespaced functions.</p>
+<p>Repo at <a href="https://github.com/Abdur-rahmaanJ/PyQt5_CRUD">PyQt5_CRUD</a> </p>
+<h2>Project Structure</h2>
+<p>Our project looks like this</p>
+<pre><code class="language-python">project_folder/
+    db/
+        items.db # created automatically
+    pics/
+        icon.png
+    base.py
+    main.py
+    models.py
+    utils.py
+    template.spec # our spec reference
+    main.spec # generated, to be modified to match template.spec
+    icon.ico # since we are on windows, you can use any file format used by your os
+    requirements.txt # what package we'll be using
+    README.md # instructions
+</code></pre>
+<p>db/ is the folder used for storing databases</p>
+<p>pics/ is the picture where pics are stored</p>
+<p>models.py is where we&rsquo;ll define our model</p>
+<p>main.py is the file we&rsquo;ll run</p>
+<p>utils.py contains some utitlities functions</p>
+<p>base.py contains some SqlAlchemy configurations</p>
+<p>main.spec is the pyinstaller specifications file</p>
+<h2>App &amp; Code</h2>
+<p><img alt="" src="https://www.pythonmembers.club/wp-content/uploads/2019/12/main_screen.jpg" />The app we&rsquo;ll be building</p>
+<p>It features the minimum working mechanism a CRUD app should have. Let&rsquo;s see what each file contains</p>
+<h2>base.py</h2>
+<pre><code class="language-python">import sys
+import os
+
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+from utils import app_path
+
+engine = create_engine('sqlite:///{}'.format(app_path('db/items.db')))
+Session = sessionmaker(bind=engine)
+
+Base = declarative_base()
+</code></pre>
+<h2>models.py</h2>
+<pre><code class="language-python">from sqlalchemy import Column, String
+
+from base import Base
+
+class Product(Base):
+    __tablename__ = 'products'
+
+    id = Column(Integer, primary_key=True)
+    barcode = Column(String)
+    name = Column(String)
+</code></pre>
+<p>Our demo product just has a barcode and a name.</p>
+<h2>utils.py</h2>
+<pre><code class="language-python">import os
+import sys
+
+from PyQt5 import QtWidgets
+
+def app_path(path):
+    frozen = 'not'
+    if getattr(sys, 'frozen', False):
+            # we are running in executable mode
+            frozen = 'ever so'
+            app_dir = sys._MEIPASS
+    else:
+            # we are running in a normal Python environment
+            app_dir = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(app_dir, path)
+
+
+def layout_addWidget(layout, widgets):
+    '''adds widgets to layouts'''
+
+    for widget in widgets:
+        if isinstance(layout, QtWidgets.QGridLayout):
+            layout.addWidget(widget[0], widget[1], widget[2])
+        else:
+            layout.addWidget(widget)
+</code></pre>
+<p>The first function allows you to get the correct resource path like an image right. Just putting pics/icon.png is going to break when using the executable version. So putting </p>
+<pre><code class="language-python">app_path('pics/icon.png')
+</code></pre>
+<p>ensure smooth fetching.</p>
+<p>The second function just spares you having to write layout.addWidget many times.</p>
+<h2>main.py</h2>
+<p>Let&rsquo;s see our imports</p>
+<pre><code class="language-python">import sys
+
+from PyQt5 import QtWidgets
+from PyQt5 import QtCore
+from PyQt5 import QtGui
+
+from models import Product
+from base import Session, engine, Base
+from utils import app_path, layout_addWidget
+</code></pre>
+<p>We can see that for PyQt5 we imported only QtWidgets. To use a QPushButton we need to write QtWidgets.QPushButton. This takes longer to read but makes you a Qt master, believe me. There are many advantages in doing so, the least of them is easy PySide2 migration</p>
+<p>Then we&rsquo;ll see our globals</p>
+<pre><code class="language-python">Base.metadata.create_all(engine)
+session = Session()
+</code></pre>
+<p>session is used by SqlAlchemy to make queries</p>
+<p>Then we have our first custom widget: the AddProduct widget. In the above picture, the complete add product section is defined and manage by the following widget</p>
+<pre><code class="language-python">class AddProduct(QtWidgets.QWidget):
+
+    def __init__(self, view_product, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.view_product = view_product
+        self.layout = QtWidgets.QVBoxLayout()
+        self.layout.setAlignment(QtCore.Qt.AlignTop)
+
+        self.barcode_label = QtWidgets.QLabel('Enter barcode')
+        self.barcode_entry = QtWidgets.QLineEdit()
+        self.name_label = QtWidgets.QLabel('Enter Name')
+        self.name_entry = QtWidgets.QLineEdit()
+        self.button = QtWidgets.QPushButton('Add')
+
+
+        self.button.clicked.connect(self.button_clicked)
+
+        layout_addWidget(self.layout, [
+            self.barcode_label, 
+            self.barcode_entry, 
+            self.name_label, 
+            self.name_entry,
+            self.button
+            ])
+
+        self.setLayout(self.layout)
+
+    def clear_textboxes(self):
+        self.barcode_entry.setText('')
+        self.name_entry.setText('')
+
+    def button_clicked(self):
+        product = Product(
+            barcode=self.barcode_entry.text(), 
+            name=self.name_entry.text())
+        session.add(product)
+        session.commit()
+
+        self.view_product.display_products()
+        self.clear_textboxes()
+</code></pre>
+<p>The layout_addWidget functions come from utils.py</p>
+<p>The EditProduct widget manages the edit section. The edit section works as follows: you must input a barcode, then press the load button, then edit.</p>
+<pre><code class="language-python">class EditProduct(QtWidgets.QWidget):
+
+    def __init__(self, view_product, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.view_product = view_product
+        self.layout = QtWidgets.QVBoxLayout()
+        self.layout.setAlignment(QtCore.Qt.AlignTop)
+
+        self.old_barcode_label = QtWidgets.QLabel('Enter old barcode')
+        self.old_barcode_entry = QtWidgets.QLineEdit()
+        self.new_barcode_label = QtWidgets.QLabel('Enter new barcode')
+        self.new_barcode_entry = QtWidgets.QLineEdit()
+        self.name_label = QtWidgets.QLabel('Enter Name')
+        self.name_entry = QtWidgets.QLineEdit()
+        self.load_button = QtWidgets.QPushButton('Load')
+        self.edit_button = QtWidgets.QPushButton('Edit')
+
+        self.load_button.clicked.connect(self.load_button_clicked)
+        self.edit_button.clicked.connect(self.edit_button_clicked)
+
+        layout_addWidget(self.layout, [
+            self.old_barcode_label, 
+            self.old_barcode_entry, 
+            self.new_barcode_label, 
+            self.new_barcode_entry,
+            self.name_label, 
+            self.name_entry,
+            self.load_button,
+            self.edit_button
+            ])
+
+        self.setLayout(self.layout)
+
+    def clear_textboxes(self):
+        self.old_barcode_entry.setText('')
+        self.new_barcode_entry.setText('')
+        self.name_entry.setText('')
+
+    def load_button_clicked(self):
+        check_barcode = self.old_barcode_entry.text()
+        record = session.query(Product).filter(Product.barcode == check_barcode).first()
+        self.new_barcode_entry.setText(check_barcode)
+        self.name_entry.setText(record.name)
+
+    def edit_button_clicked(self):
+        check_barcode = self.old_barcode_entry.text()
+        record = session.query(Product).filter(Product.barcode == check_barcode).first()
+
+        record.barcode = self.new_barcode_entry.text()
+        record.name = self.name_entry.text()
+
+        self.view_product.display_products()
+        self.clear_textboxes()
+</code></pre>
+<p>DeleteProduct manages the delete section</p>
+<pre><code class="language-python">class DeleteProduct(QtWidgets.QWidget):
+
+    def __init__(self, view_product, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.view_product = view_product
+        self.layout = QtWidgets.QVBoxLayout()
+        self.layout.setAlignment(QtCore.Qt.AlignTop)
+
+        self.barcode_label = QtWidgets.QLabel('Enter barcode')
+        self.barcode_entry = QtWidgets.QLineEdit()
+        self.button = QtWidgets.QPushButton('Delete')
+
+        self.button.clicked.connect(self.button_clicked)
+
+        layout_addWidget(self.layout, [
+            self.barcode_label, 
+            self.barcode_entry,
+            self.button
+            ])
+
+        self.setLayout(self.layout)
+
+    def clear_textboxes(self):
+        self.barcode_entry.setText('')
+
+    def button_clicked(self):
+        check_barcode = self.barcode_entry.text()
+        session.query(Product).filter(Product.barcode == check_barcode).delete()
+        self.clear_textboxes()
+        self.view_product.display_products()
+</code></pre>
+<p>ViewProduct is the display area</p>
+<pre><code class="language-python">class ViewProduct(QtWidgets.QWidget):
+
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        layout = QtWidgets.QVBoxLayout(self)
+        layout.setAlignment(QtCore.Qt.AlignTop)
+
+
+        self.data_area = QtWidgets.QWidget()
+        self.data_area_layout = QtWidgets.QVBoxLayout(self.data_area)
+        self.data_area_layout.setAlignment(QtCore.Qt.AlignTop)
+        self.display_products()
+
+        self.scroll_area = QtWidgets.QScrollArea()
+        self.scroll_area.setWidget(self.data_area)
+        self.scroll_area.setWidgetResizable(True)
+
+        layout.addWidget(self.scroll_area)
+
+    def clear_area(self):
+        for i in reversed(range(self.data_area_layout.count())): 
+            self.data_area_layout.itemAt(i).widget().setParent(None)
+
+    def display_products(self):
+        self.clear_area()
+        products = session.query(Product).all()
+
+        record_string = '''
+        &lt;table&gt;
+            &lt;tr&gt;
+                &lt;th&gt;id&lt;/th&gt;
+                &lt;th&gt;barcode&lt;/th&gt;
+                &lt;th&gt;name&lt;/th&gt;
+            &lt;/tr&gt;
+        '''
+        self.data_area_layout.addWidget(QtWidgets.QLabel('PRODUCTS'))
+
+        for product in products:
+            record_string += '''
+            &lt;tr&gt;
+                &lt;td&gt;{}&lt;/td&gt;
+                &lt;td&gt;{}&lt;/td&gt;
+                &lt;td&gt;{}&lt;/td&gt;
+            &lt;/tr&gt;
+            '''.format(product.id, product.barcode, product.name)
+        record_string += '''
+        &lt;/table&gt;'''
+        self.data_area_layout.addWidget(QtWidgets.QLabel(record_string))
+</code></pre>
+<p>Then the main window using all these widgets</p>
+<pre><code class="language-python">class MainWindow(QtWidgets.QMainWindow):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.init_gui()
+
+    def init_gui(self):
+        # win initialisations
+        self.layout = QtWidgets.QGridLayout()
+        self.window = QtWidgets.QWidget()
+        self.window.setLayout(self.layout)
+        self.setCentralWidget(self.window)
+        self.setWindowTitle('Products')
+        self.setWindowIcon(QtGui.QIcon(app_path('pics/icon.png'))) 
+
+        self.view_product_widget = ViewProduct()
+        self.add_product_widget = AddProduct(self.view_product_widget)
+        self.edit_product_widget = EditProduct(self.view_product_widget)
+        self.delete_product_widget = DeleteProduct(self.view_product_widget)
+
+        layout_addWidget(self.layout, [
+            (self.add_product_widget, 0, 0),
+            (self.edit_product_widget, 0, 1),
+            (self.delete_product_widget, 0, 2),
+            (self.view_product_widget, 0, 3),
+            ])
+</code></pre>
+<p>And finally to finish, we have our main</p>
+<pre><code class="language-python">if __name__ == '__main__':
+    app = QtWidgets.QApplication([])
+
+    win = MainWindow()
+    win.show()
+
+    sys.exit(app.exec_())
+</code></pre>
+<h2>template.spec</h2>
+<p>The spec file is normally generated using the command pyinstaller main.py</p>
+<p>However you can save it as template.spec</p>
+<pre><code class="language-python"># -*- mode: python ; coding: utf-8 -*-
+
+block_cipher = None
+
+added_files = [
+         ( './pics/*', 'pics' ),
+         ( './db/*', 'db' ),
+         ]
+
+a = Analysis(['main.py'],
+             datas = added_files,
+             pathex=['&lt;project_folder_path&gt;'],
+             binaries=[],
+             hiddenimports=[],
+             hookspath=[],
+             runtime_hooks=[],
+             excludes=[],
+             win_no_prefer_redirects=False,
+             win_private_assemblies=False,
+             cipher=block_cipher,
+             noarchive=False)
+pyz = PYZ(a.pure, a.zipped_data,
+             cipher=block_cipher)
+exe = EXE(pyz,
+          a.scripts,
+          a.binaries,
+          a.zipfiles,
+          a.datas,
+          [],
+          name='main',
+          debug=False,
+          bootloader_ignore_signals=False,
+          strip=False,
+          upx=True,
+          upx_exclude=[],
+          runtime_tmpdir=None,
+          console=False,
+          icon='icon.ico' )
+
+</code></pre>
+<p>The added_files variable adds everything in the designated folder, it&rsquo;s one of the tricks to get our app working. Notice the wildcard operator (*).</p>
+<pre><code class="language-python">added_files = [
+         ( './pics/*', 'pics' ),
+         ( './db/*', 'db' ),
+         ]
+</code></pre>
+<p>then we add it in</p>
+<pre><code class="language-python">a = Analysis(['main.py'],
+             datas = added_files, # here
+</code></pre>
+<h2>Run instructions</h2>
+<p>Make sure you have the required packages. Run </p>
+<pre><code class="language-python">python -m pip install -r requirements.txt
+</code></pre>
+<p>To test if all is well, run python main.py and see if the app appears</p>
+<p>Next we generate our main.spec using</p>
+<pre><code class="language-python">pyinstaller main.py -F
+</code></pre>
+<p>-F tells pyinstaller that we need a single file executable</p>
+<p>Now add this after block_cipher</p>
+<pre><code class="language-python">added_files = [
+         ( './pics/*', 'pics' ),
+         ( './db/*', 'db' ),
+         ]
+</code></pre>
+<p>Then change this</p>
+<pre><code class="language-python">a = Analysis(['main.py'],
+             ...
+             binaries=[],
+             datas=[],
+             ...
+</code></pre>
+<p>to this</p>
+<pre><code class="language-python">a = Analysis(['main.py'],
+             ...
+             binaries=[],
+             datas=added_files,
+             ...
+</code></pre>
+<p>You might want to change the last part where console=True to</p>
+<pre><code class="language-python">console=False,
+icon='icon.ico' )
+</code></pre>
+<p>In short we copied template.spec&rsquo;s content into main.spec keeping pathex= intact.</p>
+<p>Build your executable using </p>
+<pre><code class="language-python">pyinstaller main.spec
+</code></pre>
+<p>You will get two new folders</p>
+<pre><code class="language-python">project_folder/
+    db/
+        items.db
+    pics/
+        icon.png
+    build/ # new
+        ...
+    dist/
+        main.exe # new
+    base.py
+    main.py
+    models.py
+    utils.py
+    template.spec
+    main.spec
+    icon.ico
+    requirements.txt
+    README.md
+</code></pre>
+<p>Under dist/ you should see your executable</p>
+<h2>Dealing with headaches!</h2>
+<p>Normally you should have a working executable file, however i&rsquo;ve discovered that while the exec file can work well on your PC, it might not work so well on another person PC due to some internal hardcoding of paths. The issue apparently varies from PyQt5 version to version. In case you encounter this error, downgrade some 0.0.01 version back or forward.</p>
+<h2>Words of caution</h2>
+<p>This app is without safety nets and was intended as a packaging demo. </p>
+<p><em>You can download the repo here: <a href="https://github.com/Abdur-rahmaanJ/PyQt5_CRUD">PyQt5_CRUD</a> . Anything unclear, mail me at <arj.python at gmail dot com></em></p>
+
+                        <script src="https://utteranc.es/client.js"
+        repo="pythonkitchen/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </article>
+                
+                  </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="basis-1/4"></div>
+  </div>
+
+
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+</body>
+</html>

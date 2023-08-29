@@ -1,0 +1,449 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    a {
+	word-wrap: break-word !important;
+}
+  </style>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+
+<link rel="stylesheet" href="/post.css"> 
+
+</head>
+<body class="bg-gray-50">
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="/" class="flex items-center">
+          <img src="https://www.pythonkitchen.com/wp-content/uploads/2022/11/cropped-p3-50x50.png" class="h-8 mr-3" alt="PythonKitchen Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PythonKitchen</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="/" 
+            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
+            Home</a>
+          </li>
+          <li>
+            <a href="https://github.com/pythonkitchen/pythonkitchen/tree/source/data/posts" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Write</a>
+          </li>
+          <li>
+            <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Contact</a>
+          </li>
+          <!-- <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+
+<div class="p-8">
+
+</div>
+
+<div class="flex flex-row space-x-2">
+    <div class="basis-3/4">
+        <div class="p-8 pl-12">
+            <div class="ml-2">
+                <div class=" p-12 bg-white rounded-lg shadow-lg">
+                    <p class="text-3xl" style="font-weight: 600;">Build A Note App In Flask As Fast As It Can Get (Using Shopyo)</p>
+                    <br>
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2022-04-13 05:37:29" class="text-gray-500">April 13, 2022</time>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            flask
+                        </a>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            shopyo
+                        </a>
+                        
+                    </div>
+                    
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="https://github.com/Abdur-rahmaanJ.png?size=200" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                            <p class="font-semibold text-gray-900">
+                                <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Abdur-Rahmaan Janhangeer
+                                </a>
+                            </p>
+                            <p class="text-gray-600">Chef</p>
+                            </div>
+                        </div>
+                    
+                    <br>
+                    <article>
+                        <p><a href="https://github.com/shopyo/shopyo/">Shopyo</a> is a framework to get started with Flask really quick. It includes several libraries to get started by default. In this tutorial we will build a simple app to get started with. We used it for FlaskCon 2021 [<a href="https://flaskcon.com/y/2021/#">site</a>, <a href="https://github.com/flaskcon/traveller">codebase</a>].</p>
+<h1>First steps</h1>
+<p>The first step is to install the library.</p>
+<pre><code class="language-python">python3.9 -m venv venv # create virtual env
+. venv/bin/activate # activate (linux version)
+pip install shopyo==4.4.3
+
+</code></pre>
+<p>Then we create our folder</p>
+<pre><code class="language-python">mkdir note_app
+
+</code></pre>
+<p>We enter into the folder</p>
+<pre><code class="language-python">cd note_app
+
+</code></pre>
+<p>Then we create a new Shopyo project</p>
+<pre><code class="language-python">shopyo new
+
+</code></pre>
+<p>The output looks like this:</p>
+<pre><code class="language-python">creating project note_app...
+#######################
+[x] Project note_app created successfully!
+
+</code></pre>
+<p>A tree lookup gives</p>
+<pre><code class="language-python">├── docs
+│   ├── conf.py
+│   ├── docs.rst
+│   ├── index.rst
+│   ├── Makefile
+│   └── _static
+│       └── custom.css
+├── MANIFEST.in
+├── note_app
+├── pytest.ini
+├── README.md
+├── requirements.txt
+├── setup.py
+└── tox.ini
+
+</code></pre>
+<p>Since we are not interested in packaging our app for now, we can switch to the inner note_app/ folder</p>
+<pre><code class="language-python">cd note_app
+
+</code></pre>
+<p>The inner note_app folder has this structure</p>
+<pre><code class="language-python">├── note_app
+│   ├── app.py
+│   ├── app.txt
+│   ├── autoapp.py
+│   ├── CHANGELOG.md
+│   ├── cli.py
+│   ├── config_demo.json
+│   ├── config.py
+│   ├── conftest.py
+│   ├── __init__.py
+│   ├── init.py
+│   ├── manage.py
+│   ├── modules
+│   ├── shopyo_admin.py
+│   ├── static
+│   ├── tests
+│   │   ├── conftest.py
+│   │   └── test_configs.py
+│   └── wsgi.py
+
+</code></pre>
+<h1>Creating modules</h1>
+<p>Lets create the notes app</p>
+<pre><code class="language-python">shopyo startapp notes
+
+</code></pre>
+<p>A new folder will be created under <code>modules/</code>. The content of <code>modules/note_app/</code> looks like this</p>
+<pre><code class="language-python">modules/notes/
+├── forms.py
+├── global.py
+├── info.json
+├── models.py
+├── static
+├── templates
+│   └── notes
+│       ├── blocks
+│       │   └── sidebar.html
+│       └── dashboard.html
+├── tests
+│   ├── test_notes_functional.py
+│   └── test_notes_models.py
+└── view.py
+
+</code></pre>
+<p>These are files created by default.</p>
+<h1>Writing the first view</h1>
+<p>The <code>info.json</code> file lists some basics about the module, including it&rsquo;s url namespace (module_name) and url prefix</p>
+<pre><code class="language-python">{
+    &quot;author&quot;: {
+        &quot;mail&quot;: &quot;&quot;,
+        &quot;name&quot;: &quot;&quot;,
+        &quot;website&quot;: &quot;&quot;
+    },
+    &quot;display_string&quot;: &quot;Notes&quot;,
+    &quot;fa-icon&quot;: &quot;fa fa-store&quot;,
+    &quot;module_name&quot;: &quot;notes&quot;,
+    &quot;type&quot;: &quot;show&quot;,
+    &quot;url_prefix&quot;: &quot;/notes&quot;
+}
+
+</code></pre>
+<p>Let&rsquo;s change <code>url_prefix</code> to <code>"/"</code></p>
+<pre><code class="language-python">{
+    ...,
+    &quot;url_prefix&quot;: &quot;/&quot;
+}
+
+</code></pre>
+<p>Our <code>view.py</code> looks like this, which is generated by default.</p>
+<pre><code class="language-python">from shopyo.api.module import ModuleHelp
+
+mhelp = ModuleHelp(__file__, __name__)
+globals()[mhelp.blueprint_str] = mhelp.blueprint
+module_blueprint = globals()[mhelp.blueprint_str]
+
+
+@module_blueprint.route(&quot;/&quot;)
+def index():
+    return mhelp.info['display_string']
+
+</code></pre>
+<p>Let&rsquo;s change the return string to <code>String from notes app</code></p>
+<pre><code class="language-python">@module_blueprint.route(&quot;/&quot;)
+def index():
+    return &quot;String from notes app&quot;
+
+</code></pre>
+<h1>Running the app</h1>
+<p>Run <code>shopyo rundebug</code> to run the app in debug mode.</p>
+<p>Going to &ldquo;http://127.0.0.1:5000/&rdquo; should return &ldquo;String from notes app&rdquo;</p>
+<p>You can learn more about the run command <a href="https://shopyo.readthedocs.io/en/latest/commandline.html#run">here</a>.</p>
+<h1>Creating models</h1>
+<p>Our notes will have a title and a content. In <code>modules/notes/models.py</code> write:</p>
+<pre><code class="language-python">from init import db
+from shopyo.api.models import PkModel
+
+
+
+class Note(PkModel): 
+
+    __tablename__ = 'notes'
+
+    title = db.Column(db.String(80), nullable=False)
+    content = db.Text()
+
+</code></pre>
+<p>The <code>init</code> import comes from the <code>init.py</code> file.
+The <code>PkModel</code> is same as <code>db.Model</code> with by default <code>id</code> as primary key</p>
+<p>Then we initialise the app. It uses Flask-Migrate under the hood. You can view more initialise options <a href="https://shopyo.readthedocs.io/en/latest/commandline.html#initialise">here</a></p>
+<pre><code class="language-python">$ shopyo initialise
+initializing...
+Cleaning...
+#######################
+Auto importing models...
+#######################
+
+Creating db...
+#######################
+
+Migrating db...
+#######################
+
+Upgrading db...
+#######################
+
+Collecting static...
+#######################
+
+Uploading initial data to db...
+#######################
+
+All Done!
+
+</code></pre>
+<p>This worked as Shopyo adds a <code>shopyo.db</code> as basic sqlalchemy connection string.</p>
+<h1>Configuring Flask-Admin</h1>
+<p>Now let&rsquo;s configure flask-admin to have a quick CRUD view. Fortunately, Shopyo already has some basics ongoing.</p>
+<p>First, modify <code>shopyo_admin.py</code> to remove Flask-Login authentications</p>
+<pre><code class="language-python">from flask import redirect
+from flask import request
+from flask import url_for
+from flask_admin import AdminIndexView
+from flask_admin import expose
+from flask_admin.contrib import sqla as flask_admin_sqla
+from flask_login import current_user
+
+
+class DefaultModelView(flask_admin_sqla.ModelView):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    # def is_accessible(self):
+    #     return current_user.is_authenticated and current_user.is_admin
+
+    # def inaccessible_callback(self, name, **kwargs):
+    #     # redirect to login page if user doesn't have access
+    #     return redirect(url_for(&quot;auth.login&quot;, next=request.url))
+
+
+class MyAdminIndexView(AdminIndexView):
+    # def is_accessible(self):
+    #     return current_user.is_authenticated and current_user.is_admin
+
+    # def inaccessible_callback(self, name, **kwargs):
+    #     # redirect to login page if user doesn't have access
+    #     return redirect(url_for(&quot;auth.login&quot;, next=request.url))
+
+    @expose(&quot;/&quot;)
+    def index(self):
+        # if not current_user.is_authenticated and current_user.is_admin:
+        #     return redirect(url_for(&quot;auth.login&quot;))
+        return super().index()
+# 
+    @expose(&quot;/dashboard&quot;)
+    def indexs(self):
+        # if not current_user.is_authenticated and current_user.is_admin:
+        #     return redirect(url_for(&quot;auth.login&quot;))
+        return super().index()
+
+</code></pre>
+<p>Then in app.py, don&rsquo;t load Flask-Login by commenting it out.</p>
+<pre><code class="language-python">def load_extensions(app):
+    ...
+    # login_manager.init_app(app)
+
+</code></pre>
+<p>Then in <code>app.py</code> import the Note model</p>
+<pre><code class="language-python">from modules.notes.models import Note
+
+</code></pre>
+<p>And modify the <code>setup_flask_admin</code> function to look like this:</p>
+<pre><code class="language-python">def setup_flask_admin(app):
+    admin = Admin(
+        app,
+        name=&quot;My App&quot;,
+        template_mode=&quot;bootstrap4&quot;,
+        index_view=MyAdminIndexView(),
+    )
+    admin.add_view(ModelView(Note, db.session))
+
+</code></pre>
+<p>Now, navigating to <code>/admin</code> gives</p>
+<p><img alt="Image description" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w3ozigkj23q00n5xsjc9.png" /></p>
+<p>Clicking on note allows you to edit the Note model. Let&rsquo;s add few models!</p>
+<p><img alt="Image description" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/re17hbi920kg48gr6lax.png" />
+Displaying templates
+====================</p>
+<p>What remains is using displaying the note on our main page.</p>
+<p>Under <code>modules/notes/templates/notes</code> create a file called index.html with content</p>
+<pre><code class="language-python">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    {% for note in notes %}
+        {{note.title}}&lt;br&gt;
+        {{note.content}}&lt;hr&gt;
+    {% endfor %}
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<p>Modify the view.py to</p>
+<pre><code class="language-python">from shopyo.api.module import ModuleHelp
+from flask import render_template
+
+from .models import Note 
+
+
+mhelp = ModuleHelp(__file__, __name__)
+globals()[mhelp.blueprint_str] = mhelp.blueprint
+module_blueprint = globals()[mhelp.blueprint_str]
+
+
+@module_blueprint.route(&quot;/&quot;)
+def index():
+    notes = Note.query.all()
+    return render_template('notes/index.html', notes=notes)
+
+</code></pre>
+<p>Which results in:</p>
+<p><img alt="Image description" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ptx26y6y8yya7zxqqe5v.png" /></p>
+<p>Shopyo also provides some utils like</p>
+<pre><code class="language-python">from shopyo.api.templates import yo_render
+
+...
+@module_blueprint.route(&quot;/&quot;)
+def index():
+    notes = Note.query.all()
+    context = {
+        'notes': notes
+    }
+    return yo_render('notes/index.html', context)
+
+</code></pre>
+<h1>Trying out a demo app</h1>
+<p>If you just want to try a demo app, just run</p>
+<pre><code class="language-python">mkdir project
+cd project
+shopyo new -m # -m adds default modules
+cd project
+shopyo initialise
+shopyo rundebug
+
+</code></pre>
+<p>You can then see how an authed Flask-Admin looks like.</p>
+<p>Hope you enjoy this post!</p>
+
+                        <script src="https://utteranc.es/client.js"
+        repo="pythonkitchen/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </article>
+                
+                  </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="basis-1/4"></div>
+  </div>
+
+
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+</body>
+</html>

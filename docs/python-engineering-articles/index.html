@@ -1,0 +1,1062 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    a {
+	word-wrap: break-word !important;
+}
+  </style>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+
+<link rel="stylesheet" href="/post.css"> 
+
+</head>
+<body class="bg-gray-50">
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="/" class="flex items-center">
+          <img src="https://www.pythonkitchen.com/wp-content/uploads/2022/11/cropped-p3-50x50.png" class="h-8 mr-3" alt="PythonKitchen Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PythonKitchen</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="/" 
+            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
+            Home</a>
+          </li>
+          <li>
+            <a href="https://github.com/pythonkitchen/pythonkitchen/tree/source/data/posts" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Write</a>
+          </li>
+          <li>
+            <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Contact</a>
+          </li>
+          <!-- <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+
+<div class="p-8">
+
+</div>
+
+<div class="flex flex-row space-x-2">
+    <div class="basis-3/4">
+        <div class="p-8 pl-12">
+            <div class="ml-2">
+                <div class=" p-12 bg-white rounded-lg shadow-lg">
+                    <p class="text-3xl" style="font-weight: 600;">Python Engineering Articles</p>
+                    <br>
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2021-11-09 22:49:40" class="text-gray-500">November 9, 2021</time>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            engineering
+                        </a>
+                        
+                    </div>
+                    
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="https://github.com/Abdur-rahmaanJ.png?size=200" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                            <p class="font-semibold text-gray-900">
+                                <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Abdur-Rahmaan Janhangeer
+                                </a>
+                            </p>
+                            <p class="text-gray-600">Chef</p>
+                            </div>
+                        </div>
+                    
+                    <br>
+                    <article>
+                        <p>This page lists the very best Python engineering articles of the internet, hand-picked to give hours and hours 
+of pure reading joy.
+It is especially designed for onboarding new members on your Python team. Great for skilling up.
+Though not necessarily read one after the other, the order is nevertheless not random. 
+For example, knowledge of CPython internals specially bytecodes are necessary to make sense of B. Cannon&rsquo;s 
+unravelling series. 
+The articles are focused on core Python and it&rsquo;s as advanced as articles can get.</p>
+<h2>Encoding</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://unicodebook.readthedocs.io/">Unicode Book</a></td>
+<td>Victor Stinner</td>
+<td>Also discusses Python handling</td>
+</tr>
+</tbody>
+</table>
+<h2>Maths</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://amitness.com/2019/08/math-for-programmers/">Math Symbols Explained With Python</a></td>
+<td>Amit Chaudhary</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://foundations-of-applied-mathematics.github.io/">Foundations Of Applied Mathematics</a></td>
+<td>Profs And Students At Different Universities</td>
+<td>A series of four textbooks developed for Brigham Young University’s Applied and Computational Mathematics degree program for beginning graduate and advanced undergraduate students. Uses Python for concepts</td>
+</tr>
+</tbody>
+</table>
+<h2>Compiler Theory</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arpitbhayani.me/blogs/fsm">Building Finite State Machines With Python Coroutines</a></td>
+<td>Arpit Bhayani</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://notes.eatonphil.com/writing-a-simple-python-compiler.html">Writing A Python To C Compiler In Python</a></td>
+<td>Phil Eaton</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://notes.eatonphil.com/writing-a-template-library-in-python.html">Writing A Jinja-Inspired Template Library In Python</a></td>
+<td>Phil Eaton</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://notes.eatonphil.com/writing-a-simple-json-parser.html">Writing A Simple Json Parser</a></td>
+<td>Phil Eaton</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>CPython Internals</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://realpython.com/cpython-source-code-guide/">Your Guide To The Cpython Source Code</a></td>
+<td>Anthony Shaw</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://intopythoncom.files.wordpress.com/2017/04/internalsofcpython3-6-1.pdf">Internals Of Cpython 3.6</a></td>
+<td>Prashanth Raghu</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://intopythoncom.files.wordpress.com/2017/04/merged.pdf">Advanced Internals Of Cpython 3.6</a></td>
+<td>Prashanth Raghu</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://pythondev.readthedocs.io/">Python Development Documentation</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://dev.to/btaskaya/lifecycle-of-a-python-code---cpythons-execution-model-85i">Lifecycle Of A Python Code - Cpython’S Execution Model</a></td>
+<td>Batuhan Osman Taşkaya</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/what-is-the-core-of-the-python-programming-language/">Notes About A Web Assembly Backend</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://lukasz.langa.pl/5d044f91-49c1-4170-aed1-62b6763e6ad0/">Summary Of Sam Gross&rsquo; Nogil Proposal</a></td>
+<td>Łukasz Langa</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/c-api-abstract-pyobject.html">Python C Api: Add Functions To Access Pyobject</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/c-api-python3_10-changes.html">C Api Changes Between Python 3.5 To 3.10</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/pythoncapi_compat.html">Creation Of The Pythoncapi_Compat Project</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/c-api-opaque-structures.html">Make Structures Opaque In The Python C Api</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/hide-implementation-details-python-c-api.html">Isolate Python Subinterpreters</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/isolate-subinterpreters.html">Hide Implementation Details From The Python C Api</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/subinterpreter-leaks.html">Leaks Discovered By Subinterpreters</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/gil-bugfixes-daemon-threads-python39.html">Gil Bugfixes For Daemon Threads In Python 3.9</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/threading-shutdown-race-condition.html">Threading Shutdown Race Condition</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/threading-shutdown-race-condition.html">Threading Shutdown Race Condition</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/index2.html">Pass The Python Thread State Explicitly</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/asyncio-proactor-wsasend-memory-leak.html">Asyncio Wsasend() Memory Leak</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/asyncio-proactor-wsarecv-cancellation-data-loss.html">Asyncio: Wsarecv() Cancellation Causing Data Loss</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/asyncio-proactor-connect-pipe-race-condition.html">Asyncio: Proactor Connectpipe() Race Condition</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/asyncio-proactor-cancellation-from-hell.html">Asyncio: Proactor Cancellation From Hell</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/python37-gil-change.html">How I Fixed A Very Old Gil Race Condition In Python 3.7</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/pytime.html">History Of The Python Private C Api _Pytime</a></td>
+<td>Victor Stinner</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Bytecode</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://aosabook.org/en/500L/a-python-interpreter-written-in-python.html">A Python Interpreter Written In Python</a></td>
+<td>Allison Kaptur</td>
+<td>Introduction to Python bytecode</td>
+</tr>
+<tr>
+<td><a href="https://opensource.com/article/18/4/introduction-python-bytecode">An Introduction To Python Bytecode</a></td>
+<td>James Bennett</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="http://www.goldsborough.me/python/low-level/2016/10/04/00-31-30-disassembling_python_bytecode/">Disassembling Python Bytecode</a></td>
+<td>Peter Goldsborough</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://fedoraproject.org/wiki/Changes/Python_Optional_Bytecode_Cache">Fedora: Bytecode &amp; Packaging</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Insider Bits</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://arpitbhayani.me/blogs/constant-folding-python">Constant Folding In Python</a></td>
+<td>Arpit Bhayani</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://arpitbhayani.me/blogs/python-caches-integers">Integer Caching In Python</a></td>
+<td>Arpit Bhayani</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://arpitbhayani.me/blogs/super-long-integers">Super Long Integers In Python</a></td>
+<td>Arpit Bhayani</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-decorators/">Unravelling Decorators</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-data-structure-displays/">Unravelling Data Structure Displays</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/not-unravelling-generator-expressions/">(Not) Unravelling Generator Expressions</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-the-async-with-statement/">Unravelling The <code>Async With</code> Statement</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-async-for-loops/">Unravelling <code>Async For</code> Loops</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-async-and-await/">Unravelling <code>Async</code> And <code>Await</code></a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-the-with-statement/">Unravelling The <code>With</code> Statement</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-the-pass-statement/">Unravelling The <code>Pass</code> Statement</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-for-statements/">Unravelling <code>For</code> Statements</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-assertions/">Unravelling Assertions</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-the-import-statement/">Unravelling The Import Statement</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-boolean-operations/">Unravelling Boolean Operations</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-membership-testing/">Unravelling Membership Testing</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-not-in-python/">Unravelling <code>Not</code> In Python</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-is-and-is-not/">Unravelling <code>Is</code> And <code>Is Not</code></a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-rich-comparison-operators/">Unravelling Rich Comparison Operators</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-unary-arithmetic-operators/">Unravelling Unary Arithmetic Operators</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-augmented-arithmetic-assignment/">Unravelling Augmented Arithmetic Assignment</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-binary-arithmetic-operations-in-python/">Unravelling Binary Arithmetic Operations In Python</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/unravelling-attribute-access-in-python/">Unravelling Attribute Access In Python</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/how-the-heck-does-async-await-work-in-python-3-5/">How The Heck Does Async/Await Work In Python 3.5?</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Sane Bits</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://snarky.ca/lazy-importing-in-python-3-7/">An Approach To Lazy Importing In Python 3.7</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/customizing-class-creation-in-python/">Customizing Class Creation In Python</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/why-pathlib-path-doesn-t-inherit-from-str/">Why Pathlib.Path Doesn&rsquo;T Inherit From Str In Python</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/how-to-pitch-python-3-to-management/">Why Python3?</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/why-print-became-a-function-in-python-3/">Why <code>Print</code> Became A Function In Python 3</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/if-i-were-designing-imort-from-scratch/">If I Were Designing Python&rsquo;S Import From Scratch</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/try-to-not-use-the-c-api-directly/">Try To Not Use The Python C Api Directly</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://blog.astrosnail.pt.eu.org/2021-02-11-snake.html">Lambdas As A Solution For Puzzles</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.pythonkitchen.com/python-generators-in-depth/">Python Generators In Depth</a></td>
+<td>Abdur-Rahmaan Janhangeer</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Performance</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://blog.kevmod.com/2020/05/python-performance-its-not-just-the-interpreter/">Python Performance: It’S Not Just The Interpreter</a></td>
+<td>Kevin Modzelewski</td>
+<td>Worked on the Pyston project</td>
+</tr>
+<tr>
+<td><a href="https://blog.kevmod.com/2017/06/update-on-numpy-acceleration/">Accelerate Numpy Using Tensorflow</a></td>
+<td>Kevin Modzelewski</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://pythonspeed.com/articles/function-calls-prevent-garbage-collection/">Clinging To Memory: How Python Function Calls Can Increase Memory Use</a></td>
+<td>Itamar Turner-Trauring</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://pythonspeed.com/articles/blocking-cpu-or-io/">Where’S Your Bottleneck? Cpu Time Vs Wallclock Time</a></td>
+<td>Itamar Turner-Trauring</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://pythonspeed.com/articles/beyond-cprofile/">Beyond Cprofile: Choosing The Right Tool For Performance Optimization</a></td>
+<td>Itamar Turner-Trauring</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://pythonspeed.com/articles/custom-python-profiler/">Not Just Cpu: Writing Custom Profilers For Python</a></td>
+<td>Itamar Turner-Trauring</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://pythonspeed.com/articles/consistent-benchmarking-in-ci/">Ci For Performance: Reliable Benchmarking In Noisy Environments</a></td>
+<td>Itamar Turner-Trauring</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://pythonspeed.com/articles/python-multiprocessing/">Why Your Multiprocessing Pool Is Stuck (It’S Full Of Sharks!)</a></td>
+<td>Itamar Turner-Trauring</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://pythonspeed.com/articles/parallelism-slower/">The Parallelism Blues: When Faster Code Is Slower</a></td>
+<td>Itamar Turner-Trauring</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://pythonspeed.com/articles/python-extension-performance/">The Hidden Performance Overhead Of Python C Extensions</a></td>
+<td>Itamar Turner-Trauring</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://vstinner.github.io/analysis-python-performance-issue.html">Analysis Of A Python Performance Issue</a></td>
+<td>Victor Stinner</td>
+<td>Using the CPython benchmark suite</td>
+</tr>
+</tbody>
+</table>
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://pythonspeed.com/articles/verified-fakes/">Fast Tests For Slow Services: Why You Should Use Verified Fakes</a></td>
+<td>Itamar Turner-Trauring</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/how-to-use-your-project-travis-to-help-test-python-itself/">How To Use Your Project &amp; Travis To Help Test Python Itself</a></td>
+<td>Brett Cannon</td>
+<td>Also how to test your project against future Python releases</td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/how-to-use-your-project-travis-to-help-test-python-itself/">Why You Should Document Your Tests</a></td>
+<td>Hynek Schlawack</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Debugging</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://pythonspeed.com/articles/python-c-extension-crashes/">When C Extensions Crash: Easier Debugging For Your Python Application</a></td>
+<td>Itamar Turner-Trauring</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Zen of Python</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://lukasz.langa.pl/b6888f38-2e14-4595-a4fe-187fd0557a55/">Zen Of Python, Again</a></td>
+<td>Łukasz Langa</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://dev.to/abdurrahmaanj/the-zen-of-python-is-a-joke-and-here-is-why-you-should-not-take-it-too-seriously-508d">The Zen Of Python Is A Joke And Here Is Why</a></td>
+<td>Abdur-Rahmaan Janhangeer</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://dev.to/abdurrahmaanj/the-zen-of-python-is-a-joke-and-here-is-why-you-should-not-take-it-too-seriously-508d">The Zen Of Python Is A Joke And Here Is Why</a></td>
+<td>Abdur-Rahmaan Janhangeer</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Patterns</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://sobolevn.me/2021/06/typeclasses-in-python">Typeclasses In Python</a></td>
+<td>Nikita Sobolev</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://sobolevn.me/2020/02/typed-functional-dependency-injection">Typed Functional Dependency Injection In Python</a></td>
+<td>Nikita Sobolev</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://sobolevn.me/2019/02/python-exceptions-considered-an-antipattern">When Python Exceptions Are Considered As Anti-Pattern</a></td>
+<td>Nikita Sobolev</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://sobolevn.me/2019/02/python-exceptions-considered-an-antipattern">What’S A Pragmatic Approach To Subclassing In Python?</a></td>
+<td>Hynek Schlawack</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Typing</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://sobolevn.me/2019/01/simple-dependent-types-in-python">Simple Dependent Types In Python</a></td>
+<td>Nikita Sobolev</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Packaging</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://snarky.ca/what-the-heck-is-pyproject-toml/">What The Heck Is Pyproject.Toml?</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/deconstructing-xkcd-com-1987/">Deconstructing Xkcd.Com/1987/</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/the-challenges-in-designing-a-library-for-pep-425/">The Challenges In Designing A Library For Pep 425 (Aka Wheel Tags)/</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Concurrency And Parallelism</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://hynek.me/articles/waiting-in-asyncio/">Ways Of Waiting In Asyncio</a></td>
+<td>Hynek Schlawack</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://snarky.ca/designing-an-async-api-from-sans-i-o-on-up/">Designing An Async Api, From Sans-I/O On Up</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://sobolevn.me/2020/06/how-async-should-have-been">The Returns Package For Async</a></td>
+<td>Nikita Sobolev</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://hynek.me/articles/dead-simple-connection-pooling-with-twisted/">Dead Simple Connection Pooling With Twisted</a></td>
+<td>Hynek Schlawack</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Task Queues</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://ljvmiranda921.github.io/notebook/2019/11/08/flask-redis-celery-mcdo/">Stepping Stone Article For Redis And Celery</a></td>
+<td>Lj Miranda</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Supply Chain</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://snarky.ca/how-do-you-verify-pypi-can-be-trusted/">How Do You Verify That Pypi Can Be Trusted?</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>DevOps</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://snarky.ca/the-history-behind-the-decision-to-move-python-to-github/">The History Behind The Decision To Move Python To Github</a></td>
+<td>Brett Cannon</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://hynek.me/articles/python-deployment-anti-patterns/">Python Deployment Anti-Patterns</a></td>
+<td>Hynek Schlawack</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>The Road To Being A Core Dev</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://hynek.me/articles/my-road-to-the-python-commit-bit/">My Road To The Python Commit Bit</a></td>
+<td>Hynek Schlawack</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>How Mega Corps Use Python</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://netflixtechblog.com/python-at-netflix-bba45dae649e">Python At Netflix</a></td>
+<td>Pythonistas At Netflix</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f498ab71a0ce">Static Analysis At Scale: An Instagram Story</a></td>
+<td>Benjamin Woodruff</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>History And Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>To Read</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://python-history.blogspot.com/2018/05/the-origins-of-pgen.html">The Origins Of Pgen</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2013/11/the-history-of-bool-true-and-false.html">The History Of Bool, True And False</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2013/11/story-of-none-true-false.html">The Story Of None, True And False (And An Explanation Of Literals, Keywords And Builtins Thrown In)</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2013/10/origin-of-metaclasses-in-python.html">Origin Of Metaclasses In Python</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2013/10/why-python-uses-0-based-indexing.html">Why Python Uses 0-Based Indexing</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2011/07/karin-dewar-indentation-and-colon.html">Karin Dewar, Indentation And The Colon</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2010/08/why-pythons-integer-division-floors.html">Why Python&rsquo;S Integer Division Floors</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2010/06/from-list-comprehensions-to-generator.html">From List Comprehensions To Generator Expressions</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2010/06/method-resolution-order.html">Method Resolution Order</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2010/06/import-antigravity.html">Import Antigravity</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2010/06/inside-story-on-new-style-classes.html">The Inside Story On New-Style Classes</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2010/06/new-style-classes.html">New-Style Classes</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2009/04/metaclasses-and-extension-classes-aka.html">Metaclasses And Extension Classes (A.K.A. “The Killer Joke”)</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2009/04/and-snake-attacks.html">And The Snake Attacks</a></td>
+<td>Greg Erwin</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2009/04/origins-of-pythons-functional-features.html">Origins Of Python&rsquo;S &ldquo;Functional&rdquo; Features</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2009/03/great-or-grand-renaming.html">The Great (Or Grand) Renaming</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2009/03/dynamically-loaded-modules.html">Dynamically Loaded Modules</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2009/03/problem-with-integer-division.html">The Problem With Integer Division</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2009/03/how-exceptions-came-to-be-classes.html">How Exceptions Came To Be Classes</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2009/03/how-everything-became-executable.html">How Everything Became An Executable Statement</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2009/02/first-class-everything.html">First-Class Everything</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2009/02/adding-support-for-user-defined-classes.html">Adding Support For User-Defined Classes</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2009/02/pythons-use-of-dynamic-typing.html">Python&rsquo;S Use Of Dynamic Typing</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2009/02/early-language-design-and-development.html">Early Language Design And Development</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2009/01/microsoft-ships-python-code-in-1996.html">Microsoft Ships Python Code&hellip; In 1996</a></td>
+<td>Greg Erwin</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2009/01/personal-history-part-2-cnri-and-beyond.html">Personal History - Part 2, Cnri And Beyond</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2009/01/personal-history-part-1-cwi.html">Personal History - Part 1, Cwi</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2009/01/brief-timeline-of-python.html">A Brief Timeline Of Python</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://python-history.blogspot.com/2009/01/pythons-design-philosophy.html">Python&rsquo;S Design Philosophy</a></td>
+<td>Guido Van Rossum</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>135 articles on page</p>
+
+                        <script src="https://utteranc.es/client.js"
+        repo="pythonkitchen/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </article>
+                
+                  </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="basis-1/4"></div>
+  </div>
+
+
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+</body>
+</html>

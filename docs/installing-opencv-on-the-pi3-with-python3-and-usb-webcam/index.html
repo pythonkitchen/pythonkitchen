@@ -1,0 +1,329 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    a {
+	word-wrap: break-word !important;
+}
+  </style>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+
+<link rel="stylesheet" href="/post.css"> 
+
+</head>
+<body class="bg-gray-50">
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="/" class="flex items-center">
+          <img src="https://www.pythonkitchen.com/wp-content/uploads/2022/11/cropped-p3-50x50.png" class="h-8 mr-3" alt="PythonKitchen Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PythonKitchen</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="/" 
+            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
+            Home</a>
+          </li>
+          <li>
+            <a href="https://github.com/pythonkitchen/pythonkitchen/tree/source/data/posts" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Write</a>
+          </li>
+          <li>
+            <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Contact</a>
+          </li>
+          <!-- <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+
+<div class="p-8">
+
+</div>
+
+<div class="flex flex-row space-x-2">
+    <div class="basis-3/4">
+        <div class="p-8 pl-12">
+            <div class="ml-2">
+                <div class=" p-12 bg-white rounded-lg shadow-lg">
+                    <p class="text-3xl" style="font-weight: 600;">Installing OpenCv on the Pi3 with python3 (and usb webcam)</p>
+                    <br>
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2018-06-20 17:59:15" class="text-gray-500">June 20, 2018</time>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            computer vision
+                        </a>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            raspberry pi
+                        </a>
+                        
+                    </div>
+                    
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="https://github.com/Abdur-rahmaanJ.png?size=200" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                            <p class="font-semibold text-gray-900">
+                                <a href="#">
+                                <span class="absolute inset-0"></span>
+                                Abdur-Rahmaan Janhangeer
+                                </a>
+                            </p>
+                            <p class="text-gray-600">Chef</p>
+                            </div>
+                        </div>
+                    
+                    <br>
+                    <article>
+                        <p>opencv is one of the most difficult python package to install. it&rsquo;s not a pip install easy package issue. in this post, we&rsquo;ll see how to painlessly install it.
+Target Os
+=========</p>
+<p>we are using noobs <a href="https://www.pythonmembers.club/2018/06/18/raspberry-pi-setup/">see here</a>
+Target Pi
+=========</p>
+<p>pi3
+Existing Instructions
+=====================</p>
+<p>there are two posts which i found to be nice :</p>
+<p>[<a href="https://www.pyimagesearch.com/2017/09/04/raspbian-stretch-install-opencv-3-python-on-your-raspberry-pi/">pyimagesearch</a>] and [<a href="http://manmade2.com/simple-home-surveillance-with-opencv-3-1-0-on-raspberry-pi-part-1/">manmade2.com</a>]</p>
+<p>this tutorial is an explanationless one, refer to these two for explanations
+pyimagesearch notes</p>
+<hr />
+<p>pyimagesearch is the reference post, however, here are some notes:
+1. you don&rsquo;t need to expand the filesystem if you are using noobs (the beginner setup)
+2. misses qt packages
+3. misses python path in ~/.profile
+4. uses weird way to modify ~/.profile
+5. uses multi-core compiling
+6. no working script to test</p>
+<h2>manmade2.com notes</h2>
+<ol>
+<li>included wrong make command and reinstall instructions (what if a confused user compiles open cv twice (brr))</li>
+<li>missed qt packages install</li>
+<li>misses python path in ~/.profile</li>
+</ol>
+<h1>Install instructions</h1>
+<p>the install process can be divided into these parts
+1. install raspbian packages including the qt one
+2. unzip cv sources
+3. setup pip and virtual env
+4. compile cv
+5. fix rename bug
+6. verify installation
+7. test snippet</p>
+<h2>install raspbian packages including the qt one</h2>
+<pre><code class="language-python">sudo apt-get update
+sudo apt-get upgrade
+sudo rpi-update
+
+sudo reboot
+
+sudo apt-get install build-essential git cmake pkg-config
+sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
+
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+sudo apt-get install libxvidcore-dev libx264-dev
+
+sudo apt-get install libgtk2.0-dev
+sudo apt-get install libatlas-base-dev gfortran
+
+sudo apt-get install python2.7-dev python3-dev
+
+sudo apt install qtbase5-dev
+</code></pre>
+<h2>unzip cv sources</h2>
+<pre><code class="language-python">cd ~
+wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.3.0.zip
+unzip opencv.zip
+
+wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.3.0.zip
+unzip opencv_contrib.zip
+</code></pre>
+<h2>setup pip and virtual env</h2>
+<pre><code class="language-python">wget https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip.py
+
+sudo pip install virtualenv virtualenvwrapper
+sudo rm -rf ~/.cache/pip
+</code></pre>
+<p><strong>find python path with</strong></p>
+<pre><code class="language-python">which python
+</code></pre>
+<p><strong>open ~/.profile with</strong></p>
+<pre><code class="language-python">sudo nano ~/.profile
+</code></pre>
+<p><strong>write at the end</strong></p>
+<pre><code class="language-python"># virtualenv and virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export WORKON_HOME=/home/pi/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+</code></pre>
+<p><strong>then</strong></p>
+<pre><code class="language-python">source ~/.profile
+</code></pre>
+<pre><code class="language-python">mkvirtualenv cv -p python3
+workon cv
+pip install numpy
+</code></pre>
+<h2>compile cv</h2>
+<pre><code class="language-python">workon cv
+
+cd ~/opencv-3.3.0/
+mkdir build
+cd build
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D INSTALL_C_EXAMPLES=OFF \
+    -D INSTALL_PYTHON_EXAMPLES=ON \
+    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.3.0/modules \
+    -D BUILD_EXAMPLES=ON ..
+</code></pre>
+<pre><code class="language-python">make
+</code></pre>
+<pre><code class="language-python">sudo make install
+sudo ldconfig
+ls -l /usr/local/lib/python3.5/site-packages/
+</code></pre>
+<h2>fix rename bug</h2>
+<pre><code class="language-python">cd /usr/local/lib/python3.5/site-packages/
+
+sudo mv cv2.cpython-35m-arm-linux-gnueabihf.so cv2.so
+
+cd ~/.virtualenvs/cv/lib/python3.5/site-packages/
+
+ln -s /usr/local/lib/python3.5/site-packages/cv2.so cv2.so
+</code></pre>
+<h2><strong>verify installation</strong></h2>
+<pre><code class="language-python">workon cv
+python3
+</code></pre>
+<pre><code class="language-python">&gt;&gt;&gt; import cv2
+&gt;&gt;&gt; cv2.__version__
+</code></pre>
+<p>should be 3.3.0
+test snippet</p>
+<hr />
+<p>still inside the environment. create a new test file called cvtest.py</p>
+<p>write in it :</p>
+<pre><code class="language-python">import cv2
+import time
+
+class CameraInst():
+        # Constructor...
+        def __init__(self):
+                fps        = 20.0               # Frames per second...
+                resolution = (640, 480)         # Frame size/resolution...
+                w = 640
+                h = 480
+
+                self.cap = cv2.VideoCapture(0)  # Capture Video...
+                print(&quot;Camera warming up ...&quot;)
+                time.sleep(1)
+
+                # Define the codec and create VideoWriter object
+                fourcc = cv2.VideoWriter_fourcc(*&quot;H264&quot;)     # You also can use (*'XVID')
+                self.out = cv2.VideoWriter('output.avi',fourcc, fps, (w, h))
+
+        def captureVideo(self):
+                # Capture
+                self.ret, self.frame = self.cap.read()
+                # Image manipulations come here...
+                self.gray = cv2.cvtColor(self.frame, cv2.COLOR_BGR2GRAY)
+                cv2.imshow('frame',self.gray)
+
+        def saveVideo(self):
+                # Write the frame
+                self.out.write(self.frame)
+
+        def __del__(self):
+                self.cap.release()
+                cv2.destroyAllWindows()
+                print(&quot;Camera disabled and all output windows closed...&quot;)
+
+def main():
+        cam1 = CameraInst()
+
+        while(True):
+                # Display the resulting frames...
+                cam1.captureVideo()    # Live stream of video on screen...
+                cam1.saveVideo()       # Save video to file 'output.avi'...
+                if cv2.waitKey(1) &amp; 0xFF == ord('q'):
+                        break
+
+        cleanUp()
+
+if __name__=='__main__':
+        main()
+</code></pre>
+<p>run with</p>
+<pre><code class="language-python">python3 cvtest.py
+</code></pre>
+<p>i tetsted it with a usb webcam
+Further notes</p>
+<hr />
+<p>if you are following pyimage search, changing swap size then /etc/dphys-swapfile is a file without extentions, not  a directory</p>
+<p>if you are getting function not implemented don&rsquo;t forget sudo apt install qtbase5-dev</p>
+<p>if you can&rsquo;t open ~/.profile with nano, make sure you put sudo before i.e. sudo nano ~/.profile </p>
+<p>if you are getting</p>
+<blockquote>
+<p>virtualenvwrapper.sh: There was a problem running the initialization hooks.</p>
+<p>If Python could not import the module virtualenvwrapper.hook_loader,
+check that virtualenvwrapper has been installed for
+VIRTUALENVWRAPPER_PYTHON=/usr/bin/python and that PATH is
+set properly.</p>
+</blockquote>
+<p>make sure you set the python path as above (the which python part)</p>
+
+                        <script src="https://utteranc.es/client.js"
+        repo="pythonkitchen/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </article>
+                
+                  </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="basis-1/4"></div>
+  </div>
+
+
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+</body>
+</html>
