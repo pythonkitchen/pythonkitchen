@@ -2,9 +2,13 @@ pre::after{
     content: "\a";
     white-space: pre;
 }
+article{
+    font-size: 20px;
+    text-align: justify;
+}
 article p{
     margin-bottom: 10px;
-    color: rgb(75 85 99 / var(--tw-text-opacity)) !important;
+    color: rgb(75,85,99) !important;
 }
 article a {
     border-bottom: 5px solid rgb(139, 148, 228);
@@ -21,6 +25,7 @@ article ol{
     list-style-type: circle !important;
     padding-left: 5%;
     padding-bottom: 10px;
+    color: rgb(75,85,99) !important;
 }
 article li::marker {
     color: rgb(255, 75, 75) !important;
