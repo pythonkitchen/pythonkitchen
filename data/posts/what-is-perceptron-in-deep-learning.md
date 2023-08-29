@@ -27,14 +27,14 @@ What is Perceptron?
 
 In 1957 Percepron was introduced by frank Rosenblatt. He proposed a supervised learning algorithmic structure of the neural networks, which can be used for the classification problem, but due to its simplicity and efficiency, it became the building block of the neural networks.
 
-![](https://www.pythonkitchen.com/wp-content/uploads/2023/06/pcp1-300x176.png)
+![](/assets/pcp.png)
 [Image Source](https://starship-knowledge.com/neural-networks-perceptrons "Image Source")
 
 As we can see above that, there is a complex neural network structure available with the input, hidden, and output layers. This structure is known as the perceptron or perceptron algorithm. Here we can see that the input X is passed to the input layers where the weights and biases will be assigned, and the input will be passed to the next hidden layers. Here the neurons will process the input and will pass the same to the next layers of the neural network. After that, the weighted sum will be applied, and following the activation functions and the output will be displayed.
 
 To achieve better accuracy of the model, optimizers are used, which backpropagate the algorithms and reassign the weights and biases to the algorithms which best fit the model.
 
-Types of Perrceprons
+Types of Perceprons
 ====================
 
 
@@ -72,7 +72,7 @@ Now here, the input data will be passed to the input layer of the neural network
 
 Now if we think simply, the data can also be separated ion a graph with a straight line if the data is linear, the same mechanism that we apply in logistic regression.
 
-![](https://www.pythonkitchen.com/wp-content/uploads/2023/06/pcp2-300x165.png)
+![](/assets/custom.png)
 Image Source: Self Generated
 
 As we can see in the above image, on the X axis so the graph, we have the study hours of the student, and on the Y axis, we have plotted the results of the student. A straight line in the graph separated the student who passed or failed the exam. The student above the straight line appears in blue color, which is a student who passed the exam, and the student that is below the straight line appears in black color, which failed the exam.

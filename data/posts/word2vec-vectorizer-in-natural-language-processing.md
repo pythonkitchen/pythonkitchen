@@ -62,14 +62,13 @@ In the CBOW type of Word2Vec vectorizer, we pride t one word or the ideal word o
 Let us try to understand the same with an example. 
 Let us say we have a sentence:
 
-\*\*“PythonKitchen is Best”
-\*\*
+**“PythonKitchen is Best”**
 
 Now here, we will not directly feed this sentence to the Word2Vec and get the output from the same; instead, we will create a problem statement here, that we will predict the middle word from the sentence, with the help of left and right words, and the middle word will be dropped by us.
 
 Now we will apply neural networks in order to solve the same problem, and while predicting the middle word in the sentence, we will get the vector form of the word in the last layer of the neural network itself.
 
-![](https://www.pythonkitchen.com/wp-content/uploads/2023/04/cbow-300x261.png)
+![](/assets/bow.png)
 [Image Source](https://www.researchgate.net/figure/Illustration-of-the-Skip-gram-and-Continuous-Bag-of-Word-CBOW-models_fig1_281812760 "Image Source")
 
 As we can see in the above image, the input words are fed to the neural networks model, and the model will predict the middle or the missing words. Now in the last layer of the network where we are getting the output, we will get the vector form of the word as well.
@@ -85,12 +84,11 @@ In Skipgram, a type of vectorizer, we basically drop all the neighboring words a
 
 Let us take an example.
 
-\*\*“PythonKitchen is Best” 
-\*\*
+**“PythonKitchen is Best”**
 
 In this sentence, we will just keep- the word “is” in the dataset, and all the other neighboring words will be dropped, and the same neural network will be used to predict these words. Now while predicting, we will get the vector forms of the words in the last layer of the neural network itself.
 
-![](https://www.pythonkitchen.com/wp-content/uploads/2023/04/skipgram-300x262.png)
+![](/assets/cbow.png)
 [Image Source](https://www.researchgate.net/figure/Illustration-of-the-Skip-gram-and-Continuous-Bag-of-Word-CBOW-models_fig1_281812760 "Image Source")
 
 As we can see in the above image, one word is fed to the neural network model, and the model will predict all the other words where the vector form of the words will be obtained in the last layer.
