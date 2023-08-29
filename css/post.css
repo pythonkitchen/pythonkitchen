@@ -1,0 +1,41 @@
+pre::after{
+    content: "\a";
+    white-space: pre;
+}
+article p{
+    margin-bottom: 10px;
+    color: rgb(75 85 99 / var(--tw-text-opacity)) !important;
+}
+article a {
+    border-bottom: 5px solid rgb(139, 148, 228);
+}
+article img{
+    border-radius: 5px !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-top: 10px;
+}
+article ol{
+    list-style-type: circle !important;
+    padding-left: 5%;
+    padding-bottom: 10px;
+}
+article li::marker {
+    color: rgb(255, 75, 75) !important;
+    font-weight: bold;
+}
+
+article h1{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+article h2{
+    font-size: 20px;
+}
+
+article h3{
+    font-size: 15px;
+}
