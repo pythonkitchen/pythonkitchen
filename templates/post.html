@@ -1,0 +1,78 @@
+{%extends "base.html"%}
+
+{%block head%}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+
+<link rel="stylesheet" href="/post.css"> 
+{%endblock%}
+
+
+{%block body%}
+
+<div class="p-8">
+
+</div>
+
+<div class="flex flex-row space-x-2">
+    <div class="basis-3/4">
+        <div class="p-8 pl-12">
+            <div class="ml-2">
+                <div class=" p-12 bg-white rounded-lg shadow-lg">
+                    <p class="text-3xl" style="font-weight: 600;">{{post["title"]}}</p>
+                    <br>
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="{{post['pub']}}" class="text-gray-500">{{ format_post_date(post["pub"]) }}</time>
+                        {%for category in post["categories"]%}
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            {{category}}
+                        </a>
+                        {%endfor%}
+                    </div>
+                    {%for author in post["authors"]%}
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="{{get_author_info(author)['base']['avatar']}}" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                            <p class="font-semibold text-gray-900">
+                                <a href="#">
+                                <span class="absolute inset-0"></span>
+                                {{get_author_info(author)["base"]["name"]}}
+                                </a>
+                            </p>
+                            <p class="text-gray-600">{{get_author_info(author)["base"]["title"]}}</p>
+                            </div>
+                        </div>
+                    {%endfor%}
+                    <br>
+                    <article>
+                        {{ post['content']}}
+
+                        <script src="https://utteranc.es/client.js"
+        repo="pythonkitchen/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </article>
+                
+                  </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="basis-1/4"></div>
+  </div>
+
+
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+{%endblock%}
