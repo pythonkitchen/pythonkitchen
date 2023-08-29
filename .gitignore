@@ -135,3 +135,4 @@ docs/*
 !docs/slides/
 !docs/css
 !docs/bulma-timeline.min.css
+!docs/ads.txt
