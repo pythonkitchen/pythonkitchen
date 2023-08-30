@@ -50,7 +50,7 @@
   being friendly to beginners'>
 
   <link rel="shortcut icon" href="/assets/logo.png" /> 
-  <title>Bringing quality authorship to the community</title>
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     a {
@@ -88,6 +88,8 @@
   <meta name='pageKey' content='measures-in-statistics-for-data-science'>
   <meta name='og:title' content='Measures in Statistics for Data Science'>
   <meta name='og:url' content='https://www.pythonkitchen.com/measures-in-statistics-for-data-science'>
+
+  <title>Measures in Statistics for Data Science</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -180,7 +182,7 @@
                         <p>Statistics is a critical component of data science and machine learning algorithms. Almost all the machine learning algorithms use mathematics in the backend, which is linear algebra and statistics. Learning and understanding the core intuition and the working mechanisms of any machine learning algorithm requires a core knowledge of statistics.</p>
 <p>In this article, we will discuss the famous statistic topic of measures of dispersion, which is being used to get an idea about the variance or spread of the data. Here we will discuss the range, inter-quartile range, variance, and standard deviation. Knowing about these key concepts in statistics will help one understand the machine learning algorithms better and answer the questions related to them with the logical backing of the statistics.</p>
 <p>Let us start the discussion by answering the basic and common question, &ldquo;What are measures?&rdquo;</p>
-<h2>Table of Content</h2>
+<h1>Table of Content</h1>
 <ol>
 <li>Measures of Central Tendency</li>
 <li>Mean</li>
@@ -194,27 +196,29 @@
 <li>5 Key Points to Remember</li>
 <li>Conclusion</li>
 </ol>
-<h2>Measures of Central Tendency</h2>
+<h1>Measures of Central Tendency</h1>
 <p>Measures of tendency are the measures where a single value represents the whole dataset. The mean and median are used as the measures of central tendency.
-<img alt="" src="https://pythonkitchen.com/wp-content/uploads/2022/11/measure1-300x97.png" />
-<a href="https://cdn1.byjus.com/wp-content/uploads/2019/04/Central-Tendency.png" title="Image Source">Image Source</a>
-<strong>To calculate the &ldquo;mean&rdquo; of the data:</strong></p>
+<img alt="" src="/assets/measure1-300x97.png" />
+<a href="https://cdn1.byjus.com/wp-content/uploads/2019/04/Central-Tendency.png" title="Image Source">Image Source</a></p>
+<p><strong>To calculate the &ldquo;mean&rdquo; of the data:</strong></p>
 <p>The mean is calculated by dividing the total observations by the sum of all the observation values.</p>
 <p><strong>Code:</strong></p>
 <pre><code class="language-python">mean = df['ColumnName'].mean()
 
 </code></pre>
-<p><strong>To calculate the median:</strong>
-1. List down all integers in ascending or descending order.
-2. If the observations are odd, then the middle observations are treated as the median of the data.
-3. If the observations are even, then the mean of the middle two observation values will be treated as the median of the data.</p>
+<p><strong>To calculate the median:</strong></p>
+<ol>
+<li>List down all integers in ascending or descending order.</li>
+<li>If the observations are odd, then the middle observations are treated as the median of the data.</li>
+<li>If the observations are even, then the mean of the middle two observation values will be treated as the median of the data.</li>
+</ol>
 <p><strong>Code:</strong></p>
 <pre><code class="language-python">median = df['ColumnName'].median()
 
 </code></pre>
 <p>It is the most frequent category occurring in the dataset. It is used in categorical datasets. For example, if a column has 70 observations of yes and 30 observations of no, then the mode would be yes.</p>
 <p>Note: In the case of the outlier, the mean is the most affected measure among all, as the outlier is going to have very high or low values, which will make the mean biased to one side. So in such cases, the median is preferred over the mean.</p>
-<h2>Measures of Dispersion in Statistics</h2>
+<h1>Measures of Dispersion in Statistics</h1>
 <p>Statisticians use dispersion measures to describe the spread or variance of a given dataset. These measures help statisticians understand the range of the data and the type of data present. Statisticians can get some insights from the data and can help them to know some common machine learning problems, such as the presence of outliers, by knowing the spread of the data.</p>
 <p>Some measures used in statistics are:</p>
 <ol>
@@ -226,8 +230,10 @@
 <h2>1. Range</h2>
 <p>The range is the difference between the smallest and largest value present in the dataset. This parameter helps one understand the normal range of the data and gives a basic overview of the type of data present.</p>
 <p>Largest Value- Smallest Value = Range</p>
-<p><strong>Examples:</strong>
-1. Data: 1, 2, 3, 4, 5</p>
+<p><strong>Examples:</strong></p>
+<ol>
+<li>Data: 1, 2, 3, 4, 5</li>
+</ol>
 <p>Range = 5 - 1 = 4</p>
 <ol>
 <li>Data: 1, 4, 9, 2, 5</li>
@@ -244,7 +250,7 @@
 <h2>2. Inter Quartile Range (IQR)</h2>
 <p>The interquartile range represents the variability of a dataset based on its quartile division.</p>
 <p>Before understanding the interquartile range, we need to understand the percentile. The percentile is a value below which a certain percentage of observations lie. For example, the 99 percentile means 99 percent of the observation values lie before this current value. If a student gets a 99 percentile in exams, it means that 99 percent of students have fewer marks than this student.</p>
-<p><img alt="" src="https://pythonkitchen.com/wp-content/uploads/2022/11/measure2-300x150.png" />
+<p><img alt="" src="/assets/measure2-300x150.png" />
 <a href="https://www.google.com/search?q=iqr+plot+python&amp;rlz=1C1CHBD_enIN933IN933&amp;sxsrf=ALiCzsaH6gEEqQ45TeN5_aPh7cDyextRWQ:1668053754927&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwj8hp284KL7AhXyw3MBHS52BaUQ_AUoAXoECAIQAw&amp;biw=1220&amp;bih=579&amp;dpr=1.12#imgrc=0ASWj0dgMvYyHM" title="Image Source">Image Source</a></p>
 <p>The formula for the percentile is:</p>
 <pre><code class="language-python">Percentile = number of values less than the given number divided by the total number of values
@@ -253,11 +259,15 @@
 <p>Now let&rsquo;s try to understand the quartile.</p>
 <p>The quartile divides the rank-ordered data into four equal sets of data. The subset of the data is now called the first, second, and third quartiles. They are denoted by Q1, Q2, and Q3, respectively.</p>
 <p>Where,</p>
+<blockquote>
 <p>Q1 = 25th Percentile</p>
 <p>Q2 = 50% of the population = Median</p>
 <p>Q3 = 75th Percentile</p>
+</blockquote>
 <p>The interquartile range would be the value we get by subtracting the 25th percentile from the 75th percentile.</p>
+<blockquote>
 <p>Inter Quartile Range = Q3 - Q1</p>
+</blockquote>
 <p><strong>Code:</strong></p>
 <pre><code class="language-python">Q3 = np.quantile(df[col], 0.75)
 Q1 = np.quantile(df[col], 0.25)
@@ -293,14 +303,16 @@ print(&quot;Shape of data after outlier removal is: &quot;, df.shape)
 </code></pre>
 <h2>3. Variance</h2>
 <p>The variance is the spread of the dataset given. It is not much of a difference between the variant and the deviation. The squared values of deviations are known as the variance of the data.
-<img alt="" src="https://pythonkitchen.com/wp-content/uploads/2022/11/measure3-300x122.png" />
-<a href="https://www.google.com/search?q=variance++formula&amp;tbm=isch&amp;ved=2ahUKEwivmIms2KL7AhVNKbcAHb9VAakQ2-cCegQIABAA&amp;oq=variance++formula&amp;gs_lcp=CgNpbWcQAzIICAAQgAQQsQMyCwgAEIAEELEDEIMBMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6BAgjECc6CAgAEAcQHhAKOgkIABCABBAKEBg6BAgAEEM6BggAEAcQHlCmCljsEWDhE2gAcAB4AIABtgKIAaoPkgEHMC4zLjUuMZgBAKABAaoBC2d3cy13aXotaW1nwAEB&amp;sclient=img&amp;ei=dXJsY--JIs3S3LUPv6uFyAo&amp;rlz=1C1CHBD_enIN933IN933#imgrc=bBG2oLxODiFp3M" title="Image Source">Image Source</a>
-Where,</p>
-<p>Sigma denotes the standard deviation.
-Xi = the data&rsquo;s ith element
-Xbar = Observational Mean
-N is the number of observations.
-To get the variance of the column in the data frame, use the code below:</p>
+<img alt="" src="/assets/measure3-300x122.png" />
+<a href="https://www.google.com/search?q=variance++formula&amp;tbm=isch&amp;ved=2ahUKEwivmIms2KL7AhVNKbcAHb9VAakQ2-cCegQIABAA&amp;oq=variance++formula&amp;gs_lcp=CgNpbWcQAzIICAAQgAQQsQMyCwgAEIAEELEDEIMBMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6BAgjECc6CAgAEAcQHhAKOgkIABCABBAKEBg6BAgAEEM6BggAEAcQHlCmCljsEWDhE2gAcAB4AIABtgKIAaoPkgEHMC4zLjUuMZgBAKABAaoBC2d3cy13aXotaW1nwAEB&amp;sclient=img&amp;ei=dXJsY--JIs3S3LUPv6uFyAo&amp;rlz=1C1CHBD_enIN933IN933#imgrc=bBG2oLxODiFp3M" title="Image Source">Image Source</a></p>
+<p>Where,</p>
+<blockquote>
+<p>Sigma denotes the standard deviation.</p>
+<p>Xi = the data&rsquo;s ith element</p>
+<p>Xbar = Observational Mean</p>
+<p>N is the number of observations.</p>
+</blockquote>
+<p>To get the variance of the column in the data frame, use the code below:</p>
 <p>To get the variance of the column in the data frame, use the code below:</p>
 <pre><code class="language-python">print(df.var()['Column'])
 
@@ -314,12 +326,12 @@ plt.plot(df['Column'].var())
 </code></pre>
 <h2>4. Standard Deviations</h2>
 <p>Standard deviations are the square root of the variance and can be computed by simply calculating the square root of the variance of the data.
-<img alt="" src="https://pythonkitchen.com/wp-content/uploads/2022/11/measure4-300x150.png" />
-<a href="https://www.google.com/search?q=iqr+plot+outliers+python&amp;tbm=isch&amp;ved=2ahUKEwjEo_O94KL7AhWR_jgGHe8MC5EQ2-cCegQIABAA&amp;oq=iqr+plot+outliers+python&amp;gs_lcp=CgNpbWcQAzoECCMQJ1DRBliSFGDRFWgAcAB4AIAB9AGIAdINkgEFMC45LjGYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&amp;sclient=img&amp;ei=_npsY8SsGpH94-EP75msiAk&amp;bih=579&amp;biw=1220&amp;rlz=1C1CHBD_enIN933IN933#imgrc=v6qHaBiLYxFCWM" title="Image Source">Image Source</a>
-The formula for standard deviations would be:
-<img alt="" src="https://pythonkitchen.com/wp-content/uploads/2022/11/measure5-300x169.png" />
-<a href="https://www.google.com/search?q=std+formula&amp;tbm=isch&amp;ved=2ahUKEwiXs6v62KL7AhUo_jgGHXsjBTUQ2-cCegQIABAA&amp;oq=std+formula&amp;gs_lcp=CgNpbWcQAzIECCMQJzIKCAAQsQMQgwEQQzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBAgAEEMyBQgAEIAEMgUIABCABDIFCAAQgARQ8AZYlQlg2gpoAHAAeACAAZgCiAGeBpIBBTAuMy4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&amp;sclient=img&amp;ei=GXNsY9fCKqj84-EP-8aUqAM&amp;rlz=1C1CHBD_enIN933IN933#imgrc=RQZ54Mz6cpyDgM" title="Image Source">Image Source</a>
-<strong>Code:</strong></p>
+<img alt="" src="/assets//measure4-300x150.png" />
+<a href="https://www.google.com/search?q=iqr+plot+outliers+python&amp;tbm=isch&amp;ved=2ahUKEwjEo_O94KL7AhWR_jgGHe8MC5EQ2-cCegQIABAA&amp;oq=iqr+plot+outliers+python&amp;gs_lcp=CgNpbWcQAzoECCMQJ1DRBliSFGDRFWgAcAB4AIAB9AGIAdINkgEFMC45LjGYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&amp;sclient=img&amp;ei=_npsY8SsGpH94-EP75msiAk&amp;bih=579&amp;biw=1220&amp;rlz=1C1CHBD_enIN933IN933#imgrc=v6qHaBiLYxFCWM" title="Image Source">Image Source</a></p>
+<p>The formula for standard deviations would be:</p>
+<p><img alt="" src="/assets/measure5-300x169.png" />
+<a href="https://www.google.com/search?q=std+formula&amp;tbm=isch&amp;ved=2ahUKEwiXs6v62KL7AhUo_jgGHXsjBTUQ2-cCegQIABAA&amp;oq=std+formula&amp;gs_lcp=CgNpbWcQAzIECCMQJzIKCAAQsQMQgwEQQzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBAgAEEMyBQgAEIAEMgUIABCABDIFCAAQgARQ8AZYlQlg2gpoAHAAeACAAZgCiAGeBpIBBTAuMy4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&amp;sclient=img&amp;ei=GXNsY9fCKqj84-EP-8aUqAM&amp;rlz=1C1CHBD_enIN933IN933#imgrc=RQZ54Mz6cpyDgM" title="Image Source">Image Source</a></p>
+<p><strong>Code:</strong></p>
 <pre><code class="language-python">import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -342,8 +354,10 @@ plt.plot(df['column'].std())
 <p><strong>5. Upper Limit (UL)</strong></p>
 <p>The upper limit is the largest integer present in the dataset.</p>
 <p>Observations having values Outliers are those who exceed the upper limits.</p>
+<blockquote>
 <p>Upper Limit = Q3 + 1.5 IQR</p>
-<h2>Conclusion</h2>
+</blockquote>
+<h1>Conclusion</h1>
 <p>In this article, the measures of the dataset in statistics are discussed with their core intuitions, working mechanisms, and mathematical formulations. Knowing these core concepts will help one better understand and deal with machine learning algorithms. The five key points at the end of the article will also help one better understand the presence of outliers and how to treat them using these statistical measures.</p>
 <p>Some <strong>Key Takeaways</strong> from this article are:</p>
 <ol>

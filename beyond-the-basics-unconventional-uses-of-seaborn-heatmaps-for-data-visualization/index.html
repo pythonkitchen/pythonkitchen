@@ -50,7 +50,7 @@
   being friendly to beginners'>
 
   <link rel="shortcut icon" href="/assets/logo.png" /> 
-  <title>Bringing quality authorship to the community</title>
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     a {
@@ -88,6 +88,8 @@
   <meta name='pageKey' content='beyond-the-basics-unconventional-uses-of-seaborn-heatmaps-for-data-visualization'>
   <meta name='og:title' content='Beyond the Basics: Unconventional Uses of Seaborn Heatmaps for Data Visualization'>
   <meta name='og:url' content='https://www.pythonkitchen.com/beyond-the-basics-unconventional-uses-of-seaborn-heatmaps-for-data-visualization'>
+
+  <title>Beyond the Basics: Unconventional Uses of Seaborn Heatmaps for Data Visualization</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -177,23 +179,22 @@
                     
                     <br>
                     <article>
-                        <h4>2 Unusual Applications of Heatmaps in Data Science temperature changes, Topographic heatmap,</h4>
-<hr />
+                        <p>Heatmaps can bring your data to life. Versatile and eye-catching. There are many situations where they can highlight important relationships in your data. Specifically, we will discuss how you can use them to visualise.</p>
 <p><a href="http://www.researchgate.net/profile/Lorenzo-Dallolio-3/publication/346527505/figure/fig3/AS:963908756070403@1606825164803/Heatmap-of-Pearson-correlation-between-38-features-extracted-from-PPG-four-covariates.png" title="Correlation"><img alt="Correlation" src="https://www.researchgate.net/profile/Lorenzo-Dallolio-3/publication/346527505/figure/fig3/AS:963908756070403@1606825164803/Heatmap-of-Pearson-correlation-between-38-features-extracted-from-PPG-four-covariates.png" title="Correlation" /></a></p>
-<h4>Table of contents :</h4>
-<p>Heatmaps can bring your data to life. Versatile and eye-catching. There are many situations where they can highlight important relationships in your data. Specifically, we will discuss how you can use them to visualise:</p>
+<p><em>2 Unusual Applications of Heatmaps in Data Science temperature changes, Topographic heatmap</em></p>
+<h1>Table of contents :</h1>
 <ol>
 <li>What are Heatmaps?</li>
 <li>Temperature changes through time</li>
 <li>Topographic Maps</li>
 </ol>
-<h4>What are Heatmaps?</h4>
+<h1>What are Heatmaps?</h1>
 <p>Let&rsquo;s start by discussing what heatmaps are and why they are so useful. You can see an example in Figure 1. We have variable 1 on the y-axis. In this case, variable 1 can take on different 4 values. That is “V1–1” is the first value for variable 1. Similarly, we have variable 2 on the y-axis. There is also a 3rd variable. That is the value within each of the cells. The colour of each cell is determined by the value of this variable.</p>
 <p><a href="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*5rXFpjSndFsmCKjYiN2GNw.png" title="Correalation Fig-1"><img alt="Correalation Fig-1" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*5rXFpjSndFsmCKjYiN2GNw.png" title="Correalation Fig-1" /></a></p>
 <p>Heatmaps are an incredible tool to visualize complex variable relationships in a 2D format. By using colors to represent various values, we can highlight the most important aspects of the relationship and make them easy to understand.</p>
 <p>However, it&rsquo;s important to note that heatmaps are not without their limitations. For instance, variable 1 and variable 2 must be either discrete or categorical. If they are continuous, they should be grouped appropriately. Variable 3 must also be continuous to produce meaningful results.</p>
 <p>Don&rsquo;t worry if this all sounds a bit overwhelming. We will explore five essential heatmaps that will help you make the most of this powerful tool. So buckle up and get ready to take your data visualization game to the next level!</p>
-<h4>1) Temperature changes through time</h4>
+<h2>1) Temperature changes through time</h2>
 <p>Similar to the last heatmap, we use this one to visualise time-series data. Except now, we show how a continuous variable changes through time. In Figure 4, you can see average global temperatures through time. There is a reading for every month from 1900 to 2016. You can clearly see the impact of climate change in the later months. Perhaps we have taken the term heatmap a bit too literally.
 <a href="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*g-oufizLZBf3GmT2TBdwjw.png" title="Heatmap Correlation Fig-2"><img alt="Heatmap Correlation Fig-2" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*g-oufizLZBf3GmT2TBdwjw.png" title="Heatmap Correlation Fig-2" /></a></p>
 <p>Here is the code!</p>
@@ -236,13 +237,12 @@ plt.xlabel('Year',fontsize=22)
 plt.ylabel('Month',fontsize=22)
 
 </code></pre>
-<h4>2) Topographic Plot</h4>
+<h2>2) Topographic Plot</h2>
 <p>A topographic plot is a type of data visualization that helps us understand the 3D topography of the land through the use of contour lines. These lines connect points of equal elevation, creating a 2D map that represents the land&rsquo;s elevation in a clear and concise way. You&rsquo;ll often see these contour lines spaced at regular intervals on the plot, which allows us to visualize the changes in elevation as the terrain changes.</p>
 <p>Now, why is this important? Topographic plots are commonly used in geographic information systems (GIS) and are important tools for many different applications. For example, civil engineers use them to plan and design infrastructure, while environmental scientists use them to monitor and protect the environment. Geologists also use topographic plots to study the earth&rsquo;s structure and history.</p>
 <p>Topographic plots are particularly useful for identifying changes in elevation that can impact the flow of water or create hazards such as landslides. By understanding the terrain, we can make more informed decisions about where to build infrastructure or how to protect the environment.</p>
-<pre><code class="language-python">`# Plot surface, this is without any customization.
+<pre><code class="language-python"># Plot surface, this is without any customization.
 plot = ax.plot_surface(X=X, Y=Y, Z=afm_data, cmap='YlGnBu_r', vmin=0, vmax=200)`
-
 </code></pre>
 <p><img alt="cc" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*hqyBqmAzTgvJJlPQP27uvA.png" title="cc" /></p>
 <p>Here is an example code :</p>
@@ -278,8 +278,8 @@ plot = ax.plot_surface(X=X, Y=Y, Z=afm_data, cmap='YlGnBu_r', vmin=0, vmax=200)
 
 </code></pre>
 <p><img alt="cnt3" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*GVYJCJ3DyVO9TbnpUhSM5Q.png" title="cnt3" /></p>
-<p>here is a real-life contour map of Norway based on population:
-<img alt="Norway Contour map based on population" src="https://media.licdn.com/dms/image/C4E22AQFoYFiHDNBxgw/feedshare-shrink_800/0/1672661902249?e=1679529600&amp;v=beta&amp;t=j1W6PeWrEDMnMLQOP67Gx4gE2driOKBR54EhXGiitx8" title="Norway Contour map based on population" /></p>
+<p>Here is a real-life contour map of Norway based on population:</p>
+<p><img alt="Norway Contour map based on population" src="https://media.licdn.com/dms/image/C4E22AQFoYFiHDNBxgw/feedshare-shrink_800/0/1672661902249?e=1679529600&amp;v=beta&amp;t=j1W6PeWrEDMnMLQOP67Gx4gE2driOKBR54EhXGiitx8" title="Norway Contour map based on population" /></p>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

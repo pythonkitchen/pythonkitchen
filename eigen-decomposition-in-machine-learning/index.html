@@ -50,7 +50,7 @@
   being friendly to beginners'>
 
   <link rel="shortcut icon" href="/assets/logo.png" /> 
-  <title>Bringing quality authorship to the community</title>
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     a {
@@ -88,6 +88,8 @@
   <meta name='pageKey' content='eigen-decomposition-in-machine-learning'>
   <meta name='og:title' content='Eigen Decomposition in Machine Learning'>
   <meta name='og:url' content='https://www.pythonkitchen.com/eigen-decomposition-in-machine-learning'>
+
+  <title>Eigen Decomposition in Machine Learning</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -195,31 +197,33 @@
 <h1>Eigen Decomposition</h1>
 <p>Eigendecomposition is a type of technique that is used to decompose the given matrix into <strong>eigenvalues and eigenvectors</strong>. Eigendecomposition is one of the most widely used <strong>matrix decomposition</strong> techniques due to its accuracy and reliability.</p>
 <p>A mathematical expression for eigendecomposition is as follows:</p>
-<pre><code class="language-python">AV = Lambda V
-
-</code></pre>
+<blockquote>
+<p>AV = Lambda V</p>
+</blockquote>
 <p>Where,</p>
-<p>A = Matrix that is to be decomposed
-V = EigenVector 
-Lambda = EigenValue</p>
+<blockquote>
+<p>A = Matrix that is to be decomposed</p>
+<p>V = EigenVector </p>
+<p>Lambda = EigenValue</p>
+</blockquote>
 <p>A question might come into your mind why is the eigen decomposition needed, what is the need for decomposing it?</p>
 <p>Well, a very straight answer to this question is for better analyzing a matrix. Same as when we <strong>decompose</strong> integer values or any dataset, the reduced size of the same helps us analyze it better, the same way the eigen decomposition can help us analyze the matrix and its behavior properly.</p>
 <p><strong>Decomposition</strong> a matrix with eigen values and eigen vectors can help us analyze the properties of the matrix like rank and power, more easily and efficiently.</p>
 <h1>Eigen Values and Eigen Vectors</h1>
 <p>In matrix operations, some of the <strong>linear transformations</strong> are applied to the data, to convey the data into the right format or in case of analyzing it. Now as we know that eigen values and eigen vectors are also part of the matrix, so whenever the linear transformation will be applied to the matrix, the values and direction of the vectors in the matrix can change. But some of the vectors are there whose direction does not change, only the magnitude can be changed.</p>
 <p>Basically, eigenvectors are those vectors whose direction does not change after applying the linear transformation, the values of the <strong>magnitude</strong> only changes. And the eigenvalues are the values or the coefficient with which the value of the vector changes.</p>
-<p><img alt="" src="https://pythonkitchen.com/wp-content/uploads/2023/02/ed1.jpg" />
+<p><img alt="" src="/assets/ed1.jpg" />
 <a href="https://www.google.com/search?q=eigen+values+and+eigen+vectors+img&amp;rlz=1C1CHBD_enIN933IN933&amp;sxsrf=AJOqlzV17WsKybgOPhWzhEKqoR6LmYQcGg:1675040453445&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwjs4dj5i-78AhWu7jgGHXe0AvQQ_AUoAnoECAIQBA&amp;biw=1220&amp;bih=547&amp;dpr=1.12#imgrc=sc0AR-N2iuLZHM" title="Image Source">Image Source</a></p>
-<pre><code class="language-python">AV = Lambda V
-
-</code></pre>
+<blockquote>
+<p>AV = Lambda V</p>
+</blockquote>
 <p>As we can see in the above expression that v is represented as the eigenvector whose <strong>direction</strong> will <strong>not</strong> change after linear transformations and the Lambda is a coefficient that is eigenvalues according to which the value or the magnitude of the eigenvector will change.</p>
 <p>Sometimes the Eigenvectors are also known as the true or right vectors. Here note that if the value of the eigenvalue is negative it will reverse the direction of the eigenvector but the line on which the vector is lying will be the same.</p>
 <h1>Mathematical Understanding of the Eigen Equation</h1>
 <p>As we discussed above that the mathematical expression for the eigendecomposition is</p>
-<pre><code class="language-python">AV = Lambda V
-
-</code></pre>
+<blockquote>
+<p>AV = Lambda V</p>
+</blockquote>
 <p>Now to understand it better, we can consider a simple matrix on which <strong>linear transformation</strong> is applied to transform the values of the matrix due to some purpose.</p>
 <p>Now here the v is an eigenvector that is multiplied to the matrix A. the values that we will get will be the same as we multiply the vector with a coefficient Lambda, which is the designed value.</p>
 <p>That basically means that the eigenvalues will decide the magnitude or the length of the vector to change and to what extent. Although the direction of the vector will be the same only, positive or negative.</p>

@@ -50,7 +50,7 @@
   being friendly to beginners'>
 
   <link rel="shortcut icon" href="/assets/logo.png" /> 
-  <title>Bringing quality authorship to the community</title>
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     a {
@@ -88,6 +88,8 @@
   <meta name='pageKey' content='tfidf-vectorizers-in-natural-language-processing'>
   <meta name='og:title' content='TFIDF Vectorizers in Natural Language Processing'>
   <meta name='og:url' content='https://www.pythonkitchen.com/tfidf-vectorizers-in-natural-language-processing'>
+
+  <title>TFIDF Vectorizers in Natural Language Processing</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -228,9 +230,10 @@ Document 2 = Machine Learning is Complex to learn.</p>
 <p>Then the document frequency for the word Machine would be 2/2.</p>
 <h1>Inverse Document Frequency</h1>
 <p>Inverse document frequency is an inversed form of document frequency calculated in a log form.</p>
-<p><code>Inverse document frequency = 1 / document Frequency</code>
-The TFIDF Score
-===============</p>
+<blockquote>
+<p>Inverse document frequency = 1 / document Frequency</p>
+</blockquote>
+<h1>The TFIDF Score</h1>
 <p>Now that we know the term and inverse document frequency, let us discuss how it helps vectorize the word or text of the data. As we measure the importance of a term in a document and different documents, we can now assign a score to all the words in the corpus and vectorize them accordingly.</p>
 <p>Here we will calculate the Tf and IDf scores for each of the terms, and the values will be multiplied to achieve a score or weightage of the term. The higher the TFIDF score, the higher the importance and significance of the term in a document and a corpus.</p>
 <h1>Code Example:</h1>
