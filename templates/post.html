@@ -1,6 +1,17 @@
 {%extends "base.html"%}
 
 {%block head%}
+  <meta name='{{post["title"]}}' content=''>
+  <meta name='category' content='{{post["categories"][0]}}'>
+  <meta name='coverage' content='Worldwide'>
+  <meta name='distribution' content='Global'>
+  <meta name='rating' content='General'>
+  <meta name='revisit-after' content='1 year'>
+  <meta name='subtitle' content='{{post["title"]}}'>
+  <meta name='pageKey' content='{{post["slug"]}}'>
+  <meta name='og:title' content='{{post["title"]}}'>
+  <meta name='og:url' content='https://www.pythonkitchen.com/{{post["slug"]}}'>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
 
