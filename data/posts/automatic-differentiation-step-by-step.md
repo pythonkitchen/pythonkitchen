@@ -9,23 +9,19 @@ We will understand what is automatic differentiation for absolute beginners, alt
 
 
 
----
+Table of content
+================
 
-
-Table of content:
------------------
-
-
-* 1. Derivative
-* 2. The Chain Rule
-* 3. Auto differentiation
-* 4. Behind the scenes of auto differentiation
-* 5. Reverse mode autodiff
-* 6. what can autodiff differntiatite
+* Derivative
+* The Chain Rule
+* Auto differentiation
+* Behind the scenes of auto differentiation
+* Reverse mode autodiff
+* what can autodiff differntiatite
 
 
 Derivative
-----------
+==========
 
 
 *A derivative is the instantaneous rate of change.*
@@ -33,15 +29,17 @@ Derivative
 I will try to help you understand the derivative with an example provided.
 
 Let's say we have a graph x2.
+
 ![](https://qph.cf2.quoracdn.net/main-qimg-78715523fe6ed2e94c18fc96fb333ae9-lq)
-###### d/dx [x^2] = 2x
+
+> d/dx [x^2] = 2x
 
 
 
 The derivative of a function gives the slope at a single point.
 If we plug in the x value of 2 into the derivative function, we get 4.
 
-###### m = 4
+> m = 4
 
 
 
@@ -49,20 +47,21 @@ The slope is defined as “rise over run” or the change in y divided by the ch
 
 Or
 
-###### m=ΔyΔx
+> m=ΔyΔx
 
 
 ![](https://qph.cf2.quoracdn.net/main-qimg-99c8ad7d4050fd06e8a9231015581e6c-lq)
 
 The problem with finding the slope of a singular point is that the change in y and the change in x is 0.
 
-###### m=0/0
+> m=0/0
 
 
 
 m is undefined, but that does not always mean that it doesn’t exist. We just have to try a different way. Newton and Leibniz created a different way to calculate slopes.
 
 (If you don’t understand limits then you probably should study up on those before you start learning about derivatives)
+
 ![Autograd](//qph.cf2.quoracdn.net/main-qimg-41de61230502525630a1ac2c11535f1c-lq) "Autograd")
 
 This is the limit definition of a derivative.
@@ -71,26 +70,26 @@ As h approaches 0, the change in y and x approaches 0.
 
 I’ll do this with the function provided.
 
-###### limh→ 0(x+h)2−x2h= limh→0x2+2xh+h2−x2h
+> limh→ 0(x+h)2−x2h= limh→0x2+2xh+h2−x2h
 
 
-###### limh→ 02xh+h2h= limh→0h(2x+h)h
+> limh→ 02xh+h2h= limh→0h(2x+h)h
 
 
-###### limh→ 0(2x+h)
+> limh→ 0(2x+h)
 
 
 
 We can evaluate now.
 
-###### 2x+0= 2x
+> 2x+0= 2x
 
 
 
 Thus, our derivative.
 
-The Chain Rule:
----------------
+The Chain Rule
+==============
 
 
 
@@ -103,9 +102,7 @@ Our objective is to go from A to C, we can either go directly and if it's not po
 
 So I think, for this situation, I can write
 
-###### da/dc = (da/db • db/dc)
-
-
+> da/dc = (da/db • db/dc)
 
 This is exactly your chain rule.
 
@@ -115,7 +112,7 @@ Try to focus on the outer function, and take the derivative. Move inside to the 
 
 Let me give you a basic example:
 
-###### f(x) = sinn (2x2 + x + 1)m
+> f(x) = sinn (2x2 + x + 1)m
 
 
 * Outer Function is sin **[(2x2 + x + 1)m]n**,
@@ -133,9 +130,10 @@ There are no more functions left to differentiate. Multiply all the derivative r
 
 We will get
 
-**f′(x) = mn(4x + 1)(2x2 + x+1)m− 1sin^n−1(2x2 + x+1) mcos(2x2 + x+1)m**
-Auto differentiation:
----------------------
+> f′(x) = mn(4x + 1)(2x2 + x+1)m− 1sin^n−1(2x2 + x+1) mcos(2x2 + x+1)m
+
+Auto differentiation
+====================
 
 
 
@@ -204,7 +202,7 @@ print("Trained loss:", training_loss(weights))
 ```
 
 What going on behind the scenes?
---------------------------------
+================================
 
 
 
@@ -213,7 +211,7 @@ To compute the gradient, Autograd first has to record every transformation that 
 After the function is evaluated, Autograd has a graph specifying all operations that were performed on the inputs with respect to which we want to differentiate. This is the computational graph of the function evaluation. To compute the derivative, we simply apply the rules of differentiation to each node in the graph.
 
 Reverse mode differentiation
-----------------------------
+============================
 
 
 
@@ -224,7 +222,7 @@ For example, given `L(x) = F(G(H(x)))`, the chain rule says that its gradient is
 Compared to finite differences or forward-mode, reverse-mode differentiation is by far the more practical method for differentiating functions that take in a large vector and output a single number. In the machine learning community, reverse-mode differentiation is known as 'backpropagation', since the gradients propagate backward through the function. It's particularly nice since you don't need to instantiate the intermediate Jacobian matrices explicitly, and instead only rely on applying a sequence of matrix-free vector-Jacobian product functions (VJPs). Because Autograd supports higher derivatives as well, Hessian-vector products (a form of second-derivative) are also available and efficient to compute.
 
 What can Autograd differentiate?
---------------------------------
+================================
 
 
 
@@ -235,7 +233,7 @@ The input can be a scalar, complex number, vector, tuple, a tuple of vectors, a 
 When using the grad function, the output must be a scalar, but the functions elementwise\_grad and jacobian allow gradients of vectors.
 
 Conclusion
-----------
+==========
 
 
 
@@ -243,8 +241,8 @@ In recent years many universities and schools have changed their teaching method
 
 I hope this article helps you out, wish you the very best!
 
-References:
------------
+References
+==========
 
 
 * [Jon Krohn's autodiff with pytorch](https://www.youtube.com/watch?v=W-aiTln22cA "Jon Krohn's autodiff with pytorch")
