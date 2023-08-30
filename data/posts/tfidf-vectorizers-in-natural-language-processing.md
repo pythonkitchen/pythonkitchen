@@ -104,11 +104,11 @@ Inverse Document Frequency
 
 Inverse document frequency is an inversed form of document frequency calculated in a log form.
 
-`Inverse document frequency = 1 / document Frequency`
+> Inverse document frequency = 1 / document Frequency
+
+
 The TFIDF Score
 ===============
-
-
 
 Now that we know the term and inverse document frequency, let us discuss how it helps vectorize the word or text of the data. As we measure the importance of a term in a document and different documents, we can now assign a score to all the words in the corpus and vectorize them accordingly.
 

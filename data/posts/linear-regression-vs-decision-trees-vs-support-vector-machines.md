@@ -28,8 +28,9 @@ Table of Contents
 
 In Linear Regression, the algorithm assumes the data to be linear and doe snot has multicollinearity. The algorithm simply calculates the slope and intercept for the best fit line and it can be used for classification and regression problems.
 
-![](https://mail.pythonkitchen.com/wp-content/uploads/2022/12/lrf-300x192.png)
+![](/assets/lrf-300x192.png)
 [Image Source](https://www.google.com/search?q=linear+regression+image+&tbm=isch&ved=2ahUKEwi3zOqJnP37AhWvk9gFHclVDlIQ2-cCegQIABAA&oq=linear+regression+image+&gs_lcp=CgNpbWcQAzIECAAQHjIGCAAQBRAeMgYIABAFEB4yBwgAEIAEEBgyBwgAEIAEEBg6BAgjECc6BwgAELEDEEM6BAgAEEM6BQgAEIAEUKkFWIILYKUPaABwAHgAgAH6AYgBxQySAQUwLjUuM5gBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=E-mbY_f2Ma-n4t4Pyau5kAU&rlz=1C1CHBD_enIN933IN933#imgrc=25iIN4dGro17ZM "Image Source")
+
 PROs:
 -----
 
@@ -81,8 +82,10 @@ If outliers are present in the dataset, then linear regression would be the poor
 
 In simple words, decision trees are the type of algorithm which is defined based on so many if-else conditions. It can be assumed as a whole tree having nodes and junctions where the data is split according to several parameters e.g entropy, information gain, etc.
 
-![](https://mail.pythonkitchen.com/wp-content/uploads/2022/12/dtf-300x169.png)
+![](/assets/dtf-300x169.png)
 [Image Source](https://www.google.com/search?q=decision+tree+image&rlz=1C1CHBD_enIN933IN933&sxsrf=ALiCzsb3ZlYLaooO0xNymHrI9dggMKzd4w:1671162216263&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiOs4yynP37AhVt8DgGHeeCAQoQ_AUoAXoECAEQAw&biw=1220&bih=547&dpr=1.12#imgrc=Hq7_ALvAPOhnhM "Image Source")
+
+
 PROs:
 -----
 
@@ -133,8 +136,11 @@ As the decision trees split the dataset based on some of the parameters of the g
 
 
 The support vector machine algorithms are the type of complex algorithms that have the regularization and classification cost function like Huber scores in its `argmin` and `argmax` function which are used to maximize the distance between positive and negative planes from the best fit line.
-![](https://mail.pythonkitchen.com/wp-content/uploads/2022/12/svm-300x200.png)
+
+![](/assets/svm-300x200.png)
 [Image Source](https://www.google.com/search?q=support+vector+machines+image&rlz=1C1CHBD_enIN933IN933&sxsrf=ALiCzsZwmBU5q9QzPPiDzinqUPs5-JtYXw:1671162499354&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjB9Iq5nf37AhUdR2wGHcPeBr4Q_AUoAXoECAIQAw&biw=1220&bih=547&dpr=1.12#imgrc=pCj4qS6NoIDTjM "Image Source")
+
+
 PROs:
 -----
 

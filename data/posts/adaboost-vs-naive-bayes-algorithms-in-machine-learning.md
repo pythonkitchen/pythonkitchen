@@ -24,7 +24,7 @@ AdaBoost
 ========
 
 
-![](https://pythonkitchen.com/wp-content/uploads/2023/01/ab1-300x160.png)
+![](/assets/ab1-300x160.png)
 [Image Source](https://www.google.com/search?q=adaboost+logo+algorithm&tbm=isch&ved=2ahUKEwi-6bfN-sD8AhWvBbcAHbjPAjkQ2-cCegQIABAA&oq=adaboost+logo+algorithm&gs_lcp=CgNpbWcQAzoECCMQJzoFCAAQgAQ6BwgAEIAEEBhQ3QZY9hZgqxhoAXAAeACAAYQDiAHmC5IBBzAuMy4xLjKYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=yGy_Y77lPK-L3LUPuJ-LyAM&bih=547&biw=1220&rlz=1C1CHBD_enIN933IN933#imgrc=aKK4PhgkvuV3XM "Image Source")
 
 AdaBoost is a boosting algorithm known as the ensemble learning algorithm, which trains on the dataset with various techniques. The same machine learning algorithm is used as base models in boosting algorithms, and the data is split into parts for training. Once done, the information is fed to every base model sequentially, meaning that at a time, only one weak learning model will be trained on a particular set of datasets.
@@ -76,7 +76,7 @@ Naive Bayes
 ===========
 
 
-![](https://pythonkitchen.com/wp-content/uploads/2023/01/nb2-300x154.png)
+![](/assets/nb2-300x154.png)
 [Image Source](https://www.google.com/search?q=naive+bayes+logo+algorithm&tbm=isch&ved=2ahUKEwj61MmN-8D8AhWULrcAHdS1C4IQ2-cCegQIABAA&oq=naive+bayes+logo+algorithm&gs_lcp=CgNpbWcQA1AAWABgAGgAcAB4AIABAIgBAJIBAJgBAKoBC2d3cy13aXotaW1n&sclient=img&ei=T22_Y7rxHpTd3LUP1OuukAg&bih=547&biw=1220&rlz=1C1CHBD_enIN933IN933#imgrc=AOgQByTPhGKxQM "Image Source")
 
 The Naive Bayes algorithm is a probabilistic algorithm that works on the principle of conditional probability and the bayesian theorem. Here, the conditional probability of every data point is calculated for every dependent that can happen, and the predictions are made depending upon the probabilities of data points.

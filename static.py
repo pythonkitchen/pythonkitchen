@@ -12,6 +12,9 @@ import calendar
 import toml
 import os
 
+
+from functools import wraps 
+
 def clean_text(raw_html):
     from bs4 import BeautifulSoup
     cleantext = BeautifulSoup(raw_html, "lxml").text
