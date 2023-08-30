@@ -8,17 +8,17 @@ category: data science
 Miscellaneous routines in scipy included convenient functions. This article cover the removal of this feature.
 
 Table of content
-----------------
+================
 
 
 * Why was `_Miscellaneous routines_` removed from `SciPy`?
 * A Very Brief Introduction to `scipy.datasets`
--- What does this implement/fix ?
+    + What does this implement/fix ?
 * Pooch and scipy.datasets partnership
 
 
 Why was `_Miscellaneous routines_` removed from `SciPy`?
---------------------------------------------------------
+========================================================
 
 
 
@@ -48,7 +48,7 @@ Considering all the reasons given above people were now Frustrated with this! â†
 
 
 A Very Brief Introduction to `scipy.datasets`
----------------------------------------------
+=============================================
 
 
 
@@ -66,8 +66,8 @@ array([[ 83, 83, 83, ..., 117, 117, 117],
 
 ```
 
-### What does this implement/fix ?
-
+What does this implement/fix ?
+------------------------------
 
 
 With [gh-8707](https://github.com/scipy/scipy/pull/8707), in 2018, SciPy wanted to introduce the `datasets` submodule and move a handful of dataset functions from the current `misc` module to this new `datasets` submodule. **A Big Thanks to [@WarrenWeckesser](https://github.com/WarrenWeckesser) for discovering this idea.** With this PR (indeed inspired by [gh-8707](https://github.com/scipy/scipy/pull/8707)) they ([Anirudh](https://mail.python.org/archives/users/d23be19d7818404998f29c9c1ea3d1f9/) and [Ralf](https://mail.python.org/archives/users/f60feb983fc549cba6161c320da7b574/)) resume those efforts after making some improvements (explained below) and move away from the `scipy.misc` module, finally deprecating it in a separate PR [#15901](https://github.com/scipy/scipy/pull/15901))
@@ -80,21 +80,20 @@ With [gh-8707](https://github.com/scipy/scipy/pull/8707), in 2018, SciPy wanted 
 
 
 Pooch and scipy.datasets partnership
-------------------------------------
+====================================
 
 
 
 Pooch manages data registrations by downloading your data files from a server only when needed and storing them locally in a data *cache* (a folder on your computer).
 
-* 1. With `Pooch` you can easily decouple the datasets that are currently present within the `SicPy` repository and move them to their new repository. For example, see <https://github.com/scipy-datasets>, where each dataset has its own repository. This will lead to a lightweight `SciPy` Package decreasing the download size for future releases. Keeping the datasets in individual repositories or a single `scipy-datasets` repository is a point of discussion.....
-* 2. Dependency: Pooch is an extremely light package and has only a few [dependencies](https://github.com/fatiando/pooch/blob/main/setup.cfg#L43-L46), so if you were to add a new dependency i.e. Pooch, you can expect it to be small and at the same time it won't add a lot of sub-dependencies.
+* With `Pooch` you can easily decouple the datasets that are currently present within the `SicPy` repository and move them to their new repository. For example, see <https://github.com/scipy-datasets>, where each dataset has its own repository. This will lead to a lightweight `SciPy` Package decreasing the download size for future releases. Keeping the datasets in individual repositories or a single `scipy-datasets` repository is a point of discussion.....
+* Dependency: Pooch is an extremely light package and has only a few [dependencies](https://github.com/fatiando/pooch/blob/main/setup.cfg#L43-L46), so if you were to add a new dependency i.e. Pooch, you can expect it to be small and at the same time it won't add a lot of sub-dependencies.
 
 
 
-Written by: Hazrat Abdul
-[My LinkedIn](linkedin.com/in/hazrat-abdul-22a3511a1) 
+
 References
-----------
+==========
 
 
 * [scipy-dev](https://mail.python.org/archives/list/scipy-dev@python.org/thread/AACMUJES2D3F24QWSQNOBVIYBOUZD2QX/)
