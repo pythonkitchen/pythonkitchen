@@ -180,14 +180,16 @@
                     <br>
                     <article>
                         <p>Miscellaneous routines in scipy included convenient functions. This article cover the removal of this feature.</p>
-<h2>Table of content</h2>
+<h1>Table of content</h1>
 <ul>
 <li>Why was <code>_Miscellaneous routines_</code> removed from <code>SciPy</code>?</li>
-<li>A Very Brief Introduction to <code>scipy.datasets</code>
-&ndash; What does this implement/fix ?</li>
+<li>A Very Brief Introduction to <code>scipy.datasets</code><ul>
+<li>What does this implement/fix ?</li>
+</ul>
+</li>
 <li>Pooch and scipy.datasets partnership</li>
 </ul>
-<h2>Why was <code>_Miscellaneous routines_</code> removed from <code>SciPy</code>?</h2>
+<h1>Why was <code>_Miscellaneous routines_</code> removed from <code>SciPy</code>?</h1>
 <p>Back in the olden days <em>the Miscellaneous routines</em> of Scipy used to have some importance. But in 2022 it only has five methods <code>ascent()</code>, <code>central_diff_weights</code>, <code>derivative</code>, <code>face</code>, <code>electrocardiogram</code>. Most of these methods have moved under some other module/submodule and many Users have complaints about the usefulness/computational inefficiencies of this submodule. For example:</p>
 <blockquote>
 <p>&rdquo; <a href="https://mail.python.org/archives/users/fd539a97c2b34c4f82f9729ad7f4eb17/">Stephan Hoyer</a>
@@ -207,7 +209,7 @@ Considering all the reasons given above people were now Frustrated with this! â†
  Picked up this idea and eventually convinced the Scipy Maintainers to add <code>scipy.datasets</code> as a submodule (which includes all methods of <code>.misc</code>)
 </p>
 </blockquote>
-<h2>A Very Brief Introduction to <code>scipy.datasets</code></h2>
+<h1>A Very Brief Introduction to <code>scipy.datasets</code></h1>
 <pre><code class="language-python">&gt;&gt;&gt; from scipy import datasets
 # Example ascent dataset loading with the new module
 &gt;&gt;&gt; datasets.ascent()
@@ -220,7 +222,7 @@ array([[ 83, 83, 83, ..., 117, 117, 117],
  [178, 178, 178, ..., 57, 57, 58]])
 
 </code></pre>
-<h3>What does this implement/fix ?</h3>
+<h2>What does this implement/fix ?</h2>
 <p>With <a href="https://github.com/scipy/scipy/pull/8707">gh-8707</a>, in 2018, SciPy wanted to introduce the <code>datasets</code> submodule and move a handful of dataset functions from the current <code>misc</code> module to this new <code>datasets</code> submodule. <strong>A Big Thanks to <a href="https://github.com/WarrenWeckesser">@WarrenWeckesser</a> for discovering this idea.</strong> With this PR (indeed inspired by <a href="https://github.com/scipy/scipy/pull/8707">gh-8707</a>) they (<a href="https://mail.python.org/archives/users/d23be19d7818404998f29c9c1ea3d1f9/">Anirudh</a> and <a href="https://mail.python.org/archives/users/f60feb983fc549cba6161c320da7b574/">Ralf</a>) resume those efforts after making some improvements (explained below) and move away from the <code>scipy.misc</code> module, finally deprecating it in a separate PR <a href="https://github.com/scipy/scipy/pull/15901">#15901</a>)</p>
 <ul>
 <li>Add <code>scipy.datasets</code> submodule</li>
@@ -229,24 +231,13 @@ array([[ 83, 83, 83, ..., 117, 117, 117],
 <li>Move all dataset files (eg. <code>scipy.stats</code> has its own <a href="https://github.com/scipy/scipy/tree/main/scipy/stats/tests/data">test datasets</a> within the repository) to their respective new repository (explained below). This is something that can be done after landing this PR once we have a concrete datasets API and approach defined for adding new datasets.</li>
 <li>Deprecate the misc module (<a href="https://github.com/scipy/scipy/pull/15901">DEP: Deprecate scipy.misc in favour of scipy.datasets #15901</a>)</li>
 </ul>
-<h2>Pooch and scipy.datasets partnership</h2>
+<h1>Pooch and scipy.datasets partnership</h1>
 <p>Pooch manages data registrations by downloading your data files from a server only when needed and storing them locally in a data <em>cache</em> (a folder on your computer).</p>
 <ul>
-<li>
-<ol>
 <li>With <code>Pooch</code> you can easily decouple the datasets that are currently present within the <code>SicPy</code> repository and move them to their new repository. For example, see <a href="https://github.com/scipy-datasets">https://github.com/scipy-datasets</a>, where each dataset has its own repository. This will lead to a lightweight <code>SciPy</code> Package decreasing the download size for future releases. Keeping the datasets in individual repositories or a single <code>scipy-datasets</code> repository is a point of discussion.....</li>
-</ol>
-</li>
-<li>
-<ol>
 <li>Dependency: Pooch is an extremely light package and has only a few <a href="https://github.com/fatiando/pooch/blob/main/setup.cfg#L43-L46">dependencies</a>, so if you were to add a new dependency i.e. Pooch, you can expect it to be small and at the same time it won&rsquo;t add a lot of sub-dependencies.</li>
-</ol>
-</li>
 </ul>
-<p>Written by: Hazrat Abdul
-<a href="linkedin.com/in/hazrat-abdul-22a3511a1">My LinkedIn</a> 
-References</p>
-<hr />
+<h1>References</h1>
 <ul>
 <li><a href="https://mail.python.org/archives/list/scipy-dev@python.org/thread/AACMUJES2D3F24QWSQNOBVIYBOUZD2QX/">scipy-dev</a></li>
 </ul>
