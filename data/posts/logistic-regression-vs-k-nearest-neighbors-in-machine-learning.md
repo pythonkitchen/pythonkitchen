@@ -26,7 +26,7 @@ Table of Content
 ======================
 
 
-![](https://www.pythonkitchen.com/wp-content/uploads/2023/01/lor-300x150.jpg)
+![](/assets/lor-300x150.jpg)
 [Image Source](https://www.google.com/search?q=logistic+regression+images&rlz=1C1CHBD_enIN933IN933&sxsrf=AJOqlzVVRnVA6t429kL9Gau19aRF3LNy3w:1673317172223&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj99JWd-Lv8AhVvSGwGHYLaDk8Q_AUoAXoECAEQAw#imgrc=8qAJFp0jXJo7DM "Image Source")
 
 Logistic regression in machine learning is a classification algorithm that is mainly used for binary and multivariate classification problems. This algorithm works on the principle of maximum likelihood estimation, where the maximization of the likelihood function is performed, and the best-fit line is obtained according to the distribution of the data on the plot. In the deep learning approach, the algorithm is also known as the Perceptron trick algorithm.
@@ -79,8 +79,9 @@ The logistic regression algorithm can be used when the dataset is linear and can
 =======================
 
 
-![](https://www.pythonkitchen.com/wp-content/uploads/2023/01/knnr-300x221.png)
+![](/assets/knnr-300x221.png)
 [Image Source](https://www.google.com/search?q=knn++images&tbm=isch&ved=2ahUKEwi_zoGe-Lv8AhXYArcAHaj3Ar4Q2-cCegQIABAA&oq=knn++images&gs_lcp=CgNpbWcQAzIFCAAQgAQyBggAEAcQHjoECCMQJzoHCAAQsQMQQ1CKDFiBE2DGFGgAcAB4AIAB8wGIAZsHkgEFMC40LjGYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=Ncu8Y__fO9iF3LUPqO-L8As&rlz=1C1CHBD_enIN933IN933#imgrc=esxzYUFmIjNr-M "Image Source")
+
 The K nearest Neighbors in machine learning is a distance-based working algorithm, which calculates the distance between the data points and tries to work according to the distribution of the dataset. This algorithm is used for regression and classification problems and almost always performs best in both cases.
 
 The KNN algorithm is known as the lazy learning algorithm. This is because the algorithm does not train during the training stage. The KNN algorithm just stores the data when the data is fed to the algorithm in the training stage, and at the time of prediction, the algorithm tries to apply all the mechanisms it uses, and the prediction is made.

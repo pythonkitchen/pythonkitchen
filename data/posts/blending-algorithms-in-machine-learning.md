@@ -10,7 +10,7 @@ The Ensemble technique is one of the best-performing techniques used in the fiel
 In this article we will be discussing the blending algorithms with its core intuition behind other working mechanisms and the data sampling styles n it with the code examples, concluding with some key takeaways to remember. Knowledge about these techniques will help one to understand the power of the ensemble techniques better and also it will help one to answer the question related to blending efficiently.
 
 Table of Content
-----------------
+================
 
 
 1. Blending: How it Works
@@ -22,19 +22,21 @@ Table of Content
 
 
 Blending: How it works
-----------------------
+======================
 
 
 
 As we know that blending is the ensemble technique, it uses multiple machine learning algorithms for training on the same dataset. Here unlike other ensemble techniques, there are two layers of machine-learning algorithms are used, one is base models and the second layer algorithms are known as meta models.
 
 the base models are trained on the training dataset provided first, once the base models are trained on the dataset, the test set is fed to the base models for prediction, and the predicted values from the base models are used for the training of the meta-model. and the meta-models are trained on the prediction data, after training the meta-model assigns the weights to the base models and the output from the meta-models Is considered the final output.
-![](https://www.pythonkitchen.com/wp-content/uploads/2022/11/ba1-ka-300x227.png)
+
+![](/assets/ba1-ka-300x227.png)
 [Image Source](https://www.google.com/imgres?imgurl=https%3A%2F%2Fblogs.sas.com%2Fcontent%2Fsubconsciousmusings%2Ffiles%2F2017%2F05%2Fmodelstacking.png&imgrefurl=https%3A%2F%2Fblogs.sas.com%2Fcontent%2Fsubconsciousmusings%2F2017%2F05%2F18%2Fstacked-ensemble-models-win-data-science-competitions%2F&tbnid=MiAe0DGM5iD6XM&vet=12ahUKEwiA--eh3537AhVH_TgGHe1_D9YQMygOegUIARDWAQ..i&docid=cZq4q5H07OG1JM&w=519&h=393&q=stacking%20algorithms%20in%20ml&ved=2ahUKEwiA--eh3537AhVH_TgGHe1_D9YQMygOegUIARDWAQ "Image Source")
+
 For example, let's suppose we have 3 machine learning algorithms as base models and 1 algorithm as the meat model, so in the first step, the base model will be trained on the same dataset. Once trained, the test data is fed to all three base models and all the base models will predict different values for t same test data. Now, these predictions from all the individual base models will be used for training the meta-model, once the meta-model is trained, no the output from the meta-models will be served as the final output.
 
 Problem with Blending
----------------------
+=====================
 
 
 
@@ -43,21 +45,24 @@ As we know that blending algorithms consist of base and meta models, the trainin
 Here, in this case, to tackle the problem of overfitting, the hold-out approach is used of tracking this problem. This approach is also known as blending.
 
 Hold Out Approach: Blending
----------------------------
+===========================
 
 
 
 The hold-out approach is used to tackle the problems of overfitting where due to the date leakage the model will perform poorly on the unknown or the testing dataset. here in this approach in the first step, the main dataset is divided into training and testing sets, which can be easily done by the train\_test\_split module.
-![](https://www.pythonkitchen.com/wp-content/uploads/2022/11/ba2-300x219.png)
+
+![](/assets/ba2-300x219.png)
 [Image Source](https://i.stack.imgur.com/K7tyy.png "Image Source")
+
 Once the data is split into the training and testing set, in step 2, again the training set is divided into two parts which are the training of the base models set and the validation set.
-![](https://www.pythonkitchen.com/wp-content/uploads/2022/11/ba3-300x255.png)
+
+![](/assets/ba3-300x255.png)
 [Image Source](https://i.stack.imgur.com/K7tyy.png "Image Source")
 
 Once all the splitting on the dataset is done, the base models are trained on the training base models set, once trained the validation data is fed to the base models on which they will return prediction data. Now the resulting data will be used as the training data of the meta-models, where the meta-model will be trained and the results from the meta-models will be considered as the final output of the model. The test set which is obtained in the first step can be used to evaluate the blending model.
 
 Blending: Code Example
-----------------------
+======================
 
 
 
@@ -142,7 +147,7 @@ print('Blending Accuracy: %.3f' % (score*100))
 ```
 
 Stacking vs Blending
---------------------
+====================
 
 
 
@@ -153,7 +158,7 @@ Well, the first basic difference between these two approaches is the sampling of
 The second very intuitive difference is that in stacking the meta-models are trained first and then the base models are trained whereas in blending the base models are trained first and then the meta-models are trained.
 
 Conclusion
-----------
+==========
 
 
 

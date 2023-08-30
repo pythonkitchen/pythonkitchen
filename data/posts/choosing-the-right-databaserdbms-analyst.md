@@ -24,12 +24,10 @@ I looked into the question as any analyst would—by using data. Data Analysts w
 
 
 
----
-
-
 [![im_3](https://images.ctfassets.net/fi0zmnwlsnja/110MlzPLetri6azOQ0AyhU/2c4f2845e52736f0cb8ce80b9eacb239/best-database-chart-4.png?w=1740&h=724&q=50&fm=webp "im_3")](https://images.ctfassets.net/fi0zmnwlsnja/110MlzPLetri6azOQ0AyhU/2c4f2845e52736f0cb8ce80b9eacb239/best-database-chart-4.png?w=1740&h=724&q=50&fm=webp "im_3")
-Table of contents:
-------------------
+
+Table of contents
+=================
 
 
 1. A basic measure of difficulty
@@ -41,7 +39,7 @@ Table of contents:
 
 
 A basic measure of difficulty
------------------------------
+=============================
 
 
 
@@ -57,11 +55,8 @@ People use databases for different things. Vertica and SQL Server are proprietar
 
 
 
----
-
-
 Controlling for query complexity
---------------------------------
+================================
 
 
 
@@ -69,9 +64,6 @@ Can we then adjust for how complex a query is? Unfortunately, controlling for qu
 
 Query length could be a decent proxy, but it's not perfect.
  [![im_4](https://mode.com/blog-assets/images/post-images/best-database-chart-2.png "im_4")](https://mode.com/blog-assets/images/post-images/best-database-chart-2.png "im_4")
-
-
----
 
 
 
@@ -88,14 +80,15 @@ Rather than comparing queries of similar lengths, we could instead compare queri
 The chart below shows the error rates for queries by the number of times analysts have edited them. After five or so runs, a few clear patterns emerge. PostgreSQL, MySQL, and Redshift have consistently low error rates. Impala, BigQuery, and SQL Server have high error rates. And as before, Vertica consistently outpaces the rest with the highest error rate.
 
 [![im_6](https://mode.com/blog-assets/images/post-images/best-database-chart-4.png "im_6")](https://mode.com/blog-assets/images/post-images/best-database-chart-4.png "im_6")
-#### Scale vs. Speed
 
+Scale vs. Speed
+---------------
 
 
 When you need speed, consider Postgres: Under 1TB, Postgres is quite fast for loading and querying. Plus, it’s affordable. As you get closer to their limit of 6TB (inherited by Amazon RDS), your queries will slow down.
 
-#### Flavor of SQL
-
+Flavor of SQL
+-------------
 
 
 Redshift is built on a variation of Postgres, and both support good ol’ SQL. Redshift doesn’t support every single data type and function that postgres does, but it’s much closer to the industry standard than BigQuery, which has its own flavor of SQL.
@@ -134,7 +127,7 @@ The total score line on the bottom sums the differences for each database. The r
 Vertica gains the most ground. It moves from being the most difficult language to somewhere near the middle of the pack, beating out SQL Server and Hive. This suggests that Vertica's high error rate may be more indicative of the type of analyst that uses it than it is of the language itself.
 
 The winners
------------
+===========
 
 
 

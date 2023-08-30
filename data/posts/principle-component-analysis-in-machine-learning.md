@@ -35,8 +35,9 @@ Now sometimes we have a dataset with lots of features that can be also called di
 
 For example, we know that KNN is a distance-based algorithm that works on the principle of calculating the distances between points or data points. Now here, the computations will be very low if the dimension of the data is only two, but the computations become complex and time-consuming when the dimension increases.
 
-**Two dimensions:** d = sqrt ((Y2 - Y1)^2 + (X2 - X1)^2)
-**Three Dimensions:** d = sqrt ((Z2 - Z1)^2 + (Y2 - Y1)^2 + (X2 - X1)^2)
+> **Two dimensions:** d = sqrt ((Y2 - Y1)^2 + (X2 - X1)^2)
+
+> **Three Dimensions:** d = sqrt ((Z2 - Z1)^2 + (Y2 - Y1)^2 + (X2 - X1)^2)
 
 We noticed in the example that the computational power increases with the dimensions of the dataset which can be considered as the curse for the model and its performance, which phenomenon is known as the curse of dimensionality.
 
@@ -51,7 +52,7 @@ In such cases the principle component analysis comes to the rescue; it is a tech
 
 Principle component analysis or the PCA creates the principle components or vectors that represent the same data in **lower dimensions**, and vectors are used for training the model further.
 
-![](https://pythonkitchen.com/wp-content/uploads/2023/02/pcaimg-300x175.jpg)
+![](/assets/pcaimg-300x175.jpg)
 [Image Source](https://towardsdatascience.com/pca-clearly-explained-how-when-why-to-use-it-and-feature-importance-a-guide-in-python-7c274582c37e "Image Source")
 
 As we can see in the above image, we have a dataset with three dimensions, X1, X2, and X3. Now here if we want to visualize the data we need to plot the data in 3 axes of the three features, but we can use principle component analysis or PCA which will reduce the dimension of the data by converting its features to only two principle components or principal vectors **PC1 and PC2**. Once the data is reduced to the lower dimensions now, the data can be visualized by plotting it to only two dimensions, PC1 and PC2.

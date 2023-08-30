@@ -45,14 +45,15 @@ Here, linear algebra plays a significant role while calculating the correlations
 The formula to calculate the covariance of covariance is
 
 
-```python
-Covariance = Xt*X
 
-```
+> Covariance = Xt*X
+
+> X = Standard Matrix
+
+> Xt = Transpose of the Matrix X
 
 
-X = Standard Matrix
-Xt = Transpose of the Matrix X
+
 
 The covariance and correlations obtained from using liner algebra helps understand the dependence of the feature on other features and allow the selection of the best features that represent the data well and hence are used for features selection.
 

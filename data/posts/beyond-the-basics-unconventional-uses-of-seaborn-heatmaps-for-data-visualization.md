@@ -5,29 +5,23 @@ authors: abdulkhan
 tags: 
 category: Uncategorized
 
-#### 2 Unusual Applications of Heatmaps in Data Science temperature changes, Topographic heatmap,
 
-
-
-
----
-
+Heatmaps can bring your data to life. Versatile and eye-catching. There are many situations where they can highlight important relationships in your data. Specifically, we will discuss how you can use them to visualise.
 
 [![Correlation](https://www.researchgate.net/profile/Lorenzo-Dallolio-3/publication/346527505/figure/fig3/AS:963908756070403@1606825164803/Heatmap-of-Pearson-correlation-between-38-features-extracted-from-PPG-four-covariates.png "Correlation")](http://www.researchgate.net/profile/Lorenzo-Dallolio-3/publication/346527505/figure/fig3/AS:963908756070403@1606825164803/Heatmap-of-Pearson-correlation-between-38-features-extracted-from-PPG-four-covariates.png "Correlation")
-#### Table of contents :
 
+_2 Unusual Applications of Heatmaps in Data Science temperature changes, Topographic heatmap_
 
-
-Heatmaps can bring your data to life. Versatile and eye-catching. There are many situations where they can highlight important relationships in your data. Specifically, we will discuss how you can use them to visualise:
+Table of contents :
+===================
 
 1. What are Heatmaps?
 2. Temperature changes through time
 3. Topographic Maps
 
 
-#### What are Heatmaps?
-
-
+What are Heatmaps?
+==================
 
 Let's start by discussing what heatmaps are and why they are so useful. You can see an example in Figure 1. We have variable 1 on the y-axis. In this case, variable 1 can take on different 4 values. That is “V1–1” is the first value for variable 1. Similarly, we have variable 2 on the y-axis. There is also a 3rd variable. That is the value within each of the cells. The colour of each cell is determined by the value of this variable.
 
@@ -39,7 +33,7 @@ However, it's important to note that heatmaps are not without their limitations.
 
 Don't worry if this all sounds a bit overwhelming. We will explore five essential heatmaps that will help you make the most of this powerful tool. So buckle up and get ready to take your data visualization game to the next level!
 
-#### 1) Temperature changes through time
+## 1) Temperature changes through time
 
 
 
@@ -90,7 +84,7 @@ plt.ylabel('Month',fontsize=22)
 
 ```
 
-#### 2) Topographic Plot
+## 2) Topographic Plot
 
 
 
@@ -102,9 +96,8 @@ Topographic plots are particularly useful for identifying changes in elevation t
 
 
 ```python
-`# Plot surface, this is without any customization.
+# Plot surface, this is without any customization.
 plot = ax.plot_surface(X=X, Y=Y, Z=afm_data, cmap='YlGnBu_r', vmin=0, vmax=200)`
-
 ```
 
 ![cc](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*hqyBqmAzTgvJJlPQP27uvA.png "cc")
@@ -147,5 +140,6 @@ plot = ax.plot_surface(X=X, Y=Y, Z=afm_data, cmap='YlGnBu_r', vmin=0, vmax=200)
 
 ![cnt3](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*GVYJCJ3DyVO9TbnpUhSM5Q.png "cnt3")
 
-here is a real-life contour map of Norway based on population:
+Here is a real-life contour map of Norway based on population:
+
 ![Norway Contour map based on population](https://media.licdn.com/dms/image/C4E22AQFoYFiHDNBxgw/feedshare-shrink_800/0/1672661902249?e=1679529600&v=beta&t=j1W6PeWrEDMnMLQOP67Gx4gE2driOKBR54EhXGiitx8 "Norway Contour map based on population")

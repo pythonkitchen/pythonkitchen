@@ -31,17 +31,17 @@ Eigendecomposition is a type of technique that is used to decompose the given ma
 A mathematical expression for eigendecomposition is as follows:
 
 
-```python
-AV = Lambda V
 
-```
+> AV = Lambda V
 
 
 Where,
 
-A = Matrix that is to be decomposed
-V = EigenVector 
-Lambda = EigenValue
+> A = Matrix that is to be decomposed
+
+> V = EigenVector 
+
+> Lambda = EigenValue
 
 A question might come into your mind why is the eigen decomposition needed, what is the need for decomposing it?
 
@@ -58,14 +58,10 @@ In matrix operations, some of the **linear transformations** are applied to the 
 
 Basically, eigenvectors are those vectors whose direction does not change after applying the linear transformation, the values of the **magnitude** only changes. And the eigenvalues are the values or the coefficient with which the value of the vector changes.
 
-![](https://pythonkitchen.com/wp-content/uploads/2023/02/ed1.jpg)
+![](/assets/ed1.jpg)
 [Image Source](https://www.google.com/search?q=eigen+values+and+eigen+vectors+img&rlz=1C1CHBD_enIN933IN933&sxsrf=AJOqlzV17WsKybgOPhWzhEKqoR6LmYQcGg:1675040453445&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjs4dj5i-78AhWu7jgGHXe0AvQQ_AUoAnoECAIQBA&biw=1220&bih=547&dpr=1.12#imgrc=sc0AR-N2iuLZHM "Image Source")
 
-```python
-AV = Lambda V
-
-```
-
+> AV = Lambda V
 
 As we can see in the above expression that v is represented as the eigenvector whose **direction** will **not** change after linear transformations and the Lambda is a coefficient that is eigenvalues according to which the value or the magnitude of the eigenvector will change.
 
@@ -78,11 +74,7 @@ Mathematical Understanding of the Eigen Equation
 
 As we discussed above that the mathematical expression for the eigendecomposition is
 
-
-```python
-AV = Lambda V
-
-```
+> AV = Lambda V
 
 
 Now to understand it better, we can consider a simple matrix on which **linear transformation** is applied to transform the values of the matrix due to some purpose.
@@ -118,7 +110,6 @@ Applications of Eigen Decomposition
 There are many applications of the eigendecomposition here it is very useful and outperforms some of the existing algorithms as well. Let us discuss them one by one.
 
 ### Principle Component Analysis
-
 
 
 Principle component analysis or the PCA is one of the widely used methods for **dimensionality reduction** of the given dataset. The PCA technique uses eigen decomposition to find the eigen values and eigen vectors from the dataset and then transforms the data and results in a principle components which help in reducing the dimensionality of the data.

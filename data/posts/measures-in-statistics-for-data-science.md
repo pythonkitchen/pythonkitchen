@@ -12,7 +12,7 @@ In this article, we will discuss the famous statistic topic of measures of dispe
 Let us start the discussion by answering the basic and common question, "What are measures?"
 
 Table of Content
-----------------
+================
 
 
 1. Measures of Central Tendency
@@ -29,13 +29,14 @@ Table of Content
 
 
 Measures of Central Tendency
-----------------------------
+============================
 
 
 
 Measures of tendency are the measures where a single value represents the whole dataset. The mean and median are used as the measures of central tendency.
-![](https://pythonkitchen.com/wp-content/uploads/2022/11/measure1-300x97.png)
+![](/assets/measure1-300x97.png)
 [Image Source](https://cdn1.byjus.com/wp-content/uploads/2019/04/Central-Tendency.png "Image Source")
+
 **To calculate the "mean" of the data:**
 
 The mean is calculated by dividing the total observations by the sum of all the observation values.
@@ -48,6 +49,7 @@ mean = df['ColumnName'].mean()
 ```
 
 **To calculate the median:**
+
 1. List down all integers in ascending or descending order.
 2. If the observations are odd, then the middle observations are treated as the median of the data.
 3. If the observations are even, then the mean of the middle two observation values will be treated as the median of the data.
@@ -66,7 +68,7 @@ It is the most frequent category occurring in the dataset. It is used in categor
 Note: In the case of the outlier, the mean is the most affected measure among all, as the outlier is going to have very high or low values, which will make the mean biased to one side. So in such cases, the median is preferred over the mean.
 
 Measures of Dispersion in Statistics
-------------------------------------
+====================================
 
 
 
@@ -90,6 +92,7 @@ The range is the difference between the smallest and largest value present in th
 Largest Value- Smallest Value = Range
 
 **Examples:**
+
 1. Data: 1, 2, 3, 4, 5
 
 
@@ -124,7 +127,7 @@ The interquartile range represents the variability of a dataset based on its qua
 
 Before understanding the interquartile range, we need to understand the percentile. The percentile is a value below which a certain percentage of observations lie. For example, the 99 percentile means 99 percent of the observation values lie before this current value. If a student gets a 99 percentile in exams, it means that 99 percent of students have fewer marks than this student.
 
-![](https://pythonkitchen.com/wp-content/uploads/2022/11/measure2-300x150.png)
+![](/assets/measure2-300x150.png)
 [Image Source](https://www.google.com/search?q=iqr+plot+python&rlz=1C1CHBD_enIN933IN933&sxsrf=ALiCzsaH6gEEqQ45TeN5_aPh7cDyextRWQ:1668053754927&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj8hp284KL7AhXyw3MBHS52BaUQ_AUoAXoECAIQAw&biw=1220&bih=579&dpr=1.12#imgrc=0ASWj0dgMvYyHM "Image Source")
 
 The formula for the percentile is:
@@ -142,15 +145,15 @@ The quartile divides the rank-ordered data into four equal sets of data. The sub
 
 Where,
 
-Q1 = 25th Percentile
+> Q1 = 25th Percentile
 
-Q2 = 50% of the population = Median
+> Q2 = 50% of the population = Median
 
-Q3 = 75th Percentile
+> Q3 = 75th Percentile
 
 The interquartile range would be the value we get by subtracting the 25th percentile from the 75th percentile.
 
-Inter Quartile Range = Q3 - Q1
+> Inter Quartile Range = Q3 - Q1
 
 **Code:**
 
@@ -205,14 +208,19 @@ print("Shape of data after outlier removal is: ", df.shape)
 
 
 The variance is the spread of the dataset given. It is not much of a difference between the variant and the deviation. The squared values of deviations are known as the variance of the data.
-![](https://pythonkitchen.com/wp-content/uploads/2022/11/measure3-300x122.png)
+![](/assets/measure3-300x122.png)
 [Image Source](https://www.google.com/search?q=variance++formula&tbm=isch&ved=2ahUKEwivmIms2KL7AhVNKbcAHb9VAakQ2-cCegQIABAA&oq=variance++formula&gs_lcp=CgNpbWcQAzIICAAQgAQQsQMyCwgAEIAEELEDEIMBMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6BAgjECc6CAgAEAcQHhAKOgkIABCABBAKEBg6BAgAEEM6BggAEAcQHlCmCljsEWDhE2gAcAB4AIABtgKIAaoPkgEHMC4zLjUuMZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=dXJsY--JIs3S3LUPv6uFyAo&rlz=1C1CHBD_enIN933IN933#imgrc=bBG2oLxODiFp3M "Image Source")
+
 Where,
 
-Sigma denotes the standard deviation.
-Xi = the data's ith element
-Xbar = Observational Mean
-N is the number of observations.
+> Sigma denotes the standard deviation.
+
+> Xi = the data's ith element
+
+> Xbar = Observational Mean
+
+> N is the number of observations.
+
 To get the variance of the column in the data frame, use the code below:
 
 To get the variance of the column in the data frame, use the code below:
@@ -241,11 +249,14 @@ plt.plot(df['Column'].var())
 
 
 Standard deviations are the square root of the variance and can be computed by simply calculating the square root of the variance of the data.
-![](https://pythonkitchen.com/wp-content/uploads/2022/11/measure4-300x150.png)
+![](/assets//measure4-300x150.png)
 [Image Source](https://www.google.com/search?q=iqr+plot+outliers+python&tbm=isch&ved=2ahUKEwjEo_O94KL7AhWR_jgGHe8MC5EQ2-cCegQIABAA&oq=iqr+plot+outliers+python&gs_lcp=CgNpbWcQAzoECCMQJ1DRBliSFGDRFWgAcAB4AIAB9AGIAdINkgEFMC45LjGYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=_npsY8SsGpH94-EP75msiAk&bih=579&biw=1220&rlz=1C1CHBD_enIN933IN933#imgrc=v6qHaBiLYxFCWM "Image Source")
+
 The formula for standard deviations would be:
-![](https://pythonkitchen.com/wp-content/uploads/2022/11/measure5-300x169.png)
+
+![](/assets/measure5-300x169.png)
 [Image Source](https://www.google.com/search?q=std+formula&tbm=isch&ved=2ahUKEwiXs6v62KL7AhUo_jgGHXsjBTUQ2-cCegQIABAA&oq=std+formula&gs_lcp=CgNpbWcQAzIECCMQJzIKCAAQsQMQgwEQQzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBAgAEEMyBQgAEIAEMgUIABCABDIFCAAQgARQ8AZYlQlg2gpoAHAAeACAAZgCiAGeBpIBBTAuMy4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=GXNsY9fCKqj84-EP-8aUqAM&rlz=1C1CHBD_enIN933IN933#imgrc=RQZ54Mz6cpyDgM "Image Source")
+
 **Code:**
 
 ```python
@@ -288,10 +299,10 @@ The upper limit is the largest integer present in the dataset.
 
 Observations having values Outliers are those who exceed the upper limits.
 
-Upper Limit = Q3 + 1.5 IQR
+> Upper Limit = Q3 + 1.5 IQR
 
 Conclusion
-----------
+==========
 
 
 
