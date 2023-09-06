@@ -264,12 +264,11 @@ We yield one number and the function exits, the for loop calls it again. It yiel
 
 
 
----
-
-
 
 > 
-> `odd_till(10)` or `odd_till(10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)` don't not cause memory errors
+> `odd_till(10)` or ```odd_till(100000000000000000000000000000000000000
+000000000000000000000000000000000000000000000
+00000000000000000000000000000000)``` don't not cause memory errors
 > 
 
 
@@ -714,15 +713,16 @@ copied over and over by Python sites, see David Beazley's 3 parts series:
 It also includes lots of use cases.
 
 *Abdur-Rahmaan Janhangeer is an organising member of the [Python Mauritius User Group](https://www.pymug.com) (PyMUG), [FlaskCon](https://www.flaskcon.com) and maintains [pythonkitchen.com](https://www.pythonkitchen.com). The present article is the continuation of his talk about deriving asyncio*
+
 ### References
 
 
 
-[1] https://www.python.org/dev/peps/pep-0255/
-[2] https://www.python.org/dev/peps/pep-0289/
-[3] https://dev.to/abdurrahmaanj/add-superpowers-to-your-python-lists-using-this-feature-24nf
-[4] Python Cookbook, David Beazley
-[5] https://docs.python.org/3/library/asyncio-task.html
-[6] https://www.python.org/dev/peps/pep-0342/
-[7] https://wiki.python.org/moin/Generators
-[8] Brett Cannon: Python 3.3: Trust Me, It's Better Than Python 2.7
+- [1] https://www.python.org/dev/peps/pep-0255/
+- [2] https://www.python.org/dev/peps/pep-0289/
+- [3] https://dev.to/abdurrahmaanj/add-superpowers-to-your-python-lists-using-this-feature-24nf
+- [4] Python Cookbook, David Beazley
+- [5] https://docs.python.org/3/library/asyncio-task.html
+- [6] https://www.python.org/dev/peps/pep-0342/
+- [7] https://wiki.python.org/moin/Generators
+- [8] Brett Cannon: Python 3.3: Trust Me, It's Better Than Python 2.7
