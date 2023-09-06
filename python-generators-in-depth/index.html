@@ -358,9 +358,10 @@ for odd_num in odd_till(10):
 
 </code></pre>
 <p>We yield one number and the function exits, the for loop calls it again. It yields one number and exits. And so on. It goes about it in micro steps. The operations completed in one cycle is is just an increment <code>n += 2</code> and a check <code>n &lt; number</code>.</p>
-<hr />
 <blockquote>
-<p><code>odd_till(10)</code> or <code>odd_till(10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)</code> don&rsquo;t not cause memory errors
+<p><code>odd_till(10)</code> or <code>odd_till(100000000000000000000000000000000000000
+000000000000000000000000000000000000000000000
+00000000000000000000000000000000)</code> don&rsquo;t not cause memory errors
 </p>
 </blockquote>
 <h3>next and for loops</h3>
@@ -682,14 +683,16 @@ copied over and over by Python sites, see David Beazley&rsquo;s 3 parts series:<
 <p>It also includes lots of use cases.</p>
 <p><em>Abdur-Rahmaan Janhangeer is an organising member of the <a href="https://www.pymug.com">Python Mauritius User Group</a> (PyMUG), <a href="https://www.flaskcon.com">FlaskCon</a> and maintains <a href="https://www.pythonkitchen.com">pythonkitchen.com</a>. The present article is the continuation of his talk about deriving asyncio</em></p>
 <h3>References</h3>
-<p>[1] https://www.python.org/dev/peps/pep-0255/
-[2] https://www.python.org/dev/peps/pep-0289/
-[3] https://dev.to/abdurrahmaanj/add-superpowers-to-your-python-lists-using-this-feature-24nf
-[4] Python Cookbook, David Beazley
-[5] https://docs.python.org/3/library/asyncio-task.html
-[6] https://www.python.org/dev/peps/pep-0342/
-[7] https://wiki.python.org/moin/Generators
-[8] Brett Cannon: Python 3.3: Trust Me, It&rsquo;s Better Than Python 2.7</p>
+<ul>
+<li>[1] https://www.python.org/dev/peps/pep-0255/</li>
+<li>[2] https://www.python.org/dev/peps/pep-0289/</li>
+<li>[3] https://dev.to/abdurrahmaanj/add-superpowers-to-your-python-lists-using-this-feature-24nf</li>
+<li>[4] Python Cookbook, David Beazley</li>
+<li>[5] https://docs.python.org/3/library/asyncio-task.html</li>
+<li>[6] https://www.python.org/dev/peps/pep-0342/</li>
+<li>[7] https://wiki.python.org/moin/Generators</li>
+<li>[8] Brett Cannon: Python 3.3: Trust Me, It&rsquo;s Better Than Python 2.7</li>
+</ul>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"
