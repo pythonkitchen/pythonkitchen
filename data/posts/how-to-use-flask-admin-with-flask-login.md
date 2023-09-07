@@ -7,9 +7,9 @@ category: flask
 
 Steps:
 
-* 1. Have a login route accept a next parameter
-* 2. Define your model view and admin index view
-* 3. Register models
+* Have a login route accept a next parameter
+* Define your model view and admin index view
+* Register models
 
 
 

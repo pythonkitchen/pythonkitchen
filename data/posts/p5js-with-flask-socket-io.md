@@ -44,7 +44,7 @@ def mouse(data, methods=['GET', 'POST']):
 Client
 
 
-```python
+```html
 <!DOCTYPE html>
 <html>
 
