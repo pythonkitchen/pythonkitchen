@@ -42,6 +42,8 @@ def generate_site():
     extra_context = {"info": settings.info, "posts": get_posts(settings), 
                      "clean_text": clean_text, "format_post_date": format_post_date,
                      "get_author_info": get_author_info}
+    
+    generate('sitemap.html', join(settings.OUTPUT_FOLDER, 'sitemap.txt'), context=extra_context)
     generate('index.html', join(settings.OUTPUT_FOLDER, 'index.html'), context=extra_context)
 
     generate_blog_posts(settings, extra_context, generate)

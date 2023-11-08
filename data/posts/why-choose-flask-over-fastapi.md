@@ -344,19 +344,19 @@ People make points but they are False from the start.
 
 
 
-[1] https://news.ycombinator.com/item?id=22776339
-[2] https://fastapi.tiangolo.com/
-[3] https://github.com/tiangolo/fastapi
-[4] https://github.com/tiangolo/fastapi/issues/1664
-[5] https://dictionary.cambridge.org/dictionary/english/par
-[6] https://www.oxfordlearnersdictionaries.com/definition/english/level\_1#level\_idmg\_6
-[7] https://fastapi.tiangolo.com/alternatives/
-[8] https://fastapi.tiangolo.com/benchmarks/
-[9] https://testdriven.io/blog/moving-from-flask-to-fastapi/
-[10] https://dev.to/meseta/flask-vs-fastapi-first-impressions-1bnm
-[11] https://www.analyticsvidhya.com/blog/2020/11/fastapi-the-right-replacement-for-flask/
-[12] https://www.section.io/engineering-education/choosing-between-django-flask-and-fastapi/
-[13] https://blog.accubits.com/flask-vs-fastapi-which-one-should-you-choose/
-[14] https://www.pluralsight.com/tech-blog/porting-flask-to-fastapi-for-ml-model-serving/
-[15] https://towardsdatascience.com/you-should-start-using-fastapi-now-7efb280fec02
-[16] https://betterprogramming.pub/3-reasons-to-switch-to-fastapi-f9c788d017e5
+- [1] https://news.ycombinator.com/item?id=22776339
+- [2] https://fastapi.tiangolo.com/
+- [3] https://github.com/tiangolo/fastapi
+- [4] https://github.com/tiangolo/fastapi/issues/1664
+- [5] https://dictionary.cambridge.org/dictionary/english/par
+- [6] https://www.oxfordlearnersdictionaries.com/definition/english/level\_1#level\_idmg\_6
+- [7] https://fastapi.tiangolo.com/alternatives/
+- [8] https://fastapi.tiangolo.com/benchmarks/
+- [9] https://testdriven.io/blog/moving-from-flask-to-fastapi/
+- [10] https://dev.to/meseta/flask-vs-fastapi-first-impressions-1bnm
+- [11] https://www.analyticsvidhya.com/blog/2020/11/fastapi-the-right-replacement-for-flask/
+- [12] https://www.section.io/engineering-education/choosing-between-django-flask-and-fastapi/
+- [13] https://blog.accubits.com/flask-vs-fastapi-which-one-should-you-choose/
+- [14] https://www.pluralsight.com/tech-blog/porting-flask-to-fastapi-for-ml-model-serving/
+- [15] https://towardsdatascience.com/you-should-start-using-fastapi-now-7efb280fec02
+- [16] https://betterprogramming.pub/3-reasons-to-switch-to-fastapi-f9c788d017e5
