@@ -6,6 +6,7 @@ tags:
 category: zen
 
 Note: *I wrote a quite complete article on the Zen but for some reason it went down in seo history. I am tired seeing people write 'in-depth' article with commentaries from the top of their head and materials they pulled out of their pockets. I'm publishing the article in here. The commentary part is built from the sayings of Brett Cannon, Guido, Chris Angelico, Nick Coghlan, Raymond Hettinger & co. Warning: read only if you are a fan of Python. Last notes: I do hope learners will get a great glimpse of how the Zen can help them structure their code and give them better insight and foresight. It's a documentation of how practically the Zen is applied in Python decisions.*
+
 Table of contents
 -----------------
 
@@ -20,6 +21,7 @@ Table of contents
 The Zen of Python saw light for the first time in 1999. It's one of the many aspects that adds to the awesomeness of Python. It's a set of expressions which corners the spirit of the language. It was enounced by Tim Peters, a reputable software engineer, master Pythonista and Python's 'most prolific and tenacious core developer' in the words of none other than Guido [18]. This article bases itself mostly on the saying of core devs and highly reputable members. It makes a great gift to all those interested in the history of the sysadmin script which took the world by (pleasent) surprise.
 
 ![](https://images.unsplash.com/photo-1598545343242-89b4c263a343?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)
+
 Birth of the Path
 =================
 
@@ -66,6 +68,7 @@ language is more important that using it..." [5]. Patrick clarifies:
 
 
 ![](https://images.unsplash.com/photo-1555573989-14a9017746c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=749&q=80)
+
 Zen, Strunk and White
 =====================
 
@@ -121,6 +124,7 @@ The effect of the book is described below, he being Strunk:
 One effect of applying the Zen would then also be lighter code files.
 
 ![](https://images.unsplash.com/photo-1484108678824-e6543e2e4230?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80)
+
 Master Tim Showers his Blessings
 ================================
 
@@ -204,6 +208,7 @@ The Zen only gives the outlines, in contrast to Strunk and White which gives exp
 In a time of fluctuating and steered standards, the reference in the actual PEP8 document to Strunk and White in the usage of the English language caused a bitter, ugly and messy thread [7]. It caused some of the best people of the community to forego following python-list [8], a casual reminder that being too open without limit hurts.
 
 ![](https://images.unsplash.com/photo-1593297372323-2ba78409d0b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)
+
 Reality of the Zen
 ==================
 
@@ -257,6 +262,7 @@ If ever i myself would have added a 20th one it would have been: "Use your judge
 As for the famous `import this` command, it was Barry Warsaw's pick. He sneaked it in a this.py in 2001 along with the ROT13 obfuscation [16]. He also mentionned that it was a time 'when the Python community had a sense of humor'.
 
 ![](https://images.unsplash.com/photo-1561739091-9d698cb277ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)
+
 Authentic Commentary
 ====================
 
@@ -747,48 +753,46 @@ Your suggestions accepted at: arj [.] python [@] gmail [.] com
 
 ---
 
-
-
-[1] https://mail.python.org/pipermail/python-list/1999-June/014096.html
-[2] https://en.wikipedia.org/wiki/Zen with references to Poceski and Yampolski
-[3] All-TIME 100 Nonfiction Books. Time, Inc. Retrieved 2014-05-14.
-[4] http://www.jlakes.org/ch/web/The-elements-of-style.pdf
-[5] https://mail.python.org/pipermail/python-list/1999-June/017368.html
-[6] https://mail.python.org/pipermail/python-list/1999-June/001951.html
-[7] https://mail.python.org/archives/list/python-ideas@python.org/thread/AE2M7KOIQR37K3XSQW7FSV5KO4LMYHWX/
-[8] https://www.mail-archive.com/python-dev@python.org/msg109166.html
-[9] https://github.com/wemake-services/wemake-python-styleguide/tree/fd7b6d9d14d73cab3d7f3ac4c910e4c75b093c4c
-[10] https://dev.to/abdurrahmaanj/the-zen-of-python-is-a-joke-and-here-is-why-you-should-not-take-it-too-seriously-508d
-[11] https://pythonbytes.fm/episodes/show/170/visualize-this-visualizing-python-s-visualization-ecosystem
-[12] https://mail.python.org/archives/list/python-dev@python.org/thread/DOKCD6TKN26DOOMYWAHFIMU3LGSCN7Y5/
-[13] https://mail.python.org/pipermail/docs/2014-June/019159.html
-[14] https://mail.python.org/pipermail/python-committers/2018-July/005747.html
-[15] https://www.wefearchange.org/2020/05/zenofpython.rst.html
-[16] https://www.wefearchange.org/2010/06/import-this-and-zen-of-python.html
-[17] Wikipaedia via Pullum, Geoffrey K. (April 17, 2009). "50 Years of Stupid Grammar Advice". The Chronicle of Higher Education.
-[18] http://python-history.blogspot.com/2009/01/pythons-design-philosophy.html
-[19] https://mail.python.org/pipermail/python-ideas/2018-September/053389.html
-[20] https://mail.python.org/pipermail/python-ideas/2018-September/053382.html
-[21] https://mail.python.org/pipermail/python-ideas/2018-September/053412.html
-[22] https://mail.python.org/pipermail/python-ideas/2018-September/053421.html
-[23] https://groups.google.com/g/python-ideas/c/Upc9MbzmFAA/m/2TiIWTlbBwAJ
-[24] https://mail.python.org/pipermail/import-sig/2012-March/000423.html
-[25] https://nothingbutsnark.silvrback.com/why-python-3-exists
-[26] https://twitter.com/brettsky/status/1253704411873869826?lang=en
-[27] https://mail.python.org/pipermail/python-list/2005-January.txt
-[28] https://mail.python.org/pipermail/python-dev/2010-December/106556.html
-[29] https://mail.python.org/archives/list/python-dev@python.org/thread/XZ23MPVGDDHUWE2VTGGEHVW4A4W76SH6/
-[30] https://mail.python.org/pipermail/python-dev/2017-November/150528.html
-[31] https://mail.python.org/pipermail/python-dev/2006-May/065059.html
-[32] https://mail.python.org/pipermail/python-3000/2006-April/000348.html
-[33] http://python-history.blogspot.com/2010/06/method-resolution-order.html
-[34] https://www.mail-archive.com/python-dev@python.org/msg100513.html
-[35] https://discuss.python.org/t/rejected-rfc-pep-608-coordinated-python-release/2539
-[36] https://static.realpython.com/python-tricks-book/Python%20Tricks%20Sample.pdf
-[37] https://mail.python.org/pipermail/python-list/2005-January/296762.html
-[38] https://mail.python.org/pipermail/python-list/2004-May/283635.html
-[39] https://mail.python.org/pipermail/python-ideas/2009-February/002998.html
-[40] https://mail.python.org/pipermail/python-list/2002-July/147124.html
-[41] https://mail.python.org/pipermail/python-dev/2013-July/127229.html
-[42] https://mail.python.org/pipermail/python-dev/2000-April/003742.html
-[43] https://inventwithpython.com/blog/2018/08/17/the-zen-of-python-explained/
+- [1] https://mail.python.org/pipermail/python-list/1999-June/014096.html
+- [2] https://en.wikipedia.org/wiki/Zen with references to Poceski and Yampolski
+- [3] All-TIME 100 Nonfiction Books. Time, Inc. Retrieved 2014-05-14.
+- [4] http://www.jlakes.org/ch/web/The-elements-of-style.pdf
+- [5] https://mail.python.org/pipermail/python-list/1999-June/017368.html
+- [6] https://mail.python.org/pipermail/python-list/1999-June/001951.html
+- [7] https://mail.python.org/archives/list/python-ideas@python.org/thread/AE2M7KOIQR37K3XSQW7FSV5KO4LMYHWX/
+- [8] https://www.mail-archive.com/python-dev@python.org/msg109166.html
+- [9] https://github.com/wemake-services/wemake-python-styleguide/tree/fd7b6d9d14d73cab3d7f3ac4c910e4c75b093c4c
+- [10] https://dev.to/abdurrahmaanj/the-zen-of-python-is-a-joke-and-here-is-why-you-should-not-take-it-too-seriously-508d
+- [11] https://pythonbytes.fm/episodes/show/170/visualize-this-visualizing-python-s-visualization-ecosystem
+- [12] https://mail.python.org/archives/list/python-dev@python.org/thread/DOKCD6TKN26DOOMYWAHFIMU3LGSCN7Y5/
+- [13] https://mail.python.org/pipermail/docs/2014-June/019159.html
+- [14] https://mail.python.org/pipermail/python-committers/2018-July/005747.html
+- [15] https://www.wefearchange.org/2020/05/zenofpython.rst.html
+- [16] https://www.wefearchange.org/2010/06/import-this-and-zen-of-python.html
+- [17] Wikipaedia via Pullum, Geoffrey K. (April 17, 2009). "50 Years of Stupid Grammar Advice". The Chronicle of Higher Education.
+- [18] http://python-history.blogspot.com/2009/01/pythons-design-philosophy.html
+- [19] https://mail.python.org/pipermail/python-ideas/2018-September/053389.html
+- [20] https://mail.python.org/pipermail/python-ideas/2018-September/053382.html
+- [21] https://mail.python.org/pipermail/python-ideas/2018-September/053412.html
+- [22] https://mail.python.org/pipermail/python-ideas/2018-September/053421.html
+- [23] https://groups.google.com/g/python-ideas/c/Upc9MbzmFAA/m/2TiIWTlbBwAJ
+- [24] https://mail.python.org/pipermail/import-sig/2012-March/000423.html
+- [25] https://nothingbutsnark.silvrback.com/why-python-3-exists
+- [26] https://twitter.com/brettsky/status/1253704411873869826?lang=en
+- [27] https://mail.python.org/pipermail/python-list/2005-January.txt
+- [28] https://mail.python.org/pipermail/python-dev/2010-December/106556.html
+- [29] https://mail.python.org/archives/list/python-dev@python.org/thread/XZ23MPVGDDHUWE2VTGGEHVW4A4W76SH6/
+- [30] https://mail.python.org/pipermail/python-dev/2017-November/150528.html
+- [31] https://mail.python.org/pipermail/python-dev/2006-May/065059.html
+- [32] https://mail.python.org/pipermail/python-3000/2006-April/000348.html
+- [33] http://python-history.blogspot.com/2010/06/method-resolution-order.html
+- [34] https://www.mail-archive.com/python-dev@python.org/msg100513.html
+- [35] https://discuss.python.org/t/rejected-rfc-pep-608-coordinated-python-release/2539
+- [36] https://static.realpython.com/python-tricks-book/Python%20Tricks%20Sample.pdf
+- [37] https://mail.python.org/pipermail/python-list/2005-January/296762.html
+- [38] https://mail.python.org/pipermail/python-list/2004-May/283635.html
+- [39] https://mail.python.org/pipermail/python-ideas/2009-February/002998.html
+- [40] https://mail.python.org/pipermail/python-list/2002-July/147124.html
+- [41] https://mail.python.org/pipermail/python-dev/2013-July/127229.html
+- [42] https://mail.python.org/pipermail/python-dev/2000-April/003742.html
+- [43] https://inventwithpython.com/blog/2018/08/17/the-zen-of-python-explained/
