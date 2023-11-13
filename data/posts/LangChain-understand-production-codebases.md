@@ -1,4 +1,4 @@
-title: Understand langChain to Quickly Get Started with Production Databases
+title: Understand langChain to Quickly Get Started with Production Codebases
 slug: LangChain-understand-production-codebases
 pub: 2023-11-13 09:31:20
 authors: arj
