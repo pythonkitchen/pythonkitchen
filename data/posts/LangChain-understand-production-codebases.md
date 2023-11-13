@@ -1,7 +1,7 @@
 title: Understand langChain to Quickly Get Started with Production Databases
 slug: LangChain-understand-production-codebases
 pub: 2022-11-13 09:31:20
-authors: Abdur-rahmaanJ
+authors: arj
 tags: 
 category: data science,machine learning
 
