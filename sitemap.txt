@@ -21,6 +21,7 @@ https://www.pythonkitchen.com/choosing-the-right-databaserdbms-analyst
 https://www.pythonkitchen.com/measures-in-statistics-for-data-science
 https://www.pythonkitchen.com/lasso-sparsity
 https://www.pythonkitchen.com/automatic-differentiation-step-by-step
+https://www.pythonkitchen.com/LangChain-understand-production-codebases
 https://www.pythonkitchen.com/nesterov-accelerated-gradient-nag-optimizer-in-deep-learning
 https://www.pythonkitchen.com/2-brilliant-breakthroughs-in-computational-topology-using-machine-learning
 https://www.pythonkitchen.com/why-was-scipy-misc-removed-and-whats-next
