@@ -76,18 +76,18 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Machine Learning Part 10 Naive Bayes' content=''>
-  <meta name='category' content='machine learning'>
+  <meta name='Chat with your own data/text files using chatGPT and LangChain' content=''>
+  <meta name='category' content='data science'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
   <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Machine Learning Part 10 Naive Bayes'>
-  <meta name='pageKey' content='machine-learning-part-10-naive-bayes'>
-  <meta name='og:title' content='Machine Learning Part 10 Naive Bayes'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/machine-learning-part-10-naive-bayes'>
+  <meta name='subtitle' content='Chat with your own data/text files using chatGPT and LangChain'>
+  <meta name='pageKey' content='chat-own-data-chatgpt-langchain'>
+  <meta name='og:title' content='Chat with your own data/text files using chatGPT and LangChain'>
+  <meta name='og:url' content='https://www.pythonkitchen.com/chat-own-data-chatgpt-langchain'>
 
-  <title>Machine Learning Part 10 Naive Bayes</title>
+  <title>Chat with your own data/text files using chatGPT and LangChain</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -151,10 +151,14 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Machine Learning Part 10 Naive Bayes</p>
+                    <p class="text-3xl" style="font-weight: 600;">Chat with your own data/text files using chatGPT and LangChain</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2021-04-07 10:11:56" class="text-gray-500">April 7, 2021</time>
+                        <time datetime="2023-11-23 10:35:00" class="text-gray-500">November 23, 2023</time>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            data science
+                        </a>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
                             machine learning
@@ -177,40 +181,142 @@
                     
                     <br>
                     <article>
-                        <h1>10 naive bayes</h1>
-<p>Machine Learning</p>
-<p>👉♡ supervised learning
-♡ unsupervised learning
-♡ reinforcement learning</p>
-<p>recap:
-🔖 types of supervised learning</p>
-<p>✅ classification 📑</p>
-<p>✅ regression 📈</p>
-<p>✅ mixed ⚗</p>
-<p>naive bayes classification</p>
-<p>⚱ bayes theorem</p>
-<p>bayes theorem states that</p>
-<p>P(B|A) = (P(A|B) * P(B)) / P(A)</p>
-<p>Probability of B given A = &hellip;</p>
-<p>🔎 naive comes from the fact that features have been independently chosen from a distribution</p>
-<p>⚱ conditional probability</p>
-<p>that&rsquo;s it, checkout dependent events&rsquo; probabilities. let us take a domino game. the probability taking out a piece containing one after having taken a piece containing a 6. in this example, the taking of one is affected at the very least by the fact that the tiles have been diminished by 1 (7/28 × 7/27). similarly naive bayes allows us to guess events more precisely by adding known events in the game.</p>
-<p>⚱ are you ill?</p>
-<p>a famous use of the theorem is to find out whether you are ill given you have symptoms of a disease. the formula tells us that only looking if you have symptoms is not enough.</p>
-<p>le us say that a new disease named scarius is out. now you check out the symptoms, brr you have those it seems &hellip; but do you really have the disease?</p>
-<p>P(scarius given symptoms) = (P(symptoms given scarius) * P(scarius))/P(symptoms)</p>
-<p>if symptoms is fever, P(symptoms) is P(fever) i.e. the probability that a person gets fever on any day.</p>
-<p>P(symptoms given scarius) will be high since when you are ill you will get symptoms. let us say 0.96</p>
-<p>P(scarius) ah let us say that disease is rare, 0.0001</p>
-<p>p(fever) let us say 0.1</p>
-<p>our P will be</p>
-<p>(0.0001 × 0.96) ÷ 0.1</p>
-<p>= 0.00096</p>
-<p>so, without taking in consideration those 3 probabilities, you&rsquo;d make an erroneous guess</p>
-<p>⚱ one interesting article</p>
-<p>https://www.saedsayad.com/naive_bayesian.htm</p>
-<p>⚽️ exercise</p>
-<p>see the theorem&rsquo;s derivation by using sets via a venn diagram</p>
+                        <p>There are many different approaches to chatting with your own data.
+One way is to upload your PDF to the OpenAi chatGPT cloud.
+This comes with several limitations such as data being deleted or umm the risk of a not smart chatGPT leaking it.</p>
+<p>Now, you can also download a model from somewhere. 
+And you need to find a good one.
+And it will probably not be as good as chatGPT.
+So, to benefit from the advantage of chatGPT with local data, <a href="">LangChain</a> presents an interesting option. 
+We, however, need a vector store.</p>
+<h2>What is a vector store?</h2>
+<p>A vector store stores data as data encodings.
+This allows us to plug our own data in chatGPT.
+It augments the contextual awareness of chatGPT.
+If you asks about &ldquo;Mauritius tourist activities&rdquo;, it might give some response.
+If you give it more information, the response will be more detailed.
+You need to convert your data into vector embeddings and store it in a vector database.
+You can use Redis, PineCone (A SaaS offering) or <a href="https://python.langchain.com/docs/integrations/vectorstores/chroma">ChromaDB</a> as vector databases among others.
+Fortunately, <a href="https://python.langchain.com/">LangChain</a> helps us a lot in connecting a vector store for use in chatGPT.</p>
+<p>Please read this before to understand more about vector databases: <a href="/LangChain-understand-production-codebases/">Understand langChain to Quickly Get Started with Production Codebases</a></p>
+<h2>The code</h2>
+<p>You need to install those:</p>
+<pre><code>pip install langchain openai chromadb==0.4.15 tiktoken unstructured
+</code></pre>
+<p>Then create a directory called <code>data/</code>.</p>
+<p>Then add your files in the data folder.</p>
+<p>Then create a file called chat.py.</p>
+<p>Your directory looks like this</p>
+<pre><code>./
+data/
+    friends.txt
+    bugs.txt
+chat.py
+</code></pre>
+<p>You can add whatever info you want in the data folder.</p>
+<p>You can add pdfs also.</p>
+<p>Then paste:</p>
+<pre><code class="language-python">import os
+import sys
+
+from langchain.chains import ConversationalRetrievalChain
+from langchain.chat_models import ChatOpenAI
+from langchain.document_loaders import DirectoryLoader
+from langchain.indexes import VectorstoreIndexCreator
+from langchain.indexes.vectorstore import VectorStoreIndexWrapper
+from langchain.vectorstores import Chroma
+from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
+
+os.environ[&quot;OPENAI_API_KEY&quot;] = &quot;sk-myopenaikey&quot;
+
+# Enable to save to disk &amp; reuse the model (for repeated queries on the same data)
+PERSIST = False
+query = None
+
+embedding_function = SentenceTransformerEmbeddings(model_name=&quot;all-MiniLM-L6-v2&quot;)
+
+
+if PERSIST and os.path.exists(&quot;persist&quot;):
+  print(&quot;Reusing index...\n&quot;)
+  vectorstore = Chroma(persist_directory=&quot;persist&quot;, embedding_function=embedding_function)
+  index = VectorStoreIndexWrapper(vectorstore=vectorstore)
+else:
+  # loader = TextLoader(&quot;data/data.txt&quot;) # Use this line if you only need data.txt
+  loader = DirectoryLoader(&quot;exp-data/&quot;) # Also supports glob=&quot;&lt;pattern&gt;&quot;
+  if PERSIST:
+    index = VectorstoreIndexCreator(vectorstore_kwargs={&quot;persist_directory&quot;:&quot;persist&quot;}).from_loaders([loader])
+  else:
+    index = VectorstoreIndexCreator().from_loaders([loader])
+
+chain = ConversationalRetrievalChain.from_llm(
+  llm=ChatOpenAI(model=&quot;gpt-3.5-turbo&quot;),
+  retriever=index.vectorstore.as_retriever(search_kwargs={&quot;k&quot;: 1}),
+)
+
+chat_history = [] # preserve context
+while True:
+  if not query:
+    query = input(&quot;Prompt &gt; &quot;)
+  if query in ['quit', 'q', 'exit']:
+    sys.exit()
+  result = chain({&quot;question&quot;: query, &quot;chat_history&quot;: chat_history})
+  print(result['answer'],end=&quot;\n\n&quot;)
+
+  chat_history.append((query, result['answer']))
+  query = None
+</code></pre>
+<p>The persist part is if you don&rsquo;t want to load it in the db each time.</p>
+<h2>Notes</h2>
+<p>If you have errors like:</p>
+<pre><code>Traceback (most recent call last):
+  File &quot;&quot;, line 34, in &lt;module&gt;
+    index = VectorstoreIndexCreator().from_loaders([loader])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;&quot;, line 82, in from_loaders
+    return self.from_documents(docs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;&quot;, line 87, in from_documents
+    vectorstore = self.vectorstore_cls.from_documents(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;site-packages/langchain/vectorstores/chroma.py&quot;, line 684, in from_documents
+    return cls.from_texts(
+           ^^^^^^^^^^^^^^^
+  File &quot;site-packages/langchain/vectorstores/chroma.py&quot;, line 620, in from_texts
+    chroma_collection = cls(
+                        ^^^^
+  File &quot;site-packages/langchain/vectorstores/chroma.py&quot;, line 125, in __init__
+    self._collection = self._client.get_or_create_collection(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;site-packages/chromadb/api/client.py&quot;, line 226, in get_or_create_collection
+    return self._server.get_or_create_collection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;site-packages/chromadb/telemetry/opentelemetry/__init__.py&quot;, line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File &quot;site-packages/chromadb/api/segment.py&quot;, line 216, in get_or_create_collection
+    return self.create_collection(  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;site-packages/chromadb/telemetry/opentelemetry/__init__.py&quot;, line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File &quot;site-packages/chromadb/api/segment.py&quot;, line 190, in create_collection
+    return Collection(
+           ^^^^^^^^^^^
+  File &quot;site-packages/chromadb/api/models/Collection.py&quot;, line 85, in __init__
+    validate_embedding_function(embedding_function)
+  File &quot;site-packages/chromadb/api/types.py&quot;, line 210, in validate_embedding_function
+    raise ValueError(
+ValueError: Expected EmbeddingFunction.__call__ to have the following signature: odict_keys(['self', 'input']), got odict_keys(['self', 'args', 'kwargs'])
+Please see https://docs.trychroma.com/embeddings for details of the EmbeddingFunction interface.
+Please note the recent change to the EmbeddingFunction interface: https://docs.trychroma.com/migration#migration-to-0416---november-7-2023 
+</code></pre>
+<p>The solution is probably to pin an older version of chromadb as we did above.</p>
+<h2>Nice resources</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=9AXP7tCI9PI">Techlead video explanation</a></li>
+<li><a href="https://github.com/techleadhd/chatgpt-retrieval">Techlead faulty code (Which I fixed in this post)</a></li>
+<li><a href="https://github.com/rubentak/Langchain/blob/main/notebooks/Langchain_doc_chroma.ipynb">LangChain chroma notebook</a></li>
+</ul>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"
