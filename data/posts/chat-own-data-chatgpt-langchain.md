@@ -1,6 +1,6 @@
 title: Chat with your own data/text files using chatGPT and LangChain
 slug: chat-own-data-chatgpt- langchain
-pub: 2023-11-23 10:60:00
+pub: 2023-11-23 10:00:00
 authors: arj
 tags: langchain
 category: data science,machine learning
