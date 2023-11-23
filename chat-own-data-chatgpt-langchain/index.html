@@ -227,7 +227,7 @@ from langchain.indexes.vectorstore import VectorStoreIndexWrapper
 from langchain.vectorstores import Chroma
 from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
 
-os.environ[&quot;OPENAI_API_KEY&quot;] = &quot;sk-myopenaikey&quot;
+os.environ[&quot;OPENAI_API_KEY&quot;] = &quot;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&quot;
 
 # Enable to save to disk &amp; reuse the model (for repeated queries on the same data)
 PERSIST = False
@@ -237,33 +237,38 @@ embedding_function = SentenceTransformerEmbeddings(model_name=&quot;all-MiniLM-L
 
 
 if PERSIST and os.path.exists(&quot;persist&quot;):
-  print(&quot;Reusing index...\n&quot;)
-  vectorstore = Chroma(persist_directory=&quot;persist&quot;, embedding_function=embedding_function)
-  index = VectorStoreIndexWrapper(vectorstore=vectorstore)
+    print(&quot;Reusing index...\n&quot;)
+    vectorstore = Chroma(
+        persist_directory=&quot;persist&quot;, embedding_function=embedding_function
+    )
+    index = VectorStoreIndexWrapper(vectorstore=vectorstore)
 else:
-  # loader = TextLoader(&quot;data/data.txt&quot;) # Use this line if you only need data.txt
-  loader = DirectoryLoader(&quot;exp-data/&quot;) # Also supports glob=&quot;&lt;pattern&gt;&quot;
-  if PERSIST:
-    index = VectorstoreIndexCreator(vectorstore_kwargs={&quot;persist_directory&quot;:&quot;persist&quot;}).from_loaders([loader])
-  else:
-    index = VectorstoreIndexCreator().from_loaders([loader])
+    # loader = TextLoader(&quot;data/data.txt&quot;) # Use this line if you only need data.txt
+    loader = DirectoryLoader(&quot;exp-data/&quot;)
+    if PERSIST:
+        index = VectorstoreIndexCreator(
+            vectorstore_kwargs={&quot;persist_directory&quot;: &quot;persist&quot;}
+        ).from_loaders([loader])
+    else:
+        index = VectorstoreIndexCreator().from_loaders([loader])
 
 chain = ConversationalRetrievalChain.from_llm(
-  llm=ChatOpenAI(model=&quot;gpt-3.5-turbo&quot;),
-  retriever=index.vectorstore.as_retriever(search_kwargs={&quot;k&quot;: 1}),
+    llm=ChatOpenAI(model=&quot;gpt-3.5-turbo&quot;),
+    retriever=index.vectorstore.as_retriever(search_kwargs={&quot;k&quot;: 1}),
 )
 
-chat_history = [] # preserve context
+chat_history = []
 while True:
-  if not query:
-    query = input(&quot;Prompt &gt; &quot;)
-  if query in ['quit', 'q', 'exit']:
-    sys.exit()
-  result = chain({&quot;question&quot;: query, &quot;chat_history&quot;: chat_history})
-  print(result['answer'],end=&quot;\n\n&quot;)
+    if not query:
+        query = input(&quot;Prompt &gt; &quot;)
+    if query in [&quot;quit&quot;, &quot;q&quot;, &quot;exit&quot;]:
+        sys.exit()
+    result = chain({&quot;question&quot;: query, &quot;chat_history&quot;: chat_history})
+    print(result[&quot;answer&quot;], end=&quot;\n\n&quot;)
 
-  chat_history.append((query, result['answer']))
-  query = None
+    chat_history.append((query, result[&quot;answer&quot;]))
+    query = None
+
 </code></pre>
 <p>The persist part is if you don&rsquo;t want to load it in the db each time.</p>
 <h2>Notes</h2>
@@ -308,7 +313,8 @@ while True:
     raise ValueError(
 ValueError: Expected EmbeddingFunction.__call__ to have the following signature:
 odict_keys(['self', 'input']), got odict_keys(['self', 'args', 'kwargs'])
-Please see https://docs.trychroma.com/embeddings for details of the EmbeddingFunction interface.
+Please see https://docs.trychroma.com/embeddings for details of the
+EmbeddingFunction interface.
 Please note the recent change to the EmbeddingFunction interface:
 https://docs.trychroma.com/migration#migration-to-0416---november-7-2023 
 </code></pre>
