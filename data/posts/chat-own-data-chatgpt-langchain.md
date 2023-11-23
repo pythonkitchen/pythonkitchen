@@ -162,6 +162,6 @@ The solution is probably to pin an older version of chromadb as we did above.
 
 # Nice resources
 
-[Techlead video explanation]()
-[Techlead outdated code (Which I fixed in this post)]()
-[LangChain chroma notebook]()
+- [Techlead video explanation]()
+- [Techlead outdated code (Which I fixed in this post)]()
+- [LangChain chroma notebook]()
