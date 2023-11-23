@@ -1,5 +1,4 @@
 https://www.pythonkithen.com/
-https://www.pythonkitchen.com/chat-own-data-chatgpt-langchain
 https://www.pythonkitchen.com/LangChain-understand-production-codebases
 https://www.pythonkitchen.com/install-pipx-mint-ubuntu
 https://www.pythonkitchen.com/what-is-perceptron-in-deep-learning
