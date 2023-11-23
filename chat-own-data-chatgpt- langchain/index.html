@@ -76,18 +76,18 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Principle Component Analysis in Machine Learning' content=''>
+  <meta name='Chat with your own data/text files using chatGPT and LangChain' content=''>
   <meta name='category' content='data science'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
   <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Principle Component Analysis in Machine Learning'>
-  <meta name='pageKey' content='principle-component-analysis-in-machine-learning'>
-  <meta name='og:title' content='Principle Component Analysis in Machine Learning'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/principle-component-analysis-in-machine-learning'>
+  <meta name='subtitle' content='Chat with your own data/text files using chatGPT and LangChain'>
+  <meta name='pageKey' content='chat-own-data-chatgpt- langchain'>
+  <meta name='og:title' content='Chat with your own data/text files using chatGPT and LangChain'>
+  <meta name='og:url' content='https://www.pythonkitchen.com/chat-own-data-chatgpt- langchain'>
 
-  <title>Principle Component Analysis in Machine Learning</title>
+  <title>Chat with your own data/text files using chatGPT and LangChain</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -151,10 +151,10 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Principle Component Analysis in Machine Learning</p>
+                    <p class="text-3xl" style="font-weight: 600;">Chat with your own data/text files using chatGPT and LangChain</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2023-02-18 03:49:19" class="text-gray-500">February 18, 2023</time>
+                        <time datetime="2023-11-23 10:00:00" class="text-gray-500">November 23, 2023</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
                             data science
@@ -167,77 +167,153 @@
                     </div>
                     
                         <div class="relative mt-8 flex items-center gap-x-4">
-                            <img src="https://github.com/ParthShukla211.png?size=40" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <img src="https://github.com/Abdur-rahmaanJ.png?size=40" alt="" class="h-10 w-10 rounded-full bg-gray-50">
                             <div class="text-sm leading-6">
                             <p class="font-semibold text-gray-900">
-                                <a href='https://www.linkedin.com/in/parthshukla211/'>
+                                <a href='https://www.linkedin.com/in/appinv/'>
                                 <span class="absolute inset-0"></span>
-                                Parth Shukla
+                                Abdur-Rahmaan Janhangeer
                                 </a>
                             </p>
-                            <p class="text-gray-600">Ml wizard</p>
+                            <p class="text-gray-600">Chef</p>
                             </div>
                         </div>
                     
                     <br>
                     <article>
-                        <p>In machine learning to achieve higher accuracies and performance of the model, the <strong>data quality</strong> plays a major role while enhancing the model. If good quality data with meaningful features are provided to the machine learning model, then the model can be very accurate and reliable with lesser computational powers.</p>
-<p>Principle Component Analysis, or PCA, is also one of the techniques that are used to enhance the quality of the data in terms of the dimensionality of the data. It is one of the famous <strong>dimensionality reduction</strong> techniques used in machine learning to reduce the dimensionality of the data and then the computational power needed to train the data.</p>
-<p>In this article, we will discuss the principle component analysis, its working mechanism, its importance, and its application ns with good examples. This article will help one to understand the technique better and will be able to apply it if needed.</p>
-<p>So, before directly diving into the principle component analysis, let us discuss the <strong>Curse of Dimensionality</strong>.</p>
-<h1>Table of Contents</h1>
-<ol>
-<li>Curse of Dimensionality</li>
-<li>What is Principle Component Analysis?</li>
-<li>How Does PCA Works?</li>
-<li>Key Takeaways</li>
-<li>Conclusion</li>
-</ol>
-<h1>Curse of Dimensionality</h1>
-<p>In machine learning, majorly we have two types of features, independent features, and dependent features. Independent features are those that are independent of each other and which are used for model training, while dependent features are those which are target variable and which is to be predicted by the model.</p>
-<p>Now sometimes we have a dataset with lots of features that can be also called dimensions. In such cases the computational power of the model becomes very high which causes the slowness of the model and sometimes, it can affect the <strong>quality and performance</strong> of the model too.</p>
-<p>For example, we know that KNN is a distance-based algorithm that works on the principle of calculating the distances between points or data points. Now here, the computations will be very low if the dimension of the data is only two, but the computations become complex and time-consuming when the dimension increases.</p>
-<blockquote>
-<p><strong>Two dimensions:</strong> d = sqrt ((Y2 - Y1)^2 + (X2 - X1)^2)</p>
-<p><strong>Three Dimensions:</strong> d = sqrt ((Z2 - Z1)^2 + (Y2 - Y1)^2 + (X2 - X1)^2)</p>
-</blockquote>
-<p>We noticed in the example that the computational power increases with the dimensions of the dataset which can be considered as the curse for the model and its performance, which phenomenon is known as the curse of dimensionality.</p>
-<h1>What is the Principle Component Analysis?</h1>
-<p>As we know that the higher dimensionality of the data is a curse for the model in some ways, then it is necessary to reduce the dimensionality of the data in order to achieve higher <strong>accuracies</strong> and a <strong>reliable model</strong>; Still, we can not directly drop some of the features from the dataset as all the features can contain some values of the dataset which can not be missed.</p>
-<p>In such cases the principle component analysis comes to the rescue; it is a technique that is used for reducing the dimensionality of the data without losing the essence of the data and without losing any of the information from the dataset.</p>
-<p>Principle component analysis or the PCA creates the principle components or vectors that represent the same data in <strong>lower dimensions</strong>, and vectors are used for training the model further.</p>
-<p><img alt="" src="/assets/pcaimg-300x175.jpg" />
-<a href="https://towardsdatascience.com/pca-clearly-explained-how-when-why-to-use-it-and-feature-importance-a-guide-in-python-7c274582c37e" title="Image Source">Image Source</a></p>
-<p>As we can see in the above image, we have a dataset with three dimensions, X1, X2, and X3. Now here if we want to visualize the data we need to plot the data in 3 axes of the three features, but we can use principle component analysis or PCA which will reduce the dimension of the data by converting its features to only two principle components or principal vectors <strong>PC1 and PC2</strong>. Once the data is reduced to the lower dimensions now, the data can be visualized by plotting it to only two dimensions, PC1 and PC2.</p>
-<h1>How Does PCA Works?</h1>
-<p>Now that we have a core intuition about the principle component analysis, its use case, and its importance, let us discuss how this technique works and what steps are performed to reduce the dimensionality of the dataset.</p>
-<h3>Normalize the Data</h3>
-<p>The first step performed before applying the principle component analysis is to normalize the data, basically to bring the data observation values to the <strong>same scale</strong>. Although this step is not necessary, we can also directly apply PCA, but from the experiments, it is proven that applying normalization in PCA helps in many ways.</p>
-<h3>Calculate the Covariance Matrix</h3>
-<p>The next step is to calculate the covariance matrix for the datasets which will contain the information on the variance of single variables and covariance between double variables in the dataset. To compute this <strong>covariance matrix</strong>, we will take a matrix first, will <strong>transpose</strong> it, and will again multiply it by the actual matrix, which will give us the covariance matrix.</p>
-<h3>Calculate Eigen Vectors and Eigenvalues</h3>
-<p>The last step is to calculate the <strong>eigenvalues and eigenvectors</strong> of the dataset, where the eigenvectors will help to decide the algorithm the best for principle components or principle vectors to select, as there can be many principle vectors possible in the dataset to reduce the dimensionality of the data.</p>
-<h4>Code Example:</h4>
-<pre><code class="language-python">from sklearn.preprocessing import StandardScaler
-scale = StandardScaler()
-X_train = scale.fit_transform(X_train)
-X_test = scale.transform(X_test)
-
-from sklearn.decomposition import PCA
-pca = PCA(n_components = 2)
-X_train = pca.fit_transform(X_train)
-X_test = pca.transform(X_test)
-
+                        <p>There are many different approaches to chatting with your own data. 
+One way is to upload your PDF to the OpenAi chatGPT cloud. 
+This comes with several limitations such as data being deleted or umm the risk of a not smart chatGPT leaking it.</p>
+<p>Now, you can also download a model from somewhere. 
+And you need to find a good one. And it will probably not be as good as chatGPT. 
+So, to benefit from the advantage of chatGPT with local data, LangChain presents an interesting option. 
+We, however, need a vector store.</p>
+<h1>What is a vector store?</h1>
+<p>A vector store stores data as data encodings. This allows us to plug our own data in chatGPT. It augments the contextual awareness of chatGPT. If you asks about “Mauritius tourist activities”, it might give some response. If you give it more information, the response will be more detailed. You need to convert your data into vector embeddings and store it in a vector database. You can use Redis, PineCone (A SaaS offering) or ChromaDB as vector databases among others. Fortunately, LangChain helps us a lot in connecting a vector store for use in chatGPT.</p>
+<p>Please read this before to understand more about vector databases: 
+<a href="/LangChain-understand-production-codebases/">Understand langChain to Quickly Get Started with Production Codebases</a></p>
+<h2>The code</h2>
+<p>You need to install those:</p>
+<pre><code>pip install langchain openai chromadb==0.4.15 tiktoken unstructured
 </code></pre>
-<h1>Key Takeaways</h1>
-<ol>
-<li>Curse of dimensionality is a term used when the data haves many dimensions which can increase the computational power of the model and can affect the performance of the model.</li>
-<li>Principle component analysis is a technique used for reducing the dimensionality of the data.</li>
-<li>Before calculating the vectors that represent the data in lower dimensions, it is advised to normalize the data or make the data values on the same scale.</li>
-<li>Principle component analysis uses the principle components or principle vectors derived from the eigenvalues and eigenvectors to reduce the dimensionality of the dataset.</li>
-</ol>
-<h1>Conclusion</h1>
-<p>In this article, we discussed the principle component analysis, the core intuition behind it, and how the principle component analysis works with code examples. This article will help one to understand the concept of principal component analysis better and will help one to apply this technique wherever necessary.</p>
+<p>Then create a directory called data/.</p>
+<p>Then add your files in the data folder.</p>
+<p>Then create a file called chat.py.</p>
+<p>Your directory looks like this</p>
+<pre><code>./
+data/
+    friends.txt
+    bugs.txt
+chat.py
+</code></pre>
+<p>You can add whatever info you want in the data folder.</p>
+<p>You can add pdfs also.</p>
+<p>Then paste:</p>
+<pre><code class="language-python">import os
+import sys
+
+from langchain.chains import ConversationalRetrievalChain
+from langchain.chat_models import ChatOpenAI
+from langchain.document_loaders import DirectoryLoader
+from langchain.indexes import VectorstoreIndexCreator
+from langchain.indexes.vectorstore import VectorStoreIndexWrapper
+from langchain.vectorstores import Chroma
+from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
+
+os.environ[&quot;OPENAI_API_KEY&quot;] = &quot;sk-mykeyhere&quot;
+
+# Enable to save to disk &amp; reuse the model (for repeated queries on the same data)
+PERSIST = False
+query = None
+
+embedding_function = SentenceTransformerEmbeddings(model_name=&quot;all-MiniLM-L6-v2&quot;)
+
+
+if PERSIST and os.path.exists(&quot;persist&quot;):
+    print(&quot;Reusing index...\n&quot;)
+    vectorstore = Chroma(
+        persist_directory=&quot;persist&quot;, embedding_function=embedding_function
+    )
+    index = VectorStoreIndexWrapper(vectorstore=vectorstore)
+else:
+    # loader = TextLoader(&quot;data/data.txt&quot;) # Use this line if you only need data.txt
+    loader = DirectoryLoader(&quot;exp-data/&quot;)
+    if PERSIST:
+        index = VectorstoreIndexCreator(
+            vectorstore_kwargs={&quot;persist_directory&quot;: &quot;persist&quot;}
+        ).from_loaders([loader])
+    else:
+        index = VectorstoreIndexCreator().from_loaders([loader])
+
+chain = ConversationalRetrievalChain.from_llm(
+    llm=ChatOpenAI(model=&quot;gpt-3.5-turbo&quot;),
+    retriever=index.vectorstore.as_retriever(search_kwargs={&quot;k&quot;: 1}),
+)
+
+chat_history = []
+while True:
+    if not query:
+        query = input(&quot;Prompt &gt; &quot;)
+    if query in [&quot;quit&quot;, &quot;q&quot;, &quot;exit&quot;]:
+        sys.exit()
+    result = chain({&quot;question&quot;: query, &quot;chat_history&quot;: chat_history})
+    print(result[&quot;answer&quot;], end=&quot;\n\n&quot;)
+
+    chat_history.append((query, result[&quot;answer&quot;]))
+    query = None
+</code></pre>
+<p>The persist part is if you don’t want to load it in the db each time.</p>
+<h1>Notes</h1>
+<p>If you have errors like:</p>
+<pre><code>Traceback (most recent call last):
+  File &quot;&quot;, line 34, in &lt;module&gt;
+    index = VectorstoreIndexCreator().from_loaders([loader])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;&quot;, line 82, in from_loaders
+    return self.from_documents(docs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;&quot;, line 87, in from_documents
+    vectorstore = self.vectorstore_cls.from_documents(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;site-packages/langchain/vectorstores/chroma.py&quot;, line 684, in from_documents
+    return cls.from_texts(
+           ^^^^^^^^^^^^^^^
+  File &quot;site-packages/langchain/vectorstores/chroma.py&quot;, line 620, in from_texts
+    chroma_collection = cls(
+                        ^^^^
+  File &quot;site-packages/langchain/vectorstores/chroma.py&quot;, line 125, in __init__
+    self._collection = self._client.get_or_create_collection(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;site-packages/chromadb/api/client.py&quot;, line 226, in get_or_create_collection
+    return self._server.get_or_create_collection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;site-packages/chromadb/telemetry/opentelemetry/__init__.py&quot;, line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File &quot;site-packages/chromadb/api/segment.py&quot;, line 216, in get_or_create_collection
+    return self.create_collection(  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;site-packages/chromadb/telemetry/opentelemetry/__init__.py&quot;, line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File &quot;site-packages/chromadb/api/segment.py&quot;, line 190, in create_collection
+    return Collection(
+           ^^^^^^^^^^^
+  File &quot;site-packages/chromadb/api/models/Collection.py&quot;, line 85, in __init__
+    validate_embedding_function(embedding_function)
+  File &quot;site-packages/chromadb/api/types.py&quot;, line 210, in validate_embedding_function
+    raise ValueError(
+ValueError: Expected EmbeddingFunction.__call__ to have the following signature:
+odict_keys(['self', 'input']), got odict_keys(['self', 'args', 'kwargs'])
+Please see https://docs.trychroma.com/embeddings for details of the EmbeddingFunction interface.
+Please note the recent change to the EmbeddingFunction interface:
+https://docs.trychroma.com/migration#migration-to-0416---november-7-2023 
+</code></pre>
+<p>The solution is probably to pin an older version of chromadb as we did above.</p>
+<h1>Nice resources</h1>
+<p><a href="">Techlead video explanation</a>
+<a href="">Techlead outdated code (Which I fixed in this post)</a>
+<a href="">LangChain chroma notebook</a></p>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"
