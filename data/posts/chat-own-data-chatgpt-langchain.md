@@ -16,7 +16,7 @@ We, however, need a vector store.
 
 # What is a vector store?
 
-A vector store stores data as data encodings. This allows us to plug our own data in chatGPT. It augments the contextual awareness of chatGPT. If you asks about “Mauritius tourist activities”, it might give some response. If you give it more information, the response will be more detailed. You need to convert your data into vector embeddings and store it in a vector database. You can use Redis, PineCone (A SaaS offering) or ChromaDB as vector databases among others. Fortunately, LangChain helps us a lot in connecting a vector store for use in chatGPT.
+A vector store stores data as data encodings. This allows us to plug our own data in chatGPT. It augments the contextual awareness of chatGPT. If you asks about “Mauritius tourist activities”, it might give some response. If you give it more information, the response will be more detailed. You need to convert your data into vector embeddings and store it in a vector database. You can use Redis, PineCone (A SaaS offering) or [ChromaDB](https://python.langchain.com/docs/integrations/vectorstores/chroma) as vector databases among others. Fortunately, LangChain helps us a lot in connecting a vector store for use in chatGPT.
 
 Please read this before to understand more about vector databases: 
 [Understand langChain to Quickly Get Started with Production Codebases](/LangChain-understand-production-codebases/)
