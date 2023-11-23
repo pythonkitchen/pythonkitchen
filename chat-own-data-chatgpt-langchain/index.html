@@ -306,9 +306,11 @@ while True:
     validate_embedding_function(embedding_function)
   File &quot;site-packages/chromadb/api/types.py&quot;, line 210, in validate_embedding_function
     raise ValueError(
-ValueError: Expected EmbeddingFunction.__call__ to have the following signature: odict_keys(['self', 'input']), got odict_keys(['self', 'args', 'kwargs'])
+ValueError: Expected EmbeddingFunction.__call__ to have the following signature:
+odict_keys(['self', 'input']), got odict_keys(['self', 'args', 'kwargs'])
 Please see https://docs.trychroma.com/embeddings for details of the EmbeddingFunction interface.
-Please note the recent change to the EmbeddingFunction interface: https://docs.trychroma.com/migration#migration-to-0416---november-7-2023 
+Please note the recent change to the EmbeddingFunction interface:
+https://docs.trychroma.com/migration#migration-to-0416---november-7-2023 
 </code></pre>
 <p>The solution is probably to pin an older version of chromadb as we did above.</p>
 <h2>Nice resources</h2>
