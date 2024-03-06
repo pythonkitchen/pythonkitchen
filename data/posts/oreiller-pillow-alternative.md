@@ -1,6 +1,6 @@
 title: Oreiller: A Python Pillow Alternative
 slug: oreiller-pillow-alternative 
-pub: 2023-03-06 09:00:00
+pub: 2024-03-06 09:00:00
 authors: arj 
 tags: category: pillow
 
