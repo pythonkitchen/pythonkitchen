@@ -6,6 +6,7 @@ https://www.pythonkitchen.com/what-is-perceptron-in-deep-learning
 https://www.pythonkitchen.com/bag-of-words-in-natural-language-processing
 https://www.pythonkitchen.com/word2vec-vectorizer-in-natural-language-processing
 https://www.pythonkitchen.com/tfidf-vectorizers-in-natural-language-processing
+https://www.pythonkitchen.com/oreiller-pillow-alternative
 https://www.pythonkitchen.com/linear-algebra-applications-in-machine-learning
 https://www.pythonkitchen.com/linear-algebra-in-recommendation-systems-of-machine-learning
 https://www.pythonkitchen.com/principle-component-analysis-in-machine-learning
@@ -97,9 +98,9 @@ https://www.pythonkitchen.com/plotting-hotspots-in-mauritius-with-python-and-fol
 https://www.pythonkitchen.com/machine-learning-part-3-regression
 https://www.pythonkitchen.com/supervised-learning
 https://www.pythonkitchen.com/432
-https://www.pythonkitchen.com/machine-learning-part-1-introduction
 https://www.pythonkitchen.com/432
 https://www.pythonkitchen.com/pyqt5-value-cells-selected-row-qtview
+https://www.pythonkitchen.com/machine-learning-part-1-introduction
 https://www.pythonkitchen.com/checking-for-prime
 https://www.pythonkitchen.com/reviving-bertrand-russell-through-python
 https://www.pythonkitchen.com/armstrong-numbers
