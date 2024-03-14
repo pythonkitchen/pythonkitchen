@@ -84,7 +84,6 @@ I tried PDM and Poetry but never settled on them for daily usage. Rye in contras
 | Formatting tools included |  |  | x |
 | Can install and manage Python versions |  |  | x |
 
----
 
 - Rye intro: [https://www.youtube.com/watch?v=q99TYA7LnuA](https://www.youtube.com/watch?v=q99TYA7LnuA)
 - Rye docs: [https://rye-up.com/](https://rye-up.com/)
