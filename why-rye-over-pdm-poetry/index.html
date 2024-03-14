@@ -76,18 +76,18 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Daily Coding Problem Solution 2' content=''>
-  <meta name='category' content='algorithm and data structures'>
+  <meta name='Why I Prefer Rye: Rye v/s PDM v/s Poetry' content=''>
+  <meta name='category' content='packaging'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
   <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Daily Coding Problem Solution 2'>
-  <meta name='pageKey' content='daily-coding-problem-solution-2'>
-  <meta name='og:title' content='Daily Coding Problem Solution 2'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/daily-coding-problem-solution-2'>
+  <meta name='subtitle' content='Why I Prefer Rye: Rye v/s PDM v/s Poetry'>
+  <meta name='pageKey' content='why-rye-over-pdm-poetry'>
+  <meta name='og:title' content='Why I Prefer Rye: Rye v/s PDM v/s Poetry'>
+  <meta name='og:url' content='https://www.pythonkitchen.com/why-rye-over-pdm-poetry'>
 
-  <title>Daily Coding Problem Solution 2</title>
+  <title>Why I Prefer Rye: Rye v/s PDM v/s Poetry</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -151,17 +151,13 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Daily Coding Problem Solution 2</p>
+                    <p class="text-3xl" style="font-weight: 600;">Why I Prefer Rye: Rye v/s PDM v/s Poetry</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2021-03-22 19:24:08" class="text-gray-500">March 22, 2021</time>
+                        <time datetime="2024-03-14 07:00:00" class="text-gray-500">March 14, 2024</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            algorithm and data structures
-                        </a>
-                        
-                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            daily coding problem
+                            packaging
                         </a>
                         
                     </div>
@@ -181,80 +177,102 @@
                     
                     <br>
                     <article>
-                        <p>This problem was asked by Uber.</p>
-<p>Given an array of integers, return a new array such that each element at index i of the new array is the product of all the numbers in the original array except the one at i.</p>
-<p>For example, if our input was [1, 2, 3, 4, 5], the expected output would be [120, 60, 40, 30, 24]. If our input was [3, 2, 1], the expected output would be [2, 3, 6].</p>
-<p>Follow-up: what if you can&rsquo;t use division?</p>
+                        <p>Rye is impressive both as a package manager and as an onboarding tool for Python projects. I have done quite some workshops/sessions and one main pain point is getting Python up and running. Rye in addition to managing dependencies, also manages Python versions. And, being written in Rust guarantees some out-of-the-world speed. It also imports the cargo experience to Python.</p>
+<p>Rye can be used on Windows, Mac and Linux. A typical install of Rye also installs Python by default.</p>
+<pre><code>$ curl -sSf https://Rye-up.com/get | bash
+</code></pre>
+<p>Rye is thoughtful and comes with these commands:</p>
+<pre><code>$ rye self update
+$ rye self uninstall
+</code></pre>
+<p>To create a project:</p>
+<pre><code>$ rye init project
+$ cd project
+</code></pre>
+<p>After adding dependencies, we have to sync it with the virtual env.
+The add command adds it to pyproject.toml</p>
+<pre><code>$ rye add requests
+$ rye sync
+</code></pre>
+<p>If we want to run commands like flask run for example, Rye has the run command. <code>Rye run &lt;cli&gt;</code>/</p>
+<pre><code>$ rye run flask run
+</code></pre>
+<p>If you want to run <code>flask run</code> only, you just have to activate the virtual environment.</p>
+<p>You can check installed python versions using</p>
+<pre><code>$ rye toolchain list # try adding --downloadable
+</code></pre>
+<p>Rye supports locking but as always, it&rsquo;s platform-specific.</p>
+<p>Rye also allows you to publish your package.</p>
+<pre><code>$ rye build
+$ rye publish
+</code></pre>
+<p>Rye, true to the cargo spirit has the fmt command XD</p>
+<pre><code>$ rye fmt
+$ rye lint
+</code></pre>
+<p>It is to be noted that you can manage Python versions on your PC via Rye.</p>
+<p>Last, but not least, you can add your own command alias for other commands and env variables and add submodules managed by Rye.</p>
+<h2>Rye v/s PDM v/s Poetry</h2>
+<p>I tried PDM and Poetry but never settled on them for daily usage. Rye in contrast caught my approval.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">PDM</th>
+<th style="text-align: left;">Poetry</th>
+<th style="text-align: left;">Rye</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Install not needing Python</td>
+<td style="text-align: left;">x</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">x</td>
+</tr>
+<tr>
+<td style="text-align: left;">Can publish</td>
+<td style="text-align: left;">x</td>
+<td style="text-align: left;">x</td>
+<td style="text-align: left;">x</td>
+</tr>
+<tr>
+<td style="text-align: left;">Lock file</td>
+<td style="text-align: left;">x</td>
+<td style="text-align: left;">x</td>
+<td style="text-align: left;">x</td>
+</tr>
+<tr>
+<td style="text-align: left;">Multiple resolvers</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">x</td>
+</tr>
+<tr>
+<td style="text-align: left;">Easing Rust development</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">x</td>
+</tr>
+<tr>
+<td style="text-align: left;">Formatting tools included</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">x</td>
+</tr>
+<tr>
+<td style="text-align: left;">Can install and manage Python versions</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">x</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h3>A Pythonic Attempt</h3>
-<pre><code class="language-python">import copy
-import functools
-
-mylist1 = [1, 2, 3, 4, 5]
-output1 = [120, 60, 40, 30, 24]
-
-mylist2 = [3, 2, 1]
-output2 = [2, 3, 6]
-
-def prod_arr(mylist):
-    # pythonic
-    ans = []
-    for i, num in enumerate(mylist):
-        copied = copy.deepcopy(mylist)
-        copied.remove(num)
-        ans.append(functools.reduce(lambda a,b : a*b, copied))
-    return ans
-
-
-def prod_arr2(mylist):
-    # barebones
-    ans = []
-    for i, num in enumerate(mylist):
-        prod = 1
-        for i2, num2 in enumerate(mylist):
-            if i2 != i:
-                prod *= num2
-        ans.append(prod)
-    return ans
-
-assert prod_arr(mylist1) == output1, 'fail'
-assert prod_arr(mylist2) == output2, 'fail'
-
-assert prod_arr2(mylist1) == output1, 'fail'
-assert prod_arr2(mylist2) == output2, 'fail'
-
-</code></pre>
-<h3>The Real Solution Online</h3>
-<pre><code class="language-python">def products(nums):
-    # Generate prefix products
-    prefix_products = []
-    for num in nums:
-        if prefix_products:
-            prefix_products.append(prefix_products[-1] * num)
-        else:
-            prefix_products.append(num)
-
-    # Generate suffix products
-    suffix_products = []
-    for num in reversed(nums):
-        if suffix_products:
-            suffix_products.append(suffix_products[-1] * num)
-        else:
-            suffix_products.append(num)
-    suffix_products = list(reversed(suffix_products))
-
-    # Generate result
-    result = []
-    for i in range(len(nums)):
-        if i == 0:
-            result.append(suffix_products[i + 1])
-        elif i == len(nums) - 1:
-            result.append(prefix_products[i - 1])
-        else:
-            result.append(prefix_products[i - 1] * suffix_products[i + 1])
-    return result
-
-</code></pre>
+<ul>
+<li>Rye intro: <a href="https://www.youtube.com/watch?v=q99TYA7LnuA">https://www.youtube.com/watch?v=q99TYA7LnuA</a></li>
+<li>Rye docs: <a href="https://rye-up.com/">https://rye-up.com/</a></li>
+</ul>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"
