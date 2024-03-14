@@ -1,4 +1,5 @@
 https://www.pythonkithen.com/
+https://www.pythonkitchen.com/how-solve-django-syntax-error-migrate
 https://www.pythonkitchen.com/why-rye-over-pdm-poetry
 https://www.pythonkitchen.com/oreiller-pillow-alternative
 https://www.pythonkitchen.com/chat-own-data-chatgpt-langchain

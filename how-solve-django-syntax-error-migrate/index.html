@@ -76,18 +76,18 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Python-efl A Window' content=''>
-  <meta name='category' content='python-efl'>
+  <meta name='How To Solve Django Syntax Error On Migrating' content=''>
+  <meta name='category' content='fixes'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
   <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Python-efl A Window'>
-  <meta name='pageKey' content='python-efl-1'>
-  <meta name='og:title' content='Python-efl A Window'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/python-efl-1'>
+  <meta name='subtitle' content='How To Solve Django Syntax Error On Migrating'>
+  <meta name='pageKey' content='how-solve-django-syntax-error-migrate'>
+  <meta name='og:title' content='How To Solve Django Syntax Error On Migrating'>
+  <meta name='og:url' content='https://www.pythonkitchen.com/how-solve-django-syntax-error-migrate'>
 
-  <title>Python-efl A Window</title>
+  <title>How To Solve Django Syntax Error On Migrating</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -151,13 +151,13 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Python-efl A Window</p>
+                    <p class="text-3xl" style="font-weight: 600;">How To Solve Django Syntax Error On Migrating</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2021-10-22 18:02:40" class="text-gray-500">October 22, 2021</time>
+                        <time datetime="2024-03-14 16:50:00" class="text-gray-500">March 14, 2024</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            python-efl
+                            fixes
                         </a>
                         
                     </div>
@@ -177,52 +177,34 @@
                     
                     <br>
                     <article>
-                        <p>Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.</p>
-<p>Simple window</p>
-<p>Be sure to read first:</p>
-<p><a href="https://www.pythonkitchen.com/how-to-install-python-efl-on-ubuntu-or-linux-mint/">How to install Python-efl on Ubuntu or Linux Mint</a></p>
-<pre><code class="language-python">'''
-Abdur-Ramaan Janhangeer
-Updated from Jeff Hoogland's tutos
-for Python3.9 and Python-elf 1.25.0
-
-https://www.toolbox.com/tech/operating-systems/blogs/py-efl-tutorial-1-hello-elementary-022415/
-'''
-import efl.elementary as elm
-from efl.elementary.label import Label
-from efl.elementary.window import StandardWindow
-from efl.evas import EVAS_HINT_EXPAND
-
-EXPAND_BOTH = EVAS_HINT_EXPAND, EVAS_HINT_EXPAND
-
-
-class MainWindow(StandardWindow):
-    def __init__(self):
-        StandardWindow.__init__(self, &quot;ex1&quot;, &quot;Hello Elementary&quot;, size=(300, 200))
-        self.callback_delete_request_add(lambda o: elm.exit())
-        label = Label(self)
-        label.size_hint_weight = EXPAND_BOTH
-        label.text = &quot;Hello Elementary!&quot;
-        label.show()
-        self.resize_object_add(label)
-
-
-if __name__ == &quot;__main__&quot;:
-    elm.init()
-    gui = MainWindow()
-    gui.show()
-    elm.run()
-
+                        <p>The Django syntax error on migrating is very annoying, specially when you don&rsquo;t find any error when looking for one. This post contains a working solution.</p>
+<h1>Table of contents</h1>
+<ul>
+<li>I get a syntax error when trying to migrate in Django</li>
+<li>The solution</li>
+</ul>
+<h1>I get a syntax error when trying to migrate in Django</h1>
+<p>When using the migrate commands in Django</p>
+<pre><code>$ python manage.py makemigrations
+$ python manage.py migrate
 </code></pre>
-<p>Note: elm.shutdown is no longer needed as per the docs which says</p>
-<pre><code class="language-python">        .. versionchanged:: 1.14
-
-            The Python module calls this function when it is exiting so you
-            should no longer have any need to call this manually. Calling it does
-            not carry any penalty though.
-
+<p>You might get this ugly error:</p>
+<pre><code>File &quot;/my/path/lib/python3.11/site-packages/django/db/backends/utils.py&quot;, line 92, in _execute_with_wrappers return executor(sql, params, many, context) 
+File &quot;/my/path/lib/python3.11/site-packages/django/db/backends/utils.py&quot;, line 100, in _execute with self.db.wrap_database_errors: 
+File &quot;/my/path/lib/python3.11/site-packages/django/db/utils.py&quot;, line 91, in exit_ raise dj_exc_value.with_traceback(traceback) from exc_value 
+File &quot;/my/path/lib/python3.11/site-packages/django/db/backends/utils.py&quot;, line 105, in _execute return self,cursor.execute(sq1,2arams) 
+File &quot;/my/path/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py&quot; , line 329, in execute return super().execute(queryparams) 
+django.db.utils.OperationalError: near &quot;)&quot;: syntax error 
 </code></pre>
-<p>Updated from Jeff Hoogland&rsquo;s tutos</p>
+<p>You can confirm using a tool like ruff or copy pasting online in a syntax checker to ensure that there are actually no syntax error. This is troubling.</p>
+<p>Apparently, the error is caused by a bad model which got integrated in one of the migrations.</p>
+<h1>The solution</h1>
+<p>To solve a syntax error on using the migrate comamnds,</p>
+<ol>
+<li>delete all files in all migrations folder except <code>__init__.py</code></li>
+<li>delete the sqlite database if need be</li>
+</ol>
+<p>Bit, hard but it baseline solves the issue.</p>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"
