@@ -77,3 +77,14 @@ blockquote {
 code p{
     max-width: 50% !important;
 }
+
+table td{
+    color: rgb(75,85,99) !important;
+
+}
+table{
+    margin: 40px;
+}
+table tr{
+    border-bottom: 2px solid rgb(239, 239, 239) !important;
+}
