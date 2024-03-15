@@ -46,4 +46,4 @@ To solve a syntax error on using the migrate comamnds,
 1. delete all files in all migrations folder except `__init__.py`
 2. delete the sqlite database if need be
 
-Bit, hard but it baseline solves the issue.
+Bit hard, but it solves the issue.
