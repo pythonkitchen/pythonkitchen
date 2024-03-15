@@ -66,8 +66,9 @@ article h4{
 }
 
 article code{
-    max-width: 500px !important;
+    max-width: 45vw !important;
     overflow-x: scroll;
+    border-radius: 5px;
 }
 
 
@@ -79,10 +80,6 @@ blockquote {
     padding: 15px;
     font-style: italic;
     margin: 20px !important;
-}
-
-code p{
-    max-width: 50% !important;
 }
 
 table td{
