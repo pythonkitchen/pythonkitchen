@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="EN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset='UTF-8'>
+  <meta name='keywords' content='python, machine learning'>
+  <meta name='description' content='Educating programmers about interesting, 
+    crucial topics. Articles are intended to break down tough subjects, while 
+    being friendly to beginners'>
+  <meta name='subject' content='Python / Machine Learning articles'>
+  <meta name='copyright' content='pythonkitchen.com'>
+  <meta name='language' content='EN'>
+  <meta name='robots' content='index,follow'>
+  <meta name='revised' content='Wednesday, August 30thth, 2023, 13:30 pm'>
+  <meta name='abstract' content=''>
+  <meta name='topic' content='python'>
+  <meta name='summary' content=''>
+  <meta name='Classification' content='Education'>
+  <meta name='author' content='PythonKitchen, email@hotmail.com'>
+  <meta name='designer' content=''>
+  <meta name='reply-to' content='email@hotmail.com'>
+  <meta name='owner' content=''>
+  <meta name='url' content='https://www.pythonkitchen.com'>
+  <meta name='identifier-URL' content='https://www.pythonkitchen.com'>
+  <meta name='directory' content='submission'>
+  
+  
+  <meta name='target' content='all'>
+  <meta name='HandheldFriendly' content='True'>
+  <meta name='MobileOptimized' content='320'>
+  <meta name='date' content='2024-03-14 16:50:00'>
+  <meta name='DC.title' content='Quality Python articles'>
+  <meta name='ResourceLoaderDynamicStyles' content=''>
+  <meta name='medium' content='blog'>
+  <!-- <meta name='verify-v1' content='dV1r/ZJJdDEI++fKJ6iDEl6o+TMNtSu0kv18ONeqM0I='>
+  <meta name='y_key' content='1e39c508e0d87750'> -->
+  
+  <meta http-equiv='Expires' content='0'>
+  <meta http-equiv='Pragma' content='no-cache'>
+  <meta http-equiv='Cache-Control' content='no-cache'>
+  <meta http-equiv='imagetoolbar' content='no'>
+  <meta http-equiv='x-dns-prefetch-control' content='off'>
+
+  
+  <meta name='og:type' content='blog'>
+  <meta name='og:site_name' content='PythonKitchen'>
+  <meta name='og:description' content='Educating programmers about interesting, 
+  crucial topics. Articles are intended to break down tough subjects, while 
+  being friendly to beginners'>
+
+  <link rel="shortcut icon" href="/assets/logo.png" /> 
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+
+  </style>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4895581427484601" crossorigin="anonymous"></script>
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161612035-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-161612035-3');
+</script>
+
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ejj5ivpuup");
+</script>
+
+  <meta name='How to define prefect deployments' content=''>
+  <meta name='category' content='dask'>
+  <meta name='coverage' content='Worldwide'>
+  <meta name='distribution' content='Global'>
+  <meta name='rating' content='General'>
+  <meta name='revisit-after' content='1 year'>
+  <meta name='subtitle' content='How to define prefect deployments'>
+  <meta name='pageKey' content='how-define-prefect-deployments'>
+  <meta name='og:title' content='How to define prefect deployments'>
+  <meta name='og:url' content='https://www.pythonkitchen.com/how-define-prefect-deployments'>
+
+  <title>How to define prefect deployments</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+
+<link rel="stylesheet" href="/css/post.css"> 
+
+
+</head>
+<body class="bg-gray-50">
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="/" class="flex items-center">
+          <img src="/assets/logo.png" class="h-8 mr-3" alt="PythonKitchen Logo" 
+            style="width: 50px !important; height: 50px !important;"/>
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PythonKitchen</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="/" 
+            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
+            Home</a>
+          </li>
+          <li>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnP_IW4nK95hv-eBDIlxHb5E5DeOniFWBi9YmxlHZARLJDAQ/viewform" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Write</a>
+          </li>
+          <li>
+            <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Contact</a>
+          </li>
+          <!-- <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+
+<div class="p-8">
+
+</div>
+
+<div class="flex flex-row space-x-2">
+    <div class="basis-3/4">
+        <div class="p-8 pl-12">
+            <div class="ml-2">
+                <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
+                    <p class="text-3xl" style="font-weight: 600;">How to define prefect deployments</p>
+                    <br>
+                    <div class="flex items-center gap-x-4 text-xs">
+                        <time datetime="2023-07-03 19:00:00" class="text-gray-500">July 3, 2023</time>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            dask
+                        </a>
+                        
+                    </div>
+                    
+                        <div class="relative mt-8 flex items-center gap-x-4">
+                            <img src="https://github.com/Abdur-rahmaanJ.png?size=40" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                            <div class="text-sm leading-6">
+                            <p class="font-semibold text-gray-900">
+                                <a href='https://www.linkedin.com/in/appinv/'>
+                                <span class="absolute inset-0"></span>
+                                Abdur-Rahmaan Janhangeer
+                                </a>
+                            </p>
+                            <p class="text-gray-600">Chef</p>
+                            </div>
+                        </div>
+                    
+                    <br>
+                    <article>
+                        <p>The <a href="https://www.prefect.io/">Prefect</a> documentation about deplyments are super vague. This post explains how to add deployments.</p>
+<h2>Table of content</h2>
+<ul>
+<li>Where are deployment codes located in the docs</li>
+<li>What is a deployment</li>
+<li>Define and run prefect deployments</li>
+<li>A minimal example</li>
+<li>The prefect server</li>
+</ul>
+<h4>Where are deployment codes located in the docs</h4>
+<p>Deployments are not located inside the Deployment section, but rather in the <a href="https://docs.prefect.io/latest/concepts/flows/">flows section</a>.</p>
+<h4>What is a Deployment</h4>
+<p>Typically, deployments, whererver you define them, populate a class like this which you don&rsquo;t need to write:</p>
+<pre><code class="language-py">class Deployment:
+    &quot;&quot;&quot;
+    Structure of the schema defining a deployment
+    &quot;&quot;&quot;
+
+    # required defining data
+    name: str 
+    flow_id: UUID
+    entrypoint: str
+    path: str = None
+
+    # workflow scheduling and parametrization
+    parameters: Optional[Dict[str, Any]] = None
+    parameter_openapi_schema: Optional[Dict[str, Any]] = None
+    schedules: list[Schedule] = None
+    paused: bool = False
+    trigger: Trigger = None
+
+    # metadata for bookkeeping
+    version: str = None
+    description: str = None
+    tags: list = None
+
+    # worker-specific fields
+    work_pool_name: str = None
+    work_queue_name: str = None
+    infra_overrides: Optional[Dict[str, Any]] = None
+    pull_steps: Optional[Dict[str, Any]] = None
+</code></pre>
+<p>Deployments are essentially defining metadata</p>
+<h4>Define and run prefect deployments</h4>
+<p>Deployments can be created like this. where <code>hello_world</code> is a flow</p>
+<pre><code class="language-py">hello_world.serve(name=&quot;my-first-deployment&quot;,
+                      tags=[&quot;onboarding&quot;],
+                      parameters={&quot;goodbye&quot;: True},# flow params
+                      interval=60)
+</code></pre>
+<p>You can run the deployment like this</p>
+<pre><code class="language-py">from prefect.deployments import run_deployment
+run_deployment(name=&quot;hello_world/my-first-deployment&quot;)
+</code></pre>
+<p>Or, you can run on the commandline</p>
+<pre><code class="language-shell">prefect deployment run 'hello_world/my-first-deployment'
+</code></pre>
+<h3>A minimal example</h3>
+<pre><code class="language-python">from prefect import flow
+from prefect import task
+
+@task
+def laugh():
+    pass
+
+@task
+def run():
+    pass
+
+@task
+def swim():
+    pass
+
+@task
+def walk():
+    pass
+
+@flow
+def first_subflow():
+    laugh()
+    run()
+
+@flow
+def second_subflow():
+    laugh()
+    run()
+
+@flow
+def pipeline():
+    # do stuffs
+    first_subflow()
+    second_subflow()
+
+
+
+
+if __name__ == &quot;__main__&quot;:
+    pipeline.serve(name=&quot;ml-pipeline&quot;)
+</code></pre>
+<p>Then on the shell we run</p>
+<pre><code class="language-shell">prefect deployment run 'pipeline/ml-pipeline'
+</code></pre>
+<p>It will produce something like this</p>
+<pre><code>Creating flow run for deployment 'pipeline/canon-pipeline'...
+Created flow run 'beautiful-nyala'.
+└── UUID: 45ef0da2-ff32-472e-a9b8-8fecdeb95b10
+└── Parameters: {}
+└── Job Variables: {}
+└── Scheduled start time: 2024-07-03 19:20:02 +04 (now)
+└── URL: http://path-to-server:4200/flow-runs/flow-run/45ef0da2-ff32-472e-a9b8-8fecdeb95b10
+</code></pre>
+<h4>The prefect server</h4>
+<p>If you go to the prefect server you can see:</p>
+<p><img alt="Selection_383" src="https://github.com/pythonkitchen/pythonkitchen/assets/22630684/4ab235d6-6b54-48f0-b019-69cfbebe3cdb" />
+<img alt="Selection_382" src="https://github.com/pythonkitchen/pythonkitchen/assets/22630684/1c371598-feab-407d-a7ab-c17e31d7a8f5" /></p>
+<p>You can click on the toggle to activate then press the run button or select interval, which can also be defined when serving</p>
+
+                        <script src="https://utteranc.es/client.js"
+        repo="pythonkitchen/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+                    </article>
+                
+                  </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="basis-1/4">
+        <div class="p-8 pl-12">
+            <div class="ml-2">
+                <div class=" bg-white rounded-lg shadow-lg" style="padding: 5px">
+                    <article>
+                        <a target="_blank" href="https://leanpub.com/c/flask-masterclass">
+                            <img src="/assets/flaskcoursefree.png" style="width: 100% !important">
+                        </a>
+                        Free Flask Course
+                    </article>
+                    </div>
+                    
+                    
+            </div>
+        </div>
+
+        
+    </div>
+  </div>
+
+
+
+
+<script>hljs.highlightAll();</script>
+
+
+
+
+</body>
+</html>
