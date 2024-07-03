@@ -1,6 +1,6 @@
 title: How to define prefect deployments
 slug: how-define-prefect-deployments
-pub: 2023-07-03 19:00:00
+pub: 2024-07-03 19:00:00
 authors: arj
 tags: 
 category: dask
