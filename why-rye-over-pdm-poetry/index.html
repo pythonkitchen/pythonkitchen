@@ -29,7 +29,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2024-07-03 19:00:00'>
+  <meta name='date' content='2024-03-14 16:50:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -96,6 +96,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
 
 <link rel="stylesheet" href="/css/post.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
 </head>
@@ -293,8 +294,8 @@ $ rye lint
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 5px">
                     <article>
-                        <a target="_blank" href="https://leanpub.com/c/flask-masterclass">
-                            <img src="/assets/flaskcoursefree.png" style="width: 100% !important">
+                        <a  target="_blank" href="https://leanpub.com/c/flask-masterclass">
+                            <img id="side-img" src="/assets/flaskcoursefree.png" style="width: 100% !important">
                         </a>
                         Free Flask Course
                     </article>
@@ -309,12 +310,23 @@ $ rye lint
   </div>
 
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>hljs.highlightAll();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+<script type="text/javascript">
+    var img = jQuery("img");
 
+img.each(function() {
+   var element = jQuery(this);
+   var a = jQuery("<a />", {href: element.attr("src"), "data-lightbox": "test"});
 
+   element.wrap(a);
+});
+
+    $("#side-img").parent().removeAttr( "data-lightbox" ).attr("href","https://leanpub.com/c/flask-masterclass").attr("target","_blank");
+</script>
 
 </body>
 </html>
