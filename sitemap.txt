@@ -1,11 +1,11 @@
 https://www.pythonkithen.com/
+https://www.pythonkitchen.com/how-define-prefect-deployments
 https://www.pythonkitchen.com/how-solve-django-syntax-error-migrate
 https://www.pythonkitchen.com/why-rye-over-pdm-poetry
 https://www.pythonkitchen.com/oreiller-pillow-alternative
 https://www.pythonkitchen.com/chat-own-data-chatgpt-langchain
 https://www.pythonkitchen.com/LangChain-understand-production-codebases
 https://www.pythonkitchen.com/install-pipx-mint-ubuntu
-https://www.pythonkitchen.com/how-define-prefect-deployments
 https://www.pythonkitchen.com/what-is-perceptron-in-deep-learning
 https://www.pythonkitchen.com/bag-of-words-in-natural-language-processing
 https://www.pythonkitchen.com/word2vec-vectorizer-in-natural-language-processing
