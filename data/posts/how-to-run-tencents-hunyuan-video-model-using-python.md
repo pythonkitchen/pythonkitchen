@@ -7,7 +7,7 @@ category: web
 
 
 ## Table of content
-- What is HunYan Video model?
+- What is HunYuan Video model?
 - How does it differ from competitors?
 - Architectural novelties
 - How to install
@@ -15,17 +15,17 @@ category: web
 - Docker recipe
 
 
-## What is HunYan Video model?
+## What is HunYuan Video model?
 
 [HunYuan](https://github.com/tencent/HunyuanVideo) is a new video model that supposedly outperforms SORA, the SOTA of video models.
 
 ## How does it differ from competitors?
 
-HunYan is OpenSource, has 13 billion parameters, the largest for an open model to date and ranks better than closed-source versions.
+HunYuan is OpenSource, has 13 billion parameters, the largest for an open model to date and ranks better than closed-source versions.
 
 ## Architectural novelties
 
-To achieve the above, HunYan innovated in these areas:
+To achieve the above, HunYuan innovated in these areas:
 
 1. *Unified Dual-to-Single-Stream Design*: The model processes video and text tokens independently at first and later merges them for deeper multimodal understanding. This improves how visual and semantic information are aligned.
 
