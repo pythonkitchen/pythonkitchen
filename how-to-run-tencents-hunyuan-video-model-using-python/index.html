@@ -76,18 +76,18 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Machine Learning Part 9 Neural Networks' content=''>
-  <meta name='category' content='machine learning'>
+  <meta name='How to run Tencent's Hunyuan Video model using Python' content=''>
+  <meta name='category' content='web'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
   <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Machine Learning Part 9 Neural Networks'>
-  <meta name='pageKey' content='machine-learning-part-9-neural-networks'>
-  <meta name='og:title' content='Machine Learning Part 9 Neural Networks'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/machine-learning-part-9-neural-networks'>
+  <meta name='subtitle' content='How to run Tencent's Hunyuan Video model using Python'>
+  <meta name='pageKey' content='how-to-run-tencents-hunyuan-video-model-using-python'>
+  <meta name='og:title' content='How to run Tencent's Hunyuan Video model using Python'>
+  <meta name='og:url' content='https://www.pythonkitchen.com/how-to-run-tencents-hunyuan-video-model-using-python'>
 
-  <title>Machine Learning Part 9 Neural Networks</title>
+  <title>How to run Tencent's Hunyuan Video model using Python</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -152,13 +152,13 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Machine Learning Part 9 Neural Networks</p>
+                    <p class="text-3xl" style="font-weight: 600;">How to run Tencent's Hunyuan Video model using Python</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2021-04-07 10:10:40" class="text-gray-500">April 7, 2021</time>
+                        <time datetime="2024-11-05 20:07:00" class="text-gray-500">November 5, 2024</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            machine learning
+                            web
                         </a>
                         
                     </div>
@@ -178,89 +178,73 @@
                     
                     <br>
                     <article>
-                        <h1>9 neural networks</h1>
-<p>Machine Learning</p>
-<p>👉♡ supervised learning
-♡ unsupervised learning
-♡ reinforcement learning</p>
-<p>recap:
-🔖 types of supervised learning</p>
-<p>✅ classification 📑</p>
-<p>✅ regression 📈</p>
-<p>✅ mixed ⚗
-- tree based
-- random forest
-- neural networks 🎈
-- support vector machines</p>
-<p>neural networks</p>
-<p>neural networks require a bit of explanation. entire books can be written on the subject</p>
-<p>🕸 the perceptron</p>
-<p>the perceptron was the basis for neural networks. it consists of two inputs, a processor and an output.</p>
-<p>the processor is just a function that decides what to output according to the inputs. it might check if &gt; a number or just check the sign or whatever</p>
-<p>🕸 weight</p>
-<p>the weight is just a value that we multiply the input by.</p>
-<p>🕸 sum</p>
-<p>we then sum the inputs * weight and pass them to the function.</p>
-<p>so we can see input -&gt; weight -&gt; function</p>
-<p>🕸 example</p>
-<p>let us say our two inputs are</p>
-<p>input1 : 5
-input2 : 6</p>
-<p>let us have some random weights</p>
-<p>weight1 : 2
-weight2 : 1</p>
-<p>let us sum</p>
-<p>input1 * weight1 + input2 * weight2
-5 * 2 + 6 * 1
-16</p>
-<p>let us say we configure our function as</p>
-<p>def activation(sum):
- if sum &gt; 10:
- return 0
- else:
- return 1</p>
-<p>well, we just pass it to the activation function and it will return 1</p>
-<p>⚽️ exercise:
-1 find out the uses of neural networks (the fields)
-hint: time series prediction, signal analysis &hellip;</p>
-<p>next:
-the bias input and what need to be continued</p>
-<p>&hellip;</p>
-<h1>9 neural networks (continued)</h1>
-<p>Machine Learning</p>
-<p>👉♡ supervised learning
-♡ unsupervised learning
-♡ reinforcement learning</p>
-<p>recap:
-🔖 types of supervised learning</p>
-<p>✅ classification 📑</p>
-<p>✅ regression 📈</p>
-<p>✅ mixed ⚗
-- tree based
-- random forest
-- neural networks 🎈
-- support vector machines</p>
-<p>neural networks</p>
-<p>🎋 bias input</p>
-<p>in our example above let us say that we have input1 0 and input2 0, 0<em>weight1+0</em>weight2 will always be zero, no matter what the weight. because of this we add a permanent input of 1 so that it becomes 0<em>weight1+0</em>weight2 + 1*weight3  weight3, in that case, the weight passes through the activation function</p>
-<p>🎋 neural network</p>
-<p>a neural network is a collection of perceptrons</p>
-<p>🎋 training</p>
-<p>whatever we wanted to do with a neural network, we must first adjust the weights as we gave it random weights at the begining. first we test the perceptrons agains inputs with known answer. we then compute the error (did it get the answer right or no). we then adjust weights according to the error. we repeat</p>
-<p>🎋 error</p>
-<p>our error is
-desired output - guess output</p>
-<p>🎋 tuning weight</p>
-<p>our new weight equals
-weight + change in weight</p>
-<p>change in weight = error * input</p>
-<p>so,</p>
-<p>new weight = weight + error * input</p>
-<p>🎋 learning constant</p>
-<p>to decide at what rate we change our weight, we just use a value called learning constant. too large and we won&rsquo;t tune our weight correctly. too little and &hellip; it takes a long time</p>
-<p>new weight = weight + error * input * learning constant</p>
-<p>⚽️ exercise:
-read implementations of neural networks from scratch in python</p>
+                        <h2>Table of content</h2>
+<ul>
+<li>What is HunYan Video model?</li>
+<li>How does it differ from competitors?</li>
+<li>Architectural novelties</li>
+<li>How to install</li>
+<li>How to run?</li>
+<li>Docker recipe</li>
+</ul>
+<h2>What is HunYan Video model?</h2>
+<p><a href="https://github.com/tencent/HunyuanVideo">HunYuan</a> is a new video model that supposedly outperforms SORA, the SOTA of video models.</p>
+<h2>How does it differ from competitors?</h2>
+<p>HunYan is OpenSource, has 13 billion parameters, the largest for an open model to date and ranks better than closed-source versions.</p>
+<h2>Architectural novelties</h2>
+<p>To achieve the above, HunYan innovated in these areas:</p>
+<ol>
+<li>
+<p><em>Unified Dual-to-Single-Stream Design</em>: The model processes video and text tokens independently at first and later merges them for deeper multimodal understanding. This improves how visual and semantic information are aligned.</p>
+</li>
+<li>
+<p><em>Multimodal Large Language Model (MLLM) as Text Encoder</em>: Instead of traditional encoders like CLIP or T5, HunyuanVideo uses MLLM with a decoder-only structure, enhancing text-video alignment, complex reasoning, and image detail capture.</p>
+</li>
+<li>
+<p><em>3D VAE Compression</em>: The use of CausalConv3D compresses high-resolution videos into a compact latent space efficiently, allowing training on full-resolution, high-frame-rate videos without excessive computational cost.</p>
+</li>
+<li>
+<p><em>Prompt Rewrite Mechanism</em>: It fine-tunes user prompts into model-optimized instructions for better comprehension (Normal mode) or higher visual quality (Master mode), improving generation accuracy and adaptability.</p>
+</li>
+</ol>
+<h2>How to install</h2>
+<p>First clone the repo</p>
+<pre><code>git clone https://github.com/tencent/HunyuanVideo
+</code></pre>
+<p>enter</p>
+<pre><code>cd HunyuanVideo
+</code></pre>
+<p>Prepare conda environment</p>
+<pre><code>conda env create -f environment.yml
+</code></pre>
+<p>Activate</p>
+<pre><code>conda activate HunyuanVideo
+</code></pre>
+<p>Install dependencies</p>
+<pre><code>python -m pip install -r requirements.txt
+</code></pre>
+<p>Install flash attention v2 for acceleration (requires CUDA 11.8 or above)</p>
+<pre><code>python -m pip install git+https://github.com/Dao-AILab/flash-attention.git@v2.5.9.post1
+</code></pre>
+<h2>How to run?</h2>
+<p>Run this inside the folder</p>
+<pre><code>python sample_video.py \
+    --video-size 720 1280 \
+    --video-length 129 \
+    --infer-steps 30 \
+    --prompt &quot;a cat is running, realistic.&quot; \
+    --flow-reverse \
+    --seed 0 \
+    --use-cpu-offload \
+    --save-path ./results
+</code></pre>
+<h2>Docker recipe</h2>
+<p>For Cuda 12, you can run these instructions</p>
+<pre><code>wget https://aivideo.hunyuan.tencent.com/download/HunyuanVideo/hunyuan_video_cu12.tar
+docker load -i hunyuan_video.tar
+docker image ls
+docker run -itd --gpus all --init --net=host --uts=host --ipc=host --name hunyuanvideo --security-opt=seccomp=unconfined --ulimit=stack=67108864 --ulimit=memlock=-1 --privileged  docker_image_tag
+</code></pre>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"
