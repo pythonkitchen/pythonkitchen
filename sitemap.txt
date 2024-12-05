@@ -1,4 +1,8 @@
 https://www.pythonkithen.com/
+https://www.pythonkitchen.com/copy-files-aws-ec2
+https://www.pythonkitchen.com/how-to-ssh-into-aws-ec2
+https://www.pythonkitchen.com/fix-dockererrorsdockerexception-error-fetching-server-api-version-without-using-docker-desktop
+https://www.pythonkitchen.com/how-to-prevent-openai-and-similar-from-scraping-your-blog
 https://www.pythonkitchen.com/how-to-run-tencents-hunyuan-video-model-using-python
 https://www.pythonkitchen.com/how-define-prefect-deployments
 https://www.pythonkitchen.com/how-solve-django-syntax-error-migrate
