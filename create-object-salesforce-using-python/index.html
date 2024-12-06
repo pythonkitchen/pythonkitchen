@@ -76,18 +76,18 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Display Most Frequent Words Using Pygame' content=''>
-  <meta name='category' content='pygame'>
+  <meta name='How to create an object in salesforce using Python' content=''>
+  <meta name='category' content='salesforce'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
   <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Display Most Frequent Words Using Pygame'>
-  <meta name='pageKey' content='display-most-frequent-words-python-pygame'>
-  <meta name='og:title' content='Display Most Frequent Words Using Pygame'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/display-most-frequent-words-python-pygame'>
+  <meta name='subtitle' content='How to create an object in salesforce using Python'>
+  <meta name='pageKey' content='create-object-salesforce-using-python'>
+  <meta name='og:title' content='How to create an object in salesforce using Python'>
+  <meta name='og:url' content='https://www.pythonkitchen.com/create-object-salesforce-using-python'>
 
-  <title>Display Most Frequent Words Using Pygame</title>
+  <title>How to create an object in salesforce using Python</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -152,13 +152,13 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Display Most Frequent Words Using Pygame</p>
+                    <p class="text-3xl" style="font-weight: 600;">How to create an object in salesforce using Python</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2020-11-24 11:22:02" class="text-gray-500">November 24, 2020</time>
+                        <time datetime="2024-11-06 05:56:00" class="text-gray-500">November 6, 2024</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            pygame
+                            salesforce
                         </a>
                         
                     </div>
@@ -178,58 +178,33 @@
                     
                     <br>
                     <article>
-                        <pre><code class="language-python">&quot;&quot;&quot;
-Author: Abdur-Rahmaan Janhangeer
-Github: https://github.com/Abdur-rahmaanJ
-Instructions:
-    pip install hooman
-&quot;&quot;&quot;
-from hooman import Hooman
-import pygame
-from collections import Counter
-
-window_width, window_height = 500, 500
-hapi = Hooman(window_width, window_height)
-
-bg_col = (255, 255, 255)
-
-text = '''
-Python programs frequently need to handle data which varies in type, presence of attributes/keys, or number of elements. Typical examples are operating on nodes of a mixed structure like an AST, handling UI events of different types, processing structured input (like structured files or network messages), or “parsing” arguments for a function that can accept different combinations of types and numbers of parameters. In fact, the classic 'visitor' pattern is an example of this, done in an OOP style -- but matching makes it much less tedious to write.
-
-Much of the code to do so tends to consist of complex chains of nested if/elif statements, including multiple calls to len(), isinstance() and index/key/attribute access. Inside those branches users sometimes need to destructure the data further to extract the required component values, which may be nested several objects deep.
-
-Pattern matching as present in many other languages provides an elegant solution to this problem. These range from statically compiled functional languages like F# and Haskell, via mixed-paradigm languages like Scala [4] and Rust [3], to dynamic languages like Elixir and Ruby, and is under consideration for JavaScript. We are indebted to these languages for guiding the way to Pythonic pattern matching, as Python is indebted to so many other languages for many of its features: many basic syntactic features were inherited from C, exceptions from Modula-3, classes were inspired by C++, slicing came from Icon, regular expressions from Perl, decorators resemble Java annotations, and so on.
-'''.strip().replace('\n', '')
-
-words = text.split()
+                        <p>Here&rsquo;s a simple snippet for creating a new custom object in Salesforce in Python.</p>
+<pre><code class="language-python">from simple_salesforce import Salesforce
 
 
-word_counts = Counter(words)
-top_freq = word_counts.most_common(5)
-# top_freq: [('to', 12), ('of', 11), ('and', 7), ('languages', 6), ('the', 5)]
-print(top_freq)
-data_dict = dict(top_freq)
-
-
-while hapi.is_running:
-    hapi.background(bg_col)
-
-    hapi.barchart(
-        190, 30, 200, 200, {
-        &quot;data&quot;: data_dict,
-        &quot;mouse_line&quot;: True
-        }
+sf = Salesforce(
+    username='blitz@nexavenu.com',
+    password='F0_c090XSh1ft',
+    security_token='SAVmZNf6XMs2B95c5MBmJTyC',
+    domain='login'
+)
+try:
+    mdapi = sf.mdapi
+    custom_object = mdapi.CustomObject(
+        fullName=&quot;Object11__c&quot;,
+        label=&quot;Custom Object 1&quot;,
+        pluralLabel=&quot;Custom Objects&quot;,
+        nameField=mdapi.CustomField(
+            label=&quot;Name__c&quot;,
+            type=mdapi.FieldType(&quot;Text&quot;)
+        ),
+        deploymentStatus=mdapi.DeploymentStatus(&quot;Deployed&quot;),
+        sharingModel=mdapi.SharingModel(&quot;Read&quot;)
     )
-
-
-    hapi.event_loop()
-    hapi.flip_display()
-
-pygame.quit()
-
+    mdapi.CustomObject.create(custom_object)
+except Exception as e:
+    print(e)
 </code></pre>
-<p>Output:</p>
-<p><img alt="" src="https://www.pythonkitchen.com/wp-content/uploads/2020/11/screen.png" /></p>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"
