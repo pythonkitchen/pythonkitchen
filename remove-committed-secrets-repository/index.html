@@ -76,18 +76,18 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='How to remove committed secrets from repository' content=''>
-  <meta name='category' content='git'>
+  <meta name='How to serve nginx from custom paths' content=''>
+  <meta name='category' content='devops'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
   <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='How to remove committed secrets from repository'>
+  <meta name='subtitle' content='How to serve nginx from custom paths'>
   <meta name='pageKey' content='remove-committed-secrets-repository'>
-  <meta name='og:title' content='How to remove committed secrets from repository'>
+  <meta name='og:title' content='How to serve nginx from custom paths'>
   <meta name='og:url' content='https://www.pythonkitchen.com/remove-committed-secrets-repository'>
 
-  <title>How to remove committed secrets from repository</title>
+  <title>How to serve nginx from custom paths</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -152,13 +152,13 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">How to remove committed secrets from repository</p>
+                    <p class="text-3xl" style="font-weight: 600;">How to serve nginx from custom paths</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2024-11-06 06:38:00" class="text-gray-500">November 6, 2024</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            git
+                            devops
                         </a>
                         
                     </div>
@@ -178,28 +178,16 @@
                     
                     <br>
                     <article>
-                        <p>If ever you committed git secrets by mistake, besides revoking the secrets, here&rsquo;s what you should do.</p>
-<p>First checkout on the main branch in the remote repository where the secret has beeen committed</p>
-<pre><code>git checkout main 
-git pull origin main
+                        <p>If you want to serve nginx from a custom location, here&rsquo;s what worked for me.</p>
+<p>We give execute permissions (+x) to (others) and (groups) associated with the file or dir. Let&rsquo;s say our dir is <code>/home/ec2-user</code>. You can refine the path.</p>
+<pre><code>sudo chmod og+x /home/ec2-user
 </code></pre>
-<p>Identify what commit it was using </p>
-<pre><code>git log
+<p>To check, see if nginx can access the files</p>
+<pre><code>sudo -u nginx ls /home/ec2-user/frontend/dist/
 </code></pre>
-<p>Then run </p>
-<pre><code>git reset ceg3ec1^
+<p>Reload nginx</p>
+<pre><code>sudo systemctl reload nginx
 </code></pre>
-<p>Where <code>ceg3ec1^</code> is the commit hash.</p>
-<p>Then add the file/s you want to edit out the secret</p>
-<pre><code>git add file1
-</code></pre>
-<p>Then commit </p>
-<pre><code>git commit -m &quot;fix: typoo&quot;
-</code></pre>
-<p>Then push to the repo, use force to override history.</p>
-<pre><code>git push origin source --force
-</code></pre>
-<p>Hope it helps!</p>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"
