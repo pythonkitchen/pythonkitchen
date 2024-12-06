@@ -7,6 +7,7 @@ category: web
 
 
 ## Table of content
+
 - What is HunYuan Video model?
 - How does it differ from competitors?
 - Architectural novelties
@@ -21,19 +22,20 @@ category: web
 
 ## How does it differ from competitors?
 
+
 HunYuan is OpenSource, has 13 billion parameters, the largest for an open model to date and ranks better than closed-source versions.
 
 ## Architectural novelties
 
 To achieve the above, HunYuan innovated in these areas:
 
-1. *Unified Dual-to-Single-Stream Design*: The model processes video and text tokens independently at first and later merges them for deeper multimodal understanding. This improves how visual and semantic information are aligned.
+1. **Unified Dual-to-Single-Stream Design**: The model processes video and text tokens independently at first and later merges them for deeper multimodal understanding. This improves how visual and semantic information are aligned.
 
-2. *Multimodal Large Language Model (MLLM) as Text Encoder*: Instead of traditional encoders like CLIP or T5, HunyuanVideo uses MLLM with a decoder-only structure, enhancing text-video alignment, complex reasoning, and image detail capture.
+2. **Multimodal Large Language Model (MLLM) as Text Encoder**: Instead of traditional encoders like CLIP or T5, HunyuanVideo uses MLLM with a decoder-only structure, enhancing text-video alignment, complex reasoning, and image detail capture.
 
-3. *3D VAE Compression*: The use of CausalConv3D compresses high-resolution videos into a compact latent space efficiently, allowing training on full-resolution, high-frame-rate videos without excessive computational cost.
+3. **3D VAE Compression**: The use of CausalConv3D compresses high-resolution videos into a compact latent space efficiently, allowing training on full-resolution, high-frame-rate videos without excessive computational cost.
 
-4. *Prompt Rewrite Mechanism*: It fine-tunes user prompts into model-optimized instructions for better comprehension (Normal mode) or higher visual quality (Master mode), improving generation accuracy and adaptability.
+4. **Prompt Rewrite Mechanism**: It fine-tunes user prompts into model-optimized instructions for better comprehension (Normal mode) or higher visual quality (Master mode), improving generation accuracy and adaptability.
 
 ## How to install
 
