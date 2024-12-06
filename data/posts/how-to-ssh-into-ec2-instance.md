@@ -32,8 +32,6 @@ Ensure that you have SSH installed:
 ssh
 
 ```
-vbnet
-Copy code
 
 ## Create Key Pairs
 
