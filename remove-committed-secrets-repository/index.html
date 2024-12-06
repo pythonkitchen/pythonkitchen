@@ -76,18 +76,18 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='How to get server response from DropzoneJs for chunk uploads' content=''>
-  <meta name='category' content='Uncategorized'>
+  <meta name='How to remove committed secrets from repository' content=''>
+  <meta name='category' content='git'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
   <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='How to get server response from DropzoneJs for chunk uploads'>
-  <meta name='pageKey' content='dropzonejs-server-response-chunck-upload'>
-  <meta name='og:title' content='How to get server response from DropzoneJs for chunk uploads'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/dropzonejs-server-response-chunck-upload'>
+  <meta name='subtitle' content='How to remove committed secrets from repository'>
+  <meta name='pageKey' content='remove-committed-secrets-repository'>
+  <meta name='og:title' content='How to remove committed secrets from repository'>
+  <meta name='og:url' content='https://www.pythonkitchen.com/remove-committed-secrets-repository'>
 
-  <title>How to get server response from DropzoneJs for chunk uploads</title>
+  <title>How to remove committed secrets from repository</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -152,13 +152,13 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">How to get server response from DropzoneJs for chunk uploads</p>
+                    <p class="text-3xl" style="font-weight: 600;">How to remove committed secrets from repository</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2021-08-13 08:47:49" class="text-gray-500">August 13, 2021</time>
+                        <time datetime="2024-11-06 06:38:00" class="text-gray-500">November 6, 2024</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            Uncategorized
+                            git
                         </a>
                         
                     </div>
@@ -178,31 +178,28 @@
                     
                     <br>
                     <article>
-                        <p>After much struggling, here&rsquo;s the magical formula we got for getting the server response back for chunck uploads:</p>
-<pre><code class="language-python">var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
-    thumbnailWidth: 80,
-    thumbnailHeight: 80,
-    parallelUploads: 20,
-    previewTemplate: previewTemplate,
-    autoQueue: false, // Make sure the files aren't queued until manually added
-    previewsContainer: &quot;#previews&quot;, // Define the container to display the previews
-    clickable: &quot;.fileinput-button&quot;, // Define the element that should be used as click trigger to select files.
-    paramName: 'file',
-    chunking: true,
-    forceChunking: true,
-    url: upload_url,
-    maxFilesize: 1025, // megabytes
-    chunkSize: 1000000, // bytes
-    init: function () {
-        this.on(&quot;complete&quot;, function (file){
-          console.log(file.xhr.response);
-        });
-    }
-
-
-})
-
+                        <p>If ever you committed git secrets by mistake, besides revoking the secrets, here&rsquo;s what you should do.</p>
+<p>First checkout on the main branch in the remote repository where the secret has beeen committed</p>
+<pre><code>git checkout main 
+git pull origin main
 </code></pre>
+<p>Identify what commit it was using </p>
+<pre><code>git log
+</code></pre>
+<p>Then run </p>
+<pre><code>git reset ceg3ec1^
+</code></pre>
+<p>Where <code>ceg3ec1^</code> is the commit hash.</p>
+<p>Then add the file/s you want to edit out the secret</p>
+<pre><code>git add file1
+</code></pre>
+<p>Then commit </p>
+<pre><code>git commit -m &quot;fix: typoo&quot;
+</code></pre>
+<p>Then push to the repo, use force to override history.</p>
+<pre><code>git push origin source --force
+</code></pre>
+<p>Hope it helps!</p>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"
