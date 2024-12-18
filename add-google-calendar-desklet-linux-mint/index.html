@@ -76,18 +76,18 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Python-efl Displaying Images' content=''>
-  <meta name='category' content='python-efl'>
+  <meta name='Add Google Calendar Desklet To Linux Mint 22' content=''>
+  <meta name='category' content='Uncategorized'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
   <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Python-efl Displaying Images'>
-  <meta name='pageKey' content='python-efl-4'>
-  <meta name='og:title' content='Python-efl Displaying Images'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/python-efl-4'>
+  <meta name='subtitle' content='Add Google Calendar Desklet To Linux Mint 22'>
+  <meta name='pageKey' content='add-google-calendar-desklet-linux-mint'>
+  <meta name='og:title' content='Add Google Calendar Desklet To Linux Mint 22'>
+  <meta name='og:url' content='https://www.pythonkitchen.com/add-google-calendar-desklet-linux-mint'>
 
-  <title>Python-efl Displaying Images</title>
+  <title>Add Google Calendar Desklet To Linux Mint 22</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -152,13 +152,13 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Python-efl Displaying Images</p>
+                    <p class="text-3xl" style="font-weight: 600;">Add Google Calendar Desklet To Linux Mint 22</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2021-10-22 18:18:51" class="text-gray-500">October 22, 2021</time>
+                        <time datetime="2024-12-18 16:42:02" class="text-gray-500">December 18, 2024</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            python-efl
+                            Uncategorized
                         </a>
                         
                     </div>
@@ -178,99 +178,20 @@
                     
                     <br>
                     <article>
-                        <p>Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.</p>
-<pre><code class="language-python">'''
-Abdur-Ramaan Janhangeer
-Updated from Jeff Hoogland's tutos
-for Python3.9 and Python-elf 1.25.0
-
-https://www.toolbox.com/tech/operating-systems/blogs/py-efl-tutorial-4-displaying-images-042415/
-
-Needs one image called image.png
-'''
-
-import efl.elementary as elm
-from efl.elementary.image import Image
-from efl.elementary.label import Label
-from efl.elementary.window import StandardWindow
-from efl.evas import EVAS_HINT_EXPAND
-
-EXPAND_BOTH = EVAS_HINT_EXPAND, EVAS_HINT_EXPAND
-
-
-class MainWindow(StandardWindow):
-    def __init__(self):
-        StandardWindow.__init__(self, &quot;ex1&quot;, &quot;Hello Elementary&quot;, size=(300, 200))
-        self.callback_delete_request_add(lambda o: elm.exit())
-        our_image = Image(self)
-        our_image.size_hint_weight = EXPAND_BOTH
-        our_image.file_set(&quot;image.png&quot;)
-        our_image.tooltip_text_set(&quot;A picture!&quot;)
-        our_image.show()
-        self.resize_object_add(our_image)
-
-
-if __name__ == &quot;__main__&quot;:
-    elm.init()
-    gui = MainWindow()
-    gui.show()
-    elm.run()
-
-
+                        <p><a href="https://cinnamon-spices.linuxmint.com/desklets/view/35">Google Calendar Desklet</a> is a Python-packaged desklet app for Linux.</p>
+<p><a href="https://github.com/slgobinath/gcalendar">gcalendar</a> is a Python cli for getting Google calendar events.</p>
+<p>The desklet uses it to show events.</p>
+<h2>Installation</h2>
+<p>Installing gcalendar is best done through apt</p>
+<pre><code>sudo add-apt-repository ppa:slgobinath/gcalendar
+sudo apt update
+sudo apt install gcalendar
 </code></pre>
-<p>Select image</p>
-<pre><code class="language-python">import os
-import efl.elementary as elm
-from efl.elementary.window import StandardWindow
-from efl.elementary.image import Image
-from efl.elementary.box import Box
-from efl.elementary.fileselector_button import FileselectorButton
-from efl.evas import EVAS_HINT_EXPAND, EVAS_HINT_FILL
-
-EXPAND_BOTH = EVAS_HINT_EXPAND, EVAS_HINT_EXPAND
-EXPAND_HORIZ = EVAS_HINT_EXPAND, 0.0
-FILL_BOTH = EVAS_HINT_FILL, EVAS_HINT_FILL
-
-
-class MainWindow(StandardWindow):
-    def __init__(self):
-        StandardWindow.__init__(self, &quot;ex6&quot;, &quot;Selected Image&quot;, size=(300, 200))
-        self.callback_delete_request_add(lambda o: elm.exit())
-        self.our_image = our_image = Image(self)
-        our_image.size_hint_weight = EXPAND_BOTH
-        our_image.size_hint_align = FILL_BOTH
-        our_image.file_set(&quot;image.png&quot;)
-        our_image.tooltip_text_set(&quot;A picture!&quot;)
-        our_image.show()
-
-        our_button = FileselectorButton(self)
-        our_button.size_hint_weight = EXPAND_HORIZ
-        our_button.text = &quot;Select new Image&quot;
-        our_button.callback_file_chosen_add(self.file_selected)
-        our_button.show()
-
-        our_box = Box(self)
-        our_box.size_hint_weight = EXPAND_BOTH
-        our_box.pack_end(our_image)
-        our_box.pack_end(our_button)
-        our_box.show()
-        self.resize_object_add(our_box)
-
-    def file_selected(self, fsb, selected_file):
-        if selected_file:
-            valid_extensions = [&quot;.png&quot;, &quot;.jpg&quot;, &quot;.gif&quot;]
-            file_name, file_extension = os.path.splitext(selected_file)
-            if file_extension in valid_extensions:
-                self.our_image.file_set(selected_file)
-
-
-if __name__ == &quot;__main__&quot;:
-    elm.init()
-    gui = MainWindow()
-    gui.show()
-    elm.run()
-
-</code></pre>
+<p>Then write <code>gcalendar</code> on the terminal and configure.</p>
+<p>Then you right click on desktop -&gt; Add desklet -&gt; Download -&gt; Google calendar -&gt; Click on the download icon.</p>
+<p>The go to manage -&gt; Google calendar -&gt; Click on the + sign</p>
+<p>Then the configure icon will be ready, click and add your calendars.</p>
+<p>You can click on the <code>Click on the list below with the names of all my calendars</code></p>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"
