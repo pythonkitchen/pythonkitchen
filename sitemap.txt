@@ -1,6 +1,4 @@
 https://www.pythonkithen.com/
-https://www.pythonkitchen.com/remove-committed-secrets-repository
-https://www.pythonkitchen.com/serve-nginx-custom-paths
 https://www.pythonkitchen.com/create-object-salesforce-using-python
 https://www.pythonkitchen.com/copy-files-aws-ec2
 https://www.pythonkitchen.com/how-to-ssh-into-aws-ec2
