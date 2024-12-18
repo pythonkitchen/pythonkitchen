@@ -66,7 +66,7 @@ article h4{
 }
 
 article code{
-    max-width: 45vw !important;
+    max-width: 100%;
     overflow-x: scroll;
     border-radius: 5px;
 }
