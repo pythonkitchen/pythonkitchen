@@ -1,4 +1,5 @@
 https://www.pythonkithen.com/
+https://www.pythonkitchen.com/install-azure-cli-mint-22-wilma
 https://www.pythonkitchen.com/add-google-calendar-desklet-linux-mint
 https://www.pythonkitchen.com/create-object-salesforce-using-python
 https://www.pythonkitchen.com/copy-files-aws-ec2

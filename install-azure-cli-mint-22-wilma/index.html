@@ -76,18 +76,18 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='game map rendering' content=''>
-  <meta name='category' content='canvas theory'>
+  <meta name='How to Install Azure Cli on Linux Mint 22 / Wilma' content=''>
+  <meta name='category' content='Uncategorized'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
   <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='game map rendering'>
-  <meta name='pageKey' content='game-map-rendering'>
-  <meta name='og:title' content='game map rendering'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/game-map-rendering'>
+  <meta name='subtitle' content='How to Install Azure Cli on Linux Mint 22 / Wilma'>
+  <meta name='pageKey' content='install-azure-cli-mint-22-wilma'>
+  <meta name='og:title' content='How to Install Azure Cli on Linux Mint 22 / Wilma'>
+  <meta name='og:url' content='https://www.pythonkitchen.com/install-azure-cli-mint-22-wilma'>
 
-  <title>game map rendering</title>
+  <title>How to Install Azure Cli on Linux Mint 22 / Wilma</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -152,17 +152,13 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">game map rendering</p>
+                    <p class="text-3xl" style="font-weight: 600;">How to Install Azure Cli on Linux Mint 22 / Wilma</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2018-05-29 05:20:26" class="text-gray-500">May 29, 2018</time>
+                        <time datetime="2025-01-08 15:54:02" class="text-gray-500">January 8, 2025</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            canvas theory
-                        </a>
-                        
-                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            processing.py
+                            Uncategorized
                         </a>
                         
                     </div>
@@ -182,47 +178,21 @@
                     
                     <br>
                     <article>
-                        <p>game map rendering or simply map rendering is a nice technique that is used to generate worlds.</p>
-<p>explanations follow suit :
-demo</p>
-<hr />
-<h2>explanations</h2>
-<pre><code class="language-python">game_map = [
-        [0,0,0,0,0],
-        [0,1,0,1,0],
-        [0,0,1,0,0],
-        [0,1,0,1,0],
-        [0,0,1,0,0],
-        ]
-
+                        <p>Follow any installing azure cli on Linux mint tutorial, but, on the step below add noble main instead of something as generic as jammy main. <a href="https://linuxmint.com/download_all.php">See comparison</a></p>
+<pre><code>echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/azure-cli/ noble main&quot; | sudo tee /etc/apt/sources.list.d/azure-cli.list
+deb [arch=amd64 signed-by=/etc/apt/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/azure-cli/ noble main
 </code></pre>
-<p>first we initialise our world as a 2d array, we distinguished patterns by using 0 and 1</p>
-<pre><code class="language-python">tile_width = 50
-
+<h2>Full instructions</h2>
+<pre><code>sudo apt update
+sudo apt upgrade
+sudo apt install apt-transport-https ca-certificates curl gnupg lsb-release
+curl -sLS https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/keyrings/microsoft.gpg &gt; /dev/null
+echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/azure-cli/ noble main&quot; | sudo tee /etc/apt/sources.list.d/azure-cli.list
+deb [arch=amd64 signed-by=/etc/apt/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/azure-cli/ noble main
+sudo apt update
+sudo apt install azure-cli -y
+az --version
 </code></pre>
-<p>next we initialised the width of a tile. the formula for tile placement is x*tile_width</p>
-<pre><code class="language-python">def green_tile(x, y):
-    fill(0,255,0)
-    rect(x, y, tile_width, tile_width)
-    
-def white_tile(x, y):
-    fill(255)
-    rect(x, y, tile_width, tile_width)
-
-</code></pre>
-<p>next we separated our tile rendering in two functions, for now it&rsquo;s just colored squares</p>
-<pre><code class="language-python">    for r in range(map_length):
-        for c in range(map_length):
-
-</code></pre>
-<p>we loop or the array twice, one for the row and one for the column to get the index to accesss our map by game_map[x][y]</p>
-<pre><code class="language-python">            if game_map[c][r] == 0: # inversed for viewing as is in variable
-                green_tile(r*tile_width, c*tile_width)
-            elif game_map[c][r] == 1:
-                white_tile(r*tile_width, c*tile_width)
-
-</code></pre>
-<p>here we render according to predefined symbols, it could have been &lsquo;g&rsquo; and &lsquo;p&rsquo; for grass and path</p>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"
