@@ -1,6 +1,6 @@
 title: How to get gemini response as json using python and google genai
 slug: json-response-gemini-google-genai
-pub: 2022-01-16 15:42:02
+pub: 2025-01-16 15:42:02
 authors: arj
 tags: ai
 
