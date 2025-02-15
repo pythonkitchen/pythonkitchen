@@ -187,13 +187,13 @@
 <li>Identifying elements</li>
 <li>Processing elements</li>
 </ol>
-<h3>Introduction</h3>
+<h2>Introduction</h2>
 <p>Our goal in this post is to be able to transform this piece of json into a Python dictionary.</p>
 <pre><code>{&quot;x&quot;:&quot;y&quot;}
 </code></pre>
 <p>Our Python dictionary should have key <code>x</code> and value <code>y</code>.</p>
 <p>We aim to cover this without any previous compiler theory </p>
-<h3>Scanning the text</h3>
+<h2>Scanning the text</h2>
 <p>Our first task is to be able to go over the characters and print them.</p>
 <pre><code class="language-python">text = '''
 {&quot;x&quot;: &quot;y&quot;, &quot;z&quot;:&quot;a&quot;}
@@ -228,7 +228,7 @@ print(scan_text(text))
 8 y 
 ...
 </code></pre>
-<h3>Looking for specific characters</h3>
+<h2>Looking for specific characters</h2>
 <p>Next, we want to be able to find the next occurance of a character, give us it&rsquo;s index. We provide it from what index we want to search.</p>
 <pre><code>abcdefghijih
 
@@ -266,7 +266,7 @@ print(look_for(2, 'i')) # 8
 print(look_for(2, 'i')) # (8, 'defgh')
 </code></pre>
 <p>This will be useful when identifying strings. When we encounter a string. We find where it ends and identifies the string.</p>
-<h3>Identifying elements</h3>
+<h2>Identifying elements</h2>
 <p>We modify the scan function to return identified text. </p>
 <p>Our goal is to convert </p>
 <pre><code>text = '''
@@ -349,7 +349,7 @@ print(look_for(2, 'i')) # (8, 'defgh')
         current += 1
     return chunks    
 </code></pre>
-<h3>Processing elements</h3>
+<h2>Processing elements</h2>
 <p>Now that we have a list of items, we go over the list. The simple thing would be to find <code>:</code> and add the element before it as the key and the element after it as the value</p>
 <pre><code class="language-python">def process(chunks):
     go = True
