@@ -77,18 +77,18 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='game map rendering' content=''>
-  <meta name='category' content='canvas theory'>
+  <meta name='Simple JSON parser without knowing anything beforehands' content=''>
+  <meta name='category' content='programming problems'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
   <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='game map rendering'>
-  <meta name='pageKey' content='game-map-rendering'>
-  <meta name='og:title' content='game map rendering'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/game-map-rendering'>
+  <meta name='subtitle' content='Simple JSON parser without knowing anything beforehands'>
+  <meta name='pageKey' content='simple-json-parser'>
+  <meta name='og:title' content='Simple JSON parser without knowing anything beforehands'>
+  <meta name='og:url' content='https://www.pythonkitchen.com/simple-json-parser'>
 
-  <title>game map rendering</title>
+  <title>Simple JSON parser without knowing anything beforehands</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -153,17 +153,13 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">game map rendering</p>
+                    <p class="text-3xl" style="font-weight: 600;">Simple JSON parser without knowing anything beforehands</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2018-05-29 05:20:26" class="text-gray-500">May 29, 2018</time>
+                        <time datetime="2025-02-15 15:40:00" class="text-gray-500">February 15, 2025</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            canvas theory
-                        </a>
-                        
-                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            processing.py
+                            programming problems
                         </a>
                         
                     </div>
@@ -183,47 +179,283 @@
                     
                     <br>
                     <article>
-                        <p>game map rendering or simply map rendering is a nice technique that is used to generate worlds.</p>
-<p>explanations follow suit :
-demo</p>
-<hr />
-<h2>explanations</h2>
-<pre><code class="language-python">game_map = [
-        [0,0,0,0,0],
-        [0,1,0,1,0],
-        [0,0,1,0,0],
-        [0,1,0,1,0],
-        [0,0,1,0,0],
-        ]
-
+                        <h1>Table of Content</h1>
+<ol>
+<li>Introduction</li>
+<li>Scanning the text</li>
+<li>Looking for specific characters</li>
+<li>Identifying elements</li>
+<li>Processing elements</li>
+</ol>
+<h3>Introduction</h3>
+<p>Our goal in this post is to be able to transform this piece of json into a Python dictionary.</p>
+<pre><code>{&quot;x&quot;:&quot;y&quot;}
 </code></pre>
-<p>first we initialise our world as a 2d array, we distinguished patterns by using 0 and 1</p>
-<pre><code class="language-python">tile_width = 50
+<p>Our Python dictionary should have key <code>x</code> and value <code>y</code>.</p>
+<p>We aim to cover this without any previous compiler theory </p>
+<h3>Scanning the text</h3>
+<p>Our first task is to be able to go over the characters and print them.</p>
+<pre><code class="language-python">text = '''
+{&quot;x&quot;: &quot;y&quot;, &quot;z&quot;:&quot;a&quot;}
+'''
 
-</code></pre>
-<p>next we initialised the width of a tile. the formula for tile placement is x*tile_width</p>
-<pre><code class="language-python">def green_tile(x, y):
-    fill(0,255,0)
-    rect(x, y, tile_width, tile_width)
-    
-def white_tile(x, y):
-    fill(255)
-    rect(x, y, tile_width, tile_width)
 
-</code></pre>
-<p>next we separated our tile rendering in two functions, for now it&rsquo;s just colored squares</p>
-<pre><code class="language-python">    for r in range(map_length):
-        for c in range(map_length):
+def scan_text(text):
+    go = True
+    current = 0
 
-</code></pre>
-<p>we loop or the array twice, one for the row and one for the column to get the index to accesss our map by game_map[x][y]</p>
-<pre><code class="language-python">            if game_map[c][r] == 0: # inversed for viewing as is in variable
-                green_tile(r*tile_width, c*tile_width)
-            elif game_map[c][r] == 1:
-                white_tile(r*tile_width, c*tile_width)
+    while go:
+        char = text[current]
+        print(current, char.replace('\n', '&lt;new line&gt;'))
 
+        if char == '}':
+
+            go = False
+
+        current += 1
+
+
+print(scan_text(text))
 </code></pre>
-<p>here we render according to predefined symbols, it could have been &lsquo;g&rsquo; and &lsquo;p&rsquo; for grass and path</p>
+<pre><code>0 &lt;new line&gt; 
+1 { 
+2 &quot; 
+3 x 
+4 &quot; 
+5 : 
+6 
+7 &quot;
+8 y 
+...
+</code></pre>
+<h3>Looking for specific characters</h3>
+<p>Next, we want to be able to find the next occurance of a character, give us it&rsquo;s index. We provide it from what index we want to search.</p>
+<pre><code>abcdefghijih
+
+ex. find(2, 'i') should return 8
+</code></pre>
+<pre><code class="language-python">def look_for(from_i, char):
+    go = True
+    current = from_i+1
+    while go:
+
+        if text[current] == char:
+            return current
+
+
+        current += 1
+
+text = 'abcdefghijih'
+print(look_for(2, 'i')) # 8
+</code></pre>
+<p>We can also modify it to return the text between 2 and the index it found the first <code>i</code>.</p>
+<pre><code class="language-python">def look_for(from_i, char):
+    chunks = []
+    go = True
+    current = from_i+1
+    while go:
+
+        if text[current] == char:
+            return current, ''.join(chunks)
+        else:
+            chunks.append(text[current])
+
+
+        current += 1
+
+print(look_for(2, 'i')) # (8, 'defgh')
+</code></pre>
+<p>This will be useful when identifying strings. When we encounter a string. We find where it ends and identifies the string.</p>
+<h3>Identifying elements</h3>
+<p>We modify the scan function to return identified text. </p>
+<p>Our goal is to convert </p>
+<pre><code>text = '''
+{&quot;x&quot;: &quot;y&quot;, &quot;z&quot;:&quot;a&quot;}
+'''
+</code></pre>
+<p>into <code>['{', 'x', ':', 'y', ',', 'z', ':', 'a', '}']</code></p>
+<p>We just add a list to hold the text named <code>chunks</code>.</p>
+<pre><code class="language-python">def scan_text(text):
+    chunks = [] # added
+    go = True
+    current = 0
+
+    while go:
+        char = text[current]
+        print(current, char)
+
+
+        if char == '{': 
+            chunks.append('{') # added
+
+        elif char == '}':
+            chunks.append('}') # added
+            go = False
+
+
+        elif char == '&quot;':
+            # TODO
+
+        elif char == &quot;:&quot;:
+            chunks.append(':') # added
+
+        if char == ',':
+            chunks.append(',') # added
+
+        current += 1
+    return chunks 
+</code></pre>
+<p>For the <code>"</code> We just identify the next <code>"</code> and append the chars in  between to chunks.</p>
+<pre><code class="language-python">        elif char == '&quot;':
+            look  = look_for(current,  '&quot;') # look from the current index till the next &quot;
+            string = look[1]
+            index = look[0]
+
+            chunks.append(string) # append identified string
+            current = index # Start loop from next character. current is increased further down.
+</code></pre>
+<p>Our final function looks like this </p>
+<pre><code class="language-python">def scan_text(text):
+    chunks = []
+    go = True
+    current = 0
+
+    while go:
+        char = text[current]
+        print(current, char)
+
+
+        if char == '{':
+            chunks.append('{')
+
+        elif char == '}':
+            chunks.append('}')
+            go = False
+
+
+        elif char == '&quot;':
+            look  = look_for(current,  '&quot;')
+            string = look[1]
+            index = look[0]
+
+            chunks.append(string)
+            current = index
+        elif char == &quot;:&quot;:
+            chunks.append(char)
+
+        if char == ',':
+            chunks.append(',')
+
+        current += 1
+    return chunks    
+</code></pre>
+<h3>Processing elements</h3>
+<p>Now that we have a list of items, we go over the list. The simple thing would be to find <code>:</code> and add the element before it as the key and the element after it as the value</p>
+<pre><code class="language-python">def process(chunks):
+    go = True
+    current = 0
+
+    kv = {}
+    while go:
+        char = chunks[current]
+
+        if char == ':':
+            kv[chunks[current-1]] = chunks[current+1]
+            current += 1 
+            continue
+        elif char == '}':
+            go = False
+        current += 1 
+
+    return kv 
+</code></pre>
+<p>Our final code </p>
+<pre><code class="language-python">text = '''
+{&quot;x&quot;: &quot;y&quot;, &quot;z&quot;:&quot;a&quot;}
+'''
+
+def look_for(from_i, char):
+    go = True
+    current = from_i+1
+    text_found = []
+    while go:
+
+        if text[current] == char:
+            return current, ''.join(text_found)
+        else:
+            text_found.append(text[current])
+
+        current += 1
+        print(current)
+
+
+def scan_text(text):
+    chunks = []
+    go = True
+    current = 0
+
+    while go:
+        char = text[current]
+        print(current, char)
+
+
+        if char == '{':
+            chunks.append('{')
+
+        elif char == '}':
+            chunks.append('}')
+            go = False
+
+
+        elif char == '&quot;':
+            look  = look_for(current,  '&quot;')
+            string = look[1]
+            index = look[0]
+
+            chunks.append(string)
+            current = index
+        elif char == &quot;:&quot;:
+            chunks.append(char)
+
+        if char == ',':
+            chunks.append(',')
+
+        current += 1
+    return chunks    
+
+def process(chunks):
+    go = True
+    current = 0
+
+    kv = {}
+    while go:
+        char = chunks[current]
+
+        if char == ':':
+            kv[chunks[current-1]] = chunks[current+1]
+            current += 1 
+            continue
+        elif char == '}':
+            go = False
+        current += 1 
+
+    return kv 
+
+elements = scan_text(text)
+print(elements)
+kv = process(elements)
+print(kv)
+</code></pre>
+<p>It goes from this</p>
+<pre><code>{&quot;x&quot;: &quot;y&quot;, &quot;z&quot;:&quot;a&quot;}
+</code></pre>
+<p>to this</p>
+<pre><code>['{', 'x', ':', 'y', ',', 'z', ':', 'a', '}']
+</code></pre>
+<p>then to this</p>
+<pre><code>{'x': 'y', 'z': 'a'}
+</code></pre>
+<p>Hope you enjoyed it!</p>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

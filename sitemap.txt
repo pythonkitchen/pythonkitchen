@@ -1,4 +1,5 @@
 https://www.pythonkithen.com/
+https://www.pythonkitchen.com/simple-json-parser
 https://www.pythonkitchen.com/json-response-gemini-google-genai
 https://www.pythonkitchen.com/install-azure-cli-mint-22-wilma
 https://www.pythonkitchen.com/add-google-calendar-desklet-linux-mint
@@ -108,10 +109,10 @@ https://www.pythonkitchen.com/machine-learning-part-5-mixed-methods
 https://www.pythonkitchen.com/machine-learning-part-4-gradient-descent-and-cost-function
 https://www.pythonkitchen.com/plotting-hotspots-in-mauritius-with-python-and-folium
 https://www.pythonkitchen.com/machine-learning-part-3-regression
-https://www.pythonkitchen.com/432
 https://www.pythonkitchen.com/supervised-learning
-https://www.pythonkitchen.com/machine-learning-part-1-introduction
+https://www.pythonkitchen.com/432
 https://www.pythonkitchen.com/pyqt5-value-cells-selected-row-qtview
+https://www.pythonkitchen.com/machine-learning-part-1-introduction
 https://www.pythonkitchen.com/432
 https://www.pythonkitchen.com/checking-for-prime
 https://www.pythonkitchen.com/reviving-bertrand-russell-through-python
