@@ -23,7 +23,9 @@ Our goal in this post is to be able to transform this piece of json into a Pytho
 
 Our Python dictionary should have key `x` and value `y`.
 
-We aim to cover this without any previous compiler theory 
+We aim to cover this without any previous compiler theory experience.
+
+This was inspired by the Python Mauritius Usergroup's January challenge.
 
 ## Scanning the text
 
