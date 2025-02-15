@@ -14,7 +14,7 @@ Table of Content
 4. Identifying elements
 5. Processing elements
 
-### Introduction
+## Introduction
 
 Our goal in this post is to be able to transform this piece of json into a Python dictionary.
 ```
@@ -25,7 +25,7 @@ Our Python dictionary should have key `x` and value `y`.
 
 We aim to cover this without any previous compiler theory 
 
-### Scanning the text
+## Scanning the text
 
 Our first task is to be able to go over the characters and print them.
 
@@ -68,7 +68,7 @@ print(scan_text(text))
 ...
 ```
 
-### Looking for specific characters
+## Looking for specific characters
 
 Next, we want to be able to find the next occurance of a character, give us it's index. We provide it from what index we want to search.
 
@@ -116,7 +116,7 @@ print(look_for(2, 'i')) # (8, 'defgh')
 
 This will be useful when identifying strings. When we encounter a string. We find where it ends and identifies the string.
 
-### Identifying elements
+## Identifying elements
 
 We modify the scan function to return identified text. 
 
@@ -217,7 +217,7 @@ def scan_text(text):
     return chunks    
 ```
 
-### Processing elements
+## Processing elements
 
 Now that we have a list of items, we go over the list. The simple thing would be to find `:` and add the element before it as the key and the element after it as the value
 
