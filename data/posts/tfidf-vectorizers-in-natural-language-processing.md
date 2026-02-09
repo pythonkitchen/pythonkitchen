@@ -1,163 +1,120 @@
-title: TFIDF Vectorizers in Natural Language Processing
+title: TF-IDF Explained: Boosting Signal in Text Vectorization
 slug: tfidf-vectorizers-in-natural-language-processing
 pub: 2023-03-13 10:13:01
 authors: parthshukla
-tags: 
-category: data science,machine learning
+tags: nlp, tf-idf, vectorization, scikit-learn, text-mining
+category: data science
 
-Vectorization is a technique in natural language processing that is used to transform the text into vectors. However, multiple vectorization techniques are used to transform different texts. TFIDF is a widely used and efficient vectorization technique that data scientists use.
+In our [Bag of Words](https://www.pythonkitchen.com/bag-of-words-in-natural-language-processing/) guide, we saw how to turn text into numbers by counting word frequencies. But there is a major flaw in that approach:
 
-In this article, We will discuss the TFIDF vectorization technique, how it works, the core intuition behind it, and some examples associated with the same. This article will help one to understand the technique more deeply and will be able to apply it wherever necessary.
+**Not all words are created equal.**
 
-Before directly jumping into the article, let us discuss what vectorization techniques are.
+In a document about "Quantum Physics," the word **"the"** might appear 100 times, while **"quantum"** appears only 5 times. A simple count makes "the" seem 20x more important than "quantum," which is obviously wrong.
 
-Table of Content
-================
+**TF-IDF (Term Frequency - Inverse Document Frequency)** is the industry-standard solution to this problem. It downweights words that appear everywhere (like "the", "is", "and") and upweights words that are rare and unique to the current document.
 
+---
 
-1. What are Vectorization Techniques?
-2. What is TFIDF?
-3. Some Important Terminologies
-4. Term Frequency
-5. Document Frequency
-6. Inverse Document Frequency
-7. The TFIDF Score
-8. Key Takeaways
-9. Conclusion
+## The Intuition: Balancing Frequency and Rarity
 
+TF-IDF is a score composed of two parts multiplied together:
 
-What are Vectorization Techniques?
-==================================
+### 1. TF (Term Frequency)
+*   **Question:** How often does the word appear in *this* document?
+*   **Logic:** The more it appears, the more important it likely is for this specific text.
+*   **Formula:** $TF = \frac{\text{Count of word in doc}}{\text{Total words in doc}}$
 
+### 2. IDF (Inverse Document Frequency)
+*   **Question:** How rare is this word across *all* documents?
+*   **Logic:** If a word appears in every single document (like "the"), it has zero information value. If it appears in only one document, it is highly discriminative.
+*   **Formula:** $IDF = \log(\frac{\text{Total Documents}}{\text{Documents containing word}})$
 
+**The Result:** 
+$$TF\text{-}IDF = TF \times IDF$$
 
-Machine learning algorithms are primarily statistically based learner who learns from the data and apply functions that are predefined to train and learn from the data. Here the algorithm can not understand any type of text data; hence, if we are needed to work on any text data, we can not directly feed that data to the algorithm. The algorithms only understand the language of vectors and numbers.
+A high score means the word is **frequent in this document** but **rare in others**. This is the "signature" of the document.
 
-Hence in such cases, we vectorize or transform the data into vectors or numbers to feed that data to the machine learning algorithms and train the model. There are multiple vectorization techniques available that are used for vectorization. Some of them are CountVectorizer, Word2Vec, and TFIDF.
+---
 
-What is TFIDF?
-==============
+## Python Implementation: Scikit-Learn `TfidfVectorizer`
 
+While the math is good to know, you should never implement this manually in production. Scikit-learn's `TfidfVectorizer` is highly optimized.
 
-
-As we discussed above, TFIDF is a vectorization technique used to transform any kind of textual data into vectors to feed the data to the machine learning algorithms and to train on.
-
-Generally, TFIDF consists of two terms TF and IDF. TF stands for Term Frequency, and IDF stands for Inverse Document Frequency. The TFIDF technique works on the principle of the same. Here the TF and iDF for a word and document are calculated and multiplied, which returns the TFIDF score, and based upon that, the word is transformed into the vector.
-
-Let's try to understand the same by splitting it into two parts, Term Frequency, and inverse Document Frequency.
-
-Some Terminologies
-==================
-
-
-
-Before jumping to the term frequency, let us discuss some of the terminologies that can be helpful here.
-
-**Character:** A character is a term used for a single letter. For example: a, b, c, etc
-
-**Word:** A word combines several characters, For example, Machine, Learning, Data, etc.
-
-**Document:** A document is a term used to represent any kind of sentence or a combination of words. For example, Machine Learning is good to have skills.
-
-**Corpus:** A corpus is a term used to represent all 5the documents and texts in the dataset. For example, the complete dataset will be fed to the model for training.
-
-Term Frequency
-==============
-
-
-
-Term frequency measures how frequently a particular term appears in a document. It gives an idea about the frequency of a term, word, or term that appears in different documents.
-
-**Example:**
-
-Document: Machine Learning is a Good Skill.
-
-Now here we can see the document consists of 6 words that are Machine, Learning, Is, a, Good, and Skills.
-
-Now here, every word in the document will have its term frequency.
-
-The formula for the Term Frequency is,
-`Term Frequency = Number of Times Word Appears in a Document / Total Number of Words in a Document.`
-
-Now the Term Frequenc6y for the Word Machine would be ⅙, for the word Learning would be 1/6, and if a particular word is not in a document, then the term frequency would be zero.
-
-Document Frequency
-==================
-
-
-
-Document Frequency is a term used to measure how frequently a word appears in several documents. It gives an idea of the word's popularity in the whole corpus.
-
-The formula for the document frequency is 
-`Document Frequency = Number of Documents That has the Word / Total Number of Documents`
-
-For example, if we have two documents 
-Document 1 = Machine Learning is a Good Skill.
-Document 2 = Machine Learning is Complex to learn.
-
-Then the document frequency for the word Machine would be 2/2.
-
-Inverse Document Frequency
-==========================
-
-
-
-Inverse document frequency is an inversed form of document frequency calculated in a log form.
-
-> Inverse document frequency = 1 / document Frequency
-
-
-The TFIDF Score
-===============
-
-Now that we know the term and inverse document frequency, let us discuss how it helps vectorize the word or text of the data. As we measure the importance of a term in a document and different documents, we can now assign a score to all the words in the corpus and vectorize them accordingly.
-
-Here we will calculate the Tf and IDf scores for each of the terms, and the values will be multiplied to achieve a score or weightage of the term. The higher the TFIDF score, the higher the importance and significance of the term in a document and a corpus.
-
-Code Example:
-=============
-
-
+### Code Example: Finding Keywords
 
 ```python
-From sklearn.feature_extraction.text, import TfidfVectorizer
-from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfVectorizer
+import pandas as pd
 
-X_tfidf = vectorizer.fit_transform(X)
+# 1. The Corpus
+corpus = [
+    "The car is fast.",
+    "The car is red.",
+    "The car is broken."
+]
 
-# split the data for training and testing
-X_train, X_test, y_train, y_test = train_test_split(
-    X_tfidf, y, test_size=0.33, random_state=42
+# 2. Initialize
+vectorizer = TfidfVectorizer()
+
+# 3. Fit and Transform
+tfidf_matrix = vectorizer.fit_transform(corpus)
+
+# 4. View Results
+df = pd.DataFrame(
+    tfidf_matrix.toarray(), 
+    columns=vectorizer.get_feature_names_out()
 )
 
-From sklearn.linear_model import SGDClassifier
-from sklearn.metrics import classification_report
-
-# Training classifier model 
-sgd = SGDClassifier()
-sgd.fit(X_train, y_train)
-
-# model prediction
-y_pred = sgd.predict(X_test)
-
-print(classification_report(y_test, y_pred))
-
+print(df)
 ```
 
-Key Takeaways
-=============
+**Output Analysis:**
+You will notice that the word **"the"** (if not removed as a stop word) will have a score of 0 (or very low) because it appears in all documents. The words **"fast"**, **"red"**, and **"broken"** will have the highest scores in their respective rows because they are the unique differentiators.
 
+---
 
-1. Vectorization is a technique that transforms text data into vectors to feed it to the machine learning algorithm.
-2. TFIDF is a vectorization technique that transforms textual data into vector form.
-3. TF is a term frequency measure of the importance or significance of a term in a particular document.
-4. Inverse document frequency is a measure that is a measure of the significance of a term in the corpus, calculated by measuring the presence of a term in different documents.
-5. Higher the TFIDF scores, the higher the significance of the term in a document and a corpus of the dataset.
+## Practical Application: Keyword Extraction
 
+One of the best uses of TF-IDF is extracting keywords from a large text automatically.
 
-Conclusion
-==========
+```python
+def extract_keywords(text, vectorizer, top_n=3):
+    # Transform the single document
+    vector = vectorizer.transform([text])
+    
+    # Get mapping from index to word
+    feature_names = vectorizer.get_feature_names_out()
+    
+    # Sort and get top N indices
+    sorted_indices = vector.toarray()[0].argsort()[::-1]
+    
+    return [feature_names[i] for i in sorted_indices[:top_n]]
 
+new_doc = "The red car is very fast"
+print(extract_keywords(new_doc, vectorizer))
+# Likely Output: ['fast', 'red', 'car']
+```
 
+---
 
-In this article, we discussed vectorization techniques, how they work, what TFIDF is, what are the terms Term Frequency and Inverse document frequency, and how they are calculated with the code examples. This article will help one to understand this technique deeply and will able to apply it wherever necessary.
+## Limitations and Trade-offs
+
+### 1. No Semantic Context
+Like Bag of Words, TF-IDF effectively treats the document as a "bag." It doesn't know that "good" and "excellent" are similar. It just knows they are different strings.
+
+### 2. Sparsity
+You still end up with massive sparse matrices. If you have 100,000 documents and 50,000 unique words, your memory usage can explode.
+
+### 3. Out of Vocabulary
+If your model encounters a word it didn't see during training (the `fit` step), it ignores it completely.
+
+---
+
+## Summary
+
+Use TF-IDF when:
+*   You are building a search engine (to rank results).
+*   You need to extract keywords or tags.
+*   You are doing document clustering or classification on distinct topics.
+
+It is the robust, "baseline" choice for most NLP tasks before you need the heavy artillery of **Word Embeddings**, which we will cover in the next guide on **Word2Vec**.
