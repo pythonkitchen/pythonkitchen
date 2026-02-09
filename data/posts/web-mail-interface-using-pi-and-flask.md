@@ -1,265 +1,142 @@
-title: web mail interface using pi and flask
+title: Building a Web Mail Client with Flask and Raspberry Pi
 slug: web-mail-interface-using-pi-and-flask
 pub: 2018-07-01 07:32:45
 authors: arj
-tags: 
+tags: python, flask, raspberry-pi, smtplib, web-development
 category: raspberry pi
 
-have you ever used gmail or hotmail on the web? it seems so natural that we take it for granted. in this post we'll see how to build a basic web mail client to send mail ... using flask and pi as server. this is
-content
-=======
+Have you ever wondered how web-based email clients like Gmail or Outlook actually work? At their core, they are web applications that take user input and send it to an email server. In this tutorial, we will build a basic web mail interface using **Flask** and a **Raspberry Pi**.
 
+By the end of this guide, you’ll have a local web server running on your Pi that allows any device on your network to send emails.
 
-flask intro : folder structure
+---
 
-flask intro : requests
+## 1. Flask Basics: Setting Up the Project
 
-flask : basic app
+Flask is a "micro" web framework for Python. It’s lightweight and easy to learn, making it perfect for Raspberry Pi projects.
 
-flask : post
-flask intro : folder structure
-==============================
-
-
-flask is a python web framework, it is recommended to learn it before django. a typical flask project structure is as follows:
-
-let us say we name our project sendmail, the project structure is
-
-```python
-sendmail [folder]
-|_ _ app.py
-|_ _ templates [folder]
-|     |_ _ file.html
-|_ _ static [folder]
-      |_ _ style.css
+### Project Structure
+Create a folder for your project and organize it like this:
+```text
+sendmail/
+├── app.py           # Your Python logic
+├── templates/       # HTML files
+│   └── index.html
+└── static/          # CSS, JS, and Images
+    └── style.css
 ```
 
-to run a flask app you don't need the templates and static folder but they are here for good reasons
-the templates folder
---------------------
+---
 
+## 2. Creating the Email Interface (HTML)
 
-let us say you have a website and for each page there are some elements recurring like the header and footer. having a template allows you to specify only the changing data
-templating engine
------------------
+We need a simple form where users can enter the recipient, the subject, and the message body. Save this as `templates/index.html`.
 
-
-flask uses the [jinja](http://jinja.pocoo.org/docs/2.10/) templating engine for rendering variables etc
-
-{{name}} will display the variable name on rendering. more on that later
-static folder
--------------
-
-
-static means it won't change, load your non-changing assets in there
-flask intro : requests
-======================
-
-
-for a webserver, whatever you type in the address bar after specifying the correct ip is a request
-
-```python
-http://www.domain.com/water.html
-```
-
-requests the file water.html
-
-in flask however (and python), you need not request for only files, you can pretty much mould the request pattern
-
-```python
-http://www.domain.com/mult/5/by/2
-
-http://www.domain.com/show/user54/sea
-```
-
-flask : basic app
-=================
-
-
-a basic app in flask is as follows :
-
-```python
-from flask import Flask
-
-app = Flask(__name__)
-@app.route('/')
-def basic():
-    return 'welcome to my site'
-if __name__ == '__main__': # if file run
-    app.run(debug=True, host='0.0.0.0')
-```
-
-explanations
-
-```python
-@app.route('/')
-```
-
-means the first slash after the domain name if requested
-
-you define the action in the subsequent function, which can be named as you want
-
-let us say the domain is www.d.com, we are specifying what to do when www.d.com/ is requested
-
-```python
-return 'welcome to my site'
-```
-
-displays a single string
-
-```python
-app.run(debug=True, host='0.0.0.0')
-```
-
-host='0.0.0.0' runs the app on 192.168. ...
-flask : basic app : return page
-===============================
-
-
-
-```python
-from flask import Flask, render_tempplate
-
-app = Flask(__name__)
-@app.route('/')
-def basic():
-    return render_template('index.html')
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
-
-```
-
-here
-
-```python
-return render_template('index.html')
-```
-
-returns the file index.html in the templates folder
-flask : post
-============
-
-
-there are two request methods viz post and get, post is more secure than get
-
-here is a post demo :
-
-our html
-
-```python
-<form method="POST">
-<input type="text" name="xyz">
-<br>
-<input type="submit" value="Send">
-</form>
-```
-
-our post handling method:
-
-```python
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    if request.method == 'POST': #this block is only entered when the form is submitted
-        data = request.form['xyz']
-        return 'data entered :{}'.format(data)
-    
-    return render_template('index.html')
-
-```
-
-our app
-=======
-
-
-here is the code for our index.html file in our templates folder :
-
-```python
+```html
 <!DOCTYPE html>
 <html>
 <head>
-<title></title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Mailer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 500px; margin: auto; }
+        input, textarea { width: 100%; margin-bottom: 10px; padding: 8px; }
+        input[type="submit"] { background: #4f46e5; color: white; border: none; cursor: pointer; }
+    </style>
 </head>
 <body>
-<form method="POST">
-to:<br>
-<input type="text" name="to">
-<br>
-subject:<br>
-<input type="text" name="subject">
-<br>
-body:<br>
-<textarea rows="4" cols="50" type="text" name="body">
-
-</textarea>
-<br><br>
-<input type="submit" value="Send">
-</form> 
+    <h2>Send Email via Pi</h2>
+    <form method="POST">
+        <label>To:</label>
+        <input type="email" name="to" required>
+        
+        <label>Subject:</label>
+        <input type="text" name="subject" required>
+        
+        <label>Body:</label>
+        <textarea name="body" rows="5" required></textarea>
+        
+        <input type="submit" value="Send Email">
+    </form> 
 </body>
 </html>
 ```
 
-our app.py code :
------------------
+---
 
+## 3. The Backend: Sending Mail with `smtplib`
 
+Python’s built-in `smtplib` library allows us to connect to an SMTP server (like Gmail) to send messages.
+
+### A Note on Security
+**Important:** Do not use your primary Gmail password in your code. Most modern providers require you to generate an **"App Password"** specifically for your script. This keeps your main account secure.
+
+### The Python Script (`app.py`)
 
 ```python
 from flask import Flask, render_template, request
-
-# send mail function
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from email.header import Header
-
-def send_mail(to_, subject_, body_):
-    fromaddr='[address]'
-    toaddr=to_
-    thesub=subject_
-    thebody=body_
-    thepassword='[pass]'
-    domsmtp='smtp.gmail.com'
-    smtpport= 587 #needs integer not string
-
-     
-    msg = MIMEMultipart('alt text here')
-    msg.set_charset('utf8')
-
-     
-    msg['From'] = fromaddr
-    msg['To'] = toaddr
-    msg['Subject'] = Header(thesub,'utf8')
-    _attach = MIMEText(thebody.encode('utf8'),'html','UTF-8')
-    msg.attach(_attach)
-                       
-    server = smtplib.SMTP(domsmtp, smtpport)
-    server.starttls()
-    server.login(fromaddr, thepassword)
-    text = msg.as_string()
-    server.sendmail(fromaddr, toaddr, text)
-
-    server.quit()
-    print('mail sent')
 
 app = Flask(__name__)
 
+def send_mail(to_email, subject, message_body):
+    # Configuration
+    MY_EMAIL = "your-email@gmail.com"
+    MY_PASSWORD = "your-app-password" # Use an App Password here!
+    
+    # Setup the MIME
+    msg = MIMEMultipart()
+    msg['From'] = MY_EMAIL
+    msg['To'] = to_email
+    msg['Subject'] = subject
+    msg.attach(MIMEText(message_body, 'plain'))
+    
+    # Connect to Gmail's SMTP server
+    try:
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls() # Secure the connection
+        server.login(MY_EMAIL, MY_PASSWORD)
+        server.send_mail(MY_EMAIL, to_email, msg.as_string())
+        server.quit()
+        return True
+    except Exception as e:
+        print(f"Error: {e}")
+        return False
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    if request.method == 'POST': #this block is only entered when the form is submitted
+    if request.method == 'POST':
         to = request.form['to']
         subject = request.form['subject']
         body = request.form['body']
-        send_mail(to, subject, body)
-        return 'mail sent to {}'.format(to)
-    
+        
+        if send_mail(to, subject, body):
+            return f"<h3>Success! Mail sent to {to}</h3> <a href='/'>Send another</a>"
+        else:
+            return "<h3>Failed to send mail. Check console for errors.</h3>"
+            
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    # host='0.0.0.0' allows access from other devices on the network
+    app.run(debug=True, host='0.0.0.0', port=5000)
 ```
 
-just replace [address] and [pass] by your actual data
-now run app.py, and see the output
+---
 
-you can grab another device on the network, go to 192.168. ... depending, and ... you can send a mail from another device, from a web interface
+## 4. Running the App on Your Pi
+
+1.  Open your Pi’s terminal and navigate to the `sendmail` folder.
+2.  Run the app: `python app.py`
+3.  On your Pi, you can access it at `http://localhost:5000`.
+4.  On any other device on the same Wi-Fi, find your Pi's IP address (e.g., `192.168.1.15`) and visit `http://192.168.1.15:5000`.
+
+## Conclusion
+
+You’ve just built a functional IoT device! This project combines web development, networking, and the Python standard library into a practical tool. From here, you could add an "attachments" feature or even a simple database to keep track of sent emails.
+
+### Related Posts:
+*   [Setting up SSH for Headless Raspberry Pi access](https://www.pythonkitchen.com/raspberry-pi-setup-establishing-ssh-connection/)
+*   [How to install OpenCV on your Pi](https://www.pythonkitchen.com/installing-opencv-on-the-pi3-with-python3-and-usb-webcam/)

@@ -1,66 +1,48 @@
-title: Machine Learning Part 8: Support Vector Machines
+title: Machine Learning Part 8: Support Vector Machines (SVM)
 slug: machine-learning-part-8-support-vector-machines
 pub: 2021-04-07 10:08:14
 authors: arj
-tags: 
+tags: machine learning, svm, classification, hyperplane, kernel-trick
 category: machine learning
 
-#8 support vector machines
+Support Vector Machines (SVM) are powerful supervised learning models used for classification and regression. In this post, we'll break down the geometry and logic behind them.
 
-Machine Learning
+## The Goal: Finding the Best Boundary
 
-👉♡ supervised learning
-♡ unsupervised learning
-♡ reinforcement learning
+Imagine you have two groups of data points on a 2D graph. You want to draw a line that separates them. There are many lines you could draw, but which one is the "best"?
 
-recap:
-🔖 types of supervised learning
+### Hyperplanes 🔎
+In SVM, the boundary that separates the data is called a **Hyperplane**.
+*   In **2D**, a hyperplane is a **1D line**.
+*   In **3D**, a hyperplane is a **2D plane**.
+*   In **N dimensions**, a hyperplane has **N-1 dimensions**.
 
-✅ classification 📑
+### Margin and Support Vectors 🚂
+SVM doesn't just find *any* line; it finds the one with the **Maximum Margin**.
 
-✅ regression 📈
+1.  **Support Vectors:** These are the data points from each class that are closest to the boundary. They "support" the hyperplane.
+2.  **Margin:** The distance between the hyperplane and the support vectors. 
 
-✅ mixed ⚗
-- tree based
-- random forest
-- neural networks
-- support vector machines 🎈
+The goal of SVM is to maximize this margin. A wider margin acts like a "safety buffer," making the model more robust to new, slightly different data.
 
-support vector machines (svm)
+---
 
-🔎 support vectors : read on to know
+## The Kernel Trick 🚂
 
-🔎 machine means model
+What if the data isn't linearly separable? Imagine a ring of "Type A" points surrounding a circle of "Type B" points. No straight line can separate them.
 
-support vector machines use hyperplanes to separate data. in a 2D plot, the line separating the data is called a separating hyperplane.
+SVM solves this using the **Kernel Trick**. It mathematically transforms the data from a lower dimension to a **higher dimension** where a flat hyperplane *can* separate them. 
 
-in 2D, a 1D hyperplane separates the data, in 1000D, a 999D hyperplane separates the data. so in N dimension, we need a hyperplane of N-1 dimension
+Think of it like lifting the "Type B" points off the table into the air; now you can slide a sheet of paper (a plane) between them and the "Type A" points on the table.
 
-🚂 on how to separate and how it shines
+## Summary
+*   **SVM** looks for the widest possible "street" between classes.
+*   **Support Vectors** are the most important points that define that street.
+*   The **Kernel Trick** allows SVM to solve complex, non-linear problems.
 
-suppose whe have some data scattered on the right and some on the left. we can do something like averaging distances (best fit) and drawing a line but, if we consider that the farthest a point is from our separating line, the more confident we are that we got it right (if many points close to the boundary, we would doubt as whether we got it right or not).
+## Exercise
+Research these terms to see the math behind SVM:
+1. **Lagrange Multipliers**
+2. **Platt's SMO Algorithm** (The standard algorithm for training SVMs)
 
-svm makes use of this idea. it divides the data in such a way as to maximise the distance between the line (hyperplane) and the data lying closest to the line. 〰️ it might not be a straight line.
-
-🚂 margin
-
-the distance between the line and the closest coordinates is called margin. large margins make up for errors and limited data.
-
-👉 🔎 support vectors are those points lying closest to the line (hyperplane) i.e. the closest coordinates
-
-🚂 kernel trick
-
-to separate complex shapes like a ring of data of type A surrounding data of type B appearing as a circle in the middle, SVM makes use of the kernel trick
-
-the kernel trick transform inputs from a lower dimension (in 2D for example) to a higher dimension (like 3D) in a fashion that the data can ve separated. mostly used in non-linear problems
-
-🚂 the maths behind
-
-i plan to make a post about the maths behind but see the exercises if you want to get an idea beforehand
-
-⚽️ exercise
-1) google up
-.. lagrange multipliers
-.. platt’s smo algorithm
-
-in relation to svm
+Next, we move into the world of **Neural Networks**—the foundation of modern AI.

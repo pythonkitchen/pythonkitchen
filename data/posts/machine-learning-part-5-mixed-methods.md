@@ -1,246 +1,75 @@
-title: Machine Learning part 5: mixed methods
+title: Machine Learning Part 5: Decision Trees and Mixed Methods
 slug: machine-learning-part-5-mixed-methods
 pub: 2019-01-26 14:01:04
 authors: arj
-tags: 
+tags: machine learning, decision trees, classification, regression, CART
 category: machine learning
 
+Some machine learning methods are versatile enough to be used for both **Classification** and **Regression**. These are often called "Mixed Methods."
 
+In this post, we'll focus on one of the most popular mixed methods: **Decision Trees**.
 
+## What are Decision Trees?
 
-#5 mixed methods
+A Decision Tree is a flowchart-like structure where each internal node represents a "test" on an attribute, each branch represents the outcome of the test, and each leaf node represents a class label or a continuous value.
 
+When used for both tasks, they are often referred to as **CART** (Classification And Regression Trees).
 
+### Other Mixed Methods include:
+*   Random Forests (Ensembles of trees)
+*   Neural Networks
+*   Support Vector Machines (SVM)
 
+---
 
-Machine Learning
+## Example: Predicting a "Good Day" at School
 
+Let's say we want to predict whether a student will have a **Good (G)** or **Bad (B)** day at school based on three factors:
+1.  **Teacher:** Present (p) or Absent (a)
+2.  **Parent Mood:** Good (g) or Bad (b)
+3.  **Homework:** Done (d) or Not Done (nd)
 
+### Our Dataset:
 
+| Teacher | Mood | HWork | Result |
+| :--- | :--- | :--- | :--- |
+| a | g | d | G |
+| p | b | d | G |
+| a | g | nd | G |
+| a | b | d | B |
+| p | b | nd | B |
+| a | g | nd | G |
+| p | b | d | G |
+| a | g | nd | G |
+| a | g | d | G |
 
-👉 ♡ supervised learning  
-♡ unsupervised learning  
-♡ reinforcement learning
+## Building the Tree: The Art of Splitting
 
+To build an efficient tree, we need to decide which feature to "split" on first. We want the split that gives us the highest **Purity** (where the resulting groups are mostly one class).
 
+### Comparing Splits:
 
+**1. Split by Teacher:**
+*   Absent: 5 Good, 1 Bad
+*   Present: 2 Good, 1 Bad
 
+**2. Split by Parent Mood:**
+*   Good: **5 Good, 0 Bad** (100% Pure!)
+*   Bad: 2 Good, 2 Bad
 
+**3. Split by Homework:**
+*   Done: 4 Good, 1 Bad
+*   Not Done: 3 Good, 1 Bad
 
+### The Winner: Parent Mood
+Splitting by **Parent Mood = Good** immediately gives us a perfect prediction. If the parents are in a good mood, the student has a good day 100% of the time in our dataset.
 
-types of supervised learning
+For the **Bad Mood** branch, we would need to split further (perhaps by Teacher or Homework) to resolve the 2 Good / 2 Bad tie.
 
+## Why use Decision Trees?
 
+*   **Easy to understand:** You can literally draw them and follow the logic.
+*   **Handle different data types:** They work with both numbers and categories.
+*   **Feature Importance:** They naturally show which factors (like Parent Mood) are the most important for the prediction.
 
-
-✔ classification 🗒
-
-
-
-
-✔ regression 📈
-
-
-
-
-✔ mixed ⚗  
-- tree based  
-- random forest  
-- neural networks  
-- support vector machines
-
-
-
-
-mixed methods are used for classification and regression.
-
-
-
-
-🌱 tree based method
-
-
-
-
- those trees used for both for classification and regression are called Classification And Regression Trees (CART) models
-
-
-
-
-let us say that we want to predict whether an event will be good or bad, the event being having a good day at school
-
-
-
-
-our data looks as follows
-
-
-
-
-t. represents teacher  
-a means abscent  
-p means present
-
-
-
-
-mood stands for parents' mood  
-g good. b bad
-
-
-
-
-hwork means homework  
-d done  
-nd not done
-
-
-
-
-t. | mood | hwork | result  
----------------------------------------  
-a |      g    |       d    |      g  
-p |      b    |       d    |      g  
-a |      g    |     nd    |      g  
-a |      b    |       d    |      b  
-p |      b    |     nd    |      b  
-a |      g    |     nd    |      g  
-p |      b    |       d    |      g  
-a |      g    |      nd   |      g  
-a |      g    |       d    |      g
-
-
-
-
-let us say that today the student entered the school. he wants to know how his day will go, today he has
-
-
-
-
-t.           p  
-mood   g  
-hwork  nd
-
-
-
-
-about splitting
----------------
-
-
-
-
-the first step is to split the tree to get a high purity index
-
-
-
-
-if we split by teacher's presence first, we get
-
-
-
-
-a   
-good 5 bad 1  
-p   
-good 2 bad 1
-
-
-
-
-if we split by parents' mood we get
-
-
-
-
-g  
-good 5 bad 0  
-b  
-good 2 bad 2
-
-
-
-
-if we split by homework done we get
-
-
-
-
-d  
-good 4 bad 1  
-nd  
-good 3 bad 1
-
-
-
-
-the highest index of purity was with parents' mood with good 5 and 0 bad day
-
-
-
-
-we start with it
-
-
-
-
-mood  
---  g  
-a |      g    |       d    |      g  
-a |      g    |     nd    |      g  
-a |      g    |     nd    |      g  
-a |      g    |      nd   |      g  
-a |      g    |       d    |      g
-
-
-
-
-good 5 bad 0
-
-
-
-
--- b  
-p |      b    |       d    |      g  
-a |      b    |       d    |      b  
-p |      b    |     nd    |      b  
-p |      b    |       d    |      g
-
-
-
-
-good 2 bad 2
-
-
-
-
-so bad mood must be split further as good mood had 100% purity with 5 good result
-
-
-
-
-now our condition is
-
-
-
-
-t.           p  
-mood   g  
-hwork  nd
-
-
-
-
-if we go for mood g, we can stop spliting as our purity is 100%. we'll get a good day
-
-
-
-
-next:  
-〰 enthropy and gain  
-🌱 random forest  
-🌱 support vector machines (SVM)  
-🌱 neural networks
-
-
-
+In the next part, we will look at how we mathematically measure this "purity" using concepts like **Entropy** and **Information Gain**.

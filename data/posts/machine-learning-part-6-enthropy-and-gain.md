@@ -1,201 +1,56 @@
-title: Machine Learning part 6: enthropy and gain
+title: Machine Learning Part 6: Entropy and Information Gain
 slug: machine-learning-part-6-enthropy-and-gain
 pub: 2019-01-29 05:55:06
 authors: arj
-tags: 
+tags: machine learning, entropy, information gain, decision trees, math
 category: machine learning
 
+In the previous post, we saw how Decision Trees split data based on "purity." But how do we measure this purity mathematically? This is where **Entropy** and **Information Gain** come in.
 
-Machine Learning
+## What is Entropy? 🎗
 
+In machine learning, **Entropy** is a measure of impurity or randomness in a dataset. 
 
+*   If a subset is **perfectly pure** (all items belong to one class), the entropy is **0**.
+*   If a subset is **totally impure** (items are evenly split between classes), the entropy is **1**.
 
+### The Entropy Formula
+To calculate entropy ($H$) for a subset with two classes:
+$$H = -(P_+) \log_2(P_+) - (P_-) \log_2(P_-)$$
 
-👉 ♡ supervised learning  
+Where:
+*   $P_+$ is the probability of the positive class.
+*   $P_-$ is the probability of the negative class.
 
-♡ unsupervised learning  
+### Example: Teacher's Presence
+Recalling our "Good Day" example from Part 5, let's look at the "Teacher Present" split:
 
-♡ reinforcement learning
+**Teacher Absent:** 5 Good (G), 1 Bad (B)
+$$H(\text{absent}) = -(5/6) \log_2(5/6) - (1/6) \log_2(1/6) \approx 0.65$$
 
+**Teacher Present:** 2 Good (G), 1 Bad (B)
+$$H(\text{present}) = -(2/3) \log_2(2/3) - (1/3) \log_2(1/3) \approx 0.92$$
 
+Since 0.65 is closer to 0 than 0.92, the "Absent" group is "purer" than the "Present" group.
 
+---
 
-recap:  
- 🔖 types of supervised learning
+## What is Information Gain? 🎗
 
+**Information Gain** measures the reduction in entropy after a dataset is split on an attribute. We want to split on the attribute that gives us the **highest** Information Gain.
 
+### The Formula:
+$$Gain(S, A) = Entropy(S) - \sum_{v \in Values(A)} \frac{|S_v|}{|S|} Entropy(S_v)$$
 
+Basically: **(Entropy before split) - (Weighted average of Entropy after split)**.
 
-✔ classification 📑
+If we calculate the gain for "Teacher Presence" in our 9-row dataset:
+*   Total Entropy $H(S) \approx 0.76$
+*   $Gain = 0.76 - (6/9 \cdot 0.65) - (3/9 \cdot 0.92) \approx 0.02$
 
+A gain of 0.02 is quite low, suggesting that teacher presence isn't the most important factor in predicting a good day.
 
+## Exercise
+Calculate the Information Gain for "Parent Mood" from the dataset in Part 5. You'll find it is much higher!
 
-
-✔ regression 📈
-
-
-
-
-✔ mixed ⚗
-
-
-
-
-* tree based :balloon:
-* random forest
-* neural networks
-* support vector machines
-
-
-
-
-🎗 enthropy
-
-
-
-
-enthropy is just another word for expected value
-
-
-
-
-in the past post, we decided what to use to split based on purity index. we can do the same thing mathematically (easier) by
-
-
-
-
-P+ means probability of target (good day in our case)  
-
-P- means probability not target (bad day)
-
-
-
-
-log2(P-) means log(P-) base 2
-
-
-
-
-H = -(P+)log2(P+) - (P-)log2(P-)
-
-
-
-
-the above is the formula for the purity of subset. it measures how likely you get a positive element if you select randomly from a particular subset
-
-
-
-
-let us take teacher's presence. we had
-
-
-
-
-absent  
-
-good 5 bad 1  
-
-present  
-
-good 2 bad 1
-
-
-
-
-H(absent) = -(5/6)log2(5/6) - (1/6)log2(1/6)  
-
-= 0.65
-
-
-
-
-H(present) = -(2/3)log2(2/3) - (1/3)log2(1/3)  
-
-= 0.92
-
-
-
-
-0 is extremely pure and 1 is extremely impure
-
-
-
-
-so absent is purer than than present
-
-
-
-
-🎗 gain
-
-
-
-
-gain is used to determine what to split first by finding the feature with the highrst gain. 0 means irrelevent. 1 means very relevent
-
-
-
-
-gain is defined by
-
-
-
-
-gain = H(S) − Σ (SV/S) H(SV)
-
-
-
-
-S -> total number of points in leaf  
-
-v is the possible values and SV -> subset for which we have those values  
-
-H is our enthropy as above
-
-
-
-
-taking for presence, our gain is
-
-
-
-
-our S is 9 that is (6+3)
-
-
-
-
-gain = H(presence) - sum( SV/9 \* H(SV))  
-
-gain = H(presence) - (6/9 \* 0.65) - (3/9 \* 0.92)
-
-
-
-
-our H(presence) is -(7/9)log2(7/9) - (2/9)log2(2/9)   
-
-= 0.76
-
-
-
-
-gain = 0.76 - (6/9 \* 0.65) - (3/9 \* 0.92)  
-
-gain = 0.02
-
-
-
-
-exercise:  
-
-google up information gain related to decision trees as well as associated concepts
-
-
-
-
-next:  
-
-random forest
-
-
-
+In the next part, we will see how combining many decision trees creates a powerful model called a **Random Forest**.

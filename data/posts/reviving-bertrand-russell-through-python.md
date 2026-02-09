@@ -1,484 +1,107 @@
-title: Reviving Bertrand Russell Through Python
+title: Markov Chains in Python: Reviving Bertrand Russell's Prose
 slug: reviving-bertrand-russell-through-python
 pub: 2018-12-28 19:35:04
 authors: arj
-tags: bertrand russell,markov,probability,python,text-generator
+tags: python, markov-chains, probability, natural-language-processing, bertrand-russell
 category: programming problems
 
+Have you ever finished a book by a brilliant author and wished there was just one more chapter? While we can't bring back the great thinkers of the past, we can use **Markov Chains** to imitate their unique literary style. 
 
-famous authors are praised, respected, admired and missed due to their works. after reading all the titles of an excellent author, one is left wishing for more. curiously enough we now have the ability to produce more books that fit in the literary style, depth and topic tackling techniques of writers. perfection in this field opens a new era, you might hear of ~~mouse~~ cat trap by darwin, russian trip by mark twain and god beyond doubt by hawkins.
+In this tutorial, we will explore the theory behind Markov Chains and build a Python script to generate text in the style of the philosopher Bertrand Russell.
 
+---
 
+## What is a Markov Chain?
 
+A Markov Chain is a stochastic model describing a sequence of possible events. The crucial rule is that the probability of each event depends **only** on the state attained in the previous event.
 
-markov?
--------
+In the context of text generation:
+1.  We look at a "source text" (e.g., a book).
+2.  We break it down into words.
+3.  For every word, we record which words typically follow it.
+4.  To generate new text, we pick a starting word and then "roll the dice" to pick the next word based on our recorded frequencies.
 
+---
 
+## The "Sun was Green" Example
 
+Imagine our source text is:
+> "The meadow was green. The sun was shining. The boy went away. The glass was shining."
 
-markov chains are probabilistic pattern generating models. 'patterns' can be events, text or geometrical arrangements
+We can map out the connections (the "Chain"):
+*   **The** -> [meadow, sun, boy, glass]
+*   **was** -> [green, shining, shining]
+*   **shining** -> [The]
 
+Because "shining" appears twice after "was," our model has a 66% chance of picking "shining" and a 33% chance of picking "green." This is how we maintain the statistical "feel" of the original author.
 
+---
 
+## Implementation in Python
 
-let us take the example of a person going to a fast food outlet where there are only three types of foods, rounder, burger and panini.
-
-
-
-
-the probability of him taking a rounder after already taking one is 0.2 or 2/10
-
-
-
-
-after a rounder, the probability of taking a burger is 0.4 or 4/10
-
-
-
-
-after a rounder, the probability of taking a panini is 0.4 or 4/10
-
-
-
-
-notice that there are three arrows going out for three choices, which when added make up 1
-
-
-
-
-* ![](https://www.pythonmembers.club/wp-content/uploads/2018/12/markov.png)
-
-
-
-
-let us make up the remaining part for burger
-
-
-
-
-![](https://www.pythonmembers.club/wp-content/uploads/2018/12/markov2.png)
-
-
-now completed it looks like
-
-
-
-
-![](https://www.pythonmembers.club/wp-content/uploads/2018/12/markov2-1.png)
-
-
-B P P R P P ...
-
-
-
-
-matrix representation
----------------------
-
-
-
-
-the above can also be written as
-
-
-
-
-![](https://www.pythonmembers.club/wp-content/uploads/2018/12/markov_matrix_python.png)
-
-
-but whatever does that means?
-
-
-
-
-that's why we have state space to specify from where we begin
-
-
-
-
-  **state space {1 = rounder, 2 = burger, 3 = panini}** 
-
-
-
-
-means we start first by rounder, then burger then panini
-
-
-
-
-![](https://www.pythonmembers.club/wp-content/uploads/2018/12/markov_matrix_python2.png)
-
-
-applying markov to text
------------------------
-
-
-
-
-the idea is to:
-
-
-
-
-* build a markov model
-* then to generate text through the model
-
-
-
-
-### rehearsal
-
-
-
-
-we'll have a program that scans every word and records the next word
-
-
-
-
-let us take the text:
-
-
-
-
-*the meadow was green. the sun was shining. the boy went away. the glass was shining*
-
-
-
-
-tabulating next words we get:
-
-
-
-
-the -> meadow, sun, boy, glass
-
-
-
-
-meadow -> was
-
-
-
-
-was -> green, shining,shining
-
-
-
-
-sun -> was
-
-
-
-
-boy -> went
-
-
-
-
-went -> away
-
-
-
-
-glass -> was
-
-
-
-
-from those we can generate the text
-
-
-
-
-the sun was green
-
-
-
-
-with path
-
-
-
-
-![](https://www.pythonmembers.club/wp-content/uploads/2018/12/sunwasgreenpy.png)
-
-
------------------------------------------------------------------
-
-
-
-
-the meadow was shining
-
-
-
-
-![](https://www.pythonmembers.club/wp-content/uploads/2018/12/meadowwasshiningpy.png)
-
-
-### wait, what about probabilities ?!
-
-
-
-
-well see
-
-
-
-
- was -> green, shining,shining 
-
-
-
-
-when we randomly choose from [ green, shining,shining ] we actually have more chance getting shining than green as they occur twice more, no need of writing up the probabilities. the only draw back is programming efficiency, which we'll clean up in another post
-
-
-
-
-the code
---------
-
-
-
-
+Here is a robust implementation that reads a source file and generates a stylized phrase.
 
 ```python
+import random
 
-def format_text(file_read):
-    # getting the data ready for generation
-    data = {}
-    lines = file_read.replace('\n', ' ').split('.')
-    for line in lines:
-        words = line.split()
+def build_markov_model(text):
+    """Creates a dictionary mapping words to a list of possible next words."""
+    words = text.split()
+    model = {}
+    
+    for i in range(len(words) - 1):
+        current_word = words[i]
+        next_word = words[i+1]
+        
+        if current_word not in model:
+            model[current_word] = []
+        model[current_word].append(next_word)
+        
+    return model
 
-        for i,word in enumerate(words):
-            if i+1 < len(words):
-                next_word = words[i+1]
+def generate_text(model, length=20):
+    """Generates a random string of text based on the model."""
+    if not model:
+        return "Model is empty."
+        
+    # Start with a random word
+    current_word = random.choice(list(model.keys()))
+    output = [current_word]
+    
+    for _ in range(length - 1):
+        if current_word in model:
+            # Pick a random next word based on frequency
+            current_word = random.choice(model[current_word])
+            output.append(current_word)
+        else:
+            # If a word has no follower, pick a new random start
+            current_word = random.choice(list(model.keys()))
+            output.append(current_word)
+            
+    return " ".join(output)
 
-                if word not in data:
-                    data[word] = [next_word]
-                else:
-                    data[word].append(next_word)
-    return data
-
-def rand(data):
-    # chooses random element from dictionary
-    return random.choice(list(data))
-
-def generate(times, data):
-    # specifies length of generated phrase
-    current = rand(data)
-    gens = [current]
-    try:
-        for i in range(times):
-            current = random.choice(data[current])
-            gens.append(current)
-    except:
-        pass
-    return gens
-
-
-with open('source.txt', 'r') as source:
-    file = source.read()
-
-data = format_text(file)
-
-print(' '.join(generate(10, data)))
-
+# Example Usage
+source_text = "Your long source text from Bertrand Russell here..."
+model = build_markov_model(source_text)
+print(generate_text(model, 30))
 ```
 
+---
 
+## Why Bertrand Russell?
 
-format text returns a dictionary. here is a snapshot:
+Russell’s prose is famous for its logical clarity and complex but structured sentences. When you run this model over his work, like *Our Knowledge of the External World*, you get fascinating results:
 
+> "The inductive principle, which need not known form made space and so that there were none except prejudice..."
 
+While it might not always make perfect logical sense, it captures the **cadence** and **vocabulary** of the philosopher remarkably well.
 
+## Conclusion
 
+Markov Chains are a simple but effective introduction to Natural Language Processing (NLP). While they don't "understand" grammar, they demonstrate how powerful statistical patterns can be. 
 
-```python
-{
-'is,': ['besides'], 
-'unsupported': ['by'], 
-'one': ['which', 'of', 'at', 'reason', 'proposition', 'form', 'of', 'which', 'thing', 'thing', 'magnitude', 'kind', 'of', 'relation', 'fact,', 'fact,', 'involving', 'case', 'of', 'kind', 'atomic', 'of', 'happens,', 'something', 'is', 'would'],
-...
+Want to try something more advanced? Look into **Bigrams** (looking at pairs of words) or **LSTM Neural Networks** for even more realistic text generation!
 
-```
-
-
-
-i ran the program over some paragraphs of   
-
-
-
-
-
-*Our Knowledge of the External World as a Field for Scientific Method in Philosophy* 
-
-
-
-
- from
-
-
-
-
-
-> Mathematical logic, even in its most modern form, is not *directly* of  
->  philosophical importance except in its beginnings. After ...
-> 
->  Our Knowledge of the External World as a Field for Scientific Method in Philosophy  
-> by Bertrand Russell 
-
-
-
-
-to
-
-
-
-
-
-> Charles I. and death and his bed  
->  are objective, but they are not, except in my thought, put together as  
->  my false belief supposes. It is therefore necessary, in analysing a  
->  belief, to look for some other logical form than a two-term relation.  
->  Failure to realise this necessity has, in my opinion, vitiated almost  
->  everything that has hitherto been written on the theory of knowledge,  
->  making the problem of error insoluble and the difference between belief  
->  and perception inexplicable.
-> 
-> Our Knowledge of the External World as a Field for Scientific Method in Philosophy   
-> by Bertrand Russell
-
-
-
-
-the core is here
-
-
-
-
-
-```python
-    current = rand(data)
-    gens = [current]
-    try:
-        for i in range(times):
-            current = random.choice(data[current])
-            gens.append(current)
-    except:
-        pass
-    return gens
-
-```
-
-
-
-we start by adding a random word (a random element of the dictionary) to the list
-
-
-
-
-
-```python
-current = rand(data)
-gens = [current]
-
-```
-
-
-
-then we choose a random word from the words coming next
-
-
-
-
-![](https://www.pythonmembers.club/wp-content/uploads/2018/12/explanation_markov_code.png)
-
-
-the code produces like
-
-
-
-
-![](https://www.pythonmembers.club/wp-content/uploads/2018/12/markovgen1.png)
-
-
-![](https://www.pythonmembers.club/wp-content/uploads/2018/12/markov2-2.png)
-
-
-with length 20
-
-
-
-
-![](https://www.pythonmembers.club/wp-content/uploads/2018/12/markov3-1024x21.png)
-
-
-again length 10
-
-
-
-
-![](https://www.pythonmembers.club/wp-content/uploads/2018/12/markov4.png)
-
-
-the phrase is correct euu yes, it imitates the style for now
-
-
-
-
-
-> infinite number of which we have the one thing having some other terms or opinion about Socrates--that he feels his insight, we can discover, for example, two classifications we mean that two terms, being equally true when one of the most
-> 
-> generated text - length 40  
-> 
-
-
-
-
-
-> inductive principle, which need not known form made space and so that there were none except prejudice, so long as follows that, if they may sometimes know that we saw that I shall bring my umbrella if you could hardly be outlined in the whole theory of general truths by no
-> 
-> generated text - length 50
-
-
-
-
-
-> return to asymmetrical relations, such as follows that, if this way to be in the existent world, and red, and pure logic, no particular subject-matter otherwise than the case of the supposed common constituent, but are true or "one inch taller" or deny this is true, we are more than a "fact," I have that membership of have knowledge is any
-> 
-> generated text - length 60 
-
-
-
-
-
-> Thus "father" is the difference between B is something altogether more difficult, and common world would be inferred from sense, and mortality that certain relation is apt to be asserted or deny this hypothetical form, but the second being equally true in order to have accepted and B, and philosophically it is said to properties becomes obviously impossible to infer all propositions are and B, also knew that all things have
-> 
->  generated text - length 70 
-
-
-
-
-
-> From poverty in any such as regards the subject-predicate form--in other thing is in its constituents and were less anxious to deal throughout the other property, then B and most of unreality of the weather had been written on the marks of a certain known objects are indispensable in the everyday world with completely general propositions, and so that there is independent of three things, it should be explained would not transitive, but to give rise to exist
-> 
->  generated text - length 80 
-
-
-
-
-room for improvement
---------------------
-
-
-
-
-well we can improve many things such as: first word first, choosing probabilities as numbers rather than from list, be sensitive to punctuations, improve context etc. a rough code lands up a pretty nice result
-
-
-
+### Further Reading:
+*   [Building a Lexer in Python](https://www.pythonkitchen.com/building-a-lexer-in-python-tutorial/)
+*   [Machine Learning Part 9: Neural Networks](https://www.pythonkitchen.com/machine-learning-part-9-neural-networks/)

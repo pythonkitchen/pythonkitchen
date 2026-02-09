@@ -1,71 +1,44 @@
-title: Machine Learning Part 10 Naive Bayes
+title: Machine Learning Part 10: Naive Bayes Classification
 slug: machine-learning-part-10-naive-bayes
 pub: 2021-04-07 10:11:56
 authors: arj
-tags: 
+tags: machine learning, naive bayes, bayes theorem, probability, classification
 category: machine learning
 
-#10 naive bayes
+Naive Bayes is a simple yet powerful classification algorithm based on **Bayes' Theorem**. It's particularly popular for text classification and spam filtering.
 
-Machine Learning
+## Bayes' Theorem ⚱
 
-👉♡ supervised learning
-♡ unsupervised learning
-♡ reinforcement learning
+The heart of this algorithm is Bayes' Theorem, which describes the probability of an event based on prior knowledge of conditions that might be related to the event.
 
-recap:
-🔖 types of supervised learning
+$$P(B|A) = \frac{P(A|B) \cdot P(B)}{P(A)}$$
 
-✅ classification 📑
+In machine learning terms, we can think of this as:
+$$P(\text{Class} | \text{Data}) = \frac{P(\text{Data} | \text{Class}) \cdot P(\text{Class})}{P(\text{Data})}$$
 
-✅ regression 📈
+### Why "Naive"?
+The algorithm is called "Naive" because it assumes that all features are **independent** of each other. In reality, features are often related (e.g., if you see "Machine" and "Learning" in a text, they aren't independent), but despite this "naive" assumption, the algorithm works surprisingly well!
 
-✅ mixed ⚗
+---
 
-naive bayes classification
+## Example: Are you ill? 🤒
 
-⚱ bayes theorem
+Imagine a new rare disease called "Scarius." You have a fever—what is the probability you actually have Scarius?
 
-bayes theorem states that
+*   **P(Scarius):** The probability of having the disease (it's rare: 0.0001).
+*   **P(Fever | Scarius):** The probability that you have a fever if you have the disease (let's say 0.96).
+*   **P(Fever):** The probability that any random person has a fever (let's say 0.1).
 
-P(B|A) = (P(A|B) \* P(B)) / P(A)
+**Calculation:**
+$$P(\text{Scarius} | \text{Fever}) = \frac{0.96 \cdot 0.0001}{0.1} = 0.00096$$
 
-Probability of B given A = ...
+Even though you have the symptom, the probability you have this specific rare disease is still less than 0.1%! This shows why considering the "Prior" ($P(B)$) is so important.
 
-🔎 naive comes from the fact that features have been independently chosen from a distribution
+## Summary
+Naive Bayes is:
+*   **Fast:** It requires a small amount of training data.
+*   **Scalable:** It handles high-dimensional data well.
+*   **Effective:** Great for things like spam detection or sentiment analysis.
 
-⚱ conditional probability
-
-that's it, checkout dependent events' probabilities. let us take a domino game. the probability taking out a piece containing one after having taken a piece containing a 6. in this example, the taking of one is affected at the very least by the fact that the tiles have been diminished by 1 (7/28 × 7/27). similarly naive bayes allows us to guess events more precisely by adding known events in the game.
-
-⚱ are you ill?
-
-a famous use of the theorem is to find out whether you are ill given you have symptoms of a disease. the formula tells us that only looking if you have symptoms is not enough.
-
-le us say that a new disease named scarius is out. now you check out the symptoms, brr you have those it seems ... but do you really have the disease?
-
-P(scarius given symptoms) = (P(symptoms given scarius) \* P(scarius))/P(symptoms)
-
-if symptoms is fever, P(symptoms) is P(fever) i.e. the probability that a person gets fever on any day.
-
-P(symptoms given scarius) will be high since when you are ill you will get symptoms. let us say 0.96
-
-P(scarius) ah let us say that disease is rare, 0.0001
-
-p(fever) let us say 0.1
-
-our P will be
-
-(0.0001 × 0.96) ÷ 0.1
-
-= 0.00096
-
-so, without taking in consideration those 3 probabilities, you'd make an erroneous guess
-
-⚱ one interesting article
-
-https://www.saedsayad.com/naive\_bayesian.htm
-
-⚽️ exercise
-
-see the theorem's derivation by using sets via a venn diagram
+## Exercise
+Try to derive Bayes' Theorem using a Venn diagram. It's a great way to visualize how conditional probability works!

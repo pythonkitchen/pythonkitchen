@@ -1,86 +1,88 @@
-title: game map rendering
+title: Tile-Based Game Map Rendering with Processing.py
 slug: game-map-rendering
 pub: 2018-05-29 05:20:26
 authors: arj
-tags: 
-category: canvas theory,processing.py
+tags: python, processing.py, game-dev, tile-map, beginners
+category: canvas theory, processing.py
 
-game map rendering or simply map rendering is a nice technique that is used to generate worlds.
+Whether you're building a classic RPG or a puzzle game, **tile-based rendering** is one of the most efficient ways to create large, structured game worlds. Instead of drawing every pixel manually, we divide the world into a grid of "tiles."
 
-explanations follow suit :
-demo
-----
+In this tutorial, we'll learn how to translate a 2D Python list into a visual game map using Processing.py.
 
+---
 
-explanations
-------------
+## The Concept: The Data Map
 
-
- 
-
-```python
-game_map = [
-        [0,0,0,0,0],
-        [0,1,0,1,0],
-        [0,0,1,0,0],
-        [0,1,0,1,0],
-        [0,0,1,0,0],
-        ]
-
-```
-
- 
-
-first we initialise our world as a 2d array, we distinguished patterns by using 0 and 1
-
- 
+At its heart, a game level is just data. We can represent a grid of tiles using a 2D list (a list of lists). In this example:
+*   `0` represents Grass (Green)
+*   `1` represents Water (Blue)
 
 ```python
-tile_width = 50
-
+# Our 5x5 game map
+game_map = [
+    [0, 0, 0, 0, 0],
+    [0, 1, 1, 1, 0],
+    [0, 1, 0, 1, 0],
+    [0, 1, 1, 1, 0],
+    [0, 0, 0, 0, 0]
+]
 ```
 
- 
+---
 
-next we initialised the width of a tile. the formula for tile placement is x\*tile\_width
+## Rendering the Grid
 
- 
+To turn this data into a visual map, we need to loop through the rows and columns. The position of each tile on the screen is calculated by multiplying its grid index by the **tile size**.
+
+### The Math
+If a tile is at row `r` and column `c`, and our tiles are 50 pixels wide:
+*   `x = c * 50`
+*   `y = r * 50`
+
+### The Python Implementation
 
 ```python
-def green_tile(x, y):
-    fill(0,255,0)
-    rect(x, y, tile_width, tile_width)
-    
-def white_tile(x, y):
-    fill(255)
-    rect(x, y, tile_width, tile_width)
+TILE_SIZE = 50
 
+def setup():
+    size(250, 250)
+    noLoop() # We only need to draw the map once
+
+def draw():
+    background(255)
+    
+    # Iterate through rows
+    for r in range(len(game_map)):
+        # Iterate through columns in each row
+        for c in range(len(game_map[r])):
+            
+            tile_type = game_map[r][c]
+            
+            # Determine color based on tile type
+            if tile_type == 0:
+                fill(34, 139, 34) # Forest Green
+            elif tile_type == 1:
+                fill(30, 144, 255) # Dodger Blue
+            
+            # Draw the tile
+            # Notice x is column (c) and y is row (r)
+            rect(c * TILE_SIZE, r * TILE_SIZE, TILE_SIZE, TILE_SIZE)
 ```
 
- 
+---
 
-next we separated our tile rendering in two functions, for now it's just colored squares
+## Why use Tile Maps?
 
- 
+1.  **Memory Efficiency:** You only need to store a few integers per tile, rather than high-resolution images of the entire world.
+2.  **Easy Collision Detection:** If you know your character is at pixel (120, 85), you can easily calculate exactly which tile they are standing on by dividing by `TILE_SIZE`.
+3.  **Level Editors:** It's very easy to create a tool that allows you to "paint" levels by changing numbers in a grid.
 
-```python
-    for r in range(map_length):
-        for c in range(map_length):
+## Going Further
 
-```
+Once you have the basic grid working, you can replace the simple `rect()` calls with `image()` calls to use actual sprites for your grass and water. 
 
- 
+In our next post, we'll look at how to **generate these maps randomly** so you never play the same level twice!
 
-we loop or the array twice, one for the row and one for the column to get the index to accesss our map by game\_map[x][y]
-
- 
-
-```python
-            if game_map[c][r] == 0: # inversed for viewing as is in variable
-                green_tile(r*tile_width, c*tile_width)
-            elif game_map[c][r] == 1:
-                white_tile(r*tile_width, c*tile_width)
-
-```
-
-here we render according to predefined symbols, it could have been 'g' and 'p' for grass and path
+### Related Posts:
+*   [Generating Random Maps on the Fly](https://www.pythonkitchen.com/generating-unintelligent-random-maps/)
+*   [Converting Screen Coordinates to Map Coordinates](https://www.pythonkitchen.com/translating-location-to-map-coordinates/)

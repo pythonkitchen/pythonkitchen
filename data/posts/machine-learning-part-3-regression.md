@@ -1,138 +1,53 @@
-title: Machine Learning part 3: regression
+title: Machine Learning Part 3: Understanding Regression
 slug: machine-learning-part-3-regression
 pub: 2019-01-23 07:38:19
 authors: arj
-tags: 
-category: Uncategorized
+tags: machine learning, regression, linear regression, algorithms
+category: machine learning
 
+In the previous parts, we introduced machine learning and supervised learning. Today, we focus on one of the two main pillars of supervised learning: **Regression**.
 
-**Machine Learning**
+## What is Regression?
 
+In machine learning, **Regression** simply means **prediction**. Specifically, it involves predicting a continuous numerical value.
 
+In regression, we deal with:
+*   **Independent Variables:** Often called **features** (the input).
+*   **Dependent Variable:** The **target** (the value we want to predict).
 
+## Types of Regression Methods
 
-**♡ supervised learning**  
-♡ unsupervised learning  
-♡ reinforcement learning
+### 1. Simple Linear Regression
+This is the most basic form, where we predict a target based on a single input variable.
 
+Imagine plotting points on a graph and trying to draw a "line of best fit." The goal is to find the values of $m$ (slope) and $c$ (y-intercept) in the equation:
+$$y = mx + c$$
 
+### 2. Multivariate Linear Regression
+Most real-world problems are complex and depend on many factors. Multivariate regression handles one target variable based on two or more features.
 
+**Example:** Predicting the fuel cost of a trip.
+Features: engine age, car weight, distance, fuel price.
+Formula:
+$$Cost = m_1 \cdot feature_1 + m_2 \cdot feature_2 + m_3 \cdot feature_3 + b$$
 
-**#3 supervised learning: regression**
+We train the model on historical data to find the optimal weights ($m_1, m_2, ...$) to make accurate predictions for new data.
 
+### 3. Ridge Regression (Regularization)
+Sometimes our models become too complex and "overfit" the training data (following every tiny fluctuation or "mountain ridge" in the data).
 
+**Ridge Regression** is used as a **regularization** method. It adds a penalty to the model to keep the coefficients simple and prevents the model from being too sensitive to noise in the data. This leads to better predictions on new, unseen data.
 
+---
 
-note: **independent variables** are also called \*features\*
+## Exercise: Dig into the Math
 
+To truly understand regression, I recommend researching:
+1.  **Ordinary Least Squares:** How the line of best fit is actually calculated.
+2.  **Polynomial Regression:** How we fit curves instead of just straight lines.
+3.  **Lasso Regression:** Another regularization method similar to Ridge.
 
-
-
-regression simply means prediction. there are many types of regression methods:
-
-
-
-
-- simple linear regression  
-- multivariate linear regression  
-- polynomial regression  
-- ridge regression  
-- lasso regression
-
-
-
-
- 🎁 **simple linear regression** means predicting for only two variables, a dependent and an independent one
-
-
-
-
-let us say that we have many points on a graph of x,y and want to draw a line of best fit. we draw the line of best fit then we predict for further values of x and y. i.e. it calculates the values of m and c in **y = m \* x + c**
-
-
-
-
- 🎁 : **multivariate linear regression** means predicting for one dependent variable and two or more independent variables
-
-
-
-
-the formula is in the format 
-
-
-
-
-ind. var. means independent variable 
-
-
-
-
-stuff = m1 \* ind. var. 1+ m2 \* ind. var. 2 + ... + b
-
-
-
-
-or 
-
-
-
-
-stuff = m1\*feature1 + m2\*feature2 + ... + b
-
-
-
-
-b is the intercept
-
-
-
-
-many real world examples better fit with multivariate regression. like you might want to calculate fuel cost of trip based on many factors such as state of engine, age etc etc
-
-
-
-
-we train our data to get the m1 m2 m3 etc then we can predict our target value for such and such situations
-
-
-
-
- 🎁 **ridge regression**
-
-
-
-
-definition of ridge:   
-A ridge or a mountain ridge is a geological feature consisting of a chain of mountains or hills that form a continuous elevated crest for some distance.
-
-
-
-
-just like the tops of mountains go up and down, similarly in the case where a graph's shape is like mountain tops, going up and down, ridge regression is used as a \*regularisation\* method to have a simple curve so as to ignore large coefficients and get better predictions
-
-
-
-
-another name: tikhonov regularization
-
-
-
-
-exercise:
-
-
-
-
-1) dig into the maths of how   
-i. linear regression works (how the line of best fit is drawn)  
-ii. multivariate regression works  
-iii. polynomial regression works
-
-
-
-
-next:  
-cost function and gradient descent
+In the next post, we will look at **Cost Functions** and **Gradient Descent**—the engines that make these predictions possible!
 
 
 

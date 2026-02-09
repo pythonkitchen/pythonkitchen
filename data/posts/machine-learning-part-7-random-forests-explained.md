@@ -1,114 +1,44 @@
-title: Machine Learning part 7: Random Forests Explained
+title: Machine Learning Part 7: Random Forests Explained
 slug: machine-learning-part-7-random-forests-explained
 pub: 2019-02-03 13:00:39
 authors: arj
-tags: 
+tags: machine learning, random forest, ensemble learning, overfitting
 category: machine learning
 
+While Decision Trees are easy to understand, they have a major weakness: they tend to **overfit** the data. In this post, we'll see how **Random Forests** solve this problem.
 
+## The Problem with Single Trees 🌳
 
+Decision Trees work by drawing "boxes" around data. If a tree is allowed to grow too deep, it will create tiny, specific boxes for every single data point in your training set. This is called **overfitting**. The tree becomes great at "remembering" the training data but terrible at "predicting" new data.
 
-#7 random forest
+### Pruning
+One way to fix this is **Pruning**—cutting back branches that don't add much predictive power. This helps, but it isn't always enough.
 
+---
 
+## The Solution: Random Forests 🌳🌳🌳
 
+A **Random Forest** is an "Ensemble" method. Instead of relying on one tree, it builds a whole forest of them.
 
-Machine Learning
+### How it works:
+1.  **Random Sampling (Bagging):** Each tree in the forest is trained on a random subset of the data.
+2.  **Feature Randomness:** Each time a tree needs to split, it only considers a random selection of the available features.
+3.  **Voting:** When it's time to make a prediction, every tree in the forest "votes." The forest then picks the majority result (for classification) or the average (for regression).
 
+By randomizing the data and the features, the trees become different from one another. While one tree might overfit, the average of 100 different trees will be much more stable and accurate.
 
+## Why use Random Forests?
+*   **Highly Accurate:** One of the most powerful algorithms for structured data.
+*   **Robust to Overfitting:** Much better than a single decision tree.
+*   **Handles Missing Data:** Works well even if some data is missing.
 
+## Real-World Uses
+*   **Banking:** Detecting loyal vs. fraudulent customers.
+*   **Medicine:** Identifying the correct combination of components in medicine.
+*   **E-commerce:** Predicting whether a customer will recommend a product.
 
-👉 ♡ supervised learning  
-♡ unsupervised learning  
-♡ reinforcement learning
+## Exercise
+1. Research how many trees are usually in a "typical" Random Forest.
+2. Compare a Random Forest implementation in Python (using `scikit-learn`) vs. other languages. You'll see why Python is the king of ML!
 
-
-
-
-recap:  
-🔖 types of supervised learning
-
-
-
-
-✔ classification 📑
-
-
-
-
-✔ regression 📈
-
-
-
-
-✔ mixed ⚗  
-- tree based   
-- random forest 🎈  
-- neural networks  
-- support vector machines
-
-
-
-
-🌳 overfitting and the problem with trees
-
-
-
-
-trees classify by drawing square boxes around the data, which does not work well where many separations are needed. it overfits the data
-
-
-
-
-🌳 pruning
-
-
-
-
-pruning means to trim (a tree, shrub, or bush) by cutting away dead or overgrown branches or stems (or unwanted parts), especially to encourage growth.
-
-
-
-
-for example, if you had a single data (a leaf) that is making your square a large one, so you just remove it so that the tree still maintains relevence. improves accuracy of the tree.
-
-
-
-
-🌳 random forests
-
-
-
-
-just like a forest is made up of trees, similarly random forest is a machine learning method made up of tree methods. random as it randomises the input of the trees.
-
-
-
-
-the basic form of it acts on tally. a tree gives out an output, this one collects all the outputs of the trees and try to make up an answer. if 10% of trees said A and 90% said B, it will say B (majority). much like you ask questions to 10 people as to what book they think will be most popular this year or what team will win. just here as the  inputs are randomised, each trees are not the same. it might be further tweaked to give more or less meanings to the answers in the tree.
-
-
-
-
-🌳 use of random forests
-
-
-
-
-used to identify customer type, whether people will like a product or predict behaviour.
-
-
-
-
-⚽ exercise  
-1) dig more into the uses of random forests  
-2) compare it's implementation across languages ( with libs included ), how elegant you think python is?
-
-
-
-
-next:  
-🌱 support vector machines#8 support vector machines 
-
-
-
+Next up, we dive into the "geometric" world of **Support Vector Machines (SVM)**.

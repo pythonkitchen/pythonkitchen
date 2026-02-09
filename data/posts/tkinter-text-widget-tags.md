@@ -1,242 +1,102 @@
-title: Fixing an issue of tkinter tags overlapping
+title: Mastering Tkinter Text Tags: Fixing Overlapping Syntax Highlighting
 slug: tkinter-text-widget-tags
 pub: 2018-06-19 12:00:31
 authors: tim
-tags: syntax highlighting,tkinter
-category: editors and ides,gui,oop
+tags: python, tkinter, gui, syntax-highlighting, text-editor
+category: editors and ides, gui, oop
 
-If you've worked with tkinter's Text widget, you may notice that when you add many tags to it sometimes things get messed. So let's dive right into this. We will use syntax highlighting as an example.
-Explaining our goal
--------------------
+If you've ever tried to build a code editor or a text processor in Tkinter, you've likely used the **Text widget tags**. Tags are incredibly powerful—they allow you to change the color, font, and behavior of specific ranges of text.
 
+However, a common frustration arises when you apply multiple tags dynamically: **they overlap and interfere with each other**. In this guide, we'll look at why this happens and how to "refresh" your tags correctly for features like syntax highlighting.
 
-Consider we have the following code,
+---
 
-```python
-from tkinter import *
+## The Goal: Dynamic Highlighting
 
-class Files(Frame):
+Imagine we want to build a simple highlighter that turns the word "Hello" **red** and the word "world" **blue** as the user types.
 
-    def \_\_init\_\_(self, parent):
-        Frame.\_\_init\_\_(self, parent)
+The basic logic is to bind a function to every keypress, scan the text, find the words, and apply the corresponding tag.
 
-        self.parent = parent
-        self.initUI()
-
-    def initUI(self):
-        self.pack(fill=BOTH, expand=1)
-
-        self.txt = Text(self)
-        self.txt.pack(fill=BOTH, expand=1)
-
-root = Tk()
-top = Frame(root)
-top.pack(fill=BOTH, expand=0)
-
-bottom = Frame(root)
-bottom.pack()
-
-ex = Files(root)
-ex.pack(side="bottom")
-
-root.geometry("600x500-600-150")
-root.mainloop()
-
-```
-
-which gives us a simple Text widget.
-
-[caption id="attachment\_259" align="alignnone" width="300"]![tkinter window](https://www.pythonmembers.club/wp-content/uploads/2018/06/Screenshot-7-300x266.png) The output of our code[/caption]
-
-Let's say we want to highlight some specific words. And let's do it every time a user enters something.
-
-We will be highlighting word "Hello" with red and "world" with blue. So all we must do is make a function that will run every time a key is pressed and will highlight the words.
+### The Initial Implementation
 
 ```python
-[...]
-    def initUI(self):
-        self.pack(fill=BOTH, expand=1)
+import tkinter as tk
 
-        self.bind_all("<Key>", self.highlight) #this runs 'highlight' function every time a key is pressed
+class HighlighterApp:
+    def __init__(self, root):
+        self.text = tk.Text(root)
+        self.text.pack(fill="both", expand=True)
+        
+        # Trigger highlighting on every key release
+        self.text.bind("<KeyRelease>", self.highlight)
+        
+        # Define our tag styles
+        self.text.tag_config("red_tag", foreground="red")
+        self.text.tag_config("blue_tag", foreground="blue")
 
-        self.txt = Text(self)
-        self.txt.pack(fill=BOTH, expand=1)
-
-    def highlight(self, event=0):
-
-        file_text = self.txt.get("1.0", END+"-1c") + " " #a blank space at the end is for easier separating words
-        words = [] #we will store words along with their starting point
-        line = 1    #}
-        column = -1 #}these are starting points that will help us in the following 'for' loop
-        word = ""   #}
-
-#now we have to find words and assign them their line and column
-        for char in file_text:
-            word += char
-            column += 1
-
-            if char == "\n": #here a word stops
-                words.append(word[:-1] + " : " + str(line) + "." + str(column))
-                word = ""
-                line += 1
-                column = -1
-
-            if char == " ": #here a word stops
-                words.append(word[:-1] + " : " + str(line) + "." + str(column))
-                word = ""
-        print(words)
-[...]
-
+    def highlight(self, event=None):
+        # 1. Get all text from the widget
+        content = self.text.get("1.0", "end-1c")
+        
+        # 2. Logic to find words and add tags...
+        # (This is where the overlapping issue usually starts)
 ```
 
-This code will produce the following result as we start typing:
+---
 
-[video width="1920" height="1028" webm="https://www.pythonmembers.club/wp-content/uploads/2018/06/highlighting\_video1.webm"][/video]
+## The Problem: Overlapping Tags
 
-Now you can see, every time we push a key it gives us the list of all words with it's starting points combined in a format similar to dictionary.
+As you type, Tkinter adds tags to specific ranges (e.g., from line 1.0 to 1.5). If you delete a word or change it, the old tag often "sticks" to those coordinates. 
 
-So we have the words, we have the points now we have to use them.
-Highlighting words
-------------------
+When you type a new word in the same spot, you might apply a new tag. Now you have two tags competing for the same text. Tkinter uses a priority system, so the newer or "higher" tag will win, often leading to words being colored incorrectly or staying colored when they shouldn't be.
 
+---
 
-For this we will have to see if the word is "Hello" or "world" and add a tag that will highlight it. Now we add this to our "highlight" function:
+## The Solution: The "Clean Slate" Approach
+
+The most reliable way to handle dynamic syntax highlighting is to **remove all relevant tags before re-applying them**. This ensures that your highlighting logic is always working with a clean canvas.
+
+### The Optimized Logic
 
 ```python
-[...]
-        for i in words:
-            i = i.split() #this splits an element to i = ["word", ":", "starting point"]
-
-            if len(i) < 3: #we need this in case user types double white space which results in i = [":", "starting point"]
-                i.insert(0, " ")
-
-            if i[0] == "Hello": #i[0] stands for "word"
-                self.txt.tag_config("hlight1", foreground="red") #we named this tag hlight1
-                self.txt.tag_add("hlight1", str(i[2].split(".")[0]) + "." + str(int(i[2].split(".")[1])-len(i[0])), i[2])
-
-            if i[0] == "world":
-                self.txt.tag_config("hlight2", foreground="blue") #we named this tag hlight2
-                self.txt.tag_add("hlight2", str(i[2].split(".")[0]) + "." + str(int(i[2].split(".")[1])-len(i[0])), i[2])
-[...]
-
+    def highlight(self, event=None):
+        # 1. Remove existing tags from the entire widget
+        for tag in ["red_tag", "blue_tag"]:
+            self.text.tag_remove(tag, "1.0", "end")
+            
+        content = self.text.get("1.0", "end-1c")
+        words = content.split()
+        
+        # 2. Search and Re-apply
+        for word in ["Hello", "world"]:
+            start_pos = "1.0"
+            while True:
+                # Search for the word
+                start_pos = self.text.search(word, start_pos, stopindex="end")
+                if not start_pos:
+                    break
+                
+                # Calculate end position
+                end_pos = f"{start_pos}+{len(word)}c"
+                
+                # Apply the appropriate tag
+                tag_name = "red_tag" if word == "Hello" else "blue_tag"
+                self.text.tag_add(tag_name, start_pos, end_pos)
+                
+                # Move start_pos forward to find the next occurrence
+                start_pos = end_pos
 ```
 
-And if we run it:
+---
 
-[video width="1920" height="1028" webm="https://www.pythonmembers.club/wp-content/uploads/2018/06/highlighting\_video2.webm"][/video]
+## `tag_remove` vs `tag_delete`
 
-Looks like we don't have any problems here, right! But we do.
-Explaining our issue
---------------------
+*   **`tag_remove(name, start, end)`**: This keeps the tag's configuration (color, font) in memory but removes it from the specific text range. **This is what you should use for most highlighting tasks.**
+*   **`tag_delete(name)`**: This completely destroys the tag. You would have to call `tag_config` again to use it. This is useful only when you want to clear out a large number of dynamic tags.
 
+## Conclusion
 
-If you experiment a bit more, you can see that in cases like this, the word "Hello" or any other word gets colored blue:
+Syntax highlighting is a complex task, but mastering Tkinter tags is the first step. By remembering to clear your tags before each update, you prevent the "ghosting" effects that plague many beginner projects.
 
-[video width="1920" height="1028" webm="https://www.pythonmembers.club/wp-content/uploads/2018/06/highlighting\_video3.webm"][/video]
-
-So how to fix this? To know how to fix it, we must first find out why did it happen!
-
-It happens because two tags are overlapping, in our case hlight2 is overlapping hlight1. When the for loop runs the hlight1 tag is already there and hlight2 is over it, giving it the priority. And if we want our code to work, we must remove the tag hlight2 (or hlight1, it works vice versa to) every time it gets over a word that isn't "world". So what we will do is "refresh" the tags every time we run highlight function...
-Fixing the issue
-----------------
-
-
-To achieve this, all we have to do is delete all of the tags and then let them be reassigned.
-
-So to delete them we just add this before our 'for' loop in 'highlight' function:
-
-```python
-[...]
-        for tag in self.txt.tag_names():
-            self.txt.tag_delete(tag)
-
-        for i in words:
-            i = i.split()......
-[...]
-```
-
-And that's it! As simple as that! Here's a look into our new **working** output:
-
-[video width="1920" height="1028" webm="https://www.pythonmembers.club/wp-content/uploads/2018/06/highlighting\_video4.webm"][/video]
-
-I hope this article was helpful for you and keep coding!
-Complete code
--------------
-
-
-
-```python
-from tkinter import * 
-
-class Files(Frame):
-
-    def \_\_init\_\_(self, parent):
-        Frame.\_\_init\_\_(self, parent)   
-
-        self.parent = parent        
-        self.initUI()
-
-    def initUI(self):
-        self.pack(fill=BOTH, expand=1)
-
-        self.bind_all("<Key>", self.highlight)
-
-        self.txt = Text(self)
-        self.txt.pack(fill=BOTH, expand=1)
-
-    def highlight(self, event=0):
-
-        file_text = self.txt.get("1.0", END+"-1c") + " " #a blank space at the end is for easier separating words
-        words = [] #we will store words along with their starting point
-        line = 1    #}
-        column = -1 #}these are starting points that will help us in the following 'for' loop
-        word = ""   #}
-
-#now we have to find words and assign them their line and column
-        for char in file_text:
-            word += char
-            column += 1
-
-            if char == "\n": #here a word stops
-                words.append(word[:-1] + " : " + str(line) + "." + str(column))
-                word = ""
-                line += 1
-                column = -1
-
-            if char == " ": #here a word stops
-                words.append(word[:-1] + " : " + str(line) + "." + str(column))
-                word = ""
-        print(words)
-
-        for tag in self.txt.tag_names(): #deletes all tags so it can refresh them later
-            self.txt.tag_delete(tag)
-
-        for i in words:
-            i = i.split() #this splits an element to i = ["word", ":", "starting point"]
-
-            if len(i) < 3: #we need this in case user types double white space which results in i = [":", "starting point"]
-                i.insert(0, " ")
-
-            if i[0] == "Hello": #i[0] stands for "word"
-                self.txt.tag_config("hlight1", foreground="red") #we named this tag hlight1
-                self.txt.tag_add("hlight1", str(i[2].split(".")[0]) + "." + str(int(i[2].split(".")[1])-len(i[0])), i[2])
-
-            if i[0] == "world": #i[0] stands for "word"
-                self.txt.tag_config("hlight2", foreground="blue") #we named this tag hlight2
-                self.txt.tag_add("hlight2", str(i[2].split(".")[0]) + "." + str(int(i[2].split(".")[1])-len(i[0])), i[2])
-
-root = Tk()
-top = Frame(root)
-top.pack(fill=BOTH, expand=0)
-
-bottom = Frame(root)
-bottom.pack()
-
-ex = Files(root)
-ex.pack(side="bottom")
-
-root.geometry("600x500-600-150")
-root.mainloop()
-
-```
-
+### Pro Tip:
+For large files, running a full re-highlight on every keypress can be slow. Consider only re-highlighting the **current line** or using a small delay (debouncing) to keep your editor snappy!

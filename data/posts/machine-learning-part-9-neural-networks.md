@@ -1,144 +1,48 @@
-title: Machine Learning Part 9 Neural Networks
+title: Machine Learning Part 9: An Introduction to Neural Networks
 slug: machine-learning-part-9-neural-networks
 pub: 2021-04-07 10:10:40
 authors: arj
-tags: 
+tags: machine learning, neural networks, perceptron, deep learning, ai
 category: machine learning
 
-#9 neural networks
+Neural Networks are the backbone of modern Artificial Intelligence, powering everything from face recognition to self-driving cars. In this post, we'll explore the basic building block of a neural network: the **Perceptron**.
 
-Machine Learning
+## The Building Block: The Perceptron 🕸
 
-👉♡ supervised learning
-♡ unsupervised learning
-♡ reinforcement learning
+The perceptron is a simplified mathematical model of a biological neuron. It takes multiple inputs, processes them, and produces a single output.
 
-recap:
-🔖 types of supervised learning
+### How it Works:
+1.  **Inputs:** Numerical values from your data.
+2.  **Weights:** Every input has a weight that determines its importance.
+3.  **Summation:** The perceptron multiplies each input by its weight and adds them up.
+4.  **Activation Function:** The sum is passed through a function that decides whether the neuron "fires" (outputs a value).
 
-✅ classification 📑
+### Example Calculation:
+*   Inputs: $x_1 = 5, x_2 = 6$
+*   Weights: $w_1 = 2, w_2 = 1$
+*   Sum = $(5 \cdot 2) + (6 \cdot 1) = 16$
 
-✅ regression 📈
+If our **Activation Function** says: "If sum > 10, output 1, else 0," then our perceptron outputs **1**.
 
-✅ mixed ⚗
-- tree based
-- random forest
-- neural networks 🎈
-- support vector machines
+---
 
-neural networks
+## Adding the Bias 🎋
 
-neural networks require a bit of explanation. entire books can be written on the subject
+If all inputs are 0, the sum will always be 0, no matter what the weights are. To prevent this, we add a **Bias** input (usually a constant 1 with its own weight). This allows the neuron to "fire" even when all other inputs are zero.
 
-🕸 the perceptron
+## Training the Network 🎋
 
-the perceptron was the basis for neural networks. it consists of two inputs, a processor and an output.
+A Neural Network is just a large collection of these perceptrons organized in layers. When we "train" a network, we are actually adjusting the **weights** and **biases**.
 
-the processor is just a function that decides what to output according to the inputs. it might check if > a number or just check the sign or whatever
+1.  **Guess:** The network makes a prediction using random weights.
+2.  **Calculate Error:** We compare the guess to the actual answer ($Error = Actual - Guess$).
+3.  **Adjust:** We update the weights based on the error.
+    $$New Weight = Weight + (Error \cdot Input \cdot Learning Rate)$$
 
-🕸 weight
+The **Learning Rate** controls how much we change the weight in each step. Too high, and the model becomes unstable. Too low, and it takes forever to learn.
 
-the weight is just a value that we multiply the input by.
+## Summary
+Neural Networks learn by trial and error. By processing thousands of examples and constantly adjusting their weights, they can eventually "recognize" complex patterns that traditional algorithms can't.
 
-🕸 sum
-
-we then sum the inputs \* weight and pass them to the function.
-
-so we can see input -> weight -> function
-
-🕸 example
-
-let us say our two inputs are
-
-input1 : 5
-input2 : 6
-
-let us have some random weights
-
-weight1 : 2
-weight2 : 1
-
-let us sum
-
-input1 \* weight1 + input2 \* weight2
-5 \* 2 + 6 \* 1
-16
-
-let us say we configure our function as
-
-def activation(sum):
- if sum > 10:
- return 0
- else:
- return 1
-
-well, we just pass it to the activation function and it will return 1
-
-⚽️ exercise:
-1 find out the uses of neural networks (the fields)
-hint: time series prediction, signal analysis ...
-
-next:
-the bias input and what need to be continued
-
-...
-
-#9 neural networks (continued)
-
-Machine Learning
-
-👉♡ supervised learning
-♡ unsupervised learning
-♡ reinforcement learning
-
-recap:
-🔖 types of supervised learning
-
-✅ classification 📑
-
-✅ regression 📈
-
-✅ mixed ⚗
-- tree based
-- random forest
-- neural networks 🎈
-- support vector machines
-
-neural networks
-
-🎋 bias input
-
-in our example above let us say that we have input1 0 and input2 0, 0*weight1+0*weight2 will always be zero, no matter what the weight. because of this we add a permanent input of 1 so that it becomes 0*weight1+0*weight2 + 1\*weight3  weight3, in that case, the weight passes through the activation function
-
-🎋 neural network
-
-a neural network is a collection of perceptrons
-
-🎋 training
-
-whatever we wanted to do with a neural network, we must first adjust the weights as we gave it random weights at the begining. first we test the perceptrons agains inputs with known answer. we then compute the error (did it get the answer right or no). we then adjust weights according to the error. we repeat
-
-🎋 error
-
-our error is
-desired output - guess output
-
-🎋 tuning weight
-
-our new weight equals
-weight + change in weight
-
-change in weight = error \* input
-
-so,
-
-new weight = weight + error \* input
-
-🎋 learning constant
-
-to decide at what rate we change our weight, we just use a value called learning constant. too large and we won't tune our weight correctly. too little and ... it takes a long time
-
-new weight = weight + error \* input \* learning constant
-
-⚽️ exercise:
-read implementations of neural networks from scratch in python
+## Exercise
+Try to find a "Neural Network from scratch" tutorial in Python. You'll be surprised at how simple the math actually is for a single neuron!

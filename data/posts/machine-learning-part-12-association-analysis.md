@@ -1,76 +1,53 @@
-title: Machine Learning Part 12 Association Analysis
+title: Machine Learning Part 12: Association Analysis Explained
 slug: machine-learning-part-12-association-analysis
 pub: 2021-04-07 10:14:26
 authors: arj
-tags: 
+tags: machine learning, unsupervised learning, association analysis, apriori
 category: machine learning
 
-#12 association analysis
+**Association Analysis** is an unsupervised learning technique used to discover interesting relationships hidden in large datasets. It's most famous for its use in "Market Basket Analysis."
 
-Machine Learning
+## The Goal 🛒
 
-♡ supervised learning
-👉 ♡ unsupervised learning
-♡ reinforcement learning
+Imagine you own a grocery store. You want to know which items are frequently bought together. If you find that customers who buy bread also tend to buy butter, you can place them next to each other to increase sales.
 
-unsupervised learning is where your program has to find how the data relates to each other. there is no prior training
+### Key Terms:
+*   **Itemset:** A collection of one or more items (e.g., {Bread, Milk, Butter}).
+*   **Support:** How frequently an itemset appears in the dataset.
+*   **Confidence:** How often item Y is bought when item X is bought.
 
-types of unsupervised learning
+---
 
-♠️ clustering
-♠️ association
+## Measuring Strength: Support, Confidence, and Lift ✳
 
-association analysis
+### 1. Support
+The percentage of total transactions that contain the itemset.
+$$Support(A) = \frac{\text{Number of transactions containing A}}{\text{Total transactions}}$$
 
-finds associations between items, like what customers usually buy together in a store. if that is known, sales might be put on those items, or they could be placed together to ease the customers' life or ... why not rise the price on both?
+### 2. Confidence
+The likelihood that item B is purchased given that item A is purchased.
+$$Confidence(A \rightarrow B) = \frac{Support(A \cup B)}{Support(A)}$$
 
-🔎 itemset: those items occuring together
+### 3. Lift
+Lift measures how much more likely item B is to be bought given item A, compared to how often B is bought anyway.
+$$Lift(A \rightarrow B) = \frac{Support(A \cup B)}{Support(A) \cdot Support(B)}$$
 
-✳ confidence
+*   **Lift = 1:** A and B are independent.
+*   **Lift > 1:** A and B are positively associated (A makes B more likely).
+*   **Lift < 1:** A and B are negatively associated.
 
-confidence measure how certain a rule. if clients always buy milk with eggs, we say that the confidence is 100%
+---
 
-confidence(A, B) = P(B|A)
-i.e. P(B) given A
+## The Apriori Algorithm ✳
 
-✳ support
+Checking every possible combination of items in a large store would be incredibly slow. The **Apriori Algorithm** simplifies this by using the "Apriori Principle":
 
-the support of an itemset is the percentage of the dataset that contains the itemset
+> **If an itemset is frequent, then all of its subsets must also be frequent.**
 
-let us say out of 5 transactions at a store, butter and bread was bought together 3 times. it's support is 3/5
+This allows the algorithm to "prune" (skip) thousands of combinations that couldn't possibly be frequent, making the analysis much faster.
 
-● with support and confidence, we can assess our association rule's success
+## Summary
+Association analysis helps businesses understand customer behavior and optimize store layouts, recommendation engines, and marketing campaigns. 
 
-✳ lift
-
-lift is defined as
-
-support(X u Y) / support(X) \* support(Y)
-
-if we are looking for milk, tea to sugar together in a dataset of 6 transactions,
-
-support(X u Y) means how many times over 6 they appear together, let us say it is 2
-
-support(X) means how many times milk, tea appear together in the dataset, let us say it is 4
-
-support(Y) means how many times sugar appear in the dataset, let us say 3 times
-
-our support is
-
-2/6 / 4/6 \* 3/6
-
-= 1
-
-a lift if one means one has no effect on the other
-
-if the lift is greater than one it means that one is dependent on the other (it matters)
-
-a lift of less than one means that one adversely impacts the other
-
-✳ a priori algorithm
-
-this tells us that if an item set is frequent, then it's subset must also be frequent. you specify a certain support level to go from as if you check each and every transaction, it is very slow!
-
-✳ multilevel association rules
-
-instead of pinpointing items, they can be associated higher up. like finding people who bought milk brand A and flour brand B together might be hard but finding that people bought milk and flour together might be easier
+**Exercise:**
+Look up **"Market Basket Analysis"** examples. You'll find interesting (and sometimes weird) stories about items people frequently buy together!

@@ -31,12 +31,25 @@ def format_post_date(date):
 def get_author_info(key):
     infos = {}
     for author_file in os.listdir(settings.AUTHORS_PATH):
-        author = author_file.split(".")[0]
+        author_slug = author_file.split(".")[0]
         with open(os.path.join(settings.AUTHORS_PATH, f'{author_file}')) as f:
             info = toml.load(f)
-            infos[author] = info
+            # Index by filename slug
+            infos[author_slug] = info
+            # Index by name (case-insensitive and slugified)
+            name = info['base']['name']
+            infos[name] = info
+            infos[name.lower().replace(' ', '-')] = info
     
-    return infos[key]
+    if key in infos:
+        return infos[key]
+    
+    # Fallback to case-insensitive search if direct key fails
+    for k in infos:
+        if k.lower() == key.lower():
+            return infos[k]
+            
+    return infos[key] # Will still raise KeyError if totally missing
 
 def generate_site():
     extra_context = {"info": settings.info, "posts": get_posts(settings), 

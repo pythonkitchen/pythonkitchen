@@ -1,100 +1,86 @@
-title: venv usage on windows, activate and deactivate
+title: Python Virtual Environments on Windows: A Complete Guide
 slug: venv-usage-on-windows-activate-and-deactivate
 pub: 2018-08-10 18:46:37
 authors: arj
-tags: venv
+tags: python, venv, windows, beginners, tutorial
 category: virtual environment
 
+If you're starting multiple Python projects, you will quickly run into a problem: one project needs Version 1.0 of a library, while another needs Version 2.0. If you install everything globally, you'll end up with a broken mess.
 
-go on to your project root directory
+This is where **Virtual Environments (venv)** come in. They allow you to create isolated "bubbles" for each project, ensuring that your dependencies never clash. In this guide, we'll walk through exactly how to use them on Windows.
 
+---
 
+## 1. Creating the Environment
 
+Open your Command Prompt or PowerShell and navigate to your project folder. Run the following command:
 
-first create a virtual environment with syntax
-
-
-
-
-python3 -m venv <env-name>
-
-
-
-
-
-```python
-python3 -m venv niceproject
+```bash
+# General syntax: python -m venv [folder_name]
+python -m venv .venv
 ```
 
+*Note: `.venv` is the standard name for the folder, but you can name it whatever you like (e.g., `myenv`).*
 
+---
 
-a folder called niceproject will be automatically
+## 2. Activating the Environment
 
+Creating the folder isn't enough; you have to tell your terminal to start using it. The activation command depends on whether you are using the old **Command Prompt (CMD)** or the modern **PowerShell**.
 
-
-
-cd into <projectname>
-
-
-
-
-
-```python
-cd niceproject
+### For Command Prompt (CMD):
+```cmd
+.venv\Scripts\activate
 ```
 
-
-
-then in the Scripts folder
-
-
-
-
-
-```python
-cd Scripts
+### For PowerShell:
+```powershell
+.venv\Scripts\Activate.ps1
 ```
 
+**How do I know it worked?**
+You should see the name of your environment in parentheses at the start of your command prompt line, like this:
+`(.venv) C:\Users\Projects\MyProject>`
 
+---
 
-then just type
+## 3. Installing Packages
 
+Once activated, any package you install using `pip` will be contained entirely within that folder.
 
-
-
-
-```python
-activate
+```bash
+pip install flask
 ```
 
+If you look inside `.venv\Lib\site-packages`, you will see Flask and its dependencies sitting right there!
 
+---
 
-it will activate as there is an activate.bat in the Scripts folder
+## 4. Deactivating
 
+When you're done working, or if you want to switch to another project, simply type:
 
-
-
-pip install what you wish
-
-
-
-
-
-
-
-then type
-
-
-
-
-
-```python
+```bash
 deactivate
 ```
 
+Your prompt will return to normal, and you will be back in your global Python environment.
 
+---
 
-to disactivate the virtualenv
+## Common Issues on Windows
 
+### "Running Scripts is Disabled" (PowerShell)
+If you get a red error in PowerShell saying "Scripts cannot be loaded," it’s because Windows blocks third-party scripts by default. You can fix this by running this command once as an Administrator:
 
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 
+## Summary Checklist
+1.  **Create:** `python -m venv .venv`
+2.  **Activate:** `.venv\Scripts\activate`
+3.  **Use:** `pip install ...`
+4.  **Finish:** `deactivate`
+
+Mastering virtual environments is the first step toward becoming a professional Python developer. It keeps your computer clean and your projects reproducible!

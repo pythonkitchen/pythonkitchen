@@ -1,235 +1,113 @@
-title: home machine learning project : identifying cutlery items
+title: Machine Learning 101: Identifying Kitchen Cutlery with K-NN
 slug: identifying-home-cutlery-items
 pub: 2018-05-08 06:12:23
 authors: arj
-tags: k-nearest neighbours
+tags: machine-learning, k-nearest-neighbours, beginners, python, data-science
 category: machine learning
 
-machine learning is becoming crucial to add to your backpack. this post attempts to show a basic application of machine learning. we need to determine whether some cutlery items are bowls or mugs or plates. this is a practical demonstration of applied theory
-machine learning is just applied maths
-======================================
+Machine Learning can often feel like a "black box" of complex math and scary terminology like "Tensors" and "Neural Networks." But at its core, Machine Learning is just applied statistics. 
 
+In this project, we’ll build a simple classifier to identify different types of kitchen cutlery—specifically **Bowls**, **Mugs**, and **Plates**—using the **K-Nearest Neighbours (K-NN)** algorithm.
 
-from start to finish, machine learning is just statistics, equations, calculations and repetitions. you just code an algorithm. tensors are just big words for matrices.
-the project
-===========
+---
 
+## The Concept: Machines Learn from Data
 
-we are identifying items from my kitchen so that when presented with an unidentified cutlery, we can attempt to classify it
-characteristics of our target
------------------------------
+Imagine you have a new object from the kitchen. How do you know if it's a mug or a bowl? You probably look at its dimensions: height and diameter.
 
+*   **Plates:** Wide diameter, very short height.
+*   **Mugs:** Narrow diameter, tall height.
+*   **Bowls:** Medium diameter, medium height.
 
-we will be identifying plates, mugs and bowls. here is an overview of their common characteristics
+In Machine Learning, these dimensions are called **Features**. Our goal is to train a model so that when we give it the features of an unknown item, it can predict the **Category**.
 
-[caption id="attachment\_147" align="aligncenter" width="300"]![target data](https://www.pythonmembers.club/wp-content/uploads/2018/05/k_nearest_targets-300x126.png) target data[/caption]
-our collected data
-------------------
+---
 
+## Step 1: Collecting the Data
 
-here is our measurement sheet, it could have been a spreadsheet. heights in cm
+For this project, I literally took a ruler to my kitchen and measured several items. Here is a sample of the data we collected in a CSV format:
 
-[caption id="attachment\_148" align="aligncenter" width="225"]![data sheet](https://www.pythonmembers.club/wp-content/uploads/2018/05/20180507_151041-225x300.jpg) our data[/caption]
-
-we reformat it into cutlery.csv as follows :
-
-```python
-D,h,type
+```csv
+Diameter,Height,Type
 17,5,bowl
 15.5,5,bowl
 22.5,1,plate
 8,7.5,mug
 8,9,mug
 6,11,mug
-6,10,mug
 24,2.5,plate
 26,2,plate
 11,8,mug
 18,5.5,bowl
-14,8,bowl
 ```
 
-reformatting for calculations : plotting
-----------------------------------------
+---
 
+## Step 2: Visualizing the Data
 
-let us plot our data :
-
-[caption id="attachment\_149" align="aligncenter" width="1277"]![](https://www.pythonmembers.club/wp-content/uploads/2018/05/cutlery_ipython.png) cutlery Jupyter[/caption]
-
-now to select the entire D column we do :
-
-```python
-df['D']
-```
-
-outputs :
-
-```python
-0     17.0
-1     15.5
-2     22.5
-3      8.0
-4      8.0
-5      6.0
-6      6.0
-7     24.0
-8     26.0
-9     11.0
-10    18.0
-11    14.0
-Name: D, dtype: float64
-```
-
-same for df['h']
-viewing our data
-================
-
-
-please see [this article](https://www.pythonmembers.club/2018/05/08/matplotlib-scatter-plot-annotate-set-text-at-label-each-point/) on annotating data
-
-code :
+Before we run any math, let's look at the data. By plotting Diameter on the X-axis and Height on the Y-axis, we can see distinct clusters forming.
 
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# df is short for dataframe
-df = pd.read_csv("<path here>/Desktop/cutlery.csv")
+df = pd.read_csv("cutlery.csv")
 
-D = df['D']
-h = df['h']
+colors = {'bowl': 'red', 'mug': 'blue', 'plate': 'green'}
 
-for i,type_ in enumerate(df['type']):
-    D_ = D[i]
-    h_ = h[i]
-    if type_ == 'bowl':
-        plt.scatter(D_, h_, marker='o', color='red', label='a')
-        plt.text(D_+0.3, h_+0.3, type_, fontsize=9)
-    elif type_ == 'mug':
-        plt.scatter(D_, h_, marker='o', color='blue')
-        plt.text(D_+0.3, h_+0.3, type_, fontsize=9)
-    elif type_ == 'plate':
-        plt.scatter(D_, h_, marker='o', color='green')
-        plt.text(D_+0.3, h_+0.3, type_, fontsize=9)
-        
+plt.figure(figsize=(8, 6))
+for i, row in df.iterrows():
+    plt.scatter(row['Diameter'], row['Height'], color=colors[row['Type']])
+    plt.text(row['Diameter'] + 0.3, row['Height'], row['Type'], fontsize=8)
+
+plt.xlabel("Diameter (cm)")
+plt.ylabel("Height (cm)")
+plt.title("Cutlery Dimensions Distribution")
 plt.show()
 ```
 
-output :
+When you look at the plot, you'll see Mugs in the top left (tall and narrow) and Plates in the bottom right (wide and short).
 
-[caption id="attachment\_155" align="aligncenter" width="378"]![machine learning intro view ](https://www.pythonmembers.club/wp-content/uploads/2018/05/machine_learning_intro_view.png) view data[/caption]
-our sample
-----------
+---
 
+## Step 3: Predicting with K-Nearest Neighbours
 
-now let us say that we have this :
+The **K-Nearest Neighbours (K-NN)** algorithm is simple: to classify a new, unknown point, we look at the "K" closest points in our dataset. If the majority of those neighbors are "Mugs," then our new point is probably a Mug too!
 
-width D : 8 and h : 7.5
+### The Distance Formula
+We calculate the "closeness" using the Euclidean distance formula:
+$$Distance = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
 
-[caption id="attachment\_157" align="aligncenter" width="512"]![cup from kitchen](https://www.pythonmembers.club/wp-content/uploads/2018/05/PicsArt_05-08-09.45.48.jpg) cup from kitchen[/caption]
-
-without seeing the image, having D:9 and h:14, how do we guess what type of cutlery it is?
-guess by distance
------------------
-
-
-since this is but points on graph, we'll measure the distance between D:9 and h:14 i.e. (9,14) to each point
-
-we'll use the simple distance formula :
-
-> distance = square\_root(  ( X2-X1)^2  +  (Y2-Y1)^2 )
-
-
-code :
+### The Python Logic
 
 ```python
-import pandas as pd
-import matplotlib.pyplot as plt
 from math import sqrt
 
-# df is short for dataframe
-df = pd.read_csv("<path here>/cutlery.csv")
+def classify_item(new_diameter, new_height, data):
+    distances = []
+    for i, row in data.iterrows():
+        # Calculate distance from new point to every known point
+        d = sqrt((new_diameter - row['Diameter'])**2 + (new_height - row['Height'])**2)
+        distances.append((d, row['Type']))
+    
+    # Sort by distance (closest first)
+    distances.sort(key=lambda x: x[0])
+    
+    # Return the type of the single closest neighbor (K=1)
+    return distances[0][1]
 
-D = df['D']
-h = df['h']
-
-target = (8, 7.5) # tuple
-Dt = target[0] # Dt for D-target
-ht = target[1] # ht for h-target
-
-plt.figure(figsize=(14,5)) # size of plot in inches
-
-for i,type_ in enumerate(df['type']): # i list for index type\_ for list element
-    D_ = D[i]
-    h_ = h[i]
-    dist = sqrt( (Dt-D_)**2 + (ht-h_)**2 ) # formula
-    
-    label = '{} \ndist:{}'.format(type_, round(dist, 2))
-    if type_ == 'bowl':
-        plt.scatter(D_, h_, marker='o', color='red')
-        plt.text(D_+0.3, h_, label, fontsize=9)
-    elif type_ == 'mug':
-        plt.scatter(D_, h_, marker='o', color='blue')
-        plt.text(D_+0.3, h_, label, fontsize=9)
-    elif type_ == 'plate':
-        plt.scatter(D_, h_, marker='o', color='green')
-        plt.text(D_+0.3, h_, label, fontsize=9)
-        
-    plt.scatter(Dt, ht, marker='x', color='green') # target point
-    
-plt.annotate('target', 
-    ha = 'center', va = 'bottom',
-    xytext = (Dt-2.5, ht-2),
-    xy = (Dt, ht),
-    arrowprops = { 'facecolor' : 'green', 'shrink' : 0.05 }) # target arrow
-plt.xlabel('diameter')
-plt.ylabel('height')
-plt.show()
+# Test with a new unknown item: Diameter 9cm, Height 14cm
+new_item = (9, 14)
+prediction = classify_item(9, 14, df)
+print(f"The unknown item is likely a: {prediction}")
 ```
 
-output :
+---
 
-[caption id="attachment\_158" align="aligncenter" width="847"]![distance to target](https://www.pythonmembers.club/wp-content/uploads/2018/05/machine_learning_dist_target.png) distance to target[/caption]
+## Conclusion
 
-we'll see that the distance is nearest to all mug samples i.e. from 1.5 to 4 than it is to the nearest bowl (dist:6.02) or plate (dist:15.89)
+This project demonstrates **Supervised Learning**. We provided the computer with "labeled" data (examples with known answers), and it used that information to make predictions about new data.
 
-so we can say that it is a mug / cup
+While our manual implementation works for small datasets, in professional data science, we use libraries like **Scikit-Learn**. Using Scikit-Learn, you can implement K-NN in just three lines of code!
 
-of course, since we are only calculating dist, **we can tweak our code to do everything without graphs**
-another sample
---------------
-
-
-consider the following cup with D:9 and h:14
-
-[caption id="attachment\_156" align="aligncenter" width="512"]![mug sample](https://www.pythonmembers.club/wp-content/uploads/2018/05/PicsArt_05-08-08.55.39.jpg) mug sample[/caption]
-
-we set our target to
-
-```python
-target = (9, 14) # tuple
-
-```
-
-and our output is :
-
-[caption id="attachment\_159" align="aligncenter" width="847"]![sample two from kitchen](https://www.pythonmembers.club/wp-content/uploads/2018/05/machine_learning_dist_target-1.png) sample two graph[/caption]
-machine learning concept applied
-================================
-
-
-this is a k-nearest neighbour application which is labelled under classification aka the basic of machine learning.
-
-learning type: supervised learning
-
-this was a demo project normally much more data has to be collected !
-about the title
----------------
-
-
-i wanted to put up something that would not scare beginners off. my first title was :
-
-***identifying home cutlery items with a k-nearest neighbours inspired method***
-
-but no uninitiated would probably want to click on the link!
+Machine Learning doesn't have to be scary. Sometimes, all you need is a ruler, a CSV file, and a little bit of Python.
