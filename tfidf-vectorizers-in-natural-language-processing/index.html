@@ -79,29 +79,32 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TFIDF Vectorizers in Natural Language Processing | Python Kitchen</title>
-  <meta name="description" content="Vectorization is a technique in natural language processing that is used to transform the text into vectors. However, multiple vectorization techniques are used...">
-  <meta name="keywords" content=", data science, machine learning">
+  <title>TF-IDF Explained: Boosting Signal in Text Vectorization | Python Kitchen</title>
+  <meta name="description" content="In our Bag of Words guide, we saw how to turn text into numbers by counting word frequencies. But there is a major flaw in that approach:
+Not all words are crea...">
+  <meta name="keywords" content="nlp, tf-idf, vectorization, scikit-learn, text-mining, data science">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.pythonkitchen.com/tfidf-vectorizers-in-natural-language-processing/">
-  <meta property="og:title" content="TFIDF Vectorizers in Natural Language Processing">
-  <meta property="og:description" content="Vectorization is a technique in natural language processing that is used to transform the text into vectors. However, multiple vectorization techniques are used...">
+  <meta property="og:title" content="TF-IDF Explained: Boosting Signal in Text Vectorization">
+  <meta property="og:description" content="In our Bag of Words guide, we saw how to turn text into numbers by counting word frequencies. But there is a major flaw in that approach:
+Not all words are crea...">
   <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://www.pythonkitchen.com/tfidf-vectorizers-in-natural-language-processing/">
-  <meta property="twitter:title" content="TFIDF Vectorizers in Natural Language Processing">
-  <meta property="twitter:description" content="Vectorization is a technique in natural language processing that is used to transform the text into vectors. However, multiple vectorization techniques are used...">
+  <meta property="twitter:title" content="TF-IDF Explained: Boosting Signal in Text Vectorization">
+  <meta property="twitter:description" content="In our Bag of Words guide, we saw how to turn text into numbers by counting word frequencies. But there is a major flaw in that approach:
+Not all words are crea...">
   <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <meta name='category' content='data science'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='subtitle' content='TFIDF Vectorizers in Natural Language Processing'>
+  <meta name='subtitle' content='TF-IDF Explained: Boosting Signal in Text Vectorization'>
   <meta name='pageKey' content='tfidf-vectorizers-in-natural-language-processing'>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
@@ -172,17 +175,13 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">TFIDF Vectorizers in Natural Language Processing</p>
+                    <p class="text-3xl" style="font-weight: 600;">TF-IDF Explained: Boosting Signal in Text Vectorization</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2023-03-13 10:13:01" class="text-gray-500">March 13, 2023</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
                             data science
-                        </a>
-                        
-                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            machine learning
                         </a>
                         
                     </div>
@@ -202,97 +201,118 @@
                     
                     <br>
                     <article>
-                        <p>Vectorization is a technique in natural language processing that is used to transform the text into vectors. However, multiple vectorization techniques are used to transform different texts. TFIDF is a widely used and efficient vectorization technique that data scientists use.</p>
-<p>In this article, We will discuss the TFIDF vectorization technique, how it works, the core intuition behind it, and some examples associated with the same. This article will help one to understand the technique more deeply and will be able to apply it wherever necessary.</p>
-<p>Before directly jumping into the article, let us discuss what vectorization techniques are.</p>
-<h1>Table of Content</h1>
-<ol>
-<li>What are Vectorization Techniques?</li>
-<li>What is TFIDF?</li>
-<li>Some Important Terminologies</li>
-<li>Term Frequency</li>
-<li>Document Frequency</li>
-<li>Inverse Document Frequency</li>
-<li>The TFIDF Score</li>
-<li>Key Takeaways</li>
-<li>Conclusion</li>
-</ol>
-<h1>What are Vectorization Techniques?</h1>
-<p>Machine learning algorithms are primarily statistically based learner who learns from the data and apply functions that are predefined to train and learn from the data. Here the algorithm can not understand any type of text data; hence, if we are needed to work on any text data, we can not directly feed that data to the algorithm. The algorithms only understand the language of vectors and numbers.</p>
-<p>Hence in such cases, we vectorize or transform the data into vectors or numbers to feed that data to the machine learning algorithms and train the model. There are multiple vectorization techniques available that are used for vectorization. Some of them are CountVectorizer, Word2Vec, and TFIDF.</p>
-<h1>What is TFIDF?</h1>
-<p>As we discussed above, TFIDF is a vectorization technique used to transform any kind of textual data into vectors to feed the data to the machine learning algorithms and to train on.</p>
-<p>Generally, TFIDF consists of two terms TF and IDF. TF stands for Term Frequency, and IDF stands for Inverse Document Frequency. The TFIDF technique works on the principle of the same. Here the TF and iDF for a word and document are calculated and multiplied, which returns the TFIDF score, and based upon that, the word is transformed into the vector.</p>
-<p>Let’s try to understand the same by splitting it into two parts, Term Frequency, and inverse Document Frequency.</p>
-<h1>Some Terminologies</h1>
-<p>Before jumping to the term frequency, let us discuss some of the terminologies that can be helpful here.</p>
-<p><strong>Character:</strong> A character is a term used for a single letter. For example: a, b, c, etc</p>
-<p><strong>Word:</strong> A word combines several characters, For example, Machine, Learning, Data, etc.</p>
-<p><strong>Document:</strong> A document is a term used to represent any kind of sentence or a combination of words. For example, Machine Learning is good to have skills.</p>
-<p><strong>Corpus:</strong> A corpus is a term used to represent all 5the documents and texts in the dataset. For example, the complete dataset will be fed to the model for training.</p>
-<h1>Term Frequency</h1>
-<p>Term frequency measures how frequently a particular term appears in a document. It gives an idea about the frequency of a term, word, or term that appears in different documents.</p>
-<p><strong>Example:</strong></p>
-<p>Document: Machine Learning is a Good Skill.</p>
-<p>Now here we can see the document consists of 6 words that are Machine, Learning, Is, a, Good, and Skills.</p>
-<p>Now here, every word in the document will have its term frequency.</p>
-<p>The formula for the Term Frequency is,
-<code>Term Frequency = Number of Times Word Appears in a Document / Total Number of Words in a Document.</code></p>
-<p>Now the Term Frequenc6y for the Word Machine would be ⅙, for the word Learning would be 1/6, and if a particular word is not in a document, then the term frequency would be zero.</p>
-<h1>Document Frequency</h1>
-<p>Document Frequency is a term used to measure how frequently a word appears in several documents. It gives an idea of the word’s popularity in the whole corpus.</p>
-<p>The formula for the document frequency is 
-<code>Document Frequency = Number of Documents That has the Word / Total Number of Documents</code></p>
-<p>For example, if we have two documents 
-Document 1 = Machine Learning is a Good Skill.
-Document 2 = Machine Learning is Complex to learn.</p>
-<p>Then the document frequency for the word Machine would be 2/2.</p>
-<h1>Inverse Document Frequency</h1>
-<p>Inverse document frequency is an inversed form of document frequency calculated in a log form.</p>
-<blockquote>
-<p>Inverse document frequency = 1 / document Frequency</p>
-</blockquote>
-<h1>The TFIDF Score</h1>
-<p>Now that we know the term and inverse document frequency, let us discuss how it helps vectorize the word or text of the data. As we measure the importance of a term in a document and different documents, we can now assign a score to all the words in the corpus and vectorize them accordingly.</p>
-<p>Here we will calculate the Tf and IDf scores for each of the terms, and the values will be multiplied to achieve a score or weightage of the term. The higher the TFIDF score, the higher the importance and significance of the term in a document and a corpus.</p>
-<h1>Code Example:</h1>
-<pre><code class="language-python">From sklearn.feature_extraction.text, import TfidfVectorizer
-from sklearn.model_selection import train_test_split
+                        <p>In our <a href="https://www.pythonkitchen.com/bag-of-words-in-natural-language-processing/">Bag of Words</a> guide, we saw how to turn text into numbers by counting word frequencies. But there is a major flaw in that approach:</p>
+<p><strong>Not all words are created equal.</strong></p>
+<p>In a document about “Quantum Physics,” the word <strong>“the”</strong> might appear 100 times, while <strong>“quantum”</strong> appears only 5 times. A simple count makes “the” seem 20x more important than “quantum,” which is obviously wrong.</p>
+<p><strong>TF-IDF (Term Frequency - Inverse Document Frequency)</strong> is the industry-standard solution to this problem. It downweights words that appear everywhere (like “the”, “is”, “and”) and upweights words that are rare and unique to the current document.</p>
+<hr/>
+<h2>The Intuition: Balancing Frequency and Rarity</h2>
+<p>TF-IDF is a score composed of two parts multiplied together:</p>
+<h3>1. TF (Term Frequency)</h3>
+<ul>
+<li><strong>Question:</strong> How often does the word appear in <em>this</em> document?</li>
+<li><strong>Logic:</strong> The more it appears, the more important it likely is for this specific text.</li>
+<li><strong>Formula:</strong> $TF = \frac{\text{Count of word in doc}}{\text{Total words in doc}}$</li>
+</ul>
+<h3>2. IDF (Inverse Document Frequency)</h3>
+<ul>
+<li><strong>Question:</strong> How rare is this word across <em>all</em> documents?</li>
+<li><strong>Logic:</strong> If a word appears in every single document (like “the”), it has zero information value. If it appears in only one document, it is highly discriminative.</li>
+<li><strong>Formula:</strong> $IDF = \log(\frac{\text{Total Documents}}{\text{Documents containing word}})$</li>
+</ul>
+<p><strong>The Result:</strong> 
+$$TF\text{-}IDF = TF \times IDF$$</p>
+<p>A high score means the word is <strong>frequent in this document</strong> but <strong>rare in others</strong>. This is the “signature” of the document.</p>
+<hr/>
+<h2>Python Implementation: Scikit-Learn <code>TfidfVectorizer</code></h2>
+<p>While the math is good to know, you should never implement this manually in production. Scikit-learn’s <code>TfidfVectorizer</code> is highly optimized.</p>
+<h3>Code Example: Finding Keywords</h3>
+<pre><code class="language-python">from sklearn.feature_extraction.text import TfidfVectorizer
+import pandas as pd
 
-X_tfidf = vectorizer.fit_transform(X)
+# 1. The Corpus
+corpus = [
+    "The car is fast.",
+    "The car is red.",
+    "The car is broken."
+]
 
-# split the data for training and testing
-X_train, X_test, y_train, y_test = train_test_split(
-    X_tfidf, y, test_size=0.33, random_state=42
+# 2. Initialize
+vectorizer = TfidfVectorizer()
+
+# 3. Fit and Transform
+tfidf_matrix = vectorizer.fit_transform(corpus)
+
+# 4. View Results
+df = pd.DataFrame(
+    tfidf_matrix.toarray(), 
+    columns=vectorizer.get_feature_names_out()
 )
 
-From sklearn.linear_model import SGDClassifier
-from sklearn.metrics import classification_report
-
-# Training classifier model 
-sgd = SGDClassifier()
-sgd.fit(X_train, y_train)
-
-# model prediction
-y_pred = sgd.predict(X_test)
-
-print(classification_report(y_test, y_pred))
-
+print(df)
 </code></pre>
-<h1>Key Takeaways</h1>
-<ol>
-<li>Vectorization is a technique that transforms text data into vectors to feed it to the machine learning algorithm.</li>
-<li>TFIDF is a vectorization technique that transforms textual data into vector form.</li>
-<li>TF is a term frequency measure of the importance or significance of a term in a particular document.</li>
-<li>Inverse document frequency is a measure that is a measure of the significance of a term in the corpus, calculated by measuring the presence of a term in different documents.</li>
-<li>Higher the TFIDF scores, the higher the significance of the term in a document and a corpus of the dataset.</li>
-</ol>
-<h1>Conclusion</h1>
-<p>In this article, we discussed vectorization techniques, how they work, what TFIDF is, what are the terms Term Frequency and Inverse document frequency, and how they are calculated with the code examples. This article will help one to understand this technique deeply and will able to apply it wherever necessary.</p>
+<p><strong>Output Analysis:</strong>
+You will notice that the word <strong>“the”</strong> (if not removed as a stop word) will have a score of 0 (or very low) because it appears in all documents. The words <strong>“fast”</strong>, <strong>“red”</strong>, and <strong>“broken”</strong> will have the highest scores in their respective rows because they are the unique differentiators.</p>
+<hr/>
+<h2>Practical Application: Keyword Extraction</h2>
+<p>One of the best uses of TF-IDF is extracting keywords from a large text automatically.</p>
+<pre><code class="language-python">def extract_keywords(text, vectorizer, top_n=3):
+    # Transform the single document
+    vector = vectorizer.transform([text])
+
+    # Get mapping from index to word
+    feature_names = vectorizer.get_feature_names_out()
+
+    # Sort and get top N indices
+    sorted_indices = vector.toarray()[0].argsort()[::-1]
+
+    return [feature_names[i] for i in sorted_indices[:top_n]]
+
+new_doc = "The red car is very fast"
+print(extract_keywords(new_doc, vectorizer))
+# Likely Output: ['fast', 'red', 'car']
+</code></pre>
+<hr/>
+<h2>Limitations and Trade-offs</h2>
+<h3>1. No Semantic Context</h3>
+<p>Like Bag of Words, TF-IDF effectively treats the document as a “bag.” It doesn’t know that “good” and “excellent” are similar. It just knows they are different strings.</p>
+<h3>2. Sparsity</h3>
+<p>You still end up with massive sparse matrices. If you have 100,000 documents and 50,000 unique words, your memory usage can explode.</p>
+<h3>3. Out of Vocabulary</h3>
+<p>If your model encounters a word it didn’t see during training (the <code>fit</code> step), it ignores it completely.</p>
+<hr/>
+<h2>Summary</h2>
+<p>Use TF-IDF when:
+*   You are building a search engine (to rank results).
+*   You need to extract keywords or tags.
+*   You are doing document clustering or classification on distinct topics.</p>
+<p>It is the robust, “baseline” choice for most NLP tasks before you need the heavy artillery of <strong>Word Embeddings</strong>, which we will cover in the next guide on <strong>Word2Vec</strong>.</p>
 
                         <div class="mt-16 border-t border-gray-100 pt-10">
                             <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
                             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-23 10:00:00" class="text-gray-400 uppercase tracking-wider">November 23, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/chat-own-data-chatgpt-langchain">
+                                            <span class="absolute inset-0"></span>
+                                            Chat with your own data/text files using chatGPT and LangChain
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        There are many different approaches to chatting with your own data. 
+One way is to upload your PDF t...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
@@ -318,37 +338,16 @@ If you...
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2023-02-27 10:10:51" class="text-gray-400 uppercase tracking-wider">February 27, 2023</time>
+                                        <time datetime="2023-06-28 04:41:51" class="text-gray-400 uppercase tracking-wider">June 28, 2023</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
-                                        <a href="/linear-algebra-applications-in-machine-learning">
+                                        <a href="/what-is-perceptron-in-deep-learning">
                                             <span class="absolute inset-0"></span>
-                                            Linear Algebra Applications in Machine Learning
+                                            What is Perceptron in Deep Learning
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        We can take linear algebra as a backbone of machine learning, as almost all the machine learning tec...
-                                    </p>
-                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
-                                        Read article
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
-                                        </svg>
-                                    </div>
-                                </div>
-                                
-                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
-                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2023-02-18 03:49:19" class="text-gray-400 uppercase tracking-wider">February 18, 2023</time>
-                                    </div>
-                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
-                                        <a href="/principle-component-analysis-in-machine-learning">
-                                            <span class="absolute inset-0"></span>
-                                            Principle Component Analysis in Machine Learning
-                                        </a>
-                                    </h3>
-                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        In machine learning to achieve higher accuracies and performance of the model, the data quality play...
+                                        Deep learning is one of the most useful and trending topics in the current world scenario, which wor...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article

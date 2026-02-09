@@ -79,29 +79,29 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Word2Vec Vectorizer in Natural Language Processing | Python Kitchen</title>
-  <meta name="description" content="In natural language processing, Word2Vec is one of the most widely used vectorization techniques used for transferring words or textual data into vector or nume...">
-  <meta name="keywords" content="nlp,word2vec, data science, machine learning">
+  <title>Word2Vec: Capturing Meaning in Vector Space | Python Kitchen</title>
+  <meta name="description" content="Bag of Words and TF-IDF are great, but they suffer from a fatal flaw: they have no concept of meaning. To those algorithms, “car” and “automobile” are just as d...">
+  <meta name="keywords" content="nlp, word2vec, embeddings, gensim, deep-learning, data science">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.pythonkitchen.com/word2vec-vectorizer-in-natural-language-processing/">
-  <meta property="og:title" content="Word2Vec Vectorizer in Natural Language Processing">
-  <meta property="og:description" content="In natural language processing, Word2Vec is one of the most widely used vectorization techniques used for transferring words or textual data into vector or nume...">
+  <meta property="og:title" content="Word2Vec: Capturing Meaning in Vector Space">
+  <meta property="og:description" content="Bag of Words and TF-IDF are great, but they suffer from a fatal flaw: they have no concept of meaning. To those algorithms, “car” and “automobile” are just as d...">
   <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://www.pythonkitchen.com/word2vec-vectorizer-in-natural-language-processing/">
-  <meta property="twitter:title" content="Word2Vec Vectorizer in Natural Language Processing">
-  <meta property="twitter:description" content="In natural language processing, Word2Vec is one of the most widely used vectorization techniques used for transferring words or textual data into vector or nume...">
+  <meta property="twitter:title" content="Word2Vec: Capturing Meaning in Vector Space">
+  <meta property="twitter:description" content="Bag of Words and TF-IDF are great, but they suffer from a fatal flaw: they have no concept of meaning. To those algorithms, “car” and “automobile” are just as d...">
   <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <meta name='category' content='data science'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='subtitle' content='Word2Vec Vectorizer in Natural Language Processing'>
+  <meta name='subtitle' content='Word2Vec: Capturing Meaning in Vector Space'>
   <meta name='pageKey' content='word2vec-vectorizer-in-natural-language-processing'>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
@@ -172,17 +172,13 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Word2Vec Vectorizer in Natural Language Processing</p>
+                    <p class="text-3xl" style="font-weight: 600;">Word2Vec: Capturing Meaning in Vector Space</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2023-04-13 11:09:08" class="text-gray-500">April 13, 2023</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
                             data science
-                        </a>
-                        
-                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            machine learning
                         </a>
                         
                     </div>
@@ -202,68 +198,110 @@
                     
                     <br>
                     <article>
-                        <p>In natural language processing, Word2Vec is one of the most widely used vectorization techniques used for transferring words or textual data into vector or numerical form to feed it to the machine learning model and train the model. It has certain advantages over the BagofWords and TfIdf vectorizers which make more advanced and accurate vectorization techniques.</p>
-<p>In this article, we will discuss the Word2Vec vectorization techniques, what is the core intuition behind it, how it works, the code example of the same, and the limitations of the technique. This article will help one to understand the Word2Vec vectorizers from scratch and will be able to use them wherever necessary.</p>
-<h1>Table of Content</h1>
+                        <p>Bag of Words and TF-IDF are great, but they suffer from a fatal flaw: they have no concept of <strong>meaning</strong>. To those algorithms, “car” and “automobile” are just as different as “car” and “banana.”</p>
+<p><strong>Word2Vec</strong> changed everything. It was the first popular technique to create <strong>Word Embeddings</strong>—dense vectors where similar words appear close to each other in mathematical space.</p>
+<p>This allows us to do “math” with words, leading to the famous example:
+$$King - Man + Woman \approx Queen$$</p>
+<h2>The Core Intuition: Context is King</h2>
+<p>Word2Vec is based on the <strong>Distributional Hypothesis</strong>:</p>
+<blockquote>
+<p>“You shall know a word by the company it keeps.”</p>
+</blockquote>
+<p>The algorithm doesn’t try to understand the word itself. Instead, it looks at the words <em>surrounding</em> it.
+*   If “pizza” and “burger” both appear frequently next to “eat,” “delicious,” and “hungry,” the model learns they are semantically similar.</p>
+<hr/>
+<h2>Architectures: CBOW vs. Skip-gram</h2>
+<p>Word2Vec is essentially a shallow neural network trained on a “fake” task. There are two ways to set this up:</p>
+<h3>1. CBOW (Continuous Bag of Words)</h3>
+<ul>
+<li><strong>Task:</strong> Predict the <strong>target word</strong> based on the <strong>context words</strong>.</li>
+<li><strong>Input:</strong> “The cat sat ___ the mat.”</li>
+<li><strong>Output:</strong> “on”</li>
+<li><strong>Use Case:</strong> Faster to train, better for frequent words.</li>
+</ul>
+<h3>2. Skip-gram</h3>
+<ul>
+<li><strong>Task:</strong> Predict the <strong>context words</strong> based on the <strong>target word</strong>.</li>
+<li><strong>Input:</strong> “<strong><em> ___ sat ___ </em></strong>“</li>
+<li><strong>Output:</strong> “The”, “cat”, “on”, “mat”</li>
+<li><strong>Use Case:</strong> Slower, but much better for rare words and smaller datasets.</li>
+</ul>
+<hr/>
+<h2>Python Implementation: Using <code>Gensim</code></h2>
+<p>While TensorFlow or PyTorch can build these models, the industry standard for traditional Word2Vec is the <strong>Gensim</strong> library.</p>
+<h3>1. Training a Model</h3>
+<pre><code class="language-python">from gensim.models import Word2Vec
+
+# Data must be a list of lists of tokens
+sentences = [
+    ['i', 'love', 'machine', 'learning'],
+    ['machine', 'learning', 'is', 'amazing'],
+    ['i', 'love', 'coding', 'in', 'python'],
+    ['python', 'is', 'a', 'great', 'language']
+]
+
+# Train the model
+# vector_size: Dimension of the dense vector (e.g., 100 or 300)
+# window: How many words to look at (left and right)
+# min_count: Ignore words that appear less than this
+model = Word2Vec(sentences, vector_size=100, window=5, min_count=1, workers=4)
+
+# The training is done! The vectors are stored in the model.
+</code></pre>
+<h3>2. Using the Embeddings</h3>
+<p>Once trained, the model allows us to query for similarity.</p>
+<pre><code class="language-python"># Get the vector for a word
+vector = model.wv['python']
+
+# Find most similar words
+similar = model.wv.most_similar('machine')
+print(similar) 
+# Output might include 'coding', 'python' depending on data
+</code></pre>
+<hr/>
+<h2>Word2Vec vs. TF-IDF</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">TF-IDF</th>
+<th style="text-align: left;">Word2Vec</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Dimensionality</strong></td>
+<td style="text-align: left;">High (Sparse, 10k+)</td>
+<td style="text-align: left;">Low (Dense, 100-300)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Semantics</strong></td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">Captures meaning</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Memory</strong></td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Low</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Interpretability</strong></td>
+<td style="text-align: left;">Easy (keywords)</td>
+<td style="text-align: left;">Hard (random numbers)</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>Limitations</h2>
 <ol>
-<li>What is Word2Vec?</li>
-<li>How Does Word2Vec Work?</li>
-<li>Types of Word2Vec</li>
-<li>Advantages of Word2Vec</li>
-<li>Key Takeaways</li>
-<li>Conclusion</li>
+<li><strong>Static:</strong> Word2Vec generates <em>one</em> fixed vector for every word. It cannot handle <strong>polysemy</strong> (words with multiple meanings). For example, “bank” (river) and “bank” (money) get the same vector.<ul>
+<li><em>Solution:</em> Newer models like <strong>BERT</strong> or <strong>ELMo</strong> generate contextualized embeddings.</li>
+</ul>
+</li>
+<li><strong>OOV Words:</strong> Like other methods, it struggles with words it hasn’t seen before.</li>
 </ol>
-<h1>What is Word2Vec?</h1>
-<p>As we know that machine learning algorithms require good quality and quantity of data in order to train and build the most accurate and reliable model. And also, we can not directly feed the textual type of data to the machine learning models, as it is not the acceptable format for the statistical models. Hence we are required to transform the textual type of data into a numerical form or vector form to feed the data to the model and get the model trained on the same.</p>
-<p>For such cases, vectorization techniques are used, which transform these textual data into vector form by applying their own logic. There are many vectorization techniques available, like a bag of words, TfIdf, and Word2Vec, but among all of them, the Word2Vec is one of the most accurate and widely used approaches for vectorization due to its working mechanism and the advantages it offers over other vectorization methods.</p>
-<h1>How Does Word2Vec Work?</h1>
-<p>Unlike other vectorization techniques, Word2Vec vectorization works with the help of neural networks, which makes it more accurate and precise. Here our main aim is not to transform the word or text into a vector but to predict the next word to the middle word.</p>
-<p>Here we take a dummy problem statement in a neural network, where we apply the neural networks to solve the problems, and while solving the problem, we get the vector form of the words as a by-product.</p>
-<p>There are different types of Word2Vec vectorizers where different neural network architectures are used, and different problem states are taken to get the vector representation of the textual data.</p>
-<h1>Types of Word2Vec</h1>
-<p>There are two main types of Word2Vec:
-1. CBOW
-2. Skipgram</p>
-<p>In both of these Word2Vec vectorizers, different neural network architectures and different problem statements are taken.</p>
-<h1>CBOW</h1>
-<p>In the CBOW type of Word2Vec vectorizer, we pride t one word or the ideal word of the sentence with the help of other neighbors’ words.</p>
-<p>Let us try to understand the same with an example. 
-Let us say we have a sentence:</p>
-<p><strong>“PythonKitchen is Best”</strong></p>
-<p>Now here, we will not directly feed this sentence to the Word2Vec and get the output from the same; instead, we will create a problem statement here, that we will predict the middle word from the sentence, with the help of left and right words, and the middle word will be dropped by us.</p>
-<p>Now we will apply neural networks in order to solve the same problem, and while predicting the middle word in the sentence, we will get the vector form of the word in the last layer of the neural network itself.</p>
-<p><img alt="" src="/assets/bow.png"/>
-<a href="https://www.researchgate.net/figure/Illustration-of-the-Skip-gram-and-Continuous-Bag-of-Word-CBOW-models_fig1_281812760" title="Image Source">Image Source</a></p>
-<p>As we can see in the above image, the input words are fed to the neural networks model, and the model will predict the middle or the missing words. Now in the last layer of the network where we are getting the output, we will get the vector form of the word as well.</p>
-<p>In general, the CBOW type of Word2Vec vectorizers works well with larger datasets.</p>
-<h1>Skipgram</h1>
-<p>In Skipgram, a type of vectorizer, we basically drop all the neighboring words and just keep the middle word which will be used to predict all the other words which are missing.</p>
-<p>Let us take an example.</p>
-<p><strong>“PythonKitchen is Best”</strong></p>
-<p>In this sentence, we will just keep- the word “is” in the dataset, and all the other neighboring words will be dropped, and the same neural network will be used to predict these words. Now while predicting, we will get the vector forms of the words in the last layer of the neural network itself.</p>
-<p><img alt="" src="/assets/cbow.png"/>
-<a href="https://www.researchgate.net/figure/Illustration-of-the-Skip-gram-and-Continuous-Bag-of-Word-CBOW-models_fig1_281812760" title="Image Source">Image Source</a></p>
-<p>As we can see in the above image, one word is fed to the neural network model, and the model will predict all the other words where the vector form of the words will be obtained in the last layer.</p>
-<p>In general, the skip-gram type of Word2Vec vectorizes works well with small datasets.</p>
-<h2>Advantages of Word2Vec</h2>
-<h3>Semantic and Synthetic Meaning of Words:</h3>
-<p>The Word2Vec vectorizer can capture the patterns of different words and can, identify similar words and assigns them similar vector representations, which ultimately reduces the dimensionality of the dataset and make the model less complex.</p>
-<h3>Handle Small and Large Datasets:</h3>
-<p>The woprtd2vec can be used for both large and small datasets, where CBOW is mainly used in the case of the larger dataset, and Skipgram is used in the case of smaller datasets.</p>
-<h3>Handling Rare words:</h3>
-<p>Word2Vec can also handle the rare words which are not present in the training data and can generate the vector representations for the same. Here, the Word2Vec uses the subword information techniques technique, where it breaks the words into parts and generates the vector form of the same, with the help of other similar words in the training data.</p>
-<h3>Efficiency:</h3>
-<p>The Word2Vec vectorizer is comparatively efficient as it rains in less amount of time with large datasets, as the neural network used in the vectorizers contains less4er parameters.</p>
-<h1>Key Takeaways</h1>
-<ol>
-<li>Word2Vec is a type of vectorization technique used to transform the textual type of data into vector form.</li>
-<li>CBOW and Skiopgram are the type of Word2Vec vectorizes where different neural network architectures and different problem statements are considered.</li>
-<li>CBOW is preferred for large datasets, and Skipgram is preferred for smaller datasets.</li>
-<li>Word2Vec can identify similar words and can represent them in vector form in a very efficient manner so that the dimensionality can be handled and the model does not become so complex.</li>
-<li>Word2Vec can also handle rare qwords where it uses the subword information in order to generate the vector representations of unseen words.</li>
-</ol>
-<h1>Conclusion</h1>
-<p>In this article, we discussed the word2vec vectorizes, what it is, how it works, the type of Word2Vec, and the advantages of the same. This article will help one to understand the vectorization technique more deeply and will be able to answer interview questions related to the same very easily and efficiently.</p>
+<h2>Conclusion</h2>
+<p>Word2Vec is the bridge between simple counting statistics and modern Deep Learning NLP. By converting sparse, massive text data into dense, meaningful vectors, it enables powerful applications like recommendation engines, synonym detectors, and sophisticated chatbots.</p>
 
                         <div class="mt-16 border-t border-gray-100 pt-10">
                             <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
@@ -315,16 +353,16 @@ If you...
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2023-03-13 10:13:01" class="text-gray-400 uppercase tracking-wider">March 13, 2023</time>
+                                        <time datetime="2023-06-28 04:41:51" class="text-gray-400 uppercase tracking-wider">June 28, 2023</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
-                                        <a href="/tfidf-vectorizers-in-natural-language-processing">
+                                        <a href="/what-is-perceptron-in-deep-learning">
                                             <span class="absolute inset-0"></span>
-                                            TFIDF Vectorizers in Natural Language Processing
+                                            What is Perceptron in Deep Learning
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Vectorization is a technique in natural language processing that is used to transform the text into ...
+                                        Deep learning is one of the most useful and trending topics in the current world scenario, which wor...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article
