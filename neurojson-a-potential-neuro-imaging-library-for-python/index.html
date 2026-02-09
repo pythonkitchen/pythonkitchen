@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='NeuroJSON: A Potential Neuro-Imaging Library For Python' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuroJSON: A Potential Neuro-Imaging Library For Python | Python Kitchen</title>
+  <meta name="description" content="NeuroJson, founded by Qianqian Fang, is an open-source project which aims to create easy-to-adopt, easy-to-extend, and preferably human-readable data formats to...">
+  <meta name="keywords" content=", data science, machine learning">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/neurojson-a-potential-neuro-imaging-library-for-python/">
+  <meta property="og:title" content="NeuroJSON: A Potential Neuro-Imaging Library For Python">
+  <meta property="og:description" content="NeuroJson, founded by Qianqian Fang, is an open-source project which aims to create easy-to-adopt, easy-to-extend, and preferably human-readable data formats to...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/neurojson-a-potential-neuro-imaging-library-for-python/">
+  <meta property="twitter:title" content="NeuroJSON: A Potential Neuro-Imaging Library For Python">
+  <meta property="twitter:description" content="NeuroJson, founded by Qianqian Fang, is an open-source project which aims to create easy-to-adopt, easy-to-extend, and preferably human-readable data formats to...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='data science'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
   <meta name='subtitle' content='NeuroJSON: A Potential Neuro-Imaging Library For Python'>
   <meta name='pageKey' content='neurojson-a-potential-neuro-imaging-library-for-python'>
-  <meta name='og:title' content='NeuroJSON: A Potential Neuro-Imaging Library For Python'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/neurojson-a-potential-neuro-imaging-library-for-python'>
-
-  <title>NeuroJSON: A Potential Neuro-Imaging Library For Python</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -201,15 +220,15 @@
 </ol>
 <h2>Why NeuroJson?</h2>
 <p>Since NeuroJson uses binary-JSON (precisely UBJSON file format), <strong>It was able to address most of the Limitations mentioned above ↑.</strong> The generated files are universally parsable in nearly all programming environments with existing parsers and support complex hierarchical data with compression. A <code>UBJSON/BJData</code> parser may not necessarily be longer than a <code>.npy</code> parser. For example, the python parser of full specifications only takes about 500 lines of code (including comments), similarly to a JS parser. Generated files from this parser can readily benefit from the large ecosystem of JSON (JSON-schema, JSONPath, JSON-LD, jq, numerous parsers, web-ready, NoSQL DB). Here is a <a href="https://github.com/NeuroJSON/pybj/blob/master/bjdata/decoder.py">BJson-Parser</a>.</p>
-<p><strong>NeuroJson&rsquo;s team conducted a benchmark test a few months back</strong>. The test workloads were two large 2D numerical arrays (node, face to store surface mesh data). 
+<p><strong>NeuroJson’s team conducted a benchmark test a few months back</strong>. The test workloads were two large 2D numerical arrays (node, face to store surface mesh data). 
  They compared the parsing speed of various formats in
 Python, MATLAB, and JS. The uncompressed UBJData (BMSHraw) reported a loading speed that was nearly as fast as reading a raw binary dump, and internally compressed UBJData (BMSHz) gives the best balance between small file sizes and loading speed,</p>
 <p>Results</p>
-<p><img alt="Test Results" src="https://pbs.twimg.com/media/FRPEdLGWYAEJe80?format=png&amp;name=large" />
+<p><img alt="Test Results" src="https://pbs.twimg.com/media/FRPEdLGWYAEJe80?format=png&amp;name=large"/>
 Testing <code>UBJson(jdata.jdb)</code> VS <code>NumPy.npy</code> File size</p>
-<hr />
+<hr/>
 <p>A quick comparison of output file sizes with a 1000x1000 unitary diagonal matrix. I wanted to test and compare these formats against each other on my own PC.
-Here&rsquo;s the code!</p>
+Here’s the code!</p>
 <pre><code class="language-python">    pip install jdata bjdata
     import numpy as np
     import jdata as jd 
@@ -241,7 +260,7 @@ Here&rsquo;s the code!</p>
 * Simple structure lends itself to easy reimplementation whenever needed
 * Existing implementations for multiple languages
 * <code>.npy</code> files with time: 0.13 seconds, This is by far the fastest method of loading data.</p>
-<p><a href="https://towardsdatascience.com/what-is-npy-files-and-why-you-should-use-them-603373c78883#:~:text=npy%20files%20with%20time:%200.13,method%20of%20loading%20in%20data.">Refer to:</a><img alt="enter image description here" src="https://miro.medium.com/max/738/1*xwpjjSdZwiOMnPJtdp9L2w.png" />
+<p><a href="https://towardsdatascience.com/what-is-npy-files-and-why-you-should-use-them-603373c78883#:~:text=npy%20files%20with%20time:%200.13,method%20of%20loading%20in%20data.">Refer to:</a><img alt="enter image description here" src="https://miro.medium.com/max/738/1*xwpjjSdZwiOMnPJtdp9L2w.png"/>
 <strong>Cons:</strong>
 * Non-appendable, only possible by using <a href="https://pypi.org/project/npy-append-array/">Third-party_packages</a> that comprises processing speed.</p>
 <ul>
@@ -250,7 +269,7 @@ Here&rsquo;s the code!</p>
 </li>
 <li>
 <p>No data compression available(Only file), This Leads to big bulky files. For example:
-<img alt="enter image description here" src="https://raw.githubusercontent.com/Abdullium/Data_Analysis/main/Screenshot%202022-09-15%20173041.png" /></p>
+<img alt="enter image description here" src="https://raw.githubusercontent.com/Abdullium/Data_Analysis/main/Screenshot%202022-09-15%20173041.png"/></p>
 </li>
 <li>
 <p>Only support a single NumPy array data type and does not support other metadata</p>
@@ -264,19 +283,90 @@ Here&rsquo;s the code!</p>
 <li>Extremely Compressible, especially using Lzma compressor, it can shrink the data like this:-</li>
 </ul>
 <blockquote>
-<p>a BJData file storing a single eye(10000) array using the ND-array container can be downloaded from here <a href="http://neurojson.org/wiki/upload/eye1e4_bjd_raw_ndsyntax.jdb.zip">http://neurojson.org/wiki/upload/eye1e4_bjd_raw_ndsyntax.jdb.zip</a>(file size: 1MB with zip, if decompressed, it is ~800MB, as the npy file) - this file was generated from a MatLab encoder but can be loaded using Python (see below Re Robert).<a href="https://mail.python.org/archives/list/numpy-discussion@python.org/message/JIT4AIVEYJLSSHTSA7GOUBIVQLT3WPRU/">Read Thread</a> 
+<p>a BJData file storing a single eye(10000) array using the ND-array container can be downloaded from here <a href="http://neurojson.org/wiki/upload/eye1e4_bjd_raw_ndsyntax.jdb.zip">http://neurojson.org/wiki/upload/eye1e4_bjd_raw_ndsyntax.jdb.zip</a>(file size: 1MB with zip, if decompressed, it is ~800MB, as the npy file) - this file was generated from a MatLab encoder but can be loaded using Python (see below Re Robert).<a href="https://mail.python.org/archives/list/numpy-discussion@python.org/message/JIT4AIVEYJLSSHTSA7GOUBIVQLT3WPRU/">Read Thread</a>
 </p>
 </blockquote>
 <p><strong>Cons:</strong>
 - Not Optimized for speed, five times slower loading speed than <code>.npy</code>
 - The Data needs to be stored in chunks in order to be fully compressible</p>
 <h2>Conclusion</h2>
-<p>NeuroJson is emerging as a Major competitor to libraries like Nipy and NumPy in the field of Neuro-Imagery. It is highly compressible and has an established network of JSON/UBJSON files. However, the big challenge is the speed. it is not anywhere near Python&rsquo;s standard, which presents a big challenge for people working on medical/Neuro-Imaging data 
-Still, I have a positive outlook on NeuroJson that it can become the &ldquo;Go-To&rdquo; library for medical-coder and Neuro enthusiasts in the future!</p>
+<p>NeuroJson is emerging as a Major competitor to libraries like Nipy and NumPy in the field of Neuro-Imagery. It is highly compressible and has an established network of JSON/UBJSON files. However, the big challenge is the speed. it is not anywhere near Python’s standard, which presents a big challenge for people working on medical/Neuro-Imaging data 
+Still, I have a positive outlook on NeuroJson that it can become the “Go-To” library for medical-coder and Neuro enthusiasts in the future!</p>
 <h2>References</h2>
 <ul>
 <li><a href="https://mail.python.org/archives/list/numpy-discussion@python.org/message/JIT4AIVEYJLSSHTSA7GOUBIVQLT3WPRU/">Mailman 3 Python.org</a></li>
 </ul>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-13 09:31:20" class="text-gray-400 uppercase tracking-wider">November 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/LangChain-understand-production-codebases">
+                                            <span class="absolute inset-0"></span>
+                                            Understand langChain to Quickly Get Started with Production Codebases
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
+If you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-03-13 10:13:01" class="text-gray-400 uppercase tracking-wider">March 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/tfidf-vectorizers-in-natural-language-processing">
+                                            <span class="absolute inset-0"></span>
+                                            TFIDF Vectorizers in Natural Language Processing
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Vectorization is a technique in natural language processing that is used to transform the text into ...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-02-27 10:10:51" class="text-gray-400 uppercase tracking-wider">February 27, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/linear-algebra-applications-in-machine-learning">
+                                            <span class="absolute inset-0"></span>
+                                            Linear Algebra Applications in Machine Learning
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        We can take linear algebra as a backbone of machine learning, as almost all the machine learning tec...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

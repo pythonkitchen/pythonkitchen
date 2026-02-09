@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='tkinter : tackling import for python 2 and 3' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Import Tkinter in Python 2 and 3: A Cross-Compatibility Guide | Python Kitchen</title>
+  <meta name="description" content="Tkinter is the standard GUI (Graphical User Interface) package that comes bundled with most Python installations. However, if you are working on a codebase that...">
+  <meta name="keywords" content="python, tkinter, gui, cross-compatibility, python-2-vs-3, gui">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/tkinter-tackling-import-for-python-2-and-3/">
+  <meta property="og:title" content="How to Import Tkinter in Python 2 and 3: A Cross-Compatibility Guide">
+  <meta property="og:description" content="Tkinter is the standard GUI (Graphical User Interface) package that comes bundled with most Python installations. However, if you are working on a codebase that...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/tkinter-tackling-import-for-python-2-and-3/">
+  <meta property="twitter:title" content="How to Import Tkinter in Python 2 and 3: A Cross-Compatibility Guide">
+  <meta property="twitter:description" content="Tkinter is the standard GUI (Graphical User Interface) package that comes bundled with most Python installations. However, if you are working on a codebase that...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='gui'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='tkinter : tackling import for python 2 and 3'>
+  <meta name='subtitle' content='How to Import Tkinter in Python 2 and 3: A Cross-Compatibility Guide'>
   <meta name='pageKey' content='tkinter-tackling-import-for-python-2-and-3'>
-  <meta name='og:title' content='tkinter : tackling import for python 2 and 3'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/tkinter-tackling-import-for-python-2-and-3'>
-
-  <title>tkinter : tackling import for python 2 and 3</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">tkinter : tackling import for python 2 and 3</p>
+                    <p class="text-3xl" style="font-weight: 600;">How to Import Tkinter in Python 2 and 3: A Cross-Compatibility Guide</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-04-25 11:52:45" class="text-gray-500">April 25, 2018</time>
@@ -179,34 +198,131 @@
                     
                     <br>
                     <article>
-                        <p>[caption id=&rdquo;&rdquo; align=&rdquo;aligncenter&rdquo; width=&rdquo;480&rdquo;]<img alt="tkinter logo" src="https://i.ytimg.com/vi/QQv_e61sqxs/hqdefault.jpg" /> gui package for python[/caption]</p>
-<p>tkinter is the integrated GUI package in python. It has had an import naming change in python 3. This is the main hindrance in making tkinter codes run on python 3 or vice versa. fortunately the fix is a simple one
-Some syntax</p>
-<hr />
-<p>in python 2 we imported as :</p>
-<pre><code class="language-python">
-import Tkinter
-
-
+                        <p>Tkinter is the standard GUI (Graphical User Interface) package that comes bundled with most Python installations. However, if you are working on a codebase that needs to support both Python 2 and Python 3, or if you are porting an older project, you will quickly run into a common stumbling block: the import naming change.</p>
+<p>In this guide, we’ll look at why this change happened and how to write code that works seamlessly across both versions of Python.</p>
+<h2>The Naming Shift</h2>
+<p>The main difference between the two versions is a simple case change:</p>
+<ul>
+<li><strong>In Python 2</strong>, the module is named <code>Tkinter</code> (capital ‘T’).</li>
+<li><strong>In Python 3</strong>, the module was renamed to <code>tkinter</code> (lowercase ‘t’) as part of a larger effort to standardize module naming conventions (PEP 8).</li>
+</ul>
+<h3>Python 2 Syntax</h3>
+<pre><code class="language-python">import Tkinter
+root = Tkinter.Tk()
 </code></pre>
-<p>and in python 3 we import as :</p>
-<pre><code class="language-python">
-import tkinter
-
-
+<h3>Python 3 Syntax</h3>
+<pre><code class="language-python">import tkinter
+root = tkinter.Tk()
 </code></pre>
-<p>notice the T in py2
-The fix</p>
-<hr />
-<p>Here is a tip for cross platforming :</p>
+<p>This tiny difference is enough to cause an <code>ImportError</code> that crashes your program if you try to run Python 2 code in a Python 3 environment.</p>
+<hr/>
+<h2>The Universal Fix: Try/Except Block</h2>
+<p>The most robust way to handle this without requiring external libraries is to use a <code>try...except</code> block. This allows your script to attempt the Python 3 import first and fall back to Python 2 if it fails.</p>
 <pre><code class="language-python">try:
- import tkinter
+    # Attempt Python 3 import
+    import tkinter as tk
 except ImportError:
- import Tkinter
+    # Fallback for Python 2
+    import Tkinter as tk
 
+# Now you can use 'tk' regardless of the Python version
+root = tk.Tk()
+root.title("Cross-Platform Tkinter")
+root.mainloop()
 </code></pre>
-<h2>What it does</h2>
-<p>it imports the py3 version, if ok, it continues if no &hellip; it imports the python2 version, simple !</p>
+<h3>Why use <code>as tk</code>?</h3>
+<p>By aliasing the module to <code>tk</code>, you ensure that the rest of your code remains identical. You don’t have to keep checking which version of the module you are using; you just call <code>tk.Button()</code>, <code>tk.Label()</code>, etc.</p>
+<hr/>
+<h2>Handling Submodules (Advanced)</h2>
+<p>Sometimes you need specific submodules like <code>messagebox</code> or <code>filedialog</code>. These also changed significantly in Python 3. In Python 2, they were often separate modules like <code>tkMessageBox</code>.</p>
+<p>Here is how you handle them for cross-compatibility:</p>
+<pre><code class="language-python">try:
+    # Python 3
+    from tkinter import messagebox
+    from tkinter import filedialog
+except ImportError:
+    # Python 2
+    import tkMessageBox as messagebox
+    import tkFileDialog as filedialog
+
+# Example usage
+messagebox.showinfo("Hello", "This works in both versions!")
+</code></pre>
+<h2>Conclusion</h2>
+<p>Tackling the Python 2 and 3 divide in Tkinter is easy once you know the <code>try/except</code> pattern. By using this approach, you can write modern GUI applications that are accessible to users on older systems while remaining fully compatible with the latest Python releases.</p>
+<p>If you’re starting a brand new project, we highly recommend sticking exclusively to Python 3, as Python 2 has reached its end-of-life (EOL). However, for maintenance and porting, these tips are essential tools in your Python developer toolkit.</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2019-11-06 18:19:38" class="text-gray-400 uppercase tracking-wider">November 6, 2019</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/pyqt5-pyside2-qtableview-how-to-find-out-if-row-is-selected-and-which-one-in-python">
+                                            <span class="absolute inset-0"></span>
+                                            PyQt5 / PySide2 QTableView how to find out if row is selected and which one in Python?
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Question: I have a QTableView in PyQT5 / PySide2
+I want to
+* Know if a row is selected (my tableview...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2019-01-21 07:43:27" class="text-gray-400 uppercase tracking-wider">January 21, 2019</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/pyqt5-value-cells-selected-row-qtview">
+                                            <span class="absolute inset-0"></span>
+                                            PyQt5 / PySide2: How to Get Values from a Selected QTableView Row
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        When building desktop applications with PyQt5 or PySide2, the QTableView is the go-to widget for dis...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-04-29 21:08:30" class="text-gray-400 uppercase tracking-wider">April 29, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/a-fix-to-tkinter-output-not-showing">
+                                            <span class="absolute inset-0"></span>
+                                            Troubleshooting Tkinter: Why is My GUI Output Not Showing?
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Tkinter is the most common way for beginners to start building GUIs in Python. It’s powerful, but it...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

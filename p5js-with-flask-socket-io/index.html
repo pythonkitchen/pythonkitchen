@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='How to integrate P5JS with Flask-SocketIO' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to integrate P5JS with Flask-SocketIO | Python Kitchen</title>
+  <meta name="description" content="P5Js is an implementation of processing.org’s library in JavaSript. It can be thought of as a canvas management library. Integrating such a library with a commo...">
+  <meta name="keywords" content=", flask">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/p5js-with-flask-socket-io/">
+  <meta property="og:title" content="How to integrate P5JS with Flask-SocketIO">
+  <meta property="og:description" content="P5Js is an implementation of processing.org’s library in JavaSript. It can be thought of as a canvas management library. Integrating such a library with a commo...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/p5js-with-flask-socket-io/">
+  <meta property="twitter:title" content="How to integrate P5JS with Flask-SocketIO">
+  <meta property="twitter:description" content="P5Js is an implementation of processing.org’s library in JavaSript. It can be thought of as a canvas management library. Integrating such a library with a commo...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='flask'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
   <meta name='subtitle' content='How to integrate P5JS with Flask-SocketIO'>
   <meta name='pageKey' content='p5js-with-flask-socket-io'>
-  <meta name='og:title' content='How to integrate P5JS with Flask-SocketIO'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/p5js-with-flask-socket-io'>
-
-  <title>How to integrate P5JS with Flask-SocketIO</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -179,7 +198,7 @@
                     
                     <br>
                     <article>
-                        <p>P5Js is an implementation of processing.org&rsquo;s library in JavaSript. It can be thought of as a canvas management library. Integrating such a library with a common backend like Flask unlocks amazing opportunities. Canvas is even better if sockets.io is involved for real-time events. This post shows how to integrate these 3 libraries using flask-socketio.</p>
+                        <p>P5Js is an implementation of processing.org’s library in JavaSript. It can be thought of as a canvas management library. Integrating such a library with a common backend like Flask unlocks amazing opportunities. Canvas is even better if sockets.io is involved for real-time events. This post shows how to integrate these 3 libraries using flask-socketio.</p>
 <h1>Main codes</h1>
 <p><a href="https://github.com/Abdur-rahmaanJ/p5js-socket-io">Github Repo</a></p>
 <p>Server:</p>
@@ -194,7 +213,7 @@ globals()[mhelp.blueprint_str] = mhelp.blueprint
 module_blueprint = globals()[mhelp.blueprint_str]
 
 
-@module_blueprint.route(&quot;/&quot;)
+@module_blueprint.route("/")
 def index():
     return mhelp.render('index.html')
 
@@ -210,13 +229,13 @@ def mouse(data, methods=['GET', 'POST']):
 &lt;html&gt;
 
 &lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot; /&gt;
+  &lt;meta charset="UTF-8" /&gt;
   &lt;title&gt;Websockets drawing app&lt;/title&gt;
-  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles.css&quot; /&gt;
-  &lt;script src=&quot;https://cdn.socket.io/4.4.1/socket.io.min.js&quot; integrity=&quot;sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
-  &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js&quot;&gt;&lt;/script&gt;
-  &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.min.js&quot;&gt;&lt;/script&gt;
-  &lt;script type=&quot;text/javascript&quot;&gt;
+  &lt;link rel="stylesheet" type="text/css" href="styles.css" /&gt;
+  &lt;script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.min.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript"&gt;
 
 
  let socket
@@ -289,7 +308,7 @@ function sendmouse(x, y, pX, pY) {
   socket.emit('mouse', data)
 }
   &lt;/script&gt;
-  &lt;style type=&quot;text/css&quot;&gt;
+  &lt;style type="text/css"&gt;
     input.call-picker {
   border: 1px solid #AAA;
   color: #666;
@@ -346,17 +365,89 @@ button {
 
 &lt;body&gt;
   &lt;p&gt;Choose color (# hex)&lt;/p&gt;
-  &lt;input type=&quot;text&quot; name=&quot;custom_color&quot; placeholder=&quot;#FFFFFF&quot; id=&quot;pickcolor&quot; class=&quot;call-picker&quot; /&gt;
-  &lt;div id=&quot;color-holder&quot; class=&quot;color-holder call-picker&quot;&gt;&lt;/div&gt;
-  &lt;button id=&quot;color-btn&quot;&gt;Change color&lt;/button&gt;
+  &lt;input type="text" name="custom_color" placeholder="#FFFFFF" id="pickcolor" class="call-picker" /&gt;
+  &lt;div id="color-holder" class="color-holder call-picker"&gt;&lt;/div&gt;
+  &lt;button id="color-btn"&gt;Change color&lt;/button&gt;
   &lt;br /&gt;
   &lt;p&gt;Choose stroke width&lt;/p&gt;
-  &lt;input type=&quot;text&quot; name=&quot;stroke_width&quot; placeholder=&quot;4&quot; id=&quot;stroke-width-picker&quot; class=&quot;stroke_width_picker&quot; /&gt;
-  &lt;button id=&quot;stroke-btn&quot;&gt;Change stroke width&lt;/button&gt;
+  &lt;input type="text" name="stroke_width" placeholder="4" id="stroke-width-picker" class="stroke_width_picker" /&gt;
+  &lt;button id="stroke-btn"&gt;Change stroke width&lt;/button&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 
 </code></pre>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2022-04-13 05:37:29" class="text-gray-400 uppercase tracking-wider">April 13, 2022</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/build-a-note-app-in-flask-as-fast-as-it-can-get-using-shopyo">
+                                            <span class="absolute inset-0"></span>
+                                            Build A Note App In Flask As Fast As It Can Get (Using Shopyo)
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Shopyo is a framework to get started with Flask really quick. It includes several libraries to get s...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2021-12-09 07:32:00" class="text-gray-400 uppercase tracking-wider">December 9, 2021</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/integrate-tinymce-5-with-flask">
+                                            <span class="absolute inset-0"></span>
+                                            How to Integrate Tinymce 5 with Flask (with csrf)
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        This article shows how to integrate Tinymce 5 with Flask even including csrf protection!
+Text area
+<...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2021-04-18 21:48:04" class="text-gray-400 uppercase tracking-wider">April 18, 2021</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/why-choose-flask-over-fastapi">
+                                            <span class="absolute inset-0"></span>
+                                            Why Choose Flask Over FastAPI
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        FastAPI positions itself as one of the best choices for API development in Python. The project is po...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='home machine learning project : identifying cutlery items' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Learning 101: Identifying Kitchen Cutlery with K-NN | Python Kitchen</title>
+  <meta name="description" content="Machine Learning can often feel like a “black box” of complex math and scary terminology like “Tensors” and “Neural Networks.” But at its core, Machine Learning...">
+  <meta name="keywords" content="machine-learning, k-nearest-neighbours, beginners, python, data-science, machine learning">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/identifying-home-cutlery-items/">
+  <meta property="og:title" content="Machine Learning 101: Identifying Kitchen Cutlery with K-NN">
+  <meta property="og:description" content="Machine Learning can often feel like a “black box” of complex math and scary terminology like “Tensors” and “Neural Networks.” But at its core, Machine Learning...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/identifying-home-cutlery-items/">
+  <meta property="twitter:title" content="Machine Learning 101: Identifying Kitchen Cutlery with K-NN">
+  <meta property="twitter:description" content="Machine Learning can often feel like a “black box” of complex math and scary terminology like “Tensors” and “Neural Networks.” But at its core, Machine Learning...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='machine learning'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='home machine learning project : identifying cutlery items'>
+  <meta name='subtitle' content='Machine Learning 101: Identifying Kitchen Cutlery with K-NN'>
   <meta name='pageKey' content='identifying-home-cutlery-items'>
-  <meta name='og:title' content='home machine learning project : identifying cutlery items'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/identifying-home-cutlery-items'>
-
-  <title>home machine learning project : identifying cutlery items</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">home machine learning project : identifying cutlery items</p>
+                    <p class="text-3xl" style="font-weight: 600;">Machine Learning 101: Identifying Kitchen Cutlery with K-NN</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-05-08 06:12:23" class="text-gray-500">May 8, 2018</time>
@@ -179,170 +198,157 @@
                     
                     <br>
                     <article>
-                        <p>machine learning is becoming crucial to add to your backpack. this post attempts to show a basic application of machine learning. we need to determine whether some cutlery items are bowls or mugs or plates. this is a practical demonstration of applied theory
-machine learning is just applied maths
-======================================</p>
-<p>from start to finish, machine learning is just statistics, equations, calculations and repetitions. you just code an algorithm. tensors are just big words for matrices.
-the project
-===========</p>
-<p>we are identifying items from my kitchen so that when presented with an unidentified cutlery, we can attempt to classify it
-characteristics of our target</p>
-<hr />
-<p>we will be identifying plates, mugs and bowls. here is an overview of their common characteristics</p>
-<p>[caption id=&rdquo;attachment_147&rdquo; align=&rdquo;aligncenter&rdquo; width=&rdquo;300&rdquo;]<img alt="target data" src="https://www.pythonmembers.club/wp-content/uploads/2018/05/k_nearest_targets-300x126.png" /> target data[/caption]
-our collected data</p>
-<hr />
-<p>here is our measurement sheet, it could have been a spreadsheet. heights in cm</p>
-<p>[caption id=&rdquo;attachment_148&rdquo; align=&rdquo;aligncenter&rdquo; width=&rdquo;225&rdquo;]<img alt="data sheet" src="https://www.pythonmembers.club/wp-content/uploads/2018/05/20180507_151041-225x300.jpg" /> our data[/caption]</p>
-<p>we reformat it into cutlery.csv as follows :</p>
-<pre><code class="language-python">D,h,type
+                        <p>Machine Learning can often feel like a “black box” of complex math and scary terminology like “Tensors” and “Neural Networks.” But at its core, Machine Learning is just applied statistics. </p>
+<p>In this project, we’ll build a simple classifier to identify different types of kitchen cutlery—specifically <strong>Bowls</strong>, <strong>Mugs</strong>, and <strong>Plates</strong>—using the <strong>K-Nearest Neighbours (K-NN)</strong> algorithm.</p>
+<hr/>
+<h2>The Concept: Machines Learn from Data</h2>
+<p>Imagine you have a new object from the kitchen. How do you know if it’s a mug or a bowl? You probably look at its dimensions: height and diameter.</p>
+<ul>
+<li><strong>Plates:</strong> Wide diameter, very short height.</li>
+<li><strong>Mugs:</strong> Narrow diameter, tall height.</li>
+<li><strong>Bowls:</strong> Medium diameter, medium height.</li>
+</ul>
+<p>In Machine Learning, these dimensions are called <strong>Features</strong>. Our goal is to train a model so that when we give it the features of an unknown item, it can predict the <strong>Category</strong>.</p>
+<hr/>
+<h2>Step 1: Collecting the Data</h2>
+<p>For this project, I literally took a ruler to my kitchen and measured several items. Here is a sample of the data we collected in a CSV format:</p>
+<pre><code class="language-csv">Diameter,Height,Type
 17,5,bowl
 15.5,5,bowl
 22.5,1,plate
 8,7.5,mug
 8,9,mug
 6,11,mug
-6,10,mug
 24,2.5,plate
 26,2,plate
 11,8,mug
 18,5.5,bowl
-14,8,bowl
 </code></pre>
-<h2>reformatting for calculations : plotting</h2>
-<p>let us plot our data :</p>
-<p>[caption id=&rdquo;attachment_149&rdquo; align=&rdquo;aligncenter&rdquo; width=&rdquo;1277&rdquo;]<img alt="" src="https://www.pythonmembers.club/wp-content/uploads/2018/05/cutlery_ipython.png" /> cutlery Jupyter[/caption]</p>
-<p>now to select the entire D column we do :</p>
-<pre><code class="language-python">df['D']
-</code></pre>
-<p>outputs :</p>
-<pre><code class="language-python">0     17.0
-1     15.5
-2     22.5
-3      8.0
-4      8.0
-5      6.0
-6      6.0
-7     24.0
-8     26.0
-9     11.0
-10    18.0
-11    14.0
-Name: D, dtype: float64
-</code></pre>
-<p>same for df[&lsquo;h&rsquo;]
-viewing our data
-================</p>
-<p>please see <a href="https://www.pythonmembers.club/2018/05/08/matplotlib-scatter-plot-annotate-set-text-at-label-each-point/">this article</a> on annotating data</p>
-<p>code :</p>
+<hr/>
+<h2>Step 2: Visualizing the Data</h2>
+<p>Before we run any math, let’s look at the data. By plotting Diameter on the X-axis and Height on the Y-axis, we can see distinct clusters forming.</p>
 <pre><code class="language-python">import pandas as pd
 import matplotlib.pyplot as plt
 
-# df is short for dataframe
-df = pd.read_csv(&quot;&lt;path here&gt;/Desktop/cutlery.csv&quot;)
+df = pd.read_csv("cutlery.csv")
 
-D = df['D']
-h = df['h']
+colors = {'bowl': 'red', 'mug': 'blue', 'plate': 'green'}
 
-for i,type_ in enumerate(df['type']):
-    D_ = D[i]
-    h_ = h[i]
-    if type_ == 'bowl':
-        plt.scatter(D_, h_, marker='o', color='red', label='a')
-        plt.text(D_+0.3, h_+0.3, type_, fontsize=9)
-    elif type_ == 'mug':
-        plt.scatter(D_, h_, marker='o', color='blue')
-        plt.text(D_+0.3, h_+0.3, type_, fontsize=9)
-    elif type_ == 'plate':
-        plt.scatter(D_, h_, marker='o', color='green')
-        plt.text(D_+0.3, h_+0.3, type_, fontsize=9)
-        
+plt.figure(figsize=(8, 6))
+for i, row in df.iterrows():
+    plt.scatter(row['Diameter'], row['Height'], color=colors[row['Type']])
+    plt.text(row['Diameter'] + 0.3, row['Height'], row['Type'], fontsize=8)
+
+plt.xlabel("Diameter (cm)")
+plt.ylabel("Height (cm)")
+plt.title("Cutlery Dimensions Distribution")
 plt.show()
 </code></pre>
-<p>output :</p>
-<p>[caption id=&rdquo;attachment_155&rdquo; align=&rdquo;aligncenter&rdquo; width=&rdquo;378&rdquo;]<img alt="machine learning intro view " src="https://www.pythonmembers.club/wp-content/uploads/2018/05/machine_learning_intro_view.png" /> view data[/caption]
-our sample</p>
-<hr />
-<p>now let us say that we have this :</p>
-<p>width D : 8 and h : 7.5</p>
-<p>[caption id=&rdquo;attachment_157&rdquo; align=&rdquo;aligncenter&rdquo; width=&rdquo;512&rdquo;]<img alt="cup from kitchen" src="https://www.pythonmembers.club/wp-content/uploads/2018/05/PicsArt_05-08-09.45.48.jpg" /> cup from kitchen[/caption]</p>
-<p>without seeing the image, having D:9 and h:14, how do we guess what type of cutlery it is?
-guess by distance</p>
-<hr />
-<p>since this is but points on graph, we&rsquo;ll measure the distance between D:9 and h:14 i.e. (9,14) to each point</p>
-<p>we&rsquo;ll use the simple distance formula :</p>
-<blockquote>
-<p>distance = square_root(  ( X2-X1)^2  +  (Y2-Y1)^2 )</p>
-</blockquote>
-<p>code :</p>
-<pre><code class="language-python">import pandas as pd
-import matplotlib.pyplot as plt
-from math import sqrt
+<p>When you look at the plot, you’ll see Mugs in the top left (tall and narrow) and Plates in the bottom right (wide and short).</p>
+<hr/>
+<h2>Step 3: Predicting with K-Nearest Neighbours</h2>
+<p>The <strong>K-Nearest Neighbours (K-NN)</strong> algorithm is simple: to classify a new, unknown point, we look at the “K” closest points in our dataset. If the majority of those neighbors are “Mugs,” then our new point is probably a Mug too!</p>
+<h3>The Distance Formula</h3>
+<p>We calculate the “closeness” using the Euclidean distance formula:
+$$Distance = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$</p>
+<h3>The Python Logic</h3>
+<pre><code class="language-python">from math import sqrt
 
-# df is short for dataframe
-df = pd.read_csv(&quot;&lt;path here&gt;/cutlery.csv&quot;)
+def classify_item(new_diameter, new_height, data):
+    distances = []
+    for i, row in data.iterrows():
+        # Calculate distance from new point to every known point
+        d = sqrt((new_diameter - row['Diameter'])**2 + (new_height - row['Height'])**2)
+        distances.append((d, row['Type']))
 
-D = df['D']
-h = df['h']
+    # Sort by distance (closest first)
+    distances.sort(key=lambda x: x[0])
 
-target = (8, 7.5) # tuple
-Dt = target[0] # Dt for D-target
-ht = target[1] # ht for h-target
+    # Return the type of the single closest neighbor (K=1)
+    return distances[0][1]
 
-plt.figure(figsize=(14,5)) # size of plot in inches
-
-for i,type_ in enumerate(df['type']): # i list for index type\_ for list element
-    D_ = D[i]
-    h_ = h[i]
-    dist = sqrt( (Dt-D_)**2 + (ht-h_)**2 ) # formula
-    
-    label = '{} \ndist:{}'.format(type_, round(dist, 2))
-    if type_ == 'bowl':
-        plt.scatter(D_, h_, marker='o', color='red')
-        plt.text(D_+0.3, h_, label, fontsize=9)
-    elif type_ == 'mug':
-        plt.scatter(D_, h_, marker='o', color='blue')
-        plt.text(D_+0.3, h_, label, fontsize=9)
-    elif type_ == 'plate':
-        plt.scatter(D_, h_, marker='o', color='green')
-        plt.text(D_+0.3, h_, label, fontsize=9)
-        
-    plt.scatter(Dt, ht, marker='x', color='green') # target point
-    
-plt.annotate('target', 
-    ha = 'center', va = 'bottom',
-    xytext = (Dt-2.5, ht-2),
-    xy = (Dt, ht),
-    arrowprops = { 'facecolor' : 'green', 'shrink' : 0.05 }) # target arrow
-plt.xlabel('diameter')
-plt.ylabel('height')
-plt.show()
+# Test with a new unknown item: Diameter 9cm, Height 14cm
+new_item = (9, 14)
+prediction = classify_item(9, 14, df)
+print(f"The unknown item is likely a: {prediction}")
 </code></pre>
-<p>output :</p>
-<p>[caption id=&rdquo;attachment_158&rdquo; align=&rdquo;aligncenter&rdquo; width=&rdquo;847&rdquo;]<img alt="distance to target" src="https://www.pythonmembers.club/wp-content/uploads/2018/05/machine_learning_dist_target.png" /> distance to target[/caption]</p>
-<p>we&rsquo;ll see that the distance is nearest to all mug samples i.e. from 1.5 to 4 than it is to the nearest bowl (dist:6.02) or plate (dist:15.89)</p>
-<p>so we can say that it is a mug / cup</p>
-<p>of course, since we are only calculating dist, <strong>we can tweak our code to do everything without graphs</strong>
-another sample</p>
-<hr />
-<p>consider the following cup with D:9 and h:14</p>
-<p>[caption id=&rdquo;attachment_156&rdquo; align=&rdquo;aligncenter&rdquo; width=&rdquo;512&rdquo;]<img alt="mug sample" src="https://www.pythonmembers.club/wp-content/uploads/2018/05/PicsArt_05-08-08.55.39.jpg" /> mug sample[/caption]</p>
-<p>we set our target to</p>
-<pre><code class="language-python">target = (9, 14) # tuple
+<hr/>
+<h2>Conclusion</h2>
+<p>This project demonstrates <strong>Supervised Learning</strong>. We provided the computer with “labeled” data (examples with known answers), and it used that information to make predictions about new data.</p>
+<p>While our manual implementation works for small datasets, in professional data science, we use libraries like <strong>Scikit-Learn</strong>. Using Scikit-Learn, you can implement K-NN in just three lines of code!</p>
+<p>Machine Learning doesn’t have to be scary. Sometimes, all you need is a ruler, a CSV file, and a little bit of Python.</p>
 
-</code></pre>
-<p>and our output is :</p>
-<p>[caption id=&rdquo;attachment_159&rdquo; align=&rdquo;aligncenter&rdquo; width=&rdquo;847&rdquo;]<img alt="sample two from kitchen" src="https://www.pythonmembers.club/wp-content/uploads/2018/05/machine_learning_dist_target-1.png" /> sample two graph[/caption]
-machine learning concept applied
-================================</p>
-<p>this is a k-nearest neighbour application which is labelled under classification aka the basic of machine learning.</p>
-<p>learning type: supervised learning</p>
-<p>this was a demo project normally much more data has to be collected !
-about the title</p>
-<hr />
-<p>i wanted to put up something that would not scare beginners off. my first title was :</p>
-<p><strong><em>identifying home cutlery items with a k-nearest neighbours inspired method</em></strong></p>
-<p>but no uninitiated would probably want to click on the link!</p>
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-23 10:00:00" class="text-gray-400 uppercase tracking-wider">November 23, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/chat-own-data-chatgpt-langchain">
+                                            <span class="absolute inset-0"></span>
+                                            Chat with your own data/text files using chatGPT and LangChain
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        There are many different approaches to chatting with your own data. 
+One way is to upload your PDF t...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-13 09:31:20" class="text-gray-400 uppercase tracking-wider">November 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/LangChain-understand-production-codebases">
+                                            <span class="absolute inset-0"></span>
+                                            Understand langChain to Quickly Get Started with Production Codebases
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
+If you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-04-13 11:09:08" class="text-gray-400 uppercase tracking-wider">April 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/word2vec-vectorizer-in-natural-language-processing">
+                                            <span class="absolute inset-0"></span>
+                                            Word2Vec Vectorizer in Natural Language Processing
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        In natural language processing, Word2Vec is one of the most widely used vectorization techniques use...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

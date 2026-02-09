@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='removing last columns of excel dataframe using pandas by index' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Efficient Column Removal in Pandas: Dropping by Index or Range | Python Kitchen</title>
+  <meta name="description" content="When cleaning data in Pandas, we often need to remove columns. While dropping by name (df.drop(columns=['Name'])) is common, there are many scenarios where it’s...">
+  <meta name="keywords" content="python, pandas, dataframe, data-cleaning, beginners, data science,  pandas">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/removing-last-columns-of-excel-dataframe-using-pandas-by-index/">
+  <meta property="og:title" content="Efficient Column Removal in Pandas: Dropping by Index or Range">
+  <meta property="og:description" content="When cleaning data in Pandas, we often need to remove columns. While dropping by name (df.drop(columns=['Name'])) is common, there are many scenarios where it’s...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/removing-last-columns-of-excel-dataframe-using-pandas-by-index/">
+  <meta property="twitter:title" content="Efficient Column Removal in Pandas: Dropping by Index or Range">
+  <meta property="twitter:description" content="When cleaning data in Pandas, we often need to remove columns. While dropping by name (df.drop(columns=['Name'])) is common, there are many scenarios where it’s...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='data science'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='removing last columns of excel dataframe using pandas by index'>
+  <meta name='subtitle' content='Efficient Column Removal in Pandas: Dropping by Index or Range'>
   <meta name='pageKey' content='removing-last-columns-of-excel-dataframe-using-pandas-by-index'>
-  <meta name='og:title' content='removing last columns of excel dataframe using pandas by index'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/removing-last-columns-of-excel-dataframe-using-pandas-by-index'>
-
-  <title>removing last columns of excel dataframe using pandas by index</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">removing last columns of excel dataframe using pandas by index</p>
+                    <p class="text-3xl" style="font-weight: 600;">Efficient Column Removal in Pandas: Dropping by Index or Range</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-07-22 09:19:28" class="text-gray-500">July 22, 2018</time>
@@ -163,7 +182,7 @@
                         </a>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            pandas
+                             pandas
                         </a>
                         
                     </div>
@@ -183,7 +202,156 @@
                     
                     <br>
                     <article>
-                        <p>in case this does not load, view it <a href="https://github.com/Abdur-rahmaanJ/data-sci-mach-learn-deep-learn/blob/master/pandas_excel_remcolbyindex.ipynb">here</a></p>
+                        <p>When cleaning data in Pandas, we often need to remove columns. While dropping by name (<code>df.drop(columns=['Name'])</code>) is common, there are many scenarios where it’s more efficient to drop columns by their <strong>index position</strong>. </p>
+<p>This is particularly useful when:
+1.  You have dozens of columns and don’t want to type their names.
+2.  Your columns have names that change frequently, but their order remains the same.
+3.  You want to remove the “last X” columns of a dataset.</p>
+<hr/>
+<h2>The Core Concept: <code>iloc</code> and <code>columns</code></h2>
+<p>To drop columns by index, we first need to identify the column names at those specific positions using the <code>iloc</code> or <code>columns</code> property.</p>
+<h3>1. Dropping a Single Column by Index</h3>
+<p>Let’s say we want to remove the 3rd column (index 2).</p>
+<pre><code class="language-python">import pandas as pd
+
+df = pd.read_excel("data.xlsx")
+
+# Get the name of the column at index 2
+col_to_drop = df.columns[2]
+
+# Drop it
+df = df.drop(columns=[col_to_drop])
+</code></pre>
+<hr/>
+<h2>2. Dropping a Range of Columns</h2>
+<p>A more powerful technique is to use Python’s slicing notation. If you want to drop the first 3 columns:</p>
+<pre><code class="language-python"># Get names of columns 0, 1, and 2
+cols_to_drop = df.columns[:3]
+
+df = df.drop(columns=cols_to_drop)
+</code></pre>
+<hr/>
+<h2>3. Removing the “Last X” Columns</h2>
+<p>This is a very common task in data cleaning, especially when Excel files have empty columns at the end. In Python, we can use negative indexing to refer to the end of the list.</p>
+<h3>To remove the last 2 columns:</h3>
+<pre><code class="language-python"># Get the names of the last two columns
+last_two = df.columns[-2:]
+
+df = df.drop(columns=last_two)
+</code></pre>
+<h3>A “One-Liner” using <code>iloc</code></h3>
+<p>Alternatively, you can keep only the columns you want using <code>iloc</code>. This is often cleaner:</p>
+<pre><code class="language-python"># Keep everything from the start up to the last two columns
+df = df.iloc[:, :-2]
+</code></pre>
+<p><em>The <code>:</code> before the comma means “keep all rows.” The <code>:-2</code> after the comma means “keep all columns except the last two.”</em></p>
+<hr/>
+<h2>Summary</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Goal</th>
+<th style="text-align: left;">Code Snippet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Drop by Name</strong></td>
+<td style="text-align: left;"><code>df.drop(columns=['ColName'])</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Drop by Index</strong></td>
+<td style="text-align: left;"><code>df.drop(df.columns[i], axis=1)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Drop First 3</strong></td>
+<td style="text-align: left;"><code>df.iloc[:, 3:]</code> (Keeps from 3 onwards)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Drop Last 2</strong></td>
+<td style="text-align: left;"><code>df.iloc[:, :-2]</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Conclusion</h2>
+<p>Knowing how to manipulate DataFrames by index allows you to write more flexible and automated data cleaning scripts. Whether you’re dealing with raw Excel dumps or scraped web data, mastering <code>iloc</code> and <code>drop</code> is essential for any aspiring data scientist.</p>
+<h3>Related Posts:</h3>
+<ul>
+<li><a href="https://www.pythonkitchen.com/preparing-an-excel-file-for-analysis-using-pandas/">Preparing Excel Files for Analysis in Pandas</a></li>
+<li><a href="https://www.pythonkitchen.com/preparing-an-excel-file-for-analysis-using-pandas/">How to Handle Missing Values in Pandas</a></li>
+</ul>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-07-22 08:04:25" class="text-gray-400 uppercase tracking-wider">July 22, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/preparing-an-excel-file-for-analysis-using-pandas">
+                                            <span class="absolute inset-0"></span>
+                                            How to Prepare Excel Files for Data Analysis with Pandas
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Excel is the world’s most popular data tool, but for advanced analysis and machine learning, we ofte...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-23 10:00:00" class="text-gray-400 uppercase tracking-wider">November 23, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/chat-own-data-chatgpt-langchain">
+                                            <span class="absolute inset-0"></span>
+                                            Chat with your own data/text files using chatGPT and LangChain
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        There are many different approaches to chatting with your own data. 
+One way is to upload your PDF t...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-13 09:31:20" class="text-gray-400 uppercase tracking-wider">November 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/LangChain-understand-production-codebases">
+                                            <span class="absolute inset-0"></span>
+                                            Understand langChain to Quickly Get Started with Production Codebases
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
+If you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

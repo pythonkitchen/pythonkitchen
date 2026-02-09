@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='PyQt5 / PySide2 How to get value of cells of selected row in QTableView in Python?' content=''>
-  <meta name='category' content='Uncategorized'>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PyQt5 / PySide2: How to Get Values from a Selected QTableView Row | Python Kitchen</title>
+  <meta name="description" content="When building desktop applications with PyQt5 or PySide2, the QTableView is the go-to widget for displaying spreadsheet-like data. A common requirement is to re...">
+  <meta name="keywords" content="python, pyqt5, pyside2, gui, qtableview, gui">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/pyqt5-value-cells-selected-row-qtview/">
+  <meta property="og:title" content="PyQt5 / PySide2: How to Get Values from a Selected QTableView Row">
+  <meta property="og:description" content="When building desktop applications with PyQt5 or PySide2, the QTableView is the go-to widget for displaying spreadsheet-like data. A common requirement is to re...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/pyqt5-value-cells-selected-row-qtview/">
+  <meta property="twitter:title" content="PyQt5 / PySide2: How to Get Values from a Selected QTableView Row">
+  <meta property="twitter:description" content="When building desktop applications with PyQt5 or PySide2, the QTableView is the go-to widget for displaying spreadsheet-like data. A common requirement is to re...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <meta name='category' content='gui'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='PyQt5 / PySide2 How to get value of cells of selected row in QTableView in Python?'>
+  <meta name='subtitle' content='PyQt5 / PySide2: How to Get Values from a Selected QTableView Row'>
   <meta name='pageKey' content='pyqt5-value-cells-selected-row-qtview'>
-  <meta name='og:title' content='PyQt5 / PySide2 How to get value of cells of selected row in QTableView in Python?'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/pyqt5-value-cells-selected-row-qtview'>
-
-  <title>PyQt5 / PySide2 How to get value of cells of selected row in QTableView in Python?</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,13 +172,13 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">PyQt5 / PySide2 How to get value of cells of selected row in QTableView in Python?</p>
+                    <p class="text-3xl" style="font-weight: 600;">PyQt5 / PySide2: How to Get Values from a Selected QTableView Row</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2019-01-21 07:43:27" class="text-gray-500">January 21, 2019</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            Uncategorized
+                            gui
                         </a>
                         
                     </div>
@@ -179,20 +198,166 @@
                     
                     <br>
                     <article>
-                        <p>Question:</p>
-<p>My QTableView is set to select by rows only. How do i get the value of cells in the selected row?</p>
-<p>Answer:</p>
-<pre><code>selection_model = tableview.selectionModel()
+                        <p>When building desktop applications with PyQt5 or PySide2, the <code>QTableView</code> is the go-to widget for displaying spreadsheet-like data. A common requirement is to retrieve the data from a row when a user clicks on it.</p>
+<p>In this guide, we’ll show you the most efficient way to access cell data using the <strong>Selection Model</strong> and the <code>sibling()</code> method.</p>
+<hr/>
+<h2>The Core Solution</h2>
+<p>To get data from a selected row, you first need to access the table’s <code>selectionModel()</code>. Once you have the current index, you can “look sideways” to other columns in that same row using the <code>sibling()</code> function.</p>
+<h3>Code Snippet</h3>
+<pre><code class="language-python"># 1. Get the selection model
+selection_model = tableview.selectionModel()
 
+if selection_model.hasSelection():
+    # 2. Get the index of the currently clicked cell
+    current_index = selection_model.currentIndex()
+    row = current_index.row()
 
-        if selection_model.hasSelection():
+    # 3. Use sibling to get data from other columns in the same row
+    # sibling(row, column)
+    id_val = current_index.sibling(row, 0).data()
+    name_val = current_index.sibling(row, 1).data()
 
-
-           _index = selection_model.currentIndex()  
-             first_cell = _index.sibling(_index.row(), 0).data() # replace the 0 by the desired index  
-             second_cell = _index.sibling(_index.row(), 1).data() 
-
+    print(f"Selected Row {row}: ID={id_val}, Name={name_val}")
 </code></pre>
+<hr/>
+<h2>A Complete, Runnable Example</h2>
+<p>Here is a full Python script demonstrating a functional table with a “Get Selection” button.</p>
+<pre><code class="language-python">import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow, QTableView, QVBoxLayout, QWidget, QPushButton
+from PyQt5.QtGui import QStandardItemModel, QStandardItem
+
+class TableApp(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("PyQt5 Table Selection Demo")
+        self.setGeometry(100, 100, 400, 300)
+
+        # 1. Setup the Model
+        self.model = QStandardItemModel(4, 2)
+        self.model.setHorizontalHeaderLabels(['ID', 'Name'])
+
+        data = [('1', 'Alice'), ('2', 'Bob'), ('3', 'Charlie')]
+        for r, (uid, name) in enumerate(data):
+            self.model.setItem(r, 0, QStandardItem(uid))
+            self.model.setItem(r, 1, QStandardItem(name))
+
+        # 2. Setup the View
+        self.table = QTableView()
+        self.table.setModel(self.model)
+        self.table.setSelectionBehavior(QTableView.SelectRows) # Select full rows
+
+        # 3. Setup Layout
+        layout = QVBoxLayout()
+        layout.addWidget(self.table)
+
+        btn = QPushButton("Print Selected Data")
+        btn.clicked.connect(self.print_selection)
+        layout.addWidget(btn)
+
+        container = QWidget()
+        container.setLayout(layout)
+        self.setCentralWidget(container)
+
+    def print_selection(self):
+        index = self.table.selectionModel().currentIndex()
+        if index.isValid():
+            row = index.row()
+            # Get data from column 1 (Name)
+            name = index.sibling(row, 1).data()
+            print(f"You selected: {name}")
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = TableApp()
+    window.show()
+    sys.exit(app.exec_())
+</code></pre>
+<hr/>
+<h2>Why use <code>sibling()</code>?</h2>
+<p>Using <code>sibling(row, column)</code> is considered the best practice in Qt’s Model/View architecture because:
+1.  <strong>Safety:</strong> It ensures you are looking at the data relative to the current selection.
+2.  <strong>Performance:</strong> It directly accesses the model’s index without needing to loop through the entire dataset.
+3.  <strong>Flexibility:</strong> It works even if your table is sorted or filtered.</p>
+<h2>Summary Checklist</h2>
+<ul>
+<li>Set <code>selectionBehavior</code> to <code>SelectRows</code> if you want the whole row highlighted.</li>
+<li>Check if <code>hasSelection()</code> or <code>isValid()</code> is true before accessing data to avoid crashes.</li>
+<li>Use <code>index.row()</code> to identify the row number.</li>
+<li>Use <code>index.sibling(row, col).data()</code> to extract the actual value.</li>
+</ul>
+<p>Happy coding with PyQt!</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2019-11-06 18:19:38" class="text-gray-400 uppercase tracking-wider">November 6, 2019</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/pyqt5-pyside2-qtableview-how-to-find-out-if-row-is-selected-and-which-one-in-python">
+                                            <span class="absolute inset-0"></span>
+                                            PyQt5 / PySide2 QTableView how to find out if row is selected and which one in Python?
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Question: I have a QTableView in PyQT5 / PySide2
+I want to
+* Know if a row is selected (my tableview...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-04-29 21:08:30" class="text-gray-400 uppercase tracking-wider">April 29, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/a-fix-to-tkinter-output-not-showing">
+                                            <span class="absolute inset-0"></span>
+                                            Troubleshooting Tkinter: Why is My GUI Output Not Showing?
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Tkinter is the most common way for beginners to start building GUIs in Python. It’s powerful, but it...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-04-25 11:52:45" class="text-gray-400 uppercase tracking-wider">April 25, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/tkinter-tackling-import-for-python-2-and-3">
+                                            <span class="absolute inset-0"></span>
+                                            How to Import Tkinter in Python 2 and 3: A Cross-Compatibility Guide
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Tkinter is the standard GUI (Graphical User Interface) package that comes bundled with most Python i...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

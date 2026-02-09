@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Raspberry-Pi setup – part 2 : establishing ssh connection' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remote Access: How to Establish an SSH Connection to Your Raspberry Pi | Python Kitchen</title>
+  <meta name="description" content="One of the greatest features of the Raspberry Pi is that you don’t actually need a dedicated monitor or keyboard to use it. Through SSH (Secure Shell), you can ...">
+  <meta name="keywords" content="raspberry-pi, ssh, linux, remote-access, networking, raspberry pi">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/raspberry-pi-setup-establishing-ssh-connection/">
+  <meta property="og:title" content="Remote Access: How to Establish an SSH Connection to Your Raspberry Pi">
+  <meta property="og:description" content="One of the greatest features of the Raspberry Pi is that you don’t actually need a dedicated monitor or keyboard to use it. Through SSH (Secure Shell), you can ...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/raspberry-pi-setup-establishing-ssh-connection/">
+  <meta property="twitter:title" content="Remote Access: How to Establish an SSH Connection to Your Raspberry Pi">
+  <meta property="twitter:description" content="One of the greatest features of the Raspberry Pi is that you don’t actually need a dedicated monitor or keyboard to use it. Through SSH (Secure Shell), you can ...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='raspberry pi'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Raspberry-Pi setup – part 2 : establishing ssh connection'>
+  <meta name='subtitle' content='Remote Access: How to Establish an SSH Connection to Your Raspberry Pi'>
   <meta name='pageKey' content='raspberry-pi-setup-establishing-ssh-connection'>
-  <meta name='og:title' content='Raspberry-Pi setup – part 2 : establishing ssh connection'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/raspberry-pi-setup-establishing-ssh-connection'>
-
-  <title>Raspberry-Pi setup – part 2 : establishing ssh connection</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Raspberry-Pi setup – part 2 : establishing ssh connection</p>
+                    <p class="text-3xl" style="font-weight: 600;">Remote Access: How to Establish an SSH Connection to Your Raspberry Pi</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-06-20 16:44:45" class="text-gray-500">June 20, 2018</time>
@@ -179,30 +198,125 @@
                     
                     <br>
                     <article>
-                        <p>establishing an ssh connection is incredibly useful to manage your pi from another device/remotely be it your android phone or pc</p>
-<p><img alt="" src="https://www.putty.org/Putty.png" />
-Steps
-=====</p>
+                        <p>One of the greatest features of the Raspberry Pi is that you don’t actually need a dedicated monitor or keyboard to use it. Through <strong>SSH (Secure Shell)</strong>, you can control your Pi’s terminal from your main laptop, tablet, or even your smartphone. </p>
+<p>This is known as running “headless,” and it is the standard way to manage Raspberry Pi servers and IoT projects.</p>
+<hr/>
+<h2>Prerequisites</h2>
+<p>Before you can connect, ensure that:
+1.  <strong>SSH is enabled on the Pi:</strong> You can do this via the “Interfacing Options” in <code>sudo raspi-config</code> or by placing an empty file named <code>ssh</code> in the root of your SD card.
+2.  <strong>Both devices are on the same network:</strong> Your computer and the Pi must be connected to the same Wi-Fi or Ethernet router.</p>
+<hr/>
+<h2>Step 1: Find Your Pi’s IP Address</h2>
+<p>To connect, you need to know where the Pi is on your network.</p>
+<h3>Method A: Use the Hostname</h3>
+<p>By default, the Pi’s hostname is <code>raspberrypi</code>. Most modern routers and computers allow you to reach it at <code>raspberrypi.local</code>.</p>
+<h3>Method B: Network Scanning</h3>
+<p>If the hostname doesn’t work, you can scan your network for devices.
+*   <strong>Mobile:</strong> Use an app like <strong>Fing</strong> or <strong>FindPi</strong> to see a list of all devices on your Wi-Fi.
+*   <strong>Desktop:</strong> Use <strong>Angry IP Scanner</strong> to find the IP address (usually looks like <code>192.168.1.X</code>).</p>
+<hr/>
+<h2>Step 2: Connecting via SSH</h2>
+<h3>On Windows (using PuTTY)</h3>
+<ol>
+<li>Download and open <a href="https://www.putty.org/">PuTTY</a>.</li>
+<li>In the <strong>Host Name</strong> field, enter the IP address or <code>raspberrypi.local</code>.</li>
+<li>Ensure the port is set to <strong>22</strong>.</li>
+<li>Click <strong>Open</strong>. If a security alert appears, click “Yes.”</li>
+</ol>
+<h3>On macOS / Linux (using Terminal)</h3>
+<p>Open your terminal and type the following command:</p>
+<pre><code class="language-bash">ssh pi@raspberrypi.local
+</code></pre>
+<p><em>(Replace <code>raspberrypi.local</code> with the IP address if needed)</em></p>
+<hr/>
+<h2>Step 3: Logging In</h2>
+<p>When prompted, enter the default credentials:
+*   <strong>Default Username:</strong> <code>pi</code>
+*   <strong>Default Password:</strong> <code>raspberry</code></p>
+<p><em>Note: When you type your password, you won’t see any characters appearing on the screen. This is a security feature in Linux—just type it blindly and hit Enter.</em></p>
+<hr/>
+<h2>Essential Security: Change Your Password!</h2>
+<p>Now that you are logged in, the first thing you should do is change the default password. Since every Pi starts with the same password, leaving it unchanged makes your device a target for hackers.</p>
+<p>Type this command and follow the prompts:</p>
+<pre><code class="language-bash">passwd
+</code></pre>
+<h2>Conclusion</h2>
+<p>You are now controlling your Raspberry Pi remotely! You can run updates, install software, and write code all from the comfort of your main computer. SSH is an essential skill for any Pi enthusiast.</p>
+<h3>Next Steps:</h3>
 <ul>
-<li>connect the pi to the internet</li>
-<li>locate pi</li>
-<li>start ssh connection</li>
+<li><a href="https://www.pythonkitchen.com/installing-opencv-on-the-pi3-with-python3-and-usb-webcam/">How to Install OpenCV on your Pi 3</a></li>
+<li><a href="https://www.pythonkitchen.com/web-mail-interface-using-pi-and-flask/">Building a Web Mail Interface with Flask and Pi</a></li>
 </ul>
-<h2>connect the pi to the internet</h2>
-<p>using a two endpoints network cable, connect the pi to your router, or if you have a monitor+keyboard+mouse setup, connect to wifi (we are using pi3)
-Locating the pi</p>
-<hr />
-<p>(make sure <a href="https://www.pythonmembers.club/2018/06/18/raspberry-pi-setup/">ssh is enabled</a> before)</p>
-<p>you can use <a href="https://angryip.org/download/">angry scanner</a> in the range 192.168.137.0 - 192.168.137.255 or 192.168.100.0 - 192.168.100.255, etc depending on your network. pi has hostname pi.local&hellip;</p>
-<p>personally i use findPi on the play store (an android app)
-start ssh connection</p>
-<hr />
-<p><a href="https://www.putty.org">download putty</a>, a popular ssh client</p>
-<p>make sure ssh is selected, let the default port (22)</p>
-<p>enter the pi hostname or ip address found</p>
-<p>default user is pi</p>
-<p>default password is raspberry</p>
-<p>if successful, you should be directed to the pi command line interface !</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-07-01 07:32:45" class="text-gray-400 uppercase tracking-wider">July 1, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/web-mail-interface-using-pi-and-flask">
+                                            <span class="absolute inset-0"></span>
+                                            Building a Web Mail Client with Flask and Raspberry Pi
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Have you ever wondered how web-based email clients like Gmail or Outlook actually work? At their cor...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-06-18 11:42:03" class="text-gray-400 uppercase tracking-wider">June 18, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/raspberry-pi-setup">
+                                            <span class="absolute inset-0"></span>
+                                            Setting Up Your Raspberry Pi 3: A Step-by-Step OS Installation Guide
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        The Raspberry Pi is a remarkably powerful credit-card-sized computer, but when you first take it out...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2026-02-09 10:30:00" class="text-gray-400 uppercase tracking-wider">February 9, 2026</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/publish-python-package-using-uv-pypi-token">
+                                            <span class="absolute inset-0"></span>
+                                            Publishing a Python Package with uv and a PyPI Token
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Publishing a Python package used to feel like a small battle: setup.py rituals, half-forgotten twine...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

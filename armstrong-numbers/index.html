@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,38 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Armstrong Numbers' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding Armstrong Numbers in Python | Python Kitchen</title>
+  <meta name="description" content="In this post, we’ll explore a classic beginner programming problem: Armstrong Numbers.
+What is an Armstrong Number?
+An Armstrong number (also known as a Narciss...">
+  <meta name="keywords" content="python, programming-challenge, beginners, math, programming problems">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/armstrong-numbers/">
+  <meta property="og:title" content="Understanding Armstrong Numbers in Python">
+  <meta property="og:description" content="In this post, we’ll explore a classic beginner programming problem: Armstrong Numbers.
+What is an Armstrong Number?
+An Armstrong number (also known as a Narciss...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/armstrong-numbers/">
+  <meta property="twitter:title" content="Understanding Armstrong Numbers in Python">
+  <meta property="twitter:description" content="In this post, we’ll explore a classic beginner programming problem: Armstrong Numbers.
+What is an Armstrong Number?
+An Armstrong number (also known as a Narciss...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='programming problems'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Armstrong Numbers'>
+  <meta name='subtitle' content='Understanding Armstrong Numbers in Python'>
   <meta name='pageKey' content='armstrong-numbers'>
-  <meta name='og:title' content='Armstrong Numbers'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/armstrong-numbers'>
-
-  <title>Armstrong Numbers</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +118,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +178,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Armstrong Numbers</p>
+                    <p class="text-3xl" style="font-weight: 600;">Understanding Armstrong Numbers in Python</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-12-27 19:27:39" class="text-gray-500">December 27, 2018</time>
@@ -179,42 +204,130 @@
                     
                     <br>
                     <article>
-                        <p>we start the problem series on PMC (Python Members Club) with Armstrong Numbers. </p>
-<h2>definition</h2>
-<p><strong>an armstrong number is a number such that the sum of the digits in the number raised to the number of digits equals the number itself</strong></p>
-<p>breaking down</p>
-<p><em>sum of the digits in the number</em></p>
-<p>let us take number abc, sum is </p>
-<p>a + b + c</p>
-<p><em>raised to the number of digits</em></p>
-<p>num of digits in abc is 3</p>
-<p>a^3 + b^3 + c^3</p>
-<p><em>equals the number itself</em></p>
-<p>a^3 + b^3 + c^3 == abc</p>
-<h2>examples</h2>
-<p>1 - 123, number of digits: 3, hence risen to power 3</p>
-<p>1^3 + 2^3 + 3^3 -&gt; 36, not equals 123</p>
-<p>2 - 153 , number of digits: 3, hence risen to power 3</p>
-<p>1^3 + 5^3 + 3^3 -&gt;1 + 125 + 27 -&gt; 153, sum same as number</p>
-<p>3 - 8208, number of digits, hence risen to power 4</p>
-<p>8^4 + 2^4 + 0^4 + 8^4 -&gt;4096 + 16 + 0 + 4096-&gt; 8208, sum same as number</p>
-<h2><strong>our code</strong></h2>
-<pre><code class="language-python">
-for i in range(1000000):
-     num = str(i)
-     sumcube = 0
-     for n in num:
-         sumcube += (int(n) ** len(num))
-     if i == sumcube:
-         print(i, 'is an armstrong number')
+                        <p>In this post, we’ll explore a classic beginner programming problem: <strong>Armstrong Numbers</strong>.</p>
+<h2>What is an Armstrong Number?</h2>
+<p>An Armstrong number (also known as a Narcissistic number) is a number that is equal to the sum of its own digits each raised to the power of the number of digits.</p>
+<p><strong>Formula:</strong>
+If a number $N$ has $d$ digits ($a, b, c, …$), then:
+$$N = a^d + b^d + c^d + …$$</p>
+<h3>Examples</h3>
+<p><strong>1. Number: 153</strong>
+*   Digits: 1, 5, 3
+*   Number of digits ($d$): 3
+*   Calculation: $1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153$
+*   Result: <strong>Yes</strong>, 153 is an Armstrong number.</p>
+<p><strong>2. Number: 1634</strong>
+*   Digits: 1, 6, 3, 4
+*   Number of digits ($d$): 4
+*   Calculation: $1^4 + 6^4 + 3^4 + 4^4 = 1 + 1296 + 81 + 256 = 1634$
+*   Result: <strong>Yes</strong>, 1634 is an Armstrong number.</p>
+<p><strong>3. Number: 123</strong>
+*   Digits: 1, 2, 3
+*   Number of digits ($d$): 3
+*   Calculation: $1^3 + 2^3 + 3^3 = 1 + 8 + 27 = 36$
+*   Result: <strong>No</strong>, 123 is not an Armstrong number (36 != 123).</p>
+<hr/>
+<h2>Python Implementation</h2>
+<p>Here is a Python script to find all Armstrong numbers up to 1,000,000.</p>
+<pre><code class="language-python">def is_armstrong(number):
+    # Convert number to string to easily iterate digits
+    num_str = str(number)
+    num_digits = len(num_str)
 
+    sum_of_powers = 0
+    for digit in num_str:
+        sum_of_powers += int(digit) ** num_digits
+
+    return sum_of_powers == number
+
+# Find Armstrong numbers in a range
+print("Finding Armstrong numbers up to 1,000,000:")
+for i in range(1000000):
+    if is_armstrong(i):
+        print(f"{i} is an Armstrong number")
 </code></pre>
-<h2>the logic</h2>
-<p>for i in &hellip; spits out a number each time for us to deal with</p>
-<p>num = str(i) transform the integer into string &hellip;</p>
-<p>&hellip; which allows us a neat python trick: iterating over a string. that way we instantly get the 3 1 9 of 319. the conventional approach would have been to divide by 100 10 and 1 to get 3 1 9</p>
-<p>nothing spooky, out of reach eh &hellip;</p>
-<p>anything? drop a word below ^^</p>
+<h3>How it Works</h3>
+<ol>
+<li><strong><code>str(number)</code></strong>: Converting the integer to a string allows us to easily count the digits (<code>len()</code>) and iterate through them.</li>
+<li><strong><code>int(digit) ** num_digits</code></strong>: We convert each character back to an integer and raise it to the power of the total count of digits.</li>
+<li><strong>Comparison</strong>: Finally, we check if our calculated sum equals the original number.</li>
+</ol>
+<p>Try running this code and see which numbers pop up! It’s a great exercise for practicing loops and type conversions.</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2025-02-15 15:40:00" class="text-gray-400 uppercase tracking-wider">February 15, 2025</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/simple-json-parser">
+                                            <span class="absolute inset-0"></span>
+                                            Simple JSON parser without knowing anything beforehands
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Table of Content
+
+Introduction
+Scanning the text
+Looking for specific characters
+Identifying element...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-12-29 15:00:00" class="text-gray-400 uppercase tracking-wider">December 29, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/checking-for-prime">
+                                            <span class="absolute inset-0"></span>
+                                            Checking for Prime Numbers in Python
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Checking if a number is prime is a fundamental programming task. A prime number is a natural number ...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-12-28 19:35:04" class="text-gray-400 uppercase tracking-wider">December 28, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/reviving-bertrand-russell-through-python">
+                                            <span class="absolute inset-0"></span>
+                                            Markov Chains in Python: Reviving Bertrand Russell's Prose
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Have you ever finished a book by a brilliant author and wished there was just one more chapter? Whil...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

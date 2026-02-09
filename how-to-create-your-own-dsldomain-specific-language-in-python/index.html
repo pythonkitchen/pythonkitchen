@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='how to create your own DSL(Domain Specific Language) in python' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creating Your Own Domain Specific Language (DSL) in Python | Python Kitchen</title>
+  <meta name="description" content="Sometimes, a standard CLI tool isn’t enough, but a full-blown programming language is overkill. This is where a Domain Specific Language (DSL) shines. A DSL is ...">
+  <meta name="keywords" content="python, dsl, compiler-theory, automation, programming, compiler theory">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/how-to-create-your-own-dsldomain-specific-language-in-python/">
+  <meta property="og:title" content="Creating Your Own Domain Specific Language (DSL) in Python">
+  <meta property="og:description" content="Sometimes, a standard CLI tool isn’t enough, but a full-blown programming language is overkill. This is where a Domain Specific Language (DSL) shines. A DSL is ...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/how-to-create-your-own-dsldomain-specific-language-in-python/">
+  <meta property="twitter:title" content="Creating Your Own Domain Specific Language (DSL) in Python">
+  <meta property="twitter:description" content="Sometimes, a standard CLI tool isn’t enough, but a full-blown programming language is overkill. This is where a Domain Specific Language (DSL) shines. A DSL is ...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='compiler theory'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='how to create your own DSL(Domain Specific Language) in python'>
+  <meta name='subtitle' content='Creating Your Own Domain Specific Language (DSL) in Python'>
   <meta name='pageKey' content='how-to-create-your-own-dsldomain-specific-language-in-python'>
-  <meta name='og:title' content='how to create your own DSL(Domain Specific Language) in python'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/how-to-create-your-own-dsldomain-specific-language-in-python'>
-
-  <title>how to create your own DSL(Domain Specific Language) in python</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">how to create your own DSL(Domain Specific Language) in python</p>
+                    <p class="text-3xl" style="font-weight: 600;">Creating Your Own Domain Specific Language (DSL) in Python</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-09-03 05:50:09" class="text-gray-500">September 3, 2018</time>
@@ -179,82 +198,151 @@
                     
                     <br>
                     <article>
-                        <p>Sometimes you need more than a cli program. You need more flexibility and control. A Domain Specific Language (DSL) is the right fit for specialised tasks. This post shows how you can build your own.</p>
-<p>Some rough notes/planning :</p>
-<pre><code class="language-python">aim : calculate cost of houses
-
-input :
-num of houses
-price of house
-
-output :
-price of houses
-
-technical tasks :
-show to screen
-
---- file ---
-
-house num 1,000
-house price 250,000
-calculate sum
-
---- output ---
-
-$ 250 000 000
-</code></pre>
-<h2>the code</h2>
-<pre><code class="language-python"># py 3.7
-import locale
-
-source = '''
-# calculates price of houses
+                        <p>Sometimes, a standard CLI tool isn’t enough, but a full-blown programming language is overkill. This is where a <strong>Domain Specific Language (DSL)</strong> shines. A DSL is a mini-language designed to solve a very specific problem—think SQL for databases or HTML for web structure.</p>
+<p>In this tutorial, we’ll build a simple DSL to calculate the total cost of a real estate portfolio. This will combine concepts from our <a href="https://www.pythonkitchen.com/building-a-lexer-in-python-tutorial/">Lexer</a> and <a href="https://www.pythonkitchen.com/building-an-indentation-analyser-in-python-tutorial/">Indentation Analyser</a> guides into a practical application.</p>
+<hr/>
+<h2>The Vision: Our Custom Syntax</h2>
+<p>We want a language that looks like this:</p>
+<pre><code class="language-text"># Real Estate Calculator
 house num 100
 house price 250,000
 calculate price
+</code></pre>
+<p>It’s readable, human-friendly, and perfectly tailored to our task.</p>
+<hr/>
+<h2>Implementation: The Parser</h2>
+<p>A simple way to build a DSL in Python is to read the source code line-by-line and split each line into “tokens.”</p>
+<pre><code class="language-python">import locale
+
+# Sample source code in our custom DSL
+source_code = '''
+# Property Analysis
+house num 12
+house price 350,000
+calculate price
 '''
 
-def calculate(houses, unit_price):
-    calc_price = houses * unit_price
-    return calc_price
-
-def output(price):
-    # $ 250 000
-    locale.setlocale(locale.LC_ALL, '')
-    return f'{locale.currency(price, grouping=True)}'
-
-def sanitise_price(price):
-    # 250,000 -&gt; 250 000
-    return int(price.replace(',', ''))
-
-def parse(source):
-    houses = 0
+def parse_dsl(source):
+    num_houses = 0
     unit_price = 0
-    calc_price = 0
-    lines = [i for i in source.split('\n') if i]
+
+    lines = source.strip().split('\n')
+
     for line in lines:
-        # simplification
         tokens = line.split()
-        # comment
-        if tokens[0] == '#':
+
+        # 1. Ignore comments and empty lines
+        if not tokens or tokens[0] == '#':
             continue
-        # commands
-        elif tokens[0] == 'house':
+
+        # 2. Handle 'house' commands
+        if tokens[0] == 'house':
             if tokens[1] == 'num':
-                houses = sanitise_price(tokens[2])
+                num_houses = int(tokens[2])
             elif tokens[1] == 'price':
-                unit_price = sanitise_price(tokens[2])
-        elif tokens[0] == 'calculate' and tokens[1] == 'price':
-            calc_price = calculate(houses, unit_price)
-            print(output(calc_price))
+                # Remove commas and convert to int
+                unit_price = int(tokens[2].replace(',', ''))
 
-parse(source)
+        # 3. Handle 'calculate' commands
+        elif tokens[0] == 'calculate':
+            if tokens[1] == 'price':
+                total = num_houses * unit_price
+                print(f"Total Portfolio Value: {format_currency(total)}")
 
+def format_currency(amount):
+    # Standard Python formatting for currency
+    return "${:,.2f}".format(amount)
+
+# Run our DSL
+parse_dsl(source_code)
 </code></pre>
-<p>you must  modify it to read from file
-last words</p>
-<hr />
-<p>it might seem simple (it is) but at corporate level, the future await those who dare. a script might be simple, but if it does the job, no prob.</p>
+<hr/>
+<h2>Why go through the trouble?</h2>
+<h3>1. Empowerment</h3>
+<p>DSLs allow non-programmers (like accountants or researchers) to write complex logic using a syntax that makes sense to them. </p>
+<h3>2. Validation</h3>
+<p>Because your DSL is specialized, your parser can catch errors that a general language wouldn’t. For example, your parser can throw an error if someone tries to set a negative number of houses.</p>
+<h3>3. Maintainability</h3>
+<p>If the logic for calculating “total price” changes (e.g., adding a tax rate), you only need to change it in one place (the Python function), and all your DSL scripts will automatically use the new logic.</p>
+<hr/>
+<h2>Conclusion</h2>
+<p>Building a DSL is the ultimate form of automation. You aren’t just writing a script; you’re writing a tool that allows others to write their own scripts. </p>
+<p>If you want to take this further, check out the <strong><code>ply</code></strong> or <strong><code>lark</code></strong> libraries in Python—they are designed to help you build much more complex and powerful languages!</p>
+<h3>Further Reading:</h3>
+<ul>
+<li><a href="https://www.pythonkitchen.com/building-a-lexer-in-python-tutorial/">Building a Lexer in Python</a></li>
+<li><a href="https://www.pythonkitchen.com/building-an-indentation-analyser-in-python-tutorial/">Building an Indentation Analyser</a></li>
+</ul>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2019-07-18 15:02:53" class="text-gray-400 uppercase tracking-wider">July 18, 2019</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/dsl-python-new-language-how-to-build-a-css-pre-processor-like-sass-from-scratch-dotdot">
+                                            <span class="absolute inset-0"></span>
+                                            DSL / Python / New Language: How to build a CSS pre-processor (like SASS) from scratch (DotDot)
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        If you are in web development, maybe you’ve heard of Sass, Less, Pug, Stylus etc. All these are pre-...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-05-04 08:31:13" class="text-gray-400 uppercase tracking-wider">May 4, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/building-an-indentation-analyser-in-python-tutorial">
+                                            <span class="absolute inset-0"></span>
+                                            Building an Indentation Analyser in Python: A Comprehensive Guide
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        In many programming languages, like C or Java, scope is defined by curly braces {}. However, languag...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-05-01 11:48:58" class="text-gray-400 uppercase tracking-wider">May 1, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/building-a-lexer-in-python-tutorial">
+                                            <span class="absolute inset-0"></span>
+                                            Building a Lexer in Python: A Step-by-Step Tutorial
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Understanding how to build a lexer (lexical analyzer) is a rite of passage for many programmers. It ...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

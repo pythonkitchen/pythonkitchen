@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='handling curly braces in string formatting - python' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Escape Curly Braces in Python String Formatting | Python Kitchen</title>
+  <meta name="description" content="When using Python’s string formatting methods, curly braces {} are special characters used as placeholders for variables. But what happens when you actually wan...">
+  <meta name="keywords" content="python, strings, formatting, coding-tips, language core">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/handling-curly-braces-in-string-formatting-python/">
+  <meta property="og:title" content="How to Escape Curly Braces in Python String Formatting">
+  <meta property="og:description" content="When using Python’s string formatting methods, curly braces {} are special characters used as placeholders for variables. But what happens when you actually wan...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/handling-curly-braces-in-string-formatting-python/">
+  <meta property="twitter:title" content="How to Escape Curly Braces in Python String Formatting">
+  <meta property="twitter:description" content="When using Python’s string formatting methods, curly braces {} are special characters used as placeholders for variables. But what happens when you actually wan...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='language core'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='handling curly braces in string formatting - python'>
+  <meta name='subtitle' content='How to Escape Curly Braces in Python String Formatting'>
   <meta name='pageKey' content='handling-curly-braces-in-string-formatting-python'>
-  <meta name='og:title' content='handling curly braces in string formatting - python'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/handling-curly-braces-in-string-formatting-python'>
-
-  <title>handling curly braces in string formatting - python</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">handling curly braces in string formatting - python</p>
+                    <p class="text-3xl" style="font-weight: 600;">How to Escape Curly Braces in Python String Formatting</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-05-09 08:35:34" class="text-gray-500">May 9, 2018</time>
@@ -179,22 +198,132 @@
                     
                     <br>
                     <article>
-                        <p>let us say you want to print :</p>
-<pre><code class="language-python">{text}
+                        <p>When using Python’s string formatting methods, curly braces <code>{}</code> are special characters used as placeholders for variables. But what happens when you actually want to print a literal curly brace?</p>
+<p>If you try to use a standard backslash escape like <code>\{</code>, you’ll find it doesn’t work as expected. In this guide, we’ll look at the correct way to escape braces in both <code>.format()</code> and <strong>f-strings</strong>.</p>
+<hr/>
+<h2>Escaping in <code>.format()</code></h2>
+<p>If you are using the <code>.format()</code> method, the rule is simple: <strong>Double the braces.</strong></p>
+<p>To print <code>{</code>, use <code>{{</code>.
+To print <code>}</code>, use <code>}}</code>.</p>
+<h3>Example:</h3>
+<pre><code class="language-python">content = "Hello World"
+
+# We want the output to be: {Hello World}
+result = "{{ {} }}".format(content)
+
+print(result) 
+# Output: { Hello World }
 </code></pre>
-<p>using</p>
-<pre><code class="language-python">'{ {} }'.format(content)
+<p>By doubling the outer braces, you tell Python: “Treat these as literal characters, not as a placeholder.”</p>
+<hr/>
+<h2>Escaping in f-strings (Python 3.6+)</h2>
+<p>f-strings are the modern and preferred way to format strings in Python. The escaping rule is the same as <code>.format()</code>: you must double the braces.</p>
+<h3>Example:</h3>
+<pre><code class="language-python">name = "Python"
+
+# We want: {Python} is cool
+print(f"{{ {name} }} is cool")
+# Output: { Python } is cool
 </code></pre>
-<p>how to escape the {}?</p>
-<pre><code class="language-python">'\{ {} \}'.format(content)
+<h3>Triple Braces?</h3>
+<p>What if you want to include a literal brace AND a variable inside it without spaces? You end up with triple braces:</p>
+<pre><code class="language-python">val = 10
+print(f"{{{val}}}")
+# Output: {10}
 </code></pre>
-<p>works not
-the answer
-==========</p>
-<p>the answer is to double curly braces like that :</p>
-<pre><code class="language-python">'{{ {} }}'.format(content)
-</code></pre>
-<p>simple !</p>
+<ul>
+<li>The first two <code>{{</code> become a literal <code>{</code>.</li>
+<li>The third <code>{</code> starts the variable expression <code>{val}</code>.</li>
+<li>The first <code>}</code> ends the variable expression.</li>
+<li>The next two <code>}}</code> become a literal <code>}</code>.</li>
+</ul>
+<hr/>
+<h2>When to use this?</h2>
+<p>This is particularly useful when:
+1.  <strong>Generating JSON:</strong> JSON uses curly braces for objects. If you are building a JSON string manually (though you should usually use the <code>json</code> library!), you’ll need to escape them.
+2.  <strong>Generating CSS:</strong> If you are writing a script that generates CSS code, you’ll need literal braces for selectors.
+3.  <strong>Mathematical notation:</strong> When printing sets or equations that involve braces.</p>
+<h2>Summary</h2>
+<ul>
+<li><strong>Don’t use backslashes</strong> (<code>\{</code>) for braces in strings.</li>
+<li><strong>Always double them</strong> (<code>{{</code> or <code>}}</code>) when using <code>.format()</code> or f-strings.</li>
+</ul>
+<p>Python’s string formatting is incredibly powerful, and knowing these small “gotchas” will save you a lot of debugging time when your output looks unexpected!</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2019-07-22 15:20:18" class="text-gray-400 uppercase tracking-wider">July 22, 2019</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/string-manipulation-functions-the-top-5-you-forgot-to-pack">
+                                            <span class="absolute inset-0"></span>
+                                            String Manipulation Functions: The Top 5 You Forgot To Pack
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        String manipulation functions, good ones are available by default in Python. Ignorance make people a...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2026-02-09 10:30:00" class="text-gray-400 uppercase tracking-wider">February 9, 2026</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/publish-python-package-using-uv-pypi-token">
+                                            <span class="absolute inset-0"></span>
+                                            Publishing a Python Package with uv and a PyPI Token
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Publishing a Python package used to feel like a small battle: setup.py rituals, half-forgotten twine...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2025-02-15 15:40:00" class="text-gray-400 uppercase tracking-wider">February 15, 2025</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/simple-json-parser">
+                                            <span class="absolute inset-0"></span>
+                                            Simple JSON parser without knowing anything beforehands
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Table of Content
+
+Introduction
+Scanning the text
+Looking for specific characters
+Identifying element...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

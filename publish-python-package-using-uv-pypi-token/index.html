@@ -79,30 +79,30 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mastering Python's Regex: Part 1 - The Basics | Python Kitchen</title>
-  <meta name="description" content="Regular Expressions, or Regex, are often seen as a “dark art” by beginning programmers. At first glance, they look like a jumble of bizarre symbols and incompre...">
-  <meta name="keywords" content="python, regex, programming, search, patterns, regex">
+  <title>Publishing a Python Package with uv and a PyPI Token | Python Kitchen</title>
+  <meta name="description" content="Publishing a Python package used to feel like a small battle: setup.py rituals, half-forgotten twine commands, and the anxiety of accidentally pushing a broken ...">
+  <meta name="keywords" content="python,packaging,pypi,uv,devops, python, software engineering">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://www.pythonkitchen.com/mastering-pythons-regex-part-1-basics/">
-  <meta property="og:title" content="Mastering Python's Regex: Part 1 - The Basics">
-  <meta property="og:description" content="Regular Expressions, or Regex, are often seen as a “dark art” by beginning programmers. At first glance, they look like a jumble of bizarre symbols and incompre...">
+  <meta property="og:url" content="https://www.pythonkitchen.com/publish-python-package-using-uv-pypi-token/">
+  <meta property="og:title" content="Publishing a Python Package with uv and a PyPI Token">
+  <meta property="og:description" content="Publishing a Python package used to feel like a small battle: setup.py rituals, half-forgotten twine commands, and the anxiety of accidentally pushing a broken ...">
   <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://www.pythonkitchen.com/mastering-pythons-regex-part-1-basics/">
-  <meta property="twitter:title" content="Mastering Python's Regex: Part 1 - The Basics">
-  <meta property="twitter:description" content="Regular Expressions, or Regex, are often seen as a “dark art” by beginning programmers. At first glance, they look like a jumble of bizarre symbols and incompre...">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/publish-python-package-using-uv-pypi-token/">
+  <meta property="twitter:title" content="Publishing a Python Package with uv and a PyPI Token">
+  <meta property="twitter:description" content="Publishing a Python package used to feel like a small battle: setup.py rituals, half-forgotten twine commands, and the anxiety of accidentally pushing a broken ...">
   <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
-  <meta name='category' content='regex'>
+  <meta name='category' content='python'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='subtitle' content='Mastering Python's Regex: Part 1 - The Basics'>
-  <meta name='pageKey' content='mastering-pythons-regex-part-1-basics'>
+  <meta name='subtitle' content='Publishing a Python Package with uv and a PyPI Token'>
+  <meta name='pageKey' content='publish-python-package-using-uv-pypi-token'>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -172,13 +172,17 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Mastering Python's Regex: Part 1 - The Basics</p>
+                    <p class="text-3xl" style="font-weight: 600;">Publishing a Python Package with uv and a PyPI Token</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2018-08-03 20:04:02" class="text-gray-500">August 3, 2018</time>
+                        <time datetime="2026-02-09 10:30:00" class="text-gray-500">February 9, 2026</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            regex
+                            python
+                        </a>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            software engineering
                         </a>
                         
                     </div>
@@ -198,95 +202,122 @@
                     
                     <br>
                     <article>
-                        <p>Regular Expressions, or <strong>Regex</strong>, are often seen as a “dark art” by beginning programmers. At first glance, they look like a jumble of bizarre symbols and incomprehensible strings. However, once you understand the basic logic, Regex becomes one of the most powerful tools in your coding arsenal.</p>
-<p>Whether you’re cleaning data, building a compiler, or just searching for a specific string in a large text file, Regex is the right tool for the job.</p>
-<hr/>
-<h2>What is a Regular Expression?</h2>
-<p>A regular expression is a sequence of characters that forms a <strong>search pattern</strong>. You can use this pattern to:
-1.  Check if a string contains a specific pattern.
-2.  Extract specific parts of a string.
-3.  Replace parts of a string with something else.</p>
-<p>In Python, all regex functionality is contained in the <code>re</code> module.</p>
-<hr/>
-<h2>The Core Functions</h2>
-<h3>1. <code>re.search()</code></h3>
-<p>This function searches the entire string for a match and returns a match object if found.</p>
-<pre><code class="language-python">import re
-
-text = "The quick brown fox jumps over the lazy dog"
-match = re.search(r"fox", text)
-
-if match:
-    print(f"Found '{match.group()}' at index {match.start()}")
-</code></pre>
-<h3>2. <code>re.match()</code></h3>
-<p>Unlike <code>search</code>, <code>match()</code> only checks if the pattern matches from the <strong>beginning</strong> of the string.</p>
-<pre><code class="language-python"># This will return None because "fox" is not at the start
-print(re.match(r"fox", text)) 
-
-# This will match
-print(re.match(r"The", text))
-</code></pre>
-<h3>3. <code>re.findall()</code></h3>
-<p>If you want to find every occurrence of a pattern, use <code>findall()</code>. It returns a simple list of strings.</p>
-<pre><code class="language-python">emails = "Contact us at support@example.com or sales@example.org"
-# A simple pattern to find emails (simplified)
-found = re.findall(r"[\w\.-]+@[\w\.-]+", emails)
-print(found) # ['support@example.com', 'sales@example.org']
-</code></pre>
-<hr/>
-<h2>The Secret Ingredient: Raw Strings (<code>r""</code>)</h2>
-<p>You’ll notice that most regex patterns in Python are prefixed with an <code>r</code>, like <code>r"\n"</code>. This stands for <strong>Raw String</strong>.</p>
-<p>In a normal string, <code>\n</code> means “newline.” In Regex, backslashes are used for many special commands (like <code>\d</code> for digits). By using a raw string, you tell Python: “Don’t interpret these backslashes; pass them directly to the Regex engine.”</p>
-<hr/>
-<h2>Your First Special Characters</h2>
-<p>Regex uses “metacharacters” to define complex patterns. Here are the most common ones to get you started:</p>
+                        <p>Publishing a Python package used to feel like a small battle: setup.py rituals, half-forgotten twine commands, and the anxiety of accidentally pushing a broken release to PyPI. Thankfully, modern tooling has cleaned all of this up.</p>
+<p>With <strong>uv</strong>, publishing a Python package is fast, minimal, and refreshingly boring. In this article, we’ll walk through how to publish a Python package using <strong>uv</strong> and a <strong>PyPI API token</strong>, end to end, without unnecessary ceremony.</p>
+<p>If you already know Python and want a clean, modern publishing flow, this guide will feel right at home.</p>
+<h1>Table of Contents</h1>
 <ul>
-<li><strong><code>.</code> (Dot):</strong> Matches any single character except a newline.</li>
-<li><strong><code>*</code> (Star):</strong> Matches 0 or more occurrences of the preceding character.</li>
-<li><strong><code>+</code> (Plus):</strong> Matches 1 or more occurrences.</li>
-<li><strong><code>?</code> (Question):</strong> Matches 0 or 1 occurrence.</li>
-<li><strong><code>^</code> (Caret):</strong> Matches the start of the string.</li>
-<li><strong><code>$</code> (Dollar):</strong> Matches the end of the string.</li>
+<li>What is uv and Why Use It?</li>
+<li>Prerequisites</li>
+<li>Project Structure</li>
+<li>Configuring pyproject.toml</li>
+<li>Creating a PyPI API Token</li>
+<li>Publishing with uv</li>
+<li>Common Pitfalls</li>
+<li>Key Takeaways</li>
+<li>Conclusion</li>
 </ul>
-<h3>Example: The Star Operator</h3>
-<pre><code class="language-python"># Pattern: 'ab*' means 'a' followed by zero or more 'b's
-print(re.findall(r"ab*", "a ab abb abbbbb b")) 
-# Output: ['a', 'ab', 'abb', 'abbbbb']
-</code></pre>
-<h2>Summary</h2>
-<p>Regex might seem intimidating, but it follows a strict and logical set of rules. By starting with these basic functions and characters, you can already perform complex search-and-replace tasks that would be nearly impossible with standard string methods.</p>
-<p>In Part 2, we’ll dive into <strong>Character Sets</strong> and <strong>Grouping</strong>!</p>
-<h3>Related Posts:</h3>
+<h2>What is uv and Why Use It?</h2>
+<p>uv is a modern Python toolchain written in Rust that replaces a whole collection of traditional tools like pip, virtualenv, pip-tools, and parts of setuptools.</p>
+<p>Why uv is gaining serious traction:</p>
 <ul>
-<li><a href="https://www.pythonkitchen.com/building-a-lexer-in-python-tutorial/">Building a Lexer from Scratch in Python</a></li>
-<li><a href="https://www.pythonkitchen.com/how-to-create-your-own-dsldomain-specific-language-in-python/">How to Create Your Own DSL in Python</a></li>
+<li>Extremely fast dependency resolution</li>
+<li>First-class support for pyproject.toml</li>
+<li>Clean build and publish workflows</li>
+<li>Fewer configuration files and fewer surprises</li>
 </ul>
+<p>In short: less tooling drama, more shipping.</p>
+<h2>Prerequisites</h2>
+<p>Before publishing your package, make sure you have:</p>
+<ul>
+<li>Python 3.8 or newer</li>
+<li>A PyPI account</li>
+<li>uv installed on your system</li>
+<li>A package that actually imports and runs</li>
+</ul>
+<p>To install uv:</p>
+<pre><code>curl -Ls https://astral.sh/uv/install.sh | sh
+</code></pre>
+<h2>Project Structure</h2>
+<p>A clean project structure avoids confusion and keeps PyPI happy. A minimal recommended layout looks like this:</p>
+<pre><code>my_package/
+├── src/
+│ └── my_package/
+│ ├── init.py
+│ └── core.py
+├── README.md
+├── pyproject.toml
+└── LICENSE
+</code></pre>
+<p>Important notes:</p>
+<ul>
+<li>Use the src layout to avoid import bugs</li>
+<li>The package name must be importable</li>
+<li>README.md becomes your PyPI project description</li>
+</ul>
+<h2>Configuring pyproject.toml</h2>
+<p>The pyproject.toml file is the single source of truth for modern Python packaging. A minimal and solid configuration looks like this:</p>
+<pre><code>[project]
+name = "my-package"
+version = "0.1.0"
+description = "A small but useful Python package"
+readme = "README.md"
+requires-python = "&gt;=3.9"
+license = { text = "MIT" }
+authors = [
+{ name = "Your Name", email = "you@example.com" }
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+</code></pre>
+<p>This setup avoids legacy tooling and works perfectly with uv.</p>
+<h2>Creating a PyPI API Token</h2>
+<p>Uploading with a username and password is deprecated. PyPI strongly recommends using API tokens instead.</p>
+<p>Steps:</p>
+<ol>
+<li>Log in to PyPI</li>
+<li>Go to Account Settings → API tokens</li>
+<li>Create a new token</li>
+<li>Choose either full-account access or project-specific access</li>
+<li>Copy the token immediately</li>
+</ol>
+<p>The token will look something like this:</p>
+<p>pypi-AgEIcHlwaS5vcmcCJ…</p>
+<h2>Publishing with uv</h2>
+<p>Build your package:</p>
+<p><code>uv build</code></p>
+<p>This generates both a source distribution and a wheel.</p>
+<p>Finally, publish to PyPI:</p>
+<p><code>uv publish</code></p>
+<p>Create a token in pypi.</p>
+<p>Add your username as <code>__token__</code> and your actual token as the password.</p>
+<p>If everything is configured correctly, your package will be live within seconds.</p>
+<h2>Common Pitfalls</h2>
+<p>Even with great tooling, a few mistakes still show up often:</p>
+<ul>
+<li>Forgetting to bump the version number</li>
+<li>Choosing a package name that already exists on PyPI</li>
+<li>Broken Markdown in the README</li>
+<li>Missing <code>__init__</code>.py files in the package</li>
+</ul>
+<p>Catching these early saves a lot of frustration.</p>
+<h2>Key Takeaways</h2>
+<ul>
+<li>uv simplifies Python packaging dramatically</li>
+<li>pyproject.toml is all you need for configuration</li>
+<li>PyPI API tokens are safer and automation-friendly</li>
+<li>Publishing can be boring, fast, and reliable</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Publishing Python packages no longer needs to feel fragile or ceremonial. With uv, the workflow is fast, modern, and predictable. You write code, declare metadata, run two commands, and ship.</p>
+<p>Once you’ve used this flow a few times, going back to older tooling feels unnecessary.</p>
+<p>Happy packaging.</p>
 
                         <div class="mt-16 border-t border-gray-100 pt-10">
                             <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
                             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                                
-                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
-                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2026-02-09 10:30:00" class="text-gray-400 uppercase tracking-wider">February 9, 2026</time>
-                                    </div>
-                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
-                                        <a href="/publish-python-package-using-uv-pypi-token">
-                                            <span class="absolute inset-0"></span>
-                                            Publishing a Python Package with uv and a PyPI Token
-                                        </a>
-                                    </h3>
-                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Publishing a Python package used to feel like a small battle: setup.py rituals, half-forgotten twine...
-                                    </p>
-                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
-                                        Read article
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
-                                        </svg>
-                                    </div>
-                                </div>
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
@@ -328,6 +359,27 @@ Identifying element...
                                         Normally you can tune models to return json. But, fortunately, Gemini
 First install the lib
 pip inst...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2025-01-08 15:54:02" class="text-gray-400 uppercase tracking-wider">January 8, 2025</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/install-azure-cli-mint-22-wilma">
+                                            <span class="absolute inset-0"></span>
+                                            How to Install Azure Cli on Linux Mint 22 / Wilma
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Follow any installing azure cli on Linux mint tutorial, but, on the step below add noble main instea...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article

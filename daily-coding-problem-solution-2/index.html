@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,38 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Daily Coding Problem Solution 2' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Coding Problem #2: Product of Array Except Self | Python Kitchen</title>
+  <meta name="description" content="This problem was asked by Uber and is a popular variation of array manipulation questions.
+The Problem
+Given an array of integers, return a new array such that ...">
+  <meta name="keywords" content="python, algorithms, uber, interview, product-array, algorithm and data structures,  daily coding problem">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/daily-coding-problem-solution-2/">
+  <meta property="og:title" content="Daily Coding Problem #2: Product of Array Except Self">
+  <meta property="og:description" content="This problem was asked by Uber and is a popular variation of array manipulation questions.
+The Problem
+Given an array of integers, return a new array such that ...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/daily-coding-problem-solution-2/">
+  <meta property="twitter:title" content="Daily Coding Problem #2: Product of Array Except Self">
+  <meta property="twitter:description" content="This problem was asked by Uber and is a popular variation of array manipulation questions.
+The Problem
+Given an array of integers, return a new array such that ...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='algorithm and data structures'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Daily Coding Problem Solution 2'>
+  <meta name='subtitle' content='Daily Coding Problem #2: Product of Array Except Self'>
   <meta name='pageKey' content='daily-coding-problem-solution-2'>
-  <meta name='og:title' content='Daily Coding Problem Solution 2'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/daily-coding-problem-solution-2'>
-
-  <title>Daily Coding Problem Solution 2</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +118,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +178,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Daily Coding Problem Solution 2</p>
+                    <p class="text-3xl" style="font-weight: 600;">Daily Coding Problem #2: Product of Array Except Self</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2021-03-22 19:24:08" class="text-gray-500">March 22, 2021</time>
@@ -163,7 +188,7 @@
                         </a>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            daily coding problem
+                             daily coding problem
                         </a>
                         
                     </div>
@@ -183,80 +208,138 @@
                     
                     <br>
                     <article>
-                        <p>This problem was asked by Uber.</p>
-<p>Given an array of integers, return a new array such that each element at index i of the new array is the product of all the numbers in the original array except the one at i.</p>
-<p>For example, if our input was [1, 2, 3, 4, 5], the expected output would be [120, 60, 40, 30, 24]. If our input was [3, 2, 1], the expected output would be [2, 3, 6].</p>
-<p>Follow-up: what if you can&rsquo;t use division?</p>
-<hr />
-<h3>A Pythonic Attempt</h3>
-<pre><code class="language-python">import copy
-import functools
+                        <p>This problem was asked by Uber and is a popular variation of array manipulation questions.</p>
+<h2>The Problem</h2>
+<p>Given an array of integers, return a new array such that each element at index <code>i</code> of the new array is the product of all the numbers in the original array except the one at <code>i</code>.</p>
+<p><strong>Example 1:</strong>
+Input: <code>[1, 2, 3, 4, 5]</code>
+Output: <code>[120, 60, 40, 30, 24]</code></p>
+<p><strong>Example 2:</strong>
+Input: <code>[3, 2, 1]</code>
+Output: <code>[2, 3, 6]</code></p>
+<p><strong>Follow-up:</strong> What if you can’t use division?</p>
+<hr/>
+<h2>Solution 1: Division (If allowed)</h2>
+<p>If division is allowed, the solution is simple: calculate the product of all numbers, then divide by the current number for each index.</p>
+<ul>
+<li>Total Product = <code>1 * 2 * 3 * 4 * 5 = 120</code></li>
+<li>Index 0: <code>120 / 1 = 120</code></li>
+<li>Index 1: <code>120 / 2 = 60</code></li>
+<li>…and so on.</li>
+</ul>
+<p>However, this fails if there are zeros in the array! And often, interviews explicitly forbid division.</p>
+<h2>Solution 2: Without Division (Prefix and Suffix Products)</h2>
+<p>Without division, we can solve this by calculating the product of all numbers to the <strong>left</strong> of <code>i</code> and multiplying it by the product of all numbers to the <strong>right</strong> of <code>i</code>.</p>
+<p>We can do this efficiently using two passes (or three if we store prefix/suffix separately).</p>
+<ol>
+<li><strong>Prefix Pass:</strong> Iterate forward, storing the running product.</li>
+<li><strong>Suffix Pass:</strong> Iterate backward, storing the running product.</li>
+<li><strong>Combine:</strong> Multiply prefix[i] * suffix[i].</li>
+</ol>
+<pre><code class="language-python">def product_except_self(nums):
+    length = len(nums)
 
-mylist1 = [1, 2, 3, 4, 5]
-output1 = [120, 60, 40, 30, 24]
+    # Initialize result array
+    answer = [0] * length
 
-mylist2 = [3, 2, 1]
-output2 = [2, 3, 6]
+    # answer[i] contains the product of all the elements to the left
+    # Note: for the element at index '0', there are no elements to the left,
+    # so the answer[0] would be 1
+    answer[0] = 1
+    for i in range(1, length):
+        answer[i] = nums[i - 1] * answer[i - 1]
 
-def prod_arr(mylist):
-    # pythonic
-    ans = []
-    for i, num in enumerate(mylist):
-        copied = copy.deepcopy(mylist)
-        copied.remove(num)
-        ans.append(functools.reduce(lambda a,b : a*b, copied))
-    return ans
+    # R contains the product of all the elements to the right
+    # Note: for the element at index 'length - 1', there are no elements to the right,
+    # so the R would be 1
+    R = 1
+    for i in reversed(range(length)):
+        # For the index 'i', R would contain the product of elements to the right of 'i'
+        answer[i] = answer[i] * R
+        R *= nums[i]
 
+    return answer
 
-def prod_arr2(mylist):
-    # barebones
-    ans = []
-    for i, num in enumerate(mylist):
-        prod = 1
-        for i2, num2 in enumerate(mylist):
-            if i2 != i:
-                prod *= num2
-        ans.append(prod)
-    return ans
-
-assert prod_arr(mylist1) == output1, 'fail'
-assert prod_arr(mylist2) == output2, 'fail'
-
-assert prod_arr2(mylist1) == output1, 'fail'
-assert prod_arr2(mylist2) == output2, 'fail'
-
+# Test
+input_arr = [1, 2, 3, 4, 5]
+print(product_except_self(input_arr))
+# Output: [120, 60, 40, 30, 24]
 </code></pre>
-<h3>The Real Solution Online</h3>
-<pre><code class="language-python">def products(nums):
-    # Generate prefix products
-    prefix_products = []
-    for num in nums:
-        if prefix_products:
-            prefix_products.append(prefix_products[-1] * num)
-        else:
-            prefix_products.append(num)
+<p><strong>Complexity Analysis:</strong>
+*   Time Complexity: <strong>O(N)</strong>. We iterate through the array twice.
+*   Space Complexity: <strong>O(1)</strong> (excluding the output array), as we reuse the <code>answer</code> array to store prefixes and update it on the fly with suffixes.</p>
+<p>This is the optimal solution often expected in technical interviews.</p>
 
-    # Generate suffix products
-    suffix_products = []
-    for num in reversed(nums):
-        if suffix_products:
-            suffix_products.append(suffix_products[-1] * num)
-        else:
-            suffix_products.append(num)
-    suffix_products = list(reversed(suffix_products))
-
-    # Generate result
-    result = []
-    for i in range(len(nums)):
-        if i == 0:
-            result.append(suffix_products[i + 1])
-        elif i == len(nums) - 1:
-            result.append(prefix_products[i - 1])
-        else:
-            result.append(prefix_products[i - 1] * suffix_products[i + 1])
-    return result
-
-</code></pre>
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2021-03-22 19:19:57" class="text-gray-400 uppercase tracking-wider">March 22, 2021</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/daily-coding-problem-solution-1">
+                                            <span class="absolute inset-0"></span>
+                                            Daily Coding Problem #1: Two Sum Solution in Python
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        This problem was recently asked by Google and is a classic interview question often referred to as “...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2022-11-15 14:34:00" class="text-gray-400 uppercase tracking-wider">November 15, 2022</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/automatic-differentiation-step-by-step">
+                                            <span class="absolute inset-0"></span>
+                                            Auto-differentiation and Autograd explained step by step
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        We will understand what is automatic differentiation for absolute beginners, although this concept r...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2021-03-22 20:03:38" class="text-gray-400 uppercase tracking-wider">March 22, 2021</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/daily-coding-problem-solution-4">
+                                            <span class="absolute inset-0"></span>
+                                            Daily Coding Problem Solution 4
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        This problem was asked by Stripe.
+Given an array of integers, find the first missing positive intege...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

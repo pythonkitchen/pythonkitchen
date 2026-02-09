@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,38 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Chat with your own data/text files using chatGPT and LangChain' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat with your own data/text files using chatGPT and LangChain | Python Kitchen</title>
+  <meta name="description" content="There are many different approaches to chatting with your own data. 
+One way is to upload your PDF to the OpenAi chatGPT cloud. 
+This comes with several limitat...">
+  <meta name="keywords" content="langchain, data science, machine learning">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/chat-own-data-chatgpt-langchain/">
+  <meta property="og:title" content="Chat with your own data/text files using chatGPT and LangChain">
+  <meta property="og:description" content="There are many different approaches to chatting with your own data. 
+One way is to upload your PDF to the OpenAi chatGPT cloud. 
+This comes with several limitat...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/chat-own-data-chatgpt-langchain/">
+  <meta property="twitter:title" content="Chat with your own data/text files using chatGPT and LangChain">
+  <meta property="twitter:description" content="There are many different approaches to chatting with your own data. 
+One way is to upload your PDF to the OpenAi chatGPT cloud. 
+This comes with several limitat...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='data science'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
   <meta name='subtitle' content='Chat with your own data/text files using chatGPT and LangChain'>
   <meta name='pageKey' content='chat-own-data-chatgpt-langchain'>
-  <meta name='og:title' content='Chat with your own data/text files using chatGPT and LangChain'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/chat-own-data-chatgpt-langchain'>
-
-  <title>Chat with your own data/text files using chatGPT and LangChain</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +118,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -222,88 +247,88 @@ from langchain.indexes.vectorstore import VectorStoreIndexWrapper
 from langchain.vectorstores import Chroma
 from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
 
-os.environ[&quot;OPENAI_API_KEY&quot;] = &quot;sk-mykeyhere&quot;
+os.environ["OPENAI_API_KEY"] = "sk-mykeyhere"
 
 # Enable to save to disk &amp; reuse the model (for repeated queries on the same data)
 PERSIST = False
 query = None
 
-embedding_function = SentenceTransformerEmbeddings(model_name=&quot;all-MiniLM-L6-v2&quot;)
+embedding_function = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
 
 
-if PERSIST and os.path.exists(&quot;persist&quot;):
-    print(&quot;Reusing index...\n&quot;)
+if PERSIST and os.path.exists("persist"):
+    print("Reusing index...\n")
     vectorstore = Chroma(
-        persist_directory=&quot;persist&quot;, embedding_function=embedding_function
+        persist_directory="persist", embedding_function=embedding_function
     )
     index = VectorStoreIndexWrapper(vectorstore=vectorstore)
 else:
-    # loader = TextLoader(&quot;data/data.txt&quot;) # Use this line if you only need data.txt
-    loader = DirectoryLoader(&quot;exp-data/&quot;)
+    # loader = TextLoader("data/data.txt") # Use this line if you only need data.txt
+    loader = DirectoryLoader("exp-data/")
     if PERSIST:
         index = VectorstoreIndexCreator(
-            vectorstore_kwargs={&quot;persist_directory&quot;: &quot;persist&quot;}
+            vectorstore_kwargs={"persist_directory": "persist"}
         ).from_loaders([loader])
     else:
         index = VectorstoreIndexCreator().from_loaders([loader])
 
 chain = ConversationalRetrievalChain.from_llm(
-    llm=ChatOpenAI(model=&quot;gpt-3.5-turbo&quot;),
-    retriever=index.vectorstore.as_retriever(search_kwargs={&quot;k&quot;: 1}),
+    llm=ChatOpenAI(model="gpt-3.5-turbo"),
+    retriever=index.vectorstore.as_retriever(search_kwargs={"k": 1}),
 )
 
 chat_history = []
 while True:
     if not query:
-        query = input(&quot;Prompt &gt; &quot;)
-    if query in [&quot;quit&quot;, &quot;q&quot;, &quot;exit&quot;]:
+        query = input("Prompt &gt; ")
+    if query in ["quit", "q", "exit"]:
         sys.exit()
-    result = chain({&quot;question&quot;: query, &quot;chat_history&quot;: chat_history})
-    print(result[&quot;answer&quot;], end=&quot;\n\n&quot;)
+    result = chain({"question": query, "chat_history": chat_history})
+    print(result["answer"], end="\n\n")
 
-    chat_history.append((query, result[&quot;answer&quot;]))
+    chat_history.append((query, result["answer"]))
     query = None
 </code></pre>
 <p>The persist part is if you don’t want to load it in the db each time.</p>
 <h1>Notes</h1>
 <p>If you have errors like:</p>
 <pre><code>Traceback (most recent call last):
-  File &quot;&quot;, line 34, in &lt;module&gt;
+  File "", line 34, in &lt;module&gt;
     index = VectorstoreIndexCreator().from_loaders([loader])
             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;&quot;, line 82, in from_loaders
+  File "", line 82, in from_loaders
     return self.from_documents(docs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;&quot;, line 87, in from_documents
+  File "", line 87, in from_documents
     vectorstore = self.vectorstore_cls.from_documents(
                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;site-packages/langchain/vectorstores/chroma.py&quot;, line 684, in from_documents
+  File "site-packages/langchain/vectorstores/chroma.py", line 684, in from_documents
     return cls.from_texts(
            ^^^^^^^^^^^^^^^
-  File &quot;site-packages/langchain/vectorstores/chroma.py&quot;, line 620, in from_texts
+  File "site-packages/langchain/vectorstores/chroma.py", line 620, in from_texts
     chroma_collection = cls(
                         ^^^^
-  File &quot;site-packages/langchain/vectorstores/chroma.py&quot;, line 125, in __init__
+  File "site-packages/langchain/vectorstores/chroma.py", line 125, in __init__
     self._collection = self._client.get_or_create_collection(
                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;site-packages/chromadb/api/client.py&quot;, line 226, in get_or_create_collection
+  File "site-packages/chromadb/api/client.py", line 226, in get_or_create_collection
     return self._server.get_or_create_collection(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;site-packages/chromadb/telemetry/opentelemetry/__init__.py&quot;, line 127, in wrapper
+  File "site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 127, in wrapper
     return f(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^
-  File &quot;site-packages/chromadb/api/segment.py&quot;, line 216, in get_or_create_collection
+  File "site-packages/chromadb/api/segment.py", line 216, in get_or_create_collection
     return self.create_collection(  # type: ignore
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;site-packages/chromadb/telemetry/opentelemetry/__init__.py&quot;, line 127, in wrapper
+  File "site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 127, in wrapper
     return f(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^
-  File &quot;site-packages/chromadb/api/segment.py&quot;, line 190, in create_collection
+  File "site-packages/chromadb/api/segment.py", line 190, in create_collection
     return Collection(
            ^^^^^^^^^^^
-  File &quot;site-packages/chromadb/api/models/Collection.py&quot;, line 85, in __init__
+  File "site-packages/chromadb/api/models/Collection.py", line 85, in __init__
     validate_embedding_function(embedding_function)
-  File &quot;site-packages/chromadb/api/types.py&quot;, line 210, in validate_embedding_function
+  File "site-packages/chromadb/api/types.py", line 210, in validate_embedding_function
     raise ValueError(
 ValueError: Expected EmbeddingFunction.__call__ to have the following signature:
 odict_keys(['self', 'input']), got odict_keys(['self', 'args', 'kwargs'])
@@ -318,6 +343,77 @@ https://docs.trychroma.com/migration#migration-to-0416---november-7-2023
 <li><a href="">Techlead outdated code (Which I fixed in this post)</a></li>
 <li><a href="">LangChain chroma notebook</a></li>
 </ul>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-13 09:31:20" class="text-gray-400 uppercase tracking-wider">November 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/LangChain-understand-production-codebases">
+                                            <span class="absolute inset-0"></span>
+                                            Understand langChain to Quickly Get Started with Production Codebases
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
+If you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-04-13 11:09:08" class="text-gray-400 uppercase tracking-wider">April 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/word2vec-vectorizer-in-natural-language-processing">
+                                            <span class="absolute inset-0"></span>
+                                            Word2Vec Vectorizer in Natural Language Processing
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        In natural language processing, Word2Vec is one of the most widely used vectorization techniques use...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-03-13 10:13:01" class="text-gray-400 uppercase tracking-wider">March 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/tfidf-vectorizers-in-natural-language-processing">
+                                            <span class="absolute inset-0"></span>
+                                            TFIDF Vectorizers in Natural Language Processing
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Vectorization is a technique in natural language processing that is used to transform the text into ...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

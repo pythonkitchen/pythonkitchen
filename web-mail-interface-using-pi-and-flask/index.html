@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='web mail interface using pi and flask' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building a Web Mail Client with Flask and Raspberry Pi | Python Kitchen</title>
+  <meta name="description" content="Have you ever wondered how web-based email clients like Gmail or Outlook actually work? At their core, they are web applications that take user input and send i...">
+  <meta name="keywords" content="python, flask, raspberry-pi, smtplib, web-development, raspberry pi">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/web-mail-interface-using-pi-and-flask/">
+  <meta property="og:title" content="Building a Web Mail Client with Flask and Raspberry Pi">
+  <meta property="og:description" content="Have you ever wondered how web-based email clients like Gmail or Outlook actually work? At their core, they are web applications that take user input and send i...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/web-mail-interface-using-pi-and-flask/">
+  <meta property="twitter:title" content="Building a Web Mail Client with Flask and Raspberry Pi">
+  <meta property="twitter:description" content="Have you ever wondered how web-based email clients like Gmail or Outlook actually work? At their core, they are web applications that take user input and send i...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='raspberry pi'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='web mail interface using pi and flask'>
+  <meta name='subtitle' content='Building a Web Mail Client with Flask and Raspberry Pi'>
   <meta name='pageKey' content='web-mail-interface-using-pi-and-flask'>
-  <meta name='og:title' content='web mail interface using pi and flask'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/web-mail-interface-using-pi-and-flask'>
-
-  <title>web mail interface using pi and flask</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">web mail interface using pi and flask</p>
+                    <p class="text-3xl" style="font-weight: 600;">Building a Web Mail Client with Flask and Raspberry Pi</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-07-01 07:32:45" class="text-gray-500">July 1, 2018</time>
@@ -179,189 +198,191 @@
                     
                     <br>
                     <article>
-                        <p>have you ever used gmail or hotmail on the web? it seems so natural that we take it for granted. in this post we&rsquo;ll see how to build a basic web mail client to send mail &hellip; using flask and pi as server. this is
-content
-=======</p>
-<p>flask intro : folder structure</p>
-<p>flask intro : requests</p>
-<p>flask : basic app</p>
-<p>flask : post
-flask intro : folder structure
-==============================</p>
-<p>flask is a python web framework, it is recommended to learn it before django. a typical flask project structure is as follows:</p>
-<p>let us say we name our project sendmail, the project structure is</p>
-<pre><code class="language-python">sendmail [folder]
-|_ _ app.py
-|_ _ templates [folder]
-|     |_ _ file.html
-|_ _ static [folder]
-      |_ _ style.css
+                        <p>Have you ever wondered how web-based email clients like Gmail or Outlook actually work? At their core, they are web applications that take user input and send it to an email server. In this tutorial, we will build a basic web mail interface using <strong>Flask</strong> and a <strong>Raspberry Pi</strong>.</p>
+<p>By the end of this guide, you’ll have a local web server running on your Pi that allows any device on your network to send emails.</p>
+<hr/>
+<h2>1. Flask Basics: Setting Up the Project</h2>
+<p>Flask is a “micro” web framework for Python. It’s lightweight and easy to learn, making it perfect for Raspberry Pi projects.</p>
+<h3>Project Structure</h3>
+<p>Create a folder for your project and organize it like this:</p>
+<pre><code class="language-text">sendmail/
+├── app.py           # Your Python logic
+├── templates/       # HTML files
+│   └── index.html
+└── static/          # CSS, JS, and Images
+    └── style.css
 </code></pre>
-<p>to run a flask app you don&rsquo;t need the templates and static folder but they are here for good reasons
-the templates folder</p>
-<hr />
-<p>let us say you have a website and for each page there are some elements recurring like the header and footer. having a template allows you to specify only the changing data
-templating engine</p>
-<hr />
-<p>flask uses the <a href="http://jinja.pocoo.org/docs/2.10/">jinja</a> templating engine for rendering variables etc</p>
-<p>{{name}} will display the variable name on rendering. more on that later
-static folder</p>
-<hr />
-<p>static means it won&rsquo;t change, load your non-changing assets in there
-flask intro : requests
-======================</p>
-<p>for a webserver, whatever you type in the address bar after specifying the correct ip is a request</p>
-<pre><code class="language-python">http://www.domain.com/water.html
-</code></pre>
-<p>requests the file water.html</p>
-<p>in flask however (and python), you need not request for only files, you can pretty much mould the request pattern</p>
-<pre><code class="language-python">http://www.domain.com/mult/5/by/2
-
-http://www.domain.com/show/user54/sea
-</code></pre>
-<h1>flask : basic app</h1>
-<p>a basic app in flask is as follows :</p>
-<pre><code class="language-python">from flask import Flask
-
-app = Flask(__name__)
-@app.route('/')
-def basic():
-    return 'welcome to my site'
-if __name__ == '__main__': # if file run
-    app.run(debug=True, host='0.0.0.0')
-</code></pre>
-<p>explanations</p>
-<pre><code class="language-python">@app.route('/')
-</code></pre>
-<p>means the first slash after the domain name if requested</p>
-<p>you define the action in the subsequent function, which can be named as you want</p>
-<p>let us say the domain is www.d.com, we are specifying what to do when www.d.com/ is requested</p>
-<pre><code class="language-python">return 'welcome to my site'
-</code></pre>
-<p>displays a single string</p>
-<pre><code class="language-python">app.run(debug=True, host='0.0.0.0')
-</code></pre>
-<p>host=&lsquo;0.0.0.0&rsquo; runs the app on 192.168. &hellip;
-flask : basic app : return page
-===============================</p>
-<pre><code class="language-python">from flask import Flask, render_tempplate
-
-app = Flask(__name__)
-@app.route('/')
-def basic():
-    return render_template('index.html')
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
-
-</code></pre>
-<p>here</p>
-<pre><code class="language-python">return render_template('index.html')
-</code></pre>
-<p>returns the file index.html in the templates folder
-flask : post
-============</p>
-<p>there are two request methods viz post and get, post is more secure than get</p>
-<p>here is a post demo :</p>
-<p>our html</p>
-<pre><code class="language-python">&lt;form method=&quot;POST&quot;&gt;
-&lt;input type=&quot;text&quot; name=&quot;xyz&quot;&gt;
-&lt;br&gt;
-&lt;input type=&quot;submit&quot; value=&quot;Send&quot;&gt;
-&lt;/form&gt;
-</code></pre>
-<p>our post handling method:</p>
-<pre><code class="language-python">@app.route('/', methods=['GET', 'POST'])
-def index():
-    if request.method == 'POST': #this block is only entered when the form is submitted
-        data = request.form['xyz']
-        return 'data entered :{}'.format(data)
-
-    return render_template('index.html')
-
-</code></pre>
-<h1>our app</h1>
-<p>here is the code for our index.html file in our templates folder :</p>
-<pre><code class="language-python">&lt;!DOCTYPE html&gt;
+<hr/>
+<h2>2. Creating the Email Interface (HTML)</h2>
+<p>We need a simple form where users can enter the recipient, the subject, and the message body. Save this as <code>templates/index.html</code>.</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-&lt;title&gt;&lt;/title&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Pi Mailer&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;style&gt;
+        body { font-family: sans-serif; padding: 20px; max-width: 500px; margin: auto; }
+        input, textarea { width: 100%; margin-bottom: 10px; padding: 8px; }
+        input[type="submit"] { background: #4f46e5; color: white; border: none; cursor: pointer; }
+    &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-&lt;form method=&quot;POST&quot;&gt;
-to:&lt;br&gt;
-&lt;input type=&quot;text&quot; name=&quot;to&quot;&gt;
-&lt;br&gt;
-subject:&lt;br&gt;
-&lt;input type=&quot;text&quot; name=&quot;subject&quot;&gt;
-&lt;br&gt;
-body:&lt;br&gt;
-&lt;textarea rows=&quot;4&quot; cols=&quot;50&quot; type=&quot;text&quot; name=&quot;body&quot;&gt;
+    &lt;h2&gt;Send Email via Pi&lt;/h2&gt;
+    &lt;form method="POST"&gt;
+        &lt;label&gt;To:&lt;/label&gt;
+        &lt;input type="email" name="to" required&gt;
 
-&lt;/textarea&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;input type=&quot;submit&quot; value=&quot;Send&quot;&gt;
-&lt;/form&gt; 
+        &lt;label&gt;Subject:&lt;/label&gt;
+        &lt;input type="text" name="subject" required&gt;
+
+        &lt;label&gt;Body:&lt;/label&gt;
+        &lt;textarea name="body" rows="5" required&gt;&lt;/textarea&gt;
+
+        &lt;input type="submit" value="Send Email"&gt;
+    &lt;/form&gt; 
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<h2>our app.py code :</h2>
+<hr/>
+<h2>3. The Backend: Sending Mail with <code>smtplib</code></h2>
+<p>Python’s built-in <code>smtplib</code> library allows us to connect to an SMTP server (like Gmail) to send messages.</p>
+<h3>A Note on Security</h3>
+<p><strong>Important:</strong> Do not use your primary Gmail password in your code. Most modern providers require you to generate an <strong>“App Password”</strong> specifically for your script. This keeps your main account secure.</p>
+<h3>The Python Script (<code>app.py</code>)</h3>
 <pre><code class="language-python">from flask import Flask, render_template, request
-
-# send mail function
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from email.header import Header
-
-def send_mail(to_, subject_, body_):
-    fromaddr='[address]'
-    toaddr=to_
-    thesub=subject_
-    thebody=body_
-    thepassword='[pass]'
-    domsmtp='smtp.gmail.com'
-    smtpport= 587 #needs integer not string
-
-
-    msg = MIMEMultipart('alt text here')
-    msg.set_charset('utf8')
-
-
-    msg['From'] = fromaddr
-    msg['To'] = toaddr
-    msg['Subject'] = Header(thesub,'utf8')
-    _attach = MIMEText(thebody.encode('utf8'),'html','UTF-8')
-    msg.attach(_attach)
-
-    server = smtplib.SMTP(domsmtp, smtpport)
-    server.starttls()
-    server.login(fromaddr, thepassword)
-    text = msg.as_string()
-    server.sendmail(fromaddr, toaddr, text)
-
-    server.quit()
-    print('mail sent')
 
 app = Flask(__name__)
 
+def send_mail(to_email, subject, message_body):
+    # Configuration
+    MY_EMAIL = "your-email@gmail.com"
+    MY_PASSWORD = "your-app-password" # Use an App Password here!
+
+    # Setup the MIME
+    msg = MIMEMultipart()
+    msg['From'] = MY_EMAIL
+    msg['To'] = to_email
+    msg['Subject'] = subject
+    msg.attach(MIMEText(message_body, 'plain'))
+
+    # Connect to Gmail's SMTP server
+    try:
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls() # Secure the connection
+        server.login(MY_EMAIL, MY_PASSWORD)
+        server.send_mail(MY_EMAIL, to_email, msg.as_string())
+        server.quit()
+        return True
+    except Exception as e:
+        print(f"Error: {e}")
+        return False
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    if request.method == 'POST': #this block is only entered when the form is submitted
+    if request.method == 'POST':
         to = request.form['to']
         subject = request.form['subject']
         body = request.form['body']
-        send_mail(to, subject, body)
-        return 'mail sent to {}'.format(to)
+
+        if send_mail(to, subject, body):
+            return f"&lt;h3&gt;Success! Mail sent to {to}&lt;/h3&gt; &lt;a href='/'&gt;Send another&lt;/a&gt;"
+        else:
+            return "&lt;h3&gt;Failed to send mail. Check console for errors.&lt;/h3&gt;"
 
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    # host='0.0.0.0' allows access from other devices on the network
+    app.run(debug=True, host='0.0.0.0', port=5000)
 </code></pre>
-<p>just replace [address] and [pass] by your actual data
-now run app.py, and see the output</p>
-<p>you can grab another device on the network, go to 192.168. &hellip; depending, and &hellip; you can send a mail from another device, from a web interface</p>
+<hr/>
+<h2>4. Running the App on Your Pi</h2>
+<ol>
+<li>Open your Pi’s terminal and navigate to the <code>sendmail</code> folder.</li>
+<li>Run the app: <code>python app.py</code></li>
+<li>On your Pi, you can access it at <code>http://localhost:5000</code>.</li>
+<li>On any other device on the same Wi-Fi, find your Pi’s IP address (e.g., <code>192.168.1.15</code>) and visit <code>http://192.168.1.15:5000</code>.</li>
+</ol>
+<h2>Conclusion</h2>
+<p>You’ve just built a functional IoT device! This project combines web development, networking, and the Python standard library into a practical tool. From here, you could add an “attachments” feature or even a simple database to keep track of sent emails.</p>
+<h3>Related Posts:</h3>
+<ul>
+<li><a href="https://www.pythonkitchen.com/raspberry-pi-setup-establishing-ssh-connection/">Setting up SSH for Headless Raspberry Pi access</a></li>
+<li><a href="https://www.pythonkitchen.com/installing-opencv-on-the-pi3-with-python3-and-usb-webcam/">How to install OpenCV on your Pi</a></li>
+</ul>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-06-20 16:44:45" class="text-gray-400 uppercase tracking-wider">June 20, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/raspberry-pi-setup-establishing-ssh-connection">
+                                            <span class="absolute inset-0"></span>
+                                            Remote Access: How to Establish an SSH Connection to Your Raspberry Pi
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        One of the greatest features of the Raspberry Pi is that you don’t actually need a dedicated monitor...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-06-18 11:42:03" class="text-gray-400 uppercase tracking-wider">June 18, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/raspberry-pi-setup">
+                                            <span class="absolute inset-0"></span>
+                                            Setting Up Your Raspberry Pi 3: A Step-by-Step OS Installation Guide
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        The Raspberry Pi is a remarkably powerful credit-card-sized computer, but when you first take it out...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2026-02-09 10:30:00" class="text-gray-400 uppercase tracking-wider">February 9, 2026</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/publish-python-package-using-uv-pypi-token">
+                                            <span class="absolute inset-0"></span>
+                                            Publishing a Python Package with uv and a PyPI Token
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Publishing a Python package used to feel like a small battle: setup.py rituals, half-forgotten twine...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

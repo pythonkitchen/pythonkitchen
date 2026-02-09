@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='building a lexer in python - a tutorial' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building a Lexer in Python: A Step-by-Step Tutorial | Python Kitchen</title>
+  <meta name="description" content="Understanding how to build a lexer (lexical analyzer) is a rite of passage for many programmers. It opens up a world of possibilities, from creating your own Do...">
+  <meta name="keywords" content="python, compiler-theory, lexer, tutorial, dsl, compiler theory">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/building-a-lexer-in-python-tutorial/">
+  <meta property="og:title" content="Building a Lexer in Python: A Step-by-Step Tutorial">
+  <meta property="og:description" content="Understanding how to build a lexer (lexical analyzer) is a rite of passage for many programmers. It opens up a world of possibilities, from creating your own Do...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/building-a-lexer-in-python-tutorial/">
+  <meta property="twitter:title" content="Building a Lexer in Python: A Step-by-Step Tutorial">
+  <meta property="twitter:description" content="Understanding how to build a lexer (lexical analyzer) is a rite of passage for many programmers. It opens up a world of possibilities, from creating your own Do...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='compiler theory'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='building a lexer in python - a tutorial'>
+  <meta name='subtitle' content='Building a Lexer in Python: A Step-by-Step Tutorial'>
   <meta name='pageKey' content='building-a-lexer-in-python-tutorial'>
-  <meta name='og:title' content='building a lexer in python - a tutorial'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/building-a-lexer-in-python-tutorial'>
-
-  <title>building a lexer in python - a tutorial</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">building a lexer in python - a tutorial</p>
+                    <p class="text-3xl" style="font-weight: 600;">Building a Lexer in Python: A Step-by-Step Tutorial</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-05-01 11:48:58" class="text-gray-500">May 1, 2018</time>
@@ -179,485 +198,175 @@
                     
                     <br>
                     <article>
-                        <p>knowing how to build a lexer allows you to extend your applications and opens up a whole new world. You can write your own DSLs or your own language or just better separate symbols: in other words, it allows you to have more control over a string</p>
-<h1>what is a lexer?</h1>
-<p>from user input to code execution there are three main steps either for interpreters or compilers:</p>
+                        <p>Understanding how to build a <strong>lexer</strong> (lexical analyzer) is a rite of passage for many programmers. It opens up a world of possibilities, from creating your own Domain Specific Languages (DSLs) to writing custom configuration parsers. </p>
+<p>In this tutorial, we will break down the theory and implementation of a basic lexer using pure Python.</p>
+<hr/>
+<h2>What is a Lexer?</h2>
+<p>From the moment you type code to the moment it executes, it undergoes several transformations. The journey typically follows these steps:</p>
 <ol>
-<li>lexical analysis (1)</li>
-<li>parsing (2)</li>
-<li>code generation (example: to machine code or bytecode)</li>
-<li>execution (3)</li>
+<li><strong>Lexical Analysis (The Lexer):</strong> Converts the raw string of code into a list of “tokens” or “lexemes.”</li>
+<li><strong>Parsing (The Parser):</strong> Takes the tokens and builds a structure (like an Abstract Syntax Tree) to understand the logic.</li>
+<li><strong>Code Generation:</strong> Converts that structure into machine code or bytecode.</li>
+<li><strong>Execution:</strong> The computer runs the code.</li>
 </ol>
-<p>a lexer is a tool that performs lexical analysis</p>
-<h1>difference between lexical analysis and scanning</h1>
-<p>in the beginning, scanning and lexical analysis were two different steps but due to the increased speed of processors, they now refer to one and the same process and are used interchangeably.</p>
-<h1>what is scanning?</h1>
-<p>scanning means to pass over / scan a string character by character (char by char).</p>
-<h1>what is lexical analysis?</h1>
-<p>it is the process whereby the scanned characters are turned into lexemes</p>
-<h1>what is a lexeme?</h1>
-<p>a lexeme is a recognised piece of string</p>
-<p>let us take:</p>
-<p>ac</p>
-<p>we might build a parser that outputs the following lexemes :</p>
+<p><strong>A lexer is the tool that performs step 1.</strong> It’s the eyes of the compiler; it looks at a messy string and identifies the meaningful parts.</p>
+<hr/>
+<h2>Key Terminology</h2>
 <ul>
-<li>lexeme 1: <strong>the</strong></li>
-<li>lexeme 2: <strong>quick</strong></li>
-<li>lexeme 3: <strong>brown</strong></li>
-<li>lexeme 4: <strong>fox</strong></li>
+<li><strong>Scanning:</strong> The process of reading the source code character by character.</li>
+<li><strong>Lexeme:</strong> A sequence of characters that matches a pattern (e.g., the word <code>for</code> or the symbol <code>{</code>).</li>
+<li><strong>Token:</strong> A categorized lexeme. For example, the lexeme <code>123</code> might be tokenized as <code>(NUMBER, 123)</code>.</li>
+<li><strong>Keyword:</strong> A lexeme that has a special, predefined meaning (e.g., <code>if</code>, <code>while</code>, <code>print</code>).</li>
 </ul>
-<p>now let us take a simili code:</p>
-<p><strong>for(i; i&lt;arr.length; i++){ }</strong></p>
-<ul>
-<li>lexeme 1: <strong>for</strong></li>
-<li>lexeme 2: <strong>(</strong></li>
-<li>lexeme 3: <strong>i</strong></li>
-<li>lexeme 4: ;</li>
-<li>lexeme 5: i</li>
-<li>lexeme 6: <strong>&lt;</strong></li>
-<li>lexeme 7: <strong>arr</strong></li>
-<li>lexeme 8: <strong>.</strong></li>
-<li>lexeme 9: <strong>length</strong></li>
-<li>lexeme 10: ;</li>
-<li>lexeme 11: <strong>i</strong></li>
-<li>lexeme 12: <strong>++</strong></li>
-<li>lexeme 13: <strong>)</strong></li>
-<li>lexeme 14: <strong>{</strong></li>
-<li>lexeme 15: <strong>}</strong></li>
-</ul>
-<p>so our task for this post will  be to build a program that can separate those pieces</p>
-<p>[sc name=&rdquo;lexer&rdquo;]</p>
-<h1>what does a lexer needs as input?</h1>
-<p>a lexer needs two things : the source code and keywords</p>
-<h1>what is a keyword?</h1>
-<p>a keyword is a lexeme that has a special meaning to the lexer</p>
-<p>normally words like print, from, to are known as keywords, however, symbols such as ( , { can also be considered as keywords</p>
-<h1>types of keywords</h1>
-<p>there are single character keywords e.g. whitespace</p>
-<p>there are multi-char  keywords such as print</p>
-<h1>ignoring keywords</h1>
-<p>there are cases where we might want to ignore keywords as in the case where they appear between &rdquo; &rdquo; or in comments</p>
-<h1>what are ids?</h1>
-<p>ids are user-defined names, like the names of namespaces, variables, classes and functions. functions in the standard library are only predefined ids. normally keyword names are banned from being used as ids</p>
-<h1>some observations</h1>
-<p>let us compare :</p>
-<p><strong>the quick brown fox</strong></p>
-<p>and</p>
-<p><strong>for(i; i&lt;arr.length; i++){ }</strong></p>
-<p>for both of the strings, lexing could be carried out. the first case is simple</p>
-<pre><code class="language-python">lexeme = ''
-add characters to lexeme variable until next char is a white space
-if next is a white space
-    print lexeme
-    lexeme = ''
-</code></pre>
-<p>but for the next case we observe a general rule. we break if the next character is a keyword be it a special word or symbol</p>
-<pre><code class="language-python">lexeme = ''
-add characters to lexeme variable until next char is a white space (single-char keyword)
-if next is a white space single-char keyword
-    print lexeme
-    lexeme = ''
-</code></pre>
-<p>in reality we also add the condition of if the element itself is a keyword</p>
-<h1>special cases</h1>
-<p>now let us take the case of ++, + is a keyword and ++ too but how do we differenciate between them or ==?</p>
-<p>that&rsquo;s when we use flags to determine which context are we in</p>
-<p>flags are just variables that act like switches e.g.</p>
-<p>x = 0</p>
-<p>if &hellip; : x = 1</p>
-<p>if x == 1 : &hellip;</p>
-<p>or use some checks !</p>
-<h1>writing the scanner</h1>
-<p>basically we just need a program that outputs a char at one time. in python it is easy :</p>
-<pre><code class="language-python">string = 'i am coming'
-
-for char in string:
-    print(char)
-</code></pre>
-<p>which outputs:</p>
-<pre><code class="language-python">i
-
-a
-m
-
-c
-o
-m
-i
-n
-g
-</code></pre>
-<p>just some fancy modifications :</p>
-<pre><code class="language-python">string = 'i am coming'
-
-for i, char in enumerate(string): # i gives us index and char the element
-    print('char', str(i+1).rjust(3, ' '), ':', char)
-</code></pre>
-<p>outputting:</p>
-<pre><code class="language-python">char   1 : i
-char   2 :  
-char   3 : a
-char   4 : m
-char   5 :  
-char   6 : c
-char   7 : o
-char   8 : m
-char   9 : i
-char  10 : n
-char  11 : g
-
-</code></pre>
-<h1>writing the basic lexer</h1>
-<p>now that we can read a string char by char, we can now check if next char is a keyword</p>
-<p>let us do it for the phrase:</p>
-<p><strong>the beautiful white moon</strong></p>
-<p>where white space is a keyword, referring to above :</p>
-<pre><code class="language-python">lexeme = ''
-add characters to lexeme variable until next char is a white space
-if next is a white space
-    print lexeme
-    lexeme = ''
-</code></pre>
-<p>we implement something similar to it i.e checking if next char is a white space:</p>
-<pre><code class="language-python">string = 'the beautiful white moon'
-white_space = ' '
-
+<hr/>
+<h2>The Core Logic: How to Separate Code</h2>
+<p>Imagine we have this line of code:
+<code>for(i; i &lt; 10; i++){ }</code></p>
+<p>Our lexer needs to separate this into:
+<code>for</code>, <code>(</code>, <code>i</code>, <code>;</code>, <code>i</code>, <code>&lt;</code>, <code>10</code>, <code>;</code>, <code>i</code>, <code>++</code>, <code>)</code>, <code>{</code>, <code>}</code></p>
+<h3>The Strategy</h3>
+<p>We iterate through the string character by character. We accumulate characters into a <code>lexeme</code> variable until we hit a “boundary”—usually a whitespace or a special symbol.</p>
+<pre><code class="language-python"># Conceptual Pseudo-code
 lexeme = ''
-for i,char in enumerate(string):
-    lexeme += char # adding a char each time
-    if (i+1 &lt; len(string)): # prevents error
-        if string[i+1] == white_space: # if next char == ' '
-            print(lexeme)
-            lexeme = ''
+for char in source_code:
+    if char is a whitespace or a special symbol:
+        process(lexeme)
+        process(char)
+        lexeme = ''
+    else:
+        lexeme += char
 </code></pre>
-<p>which outputs :</p>
-<pre><code class="language-python">the
- beautiful
- white
+<hr/>
+<h2>Implementation in Python</h2>
+<p>Let’s build a simple lexer that can handle a snippet of Java-like code.</p>
+<h3>1. Defining our Keywords</h3>
+<pre><code class="language-python"># Single-character symbols that act as boundaries
+SYMBOLS = ['{', '}', '(', ')', '[', ']', '.', '"', '*', '\n', ':', ',', ';', '=', ' ', '\t']
 
+# Multi-character keywords
+KEYWORDS = ['public', 'class', 'static', 'void', 'main', 'String', 'int', 'for']
 </code></pre>
-<p>moon is missing as there is no white space after it, we fix this edge case by printing the lexeme after the loop :</p>
-<pre><code class="language-python">string = 'the beautiful white moon'
-white_space = ' '
+<h3>2. The Lexing Loop</h3>
+<pre><code class="language-python">def simple_lexer(source_code):
+    lexemes = []
+    current_lexeme = ''
 
-lexeme = ''
-for i,char in enumerate(string):
-    lexeme += char # adding a char each time
-    if (i+1 &lt; len(string)): # prevents error
-        if string[i+1] == white_space: # if next char == ' '
-            print(lexeme)
-            lexeme = ''
-print(lexeme)
+    # We use enumerate to easily peek at the next character
+    for i, char in enumerate(source_code):
+        # If it's not a whitespace, add to current lexeme
+        if char not in [' ', '\t', '\n']:
+            current_lexeme += char
+
+        # Look ahead to see if we should "break" the current lexeme
+        if (i + 1 &lt; len(source_code)):
+            next_char = source_code[i + 1]
+
+            # Condition to break:
+            # 1. Next char is a symbol/boundary
+            # 2. Current char is a symbol/boundary
+            # 3. We've just completed a known keyword
+            if next_char in SYMBOLS or char in SYMBOLS or current_lexeme in KEYWORDS:
+                if current_lexeme != '':
+                    lexemes.append(current_lexeme)
+                    current_lexeme = ''
+
+    # Handle the final lexeme
+    if current_lexeme:
+        lexemes.append(current_lexeme)
+
+    return lexemes
+
+# Test it out
+code = 'public class Test { int x = 10; }'
+print(simple_lexer(code))
 </code></pre>
-<p>output :</p>
-<pre><code class="language-python">the
- beautiful
- white
- moon
+<hr/>
+<h2>Challenges and Edge Cases</h2>
+<p>The basic lexer above is a great start, but it has some limitations:</p>
+<ol>
+<li><strong>Multi-character Operators:</strong> How do we handle <code>++</code> or <code>==</code>? Usually, we add a “lookahead” check to see if the next character combines with the current one to form a single token.</li>
+<li><strong>Strings:</strong> Everything inside <code>" "</code> should be treated as one single lexeme, even if it contains spaces or symbols.</li>
+<li><strong>Comments:</strong> We need flags to identify when we enter a comment (<code>/*</code> or <code>//</code>) so we can ignore the content until the comment ends.</li>
+</ol>
+<hr/>
+<h2>Conclusion</h2>
+<p>Building a lexer manually is a fantastic way to learn the internals of programming languages. While libraries like <code>re</code> (Regular Expressions) can make this faster, doing it “by hand” gives you complete control over the parsing logic and a deeper appreciation for the tools we use every day.</p>
+<p>In our next tutorial, we’ll look at <strong>Tokenization</strong>—adding types and metadata to these lexemes!</p>
+<h3>Further Reading:</h3>
+<ul>
+<li><a href="https://www.pythonkitchen.com/building-an-indentation-analyser-in-python-tutorial/">Building an Indentation Analyser in Python</a></li>
+<li><a href="https://www.pythonkitchen.com/how-to-create-your-own-dsldomain-specific-language-in-python/">How to Create Your Own DSL in Python</a></li>
+</ul>
 
-</code></pre>
-<h3>fixing whitespace addition</h3>
-<p>now white space got added to our lexeme, to fix we just add a character if the current char is not a whitespace :</p>
-<pre><code class="language-python">string = 'the beautiful white moon'
-white_space = ' '
-
-lexeme = ''
-for i,char in enumerate(string):
-    if char != white_space:
-        lexeme += char # adding a char each time
-    if (i+1 &lt; len(string)): # prevents error
-        if string[i+1] == white_space: # if next char == ' '
-            print(lexeme)
-            lexeme = ''
-print(lexeme)
-
-
-</code></pre>
-<p>output :</p>
-<pre><code class="language-python">the
-beautiful
-white
-moon
-</code></pre>
-<h1>running on a real piece of code</h1>
-<p>let us take this piece of java code taken from tutorialspoint:</p>
-<pre><code class="language-python">public class Test {
-   // main function
-   public static void main(String args[]) {
-      int [] numbers = {10, 20, 30, 40, 50};
-
-      for(int x : numbers ) {
-         System.out.print( x );
-         System.out.print(&quot;,&quot;);
-      }
-      /* printing new line
-      */
-      System.out.print(&quot;\n&quot;);
-      String [] names = {&quot;James&quot;, &quot;Larry&quot;, &quot;Tom&quot;, &quot;Lacy&quot;};
-
-      for( String name : names ) {
-         System.out.print( name );
-         System.out.print(&quot;,&quot;);
-      }
-   }
-}
-</code></pre>
-<p>our first task is to identify single-char and multi-char keywords</p>
-<p>MULTI-CHAR KEYWORDS :</p>
-<p>public, class, static, void, main, string, int, for</p>
-<p>SINGLE-CHAR KEYWORD :</p>
-<p>{ } ( ) ; [ ] : . \ &rdquo; *</p>
-<p>we did not consider System as a keyword as in the language, System is the name of an id (user-defined name)</p>
-<p>now we can feed those keywords to our lexer</p>
-<h3>preassumption on whitespace</h3>
-<p>since whitespace still separates between like public and class:</p>
-<pre><code class="language-python">public class Test {
-</code></pre>
-<p>we&rsquo;ll keep the if next == whitespace rule</p>
-<blockquote>
-<p>source codes are just pieces of strings</p>
-</blockquote>
-<p>we could have ignored newline was it not for single line comments</p>
-<p>a first attempt:</p>
-<pre><code class="language-python">string = '''
-public class Test {
-
-   public static void main(String args[]) {
-      int [] numbers = {10, 20, 30, 40, 50};
-      // printing !
-      for(int x : numbers ) {
-         System.out.print( x );
-         System.out.print(&quot;,&quot;);
-      }
-      System.out.print(&quot;\n&quot;);
-      String [] names = {&quot;James&quot;, &quot;Larry&quot;, &quot;Tom&quot;, &quot;Lacy&quot;};
-      /*
-      looping over 
-      */
-      for( String name : names ) {
-         System.out.print( name );
-         System.out.print(&quot;,&quot;);
-      }
-   }
-}
-'''
-
-symbols = ['{', '}', '(', ')', '[', ']', '.', '&quot;', '*', '\n', ':', ','] # single-char keywords
-other_symbols = ['\\', '/*', '*/'] # multi-char keywords
-keywords = ['public', 'class', 'void', 'main', 'String', 'int']
-KEYWORDS = symbols + other_symbols + keywords
-
-white_space = ' '
-lexeme = ''
-
-for i,char in enumerate(string):
-    if char != white_space:
-        lexeme += char # adding a char each time
-    if (i+1 &lt; len(string)): # prevents error
-        if string[i+1] == white_space or string[i+1] in KEYWORDS or lexeme in KEYWORDS: # if next char == ' '
-            if lexeme != '':
-                print(lexeme.replace('\n', '&lt;newline&gt;'))
-                lexeme = ''
-
-</code></pre>
-<p>the added conditions test if the next char is a single-char keyword or if what we already have at hand after adding a char is a keyword, if so, we then check if our variable is not empty else we&rsquo;ll print an empty lexeme. we also replaced newline by <newline> to better distinguish it</p>
-<p>the above code outputs in:</p>
-<pre><code class="language-python">&lt;newline&gt;
-public
-class
-Test
-{
-&lt;newline&gt;
-&lt;newline&gt;
-public
-static
-void
-main
-(
-String
-args
-[
-]
-)
-{
-&lt;newline&gt;
-int
-[
-]
-numbers
-=
-{
-10
-,
-20
-,
-30
-,
-40
-,
-50
-}
-;
-&lt;newline&gt;
-//
-printing
-!
-&lt;newline&gt;
-for
-(
-int
-x
-:
-numbers
-)
-{
-&lt;newline&gt;
-System
-.
-out
-.
-print
-(
-x
-)
-;
-&lt;newline&gt;
-System
-.
-out
-.
-print
-(
-&quot;
-,
-&quot;
-)
-;
-&lt;newline&gt;
-}
-&lt;newline&gt;
-System
-.
-out
-.
-print
-(
-&quot;
-&lt;newline&gt;
-&quot;
-)
-;
-&lt;newline&gt;
-String
-[
-]
-names
-=
-{
-&quot;
-James
-&quot;
-,
-&quot;
-Larry
-&quot;
-,
-&quot;
-Tom
-&quot;
-,
-&quot;
-Lacy
-&quot;
-}
-;
-&lt;newline&gt;
-/
-*
-&lt;newline&gt;
-looping
-over
-&lt;newline&gt;
-*
-/
-&lt;newline&gt;
-for
-(
-String
-name
-:
-names
-)
-{
-&lt;newline&gt;
-System
-.
-out
-.
-print
-(
-name
-)
-;
-&lt;newline&gt;
-System
-.
-out
-.
-print
-(
-&quot;
-,
-&quot;
-)
-;
-&lt;newline&gt;
-}
-&lt;newline&gt;
-}
-&lt;newline&gt;
-}
-</code></pre>
-<p>see how it magically separates 10 and , System and . , String and name &hellip; all perfect but : we have  a glitch</p>
-<h1>a glitch and the introduction the next step!</h1>
-<p>see at /* and */, it considered them as / then * and not as a single entity. that is because we defined * as a keyword, though we did not use it here but we use it in multiplication like : 12 * 12</p>
-<p>so, our basic lexer has a confusion at this junction, we can for the time being tackle it like :</p>
-<p>we modify only the loop :</p>
-<pre><code class="language-python">for i,char in enumerate(string):
-    if char == '*':
-        if string[i-1] == '/':
-            lexeme += '/*'
-        elif string[i+1] == '/':
-            lexeme += '*/'
-        else:
-            lexeme += '*'
-    elif char == '/':
-        if string[i+1] != '*' and string[i-1] != '*':
-            lexeme += '/'
-        else:
-            continue
-    else:
-        if char != white_space:
-            lexeme += char # adding a char each time
-    if (i+1 &lt; len(string)): # prevents error
-        if string[i+1] == white_space or string[i+1] in KEYWORDS or lexeme in KEYWORDS: # if next char == ' '
-            if lexeme != '':
-                print(lexeme.replace('\n', '&lt;newline&gt;'))
-                lexeme = ''
-
-
-</code></pre>
-<p>we just added some checks to make things clear with the result that now the comments are recognised as such :</p>
-<pre><code class="language-python">/*
-&lt;newline&gt;
-looping
-over
-&lt;newline&gt;
-*/
-</code></pre>
-<h1>conclusion</h1>
-<p>we built a lexer by voluntarily leaving out regex given that some lookaheads is a breeze in py. we&rsquo;ll move on next time to the tokeniser.</p>
-<p>in this post, brevity was voluntarily left out, favouring a more complete approach, more programming than jargon usage!</p>
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2019-07-18 15:02:53" class="text-gray-400 uppercase tracking-wider">July 18, 2019</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/dsl-python-new-language-how-to-build-a-css-pre-processor-like-sass-from-scratch-dotdot">
+                                            <span class="absolute inset-0"></span>
+                                            DSL / Python / New Language: How to build a CSS pre-processor (like SASS) from scratch (DotDot)
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        If you are in web development, maybe you’ve heard of Sass, Less, Pug, Stylus etc. All these are pre-...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-09-03 05:50:09" class="text-gray-400 uppercase tracking-wider">September 3, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/how-to-create-your-own-dsldomain-specific-language-in-python">
+                                            <span class="absolute inset-0"></span>
+                                            Creating Your Own Domain Specific Language (DSL) in Python
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Sometimes, a standard CLI tool isn’t enough, but a full-blown programming language is overkill. This...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-05-04 08:31:13" class="text-gray-400 uppercase tracking-wider">May 4, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/building-an-indentation-analyser-in-python-tutorial">
+                                            <span class="absolute inset-0"></span>
+                                            Building an Indentation Analyser in Python: A Comprehensive Guide
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        In many programming languages, like C or Java, scope is defined by curly braces {}. However, languag...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

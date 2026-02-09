@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='generating unintelligent random maps on mouse press' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procedural Generation Basics: Random Map Generation in Python | Python Kitchen</title>
+  <meta name="description" content="In game development, Procedural Generation is the technique of using algorithms to create game content automatically rather than manually. While complex games l...">
+  <meta name="keywords" content="python, processing.py, game-dev, procedural-generation, algorithms, canvas theory,  processing.py">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/generating-unintelligent-random-maps/">
+  <meta property="og:title" content="Procedural Generation Basics: Random Map Generation in Python">
+  <meta property="og:description" content="In game development, Procedural Generation is the technique of using algorithms to create game content automatically rather than manually. While complex games l...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/generating-unintelligent-random-maps/">
+  <meta property="twitter:title" content="Procedural Generation Basics: Random Map Generation in Python">
+  <meta property="twitter:description" content="In game development, Procedural Generation is the technique of using algorithms to create game content automatically rather than manually. While complex games l...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='canvas theory'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='generating unintelligent random maps on mouse press'>
+  <meta name='subtitle' content='Procedural Generation Basics: Random Map Generation in Python'>
   <meta name='pageKey' content='generating-unintelligent-random-maps'>
-  <meta name='og:title' content='generating unintelligent random maps on mouse press'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/generating-unintelligent-random-maps'>
-
-  <title>generating unintelligent random maps on mouse press</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">generating unintelligent random maps on mouse press</p>
+                    <p class="text-3xl" style="font-weight: 600;">Procedural Generation Basics: Random Map Generation in Python</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-06-01 05:32:02" class="text-gray-500">June 1, 2018</time>
@@ -163,7 +182,7 @@
                         </a>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            processing.py
+                             processing.py
                         </a>
                         
                     </div>
@@ -183,22 +202,130 @@
                     
                     <br>
                     <article>
-                        <p>this code generates random maps on mouse press. it is really just a simple 2d array value filling. a modification of <a href="https://www.pythonmembers.club/2018/05/29/game-map-rendering/">this article</a>.
-demo</p>
-<hr />
-<h2>explanations</h2>
-<pre><code class="language-python">def random_map():
-    for r in range(map_length):
-        for c in range(map_length):
-            game_map[c][r] = random.randint(0,1)
+                        <p>In game development, <strong>Procedural Generation</strong> is the technique of using algorithms to create game content automatically rather than manually. While complex games like <em>Minecraft</em> or <em>No Man’s Sky</em> use sophisticated noise functions, we can start by learning the most basic form: <strong>Random Value Filling</strong>.</p>
+<p>This tutorial builds upon our <a href="https://www.pythonkitchen.com/game-map-rendering/">Tile-Based Map Rendering</a> guide.</p>
+<hr/>
+<h2>The “Unintelligent” Approach</h2>
+<p>The simplest way to generate a map is to iterate through every cell in your 2D grid and assign it a random tile type. </p>
+<p>We call this “unintelligent” because there is no logic to ensure that the tiles make sense together. For example, you might get a single water tile surrounded entirely by land, or a very “noisy” looking map that doesn’t resemble real geography.</p>
+<h3>Python Implementation</h3>
+<p>Using the <code>random</code> module, we can quickly fill our <code>game_map</code> with new data:</p>
+<pre><code class="language-python">import random
 
-</code></pre>
-<p>here we generated a random map by looping and assigning a random value. randint returns a value betwen 1 and 0. the advantage of a function is that we just need to call it each time a random map is needed</p>
-<pre><code class="language-python">def mousePressed():
-    random_map()
+MAP_SIZE = 10
+game_map = [[0 for _ in range(MAP_SIZE)] for _ in range(MAP_SIZE)]
 
+def generate_random_map():
+    for r in range(MAP_SIZE):
+        for c in range(MAP_SIZE):
+            # Assign 0 (Grass) or 1 (Water) randomly
+            game_map[r][c] = random.randint(0, 1)
+
+def mousePressed():
+    # Generate a new map every time the user clicks
+    generate_random_map()
+    redraw()
 </code></pre>
-<p>each time the mouse is pressed, random_map() is called</p>
+<hr/>
+<h2>Improving the Randomness: Probability</h2>
+<p>Purely random (50/50) maps often look chaotic. We can improve this by introducing <strong>weighted probabilities</strong>. If we want a world that is mostly grass with only a few lakes, we can adjust our logic:</p>
+<pre><code class="language-python">def generate_weighted_map():
+    for r in range(MAP_SIZE):
+        for c in range(MAP_SIZE):
+            # Generate a number between 0 and 100
+            chance = random.random() * 100
+
+            if chance &lt; 80:
+                game_map[r][c] = 0 # 80% chance for Grass
+            else:
+                game_map[r][c] = 1 # 20% chance for Water
+</code></pre>
+<hr/>
+<h2>Random vs. Noise-Based Generation</h2>
+<p>While simple randomness is great for learning, professional games usually use <strong>Perlin Noise</strong> or <strong>Simplex Noise</strong>. </p>
+<ul>
+<li><strong>Random:</strong> Every cell is independent. Result: “Static” or noisy look.</li>
+<li><strong>Noise:</strong> Each cell is related to its neighbors. Result: Smooth, natural-looking transitions (hills, valleys, and coastlines).</li>
+</ul>
+<h3>Next Steps</h3>
+<p>Try modifying the <code>generate_random_map</code> function to include a third tile type, like “Mountain” or “Desert,” and experiment with different probability weights to see how it changes the “feel” of your generated world.</p>
+<p>Procedural generation is a deep and fascinating topic. Starting with simple random grids is the first step toward building infinite, ever-changing game universes!</p>
+<h3>Related Posts:</h3>
+<ul>
+<li><a href="https://www.pythonkitchen.com/game-map-rendering/">Tile-Based Game Map Rendering</a></li>
+<li><a href="https://www.pythonkitchen.com/translating-location-to-map-coordinates/">Converting Screen Space to Map Space</a></li>
+</ul>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-06-06 06:10:46" class="text-gray-400 uppercase tracking-wider">June 6, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/translating-location-to-map-coordinates">
+                                            <span class="absolute inset-0"></span>
+                                            Coordinate Systems: Converting Screen Space to Map Space
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        When building a tile-based game, you constantly need to translate between two different worlds:
+1.  ...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-05-29 05:20:26" class="text-gray-400 uppercase tracking-wider">May 29, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/game-map-rendering">
+                                            <span class="absolute inset-0"></span>
+                                            Tile-Based Game Map Rendering with Processing.py
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Whether you’re building a classic RPG or a puzzle game, tile-based rendering is one of the most effi...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-05-28 18:26:55" class="text-gray-400 uppercase tracking-wider">May 28, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/lines-around-nodes">
+                                            <span class="absolute inset-0"></span>
+                                            Building a Dynamic Polygon Drawer in Processing.py
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Have you ever wondered how vector drawing tools allow you to click and create complex shapes? In thi...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='game map rendering' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tile-Based Game Map Rendering with Processing.py | Python Kitchen</title>
+  <meta name="description" content="Whether you’re building a classic RPG or a puzzle game, tile-based rendering is one of the most efficient ways to create large, structured game worlds. Instead ...">
+  <meta name="keywords" content="python, processing.py, game-dev, tile-map, beginners, canvas theory,  processing.py">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/game-map-rendering/">
+  <meta property="og:title" content="Tile-Based Game Map Rendering with Processing.py">
+  <meta property="og:description" content="Whether you’re building a classic RPG or a puzzle game, tile-based rendering is one of the most efficient ways to create large, structured game worlds. Instead ...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/game-map-rendering/">
+  <meta property="twitter:title" content="Tile-Based Game Map Rendering with Processing.py">
+  <meta property="twitter:description" content="Whether you’re building a classic RPG or a puzzle game, tile-based rendering is one of the most efficient ways to create large, structured game worlds. Instead ...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='canvas theory'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='game map rendering'>
+  <meta name='subtitle' content='Tile-Based Game Map Rendering with Processing.py'>
   <meta name='pageKey' content='game-map-rendering'>
-  <meta name='og:title' content='game map rendering'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/game-map-rendering'>
-
-  <title>game map rendering</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">game map rendering</p>
+                    <p class="text-3xl" style="font-weight: 600;">Tile-Based Game Map Rendering with Processing.py</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-05-29 05:20:26" class="text-gray-500">May 29, 2018</time>
@@ -163,7 +182,7 @@
                         </a>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            processing.py
+                             processing.py
                         </a>
                         
                     </div>
@@ -183,47 +202,142 @@
                     
                     <br>
                     <article>
-                        <p>game map rendering or simply map rendering is a nice technique that is used to generate worlds.</p>
-<p>explanations follow suit :
-demo</p>
-<hr />
-<h2>explanations</h2>
-<pre><code class="language-python">game_map = [
-        [0,0,0,0,0],
-        [0,1,0,1,0],
-        [0,0,1,0,0],
-        [0,1,0,1,0],
-        [0,0,1,0,0],
-        ]
-
+                        <p>Whether you’re building a classic RPG or a puzzle game, <strong>tile-based rendering</strong> is one of the most efficient ways to create large, structured game worlds. Instead of drawing every pixel manually, we divide the world into a grid of “tiles.”</p>
+<p>In this tutorial, we’ll learn how to translate a 2D Python list into a visual game map using Processing.py.</p>
+<hr/>
+<h2>The Concept: The Data Map</h2>
+<p>At its heart, a game level is just data. We can represent a grid of tiles using a 2D list (a list of lists). In this example:
+*   <code>0</code> represents Grass (Green)
+*   <code>1</code> represents Water (Blue)</p>
+<pre><code class="language-python"># Our 5x5 game map
+game_map = [
+    [0, 0, 0, 0, 0],
+    [0, 1, 1, 1, 0],
+    [0, 1, 0, 1, 0],
+    [0, 1, 1, 1, 0],
+    [0, 0, 0, 0, 0]
+]
 </code></pre>
-<p>first we initialise our world as a 2d array, we distinguished patterns by using 0 and 1</p>
-<pre><code class="language-python">tile_width = 50
+<hr/>
+<h2>Rendering the Grid</h2>
+<p>To turn this data into a visual map, we need to loop through the rows and columns. The position of each tile on the screen is calculated by multiplying its grid index by the <strong>tile size</strong>.</p>
+<h3>The Math</h3>
+<p>If a tile is at row <code>r</code> and column <code>c</code>, and our tiles are 50 pixels wide:
+*   <code>x = c * 50</code>
+*   <code>y = r * 50</code></p>
+<h3>The Python Implementation</h3>
+<pre><code class="language-python">TILE_SIZE = 50
 
-</code></pre>
-<p>next we initialised the width of a tile. the formula for tile placement is x*tile_width</p>
-<pre><code class="language-python">def green_tile(x, y):
-    fill(0,255,0)
-    rect(x, y, tile_width, tile_width)
-    
-def white_tile(x, y):
-    fill(255)
-    rect(x, y, tile_width, tile_width)
+def setup():
+    size(250, 250)
+    noLoop() # We only need to draw the map once
 
-</code></pre>
-<p>next we separated our tile rendering in two functions, for now it&rsquo;s just colored squares</p>
-<pre><code class="language-python">    for r in range(map_length):
-        for c in range(map_length):
+def draw():
+    background(255)
 
-</code></pre>
-<p>we loop or the array twice, one for the row and one for the column to get the index to accesss our map by game_map[x][y]</p>
-<pre><code class="language-python">            if game_map[c][r] == 0: # inversed for viewing as is in variable
-                green_tile(r*tile_width, c*tile_width)
-            elif game_map[c][r] == 1:
-                white_tile(r*tile_width, c*tile_width)
+    # Iterate through rows
+    for r in range(len(game_map)):
+        # Iterate through columns in each row
+        for c in range(len(game_map[r])):
 
+            tile_type = game_map[r][c]
+
+            # Determine color based on tile type
+            if tile_type == 0:
+                fill(34, 139, 34) # Forest Green
+            elif tile_type == 1:
+                fill(30, 144, 255) # Dodger Blue
+
+            # Draw the tile
+            # Notice x is column (c) and y is row (r)
+            rect(c * TILE_SIZE, r * TILE_SIZE, TILE_SIZE, TILE_SIZE)
 </code></pre>
-<p>here we render according to predefined symbols, it could have been &lsquo;g&rsquo; and &lsquo;p&rsquo; for grass and path</p>
+<hr/>
+<h2>Why use Tile Maps?</h2>
+<ol>
+<li><strong>Memory Efficiency:</strong> You only need to store a few integers per tile, rather than high-resolution images of the entire world.</li>
+<li><strong>Easy Collision Detection:</strong> If you know your character is at pixel (120, 85), you can easily calculate exactly which tile they are standing on by dividing by <code>TILE_SIZE</code>.</li>
+<li><strong>Level Editors:</strong> It’s very easy to create a tool that allows you to “paint” levels by changing numbers in a grid.</li>
+</ol>
+<h2>Going Further</h2>
+<p>Once you have the basic grid working, you can replace the simple <code>rect()</code> calls with <code>image()</code> calls to use actual sprites for your grass and water. </p>
+<p>In our next post, we’ll look at how to <strong>generate these maps randomly</strong> so you never play the same level twice!</p>
+<h3>Related Posts:</h3>
+<ul>
+<li><a href="https://www.pythonkitchen.com/generating-unintelligent-random-maps/">Generating Random Maps on the Fly</a></li>
+<li><a href="https://www.pythonkitchen.com/translating-location-to-map-coordinates/">Converting Screen Coordinates to Map Coordinates</a></li>
+</ul>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-06-06 06:10:46" class="text-gray-400 uppercase tracking-wider">June 6, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/translating-location-to-map-coordinates">
+                                            <span class="absolute inset-0"></span>
+                                            Coordinate Systems: Converting Screen Space to Map Space
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        When building a tile-based game, you constantly need to translate between two different worlds:
+1.  ...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-06-01 05:32:02" class="text-gray-400 uppercase tracking-wider">June 1, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/generating-unintelligent-random-maps">
+                                            <span class="absolute inset-0"></span>
+                                            Procedural Generation Basics: Random Map Generation in Python
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        In game development, Procedural Generation is the technique of using algorithms to create game conte...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-05-28 18:26:55" class="text-gray-400 uppercase tracking-wider">May 28, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/lines-around-nodes">
+                                            <span class="absolute inset-0"></span>
+                                            Building a Dynamic Polygon Drawer in Processing.py
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Have you ever wondered how vector drawing tools allow you to click and create complex shapes? In thi...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

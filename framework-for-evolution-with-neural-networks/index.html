@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Biosim4: Framework For Evolution With Neural Networks' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biosim4: Framework For Evolution With Neural Networks | Python Kitchen</title>
+  <meta name="description" content="Biosim4 is a project in which there’s a 2-dimensional world where creatures with neural brains live in it. They have genomes (complete genetic information) that...">
+  <meta name="keywords" content=", machine learning">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/framework-for-evolution-with-neural-networks/">
+  <meta property="og:title" content="Biosim4: Framework For Evolution With Neural Networks">
+  <meta property="og:description" content="Biosim4 is a project in which there’s a 2-dimensional world where creatures with neural brains live in it. They have genomes (complete genetic information) that...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/framework-for-evolution-with-neural-networks/">
+  <meta property="twitter:title" content="Biosim4: Framework For Evolution With Neural Networks">
+  <meta property="twitter:description" content="Biosim4 is a project in which there’s a 2-dimensional world where creatures with neural brains live in it. They have genomes (complete genetic information) that...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='machine learning'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
   <meta name='subtitle' content='Biosim4: Framework For Evolution With Neural Networks'>
   <meta name='pageKey' content='framework-for-evolution-with-neural-networks'>
-  <meta name='og:title' content='Biosim4: Framework For Evolution With Neural Networks'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/framework-for-evolution-with-neural-networks'>
-
-  <title>Biosim4: Framework For Evolution With Neural Networks</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -179,7 +198,7 @@
                     
                     <br>
                     <article>
-                        <p><strong>Biosim4</strong> is a project in which there&rsquo;s a 2-dimensional world where creatures with neural brains live in it. They have genomes (complete genetic information) that they pass on from one generation to the next generation, And these creatures have neural network brains that govern their behaviour. This project aims to try setting up the conditions necessary for evolution to occur and then see what happens next. Would the creatures evolve their brains in response to their environment? This article will provide you with detailed information about the code structure, functionality and overall understanding of evolution connecting with neural networks. Note that we won&rsquo;t be seeing an actual simulation here. The best thing to do is to watch the video given above, This article is only for understanding the code structure of this program, But before we read the code, let&rsquo;s brush up on our basics on evolution first!</p>
+                        <p><strong>Biosim4</strong> is a project in which there’s a 2-dimensional world where creatures with neural brains live in it. They have genomes (complete genetic information) that they pass on from one generation to the next generation, And these creatures have neural network brains that govern their behaviour. This project aims to try setting up the conditions necessary for evolution to occur and then see what happens next. Would the creatures evolve their brains in response to their environment? This article will provide you with detailed information about the code structure, functionality and overall understanding of evolution connecting with neural networks. Note that we won’t be seeing an actual simulation here. The best thing to do is to watch the video given above, This article is only for understanding the code structure of this program, But before we read the code, let’s brush up on our basics on evolution first!</p>
 <h2>Table of content</h2>
 <ul>
 <li>About Evolution</li>
@@ -191,7 +210,7 @@
 <p>Note: a code/function/class/container is referred as this: <code>code</code>, <code>function</code>, <code>class</code>, <code>container</code>
 And Files are referred as links <a href="https://github.com/davidrmiller/biosim4/blob/main/Makefile">File</a> 
 About Evolution</p>
-<hr />
+<hr/>
 <p>Evloution can happen:</p>
 <ul>
 <li>without any external effort</li>
@@ -200,38 +219,38 @@ About Evolution</p>
 </ul>
 <p>If the following conditions are satisfied:</p>
 <ol>
-<li><strong>Self-Replication -</strong> Any behaviour of an organism&rsquo;s system that yields the construction of a similar copy of its Biological cells, Given suitable environments. In our simulator, Each creature is just a little data structure. It contains a few bits of information like where it lives in the world, its genome and its neural network brain.</li>
+<li><strong>Self-Replication -</strong> Any behaviour of an organism’s system that yields the construction of a similar copy of its Biological cells, Given suitable environments. In our simulator, Each creature is just a little data structure. It contains a few bits of information like where it lives in the world, its genome and its neural network brain.</li>
 <li>Genome - the genome is a complete set of genetic information of an organism. It provides all the information the organism requires to function, And DNA and RNA are specific chemical storage formats for storing that information. In nature, DNA is just a long strand of a protein molecule. A DNA strand in our simulator might look like this.</li>
 </ol>
 <blockquote>
-<p><strong>&ldquo;</strong> CAGAAGATGATAAGC TCCGGCAAGCAATTAT GAACAACGCAAGGATC
- GGCGATATAAACAGAG <strong>&ldquo;</strong></p>
+<p><strong>“</strong> CAGAAGATGATAAGC TCCGGCAAGCAATTAT GAACAACGCAAGGATC
+ GGCGATATAAACAGAG <strong>“</strong></p>
 </blockquote>
-<p>{Fact: In each one of your cells, there are approx. 3 billion of these DNA letters} This simulator(Biosim4) also uses strings of letters or characters to store each individual&rsquo;s genome. But its genomes are a lot shorter. It only uses a few dozen Letters or maybe a few hundred Letters at most.</p>
+<p>{Fact: In each one of your cells, there are approx. 3 billion of these DNA letters} This simulator(Biosim4) also uses strings of letters or characters to store each individual’s genome. But its genomes are a lot shorter. It only uses a few dozen Letters or maybe a few hundred Letters at most.</p>
 <ol>
-<li>Inherited genome - Genome inherited by parents/replicator. You contain DNA that partly comes from one parent and part comes from the other parent, And that&rsquo;s what is done in the simulator, When a new child is born in our simulator, We copy the data structure, but we also copy some of the genomes from one parent and some of the genomes from the other parent which makes up a new genome for the child data structure.</li>
-<li>Mutation - The inherited genome gets passed to the offspring and has to undergo occasional modifications/enhancements. Usually, when you inherit the genes from your parents, those genes are copied 100% accurately most of the time, But once in a while, you&rsquo;ll have a gene that you get that has one different letter, or a few letters are different, and that is called mutation In our simulator, there&rsquo;s a parameter that tells how often a mutation happens there&rsquo;s one chance in 1000 that any gene that gets inherited will have a single-bit error in its copy. That means the genome inherited by the child will have a 1 in 1000 chance of being modified/enhanced from the rest of 999, and this satisfies our condition for mutation.</li>
+<li>Inherited genome - Genome inherited by parents/replicator. You contain DNA that partly comes from one parent and part comes from the other parent, And that’s what is done in the simulator, When a new child is born in our simulator, We copy the data structure, but we also copy some of the genomes from one parent and some of the genomes from the other parent which makes up a new genome for the child data structure.</li>
+<li>Mutation - The inherited genome gets passed to the offspring and has to undergo occasional modifications/enhancements. Usually, when you inherit the genes from your parents, those genes are copied 100% accurately most of the time, But once in a while, you’ll have a gene that you get that has one different letter, or a few letters are different, and that is called mutation In our simulator, there’s a parameter that tells how often a mutation happens there’s one chance in 1000 that any gene that gets inherited will have a single-bit error in its copy. That means the genome inherited by the child will have a 1 in 1000 chance of being modified/enhanced from the rest of 999, and this satisfies our condition for mutation.</li>
 </ol>
 <h2>A Complete Code Walkthrough of Biosim4</h2>
 <h3>Data Structures Of Biosim4:</h3>
-<p><strong>The World Structure</strong> - The creatures live in a simulation where there&rsquo;s a 2D arena. Class <code>Grid</code> (see <a href="https://github.com/davidrmiller/biosim4/blob/main/src/grid.h">&ldquo;grid.h&rdquo;</a> and <a href="https://github.com/davidrmiller/biosim4/blob/main/src/grid.cpp">&ldquo;grid.cpp&rdquo;</a>) contains a 2D array of 16-bit indexes, where each nonzero index refers to a specific individual in class <code>Peeps</code> (see below). Zero values in Grid indicate empty locations. Class Grid does not know anything else about the world; it only stores indexes to represent who lives where.
-<em>Here&rsquo;s an image of our world !</em>
-<img alt="Our World" src="https://raw.githubusercontent.com/Abdullium/NYPD/main/Screenshot%202022-10-07%20143229.png" />
-<strong>The Population</strong> - The population of creatures is Stored in class Peeps (see <a href="https://github.com/davidrmiller/biosim4/blob/main/src/peeps.h">peeps.h</a> and <a href="https://github.com/davidrmiller/biosim4/blob/main/src/peeps.cpp">peeps.cpp</a>). Class <code>Peeps</code> contains each organism in the simulation, stored as instances of struct Indiv in a <code>std::vector</code> container. The indexes in class <code>Grid</code> are indexes into the vector of individuals in class Peeps. Class <code>Peeps</code> keep a container of struct Indiv but otherwise do not know anything about the internal workings of these organisms.<img alt="The population" src="https://raw.githubusercontent.com/Abdullium/NYPD/main/Screenshot%202022-10-07%20143941.png" />
-<strong>The Individual</strong> - Each individual is represented by an instance of <code>struct Indiv</code> (see <a href="https://github.com/davidrmiller/biosim4/blob/main/src/indiv.h">indiv.h</a> and <a href="https://github.com/davidrmiller/biosim4/blob/main/src/indiv.cpp">indiv.cpp</a>). struct Indiv contains an individual&rsquo;s genome. Its corresponding neural net brain and a redundant copy of the individual&rsquo;s X and Y location in the 2D Grid. It also contains a few other parameters for the individual, such as its &ldquo;responsiveness&rdquo; level, oscillator period, age, and other personal parameters. struct Indiv knows how to convert an individual&rsquo;s genome into its neural net brain at the beginning of the simulation. It also knows how to print the genome and neural net brain in text format to stdout during a simulation. It also has a function <code>Indiv::getSensor()</code> that is called to compute the individual&rsquo;s input neurons for each simulator step. All the simulator code lives in the BS namespace called &ldquo;biosim4&rdquo;.
-<img alt="The individual" src="https://raw.githubusercontent.com/Abdullium/NYPD/main/Screenshot%202022-10-07%20143852.png" />
+<p><strong>The World Structure</strong> - The creatures live in a simulation where there’s a 2D arena. Class <code>Grid</code> (see <a href="https://github.com/davidrmiller/biosim4/blob/main/src/grid.h">“grid.h”</a> and <a href="https://github.com/davidrmiller/biosim4/blob/main/src/grid.cpp">“grid.cpp”</a>) contains a 2D array of 16-bit indexes, where each nonzero index refers to a specific individual in class <code>Peeps</code> (see below). Zero values in Grid indicate empty locations. Class Grid does not know anything else about the world; it only stores indexes to represent who lives where.
+<em>Here’s an image of our world !</em>
+<img alt="Our World" src="https://raw.githubusercontent.com/Abdullium/NYPD/main/Screenshot%202022-10-07%20143229.png"/>
+<strong>The Population</strong> - The population of creatures is Stored in class Peeps (see <a href="https://github.com/davidrmiller/biosim4/blob/main/src/peeps.h">peeps.h</a> and <a href="https://github.com/davidrmiller/biosim4/blob/main/src/peeps.cpp">peeps.cpp</a>). Class <code>Peeps</code> contains each organism in the simulation, stored as instances of struct Indiv in a <code>std::vector</code> container. The indexes in class <code>Grid</code> are indexes into the vector of individuals in class Peeps. Class <code>Peeps</code> keep a container of struct Indiv but otherwise do not know anything about the internal workings of these organisms.<img alt="The population" src="https://raw.githubusercontent.com/Abdullium/NYPD/main/Screenshot%202022-10-07%20143941.png"/>
+<strong>The Individual</strong> - Each individual is represented by an instance of <code>struct Indiv</code> (see <a href="https://github.com/davidrmiller/biosim4/blob/main/src/indiv.h">indiv.h</a> and <a href="https://github.com/davidrmiller/biosim4/blob/main/src/indiv.cpp">indiv.cpp</a>). struct Indiv contains an individual’s genome. Its corresponding neural net brain and a redundant copy of the individual’s X and Y location in the 2D Grid. It also contains a few other parameters for the individual, such as its “responsiveness” level, oscillator period, age, and other personal parameters. struct Indiv knows how to convert an individual’s genome into its neural net brain at the beginning of the simulation. It also knows how to print the genome and neural net brain in text format to stdout during a simulation. It also has a function <code>Indiv::getSensor()</code> that is called to compute the individual’s input neurons for each simulator step. All the simulator code lives in the BS namespace called “biosim4”.
+<img alt="The individual" src="https://raw.githubusercontent.com/Abdullium/NYPD/main/Screenshot%202022-10-07%20143852.png"/>
 <strong>The Configuration File:</strong></p>
-<p>The configuration file, named <a href="https://github.com/davidrmiller/biosim4/blob/main/biosim4.ini">biosim4.ini</a> by default, contains all the tunable parameters for a simulation run. The biosim4 executable reads the configuration file at startup And then monitors it for changes during the simulation. Although it&rsquo;s not foolproof, Many of its parameters can be modified during the simulation run. Class <code>ParamManage</code>r (see <a href="https://github.com/davidrmiller/biosim4/blob/main/src/params.h">params.h</a> and <a href="https://github.com/davidrmiller/biosim4/blob/main/src/params.cpp">params.cpp</a>) manages the configuration parameters and makes them available to the simulator through a read-only pointer provided by <code>ParamManager::getParamRef()</code>. See the provided biosim4.ini for documentation for each parameter. Most parameters in the configuration file corresponding to members in struct Params (see params.h).</p>
+<p>The configuration file, named <a href="https://github.com/davidrmiller/biosim4/blob/main/biosim4.ini">biosim4.ini</a> by default, contains all the tunable parameters for a simulation run. The biosim4 executable reads the configuration file at startup And then monitors it for changes during the simulation. Although it’s not foolproof, Many of its parameters can be modified during the simulation run. Class <code>ParamManage</code>r (see <a href="https://github.com/davidrmiller/biosim4/blob/main/src/params.h">params.h</a> and <a href="https://github.com/davidrmiller/biosim4/blob/main/src/params.cpp">params.cpp</a>) manages the configuration parameters and makes them available to the simulator through a read-only pointer provided by <code>ParamManager::getParamRef()</code>. See the provided biosim4.ini for documentation for each parameter. Most parameters in the configuration file corresponding to members in struct Params (see params.h).</p>
 <p><strong>The Program Output:</strong></p>
 <p>Depending on the parameters in the configuration file. These are the following results that can be produced by biosim4:</p>
 <ol>
 <li>
-<p>The simulator will append one line to logs/epoch.txt after the completion of each generation. Each line records the generation number, the number of individuals who survived the selection criterion, an estimate of the population&rsquo;s genetic diversity, average genome length, and the number of deaths due to the <a href="https://www.researchgate.net/figure/The-number-of-genes-killed-by-selection-in-the-course-of-evolution-during-which-mutation_fig3_220858827">&ldquo;Kill gene&rdquo;</a>. This file epoch.txt can be fed to tools/<a href="https://github.com/davidrmiller/biosim4/blob/main/tools/graphlog.gp">graphlog.gp</a> to produce a graphic plot.</p>
+<p>The simulator will append one line to logs/epoch.txt after the completion of each generation. Each line records the generation number, the number of individuals who survived the selection criterion, an estimate of the population’s genetic diversity, average genome length, and the number of deaths due to the <a href="https://www.researchgate.net/figure/The-number-of-genes-killed-by-selection-in-the-course-of-evolution-during-which-mutation_fig3_220858827">“Kill gene”</a>. This file epoch.txt can be fed to tools/<a href="https://github.com/davidrmiller/biosim4/blob/main/tools/graphlog.gp">graphlog.gp</a> to produce a graphic plot.</p>
 </li>
 <li>
 <p>The simulator will display a small number of sample genomes at regular intervals to stdout. Parameters in the configuration file specify the number and interval. The genomes are in hex format and Also in mnemonic that can be fed to tools
 {Fact: In each one of your cells, there are approx. 3 billion of these DNA letters} 
-This simulator(Biosim4) also uses strings of letters or characters to store each individual&rsquo;s genome. But its genomes are a lot shorter. It only uses a few dozen Letters or maybe a few hundred Letters at most. to produce a graphic network diagram.</p>
+This simulator(Biosim4) also uses strings of letters or characters to store each individual’s genome. But its genomes are a lot shorter. It only uses a few dozen Letters or maybe a few hundred Letters at most. to produce a graphic network diagram.</p>
 </li>
 <li>
 <p>Movies of the selected generations will be created in the images/ directory. Parameters in the configuration file specify the interval at which to make movies. Each movie records a single generation.</p>
@@ -255,11 +274,11 @@ This simulator(Biosim4) also uses strings of letters or characters to store each
 </ol>
 <p>At the end of each simulator step, a call is made to <code>endOfSimStep()</code> in single-thread mode (see <a href="https://github.com/davidrmiller/biosim4/blob/main/src/endOfSimStep.cpp">endOfSimStep.cpp)</a> to create a video frame representing the locations of all the individuals at the end of the simulator step. The video frame is pushed onto a stack to be converted to a movie later. At the end of each generation, a call is made to <code>endOfGeneration()</code> in single-thread mode (see <a href="https://github.com/davidrmiller/biosim4/blob/main/src/endOfGeneration.cpp">endOfGeneration.cpp</a>) to create a video from the saved video frames. Also, a new graph might generate showing the progress of the simulation. See endOfGeneraton.cpp for more information.</p>
 <h3>Sensory inputs and action outputs</h3>
-<p>Every one of our creatures is born with a certain number of sensory inputs pre-installed alongside a collection of output action neurons. Initially, When an organism is born, its brain is not wired up well enough as much as its parents. It&rsquo;s the quality of the genome inherited from the parent which determines motor functionality, intelligence, and survival instincts (a.k.a wiring). Each sensory input and each action output is a neuron in the individual&rsquo;s neural net brain. The header file <a href="https://github.com/davidrmiller/biosim4/blob/main/src/sensors-actions.h">sensors-actions.h</a> contains <code>Enum Sensor</code> that enumerates all the possible sensory inputs and <code>Enum Action</code>. Enum action enumerates all the possible action outputs. In Enum Sensor, all the sensory inputs before the enumerant NUM_SENSES will be compiled into the executable, And all action outputs before NUM_ACTIONS will be compiled. By rearranging the enumerants in those enums, you can select a subset of all possible sensory and action neurons to be compiled into the simulator.</p>
+<p>Every one of our creatures is born with a certain number of sensory inputs pre-installed alongside a collection of output action neurons. Initially, When an organism is born, its brain is not wired up well enough as much as its parents. It’s the quality of the genome inherited from the parent which determines motor functionality, intelligence, and survival instincts (a.k.a wiring). Each sensory input and each action output is a neuron in the individual’s neural net brain. The header file <a href="https://github.com/davidrmiller/biosim4/blob/main/src/sensors-actions.h">sensors-actions.h</a> contains <code>Enum Sensor</code> that enumerates all the possible sensory inputs and <code>Enum Action</code>. Enum action enumerates all the possible action outputs. In Enum Sensor, all the sensory inputs before the enumerant NUM_SENSES will be compiled into the executable, And all action outputs before NUM_ACTIONS will be compiled. By rearranging the enumerants in those enums, you can select a subset of all possible sensory and action neurons to be compiled into the simulator.</p>
 <p>Here are all the sensory inputs:
-<img alt="sensory inputs" src="https://raw.githubusercontent.com/Abdullium/NYPD/main/Screenshot%202022-10-07%20152614.png" /></p>
+<img alt="sensory inputs" src="https://raw.githubusercontent.com/Abdullium/NYPD/main/Screenshot%202022-10-07%20152614.png"/></p>
 <p>Here are all the action outputs:
- <img alt="enter image description here" src="https://raw.githubusercontent.com/Abdullium/NYPD/main/Screenshot%202022-10-07%20152657.png" /></p>
+ <img alt="enter image description here" src="https://raw.githubusercontent.com/Abdullium/NYPD/main/Screenshot%202022-10-07%20152657.png"/></p>
 <h3>Fundamental value types</h3>
 <p>There are a few basic value types:</p>
 <ul>
@@ -278,10 +297,81 @@ This simulator(Biosim4) also uses strings of letters or characters to store each
 </ul>
 <p>Various conversions and math are possible between these basic types. See <a href="https://github.com/davidrmiller/biosim4/blob/main/src/unitTestBasicTypes.cpp">unitTestBasicTypes.cpp</a></p>
 <h3>Pheromones</h3>
-<p>A simple system used to simulate pheromones emitted by individuals. Pheromones are called &ldquo;signals&rdquo; in our simulator(see <a href="https://github.com/davidrmiller/biosim4/blob/main/src/signals.h">signals.h</a> and <a href="https://github.com/davidrmiller/biosim4/blob/main/src/signals.cpp">signals.cpp</a>). <code>Struct Signals</code> holds a single layer that overlays the 2D world in class Grid. Each location can contain a volume of pheromones(there&rsquo;s only a single kind of pheromone supported at present). The pheromone volume at any grid location is stored as an unsigned 8-bit integer, where zero means no pheromone, and 255 is the maximum. Each time an individual emits a pheromone, it increases the pheromone values in a small neighbourhood around the individual up to the maximum of 255.</p>
+<p>A simple system used to simulate pheromones emitted by individuals. Pheromones are called “signals” in our simulator(see <a href="https://github.com/davidrmiller/biosim4/blob/main/src/signals.h">signals.h</a> and <a href="https://github.com/davidrmiller/biosim4/blob/main/src/signals.cpp">signals.cpp</a>). <code>Struct Signals</code> holds a single layer that overlays the 2D world in class Grid. Each location can contain a volume of pheromones(there’s only a single kind of pheromone supported at present). The pheromone volume at any grid location is stored as an unsigned 8-bit integer, where zero means no pheromone, and 255 is the maximum. Each time an individual emits a pheromone, it increases the pheromone values in a small neighbourhood around the individual up to the maximum of 255.</p>
 <p><strong>I hope that by now you would have understood the code,
 to see the actual simulation</strong> <a href="https://www.youtube.com/watch?v=N3tRFayqVtk&amp;list=WL&amp;index=23">click here</a>
 * <a href="https://youtu.be/N3tRFayqVtk">Source - Youtube</a></p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-13 09:31:20" class="text-gray-400 uppercase tracking-wider">November 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/LangChain-understand-production-codebases">
+                                            <span class="absolute inset-0"></span>
+                                            Understand langChain to Quickly Get Started with Production Codebases
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
+If you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-03-13 10:13:01" class="text-gray-400 uppercase tracking-wider">March 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/tfidf-vectorizers-in-natural-language-processing">
+                                            <span class="absolute inset-0"></span>
+                                            TFIDF Vectorizers in Natural Language Processing
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Vectorization is a technique in natural language processing that is used to transform the text into ...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-02-27 10:10:51" class="text-gray-400 uppercase tracking-wider">February 27, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/linear-algebra-applications-in-machine-learning">
+                                            <span class="absolute inset-0"></span>
+                                            Linear Algebra Applications in Machine Learning
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        We can take linear algebra as a backbone of machine learning, as almost all the machine learning tec...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

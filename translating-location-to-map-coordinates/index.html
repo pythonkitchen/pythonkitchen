@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,35 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='translating location to map coordinates' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coordinate Systems: Converting Screen Space to Map Space | Python Kitchen</title>
+  <meta name="description" content="When building a tile-based game, you constantly need to translate between two different worlds:
+1.  Screen Space: The actual pixel coordinates on your monitor (...">
+  <meta name="keywords" content="python, processing.py, game-dev, math, coordinates, canvas theory,  processing.py">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/translating-location-to-map-coordinates/">
+  <meta property="og:title" content="Coordinate Systems: Converting Screen Space to Map Space">
+  <meta property="og:description" content="When building a tile-based game, you constantly need to translate between two different worlds:
+1.  Screen Space: The actual pixel coordinates on your monitor (...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/translating-location-to-map-coordinates/">
+  <meta property="twitter:title" content="Coordinate Systems: Converting Screen Space to Map Space">
+  <meta property="twitter:description" content="When building a tile-based game, you constantly need to translate between two different worlds:
+1.  Screen Space: The actual pixel coordinates on your monitor (...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='canvas theory'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='translating location to map coordinates'>
+  <meta name='subtitle' content='Coordinate Systems: Converting Screen Space to Map Space'>
   <meta name='pageKey' content='translating-location-to-map-coordinates'>
-  <meta name='og:title' content='translating location to map coordinates'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/translating-location-to-map-coordinates'>
-
-  <title>translating location to map coordinates</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +115,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +175,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">translating location to map coordinates</p>
+                    <p class="text-3xl" style="font-weight: 600;">Coordinate Systems: Converting Screen Space to Map Space</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-06-06 06:10:46" class="text-gray-500">June 6, 2018</time>
@@ -163,7 +185,7 @@
                         </a>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            processing.py
+                             processing.py
                         </a>
                         
                     </div>
@@ -183,20 +205,125 @@
                     
                     <br>
                     <article>
-                        <p>let us say you have a character moving across the screen, and you want to have it&rsquo;s location in terms of the map coordinate like (0,0), (3,2) instead of the actual location, like if you want to generate some obstacles in his path, here&rsquo;s how you do it :
-demo</p>
-<hr />
-<p>move the mouse and see the text updates</p>
-<h2>explanations</h2>
-<pre><code class="language-python">    fill(255, 0, 0)
-    # text &lt;text here&gt; &lt;x&gt; &lt;y&gt;
-    text( '{} {}'.format(mouseY//tile_width, mouseX//tile_width),
-         20, 20)
+                        <p>When building a tile-based game, you constantly need to translate between two different worlds:
+1.  <strong>Screen Space:</strong> The actual pixel coordinates on your monitor (e.g., the mouse is at <code>x: 342, y: 156</code>).
+2.  <strong>Map Space:</strong> The grid coordinates in your data array (e.g., the player is standing on tile <code>row: 3, col: 6</code>).</p>
+<p>Knowing how to convert between these two is essential for handling clicks, collision detection, and character movement.</p>
+<hr/>
+<h2>The Secret: Floor Division</h2>
+<p>The math for this conversion is surprisingly simple, thanks to a feature in Python called <strong>Floor Division</strong> (<code>//</code>).</p>
+<p>Floor division divides two numbers and rounds the result <strong>down</strong> to the nearest whole integer. This is exactly what we need to determine which “box” a specific pixel falls into.</p>
+<h3>The Formula</h3>
+<p>If your tiles are 50 pixels wide:
+*   <code>Map Column = Screen X // 50</code>
+*   <code>Map Row = Screen Y // 50</code></p>
+<hr/>
+<h2>Practical Example in Processing.py</h2>
+<p>Imagine you want to highlight the tile that the user is currently hovering over with their mouse.</p>
+<pre><code class="language-python">TILE_SIZE = 50
 
+def draw():
+    background(255)
+    render_map() # Draw your grid
+
+    # Calculate map coordinates from mouse position
+    map_c = mouseX // TILE_SIZE
+    map_r = mouseY // TILE_SIZE
+
+    # Display the coordinates on screen
+    fill(255, 0, 0)
+    text("Tile: Column {}, Row {}".format(map_c, map_r), 20, 20)
+
+    # Visual feedback: Highlight the hovered tile
+    noFill()
+    stroke(255, 0, 0)
+    rect(map_c * TILE_SIZE, map_r * TILE_SIZE, TILE_SIZE, TILE_SIZE)
 </code></pre>
-<p>the only required explanation is that we divide the actual location by the tile width, here both x and y size same.</p>
-<p>// in python is floor division, it rounds it to the lower nearest whole number</p>
-<p>in case you miss map rendering, <a href="https://www.pythonmembers.club/2018/05/29/game-map-rendering/">here it is</a>.</p>
+<hr/>
+<h2>Why is this useful?</h2>
+<h3>1. Handling Clicks</h3>
+<p>If a user clicks on the screen, you don’t care that they clicked at pixel 143. You care that they clicked on the “Chest” object located at grid position (2, 3). By converting the click coordinates immediately, your logic becomes much simpler.</p>
+<h3>2. Efficient Collision Detection</h3>
+<p>Instead of checking your player against every single object in the game, you can simply check the tile they are currently “inside.” If <code>game_map[player_row][player_col]</code> is a “Wall” tile, you stop the player from moving.</p>
+<h3>3. Tooltips and UI</h3>
+<p>Showing the name of a terrain or an item when the mouse hovers over it requires this constant translation from the cursor’s pixel position to the underlying data grid.</p>
+<h2>Conclusion</h2>
+<p>Understanding the relationship between pixels and grid cells is a “lightbulb moment” for many beginning game developers. Once you can move freely between these two coordinate systems, you have the power to create interactive, data-driven game worlds.</p>
+<h3>Related Posts:</h3>
+<ul>
+<li><a href="https://www.pythonkitchen.com/game-map-rendering/">Tile-Based Game Map Rendering</a></li>
+<li><a href="https://www.pythonkitchen.com/generating-unintelligent-random-maps/">Procedural Generation Basics</a></li>
+</ul>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-06-01 05:32:02" class="text-gray-400 uppercase tracking-wider">June 1, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/generating-unintelligent-random-maps">
+                                            <span class="absolute inset-0"></span>
+                                            Procedural Generation Basics: Random Map Generation in Python
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        In game development, Procedural Generation is the technique of using algorithms to create game conte...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-05-29 05:20:26" class="text-gray-400 uppercase tracking-wider">May 29, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/game-map-rendering">
+                                            <span class="absolute inset-0"></span>
+                                            Tile-Based Game Map Rendering with Processing.py
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Whether you’re building a classic RPG or a puzzle game, tile-based rendering is one of the most effi...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-05-28 18:26:55" class="text-gray-400 uppercase tracking-wider">May 28, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/lines-around-nodes">
+                                            <span class="absolute inset-0"></span>
+                                            Building a Dynamic Polygon Drawer in Processing.py
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Have you ever wondered how vector drawing tools allow you to click and create complex shapes? In thi...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

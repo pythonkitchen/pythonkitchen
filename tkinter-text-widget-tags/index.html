@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Fixing an issue of tkinter tags overlapping' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mastering Tkinter Text Tags: Fixing Overlapping Syntax Highlighting | Python Kitchen</title>
+  <meta name="description" content="If you’ve ever tried to build a code editor or a text processor in Tkinter, you’ve likely used the Text widget tags. Tags are incredibly powerful—they allow you...">
+  <meta name="keywords" content="python, tkinter, gui, syntax-highlighting, text-editor, editors and ides,  gui,  oop">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/tkinter-text-widget-tags/">
+  <meta property="og:title" content="Mastering Tkinter Text Tags: Fixing Overlapping Syntax Highlighting">
+  <meta property="og:description" content="If you’ve ever tried to build a code editor or a text processor in Tkinter, you’ve likely used the Text widget tags. Tags are incredibly powerful—they allow you...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/tkinter-text-widget-tags/">
+  <meta property="twitter:title" content="Mastering Tkinter Text Tags: Fixing Overlapping Syntax Highlighting">
+  <meta property="twitter:description" content="If you’ve ever tried to build a code editor or a text processor in Tkinter, you’ve likely used the Text widget tags. Tags are incredibly powerful—they allow you...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='editors and ides'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Fixing an issue of tkinter tags overlapping'>
+  <meta name='subtitle' content='Mastering Tkinter Text Tags: Fixing Overlapping Syntax Highlighting'>
   <meta name='pageKey' content='tkinter-text-widget-tags'>
-  <meta name='og:title' content='Fixing an issue of tkinter tags overlapping'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/tkinter-text-widget-tags'>
-
-  <title>Fixing an issue of tkinter tags overlapping</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Fixing an issue of tkinter tags overlapping</p>
+                    <p class="text-3xl" style="font-weight: 600;">Mastering Tkinter Text Tags: Fixing Overlapping Syntax Highlighting</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-06-19 12:00:31" class="text-gray-500">June 19, 2018</time>
@@ -163,11 +182,11 @@
                         </a>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            gui
+                             gui
                         </a>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            oop
+                             oop
                         </a>
                         
                     </div>
@@ -187,202 +206,156 @@
                     
                     <br>
                     <article>
-                        <p>If you&rsquo;ve worked with tkinter&rsquo;s Text widget, you may notice that when you add many tags to it sometimes things get messed. So let&rsquo;s dive right into this. We will use syntax highlighting as an example.
-Explaining our goal</p>
-<hr />
-<p>Consider we have the following code,</p>
-<pre><code class="language-python">from tkinter import *
+                        <p>If you’ve ever tried to build a code editor or a text processor in Tkinter, you’ve likely used the <strong>Text widget tags</strong>. Tags are incredibly powerful—they allow you to change the color, font, and behavior of specific ranges of text.</p>
+<p>However, a common frustration arises when you apply multiple tags dynamically: <strong>they overlap and interfere with each other</strong>. In this guide, we’ll look at why this happens and how to “refresh” your tags correctly for features like syntax highlighting.</p>
+<hr/>
+<h2>The Goal: Dynamic Highlighting</h2>
+<p>Imagine we want to build a simple highlighter that turns the word “Hello” <strong>red</strong> and the word “world” <strong>blue</strong> as the user types.</p>
+<p>The basic logic is to bind a function to every keypress, scan the text, find the words, and apply the corresponding tag.</p>
+<h3>The Initial Implementation</h3>
+<pre><code class="language-python">import tkinter as tk
 
-class Files(Frame):
+class HighlighterApp:
+    def __init__(self, root):
+        self.text = tk.Text(root)
+        self.text.pack(fill="both", expand=True)
 
-    def \_\_init\_\_(self, parent):
-        Frame.\_\_init\_\_(self, parent)
+        # Trigger highlighting on every key release
+        self.text.bind("&lt;KeyRelease&gt;", self.highlight)
 
-        self.parent = parent
-        self.initUI()
+        # Define our tag styles
+        self.text.tag_config("red_tag", foreground="red")
+        self.text.tag_config("blue_tag", foreground="blue")
 
-    def initUI(self):
-        self.pack(fill=BOTH, expand=1)
+    def highlight(self, event=None):
+        # 1. Get all text from the widget
+        content = self.text.get("1.0", "end-1c")
 
-        self.txt = Text(self)
-        self.txt.pack(fill=BOTH, expand=1)
-
-root = Tk()
-top = Frame(root)
-top.pack(fill=BOTH, expand=0)
-
-bottom = Frame(root)
-bottom.pack()
-
-ex = Files(root)
-ex.pack(side=&quot;bottom&quot;)
-
-root.geometry(&quot;600x500-600-150&quot;)
-root.mainloop()
-
+        # 2. Logic to find words and add tags...
+        # (This is where the overlapping issue usually starts)
 </code></pre>
-<p>which gives us a simple Text widget.</p>
-<p>[caption id=&rdquo;attachment_259&rdquo; align=&rdquo;alignnone&rdquo; width=&rdquo;300&rdquo;]<img alt="tkinter window" src="https://www.pythonmembers.club/wp-content/uploads/2018/06/Screenshot-7-300x266.png" /> The output of our code[/caption]</p>
-<p>Let&rsquo;s say we want to highlight some specific words. And let&rsquo;s do it every time a user enters something.</p>
-<p>We will be highlighting word &ldquo;Hello&rdquo; with red and &ldquo;world&rdquo; with blue. So all we must do is make a function that will run every time a key is pressed and will highlight the words.</p>
-<pre><code class="language-python">[...]
-    def initUI(self):
-        self.pack(fill=BOTH, expand=1)
+<hr/>
+<h2>The Problem: Overlapping Tags</h2>
+<p>As you type, Tkinter adds tags to specific ranges (e.g., from line 1.0 to 1.5). If you delete a word or change it, the old tag often “sticks” to those coordinates. </p>
+<p>When you type a new word in the same spot, you might apply a new tag. Now you have two tags competing for the same text. Tkinter uses a priority system, so the newer or “higher” tag will win, often leading to words being colored incorrectly or staying colored when they shouldn’t be.</p>
+<hr/>
+<h2>The Solution: The “Clean Slate” Approach</h2>
+<p>The most reliable way to handle dynamic syntax highlighting is to <strong>remove all relevant tags before re-applying them</strong>. This ensures that your highlighting logic is always working with a clean canvas.</p>
+<h3>The Optimized Logic</h3>
+<pre><code class="language-python">    def highlight(self, event=None):
+        # 1. Remove existing tags from the entire widget
+        for tag in ["red_tag", "blue_tag"]:
+            self.text.tag_remove(tag, "1.0", "end")
 
-        self.bind_all(&quot;&lt;Key&gt;&quot;, self.highlight) #this runs 'highlight' function every time a key is pressed
+        content = self.text.get("1.0", "end-1c")
+        words = content.split()
 
-        self.txt = Text(self)
-        self.txt.pack(fill=BOTH, expand=1)
+        # 2. Search and Re-apply
+        for word in ["Hello", "world"]:
+            start_pos = "1.0"
+            while True:
+                # Search for the word
+                start_pos = self.text.search(word, start_pos, stopindex="end")
+                if not start_pos:
+                    break
 
-    def highlight(self, event=0):
+                # Calculate end position
+                end_pos = f"{start_pos}+{len(word)}c"
 
-        file_text = self.txt.get(&quot;1.0&quot;, END+&quot;-1c&quot;) + &quot; &quot; #a blank space at the end is for easier separating words
-        words = [] #we will store words along with their starting point
-        line = 1    #}
-        column = -1 #}these are starting points that will help us in the following 'for' loop
-        word = &quot;&quot;   #}
+                # Apply the appropriate tag
+                tag_name = "red_tag" if word == "Hello" else "blue_tag"
+                self.text.tag_add(tag_name, start_pos, end_pos)
 
-#now we have to find words and assign them their line and column
-        for char in file_text:
-            word += char
-            column += 1
-
-            if char == &quot;\n&quot;: #here a word stops
-                words.append(word[:-1] + &quot; : &quot; + str(line) + &quot;.&quot; + str(column))
-                word = &quot;&quot;
-                line += 1
-                column = -1
-
-            if char == &quot; &quot;: #here a word stops
-                words.append(word[:-1] + &quot; : &quot; + str(line) + &quot;.&quot; + str(column))
-                word = &quot;&quot;
-        print(words)
-[...]
-
+                # Move start_pos forward to find the next occurrence
+                start_pos = end_pos
 </code></pre>
-<p>This code will produce the following result as we start typing:</p>
-<p>[video width=&rdquo;1920&rdquo; height=&rdquo;1028&rdquo; webm=&rdquo;https://www.pythonmembers.club/wp-content/uploads/2018/06/highlighting_video1.webm&rdquo;][/video]</p>
-<p>Now you can see, every time we push a key it gives us the list of all words with it&rsquo;s starting points combined in a format similar to dictionary.</p>
-<p>So we have the words, we have the points now we have to use them.
-Highlighting words</p>
-<hr />
-<p>For this we will have to see if the word is &ldquo;Hello&rdquo; or &ldquo;world&rdquo; and add a tag that will highlight it. Now we add this to our &ldquo;highlight&rdquo; function:</p>
-<pre><code class="language-python">[...]
-        for i in words:
-            i = i.split() #this splits an element to i = [&quot;word&quot;, &quot;:&quot;, &quot;starting point&quot;]
+<hr/>
+<h2><code>tag_remove</code> vs <code>tag_delete</code></h2>
+<ul>
+<li><strong><code>tag_remove(name, start, end)</code></strong>: This keeps the tag’s configuration (color, font) in memory but removes it from the specific text range. <strong>This is what you should use for most highlighting tasks.</strong></li>
+<li><strong><code>tag_delete(name)</code></strong>: This completely destroys the tag. You would have to call <code>tag_config</code> again to use it. This is useful only when you want to clear out a large number of dynamic tags.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Syntax highlighting is a complex task, but mastering Tkinter tags is the first step. By remembering to clear your tags before each update, you prevent the “ghosting” effects that plague many beginner projects.</p>
+<h3>Pro Tip:</h3>
+<p>For large files, running a full re-highlight on every keypress can be slow. Consider only re-highlighting the <strong>current line</strong> or using a small delay (debouncing) to keep your editor snappy!</p>
 
-            if len(i) &lt; 3: #we need this in case user types double white space which results in i = [&quot;:&quot;, &quot;starting point&quot;]
-                i.insert(0, &quot; &quot;)
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2026-02-09 10:30:00" class="text-gray-400 uppercase tracking-wider">February 9, 2026</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/publish-python-package-using-uv-pypi-token">
+                                            <span class="absolute inset-0"></span>
+                                            Publishing a Python Package with uv and a PyPI Token
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Publishing a Python package used to feel like a small battle: setup.py rituals, half-forgotten twine...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2025-02-15 15:40:00" class="text-gray-400 uppercase tracking-wider">February 15, 2025</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/simple-json-parser">
+                                            <span class="absolute inset-0"></span>
+                                            Simple JSON parser without knowing anything beforehands
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Table of Content
 
-            if i[0] == &quot;Hello&quot;: #i[0] stands for &quot;word&quot;
-                self.txt.tag_config(&quot;hlight1&quot;, foreground=&quot;red&quot;) #we named this tag hlight1
-                self.txt.tag_add(&quot;hlight1&quot;, str(i[2].split(&quot;.&quot;)[0]) + &quot;.&quot; + str(int(i[2].split(&quot;.&quot;)[1])-len(i[0])), i[2])
-
-            if i[0] == &quot;world&quot;:
-                self.txt.tag_config(&quot;hlight2&quot;, foreground=&quot;blue&quot;) #we named this tag hlight2
-                self.txt.tag_add(&quot;hlight2&quot;, str(i[2].split(&quot;.&quot;)[0]) + &quot;.&quot; + str(int(i[2].split(&quot;.&quot;)[1])-len(i[0])), i[2])
-[...]
-
-</code></pre>
-<p>And if we run it:</p>
-<p>[video width=&rdquo;1920&rdquo; height=&rdquo;1028&rdquo; webm=&rdquo;https://www.pythonmembers.club/wp-content/uploads/2018/06/highlighting_video2.webm&rdquo;][/video]</p>
-<p>Looks like we don&rsquo;t have any problems here, right! But we do.
-Explaining our issue</p>
-<hr />
-<p>If you experiment a bit more, you can see that in cases like this, the word &ldquo;Hello&rdquo; or any other word gets colored blue:</p>
-<p>[video width=&rdquo;1920&rdquo; height=&rdquo;1028&rdquo; webm=&rdquo;https://www.pythonmembers.club/wp-content/uploads/2018/06/highlighting_video3.webm&rdquo;][/video]</p>
-<p>So how to fix this? To know how to fix it, we must first find out why did it happen!</p>
-<p>It happens because two tags are overlapping, in our case hlight2 is overlapping hlight1. When the for loop runs the hlight1 tag is already there and hlight2 is over it, giving it the priority. And if we want our code to work, we must remove the tag hlight2 (or hlight1, it works vice versa to) every time it gets over a word that isn&rsquo;t &ldquo;world&rdquo;. So what we will do is &ldquo;refresh&rdquo; the tags every time we run highlight function&hellip;
-Fixing the issue</p>
-<hr />
-<p>To achieve this, all we have to do is delete all of the tags and then let them be reassigned.</p>
-<p>So to delete them we just add this before our &lsquo;for&rsquo; loop in &lsquo;highlight&rsquo; function:</p>
-<pre><code class="language-python">[...]
-        for tag in self.txt.tag_names():
-            self.txt.tag_delete(tag)
-
-        for i in words:
-            i = i.split()......
-[...]
-</code></pre>
-<p>And that&rsquo;s it! As simple as that! Here&rsquo;s a look into our new <strong>working</strong> output:</p>
-<p>[video width=&rdquo;1920&rdquo; height=&rdquo;1028&rdquo; webm=&rdquo;https://www.pythonmembers.club/wp-content/uploads/2018/06/highlighting_video4.webm&rdquo;][/video]</p>
-<p>I hope this article was helpful for you and keep coding!
-Complete code</p>
-<hr />
-<pre><code class="language-python">from tkinter import * 
-
-class Files(Frame):
-
-    def \_\_init\_\_(self, parent):
-        Frame.\_\_init\_\_(self, parent)   
-
-        self.parent = parent        
-        self.initUI()
-
-    def initUI(self):
-        self.pack(fill=BOTH, expand=1)
-
-        self.bind_all(&quot;&lt;Key&gt;&quot;, self.highlight)
-
-        self.txt = Text(self)
-        self.txt.pack(fill=BOTH, expand=1)
-
-    def highlight(self, event=0):
-
-        file_text = self.txt.get(&quot;1.0&quot;, END+&quot;-1c&quot;) + &quot; &quot; #a blank space at the end is for easier separating words
-        words = [] #we will store words along with their starting point
-        line = 1    #}
-        column = -1 #}these are starting points that will help us in the following 'for' loop
-        word = &quot;&quot;   #}
-
-#now we have to find words and assign them their line and column
-        for char in file_text:
-            word += char
-            column += 1
-
-            if char == &quot;\n&quot;: #here a word stops
-                words.append(word[:-1] + &quot; : &quot; + str(line) + &quot;.&quot; + str(column))
-                word = &quot;&quot;
-                line += 1
-                column = -1
-
-            if char == &quot; &quot;: #here a word stops
-                words.append(word[:-1] + &quot; : &quot; + str(line) + &quot;.&quot; + str(column))
-                word = &quot;&quot;
-        print(words)
-
-        for tag in self.txt.tag_names(): #deletes all tags so it can refresh them later
-            self.txt.tag_delete(tag)
-
-        for i in words:
-            i = i.split() #this splits an element to i = [&quot;word&quot;, &quot;:&quot;, &quot;starting point&quot;]
-
-            if len(i) &lt; 3: #we need this in case user types double white space which results in i = [&quot;:&quot;, &quot;starting point&quot;]
-                i.insert(0, &quot; &quot;)
-
-            if i[0] == &quot;Hello&quot;: #i[0] stands for &quot;word&quot;
-                self.txt.tag_config(&quot;hlight1&quot;, foreground=&quot;red&quot;) #we named this tag hlight1
-                self.txt.tag_add(&quot;hlight1&quot;, str(i[2].split(&quot;.&quot;)[0]) + &quot;.&quot; + str(int(i[2].split(&quot;.&quot;)[1])-len(i[0])), i[2])
-
-            if i[0] == &quot;world&quot;: #i[0] stands for &quot;word&quot;
-                self.txt.tag_config(&quot;hlight2&quot;, foreground=&quot;blue&quot;) #we named this tag hlight2
-                self.txt.tag_add(&quot;hlight2&quot;, str(i[2].split(&quot;.&quot;)[0]) + &quot;.&quot; + str(int(i[2].split(&quot;.&quot;)[1])-len(i[0])), i[2])
-
-root = Tk()
-top = Frame(root)
-top.pack(fill=BOTH, expand=0)
-
-bottom = Frame(root)
-bottom.pack()
-
-ex = Files(root)
-ex.pack(side=&quot;bottom&quot;)
-
-root.geometry(&quot;600x500-600-150&quot;)
-root.mainloop()
-
-</code></pre>
+Introduction
+Scanning the text
+Looking for specific characters
+Identifying element...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2025-01-16 15:42:02" class="text-gray-400 uppercase tracking-wider">January 16, 2025</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/json-response-gemini-google-genai">
+                                            <span class="absolute inset-0"></span>
+                                            How to get gemini response as json using python and google genai
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Normally you can tune models to return json. But, fortunately, Gemini
+First install the lib
+pip inst...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,44 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='How to solve celery task has no attribute AsyncResult' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to solve celery task has no attribute AsyncResult | Python Kitchen</title>
+  <meta name="description" content="I was looking through Grinberg’s tuto on celery and flask. I saw querying tasks by
+task = long_task.AsyncResult(task_id)
+
+
+But for some reasons it was not worki...">
+  <meta name="keywords" content="celery, distributed system">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/celery-task-asyncresult-no-attribute/">
+  <meta property="og:title" content="How to solve celery task has no attribute AsyncResult">
+  <meta property="og:description" content="I was looking through Grinberg’s tuto on celery and flask. I saw querying tasks by
+task = long_task.AsyncResult(task_id)
+
+
+But for some reasons it was not worki...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/celery-task-asyncresult-no-attribute/">
+  <meta property="twitter:title" content="How to solve celery task has no attribute AsyncResult">
+  <meta property="twitter:description" content="I was looking through Grinberg’s tuto on celery and flask. I saw querying tasks by
+task = long_task.AsyncResult(task_id)
+
+
+But for some reasons it was not worki...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='distributed system'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
   <meta name='subtitle' content='How to solve celery task has no attribute AsyncResult'>
   <meta name='pageKey' content='celery-task-asyncresult-no-attribute'>
-  <meta name='og:title' content='How to solve celery task has no attribute AsyncResult'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/celery-task-asyncresult-no-attribute'>
-
-  <title>How to solve celery task has no attribute AsyncResult</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +124,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -179,12 +210,85 @@
                     
                     <br>
                     <article>
-                        <p>I was looking through Grinberg&rsquo;s <a href="https://blog.miguelgrinberg.com/post/using-celery-with-flask">tuto</a> on celery and flask. I saw querying tasks by</p>
+                        <p>I was looking through Grinberg’s <a href="https://blog.miguelgrinberg.com/post/using-celery-with-flask">tuto</a> on celery and flask. I saw querying tasks by</p>
 <pre><code class="language-python">task = long_task.AsyncResult(task_id)
 
 </code></pre>
-<p>But for some reasons it was not working for me. I looked at <a href="https://github.com/mher/flower/blob/ce5f0de7b25bc42ef9fb909340ba9fe9c8f903f0/flower/views/tasks.py#L17">Flower</a>&rsquo;s get_task_by_id which led to wrapping a tornado object. It was too complicated for me to include Tornado in my project. I browsed through celery&rsquo;s source and found the <a href="https://github.com/celery/celery/blob/3cf5072ee5f95744024f60e0f4a77eb2edb8959f/celery/worker/control.py#L106">query_task</a> function which led me to the <code>_find_requests_by_id</code> fucntion which led to a state file but i could not find it by inspecting my celery app. I finally found the right path and documented it under <a href="https://www.pythonkitchen.com/how-to-query-task-by-id-in-celery/">finding task by id in celery 5.1.2</a>.</p>
+<p>But for some reasons it was not working for me. I looked at <a href="https://github.com/mher/flower/blob/ce5f0de7b25bc42ef9fb909340ba9fe9c8f903f0/flower/views/tasks.py#L17">Flower</a>’s get_task_by_id which led to wrapping a tornado object. It was too complicated for me to include Tornado in my project. I browsed through celery’s source and found the <a href="https://github.com/celery/celery/blob/3cf5072ee5f95744024f60e0f4a77eb2edb8959f/celery/worker/control.py#L106">query_task</a> function which led me to the <code>_find_requests_by_id</code> fucntion which led to a state file but i could not find it by inspecting my celery app. I finally found the right path and documented it under <a href="https://www.pythonkitchen.com/how-to-query-task-by-id-in-celery/">finding task by id in celery 5.1.2</a>.</p>
 <p>Works on windows 8</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2021-08-15 07:27:43" class="text-gray-400 uppercase tracking-wider">August 15, 2021</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/how-to-query-task-by-id-in-celery">
+                                            <span class="absolute inset-0"></span>
+                                            How to query task by id in celery
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Using celery 5.1.2 you can get the task id by the following code snippet:
+from celery import current...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2021-08-15 07:24:51" class="text-gray-400 uppercase tracking-wider">August 15, 2021</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/how-to-set-task-id-in-celery">
+                                            <span class="absolute inset-0"></span>
+                                            How to set task id in celery
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Here’s a convenient way to set task id in celery:
+import uuid # in-built in Python
+task_id = str(uui...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2026-02-09 10:30:00" class="text-gray-400 uppercase tracking-wider">February 9, 2026</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/publish-python-package-using-uv-pypi-token">
+                                            <span class="absolute inset-0"></span>
+                                            Publishing a Python Package with uv and a PyPI Token
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Publishing a Python package used to feel like a small battle: setup.py rituals, half-forgotten twine...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

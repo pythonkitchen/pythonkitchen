@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,35 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='An Advanced Flask App: Shopyo' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>An Advanced Flask App: Shopyo | Python Kitchen</title>
+  <meta name="description" content="
+Shopyo is an Open Source Flask-based, Python-powered inventory solution and upcoming point of sales. It’s aim is to help small business owners get a nice Pytho...">
+  <meta name="keywords" content="erp,flask,oss,shopyo, flask">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/shopyo-understand-advanced-flask-app/">
+  <meta property="og:title" content="An Advanced Flask App: Shopyo">
+  <meta property="og:description" content="
+Shopyo is an Open Source Flask-based, Python-powered inventory solution and upcoming point of sales. It’s aim is to help small business owners get a nice Pytho...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/shopyo-understand-advanced-flask-app/">
+  <meta property="twitter:title" content="An Advanced Flask App: Shopyo">
+  <meta property="twitter:description" content="
+Shopyo is an Open Source Flask-based, Python-powered inventory solution and upcoming point of sales. It’s aim is to help small business owners get a nice Pytho...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='flask'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
   <meta name='subtitle' content='An Advanced Flask App: Shopyo'>
   <meta name='pageKey' content='shopyo-understand-advanced-flask-app'>
-  <meta name='og:title' content='An Advanced Flask App: Shopyo'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/shopyo-understand-advanced-flask-app'>
-
-  <title>An Advanced Flask App: Shopyo</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +115,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -179,11 +201,11 @@
                     
                     <br>
                     <article>
-                        <p><img alt="" src="https://raw.githubusercontent.com/Abdur-rahmaanJ/shopyo/master/shopyo.png" />
-<a href="https://github.com/Abdur-rahmaanJ/shopyo">Shopyo</a> is an Open Source Flask-based, Python-powered inventory solution and upcoming point of sales. It&rsquo;s aim is to help small business owners get a nice Python-based product with essential amenities for their businesses. An empty Shopyo project at the very least makes a great Flask base. Shopyo also makes use of advanced flask concepts.</p>
+                        <p><img alt="" src="https://raw.githubusercontent.com/Abdur-rahmaanJ/shopyo/master/shopyo.png"/>
+<a href="https://github.com/Abdur-rahmaanJ/shopyo">Shopyo</a> is an Open Source Flask-based, Python-powered inventory solution and upcoming point of sales. It’s aim is to help small business owners get a nice Python-based product with essential amenities for their businesses. An empty Shopyo project at the very least makes a great Flask base. Shopyo also makes use of advanced flask concepts.</p>
 <h1>The Tech Stack</h1>
-<p><img alt="" src="https://images.unsplash.com/photo-1533630160910-65f5a1718c65?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" /></p>
-<p>A peek at Shopyo&rsquo;s requirements.txt gives</p>
+<p><img alt="" src="https://images.unsplash.com/photo-1533630160910-65f5a1718c65?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60"/></p>
+<p>A peek at Shopyo’s requirements.txt gives</p>
 <pre><code class="language-python">flask
 flask_sqlalchemy
 marshmallow_sqlalchemy
@@ -208,7 +230,7 @@ requests
 <ul>
 <li>flask_migrate</li>
 </ul>
-<p>flask_migrate is used to migrate your models. If you change your models by adding a new field, the change is not reflected in your database. That&rsquo;s why you need to apply migrations. It is a wrapper around Alembic, a popular migration package.</p>
+<p>flask_migrate is used to migrate your models. If you change your models by adding a new field, the change is not reflected in your database. That’s why you need to apply migrations. It is a wrapper around Alembic, a popular migration package.</p>
 <ul>
 <li>flask_marshmallow</li>
 <li>marshmallow_sqlalchemy</li>
@@ -217,7 +239,7 @@ requests
 <ul>
 <li>flask_script</li>
 </ul>
-<p>Though deprecated by Flask&rsquo;s official command line utitlity, flask_script allows you to create scripts to manage your Flask app easily.</p>
+<p>Though deprecated by Flask’s official command line utitlity, flask_script allows you to create scripts to manage your Flask app easily.</p>
 <ul>
 <li>flask_login</li>
 </ul>
@@ -225,16 +247,16 @@ requests
 <ul>
 <li>Flask-WTF</li>
 </ul>
-<p>A package that allows you to create forms. We use it to prevent CSRF (pronounced sea surf) attacks. It basically ensures that you don&rsquo;t tamper with a webpage then try to send it to someone else expecting it to work</p>
+<p>A package that allows you to create forms. We use it to prevent CSRF (pronounced sea surf) attacks. It basically ensures that you don’t tamper with a webpage then try to send it to someone else expecting it to work</p>
 <ul>
 <li>requests</li>
 </ul>
 <p>A package to make web requests and pull in urls easily. You can view a tutorial about it <a href="https://dmerej.info/blog/post/requests-what-you-need-to-build-useful-apps/">here</a>
 Terms Explained
 ===============</p>
-<p><img alt="" src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80" />
+<p><img alt="" src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"/>
 model</p>
-<hr />
+<hr/>
 <p>A model defines your table</p>
 <pre><code class="language-python">class Settings(db.Model):
     __tablename__ = 'settings'
@@ -245,7 +267,7 @@ model</p>
 <p>creates a table named settings with fields named setting and value</p>
 <h2>template</h2>
 <p>A template is an html file with spaces left for values. <code>{%</code> and <code>{{</code> have special meaning. <code>{{1 + 1}}</code> will display 2 when rendered. Similarly <code>{{x + 1}}</code> will evaluate the expression before rendering.</p>
-<pre><code class="language-python">{% extends &quot;base/main_base.html&quot; %}
+<pre><code class="language-python">{% extends "base/main_base.html" %}
 
 {% set active_page ='settings' %}
 
@@ -262,18 +284,18 @@ model</p>
 {% endblock %}
 
 {% block content %}
-&lt;script type=&quot;text/javascript&quot;&gt;
+&lt;script type="text/javascript"&gt;
 $(function() {
 
   });
 &lt;/script&gt;
 
-&lt;table class=&quot;table&quot;&gt;
+&lt;table class="table"&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th scope=&quot;col&quot;&gt;Settings&lt;/th&gt;
-      &lt;th scope=&quot;col&quot;&gt;Value &lt;/th&gt;
-      &lt;th scope=&quot;col&quot;&gt;&lt;/th&gt;
+      &lt;th scope="col"&gt;Settings&lt;/th&gt;
+      &lt;th scope="col"&gt;Value &lt;/th&gt;
+      &lt;th scope="col"&gt;&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
@@ -281,7 +303,7 @@ $(function() {
     &lt;tr&gt;
       &lt;td&gt;{{setting.setting}}&lt;/td&gt;
       &lt;td&gt;{{setting.value}} &lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;/settings/edit/{{setting.setting}}&quot; class=&quot;btn btn-info&quot; role=&quot;button&quot;&gt;&lt;i class=&quot;fas fa-pencil-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href="/settings/edit/{{setting.setting}}" class="btn btn-info" role="button"&gt;&lt;i class="fas fa-pencil-alt"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
 {%endfor%}
   &lt;/tbody&gt;
@@ -291,8 +313,8 @@ $(function() {
 
 
 </code></pre>
-<p>let&rsquo;s take this snippet</p>
-<pre><code class="language-python">{% extends &quot;base/main_base.html&quot; %}
+<p>let’s take this snippet</p>
+<pre><code class="language-python">{% extends "base/main_base.html" %}
 
 </code></pre>
 <p>Tells that we are inheriting from <a href="https://github.com/Abdur-rahmaanJ/shopyo/blob/master/shopyo/templates/base/main_base.html">base.html</a></p>
@@ -309,7 +331,7 @@ $(function() {
 </code></pre>
 <p>allows us to define our head and body respectively.</p>
 <h1>Views and blueprint</h1>
-<p><img alt="" src="https://images.unsplash.com/photo-1565886593760-8e80f074d1f7?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=739&amp;q=80" /></p>
+<p><img alt="" src="https://images.unsplash.com/photo-1565886593760-8e80f074d1f7?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=739&amp;q=80"/></p>
 <p>A view file has lots of routes and what happens when such a route is found. This is the settings view file for example</p>
 <pre><code class="language-python">from flask import (
     Blueprint, render_template, request, redirect, url_for, jsonify
@@ -325,7 +347,7 @@ from project_api import base_context
 
 settings_blueprint = Blueprint('settings', __name__, url_prefix='/settings')
 
-@settings_blueprint.route(&quot;/&quot;)
+@settings_blueprint.route("/")
 @login_required
 def settings_main():
     context = base_context()
@@ -400,11 +422,11 @@ from project_api import base_context
 
 </code></pre>
 <p>This tells that whatever urls starts with /settings will be dealt with in this file</p>
-<pre><code class="language-python">@settings_blueprint.route(&quot;/abc&quot;)
+<pre><code class="language-python">@settings_blueprint.route("/abc")
 
 </code></pre>
 <p>is actually for the url <code>/settings/abc</code></p>
-<pre><code class="language-python">@settings_blueprint.route(&quot;/&quot;)
+<pre><code class="language-python">@settings_blueprint.route("/")
 @login_required
 def settings_main():
     context = base_context()
@@ -424,7 +446,7 @@ def settings_main():
     &lt;tr&gt;
       &lt;td&gt;{{setting.setting}}&lt;/td&gt;
       &lt;td&gt;{{setting.value}} &lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;/settings/edit/{{setting.setting}}&quot; class=&quot;btn btn-info&quot; role=&quot;button&quot;&gt;&lt;i class=&quot;fas fa-pencil-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href="/settings/edit/{{setting.setting}}" class="btn btn-info" role="button"&gt;&lt;i class="fas fa-pencil-alt"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
 {%endfor%}
 
@@ -443,7 +465,7 @@ return render_template('settings/index.html', **context)
 
 </code></pre>
 <h1>Register blueprints</h1>
-<p><img alt="" src="https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=750&amp;q=80" /></p>
+<p><img alt="" src="https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=750&amp;q=80"/></p>
 <p>in <a href="https://github.com/Abdur-rahmaanJ/shopyo/blob/master/shopyo/app.py">app.py</a> you will see</p>
 <pre><code class="language-python">    from views.settings.settings_modif import settings_blueprint
 
@@ -452,10 +474,10 @@ return render_template('settings/index.html', **context)
 </code></pre>
 <p>which adds the views of the settings folder to the app.</p>
 <h1>Configuration management</h1>
-<p><img alt="" src="https://images.unsplash.com/photo-1484191914255-a429e6f819b4?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=750&amp;q=80" /></p>
+<p><img alt="" src="https://images.unsplash.com/photo-1484191914255-a429e6f819b4?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=750&amp;q=80"/></p>
 <p>in <a href="https://github.com/Abdur-rahmaanJ/shopyo/blob/master/shopyo/config.py">config.py</a> we see</p>
 <pre><code class="language-python">class Config:
-    &quot;&quot;&quot;Parent configuration class.&quot;&quot;&quot;
+    """Parent configuration class."""
     DEBUG = False
     SQLALCHEMY_DATABASE_URI = 'sqlite:///test.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -467,7 +489,7 @@ return render_template('settings/index.html', **context)
 
 
 class DevelopmentConfig(Config):
-    &quot;&quot;&quot;Configurations for development&quot;&quot;&quot;
+    """Configurations for development"""
     ENV = 'development'
     DEBUG = True
 
@@ -490,10 +512,10 @@ app_config = {
 <pre><code class="language-python">app = create_app('development')
 
 </code></pre>
-<p>so, if we put in &lsquo;production&rsquo; it will load the production configs.</p>
-<p>As info, creating apps this way (app = &hellip;) is called the App Factory pattern</p>
+<p>so, if we put in ‘production’ it will load the production configs.</p>
+<p>As info, creating apps this way (app = …) is called the App Factory pattern</p>
 <h1>manage.py</h1>
-<p><img alt="" src="https://images.unsplash.com/photo-1509541206217-cde45c41aa6d?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=751&amp;q=80" />
+<p><img alt="" src="https://images.unsplash.com/photo-1509541206217-cde45c41aa6d?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=751&amp;q=80"/>
 <a href="https://github.com/Abdur-rahmaanJ/shopyo/blob/master/shopyo/manage.py">manage.py</a></p>
 <pre><code class="language-python">migrate = Migrate(app, db, compare_type=True)
 manager = Manager(app)
@@ -533,6 +555,76 @@ def runserver():
 
 
 </code></pre>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2022-08-30 03:43:51" class="text-gray-400 uppercase tracking-wider">August 30, 2022</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/how-to-have-django-packages-in-flask">
+                                            <span class="absolute inset-0"></span>
+                                            How To Have Django Packages in Flask
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Django packages in Flask seems like a far-away dream, but shopyo 4.6.0 allows you to install Shopyo ...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2022-04-15 20:37:03" class="text-gray-400 uppercase tracking-wider">April 15, 2022</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/p5js-with-flask-socket-io">
+                                            <span class="absolute inset-0"></span>
+                                            How to integrate P5JS with Flask-SocketIO
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        P5Js is an implementation of processing.org’s library in JavaSript. It can be thought of as a canvas...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2022-04-13 05:37:29" class="text-gray-400 uppercase tracking-wider">April 13, 2022</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/build-a-note-app-in-flask-as-fast-as-it-can-get-using-shopyo">
+                                            <span class="absolute inset-0"></span>
+                                            Build A Note App In Flask As Fast As It Can Get (Using Shopyo)
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Shopyo is a framework to get started with Flask really quick. It includes several libraries to get s...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

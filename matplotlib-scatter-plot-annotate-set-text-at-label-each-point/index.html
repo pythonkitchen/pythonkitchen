@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,35 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='matplotlib scatter plot annotate / set text at / label each point' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Annotate Each Point in a Matplotlib Scatter Plot | Python Kitchen</title>
+  <meta name="description" content="One of the most frequent questions when working with Matplotlib is: “How do I label each point in my scatter plot?” 
+While plotting coordinates is straightforwa...">
+  <meta name="keywords" content="python, matplotlib, data-visualization, pandas, plotting, data science">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/matplotlib-scatter-plot-annotate-set-text-at-label-each-point/">
+  <meta property="og:title" content="How to Annotate Each Point in a Matplotlib Scatter Plot">
+  <meta property="og:description" content="One of the most frequent questions when working with Matplotlib is: “How do I label each point in my scatter plot?” 
+While plotting coordinates is straightforwa...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/matplotlib-scatter-plot-annotate-set-text-at-label-each-point/">
+  <meta property="twitter:title" content="How to Annotate Each Point in a Matplotlib Scatter Plot">
+  <meta property="twitter:description" content="One of the most frequent questions when working with Matplotlib is: “How do I label each point in my scatter plot?” 
+While plotting coordinates is straightforwa...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='data science'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='matplotlib scatter plot annotate / set text at / label each point'>
+  <meta name='subtitle' content='How to Annotate Each Point in a Matplotlib Scatter Plot'>
   <meta name='pageKey' content='matplotlib-scatter-plot-annotate-set-text-at-label-each-point'>
-  <meta name='og:title' content='matplotlib scatter plot annotate / set text at / label each point'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/matplotlib-scatter-plot-annotate-set-text-at-label-each-point'>
-
-  <title>matplotlib scatter plot annotate / set text at / label each point</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +115,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +175,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">matplotlib scatter plot annotate / set text at / label each point</p>
+                    <p class="text-3xl" style="font-weight: 600;">How to Annotate Each Point in a Matplotlib Scatter Plot</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-05-08 04:32:11" class="text-gray-500">May 8, 2018</time>
@@ -179,27 +201,141 @@
                     
                     <br>
                     <article>
-                        <p>a hard question in matplotlib is to annotate each point with a text or label. answers range from ax.annotate to some more weird stuffs. fortunately, the answer is a simple one! this question poses itself quite often in scatter plots</p>
-<h2>the key</h2>
-<p>without beating around the bush, the answer is using <strong>pyplot.text</strong> found <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html">here</a></p>
-<h2>demo</h2>
-<p>code :</p>
+                        <p>One of the most frequent questions when working with Matplotlib is: <strong>“How do I label each point in my scatter plot?”</strong> </p>
+<p>While plotting coordinates is straightforward, adding descriptive text to those points can quickly become messy, especially when points are crowded together. In this guide, we’ll look at the simplest way to achieve this using <code>plt.text</code> and discuss more advanced options for professional-grade visualizations.</p>
+<hr/>
+<h2>The Simple Method: <code>plt.text()</code></h2>
+<p>The most direct way to add a label to a specific coordinate is the <code>text()</code> function. You simply provide the X position, Y position, and the string you want to display.</p>
+<h3>Basic Implementation</h3>
+<p>When working with a list of points (like from a Pandas DataFrame), you can iterate through them and apply the label one by one:</p>
 <pre><code class="language-python">import matplotlib.pyplot as plt
 
-# simulating a pandas df['type'] column
-types = ['apple', 'orange', 'apple', 'pear', 'apple', 'orange', 'apple', 'pear']
-x_coords = [10, 10, 5, 4, 3, 20, 19, 21]
-y_coords = [21, 23, 12, 21, 10, 20, 14, 2]
+# Sample data
+cities = ['London', 'Paris', 'New York', 'Tokyo', 'Sydney']
+x_coords = [10, 15, 5, 25, 30]
+y_coords = [20, 25, 10, 30, 5]
 
-for i,type in enumerate(types):
-    x = x_coords[i]
-    y = y_coords[i]
-    plt.scatter(x, y, marker='x', color='red')
-    plt.text(x+0.3, y+0.3, type, fontsize=9)
+plt.figure(figsize=(8, 6))
+plt.scatter(x_coords, y_coords, color='blue')
+
+# Iterate and annotate
+for i, label in enumerate(cities):
+    # We add a small offset (+0.5) so the text doesn't sit directly on the dot
+    plt.text(x_coords[i] + 0.5, y_coords[i] + 0.5, label, fontsize=10)
+
+plt.title("City Coordinates with Labels")
+plt.xlabel("X Axis")
+plt.ylabel("Y Axis")
 plt.show()
 </code></pre>
-<p>output :</p>
-<p><img alt="matplotlib label annotate points" src="https://www.pythonmembers.club/wp-content/uploads/2018/05/matplotlib_label_points-1.png" />matplotlib label points</p>
+<hr/>
+<h2>Advanced Method: <code>ax.annotate()</code></h2>
+<p>While <code>plt.text</code> is easy, <code>ax.annotate()</code> is more powerful. It allows you to create arrows pointing to the data points and gives you more control over the “offset” (moving the text relative to the point).</p>
+<pre><code class="language-python">fig, ax = plt.subplots()
+ax.scatter(x_coords, y_coords)
+
+for i, label in enumerate(cities):
+    ax.annotate(label, (x_coords[i], y_coords[i]), 
+                textcoords="offset points", # How to position the text
+                xytext=(0,10),               # Distance from text to points (x,y)
+                ha='center')                # Horizontal alignment
+</code></pre>
+<hr/>
+<h2>The “Overlapping” Problem</h2>
+<p>If your scatter plot has dozens of points, <code>plt.text</code> will likely cause labels to overlap, making them unreadable. </p>
+<h3>The Pro Solution: <code>adjustText</code></h3>
+<p>If you are doing serious data science, there is a fantastic library called <code>adjustText</code> that automatically moves labels so they don’t overlap.</p>
+<pre><code class="language-bash">pip install adjustText
+</code></pre>
+<p>Then in your code:</p>
+<pre><code class="language-python">from adjust_text import adjust_text
+
+texts = []
+for i, label in enumerate(cities):
+    texts.append(plt.text(x_coords[i], y_coords[i], label))
+
+# This one line handles all the magic of preventing overlaps!
+adjust_text(texts, arrowprops=dict(arrowstyle='-&gt;', color='red'))
+</code></pre>
+<h2>Summary</h2>
+<ul>
+<li>Use <strong><code>plt.text()</code></strong> for quick, simple labels on a few points.</li>
+<li>Use <strong><code>ax.annotate()</code></strong> if you need arrows or more precise positioning.</li>
+<li>Use <strong><code>adjustText</code></strong> if you have many points and want a clean, professional look without overlaps.</li>
+</ul>
+<p>Visualizing data is about telling a story—make sure your labels are clear so your audience can read it!</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-23 10:00:00" class="text-gray-400 uppercase tracking-wider">November 23, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/chat-own-data-chatgpt-langchain">
+                                            <span class="absolute inset-0"></span>
+                                            Chat with your own data/text files using chatGPT and LangChain
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        There are many different approaches to chatting with your own data. 
+One way is to upload your PDF t...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-13 09:31:20" class="text-gray-400 uppercase tracking-wider">November 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/LangChain-understand-production-codebases">
+                                            <span class="absolute inset-0"></span>
+                                            Understand langChain to Quickly Get Started with Production Codebases
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
+If you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-06-28 04:41:51" class="text-gray-400 uppercase tracking-wider">June 28, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/what-is-perceptron-in-deep-learning">
+                                            <span class="absolute inset-0"></span>
+                                            What is Perceptron in Deep Learning
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Deep learning is one of the most useful and trending topics in the current world scenario, which wor...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

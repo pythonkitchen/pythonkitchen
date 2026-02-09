@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Why Does Lasso (L1) Regression Create Sparsity?' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Does Lasso (L1) Regression Create Sparsity? | Python Kitchen</title>
+  <meta name="description" content="The Lasso regression is a regularization technique and a type of regression that is well-suited for models showing high levels of multicollinearity. It is also ...">
+  <meta name="keywords" content="lasso regression,sparsity, machine learning">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/lasso-sparsity/">
+  <meta property="og:title" content="Why Does Lasso (L1) Regression Create Sparsity?">
+  <meta property="og:description" content="The Lasso regression is a regularization technique and a type of regression that is well-suited for models showing high levels of multicollinearity. It is also ...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/lasso-sparsity/">
+  <meta property="twitter:title" content="Why Does Lasso (L1) Regression Create Sparsity?">
+  <meta property="twitter:description" content="The Lasso regression is a regularization technique and a type of regression that is well-suited for models showing high levels of multicollinearity. It is also ...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='machine learning'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
   <meta name='subtitle' content='Why Does Lasso (L1) Regression Create Sparsity?'>
   <meta name='pageKey' content='lasso-sparsity'>
-  <meta name='og:title' content='Why Does Lasso (L1) Regression Create Sparsity?'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/lasso-sparsity'>
-
-  <title>Why Does Lasso (L1) Regression Create Sparsity?</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -182,7 +201,7 @@
                         <p>The Lasso regression is a <a href="https://en.wikipedia.org/wiki/Regularization_(mathematics)" title="regularization">regularization</a> technique and a type of regression that is well-suited for models showing high levels of multicollinearity. It is also known as the L1 regularization technique. This technique is often used when there is a high number of features present in the dataset, as this technique can automatically perform feature selection. [<a href="https://machinelearningmastery.com/lasso-regression-with-python/" title="Read More">Read More</a>]</p>
 <p>The full form of the word “LASSO” means Least Absolute Shrinkage and Selection Operator.</p>
 <p>Regularization is an important concept used to avoid <a href="https://en.wikipedia.org/wiki/Overfitting" title="over-fitting">over-fitting</a> the data, especially where the trained and test data vary. This technique is implemented by adding a penalty term to the best fir line derived from the model trained on training data. By doing this, we can achieve lesser variance in the test data.</p>
-<p><img alt="" src="/assets/pk11-300x65.png" />
+<p><img alt="" src="/assets/pk11-300x65.png"/>
 <a href="https://www.google.com/search?q=l1+regularization+formula&amp;tbm=isch&amp;ved=2ahUKEwii_Zntn-b6AhU1yKACHVRhDRwQ2-cCegQIABAA&amp;oq=l1+regularization+formula&amp;gs_lcp=CgNpbWcQAzIFCAAQgAQ6BAgjECc6BwgAEIAEEBhQnQhY7xJgzRNoAHAAeACAAY0DiAG8CJIBBzAuNC4wLjGYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&amp;sclient=img&amp;ei=KcJMY-LEAbWQg8UP1MK14AE&amp;bih=579&amp;biw=1204&amp;rlz=1C1CHBD_enIN933IN933&amp;hl=en-GB#imgrc=iQSJGTgfx9f-1M" title="Image Source">Image Source</a></p>
 <p>In the above image, we can see that the loss function is a sum of 2 terms, the error term and the penalty term L1. The error term can be any loss function for the regression problem like mean absolute error, mean squared error, r2 score, etc. The penalty term is an absolute value of weight Wi and the Lambda is a coefficient multiplied by the penalty term L1.</p>
 <h1>Table of Content</h1>
@@ -190,7 +209,7 @@
 <li>The Reason Behind Spasity</li>
 <li>Case 1: Ridge Regression</li>
 <li>Case 2: Lasso Regression</li>
-<li>3 Different Conditions For Values of &ldquo;m&rdquo; in Lasso Regression</li>
+<li>3 Different Conditions For Values of “m” in Lasso Regression</li>
 <li>Conclusion</li>
 <li>References</li>
 </ul>
@@ -208,14 +227,14 @@
 <p>x^ = mean of x values</p>
 </blockquote>
 <p>from the statistical solutions, we can derive the formula for m which stand to be</p>
-<p><img alt="" src="/assets/pk22-300x93.png" /></p>
+<p><img alt="" src="/assets/pk22-300x93.png"/></p>
 <h1>Case 1: Ridge Regression</h1>
 <p>In the case of Ridge or L2 regression, the formula of the loss function will be the same as the normal loss function but with the additional penalty term L2.</p>
-<p><img alt="" src="/assets/pk33-300x100.png" />
+<p><img alt="" src="/assets/pk33-300x100.png"/>
 <a href="https://www.google.com/search?q=ridge+regression+formula&amp;rlz=1C1CHBD_enIN933IN933&amp;sxsrf=ALiCzsaOLnx_muyXNCCs2qTAtVg6ZfFQ6w:1665976855035&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwjAxpe1p-b6AhUWSWwGHeKHA_0Q_AUoAXoECAMQAw&amp;biw=1220&amp;bih=579&amp;dpr=1.12#imgrc=PkoL44AuplYS0M&amp;imgdii=TAJZGelDAz7-ZM" title="Image Source">Image Source</a></p>
 <p>Where SSE = Squared Sum Error</p>
 <p>If we modify this equation and try to get the formula for the slope m using statistical methods the formula will be the same as simple linear regression slope formula with an additional term lambda in the denominator.</p>
-<p><img alt="" src="/assets/pk44-300x96.png" /></p>
+<p><img alt="" src="/assets/pk44-300x96.png"/></p>
 <p>Now here in the case of ridge regression, to make the value of slope m to be zero, the term in the numerator should be zero, so here no matter how big or small the value of lambda is, it will not affect the value of m to be zero. So the value of slope m will always reach near values of zero but not the exact zero value.</p>
 <h1>Case 2: Lasso Regression</h1>
 <p>In the case of Lasso or L1 regression, the formula for the slope m will be different for 3 different values of m, which is for</p>
@@ -226,16 +245,16 @@
 </ol>
 <h2>1. For <code>m</code> &gt; 0:</h2>
 <p>when the value of m will be greater than zero it means that the term in the numerator will also be greater than zero. so now if we increase the values of lambda to some extent simply the value of the numerator in the equation will decrease, now after increasing the values of lambda, when the values of lambda will be equal to the other term in the numerator the difference will be zero and the values of m will be zero, but as we discussed for the zero value of m we have a different equation to follow. so the values will reach zero but they will not be negative as after reaching to zero value of m we have to follow another equation.</p>
-<p><img alt="" src="/assets/pk5-300x92.png" /></p>
+<p><img alt="" src="/assets/pk5-300x92.png"/></p>
 <h2>2. For <code>m</code> &lt; 0:</h2>
 <p>In the case where the values of m will be less than zero, we have different equations to follow. same as the above case if we start increasing the value of lambda which is added in the numerator term, and if the other term in the numerator is negative then to some value of lambda the sum of these two terms will be negative, but after increasing the value of lambda the numerator term will start increasing and reached to zero, so it will reach to zero value but after reaching zero value this same equation will not be followed and then there will not be any reading after zero.</p>
-<p><img alt="" src="/assets/pk7-300x97.png" /></p>
+<p><img alt="" src="/assets/pk7-300x97.png"/></p>
 <h2>3. For <code>m</code> = 0:</h2>
 <p>In the case of m equals zero we have the same equation as simple linear regression slope formula. which will be followed if the value of m reached zero.</p>
-<p><img alt="" src="/assets/pk8-300x93.png" /></p>
-<p>Let&rsquo;s try to understand the same thing with the help of an example dataset. In both cases, we can apply ridge and lasso regression and analyze the values with the description of the features.</p>
+<p><img alt="" src="/assets/pk8-300x93.png"/></p>
+<p>Let’s try to understand the same thing with the help of an example dataset. In both cases, we can apply ridge and lasso regression and analyze the values with the description of the features.</p>
 <p>In the case of ridge regression, different features can have high negative or positive values but as the value of alpha or lambda increases the values tend to be reach near zero but do not attain the exact zero values.</p>
-<p><img alt="" src="/assets/lasso-s-3-300x200.png" />
+<p><img alt="" src="/assets/lasso-s-3-300x200.png"/>
 <a href="https://www.analyticsvidhya.com/wp-content/uploads/2016/01/8.-lasso-table_modified.png" title="Image Source">Image Source</a></p>
 <p>If we try to apply the lasso regression to the same dataset and try to plot the table for that, the values of different features are having high positive or negative values, but as the value of alpha or lambda increases the values start reaching the exact zero value but not more or less than that as after reaching zero, it will follow another equation for the suitable situation of m being positive or negative.</p>
 <h1>Conclusion</h1>
@@ -255,6 +274,78 @@
 <li>[4] https://www.delftstack.com/howto/python/lasso-regression-in-python/</li>
 <li>[5] https://you.com/search?q=lasso%20regression%20implementation%20python</li>
 </ul>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-23 10:00:00" class="text-gray-400 uppercase tracking-wider">November 23, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/chat-own-data-chatgpt-langchain">
+                                            <span class="absolute inset-0"></span>
+                                            Chat with your own data/text files using chatGPT and LangChain
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        There are many different approaches to chatting with your own data. 
+One way is to upload your PDF t...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-13 09:31:20" class="text-gray-400 uppercase tracking-wider">November 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/LangChain-understand-production-codebases">
+                                            <span class="absolute inset-0"></span>
+                                            Understand langChain to Quickly Get Started with Production Codebases
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
+If you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-04-13 11:09:08" class="text-gray-400 uppercase tracking-wider">April 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/word2vec-vectorizer-in-natural-language-processing">
+                                            <span class="absolute inset-0"></span>
+                                            Word2Vec Vectorizer in Natural Language Processing
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        In natural language processing, Word2Vec is one of the most widely used vectorization techniques use...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

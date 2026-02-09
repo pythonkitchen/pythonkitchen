@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Machine Learning Part 12 Association Analysis' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Learning Part 12: Association Analysis Explained | Python Kitchen</title>
+  <meta name="description" content="Association Analysis is an unsupervised learning technique used to discover interesting relationships hidden in large datasets. It’s most famous for its use in ...">
+  <meta name="keywords" content="machine learning, unsupervised learning, association analysis, apriori, machine learning">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/machine-learning-part-12-association-analysis/">
+  <meta property="og:title" content="Machine Learning Part 12: Association Analysis Explained">
+  <meta property="og:description" content="Association Analysis is an unsupervised learning technique used to discover interesting relationships hidden in large datasets. It’s most famous for its use in ...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/machine-learning-part-12-association-analysis/">
+  <meta property="twitter:title" content="Machine Learning Part 12: Association Analysis Explained">
+  <meta property="twitter:description" content="Association Analysis is an unsupervised learning technique used to discover interesting relationships hidden in large datasets. It’s most famous for its use in ...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='machine learning'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Machine Learning Part 12 Association Analysis'>
+  <meta name='subtitle' content='Machine Learning Part 12: Association Analysis Explained'>
   <meta name='pageKey' content='machine-learning-part-12-association-analysis'>
-  <meta name='og:title' content='Machine Learning Part 12 Association Analysis'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/machine-learning-part-12-association-analysis'>
-
-  <title>Machine Learning Part 12 Association Analysis</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Machine Learning Part 12 Association Analysis</p>
+                    <p class="text-3xl" style="font-weight: 600;">Machine Learning Part 12: Association Analysis Explained</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2021-04-07 10:14:26" class="text-gray-500">April 7, 2021</time>
@@ -179,43 +198,114 @@
                     
                     <br>
                     <article>
-                        <h1>12 association analysis</h1>
-<p>Machine Learning</p>
-<p>♡ supervised learning
-👉 ♡ unsupervised learning
-♡ reinforcement learning</p>
-<p>unsupervised learning is where your program has to find how the data relates to each other. there is no prior training</p>
-<p>types of unsupervised learning</p>
-<p>♠️ clustering
-♠️ association</p>
-<p>association analysis</p>
-<p>finds associations between items, like what customers usually buy together in a store. if that is known, sales might be put on those items, or they could be placed together to ease the customers&rsquo; life or &hellip; why not rise the price on both?</p>
-<p>🔎 itemset: those items occuring together</p>
-<p>✳ confidence</p>
-<p>confidence measure how certain a rule. if clients always buy milk with eggs, we say that the confidence is 100%</p>
-<p>confidence(A, B) = P(B|A)
-i.e. P(B) given A</p>
-<p>✳ support</p>
-<p>the support of an itemset is the percentage of the dataset that contains the itemset</p>
-<p>let us say out of 5 transactions at a store, butter and bread was bought together 3 times. it&rsquo;s support is 3/5</p>
-<p>● with support and confidence, we can assess our association rule&rsquo;s success</p>
-<p>✳ lift</p>
-<p>lift is defined as</p>
-<p>support(X u Y) / support(X) * support(Y)</p>
-<p>if we are looking for milk, tea to sugar together in a dataset of 6 transactions,</p>
-<p>support(X u Y) means how many times over 6 they appear together, let us say it is 2</p>
-<p>support(X) means how many times milk, tea appear together in the dataset, let us say it is 4</p>
-<p>support(Y) means how many times sugar appear in the dataset, let us say 3 times</p>
-<p>our support is</p>
-<p>2/6 / 4/6 * 3/6</p>
-<p>= 1</p>
-<p>a lift if one means one has no effect on the other</p>
-<p>if the lift is greater than one it means that one is dependent on the other (it matters)</p>
-<p>a lift of less than one means that one adversely impacts the other</p>
-<p>✳ a priori algorithm</p>
-<p>this tells us that if an item set is frequent, then it&rsquo;s subset must also be frequent. you specify a certain support level to go from as if you check each and every transaction, it is very slow!</p>
-<p>✳ multilevel association rules</p>
-<p>instead of pinpointing items, they can be associated higher up. like finding people who bought milk brand A and flour brand B together might be hard but finding that people bought milk and flour together might be easier</p>
+                        <p><strong>Association Analysis</strong> is an unsupervised learning technique used to discover interesting relationships hidden in large datasets. It’s most famous for its use in “Market Basket Analysis.”</p>
+<h2>The Goal 🛒</h2>
+<p>Imagine you own a grocery store. You want to know which items are frequently bought together. If you find that customers who buy bread also tend to buy butter, you can place them next to each other to increase sales.</p>
+<h3>Key Terms:</h3>
+<ul>
+<li><strong>Itemset:</strong> A collection of one or more items (e.g., {Bread, Milk, Butter}).</li>
+<li><strong>Support:</strong> How frequently an itemset appears in the dataset.</li>
+<li><strong>Confidence:</strong> How often item Y is bought when item X is bought.</li>
+</ul>
+<hr/>
+<h2>Measuring Strength: Support, Confidence, and Lift ✳</h2>
+<h3>1. Support</h3>
+<p>The percentage of total transactions that contain the itemset.
+$$Support(A) = \frac{\text{Number of transactions containing A}}{\text{Total transactions}}$$</p>
+<h3>2. Confidence</h3>
+<p>The likelihood that item B is purchased given that item A is purchased.
+$$Confidence(A \rightarrow B) = \frac{Support(A \cup B)}{Support(A)}$$</p>
+<h3>3. Lift</h3>
+<p>Lift measures how much more likely item B is to be bought given item A, compared to how often B is bought anyway.
+$$Lift(A \rightarrow B) = \frac{Support(A \cup B)}{Support(A) \cdot Support(B)}$$</p>
+<ul>
+<li><strong>Lift = 1:</strong> A and B are independent.</li>
+<li><strong>Lift &gt; 1:</strong> A and B are positively associated (A makes B more likely).</li>
+<li><strong>Lift &lt; 1:</strong> A and B are negatively associated.</li>
+</ul>
+<hr/>
+<h2>The Apriori Algorithm ✳</h2>
+<p>Checking every possible combination of items in a large store would be incredibly slow. The <strong>Apriori Algorithm</strong> simplifies this by using the “Apriori Principle”:</p>
+<blockquote>
+<p><strong>If an itemset is frequent, then all of its subsets must also be frequent.</strong></p>
+</blockquote>
+<p>This allows the algorithm to “prune” (skip) thousands of combinations that couldn’t possibly be frequent, making the analysis much faster.</p>
+<h2>Summary</h2>
+<p>Association analysis helps businesses understand customer behavior and optimize store layouts, recommendation engines, and marketing campaigns. </p>
+<p><strong>Exercise:</strong>
+Look up <strong>“Market Basket Analysis”</strong> examples. You’ll find interesting (and sometimes weird) stories about items people frequently buy together!</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-23 10:00:00" class="text-gray-400 uppercase tracking-wider">November 23, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/chat-own-data-chatgpt-langchain">
+                                            <span class="absolute inset-0"></span>
+                                            Chat with your own data/text files using chatGPT and LangChain
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        There are many different approaches to chatting with your own data. 
+One way is to upload your PDF t...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-13 09:31:20" class="text-gray-400 uppercase tracking-wider">November 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/LangChain-understand-production-codebases">
+                                            <span class="absolute inset-0"></span>
+                                            Understand langChain to Quickly Get Started with Production Codebases
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
+If you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-04-13 11:09:08" class="text-gray-400 uppercase tracking-wider">April 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/word2vec-vectorizer-in-natural-language-processing">
+                                            <span class="absolute inset-0"></span>
+                                            Word2Vec Vectorizer in Natural Language Processing
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        In natural language processing, Word2Vec is one of the most widely used vectorization techniques use...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

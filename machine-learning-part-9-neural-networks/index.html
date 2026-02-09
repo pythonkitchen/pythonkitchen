@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Machine Learning Part 9 Neural Networks' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Learning Part 9: An Introduction to Neural Networks | Python Kitchen</title>
+  <meta name="description" content="Neural Networks are the backbone of modern Artificial Intelligence, powering everything from face recognition to self-driving cars. In this post, we’ll explore ...">
+  <meta name="keywords" content="machine learning, neural networks, perceptron, deep learning, ai, machine learning">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/machine-learning-part-9-neural-networks/">
+  <meta property="og:title" content="Machine Learning Part 9: An Introduction to Neural Networks">
+  <meta property="og:description" content="Neural Networks are the backbone of modern Artificial Intelligence, powering everything from face recognition to self-driving cars. In this post, we’ll explore ...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/machine-learning-part-9-neural-networks/">
+  <meta property="twitter:title" content="Machine Learning Part 9: An Introduction to Neural Networks">
+  <meta property="twitter:description" content="Neural Networks are the backbone of modern Artificial Intelligence, powering everything from face recognition to self-driving cars. In this post, we’ll explore ...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='machine learning'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Machine Learning Part 9 Neural Networks'>
+  <meta name='subtitle' content='Machine Learning Part 9: An Introduction to Neural Networks'>
   <meta name='pageKey' content='machine-learning-part-9-neural-networks'>
-  <meta name='og:title' content='Machine Learning Part 9 Neural Networks'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/machine-learning-part-9-neural-networks'>
-
-  <title>Machine Learning Part 9 Neural Networks</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Machine Learning Part 9 Neural Networks</p>
+                    <p class="text-3xl" style="font-weight: 600;">Machine Learning Part 9: An Introduction to Neural Networks</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2021-04-07 10:10:40" class="text-gray-500">April 7, 2021</time>
@@ -179,89 +198,111 @@
                     
                     <br>
                     <article>
-                        <h1>9 neural networks</h1>
-<p>Machine Learning</p>
-<p>👉♡ supervised learning
-♡ unsupervised learning
-♡ reinforcement learning</p>
-<p>recap:
-🔖 types of supervised learning</p>
-<p>✅ classification 📑</p>
-<p>✅ regression 📈</p>
-<p>✅ mixed ⚗
-- tree based
-- random forest
-- neural networks 🎈
-- support vector machines</p>
-<p>neural networks</p>
-<p>neural networks require a bit of explanation. entire books can be written on the subject</p>
-<p>🕸 the perceptron</p>
-<p>the perceptron was the basis for neural networks. it consists of two inputs, a processor and an output.</p>
-<p>the processor is just a function that decides what to output according to the inputs. it might check if &gt; a number or just check the sign or whatever</p>
-<p>🕸 weight</p>
-<p>the weight is just a value that we multiply the input by.</p>
-<p>🕸 sum</p>
-<p>we then sum the inputs * weight and pass them to the function.</p>
-<p>so we can see input -&gt; weight -&gt; function</p>
-<p>🕸 example</p>
-<p>let us say our two inputs are</p>
-<p>input1 : 5
-input2 : 6</p>
-<p>let us have some random weights</p>
-<p>weight1 : 2
-weight2 : 1</p>
-<p>let us sum</p>
-<p>input1 * weight1 + input2 * weight2
-5 * 2 + 6 * 1
-16</p>
-<p>let us say we configure our function as</p>
-<p>def activation(sum):
- if sum &gt; 10:
- return 0
- else:
- return 1</p>
-<p>well, we just pass it to the activation function and it will return 1</p>
-<p>⚽️ exercise:
-1 find out the uses of neural networks (the fields)
-hint: time series prediction, signal analysis &hellip;</p>
-<p>next:
-the bias input and what need to be continued</p>
-<p>&hellip;</p>
-<h1>9 neural networks (continued)</h1>
-<p>Machine Learning</p>
-<p>👉♡ supervised learning
-♡ unsupervised learning
-♡ reinforcement learning</p>
-<p>recap:
-🔖 types of supervised learning</p>
-<p>✅ classification 📑</p>
-<p>✅ regression 📈</p>
-<p>✅ mixed ⚗
-- tree based
-- random forest
-- neural networks 🎈
-- support vector machines</p>
-<p>neural networks</p>
-<p>🎋 bias input</p>
-<p>in our example above let us say that we have input1 0 and input2 0, 0<em>weight1+0</em>weight2 will always be zero, no matter what the weight. because of this we add a permanent input of 1 so that it becomes 0<em>weight1+0</em>weight2 + 1*weight3  weight3, in that case, the weight passes through the activation function</p>
-<p>🎋 neural network</p>
-<p>a neural network is a collection of perceptrons</p>
-<p>🎋 training</p>
-<p>whatever we wanted to do with a neural network, we must first adjust the weights as we gave it random weights at the begining. first we test the perceptrons agains inputs with known answer. we then compute the error (did it get the answer right or no). we then adjust weights according to the error. we repeat</p>
-<p>🎋 error</p>
-<p>our error is
-desired output - guess output</p>
-<p>🎋 tuning weight</p>
-<p>our new weight equals
-weight + change in weight</p>
-<p>change in weight = error * input</p>
-<p>so,</p>
-<p>new weight = weight + error * input</p>
-<p>🎋 learning constant</p>
-<p>to decide at what rate we change our weight, we just use a value called learning constant. too large and we won&rsquo;t tune our weight correctly. too little and &hellip; it takes a long time</p>
-<p>new weight = weight + error * input * learning constant</p>
-<p>⚽️ exercise:
-read implementations of neural networks from scratch in python</p>
+                        <p>Neural Networks are the backbone of modern Artificial Intelligence, powering everything from face recognition to self-driving cars. In this post, we’ll explore the basic building block of a neural network: the <strong>Perceptron</strong>.</p>
+<h2>The Building Block: The Perceptron 🕸</h2>
+<p>The perceptron is a simplified mathematical model of a biological neuron. It takes multiple inputs, processes them, and produces a single output.</p>
+<h3>How it Works:</h3>
+<ol>
+<li><strong>Inputs:</strong> Numerical values from your data.</li>
+<li><strong>Weights:</strong> Every input has a weight that determines its importance.</li>
+<li><strong>Summation:</strong> The perceptron multiplies each input by its weight and adds them up.</li>
+<li><strong>Activation Function:</strong> The sum is passed through a function that decides whether the neuron “fires” (outputs a value).</li>
+</ol>
+<h3>Example Calculation:</h3>
+<ul>
+<li>Inputs: $x_1 = 5, x_2 = 6$</li>
+<li>Weights: $w_1 = 2, w_2 = 1$</li>
+<li>Sum = $(5 \cdot 2) + (6 \cdot 1) = 16$</li>
+</ul>
+<p>If our <strong>Activation Function</strong> says: “If sum &gt; 10, output 1, else 0,” then our perceptron outputs <strong>1</strong>.</p>
+<hr/>
+<h2>Adding the Bias 🎋</h2>
+<p>If all inputs are 0, the sum will always be 0, no matter what the weights are. To prevent this, we add a <strong>Bias</strong> input (usually a constant 1 with its own weight). This allows the neuron to “fire” even when all other inputs are zero.</p>
+<h2>Training the Network 🎋</h2>
+<p>A Neural Network is just a large collection of these perceptrons organized in layers. When we “train” a network, we are actually adjusting the <strong>weights</strong> and <strong>biases</strong>.</p>
+<ol>
+<li><strong>Guess:</strong> The network makes a prediction using random weights.</li>
+<li><strong>Calculate Error:</strong> We compare the guess to the actual answer ($Error = Actual - Guess$).</li>
+<li><strong>Adjust:</strong> We update the weights based on the error.
+    $$New Weight = Weight + (Error \cdot Input \cdot Learning Rate)$$</li>
+</ol>
+<p>The <strong>Learning Rate</strong> controls how much we change the weight in each step. Too high, and the model becomes unstable. Too low, and it takes forever to learn.</p>
+<h2>Summary</h2>
+<p>Neural Networks learn by trial and error. By processing thousands of examples and constantly adjusting their weights, they can eventually “recognize” complex patterns that traditional algorithms can’t.</p>
+<h2>Exercise</h2>
+<p>Try to find a “Neural Network from scratch” tutorial in Python. You’ll be surprised at how simple the math actually is for a single neuron!</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-23 10:00:00" class="text-gray-400 uppercase tracking-wider">November 23, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/chat-own-data-chatgpt-langchain">
+                                            <span class="absolute inset-0"></span>
+                                            Chat with your own data/text files using chatGPT and LangChain
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        There are many different approaches to chatting with your own data. 
+One way is to upload your PDF t...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-13 09:31:20" class="text-gray-400 uppercase tracking-wider">November 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/LangChain-understand-production-codebases">
+                                            <span class="absolute inset-0"></span>
+                                            Understand langChain to Quickly Get Started with Production Codebases
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
+If you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-04-13 11:09:08" class="text-gray-400 uppercase tracking-wider">April 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/word2vec-vectorizer-in-natural-language-processing">
+                                            <span class="absolute inset-0"></span>
+                                            Word2Vec Vectorizer in Natural Language Processing
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        In natural language processing, Word2Vec is one of the most widely used vectorization techniques use...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

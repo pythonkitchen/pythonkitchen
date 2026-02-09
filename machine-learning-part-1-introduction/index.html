@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Machine Learning part 1: introduction' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Learning Part 1: An Introduction for Beginners | Python Kitchen</title>
+  <meta name="description" content="Machine Learning (ML) is one of the most exciting fields in technology today. But what exactly is it? In this introductory series, we will break down the core c...">
+  <meta name="keywords" content="machine learning, introduction, data science, statistics, machine learning">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/machine-learning-part-1-introduction/">
+  <meta property="og:title" content="Machine Learning Part 1: An Introduction for Beginners">
+  <meta property="og:description" content="Machine Learning (ML) is one of the most exciting fields in technology today. But what exactly is it? In this introductory series, we will break down the core c...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/machine-learning-part-1-introduction/">
+  <meta property="twitter:title" content="Machine Learning Part 1: An Introduction for Beginners">
+  <meta property="twitter:description" content="Machine Learning (ML) is one of the most exciting fields in technology today. But what exactly is it? In this introductory series, we will break down the core c...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='machine learning'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Machine Learning part 1: introduction'>
+  <meta name='subtitle' content='Machine Learning Part 1: An Introduction for Beginners'>
   <meta name='pageKey' content='machine-learning-part-1-introduction'>
-  <meta name='og:title' content='Machine Learning part 1: introduction'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/machine-learning-part-1-introduction'>
-
-  <title>Machine Learning part 1: introduction</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Machine Learning part 1: introduction</p>
+                    <p class="text-3xl" style="font-weight: 600;">Machine Learning Part 1: An Introduction for Beginners</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2019-01-21 07:43:27" class="text-gray-500">January 21, 2019</time>
@@ -179,21 +198,109 @@
                     
                     <br>
                     <article>
-                        <h2><strong>what is it?</strong></h2>
-<p>wikipaedia defines machine learning as:</p>
-<p>_the scientific study of algorithms and statistical models that computer systems use to progressively improve their performance 📈 on a specific task. Machine learning algorithms build a mathematical model of sample data, known as &ldquo;training data&rdquo;, in order to make predictions or decisions without being explicitly programmed to perform the task_</p>
-<p>data -&gt; train -&gt; do tasks</p>
-<h2><strong>relationship with data science</strong></h2>
-<p>since data is used, it should be cleaned etc. knowing what data to collect, how etc, also about formulas needed, is part of data science</p>
-<h2><strong>relationship with statistics</strong></h2>
-<p><img alt="" src="" /></p>
-<p>machine learning is 100% applied maths, more specifically, statistics :bar_chart: plays a very important part. a computer is there to calculate and repeat faster</p>
-<h2><strong>use of machine learning</strong></h2>
-<p>image recognition like recognising digits and letters from pictures, books recommendations on some sites, criminal identification on anonymous networks, speech recognition etc.</p>
-<h2><strong>types of machine learning</strong></h2>
-<p>♡ supervised learning<br />
-♡ unsupervised learning<br />
-♡ reinforcement learning</p>
+                        <p>Machine Learning (ML) is one of the most exciting fields in technology today. But what exactly is it? In this introductory series, we will break down the core concepts of ML, starting from the very basics.</p>
+<h2>What is Machine Learning?</h2>
+<p>Wikipedia defines machine learning as:</p>
+<blockquote>
+<p>“The scientific study of algorithms and statistical models that computer systems use to progressively improve their performance on a specific task. Machine learning algorithms build a mathematical model of sample data, known as ‘training data’, in order to make predictions or decisions without being explicitly programmed to perform the task.”</p>
+</blockquote>
+<p>In simple terms: <strong>Data -&gt; Train -&gt; Results.</strong></p>
+<p>Unlike traditional programming where you write explicit rules (If X then Y), in machine learning, you provide the data and the computer finds the patterns itself.</p>
+<h2>Relationship with Data Science</h2>
+<p>Machine learning and Data Science are closely related but not identical. Data Science is a broad field that involves:
+*   Collecting data
+*   Cleaning and processing data
+*   Analyzing data to find insights
+*   Applying formulas and machine learning models</p>
+<p>ML is a key tool used by Data Scientists to automate the predictive part of their work.</p>
+<h2>Relationship with Statistics</h2>
+<p>Machine learning is essentially 100% applied mathematics, with <strong>Statistics</strong> playing the most critical role. While a statistician might focus on understanding the relationships between variables, a machine learning engineer uses those same statistical principles to build models that can repeat calculations faster and more accurately than a human ever could.</p>
+<h2>Real-World Applications</h2>
+<p>You encounter machine learning every day:
+*   <strong>Image Recognition:</strong> Identifying faces in photos or digits on envelopes.
+*   <strong>Recommendation Systems:</strong> How Netflix or Amazon suggests what you might like next.
+*   <strong>Speech Recognition:</strong> Powering assistants like Siri, Alexa, and Google Assistant.
+*   <strong>Fraud Detection:</strong> Banks identifying unusual spending patterns to stop criminals.</p>
+<h2>The Three Main Types of Machine Learning</h2>
+<p>There are three primary ways that machines learn:</p>
+<ol>
+<li><strong>Supervised Learning:</strong> The machine is trained on labeled data (it knows the answers during training).</li>
+<li><strong>Unsupervised Learning:</strong> The machine looks for patterns in unlabeled data.</li>
+<li><strong>Reinforcement Learning:</strong> The machine learns by trial and error, receiving rewards or penalties.</li>
+</ol>
+<p>In the next part of this series, we will dive deeper into <strong>Supervised Learning</strong>.</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-23 10:00:00" class="text-gray-400 uppercase tracking-wider">November 23, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/chat-own-data-chatgpt-langchain">
+                                            <span class="absolute inset-0"></span>
+                                            Chat with your own data/text files using chatGPT and LangChain
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        There are many different approaches to chatting with your own data. 
+One way is to upload your PDF t...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-13 09:31:20" class="text-gray-400 uppercase tracking-wider">November 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/LangChain-understand-production-codebases">
+                                            <span class="absolute inset-0"></span>
+                                            Understand langChain to Quickly Get Started with Production Codebases
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
+If you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-04-13 11:09:08" class="text-gray-400 uppercase tracking-wider">April 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/word2vec-vectorizer-in-natural-language-processing">
+                                            <span class="absolute inset-0"></span>
+                                            Word2Vec Vectorizer in Natural Language Processing
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        In natural language processing, Word2Vec is one of the most widely used vectorization techniques use...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

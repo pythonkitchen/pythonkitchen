@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,35 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Machine Learning part 5: mixed methods' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Learning Part 5: Decision Trees and Mixed Methods | Python Kitchen</title>
+  <meta name="description" content="Some machine learning methods are versatile enough to be used for both Classification and Regression. These are often called “Mixed Methods.”
+In this post, we’l...">
+  <meta name="keywords" content="machine learning, decision trees, classification, regression, CART, machine learning">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/machine-learning-part-5-mixed-methods/">
+  <meta property="og:title" content="Machine Learning Part 5: Decision Trees and Mixed Methods">
+  <meta property="og:description" content="Some machine learning methods are versatile enough to be used for both Classification and Regression. These are often called “Mixed Methods.”
+In this post, we’l...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/machine-learning-part-5-mixed-methods/">
+  <meta property="twitter:title" content="Machine Learning Part 5: Decision Trees and Mixed Methods">
+  <meta property="twitter:description" content="Some machine learning methods are versatile enough to be used for both Classification and Regression. These are often called “Mixed Methods.”
+In this post, we’l...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='machine learning'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Machine Learning part 5: mixed methods'>
+  <meta name='subtitle' content='Machine Learning Part 5: Decision Trees and Mixed Methods'>
   <meta name='pageKey' content='machine-learning-part-5-mixed-methods'>
-  <meta name='og:title' content='Machine Learning part 5: mixed methods'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/machine-learning-part-5-mixed-methods'>
-
-  <title>Machine Learning part 5: mixed methods</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +115,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +175,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Machine Learning part 5: mixed methods</p>
+                    <p class="text-3xl" style="font-weight: 600;">Machine Learning Part 5: Decision Trees and Mixed Methods</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2019-01-26 14:01:04" class="text-gray-500">January 26, 2019</time>
@@ -179,90 +201,184 @@
                     
                     <br>
                     <article>
-                        <h1>5 mixed methods</h1>
-<p>Machine Learning</p>
-<p>👉 ♡ supervised learning<br />
-♡ unsupervised learning<br />
-♡ reinforcement learning</p>
-<p>types of supervised learning</p>
-<p>✔ classification 🗒</p>
-<p>✔ regression 📈</p>
-<p>✔ mixed ⚗<br />
-- tree based<br />
-- random forest<br />
-- neural networks<br />
-- support vector machines</p>
-<p>mixed methods are used for classification and regression.</p>
-<p>🌱 tree based method</p>
-<p>those trees used for both for classification and regression are called Classification And Regression Trees (CART) models</p>
-<p>let us say that we want to predict whether an event will be good or bad, the event being having a good day at school</p>
-<p>our data looks as follows</p>
-<p>t. represents teacher<br />
-a means abscent<br />
-p means present</p>
-<p>mood stands for parents&rsquo; mood<br />
-g good. b bad</p>
-<p>hwork means homework<br />
-d done<br />
-nd not done</p>
-<h2>t. | mood | hwork | result</h2>
-<p>a |      g    |       d    |      g<br />
-p |      b    |       d    |      g<br />
-a |      g    |     nd    |      g<br />
-a |      b    |       d    |      b<br />
-p |      b    |     nd    |      b<br />
-a |      g    |     nd    |      g<br />
-p |      b    |       d    |      g<br />
-a |      g    |      nd   |      g<br />
-a |      g    |       d    |      g</p>
-<p>let us say that today the student entered the school. he wants to know how his day will go, today he has</p>
-<p>t.           p<br />
-mood   g<br />
-hwork  nd</p>
-<h2>about splitting</h2>
-<p>the first step is to split the tree to get a high purity index</p>
-<p>if we split by teacher&rsquo;s presence first, we get</p>
-<p>a <br />
-good 5 bad 1<br />
-p <br />
-good 2 bad 1</p>
-<p>if we split by parents&rsquo; mood we get</p>
-<p>g<br />
-good 5 bad 0<br />
-b<br />
-good 2 bad 2</p>
-<p>if we split by homework done we get</p>
-<p>d<br />
-good 4 bad 1<br />
-nd<br />
-good 3 bad 1</p>
-<p>the highest index of purity was with parents&rsquo; mood with good 5 and 0 bad day</p>
-<p>we start with it</p>
-<p>mood<br />
-&ndash;  g<br />
-a |      g    |       d    |      g<br />
-a |      g    |     nd    |      g<br />
-a |      g    |     nd    |      g<br />
-a |      g    |      nd   |      g<br />
-a |      g    |       d    |      g</p>
-<p>good 5 bad 0</p>
-<p>&ndash; b<br />
-p |      b    |       d    |      g<br />
-a |      b    |       d    |      b<br />
-p |      b    |     nd    |      b<br />
-p |      b    |       d    |      g</p>
-<p>good 2 bad 2</p>
-<p>so bad mood must be split further as good mood had 100% purity with 5 good result</p>
-<p>now our condition is</p>
-<p>t.           p<br />
-mood   g<br />
-hwork  nd</p>
-<p>if we go for mood g, we can stop spliting as our purity is 100%. we&rsquo;ll get a good day</p>
-<p>next:<br />
-〰 enthropy and gain<br />
-🌱 random forest<br />
-🌱 support vector machines (SVM)<br />
-🌱 neural networks</p>
+                        <p>Some machine learning methods are versatile enough to be used for both <strong>Classification</strong> and <strong>Regression</strong>. These are often called “Mixed Methods.”</p>
+<p>In this post, we’ll focus on one of the most popular mixed methods: <strong>Decision Trees</strong>.</p>
+<h2>What are Decision Trees?</h2>
+<p>A Decision Tree is a flowchart-like structure where each internal node represents a “test” on an attribute, each branch represents the outcome of the test, and each leaf node represents a class label or a continuous value.</p>
+<p>When used for both tasks, they are often referred to as <strong>CART</strong> (Classification And Regression Trees).</p>
+<h3>Other Mixed Methods include:</h3>
+<ul>
+<li>Random Forests (Ensembles of trees)</li>
+<li>Neural Networks</li>
+<li>Support Vector Machines (SVM)</li>
+</ul>
+<hr/>
+<h2>Example: Predicting a “Good Day” at School</h2>
+<p>Let’s say we want to predict whether a student will have a <strong>Good (G)</strong> or <strong>Bad (B)</strong> day at school based on three factors:
+1.  <strong>Teacher:</strong> Present (p) or Absent (a)
+2.  <strong>Parent Mood:</strong> Good (g) or Bad (b)
+3.  <strong>Homework:</strong> Done (d) or Not Done (nd)</p>
+<h3>Our Dataset:</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Teacher</th>
+<th style="text-align: left;">Mood</th>
+<th style="text-align: left;">HWork</th>
+<th style="text-align: left;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">a</td>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">d</td>
+<td style="text-align: left;">G</td>
+</tr>
+<tr>
+<td style="text-align: left;">p</td>
+<td style="text-align: left;">b</td>
+<td style="text-align: left;">d</td>
+<td style="text-align: left;">G</td>
+</tr>
+<tr>
+<td style="text-align: left;">a</td>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">nd</td>
+<td style="text-align: left;">G</td>
+</tr>
+<tr>
+<td style="text-align: left;">a</td>
+<td style="text-align: left;">b</td>
+<td style="text-align: left;">d</td>
+<td style="text-align: left;">B</td>
+</tr>
+<tr>
+<td style="text-align: left;">p</td>
+<td style="text-align: left;">b</td>
+<td style="text-align: left;">nd</td>
+<td style="text-align: left;">B</td>
+</tr>
+<tr>
+<td style="text-align: left;">a</td>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">nd</td>
+<td style="text-align: left;">G</td>
+</tr>
+<tr>
+<td style="text-align: left;">p</td>
+<td style="text-align: left;">b</td>
+<td style="text-align: left;">d</td>
+<td style="text-align: left;">G</td>
+</tr>
+<tr>
+<td style="text-align: left;">a</td>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">nd</td>
+<td style="text-align: left;">G</td>
+</tr>
+<tr>
+<td style="text-align: left;">a</td>
+<td style="text-align: left;">g</td>
+<td style="text-align: left;">d</td>
+<td style="text-align: left;">G</td>
+</tr>
+</tbody>
+</table>
+<h2>Building the Tree: The Art of Splitting</h2>
+<p>To build an efficient tree, we need to decide which feature to “split” on first. We want the split that gives us the highest <strong>Purity</strong> (where the resulting groups are mostly one class).</p>
+<h3>Comparing Splits:</h3>
+<p><strong>1. Split by Teacher:</strong>
+*   Absent: 5 Good, 1 Bad
+*   Present: 2 Good, 1 Bad</p>
+<p><strong>2. Split by Parent Mood:</strong>
+*   Good: <strong>5 Good, 0 Bad</strong> (100% Pure!)
+*   Bad: 2 Good, 2 Bad</p>
+<p><strong>3. Split by Homework:</strong>
+*   Done: 4 Good, 1 Bad
+*   Not Done: 3 Good, 1 Bad</p>
+<h3>The Winner: Parent Mood</h3>
+<p>Splitting by <strong>Parent Mood = Good</strong> immediately gives us a perfect prediction. If the parents are in a good mood, the student has a good day 100% of the time in our dataset.</p>
+<p>For the <strong>Bad Mood</strong> branch, we would need to split further (perhaps by Teacher or Homework) to resolve the 2 Good / 2 Bad tie.</p>
+<h2>Why use Decision Trees?</h2>
+<ul>
+<li><strong>Easy to understand:</strong> You can literally draw them and follow the logic.</li>
+<li><strong>Handle different data types:</strong> They work with both numbers and categories.</li>
+<li><strong>Feature Importance:</strong> They naturally show which factors (like Parent Mood) are the most important for the prediction.</li>
+</ul>
+<p>In the next part, we will look at how we mathematically measure this “purity” using concepts like <strong>Entropy</strong> and <strong>Information Gain</strong>.</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-23 10:00:00" class="text-gray-400 uppercase tracking-wider">November 23, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/chat-own-data-chatgpt-langchain">
+                                            <span class="absolute inset-0"></span>
+                                            Chat with your own data/text files using chatGPT and LangChain
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        There are many different approaches to chatting with your own data. 
+One way is to upload your PDF t...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-13 09:31:20" class="text-gray-400 uppercase tracking-wider">November 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/LangChain-understand-production-codebases">
+                                            <span class="absolute inset-0"></span>
+                                            Understand langChain to Quickly Get Started with Production Codebases
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
+If you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-04-13 11:09:08" class="text-gray-400 uppercase tracking-wider">April 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/word2vec-vectorizer-in-natural-language-processing">
+                                            <span class="absolute inset-0"></span>
+                                            Word2Vec Vectorizer in Natural Language Processing
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        In natural language processing, Word2Vec is one of the most widely used vectorization techniques use...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

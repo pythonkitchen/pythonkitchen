@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='ReLU Activation Function and Its Variants' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReLU Activation Function and Its Variants | Python Kitchen</title>
+  <meta name="description" content="Activation functions in deep learning are the functions that decide the output from node or hidden layers from a given set of inputs in neural networks. There a...">
+  <meta name="keywords" content="activations functions,relu, machine learning">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/relu-activation-function-and-its-variants/">
+  <meta property="og:title" content="ReLU Activation Function and Its Variants">
+  <meta property="og:description" content="Activation functions in deep learning are the functions that decide the output from node or hidden layers from a given set of inputs in neural networks. There a...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/relu-activation-function-and-its-variants/">
+  <meta property="twitter:title" content="ReLU Activation Function and Its Variants">
+  <meta property="twitter:description" content="Activation functions in deep learning are the functions that decide the output from node or hidden layers from a given set of inputs in neural networks. There a...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='machine learning'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
   <meta name='subtitle' content='ReLU Activation Function and Its Variants'>
   <meta name='pageKey' content='relu-activation-function-and-its-variants'>
-  <meta name='og:title' content='ReLU Activation Function and Its Variants'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/relu-activation-function-and-its-variants'>
-
-  <title>ReLU Activation Function and Its Variants</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -198,11 +217,11 @@
 <p>F(x) = max(0,x)</p>
 </blockquote>
 <p>which tells that if the input x is less than zero then the output from the function will be zero and if the input given to the relu function is greater than zero then the output from the function will be the same as the input.</p>
-<p><img alt="" src="/assets/relu1-300x169.png" />
+<p><img alt="" src="/assets/relu1-300x169.png"/>
 <a href="https://www.google.com/search?q=relu+activation+function+graph&amp;tbm=isch&amp;ved=2ahUKEwiUzP2WxOn6AhU-iNgFHexiC-sQ2-cCegQIABAA&amp;oq=relu+activation+function+graph&amp;gs_lcp=CgNpbWcQAzIFCAAQgAQ6BAgjECc6BwgAEIAEEBhQmBBY5xVguhdoAHAAeACAAcICiAHgCZIBBzAuNC4xLjGYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&amp;sclient=img&amp;ei=53pOY9S8IL6Q4t4P7MWt2A4&amp;bih=579&amp;biw=1220&amp;rlz=1C1CHBD_enIN933IN933#imgrc=NbAH97YJC7mO9M" title="Image Source">Image Source</a></p>
 <h1>Dying ReLU Problem</h1>
 <p>Due to the formula of the ReLU activation function, all the values less than zero will be zero after passing through the ReLU function. If the neural network is having a lot of negative values in the dataset then they all will be converted to zero after passing through the ReLU activation function and there will be zeros in the output which will make the neurons inactive. This type of scenario is called the dying ReLu problem in neural networks.</p>
-<p><img alt="" src="/assets/relu2-300x170.png" />
+<p><img alt="" src="/assets/relu2-300x170.png"/>
 <a href="https://miro.medium.com/max/1400/1*r_fTwA86CGc6iqFQlVjZ-g.png" title="Image Source">Image Source</a></p>
 <p>In the above image, we can see that all of the negative values passing through the ReLU activation function will be converted to zero and there will be a straight line in the graph of the function on the negative x-axis.</p>
 <h1>Variants of ReLU</h1>
@@ -214,30 +233,30 @@
 <p>F(x) = max(0.01x, x)</p>
 </blockquote>
 <p>So according to the leaky ReLU if the input passes to the activation function are less than zero then the output value would be 0.01 times the input values and if the input passes to the activation function is greater than zero the output values will be equal to the input value.</p>
-<p><img alt="" src="/assets/relu3-300x177.png" />
+<p><img alt="" src="/assets/relu3-300x177.png"/>
 <a href="https://www.researchgate.net/publication/358306930/figure/fig2/AS:1119417702318091@1643901386378/ReLU-activation-function-vs-LeakyReLU-activation-function.png" title="Image Source">Image Source</a></p>
 <h2>2. Parametric ReLU (PReLU)</h2>
-<p>Parametric ReLU is similar to the leaky ReLU activation function, but here instead of having a predetermined value for multiplying the input values with 0.01, we use the parameter &ldquo;a&rdquo; in parametric ReLU. The value of the &ldquo;a&rdquo; parameter will be decided by the neural network itself.</p>
+<p>Parametric ReLU is similar to the leaky ReLU activation function, but here instead of having a predetermined value for multiplying the input values with 0.01, we use the parameter “a” in parametric ReLU. The value of the “a” parameter will be decided by the neural network itself.</p>
 <p>The formula for Parametric ReLU is</p>
 <blockquote>
 <p>F(x) = max(ax, x)</p>
 </blockquote>
-<p>which stated that if the input value given to the parametric RELU is less than zero then the output values will be equal to the input values multiplied with parameter &ldquo;a&rdquo; and if the input value if greater than zero then the output value will be the same as the input value.</p>
-<p><img alt="" src="/assets/relu4-300x266.png" />
+<p>which stated that if the input value given to the parametric RELU is less than zero then the output values will be equal to the input values multiplied with parameter “a” and if the input value if greater than zero then the output value will be the same as the input value.</p>
+<p><img alt="" src="/assets/relu4-300x266.png"/>
 <a href="https://cdn-images-1.medium.com/max/800/0*ChdsWvPFTyZ8kbbR.png" title="Image Source">Image Source</a></p>
 <h2>3. Exponential Linear Unit (ELU)</h2>
 <p>The exponential linear unit is a variant of ReLU activation which fixes some problems and gives some advantages compared to the normal ReLU activation function.</p>
 <p>The formula for Exponential Linear Unit is</p>
-<p><img alt="" src="/assets/relu5.png" />
+<p><img alt="" src="/assets/relu5.png"/>
 <a href="https://www.v7labs.com/blog/neural-networks-activation-functions" title="Image Source">Image Source</a></p>
 <p>ELU activation function uses a log curve and due to this it does not gives a straight line for negative values, unlike leaky and parametric ReLU.</p>
 <p>ELU activation functions also solve the dying ReLU problem and also the curve of the ELU becomes smooth slowly for negative values having high magnitude while normal Relu becomes smooth instantly.</p>
-<p><img alt="" src="/assets/relu6-300x192.png" />
+<p><img alt="" src="/assets/relu6-300x192.png"/>
 <a href="https://www.google.com/search?q=elu+activation+graph&amp;rlz=1C1CHBD_enIN933IN933&amp;sxsrf=ALiCzsbSAcYfWuUzgQ7eUq9stJh4AhC8qQ:1666090389003&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwiM9LKuzun6AhUb43MBHTytBx8Q_AUoAXoECAEQAw&amp;biw=1220&amp;bih=579&amp;dpr=1.12#imgrc=fabozd3VMZV4KM" title="Image Source">Image Source</a></p>
 <p>Higher computational powers are required while working with ELU compared to ReLU and there is a chance of exploding gradient problems while working with ELU.</p>
 <h2>4. Scaled Exponential Linear Unit (SELU)</h2>
 <p>This activation function is one of the latest activation functions in deep learning. The equation for this activation function just looks like the other equations. The equation for this activation function is</p>
-<p><img alt="" src="/assets/relu7-300x61.png" />
+<p><img alt="" src="/assets/relu7-300x61.png"/>
 <a href="https://www.google.com/search?q=selu+activation+formula&amp;tbm=isch&amp;ved=2ahUKEwitk8y6zOn6AhW1j9gFHXh3Bt0Q2-cCegQIABAA&amp;oq=selu+activation+formula&amp;gs_lcp=CgNpbWcQAzIECCMQJ1D6F1j6F2DEGGgBcAB4AIAB2gGIAdoBkgEDMi0xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&amp;sclient=img&amp;ei=lYNOY-30KrWf4t4P-O6Z6A0&amp;bih=579&amp;biw=1204&amp;rlz=1C1CHBD_enIN933IN933&amp;hl=en-GB#imgrc=78l7EbscdBRa0M" title="Image Source">Image Source</a></p>
 <p>The equation states that, if the input value x is greater than zero, the output value becomes x multiplied by lambda λ term and If the input value x is less than or equal to zero then alpha is multiplied with the exponential of the x-value minus the alpha value, and then we multiply by the lambda value.</p>
 <p>The calculated values for alpha and lambda are</p>
@@ -245,7 +264,7 @@
 <p>Alpha = 1.6732632423543772848170429916717</p>
 <p>Lambda = 1.0507009873554804934193349852946</p>
 </blockquote>
-<p><img alt="" src="/assets/relu8-300x200.png" />
+<p><img alt="" src="/assets/relu8-300x200.png"/>
 <a href="https://www.google.com/search?q=selu+activation+graph&amp;tbm=isch&amp;ved=2ahUKEwi5hcLYz-n6AhU8k9gFHZlaCqwQ2-cCegQIABAA&amp;oq=selu+activation+graph&amp;gs_lcp=CgNpbWcQAzoECCMQJ1DPB1iJEGDpEWgAcAB4AIAB5wGIAZkJkgEFMC40LjKYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&amp;sclient=img&amp;ei=-YZOY_mkLrym4t4PmbWp4Ao&amp;bih=579&amp;biw=1204&amp;rlz=1C1CHBD_enIN933IN933&amp;hl=en-GB#imgrc=qJPE_mBWQXNMSM" title="Image Source">Image Source</a></p>
 <p>The special case in the SELU activation function is that it is self normalizing activation function, which means that the input value will be passed through an activation function and the output from the function will be normalized by subtracting the mean from the value and diving it by its standard deviation. By doing this means centralizing will take place and the value of the mean will be zero and the standard deviation will be equal to 1.</p>
 <h1>Conclusion</h1>
@@ -257,6 +276,78 @@
 <li>Leaky ReLu and Parametric ReLu are the variants of Relu having linear negative x-axis graph in which some value is multiplied by input value if its negative to avoid dying ReLU problem.</li>
 <li>ELU and SELU are the variants of the Normal RelU activation function having nonlinear graphs for negative x-axis value with high computation power required and advantages like self-normalizing etc.</li>
 </ol>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-23 10:00:00" class="text-gray-400 uppercase tracking-wider">November 23, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/chat-own-data-chatgpt-langchain">
+                                            <span class="absolute inset-0"></span>
+                                            Chat with your own data/text files using chatGPT and LangChain
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        There are many different approaches to chatting with your own data. 
+One way is to upload your PDF t...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-13 09:31:20" class="text-gray-400 uppercase tracking-wider">November 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/LangChain-understand-production-codebases">
+                                            <span class="absolute inset-0"></span>
+                                            Understand langChain to Quickly Get Started with Production Codebases
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
+If you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-04-13 11:09:08" class="text-gray-400 uppercase tracking-wider">April 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/word2vec-vectorizer-in-natural-language-processing">
+                                            <span class="absolute inset-0"></span>
+                                            Word2Vec Vectorizer in Natural Language Processing
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        In natural language processing, Word2Vec is one of the most widely used vectorization techniques use...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

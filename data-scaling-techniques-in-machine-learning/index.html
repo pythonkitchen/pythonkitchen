@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Data Scaling Techniques in Machine Learning' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Scaling Techniques in Machine Learning | Python Kitchen</title>
+  <meta name="description" content="Data and its quality affect machine learning models and their accuracy, and the quality of the data can not be well in some types of problems which can be solve...">
+  <meta name="keywords" content="data science,machine learning,scaling, data science, machine learning">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/data-scaling-techniques-in-machine-learning/">
+  <meta property="og:title" content="Data Scaling Techniques in Machine Learning">
+  <meta property="og:description" content="Data and its quality affect machine learning models and their accuracy, and the quality of the data can not be well in some types of problems which can be solve...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/data-scaling-techniques-in-machine-learning/">
+  <meta property="twitter:title" content="Data Scaling Techniques in Machine Learning">
+  <meta property="twitter:description" content="Data and its quality affect machine learning models and their accuracy, and the quality of the data can not be well in some types of problems which can be solve...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='data science'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
   <meta name='subtitle' content='Data Scaling Techniques in Machine Learning'>
   <meta name='pageKey' content='data-scaling-techniques-in-machine-learning'>
-  <meta name='og:title' content='Data Scaling Techniques in Machine Learning'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/data-scaling-techniques-in-machine-learning'>
-
-  <title>Data Scaling Techniques in Machine Learning</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -184,7 +203,7 @@
                     <br>
                     <article>
                         <p>Data and its quality affect machine learning models and their accuracy, and the quality of the data can not be well in some types of problems which can be solved by machine learning. Here the scale of the data is also represented as the quality of the data, which needs to be expected while training the machine learning model. If the <strong>scale</strong> of the data is not normal then some techniques are applied to make it of the same scale.</p>
-<p>Scaling is also a technique used to transform the data scale into the same scale to make it clearly understandable by machine learning algorithms and make it an easier task. This article will discuss data scaling techniques with their intuition and mathematical formulations. This will help one understand the data&rsquo;s scale property and make it of the same scale if needed.</p>
+<p>Scaling is also a technique used to transform the data scale into the same scale to make it clearly understandable by machine learning algorithms and make it an easier task. This article will discuss data scaling techniques with their intuition and mathematical formulations. This will help one understand the data’s scale property and make it of the same scale if needed.</p>
 <h1>Table of Content</h1>
 <ul>
 <li>What is Data Scale?</li>
@@ -206,7 +225,7 @@
 <h1>Standardization</h1>
 <p>Standardization is a technique where every sta point is taken, and a mathematical formula is applied to transform the particular data point.</p>
 <p>This technique is also known as the mean centralization technique, as after applying this technique, the mean of the data points is <strong>0</strong>, and the standard deviation of the data is <strong>1</strong>.</p>
-<p><img alt="" src="/assets/ds2-300x125.png" />
+<p><img alt="" src="/assets/ds2-300x125.png"/>
 <a href="https://www.google.com/search?q=standardization+formula&amp;rlz=1C1CHBD_enIN933IN933&amp;sxsrf=AJOqlzURVqJHGB12q7-XL3RhUz382aNCXg:1673833807943&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwi-hKTs_Mr8AhWyVHwKHZ15B8MQ_AUoAXoECAEQAw&amp;biw=1220&amp;bih=547&amp;dpr=1.12#imgrc=VeeioC_xQ7SaAM" title="Image Source">Image Source</a></p>
 <p>Here, </p>
 <blockquote>
@@ -225,7 +244,7 @@
 4. Robust Scaling</p>
 <h2>Min-Max Scaling</h2>
 <p>Min-max scaling is a normalization technique when we know the uppermost and lowermost limit of the data points’ values. This transformation technique converts the data points into new values ranging from <strong>0 to 1</strong>.</p>
-<p><img alt="" src="/assets/ds3-300x76.png" />
+<p><img alt="" src="/assets/ds3-300x76.png"/>
 <a href="https://www.google.com/search?q=min+max+scaling+formula&amp;rlz=1C1CHBD_enIN933IN933&amp;sxsrf=AJOqlzXP-mfS1O1DYPYT7biyUjqGBjXKMw:1673834302230&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwj15_zX_sr8AhVD7TgGHYVHA_YQ_AUoAXoECAEQAw&amp;biw=1220&amp;bih=547&amp;dpr=1.12#imgrc=LfU210iNThIcvM&amp;imgdii=mbkvPAkidevLTM" title="Image Source">Image Source</a></p>
 <p>Here, </p>
 <blockquote>
@@ -236,8 +255,8 @@
 </blockquote>
 <p>As we can see in the above image, the maximum and minimum value of the data is taken, and a new data point is generated, which will have a value between <strong>0 and 1</strong>.</p>
 <h2>Mean Normalization</h2>
-<p>Mean normalization is also a normalization technique that uses the mean of the data while transforming the data point into its new value. The mean normalization is the same as the min-max scaling techniques, which differs when it uses the mean of the data distribution instead of the data&rsquo;s minimum value in the formula&rsquo;s numerator.</p>
-<p><img alt="" src="/assets/ds4-300x67.png" />
+<p>Mean normalization is also a normalization technique that uses the mean of the data while transforming the data point into its new value. The mean normalization is the same as the min-max scaling techniques, which differs when it uses the mean of the data distribution instead of the data’s minimum value in the formula’s numerator.</p>
+<p><img alt="" src="/assets/ds4-300x67.png"/>
 <a href="https://www.google.com/search?q=mean+normalization%27+scaling+formula&amp;tbm=isch&amp;ved=2ahUKEwio5-Le_sr8AhX0itgFHTg_CMMQ2-cCegQIABAA&amp;oq=mean+normalization%27+scaling+formula&amp;gs_lcp=CgNpbWcQAzoECCMQJzoHCAAQgAQQGFCqC1jrH2CUJ2gAcAB4AIAB5AGIAbYbkgEGMC4xOS4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&amp;sclient=img&amp;ei=TK_EY6iRHfSV4t4PuP6gmAw&amp;bih=547&amp;biw=1220&amp;rlz=1C1CHBD_enIN933IN933#imgrc=qclWWPviPA85fM" title="Image Source">Image Source</a></p>
 <p>Here,</p>
 <blockquote>
@@ -250,7 +269,7 @@
 <p>As we can see in the above image, the mean of the data is used instead of the minimum value of the data; hence, the mean normalization transforms the data points values between <strong>-1 and 1</strong>.</p>
 <h2>Max Absolute Scaling</h2>
 <p>Max absolute scaling is a normalization technique that uses the absolute value of the maximum value of the dataset. This technique is not much used as the other methods are mostly enough to transform the data into its normal distribution.</p>
-<p><img alt="" src="/assets/ds5.png" />
+<p><img alt="" src="/assets/ds5.png"/>
 <a href="https://www.google.com/search?q=max+abs+normalization%27+scaling+formula&amp;tbm=isch&amp;ved=2ahUKEwiC5pLX_8r8AhU_k9gFHShDBYQQ2-cCegQIABAA&amp;oq=max+abs+normalization%27+scaling+formula&amp;gs_lcp=CgNpbWcQAzoECCMQJ1CID1jmFmDNF2gAcAB4AIAB1wGIAagKkgEFMC42LjGYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&amp;sclient=img&amp;ei=SLDEY4KiOL-m4t4PqIaVoAg&amp;bih=547&amp;biw=1220&amp;rlz=1C1CHBD_enIN933IN933#imgrc=regMugh1tyYfAM&amp;imgdii=Sv4g-rOsqBNwuM" title="Image Source">Image Source</a></p>
 <p>Here, </p>
 <blockquote>
@@ -261,7 +280,7 @@
 <h2>Robust Scaling</h2>
 <p>As the name suggests, robust scaling is a type of data scaling technique that is very robust to the outliers and is used in case of the data having outliers. This technique transforms the data into its normal distribution without having the effect of outliers and their values.</p>
 <p>This technique uses the Interquartile range and median of the data, which makes it <strong>robust to the outliers</strong>.</p>
-<p><img alt="" src="/assets/ds6-300x149.png" />
+<p><img alt="" src="/assets/ds6-300x149.png"/>
 <a href="https://www.google.com/search?q=robust+normalization%27+scaling+formula&amp;tbm=isch&amp;ved=2ahUKEwiMoc2tgcv8AhWChNgFHTt8BM8Q2-cCegQIABAA&amp;oq=robust+normalization%27+scaling+formula&amp;gs_lcp=CgNpbWcQAzoECCMQJ1DiBVioD2C-EmgAcAB4AIAB1AGIAdwFkgEFMC4zLjGYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&amp;sclient=img&amp;ei=CrLEY4z0KIKJ4t4Pu_iR-Aw&amp;bih=547&amp;biw=1220&amp;rlz=1C1CHBD_enIN933IN933#imgrc=6w8NlMSYUqFxoM&amp;imgdii=7p6nM4AWejSyjM" title="Image Source">Image Source</a></p>
 <p>As we can see in the above image, the technique uses the median in its numerator and the IQR in its denominator, making it robust to the outliers as the median and IQR do not have any relationship with outliers and their value in any way.</p>
 <h1>Key Takeaways</h1>
@@ -275,6 +294,78 @@
 </ul>
 <h1>Conclusion</h1>
 <p>In this article, we discussed data scaling and its techniques to transform the data into the same scale to make the model training more straightforward and efficient. This will help one to understand the scale f the data and apply an appropriate technique to bring the scale of the data into the correct format.</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-23 10:00:00" class="text-gray-400 uppercase tracking-wider">November 23, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/chat-own-data-chatgpt-langchain">
+                                            <span class="absolute inset-0"></span>
+                                            Chat with your own data/text files using chatGPT and LangChain
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        There are many different approaches to chatting with your own data. 
+One way is to upload your PDF t...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-13 09:31:20" class="text-gray-400 uppercase tracking-wider">November 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/LangChain-understand-production-codebases">
+                                            <span class="absolute inset-0"></span>
+                                            Understand langChain to Quickly Get Started with Production Codebases
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
+If you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-04-13 11:09:08" class="text-gray-400 uppercase tracking-wider">April 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/word2vec-vectorizer-in-natural-language-processing">
+                                            <span class="absolute inset-0"></span>
+                                            Word2Vec Vectorizer in Natural Language Processing
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        In natural language processing, Word2Vec is one of the most widely used vectorization techniques use...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

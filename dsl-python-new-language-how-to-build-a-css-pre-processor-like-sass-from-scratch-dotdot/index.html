@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='DSL / Python / New Language: How to build a CSS pre-processor (like SASS) from scratch (DotDot)' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSL / Python / New Language: How to build a CSS pre-processor (like SASS) from scratch (DotDot) | Python Kitchen</title>
+  <meta name="description" content="If you are in web development, maybe you’ve heard of Sass, Less, Pug, Stylus etc. All these are pre-processors. In this tutorial we’re going to build nothing le...">
+  <meta name="keywords" content="css,new-language,pre-processor, compiler theory">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/dsl-python-new-language-how-to-build-a-css-pre-processor-like-sass-from-scratch-dotdot/">
+  <meta property="og:title" content="DSL / Python / New Language: How to build a CSS pre-processor (like SASS) from scratch (DotDot)">
+  <meta property="og:description" content="If you are in web development, maybe you’ve heard of Sass, Less, Pug, Stylus etc. All these are pre-processors. In this tutorial we’re going to build nothing le...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/dsl-python-new-language-how-to-build-a-css-pre-processor-like-sass-from-scratch-dotdot/">
+  <meta property="twitter:title" content="DSL / Python / New Language: How to build a CSS pre-processor (like SASS) from scratch (DotDot)">
+  <meta property="twitter:description" content="If you are in web development, maybe you’ve heard of Sass, Less, Pug, Stylus etc. All these are pre-processors. In this tutorial we’re going to build nothing le...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='compiler theory'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
   <meta name='subtitle' content='DSL / Python / New Language: How to build a CSS pre-processor (like SASS) from scratch (DotDot)'>
   <meta name='pageKey' content='dsl-python-new-language-how-to-build-a-css-pre-processor-like-sass-from-scratch-dotdot'>
-  <meta name='og:title' content='DSL / Python / New Language: How to build a CSS pre-processor (like SASS) from scratch (DotDot)'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/dsl-python-new-language-how-to-build-a-css-pre-processor-like-sass-from-scratch-dotdot'>
-
-  <title>DSL / Python / New Language: How to build a CSS pre-processor (like SASS) from scratch (DotDot)</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -179,11 +198,11 @@
                     
                     <br>
                     <article>
-                        <p>If you are in web development, maybe you&rsquo;ve heard of <a href="https://sass-lang.com/documentation/syntax/comments">Sass</a>, <a href="http://lesscss.org">Less</a>, Pug, <a href="http://stylus-lang.com">Stylus</a> etc. All these are pre-processors. In this tutorial we&rsquo;re going to build nothing less than a functional css pre-processor from scratch with variables and functions. This type of new language is called source-to-source compiled. If you are thrilled, i hope not to disappoint you.</p>
-<p><img alt="Mesh drilling" src="https://images.unsplash.com/photo-1516562309708-05f3b2b2c238?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80" /></p>
+                        <p>If you are in web development, maybe you’ve heard of <a href="https://sass-lang.com/documentation/syntax/comments">Sass</a>, <a href="http://lesscss.org">Less</a>, Pug, <a href="http://stylus-lang.com">Stylus</a> etc. All these are pre-processors. In this tutorial we’re going to build nothing less than a functional css pre-processor from scratch with variables and functions. This type of new language is called source-to-source compiled. If you are thrilled, i hope not to disappoint you.</p>
+<p><img alt="Mesh drilling" src="https://images.unsplash.com/photo-1516562309708-05f3b2b2c238?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"/></p>
 <h3>Charting The Routes</h3>
-<p>First let&rsquo;s see what we&rsquo;ll be doing. We&rsquo;ll call the language DotDot with extention .dot</p>
-<p>When designing a new language, it&rsquo;s good to spend sometimes on design. If you have something that really flows, you can start coding.</p>
+<p>First let’s see what we’ll be doing. We’ll call the language DotDot with extention .dot</p>
+<p>When designing a new language, it’s good to spend sometimes on design. If you have something that really flows, you can start coding.</p>
 <p>Here is a DotDot snippet:</p>
 <pre><code class="language-python">
 x = 1
@@ -230,7 +249,7 @@ col-z = berry
 
 </code></pre>
 <h3>Dissecting Design</h3>
-<p>Let&rsquo;s see what features we included</p>
+<p>Let’s see what features we included</p>
 <h4><strong>Variables</strong></h4>
 <pre><code class="language-python">
 x = 1
@@ -241,7 +260,7 @@ col-z = berry
 </code></pre>
 <p>We see that </p>
 <ul>
-<li>we don&rsquo;t need to specify a specifier like $ or var in Js.</li>
+<li>we don’t need to specify a specifier like $ or var in Js.</li>
 <li>we can add - in the variable name</li>
 </ul>
 <p>We can call variables in function values</p>
@@ -271,7 +290,7 @@ color: ..col-z;
 }
 
 </code></pre>
-<p>That is enough complexity to deal with. Let&rsquo;s start!</p>
+<p>That is enough complexity to deal with. Let’s start!</p>
 <pre><code class="language-python">import copy # we have just one import
 </code></pre>
 <p>We also add our source as a variable</p>
@@ -303,7 +322,7 @@ col-z = berry
 '''
 </code></pre>
 <h3>Defining Constants</h3>
-<p>We&rsquo;ve bundled our constants in a class.</p>
+<p>We’ve bundled our constants in a class.</p>
 <pre><code class="language-python">
 class SYM:
     LEFT_BRACE = '{'
@@ -372,7 +391,7 @@ lexemes.append('') # appending an unused last element to properly dump all value
 ';', '@f', '}', '']
 
 </code></pre>
-<p>With such separated data, it&rsquo;s much easier to proceed!</p>
+<p>With such separated data, it’s much easier to proceed!</p>
 <h3>The Concept of Memory</h3>
 <p>Next we define a dictionary to hold all our variables.</p>
 <pre><code class="language-python">
@@ -389,13 +408,13 @@ x = 1
 {'x':'1'}
 
 </code></pre>
-<p>to retrieve it we&rsquo;ll just do </p>
+<p>to retrieve it we’ll just do </p>
 <pre><code class="language-python">
 memory['x']
 
 </code></pre>
 <h3>The Concept of Tree</h3>
-<p>We&rsquo;ll have a dictionary called tree</p>
+<p>We’ll have a dictionary called tree</p>
 <pre><code class="language-python">
 tree = {}
 
@@ -422,7 +441,7 @@ tree = {}
 </code></pre>
 <p>Our next step will exactly be this: converting the lexemes list into this dictionary</p>
 <h3>Generating The Tree</h3>
-<p>To keep track of where we are, we&rsquo;ll have a series of variables taking True/False values (on/off)</p>
+<p>To keep track of where we are, we’ll have a series of variables taking True/False values (on/off)</p>
 <h4>Setting up holders</h4>
 <pre><code class="language-python">
 id_string = ''
@@ -438,7 +457,7 @@ len_lexemes = len(lexemes)
 <p>id string will hold like #add, .x a div etc</p>
 <p>the last_ variables just hold variables that are not emptied upon leaving the sub section</p>
 <h4>Setting up flags</h4>
-<p>We&rsquo;ll have 3 flags.</p>
+<p>We’ll have 3 flags.</p>
 <p>One when we are starting a block, which will become true when encountering a { and false when encountering a }</p>
 <p>An attribute is color in color:black;</p>
 <p>The attribute ongoing will become true when passing over { and ; and will become false when passing over :</p>
@@ -449,7 +468,7 @@ attribute_ongoing = False
 value_ongoing = False
 
 </code></pre>
-<p>We&rsquo;ll start looping over the list and implement what we described of the flags above</p>
+<p>We’ll start looping over the list and implement what we described of the flags above</p>
 <pre><code class="language-python">
 for i, lex in enumerate(lexemes):
 
@@ -491,7 +510,7 @@ for i, lex in enumerate(lexemes):
 
 </code></pre>
 <h3>Where The Tree Builds</h3>
-<p>Now we&rsquo;ll make use of the flags</p>
+<p>Now we’ll make use of the flags</p>
 <pre><code class="language-python">
     if not block_ongoing:
         id_string += lex + ' '
@@ -514,7 +533,7 @@ tree[id_string.strip()] = {}
 }
 
 </code></pre>
-<p>Using the same principle, we&rsquo;ll do so for the attribute</p>
+<p>Using the same principle, we’ll do so for the attribute</p>
 <pre><code class="language-python">
     if attribute_ongoing:
         current_attribute += lex
@@ -567,10 +586,10 @@ def parseFunc(f):
     return '{}({})'.format(name.strip(), ','.join(values))
 
 </code></pre>
-<p>Here we replace rgb(x, 4, 5) to rgb(1, 4, 5) by replacing the x by 1 in the memory dictionary. To build a CSS pre-processor from scratch, we have to take all cases, which we&rsquo;ll do after.</p>
-<h3>Transforming The Tree Into It&rsquo;s Final Form</h3>
+<p>Here we replace rgb(x, 4, 5) to rgb(1, 4, 5) by replacing the x by 1 in the memory dictionary. To build a CSS pre-processor from scratch, we have to take all cases, which we’ll do after.</p>
+<h3>Transforming The Tree Into It’s Final Form</h3>
 <p>Now we need to pass over the tree once again and expand functions, replace values, including the use of our defined function above.</p>
-<p>Technically we can&rsquo;t change a dictionary while iterating over it. We have to copy it to break references to it. We have to deepcopy it.</p>
+<p>Technically we can’t change a dictionary while iterating over it. We have to copy it to break references to it. We have to deepcopy it.</p>
 <pre><code class="language-python">
 ntree = copy.deepcopy(tree)
 
@@ -582,7 +601,7 @@ for block_name in ntree:
         continue
 
 </code></pre>
-<p>Now, if we get the first symbol of the id as a @, we just skip it as we don&rsquo;t need to expand the definition.</p>
+<p>Now, if we get the first symbol of the id as a @, we just skip it as we don’t need to expand the definition.</p>
 <pre><code class="language-python">
     for element in properties:
         value = properties[element]
@@ -606,7 +625,7 @@ for block_name in ntree:
 <p>Next we we see the @ symbol in as key in a block, we just add the dictionaries in it to the dictionaries in that block (Done by update in Python) .</p>
 <p>That also shows the advantage of using a data structure over plain strings.</p>
 <h3>Compiling To Normal Css</h3>
-<p>Now we can compile it to normal CSS, we&rsquo;ll just print it for now (you can file= in print btw)</p>
+<p>Now we can compile it to normal CSS, we’ll just print it for now (you can file= in print btw)</p>
 <pre><code class="language-python">
 for key in tree:
     if key[0] == SYM.AT:
@@ -641,7 +660,77 @@ for key in tree:
 <p>If you want to build a CSS pre-processor from scratch based on indentation (like stylus), use <a href="https://www.pythonmembers.club/2018/05/04/building-an-indentation-analyser-in-python-tutorial/">this tutorial</a>.</p>
 <p>Github Link: <a href="https://github.com/Abdur-rahmaanJ/dotdot">https://github.com/Abdur-rahmaanJ/dotdot</a></p>
 <p>Pictures from unsplash.</p>
-<p>&ndash; Abdur-Rahmaan Janhangeer</p>
+<p>– Abdur-Rahmaan Janhangeer</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-09-03 05:50:09" class="text-gray-400 uppercase tracking-wider">September 3, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/how-to-create-your-own-dsldomain-specific-language-in-python">
+                                            <span class="absolute inset-0"></span>
+                                            Creating Your Own Domain Specific Language (DSL) in Python
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Sometimes, a standard CLI tool isn’t enough, but a full-blown programming language is overkill. This...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-05-04 08:31:13" class="text-gray-400 uppercase tracking-wider">May 4, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/building-an-indentation-analyser-in-python-tutorial">
+                                            <span class="absolute inset-0"></span>
+                                            Building an Indentation Analyser in Python: A Comprehensive Guide
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        In many programming languages, like C or Java, scope is defined by curly braces {}. However, languag...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-05-01 11:48:58" class="text-gray-400 uppercase tracking-wider">May 1, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/building-a-lexer-in-python-tutorial">
+                                            <span class="absolute inset-0"></span>
+                                            Building a Lexer in Python: A Step-by-Step Tutorial
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Understanding how to build a lexer (lexical analyzer) is a rite of passage for many programmers. It ...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

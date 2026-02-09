@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Linear Regression vs. Decision Trees vs. Support Vector Machines' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linear Regression vs. Decision Trees vs. Support Vector Machines | Python Kitchen</title>
+  <meta name="description" content="Machine Learning algorithms are one of the most important things to decide during model training and building. All the datasets and problem statements related t...">
+  <meta name="keywords" content=", Uncategorized">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/linear-regression-vs-decision-trees-vs-support-vector-machines/">
+  <meta property="og:title" content="Linear Regression vs. Decision Trees vs. Support Vector Machines">
+  <meta property="og:description" content="Machine Learning algorithms are one of the most important things to decide during model training and building. All the datasets and problem statements related t...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/linear-regression-vs-decision-trees-vs-support-vector-machines/">
+  <meta property="twitter:title" content="Linear Regression vs. Decision Trees vs. Support Vector Machines">
+  <meta property="twitter:description" content="Machine Learning algorithms are one of the most important things to decide during model training and building. All the datasets and problem statements related t...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='Uncategorized'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
   <meta name='subtitle' content='Linear Regression vs. Decision Trees vs. Support Vector Machines'>
   <meta name='pageKey' content='linear-regression-vs-decision-trees-vs-support-vector-machines'>
-  <meta name='og:title' content='Linear Regression vs. Decision Trees vs. Support Vector Machines'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/linear-regression-vs-decision-trees-vs-support-vector-machines'>
-
-  <title>Linear Regression vs. Decision Trees vs. Support Vector Machines</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -180,7 +199,7 @@
                     <br>
                     <article>
                         <p>Machine Learning algorithms are one of the most important things to decide during model training and building. All the datasets and problem statements related to that in machine learning are not the same and can have different patterns and complexity. In such cases, selecting the best suitable machine learning algorithms becomes a significant step of model building.</p>
-<p>This article will discuss the most popular machine learning algorithms&rsquo; PROs and CONs and the appropriate reason behind them. This knowledge will help one understand the problem statement better and select the best-fit algorithm for model building. This will also help one to answer interview questions related to PROs and CONs of Machine learning algorithms.</p>
+<p>This article will discuss the most popular machine learning algorithms’ PROs and CONs and the appropriate reason behind them. This knowledge will help one understand the problem statement better and select the best-fit algorithm for model building. This will also help one to answer interview questions related to PROs and CONs of Machine learning algorithms.</p>
 <h1>Table of Contents</h1>
 <ol>
 <li>Linear Regression</li>
@@ -192,7 +211,7 @@
 </ol>
 <h1>1. Linear Regression</h1>
 <p>In Linear Regression, the algorithm assumes the data to be linear and doe snot has multicollinearity. The algorithm simply calculates the slope and intercept for the best fit line and it can be used for classification and regression problems.</p>
-<p><img alt="" src="/assets/lrf-300x192.png" />
+<p><img alt="" src="/assets/lrf-300x192.png"/>
 <a href="https://www.google.com/search?q=linear+regression+image+&amp;tbm=isch&amp;ved=2ahUKEwi3zOqJnP37AhWvk9gFHclVDlIQ2-cCegQIABAA&amp;oq=linear+regression+image+&amp;gs_lcp=CgNpbWcQAzIECAAQHjIGCAAQBRAeMgYIABAFEB4yBwgAEIAEEBgyBwgAEIAEEBg6BAgjECc6BwgAELEDEEM6BAgAEEM6BQgAEIAEUKkFWIILYKUPaABwAHgAgAH6AYgBxQySAQUwLjUuM5gBAKABAaoBC2d3cy13aXotaW1nwAEB&amp;sclient=img&amp;ei=E-mbY_f2Ma-n4t4Pyau5kAU&amp;rlz=1C1CHBD_enIN933IN933#imgrc=25iIN4dGro17ZM" title="Image Source">Image Source</a></p>
 <h2>PROs:</h2>
 <h3>1. Easy to Understand:</h3>
@@ -207,16 +226,16 @@
 <h3>2. Overfitting:</h3>
 <p>The linear regression is prone to overfitting, frequently overfitting the data.</p>
 <h3>3. Outliers:</h3>
-<p>If outliers are present in the dataset, then linear regression would be the poorest choice. Linear regression can not handle the dataset&rsquo;s outliers, resulting in poor performance.</p>
+<p>If outliers are present in the dataset, then linear regression would be the poorest choice. Linear regression can not handle the dataset’s outliers, resulting in poor performance.</p>
 <h1>2. Decision Trees</h1>
 <p>In simple words, decision trees are the type of algorithm which is defined based on so many if-else conditions. It can be assumed as a whole tree having nodes and junctions where the data is split according to several parameters e.g entropy, information gain, etc.</p>
-<p><img alt="" src="/assets/dtf-300x169.png" />
+<p><img alt="" src="/assets/dtf-300x169.png"/>
 <a href="https://www.google.com/search?q=decision+tree+image&amp;rlz=1C1CHBD_enIN933IN933&amp;sxsrf=ALiCzsb3ZlYLaooO0xNymHrI9dggMKzd4w:1671162216263&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwiOs4yynP37AhVt8DgGHeeCAQoQ_AUoAXoECAEQAw&amp;biw=1220&amp;bih=547&amp;dpr=1.12#imgrc=Hq7_ALvAPOhnhM" title="Image Source">Image Source</a></p>
 <h2>PROs:</h2>
 <h3>1. Visualize and Tuning:</h3>
 <p>Decision trees are one of the algorithms that can be easily visualized through several libraries and tuned according to that. One famous decision tree visualization library is dtreeviz, which can be used to visualize the decision tree correctly and with every model and condition of splitting the node.</p>
 <h3>2. Accuracy:</h3>
-<p>Decision Trees perform well on very high dimensional datasets and can be tuned if performs poorly; tuning some parameters, like the tree&rsquo;s depth and splitting criteria, can enhance the tree&rsquo;s performance.</p>
+<p>Decision Trees perform well on very high dimensional datasets and can be tuned if performs poorly; tuning some parameters, like the tree’s depth and splitting criteria, can enhance the tree’s performance.</p>
 <h3>3. Non-Linear data:</h3>
 <p>Unlike linear regression, decision trees perform well on linear and nonlinear datasets.</p>
 <h2>CONs:</h2>
@@ -228,7 +247,7 @@
 <p>As the decision trees split the dataset based on some of the parameters of the given data, if there is a slight change made to the dataset, then all the splits will be of no use, and there will be a need for model training again from scratch.</p>
 <h1>3. Support Vector Machines:</h1>
 <p>The support vector machine algorithms are the type of complex algorithms that have the regularization and classification cost function like Huber scores in its <code>argmin</code> and <code>argmax</code> function which are used to maximize the distance between positive and negative planes from the best fit line.</p>
-<p><img alt="" src="/assets/svm-300x200.png" />
+<p><img alt="" src="/assets/svm-300x200.png"/>
 <a href="https://www.google.com/search?q=support+vector+machines+image&amp;rlz=1C1CHBD_enIN933IN933&amp;sxsrf=ALiCzsZwmBU5q9QzPPiDzinqUPs5-JtYXw:1671162499354&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwjB9Iq5nf37AhUdR2wGHcPeBr4Q_AUoAXoECAIQAw&amp;biw=1220&amp;bih=547&amp;dpr=1.12#imgrc=pCj4qS6NoIDTjM" title="Image Source">Image Source</a></p>
 <h2>PROs:</h2>
 <h3>1. Accuracy:</h3>
@@ -245,7 +264,7 @@
 <h3>3. Performace on Large Data:</h3>
 <p>Support vector machines perform very poorly on a considerable amount of data. It gives the best results in small datasets and tends to perform very poorly on large amounts of datasets.</p>
 <h1>The Best Among Them?</h1>
-<p>Although there is no thumb rule to use any of the machine learning algorithms for all time, as all the problem statements and datasets related to the machine learning field are different and can have very different patterns and behavior, one cannot say the best-fit machine learning algorithm for the same initially. After carefully reviewing the data and reading the parameters, one can only estimate the probability of such algorithms that can perform better on the dataset. Based on the algorithm&rsquo;s working mechanism and PROs and CONs, one can estimate the best suitable machine learning algorithm for the same.</p>
+<p>Although there is no thumb rule to use any of the machine learning algorithms for all time, as all the problem statements and datasets related to the machine learning field are different and can have very different patterns and behavior, one cannot say the best-fit machine learning algorithm for the same initially. After carefully reviewing the data and reading the parameters, one can only estimate the probability of such algorithms that can perform better on the dataset. Based on the algorithm’s working mechanism and PROs and CONs, one can estimate the best suitable machine learning algorithm for the same.</p>
 <h1>Key Takeaways</h1>
 <ol>
 <li>Linear regression performs well on linear data, it can not handle the outliers properly, and the regularization techniques can be easily implemented.</li>
@@ -254,6 +273,76 @@
 </ol>
 <h1>Conclusion</h1>
 <p>In this article, we discussed some of the top-rated PROs and CONs of different machine-learning algorithms with the core intuition behind them. We also discussed the approach to select the best-fit algorithm initially for the given dataset and problem statement. Knowledge about these concepts will help one to understand and choose the best-fit algorithms for the problem statement. It will also help one to answer interview questions differentiating between them.</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-07-26 06:13:54" class="text-gray-400 uppercase tracking-wider">July 26, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/install-pipx-mint-ubuntu">
+                                            <span class="absolute inset-0"></span>
+                                            Installing pipx on Mint and Ubuntu
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        pipx allows you to use python projects on the commandline without using a virtual environment each t...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-02-14 10:04:35" class="text-gray-400 uppercase tracking-wider">February 14, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/beyond-the-basics-unconventional-uses-of-seaborn-heatmaps-for-data-visualization">
+                                            <span class="absolute inset-0"></span>
+                                            Beyond the Basics: Unconventional Uses of Seaborn Heatmaps for Data Visualization
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Heatmaps can bring your data to life. Versatile and eye-catching. There are many situations where th...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2021-10-22 10:05:36" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/why-i-admire-tiango-more-than-fastapi">
+                                            <span class="absolute inset-0"></span>
+                                            Why I Admire Tiangolo More Than Fastapi
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        People talk about FastAPI a lot, but they give little attention to Sebastián Ramírez, alias tiangolo...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

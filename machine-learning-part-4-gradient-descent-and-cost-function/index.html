@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Machine Learning part 4: Gradient Descent and cost function' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Learning Part 4: Gradient Descent and Cost Function | Python Kitchen</title>
+  <meta name="description" content="In this part, we explore the engine under the hood of most machine learning algorithms: Optimization. Specifically, we will look at the Cost Function and Gradie...">
+  <meta name="keywords" content="machine learning, gradient descent, cost function, optimization, machine learning">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/machine-learning-part-4-gradient-descent-and-cost-function/">
+  <meta property="og:title" content="Machine Learning Part 4: Gradient Descent and Cost Function">
+  <meta property="og:description" content="In this part, we explore the engine under the hood of most machine learning algorithms: Optimization. Specifically, we will look at the Cost Function and Gradie...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/machine-learning-part-4-gradient-descent-and-cost-function/">
+  <meta property="twitter:title" content="Machine Learning Part 4: Gradient Descent and Cost Function">
+  <meta property="twitter:description" content="In this part, we explore the engine under the hood of most machine learning algorithms: Optimization. Specifically, we will look at the Cost Function and Gradie...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='machine learning'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Machine Learning part 4: Gradient Descent and cost function'>
+  <meta name='subtitle' content='Machine Learning Part 4: Gradient Descent and Cost Function'>
   <meta name='pageKey' content='machine-learning-part-4-gradient-descent-and-cost-function'>
-  <meta name='og:title' content='Machine Learning part 4: Gradient Descent and cost function'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/machine-learning-part-4-gradient-descent-and-cost-function'>
-
-  <title>Machine Learning part 4: Gradient Descent and cost function</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Machine Learning part 4: Gradient Descent and cost function</p>
+                    <p class="text-3xl" style="font-weight: 600;">Machine Learning Part 4: Gradient Descent and Cost Function</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2019-01-24 14:00:21" class="text-gray-500">January 24, 2019</time>
@@ -179,66 +198,139 @@
                     
                     <br>
                     <article>
-                        <p><strong>#4 gradient descent and cost function</strong></p>
-<p>Machine Learning</p>
-<p>👉 ♡ supervised learning<br />
-♡ unsupervised learning<br />
-♡ reinforced learning</p>
-<h2><strong>☄ cost function</strong></h2>
-<p>cost function is also called mean squared error. </p>
-<p>well mean means sum of elements / number of elements. here we take the sum of all squared errors</p>
-<p>(error1 ^ 2 + error2 ^ 2 + error3 ^ 2)/3</p>
-<p>/3 as there are 3 errors</p>
-<p>we define error as the difference in y between your point and the y on thwline you are trying to fit</p>
-<p>-&gt; y predicted - y on line<br />
--&gt; y predicted - m*x on line + c</p>
-<h2>☄ gradient descent</h2>
-<p>wikipaedia defines gradient descent such:</p>
-<p>Gradient descent is a first-order iterative optimization algorithm for finding the minimum of a function.</p>
-<p>well first, that has nothing specific to machine learning but concerns more maths</p>
-<p>iterative means it repeats a process again and again<br />
-the minimum of a function is the lowest point of a u shape curve</p>
-<p>in machine learning it means finding the line of best fit for a given training data</p>
-<p>if you plot cost v/s m or cost v/s c you&rsquo;ll get a u shape graph</p>
-<h2>☄ the aim</h2>
-<p>when you plot the above graph, the minimum is the point where the error is the lowest (that&rsquo;s when you get the line of best fit). now, how exactly do you find it? </p>
-<h2>☄ the how</h2>
-<p>well you plot either of the above graphs i.e. cost versus m or cost versus b and you find the minimum by checking the gradient at each point. at the minimum the gradient is 0 (gradient of straight line)</p>
-<p>for the curve, you apply calculus to get the gradient function.</p>
-<h2>☄ about steps</h2>
-<p>well when you start, you need to check the gradient after an interval of c. when we see the gradient rising again we know we&rsquo;ve found our minimum.</p>
-<p>too small an interval of c (step) and your program might run too long</p>
-<p>too big an interval of c and you miss your minimum</p>
-<p>⌨ the code</p>
-<pre><code class="language-python">
-import numpy as np
+                        <p>In this part, we explore the engine under the hood of most machine learning algorithms: <strong>Optimization</strong>. Specifically, we will look at the <strong>Cost Function</strong> and <strong>Gradient Descent</strong>.</p>
+<h2>The Cost Function (Mean Squared Error)</h2>
+<p>To improve a model, we first need a way to measure how “wrong” it is. This measurement is called the <strong>Cost Function</strong>.</p>
+<p>The most common cost function for regression is <strong>Mean Squared Error (MSE)</strong>. 
+1.  Calculate the <strong>Error</strong>: The difference between the actual value ($y$) and the predicted value ($\hat{y}$).
+2.  <strong>Square</strong> the errors: This makes all values positive and penalizes larger errors more heavily.
+3.  <strong>Mean</strong>: Take the average of these squared errors.</p>
+<p>$$MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$</p>
+<p>Our goal is to find the values of $m$ and $c$ that result in the <strong>lowest possible cost</strong>.</p>
+<h2>Gradient Descent</h2>
+<p><strong>Gradient Descent</strong> is an optimization algorithm used to find the minimum of a function. In machine learning, we use it to find the values of our model parameters ($m$ and $c$) that minimize the cost function.</p>
+<p>Imagine you are standing on a mountain in a thick fog. To find the bottom of the valley, you feel the slope of the ground under your feet and take a step in the direction where the slope goes down most steeply. You repeat this until the ground is flat.</p>
+<h3>How it Works:</h3>
+<ol>
+<li><strong>Iterative:</strong> It repeats the process over and over.</li>
+<li><strong>Steps:</strong> The size of each step is determined by the <strong>Learning Rate</strong>.<ul>
+<li><strong>Too small:</strong> It will take forever to reach the bottom.</li>
+<li><strong>Too large:</strong> You might overstep the bottom and end up back on the other side.</li>
+</ul>
+</li>
+</ol>
+<h3>The Math in Python</h3>
+<p>Here is a simple implementation using NumPy to demonstrate how a model “learns” the line of best fit.</p>
+<pre><code class="language-python">import numpy as np
 
-def gradient_descent(x,y):
+def gradient_descent(x, y):
     m_curr = b_curr = 0
-    iterations = 10000
+    iterations = 1000
     n = len(x)
     learning_rate = 0.08
+
     for i in range(iterations):
         y_predicted = m_curr * x + b_curr
-        cost = (1/n) * sum([val**2 for val in (y-y_predicted)])
-        md = -(2/n)*sum(x*(y-y_predicted))
-        bd = -(2/n)*sum(y-y_predicted)
+        # Calculate Cost (MSE)
+        cost = (1/n) * sum([val**2 for val in (y - y_predicted)])
+
+        # Calculate Derivatives (Gradients)
+        md = -(2/n) * sum(x * (y - y_predicted))
+        bd = -(2/n) * sum(y - y_predicted)
+
+        # Update weights
         m_curr = m_curr - learning_rate * md
         b_curr = b_curr - learning_rate * bd
-        print (&quot;m {}, b {}, cost {} iteration {}&quot;.format(m_curr,b_curr,cost, i))
 
-x = np.array([1,2,3,4,5])
-y = np.array([5,7,9,11,13])
+        if i % 100 == 0:
+            print(f"Iteration {i}: m {m_curr:.4f}, b {b_curr:.4f}, cost {cost:.4f}")
 
-gradient_descent(x,y)
+# Sample Data
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([5, 7, 9, 11, 13])
 
+gradient_descent(x, y)
 </code></pre>
-<p>🗒 notes</p>
-<p>md means derivative (gradient) of m</p>
-<p>the above calculates the m and c to get the right amount to find the relationship between 1 and 5, 2 and 7 etc (see array in code) </p>
-<p>⚽ exercise:<br />
-1. google up stochastic gradient descent</p>
-<p>code credits: code basics</p>
+<h2>Summary</h2>
+<ul>
+<li>The <strong>Cost Function</strong> tells us how far off our predictions are.</li>
+<li><strong>Gradient Descent</strong> tells us how to change our parameters to reduce that error.</li>
+<li>The <strong>Learning Rate</strong> controls how quickly we try to reach the optimal solution.</li>
+</ul>
+<p><strong>Exercise:</strong>
+Look up <strong>Stochastic Gradient Descent (SGD)</strong>. How does it differ from the “Batch” gradient descent we used here?</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-23 10:00:00" class="text-gray-400 uppercase tracking-wider">November 23, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/chat-own-data-chatgpt-langchain">
+                                            <span class="absolute inset-0"></span>
+                                            Chat with your own data/text files using chatGPT and LangChain
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        There are many different approaches to chatting with your own data. 
+One way is to upload your PDF t...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-13 09:31:20" class="text-gray-400 uppercase tracking-wider">November 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/LangChain-understand-production-codebases">
+                                            <span class="absolute inset-0"></span>
+                                            Understand langChain to Quickly Get Started with Production Codebases
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
+If you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-04-13 11:09:08" class="text-gray-400 uppercase tracking-wider">April 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/word2vec-vectorizer-in-natural-language-processing">
+                                            <span class="absolute inset-0"></span>
+                                            Word2Vec Vectorizer in Natural Language Processing
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        In natural language processing, Word2Vec is one of the most widely used vectorization techniques use...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

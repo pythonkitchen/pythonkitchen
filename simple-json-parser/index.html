@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,59 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Simple JSON parser without knowing anything beforehands' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple JSON parser without knowing anything beforehands | Python Kitchen</title>
+  <meta name="description" content="Table of Content
+
+Introduction
+Scanning the text
+Looking for specific characters
+Identifying elements
+Processing elements
+
+Introduction
+Our goal in this post is...">
+  <meta name="keywords" content=", programming problems">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/simple-json-parser/">
+  <meta property="og:title" content="Simple JSON parser without knowing anything beforehands">
+  <meta property="og:description" content="Table of Content
+
+Introduction
+Scanning the text
+Looking for specific characters
+Identifying elements
+Processing elements
+
+Introduction
+Our goal in this post is...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/simple-json-parser/">
+  <meta property="twitter:title" content="Simple JSON parser without knowing anything beforehands">
+  <meta property="twitter:description" content="Table of Content
+
+Introduction
+Scanning the text
+Looking for specific characters
+Identifying elements
+Processing elements
+
+Introduction
+Our goal in this post is...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='programming problems'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
   <meta name='subtitle' content='Simple JSON parser without knowing anything beforehands'>
   <meta name='pageKey' content='simple-json-parser'>
-  <meta name='og:title' content='Simple JSON parser without knowing anything beforehands'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/simple-json-parser'>
-
-  <title>Simple JSON parser without knowing anything beforehands</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +139,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -189,15 +235,15 @@
 </ol>
 <h2>Introduction</h2>
 <p>Our goal in this post is to be able to transform this piece of json into a Python dictionary.</p>
-<pre><code>{&quot;x&quot;:&quot;y&quot;}
+<pre><code>{"x":"y"}
 </code></pre>
 <p>Our Python dictionary should have key <code>x</code> and value <code>y</code>.</p>
 <p>We aim to cover this without any previous compiler theory experience.</p>
-<p>This was inspired by the Python Mauritius Usergroup&rsquo;s January challenge.</p>
+<p>This was inspired by the Python Mauritius Usergroup’s January challenge.</p>
 <h2>Scanning the text</h2>
 <p>Our first task is to be able to go over the characters and print them.</p>
 <pre><code class="language-python">text = '''
-{&quot;x&quot;: &quot;y&quot;, &quot;z&quot;:&quot;a&quot;}
+{"x": "y", "z":"a"}
 '''
 
 
@@ -220,17 +266,17 @@ print(scan_text(text))
 </code></pre>
 <pre><code>0 &lt;new line&gt; 
 1 { 
-2 &quot; 
+2 " 
 3 x 
-4 &quot; 
+4 " 
 5 : 
 6 
-7 &quot;
+7 "
 8 y 
 ...
 </code></pre>
 <h2>Looking for specific characters</h2>
-<p>Next, we want to be able to find the next occurance of a character, give us it&rsquo;s index. We provide it from what index we want to search.</p>
+<p>Next, we want to be able to find the next occurance of a character, give us it’s index. We provide it from what index we want to search.</p>
 <pre><code>abcdefghijih
 
 ex. find(2, 'i') should return 8
@@ -271,7 +317,7 @@ print(look_for(2, 'i')) # (8, 'defgh')
 <p>We modify the scan function to return identified text. </p>
 <p>Our goal is to convert </p>
 <pre><code>text = '''
-{&quot;x&quot;: &quot;y&quot;, &quot;z&quot;:&quot;a&quot;}
+{"x": "y", "z":"a"}
 '''
 </code></pre>
 <p>into <code>['{', 'x', ':', 'y', ',', 'z', ':', 'a', '}']</code></p>
@@ -294,10 +340,10 @@ print(look_for(2, 'i')) # (8, 'defgh')
             go = False
 
 
-        elif char == '&quot;':
+        elif char == '"':
             # TODO
 
-        elif char == &quot;:&quot;:
+        elif char == ":":
             chunks.append(':') # added
 
         if char == ',':
@@ -307,8 +353,8 @@ print(look_for(2, 'i')) # (8, 'defgh')
     return chunks 
 </code></pre>
 <p>For the <code>"</code> We just identify the next <code>"</code> and append the chars in  between to chunks.</p>
-<pre><code class="language-python">        elif char == '&quot;':
-            look  = look_for(current,  '&quot;') # look from the current index till the next &quot;
+<pre><code class="language-python">        elif char == '"':
+            look  = look_for(current,  '"') # look from the current index till the next "
             string = look[1]
             index = look[0]
 
@@ -334,14 +380,14 @@ print(look_for(2, 'i')) # (8, 'defgh')
             go = False
 
 
-        elif char == '&quot;':
-            look  = look_for(current,  '&quot;')
+        elif char == '"':
+            look  = look_for(current,  '"')
             string = look[1]
             index = look[0]
 
             chunks.append(string)
             current = index
-        elif char == &quot;:&quot;:
+        elif char == ":":
             chunks.append(char)
 
         if char == ',':
@@ -372,7 +418,7 @@ print(look_for(2, 'i')) # (8, 'defgh')
 </code></pre>
 <p>Our final code </p>
 <pre><code class="language-python">text = '''
-{&quot;x&quot;: &quot;y&quot;, &quot;z&quot;:&quot;a&quot;}
+{"x": "y", "z":"a"}
 '''
 
 def look_for(from_i, char):
@@ -408,14 +454,14 @@ def scan_text(text):
             go = False
 
 
-        elif char == '&quot;':
-            look  = look_for(current,  '&quot;')
+        elif char == '"':
+            look  = look_for(current,  '"')
             string = look[1]
             index = look[0]
 
             chunks.append(string)
             current = index
-        elif char == &quot;:&quot;:
+        elif char == ":":
             chunks.append(char)
 
         if char == ',':
@@ -448,7 +494,7 @@ kv = process(elements)
 print(kv)
 </code></pre>
 <p>It goes from this</p>
-<pre><code>{&quot;x&quot;: &quot;y&quot;, &quot;z&quot;:&quot;a&quot;}
+<pre><code>{"x": "y", "z":"a"}
 </code></pre>
 <p>to this</p>
 <pre><code>['{', 'x', ':', 'y', ',', 'z', ':', 'a', '}']
@@ -457,6 +503,77 @@ print(kv)
 <pre><code>{'x': 'y', 'z': 'a'}
 </code></pre>
 <p>Hope you enjoyed it!</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-12-29 15:00:00" class="text-gray-400 uppercase tracking-wider">December 29, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/checking-for-prime">
+                                            <span class="absolute inset-0"></span>
+                                            Checking for Prime Numbers in Python
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Checking if a number is prime is a fundamental programming task. A prime number is a natural number ...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-12-28 19:35:04" class="text-gray-400 uppercase tracking-wider">December 28, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/reviving-bertrand-russell-through-python">
+                                            <span class="absolute inset-0"></span>
+                                            Markov Chains in Python: Reviving Bertrand Russell's Prose
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Have you ever finished a book by a brilliant author and wished there was just one more chapter? Whil...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-12-27 19:27:39" class="text-gray-400 uppercase tracking-wider">December 27, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/armstrong-numbers">
+                                            <span class="absolute inset-0"></span>
+                                            Understanding Armstrong Numbers in Python
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        In this post, we’ll explore a classic beginner programming problem: Armstrong Numbers.
+What is an Ar...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

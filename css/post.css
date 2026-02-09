@@ -4,91 +4,117 @@ pre::after{
 }
 
 article{
-    font-size: 20px;
-    text-align: justify;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #374151;
+    text-align: left; /* Justify can often look messy on web */
 }
 article > p{
-    margin-bottom: 10px;
-    color: rgb(75,85,99) !important;
+    margin-bottom: 1.5rem;
 }
 article a {
-    border-bottom: 5px solid rgb(139, 148, 228);
+    color: #4f46e5;
+    text-decoration: none;
+    border-bottom: 2px solid #c7d2fe;
+    transition: all 0.2s;
+}
+article a:hover {
+    background-color: #f5f3ff;
+    border-bottom-color: #4f46e5;
 }
 article img{
-    border-radius: 5px !important;
-    border-top-right-radius: 5px !important;
+    border-radius: 8px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    padding-top: 10px;
+    margin: 2rem auto;
+    max-width: 100%;
+    height: auto;
 }
 article ol{
-    list-style-type: circle !important;
-    padding-left: 5%;
-    padding-bottom: 10px;
-    color: rgb(75,85,99) !important;
-}
-article li::marker {
-    color: rgb(255, 75, 75) !important;
-    font-weight: bold;
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 article ul{
-    list-style-type: circle !important;
-    padding-left: 5%;
-    padding-bottom: 10px;
-    color: rgb(75,85,99) !important;
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+article li {
+    margin-bottom: 0.5rem;
+}
+article li::marker {
+    color: #4f46e5;
+    font-weight: bold;
 }
 
 article h1{
-    font-weight: bold;
-    font-size: 25px;
-    margin-top: 10px;
+    font-weight: 800;
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    color: #111827;
+    line-height: 1.2;
 }
 
 article h2{
-    font-weight: bold;
-    margin-top: 10px;
-    font-size: 20px;
+    font-weight: 700;
+    font-size: 1.875rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    color: #111827;
+    line-height: 1.3;
 }
 
 article h3{
-    font-weight: bold;
-    font-size: 15px;
-    margin-top: 20px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #111827;
 }
 
-
 article h4{
-    font-weight: bold;
-    font-size: 13px;
-    margin-top: 20px;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #111827;
 }
 
 article code{
-    max-width: 100%;
-    overflow-x: scroll;
-    border-radius: 5px;
+    background-color: #f3f4f6;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
 }
 
-
-
+pre code {
+    background-color: transparent;
+    padding: 0;
+}
 
 blockquote {
-    background-color: rgb(243, 243, 243);
-    border-left: 5px solid rgb(180, 180, 180) !important;
-    padding: 15px;
+    background-color: #f9fafb;
+    border-left: 4px solid #e5e7eb !important;
+    padding: 1rem 1.5rem;
     font-style: italic;
-    margin: 20px !important;
+    margin: 2rem 0 !important;
+    color: #4b5563;
 }
 
-table td{
-    color: rgb(75,85,99) !important;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+}
 
+table th, table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
 }
-table{
-    margin: 40px;
-}
-table tr{
-    border-bottom: 2px solid rgb(239, 239, 239) !important;
+
+table th {
+    background-color: #f9fafb;
+    font-weight: 600;
 }

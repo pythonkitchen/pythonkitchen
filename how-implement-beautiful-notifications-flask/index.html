@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,41 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='How to implement beautiful notifications in Flask' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to implement beautiful notifications in Flask | Python Kitchen</title>
+  <meta name="description" content="Since you already know how to implement notifications, let’s see how to implement beautiful notifications in Flask.
+Using boostrap, we can do:
+# shopyoapi.html
+...">
+  <meta name="keywords" content=", flask, shopyo">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/how-implement-beautiful-notifications-flask/">
+  <meta property="og:title" content="How to implement beautiful notifications in Flask">
+  <meta property="og:description" content="Since you already know how to implement notifications, let’s see how to implement beautiful notifications in Flask.
+Using boostrap, we can do:
+# shopyoapi.html
+...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/how-implement-beautiful-notifications-flask/">
+  <meta property="twitter:title" content="How to implement beautiful notifications in Flask">
+  <meta property="twitter:description" content="Since you already know how to implement notifications, let’s see how to implement beautiful notifications in Flask.
+Using boostrap, we can do:
+# shopyoapi.html
+...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='flask'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
   <meta name='subtitle' content='How to implement beautiful notifications in Flask'>
   <meta name='pageKey' content='how-implement-beautiful-notifications-flask'>
-  <meta name='og:title' content='How to implement beautiful notifications in Flask'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/how-implement-beautiful-notifications-flask'>
-
-  <title>How to implement beautiful notifications in Flask</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +121,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -183,11 +211,11 @@
                     
                     <br>
                     <article>
-                        <p>Since you already know <a href="https://www.pythonkitchen.com/how-implement-notification-flask/">how to implement notifications</a>, let&rsquo;s see how to implement beautiful notifications in Flask.</p>
+                        <p>Since you already know <a href="https://www.pythonkitchen.com/how-implement-notification-flask/">how to implement notifications</a>, let’s see how to implement beautiful notifications in Flask.</p>
 <p>Using boostrap, we can do:</p>
 <pre><code class="language-python"># shopyoapi.html
-def notify(message, alert_type=&quot;primary&quot;):
-    &quot;&quot;&quot;
+def notify(message, alert_type="primary"):
+    """
     Used with flash
         flash(notify('blabla'))
 
@@ -202,49 +230,119 @@ def notify(message, alert_type=&quot;primary&quot;):
     Returns
     -------
     None
-    &quot;&quot;&quot;
-    alert = &quot;&quot;&quot;
-    &lt;div class=&quot;shopyo-alert alert alert-{alert_type} alert-dismissible fade show&quot; role=&quot;alert&quot;
-        style=&quot;opacity: 0.98;&quot;&gt;
+    """
+    alert = """
+    &lt;div class="shopyo-alert alert alert-{alert_type} alert-dismissible fade show" role="alert"
+        style="opacity: 0.98;"&gt;
       {message}
 
-      &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;
-        &lt;span aria-hidden=&quot;true&quot;&gt;×&lt;/span&gt;
+      &lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;
+        &lt;span aria-hidden="true"&gt;×&lt;/span&gt;
       &lt;/button&gt;
     &lt;/div&gt;
-    &quot;&quot;&quot;.format(
+    """.format(
         message=message, alert_type=alert_type
     )
 
-    scriptFade = &quot;&quot;&quot; 
+    scriptFade = """ 
     &lt;script&gt;
           setTimeout(function() {
             $('#flashed-messages').fadeOut('fast');
         }, 5000); // &lt;-- time in milliseconds (5 secs)
     &lt;/script&gt;
-    &quot;&quot;&quot;
+    """
     return alert + scriptFade
 
 
 def notify_success(message):
-    return notify(message, alert_type=&quot;success&quot;)
+    return notify(message, alert_type="success")
 
 
 def notify_danger(message):
-    return notify(message, alert_type=&quot;danger&quot;)
+    return notify(message, alert_type="danger")
 
 
 def notify_warning(message):
-    return notify(message, alert_type=&quot;warning&quot;)
+    return notify(message, alert_type="warning")
 
 
 def notify_info(message):
-    return notify(message, alert_type=&quot;info&quot;)
+    return notify(message, alert_type="info")
 
 
 </code></pre>
 <p>so that 
-<code>flash(notify\_success('Good'))</code> will give you a green alert. But, be sure to include the bootstrap links in your page&rsquo;s head. Part of the <a href="https://github.com/Abdur-rahmaanJ/shopyo">Shopyo</a> internals series.</p>
+<code>flash(notify\_success('Good'))</code> will give you a green alert. But, be sure to include the bootstrap links in your page’s head. Part of the <a href="https://github.com/Abdur-rahmaanJ/shopyo">Shopyo</a> internals series.</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2022-04-13 05:37:29" class="text-gray-400 uppercase tracking-wider">April 13, 2022</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/build-a-note-app-in-flask-as-fast-as-it-can-get-using-shopyo">
+                                            <span class="absolute inset-0"></span>
+                                            Build A Note App In Flask As Fast As It Can Get (Using Shopyo)
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Shopyo is a framework to get started with Flask really quick. It includes several libraries to get s...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2021-02-24 09:29:14" class="text-gray-400 uppercase tracking-wider">February 24, 2021</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/how-implement-notification-flask">
+                                            <span class="absolute inset-0"></span>
+                                            How to implement notification in Flask
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Implementing notifications in Flask goes way beyond using flash. You have to add this snippet in you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2021-02-24 07:05:45" class="text-gray-400 uppercase tracking-wider">February 24, 2021</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/how-to-correctly-use-the-next-parameter-in-login-and-logout-in-flask">
+                                            <span class="absolute inset-0"></span>
+                                            How to correctly use the next parameter in login and logout in Flask
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Here is a sample login and logout route taken from the shopyo web framework. You can learn here how ...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

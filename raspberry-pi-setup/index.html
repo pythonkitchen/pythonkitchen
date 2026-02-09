@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Raspberry-Pi setup - part 1 : OS installation' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setting Up Your Raspberry Pi 3: A Step-by-Step OS Installation Guide | Python Kitchen</title>
+  <meta name="description" content="The Raspberry Pi is a remarkably powerful credit-card-sized computer, but when you first take it out of the box, it’s a “blank slate.” It has no operating syste...">
+  <meta name="keywords" content="raspberry-pi, hardware, linux, tutorial, beginners, raspberry pi">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/raspberry-pi-setup/">
+  <meta property="og:title" content="Setting Up Your Raspberry Pi 3: A Step-by-Step OS Installation Guide">
+  <meta property="og:description" content="The Raspberry Pi is a remarkably powerful credit-card-sized computer, but when you first take it out of the box, it’s a “blank slate.” It has no operating syste...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/raspberry-pi-setup/">
+  <meta property="twitter:title" content="Setting Up Your Raspberry Pi 3: A Step-by-Step OS Installation Guide">
+  <meta property="twitter:description" content="The Raspberry Pi is a remarkably powerful credit-card-sized computer, but when you first take it out of the box, it’s a “blank slate.” It has no operating syste...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='raspberry pi'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Raspberry-Pi setup - part 1 : OS installation'>
+  <meta name='subtitle' content='Setting Up Your Raspberry Pi 3: A Step-by-Step OS Installation Guide'>
   <meta name='pageKey' content='raspberry-pi-setup'>
-  <meta name='og:title' content='Raspberry-Pi setup - part 1 : OS installation'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/raspberry-pi-setup'>
-
-  <title>Raspberry-Pi setup - part 1 : OS installation</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Raspberry-Pi setup - part 1 : OS installation</p>
+                    <p class="text-3xl" style="font-weight: 600;">Setting Up Your Raspberry Pi 3: A Step-by-Step OS Installation Guide</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-06-18 11:42:03" class="text-gray-500">June 18, 2018</time>
@@ -179,48 +198,116 @@
                     
                     <br>
                     <article>
-                        <p>In this post we&rsquo;ll cover the software setup part. The raspberry pi is an empty computer, empty of peripherals and os. the first step is to install the os.
-Target Model
-============</p>
-<p>raspberry pi 3</p>
-<p><img alt="" src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg" />
-Needed
-======</p>
+                        <p>The Raspberry Pi is a remarkably powerful credit-card-sized computer, but when you first take it out of the box, it’s a “blank slate.” It has no operating system and no built-in storage. In this first part of our setup series, we’ll cover how to install the OS and get your Pi up and running.</p>
+<h2>Hardware Requirements</h2>
+<p>To get started with a Raspberry Pi 3, you will need:
+*   <strong>MicroSD Card:</strong> At least 8GB (Class 10 is recommended for speed).
+*   <strong>Power Supply:</strong> A 5V 2.5A Micro USB power adapter.
+*   <strong>HDMI Cable &amp; Monitor:</strong> To see what’s happening.
+*   <strong>USB Mouse &amp; Keyboard:</strong> For initial configuration.
+*   <strong>Internet Connection:</strong> Either an Ethernet cable or Wi-Fi.</p>
+<hr/>
+<h2>Step 1: Choosing Your Operating System</h2>
+<p>While there are many OS options (Ubuntu, RetroPie, etc.), <strong>Raspberry Pi OS</strong> (formerly known as Raspbian) is the official and most stable choice for beginners.</p>
+<h3>The Modern Way: Raspberry Pi Imager</h3>
+<p>Back in the day, we used a tool called NOOBS. Today, the easiest method is using the <strong>Raspberry Pi Imager</strong>, which you can download for Windows, macOS, or Linux from the <a href="https://www.raspberrypi.com/software/">official website</a>.</p>
+<hr/>
+<h2>Step 2: Flashing the SD Card</h2>
+<ol>
+<li>Insert your MicroSD card into your computer.</li>
+<li>Open the <strong>Raspberry Pi Imager</strong>.</li>
+<li>Click <strong>CHOOSE OS</strong> and select “Raspberry Pi OS (32-bit)”.</li>
+<li>Click <strong>CHOOSE STORAGE</strong> and select your SD card.</li>
+<li><em>(Optional but Recommended)</em> Click the <strong>Gear Icon</strong> (Advanced Options) to pre-configure your Wi-Fi, set a hostname (like <code>pi.local</code>), and enable SSH.</li>
+<li>Click <strong>WRITE</strong> and wait for the process to finish.</li>
+</ol>
+<hr/>
+<h2>Step 3: First Boot</h2>
+<ol>
+<li>Insert the MicroSD card into the slot on the underside of your Raspberry Pi.</li>
+<li>Connect your monitor via HDMI and plug in your mouse and keyboard.</li>
+<li><strong>Finally, plug in the power cable.</strong> The Pi doesn’t have a power button; it turns on as soon as it gets power.</li>
+</ol>
+<p>You should see a splash screen followed by the desktop. Follow the on-screen setup wizard to set your location, change your password, and check for software updates.</p>
+<h2>Enabling SSH (Headless Setup)</h2>
+<p>If you don’t have a spare monitor, you can run the Pi “headless.” To do this, create an empty file named <code>ssh</code> (no file extension) in the root directory of the SD card after flashing it. This tells the Pi to enable Remote Terminal access as soon as it boots.</p>
+<h2>Conclusion</h2>
+<p>Congratulations! You now have a working Linux computer the size of a deck of cards. In the next part of this series, we’ll look at how to <strong>connect to your Pi remotely via SSH</strong> so you can control it from your main laptop.</p>
+<h3>Next Steps:</h3>
 <ul>
-<li>sd card at least 8gb</li>
-<li>hdmi cable</li>
-<li>monitor</li>
-<li>charger</li>
-<li>usb mouse</li>
-<li>usb keyboard</li>
+<li><a href="https://www.pythonkitchen.com/raspberry-pi-setup-establishing-ssh-connection/">Establishing an SSH Connection to your Pi</a></li>
+<li><a href="https://www.pythonkitchen.com/installing-opencv-on-the-pi3-with-python3-and-usb-webcam/">Installing OpenCV for Computer Vision Projects</a></li>
 </ul>
-<p>only power and hdmi cable + monitor needed if testing if installation ok. tv passes as monitor
-Installing the OS
-=================</p>
-<p>the steps are outlined as follows ;
-* format sd card
-* download the os pack
-* extract to sd card
-* add empty ssh file (optional)</p>
-<h2>format sd card</h2>
-<p>download the sdcard association&rsquo;s formatter [<a href="https://www.sdcard.org/downloads/formatter_4/eula_windows/index.html">windows</a>]</p>
-<p>insert the sd card on your pc (the sd card is in the holder, you insert the holder on your pc)</p>
-<p>use the formatter to format the sdcard to FAT32
-download the os pack</p>
-<hr />
-<p>download NOOBS from [<a href="https://www.raspberrypi.org/downloads/">here</a>]</p>
-<p>NOOBS stands for New Out Of the Box Software. It is an installer with many programs included, including raspbian, the linux flavoured distribution.</p>
-<p>extract the zip file to the formatted sdcard (choose the sdcard location)
-add empty ssh file (optional)</p>
-<hr />
-<p>create an empty ssh file (filename : ssh, no extention) in the sdcard (root directory). this will enable ssh by default.</p>
-<p>ssh can also be enabled by gui after boot
-Booting
-=======</p>
-<p>insert the sd card in the pi at the sd card slot at the bottom, plug the hdmi cable to your monitor and pi and  power on.</p>
-<p>you should see some installation instruction</p>
-<p>choose raspbian and click the install tab/button above.</p>
-<p>that&rsquo;s it !</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-07-01 07:32:45" class="text-gray-400 uppercase tracking-wider">July 1, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/web-mail-interface-using-pi-and-flask">
+                                            <span class="absolute inset-0"></span>
+                                            Building a Web Mail Client with Flask and Raspberry Pi
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Have you ever wondered how web-based email clients like Gmail or Outlook actually work? At their cor...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2018-06-20 16:44:45" class="text-gray-400 uppercase tracking-wider">June 20, 2018</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/raspberry-pi-setup-establishing-ssh-connection">
+                                            <span class="absolute inset-0"></span>
+                                            Remote Access: How to Establish an SSH Connection to Your Raspberry Pi
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        One of the greatest features of the Raspberry Pi is that you don’t actually need a dedicated monitor...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2026-02-09 10:30:00" class="text-gray-400 uppercase tracking-wider">February 9, 2026</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/publish-python-package-using-uv-pypi-token">
+                                            <span class="absolute inset-0"></span>
+                                            Publishing a Python Package with uv and a PyPI Token
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Publishing a Python package used to feel like a small battle: setup.py rituals, half-forgotten twine...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

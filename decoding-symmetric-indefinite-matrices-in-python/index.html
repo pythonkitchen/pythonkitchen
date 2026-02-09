@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,41 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Decoding Symmetric Indefinite Matrices In Python' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decoding Symmetric Indefinite Matrices In Python | Python Kitchen</title>
+  <meta name="description" content="This article is a gentle introduction to symmetric indefinite matrices in Python
+Table of content
+
+What are symmetric indefinite matrices andwhere are they used...">
+  <meta name="keywords" content=", data science, machine learning">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/decoding-symmetric-indefinite-matrices-in-python/">
+  <meta property="og:title" content="Decoding Symmetric Indefinite Matrices In Python">
+  <meta property="og:description" content="This article is a gentle introduction to symmetric indefinite matrices in Python
+Table of content
+
+What are symmetric indefinite matrices andwhere are they used...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/decoding-symmetric-indefinite-matrices-in-python/">
+  <meta property="twitter:title" content="Decoding Symmetric Indefinite Matrices In Python">
+  <meta property="twitter:description" content="This article is a gentle introduction to symmetric indefinite matrices in Python
+Table of content
+
+What are symmetric indefinite matrices andwhere are they used...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='data science'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
   <meta name='subtitle' content='Decoding Symmetric Indefinite Matrices In Python'>
   <meta name='pageKey' content='decoding-symmetric-indefinite-matrices-in-python'>
-  <meta name='og:title' content='Decoding Symmetric Indefinite Matrices In Python'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/decoding-symmetric-indefinite-matrices-in-python'>
-
-  <title>Decoding Symmetric Indefinite Matrices In Python</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +121,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -191,16 +219,16 @@
 <li>Comparing convergence rate of SYMMLQ, CG (Conjugate Gradient), and MINRES by solving the following classical symmetric indefinite system</li>
 </ul>
 <h2>What are symmetric indefinite matrices and where are they used?</h2>
-<p>A matrix is symmetric indefinite if it is symmetric and has both positive and negative <strong>eigenvalues</strong>. Symmetric Indefinite matrices are a crucial class of matrices since its used for Fine-Tuning in-built algorithms or creating one from scratch. Available in many applications. To name a few: this class of matrices appears in Newton&rsquo;s methods for the unconstrained/constrained <a href="https://www.sciencedirect.com/topics/mathematics/unconstrained-optimization">optimization algorithms</a>, <a href="https://en.wikipedia.org/wiki/Penalty_method">penalty function</a>, methods for nonlinear programming, and in discretized incompressible <a href="https://www.sciencedirect.com/science/article/pii/S0021999120305647">Navier{Stokes equations}</a>. Apart from arising intrinsically in applications, symmetric indefinite matrices are also created from definite ones because of errors in measuring or computing the matrix elements.</p>
-<p>As of now, there&rsquo;s no method of directly dealing with Symmetric Indefinite matrices in Python. People either use the (MINRES) Minimal Residual method or (LSQR) Least Square Root method for working/manipulating symmetric indefinite matrices which is very inconvenient for users. This was a Major deficiency of Python as it cannot meet the demands of professionals who use symmetric indefinite matrices in mechanics, computer science, or ML researchers who find innovative ways to enhance current systems to the next level.</p>
+<p>A matrix is symmetric indefinite if it is symmetric and has both positive and negative <strong>eigenvalues</strong>. Symmetric Indefinite matrices are a crucial class of matrices since its used for Fine-Tuning in-built algorithms or creating one from scratch. Available in many applications. To name a few: this class of matrices appears in Newton’s methods for the unconstrained/constrained <a href="https://www.sciencedirect.com/topics/mathematics/unconstrained-optimization">optimization algorithms</a>, <a href="https://en.wikipedia.org/wiki/Penalty_method">penalty function</a>, methods for nonlinear programming, and in discretized incompressible <a href="https://www.sciencedirect.com/science/article/pii/S0021999120305647">Navier{Stokes equations}</a>. Apart from arising intrinsically in applications, symmetric indefinite matrices are also created from definite ones because of errors in measuring or computing the matrix elements.</p>
+<p>As of now, there’s no method of directly dealing with Symmetric Indefinite matrices in Python. People either use the (MINRES) Minimal Residual method or (LSQR) Least Square Root method for working/manipulating symmetric indefinite matrices which is very inconvenient for users. This was a Major deficiency of Python as it cannot meet the demands of professionals who use symmetric indefinite matrices in mechanics, computer science, or ML researchers who find innovative ways to enhance current systems to the next level.</p>
 <h2>Implementing symmetric indefinite matrices (SYMMQL) in python</h2>
-<p>SYMMQL is widely used in programming languages like MATLAB, PETSc, Trilinos, and PyKrylov. For python, The idea of implementing a method(SYMMQL) that keeps up the pace and doesn&rsquo;t compromise the optimization was initially proposed by <a href="https://scholar.google.com/citations?user=iTzCWMwAAAAJ&amp;hl=en">C.C.Paige</a> and <a href="https://web.stanford.edu/~saunders/">M.A.Saunders</a> back in 1998. But due to some unknown reasons, It was not carried out.
+<p>SYMMQL is widely used in programming languages like MATLAB, PETSc, Trilinos, and PyKrylov. For python, The idea of implementing a method(SYMMQL) that keeps up the pace and doesn’t compromise the optimization was initially proposed by <a href="https://scholar.google.com/citations?user=iTzCWMwAAAAJ&amp;hl=en">C.C.Paige</a> and <a href="https://web.stanford.edu/~saunders/">M.A.Saunders</a> back in 1998. But due to some unknown reasons, It was not carried out.
  By the way, <a href="https://github.com/PythonOptimizers/pykrylov/blob/master/pykrylov/symmlq/symmlq.py">here</a> There is a Python version of this algorithm, but the library seems to be deprecated, and also it is licensed under LGPL, Hence it was not adopted in python as well.</p>
 <p>This year(2022) <a href="https://github.com/scipy/scipy/pull/16202">Gang Zhao</a> picked up this idea and made a PR to make this implementation. But I think the PR is not fully adapted because the following tests were conducted to merge this method into SciPy. However, 13 out of 23 failed :
 <a href="https://github.com/scipy/scipy/pull/16202/checks?check_run_id=6709247274">See the tests</a>
 Comparing convergence rate of SYMMLQ, CG (Conjugate Gradient), and MINRES by solving the following classical symmetric indefinite system</p>
-<hr />
-<p>Here&rsquo;s some prototype code:</p>
+<hr/>
+<p>Here’s some prototype code:</p>
 <pre><code class="language-python">    import numpy as np
     from scipy import sparse
 
@@ -222,17 +250,88 @@ Comparing convergence rate of SYMMLQ, CG (Conjugate Gradient), and MINRES by sol
 
 </code></pre>
 <p>The convergence rate is as follows:
-<img alt="屏幕截图 2022-05-19 185218" src="https://user-images.githubusercontent.com/31978442/169277269-abcb40ff-b03a-4387-a8cb-59f2109dc319.png" /></p>
+<img alt="屏幕截图 2022-05-19 185218" src="https://user-images.githubusercontent.com/31978442/169277269-abcb40ff-b03a-4387-a8cb-59f2109dc319.png"/></p>
 <p>And CPU time is as follows:
-<img alt="2022-05-19 16-26-34 的屏幕截图" src="https://user-images.githubusercontent.com/31978442/169277587-425bedc5-3d11-42e1-b1b2-fd669194690e.png" />
+<img alt="2022-05-19 16-26-34 的屏幕截图" src="https://user-images.githubusercontent.com/31978442/169277587-425bedc5-3d11-42e1-b1b2-fd669194690e.png"/>
 For a symmetric indefinite system, compared with CG, SYMMLQ has a smoother convergence curve and better convergence rate. I believe SYMMLQ can replace MINRES to get almost the same performance.</p>
 <h2>Conclusion</h2>
-<p>There&rsquo;s almost no information available on the internet regarding symmetric indefinite matrices. There are only scholarly articles written decades ago. This topic is very underrated compared to other concepts of ML or computer science. I presume the main reason for that is because it requires substantial knowledge of Linear Algebra + computer science. I hope there will be someone taking the Big leap forward in this.</p>
+<p>There’s almost no information available on the internet regarding symmetric indefinite matrices. There are only scholarly articles written decades ago. This topic is very underrated compared to other concepts of ML or computer science. I presume the main reason for that is because it requires substantial knowledge of Linear Algebra + computer science. I hope there will be someone taking the Big leap forward in this.</p>
 <h2>References</h2>
 <ul>
 <li><a href="https://mail.python.org/archives/list/scipy-dev@python.org/thread/NA7XKDBXXSI4I3RIPZKUEWAACT4Z2QVN/">scipy-dev</a></li>
 <li><a href="https://github.com/scipy/scipy/pull/16202">scipy-github</a></li>
 </ul>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-13 09:31:20" class="text-gray-400 uppercase tracking-wider">November 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/LangChain-understand-production-codebases">
+                                            <span class="absolute inset-0"></span>
+                                            Understand langChain to Quickly Get Started with Production Codebases
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
+If you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-03-13 10:13:01" class="text-gray-400 uppercase tracking-wider">March 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/tfidf-vectorizers-in-natural-language-processing">
+                                            <span class="absolute inset-0"></span>
+                                            TFIDF Vectorizers in Natural Language Processing
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Vectorization is a technique in natural language processing that is used to transform the text into ...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-02-27 10:10:51" class="text-gray-400 uppercase tracking-wider">February 27, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/linear-algebra-applications-in-machine-learning">
+                                            <span class="absolute inset-0"></span>
+                                            Linear Algebra Applications in Machine Learning
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        We can take linear algebra as a backbone of machine learning, as almost all the machine learning tec...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

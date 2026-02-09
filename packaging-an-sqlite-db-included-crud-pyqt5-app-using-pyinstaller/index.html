@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Packaging An Sqlite db-included CRUD PyQt5 app using PyInstaller' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packaging An Sqlite db-included CRUD PyQt5 app using PyInstaller | Python Kitchen</title>
+  <meta name="description" content="The Python programmer’s journey inevitably leads him to one of the black belts of the industry: packaging and distribution. But, particularly in Python, distrib...">
+  <meta name="keywords" content=", packaging &amp; distribution">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/packaging-an-sqlite-db-included-crud-pyqt5-app-using-pyinstaller/">
+  <meta property="og:title" content="Packaging An Sqlite db-included CRUD PyQt5 app using PyInstaller">
+  <meta property="og:description" content="The Python programmer’s journey inevitably leads him to one of the black belts of the industry: packaging and distribution. But, particularly in Python, distrib...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/packaging-an-sqlite-db-included-crud-pyqt5-app-using-pyinstaller/">
+  <meta property="twitter:title" content="Packaging An Sqlite db-included CRUD PyQt5 app using PyInstaller">
+  <meta property="twitter:description" content="The Python programmer’s journey inevitably leads him to one of the black belts of the industry: packaging and distribution. But, particularly in Python, distrib...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='packaging &amp; distribution'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
   <meta name='subtitle' content='Packaging An Sqlite db-included CRUD PyQt5 app using PyInstaller'>
   <meta name='pageKey' content='packaging-an-sqlite-db-included-crud-pyqt5-app-using-pyinstaller'>
-  <meta name='og:title' content='Packaging An Sqlite db-included CRUD PyQt5 app using PyInstaller'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/packaging-an-sqlite-db-included-crud-pyqt5-app-using-pyinstaller'>
-
-  <title>Packaging An Sqlite db-included CRUD PyQt5 app using PyInstaller</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -179,10 +198,10 @@
                     
                     <br>
                     <article>
-                        <p>The Python programmer&rsquo;s journey inevitably leads him to one of the black belts of the industry: packaging and distribution. But, particularly in Python, distribution can also be a black beast. We&rsquo;ve seen slow and steady progress in the field with the advent of tools like cx_freeze, pyinstaller and protocols like zipapp. In this post we&rsquo;ll see how to package a realistic PyQt5 app.</p>
+                        <p>The Python programmer’s journey inevitably leads him to one of the black belts of the industry: packaging and distribution. But, particularly in Python, distribution can also be a black beast. We’ve seen slow and steady progress in the field with the advent of tools like cx_freeze, pyinstaller and protocols like zipapp. In this post we’ll see how to package a realistic PyQt5 app.</p>
 <p>As a side note, i was hesitating between titles to choose so i made a poll in our facebook group. This title got far more votes many requests beforehand. I went on with it.</p>
 <h2>Complexity of the demo app</h2>
-<p>Since we are focusing on packaging, we deliberately choose a demo that tackles common headaches. We included picture files and sqlite database. We&rsquo;ll package a CRUD app which uses SqlAlchemy. You can use this as a basis for more ambitious projects. Moreover we used some &lsquo;good&rsquo; PyQt5 practices like custom widgets, OOP approach and namespaced functions.</p>
+<p>Since we are focusing on packaging, we deliberately choose a demo that tackles common headaches. We included picture files and sqlite database. We’ll package a CRUD app which uses SqlAlchemy. You can use this as a basis for more ambitious projects. Moreover we used some ‘good’ PyQt5 practices like custom widgets, OOP approach and namespaced functions.</p>
 <p>Repo at <a href="https://github.com/Abdur-rahmaanJ/PyQt5_CRUD">PyQt5_CRUD</a> </p>
 <h2>Project Structure</h2>
 <p>Our project looks like this</p>
@@ -203,14 +222,14 @@
 </code></pre>
 <p>db/ is the folder used for storing databases</p>
 <p>pics/ is the picture where pics are stored</p>
-<p>models.py is where we&rsquo;ll define our model</p>
-<p>main.py is the file we&rsquo;ll run</p>
+<p>models.py is where we’ll define our model</p>
+<p>main.py is the file we’ll run</p>
 <p>utils.py contains some utitlities functions</p>
 <p>base.py contains some SqlAlchemy configurations</p>
 <p>main.spec is the pyinstaller specifications file</p>
 <h2>App &amp; Code</h2>
-<p><img alt="" src="https://www.pythonmembers.club/wp-content/uploads/2019/12/main_screen.jpg" />The app we&rsquo;ll be building</p>
-<p>It features the minimum working mechanism a CRUD app should have. Let&rsquo;s see what each file contains</p>
+<p><img alt="" src="https://www.pythonmembers.club/wp-content/uploads/2019/12/main_screen.jpg"/>The app we’ll be building</p>
+<p>It features the minimum working mechanism a CRUD app should have. Let’s see what each file contains</p>
 <h2>base.py</h2>
 <pre><code class="language-python">import sys
 import os
@@ -272,7 +291,7 @@ def layout_addWidget(layout, widgets):
 <p>ensure smooth fetching.</p>
 <p>The second function just spares you having to write layout.addWidget many times.</p>
 <h2>main.py</h2>
-<p>Let&rsquo;s see our imports</p>
+<p>Let’s see our imports</p>
 <pre><code class="language-python">import sys
 
 from PyQt5 import QtWidgets
@@ -284,7 +303,7 @@ from base import Session, engine, Base
 from utils import app_path, layout_addWidget
 </code></pre>
 <p>We can see that for PyQt5 we imported only QtWidgets. To use a QPushButton we need to write QtWidgets.QPushButton. This takes longer to read but makes you a Qt master, believe me. There are many advantages in doing so, the least of them is easy PySide2 migration</p>
-<p>Then we&rsquo;ll see our globals</p>
+<p>Then we’ll see our globals</p>
 <pre><code class="language-python">Base.metadata.create_all(engine)
 session = Session()
 </code></pre>
@@ -549,7 +568,7 @@ exe = EXE(pyz,
           icon='icon.ico' )
 
 </code></pre>
-<p>The added_files variable adds everything in the designated folder, it&rsquo;s one of the tricks to get our app working. Notice the wildcard operator (*).</p>
+<p>The added_files variable adds everything in the designated folder, it’s one of the tricks to get our app working. Notice the wildcard operator (*).</p>
 <pre><code class="language-python">added_files = [
          ( './pics/*', 'pics' ),
          ( './db/*', 'db' ),
@@ -592,7 +611,7 @@ exe = EXE(pyz,
 <pre><code class="language-python">console=False,
 icon='icon.ico' )
 </code></pre>
-<p>In short we copied template.spec&rsquo;s content into main.spec keeping pathex= intact.</p>
+<p>In short we copied template.spec’s content into main.spec keeping pathex= intact.</p>
 <p>Build your executable using </p>
 <pre><code class="language-python">pyinstaller main.spec
 </code></pre>
@@ -618,10 +637,87 @@ icon='icon.ico' )
 </code></pre>
 <p>Under dist/ you should see your executable</p>
 <h2>Dealing with headaches!</h2>
-<p>Normally you should have a working executable file, however i&rsquo;ve discovered that while the exec file can work well on your PC, it might not work so well on another person PC due to some internal hardcoding of paths. The issue apparently varies from PyQt5 version to version. In case you encounter this error, downgrade some 0.0.01 version back or forward.</p>
+<p>Normally you should have a working executable file, however i’ve discovered that while the exec file can work well on your PC, it might not work so well on another person PC due to some internal hardcoding of paths. The issue apparently varies from PyQt5 version to version. In case you encounter this error, downgrade some 0.0.01 version back or forward.</p>
 <h2>Words of caution</h2>
 <p>This app is without safety nets and was intended as a packaging demo. </p>
-<p><em>You can download the repo here: <a href="https://github.com/Abdur-rahmaanJ/PyQt5_CRUD">PyQt5_CRUD</a> . Anything unclear, mail me at <arj.python at gmail dot com></em></p>
+<p><em>You can download the repo here: <a href="https://github.com/Abdur-rahmaanJ/PyQt5_CRUD">PyQt5_CRUD</a> . Anything unclear, mail me at <arj.python at="" com="" dot="" gmail=""></arj.python></em></p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2020-01-07 19:27:36" class="text-gray-400 uppercase tracking-wider">January 7, 2020</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/upload-your-package-to-pypi">
+                                            <span class="absolute inset-0"></span>
+                                            Upload your package to Pypi
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        To upload your project to Pypi, this assumes you have your setup.py ready
+cd into your package direc...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2025-02-15 15:40:00" class="text-gray-400 uppercase tracking-wider">February 15, 2025</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/simple-json-parser">
+                                            <span class="absolute inset-0"></span>
+                                            Simple JSON parser without knowing anything beforehands
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Table of Content
+
+Introduction
+Scanning the text
+Looking for specific characters
+Identifying element...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2024-11-06 05:56:00" class="text-gray-400 uppercase tracking-wider">November 6, 2024</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/create-object-salesforce-using-python">
+                                            <span class="absolute inset-0"></span>
+                                            How to create an object in salesforce using Python
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Here’s a simple snippet for creating a new custom object in Salesforce in Python.
+from simple_salesf...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

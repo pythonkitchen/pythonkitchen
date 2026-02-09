@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Installing OpenCv on the Pi3 with python3 (and usb webcam)' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ultimate Guide to Installing OpenCV on Raspberry Pi 3 | Python Kitchen</title>
+  <meta name="description" content="OpenCV (Open Source Computer Vision Library) is the industry standard for image processing and computer vision. However, installing it on a Raspberry Pi 3 can b...">
+  <meta name="keywords" content="python, opencv, raspberry-pi, computer-vision, tutorial, computer vision,  raspberry pi">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/installing-opencv-on-the-pi3-with-python3-and-usb-webcam/">
+  <meta property="og:title" content="The Ultimate Guide to Installing OpenCV on Raspberry Pi 3">
+  <meta property="og:description" content="OpenCV (Open Source Computer Vision Library) is the industry standard for image processing and computer vision. However, installing it on a Raspberry Pi 3 can b...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/installing-opencv-on-the-pi3-with-python3-and-usb-webcam/">
+  <meta property="twitter:title" content="The Ultimate Guide to Installing OpenCV on Raspberry Pi 3">
+  <meta property="twitter:description" content="OpenCV (Open Source Computer Vision Library) is the industry standard for image processing and computer vision. However, installing it on a Raspberry Pi 3 can b...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='computer vision'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='Installing OpenCv on the Pi3 with python3 (and usb webcam)'>
+  <meta name='subtitle' content='The Ultimate Guide to Installing OpenCV on Raspberry Pi 3'>
   <meta name='pageKey' content='installing-opencv-on-the-pi3-with-python3-and-usb-webcam'>
-  <meta name='og:title' content='Installing OpenCv on the Pi3 with python3 (and usb webcam)'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/installing-opencv-on-the-pi3-with-python3-and-usb-webcam'>
-
-  <title>Installing OpenCv on the Pi3 with python3 (and usb webcam)</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Installing OpenCv on the Pi3 with python3 (and usb webcam)</p>
+                    <p class="text-3xl" style="font-weight: 600;">The Ultimate Guide to Installing OpenCV on Raspberry Pi 3</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-06-20 17:59:15" class="text-gray-500">June 20, 2018</time>
@@ -163,7 +182,7 @@
                         </a>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            raspberry pi
+                             raspberry pi
                         </a>
                         
                     </div>
@@ -183,204 +202,175 @@
                     
                     <br>
                     <article>
-                        <p>opencv is one of the most difficult python package to install. it&rsquo;s not a pip install easy package issue. in this post, we&rsquo;ll see how to painlessly install it.
-Target Os
-=========</p>
-<p>we are using noobs <a href="https://www.pythonmembers.club/2018/06/18/raspberry-pi-setup/">see here</a>
-Target Pi
-=========</p>
-<p>pi3
-Existing Instructions
-=====================</p>
-<p>there are two posts which i found to be nice :</p>
-<p>[<a href="https://www.pyimagesearch.com/2017/09/04/raspbian-stretch-install-opencv-3-python-on-your-raspberry-pi/">pyimagesearch</a>] and [<a href="http://manmade2.com/simple-home-surveillance-with-opencv-3-1-0-on-raspberry-pi-part-1/">manmade2.com</a>]</p>
-<p>this tutorial is an explanationless one, refer to these two for explanations
-pyimagesearch notes</p>
-<hr />
-<p>pyimagesearch is the reference post, however, here are some notes:
-1. you don&rsquo;t need to expand the filesystem if you are using noobs (the beginner setup)
-2. misses qt packages
-3. misses python path in ~/.profile
-4. uses weird way to modify ~/.profile
-5. uses multi-core compiling
-6. no working script to test</p>
-<h2>manmade2.com notes</h2>
-<ol>
-<li>included wrong make command and reinstall instructions (what if a confused user compiles open cv twice (brr))</li>
-<li>missed qt packages install</li>
-<li>misses python path in ~/.profile</li>
-</ol>
-<h1>Install instructions</h1>
-<p>the install process can be divided into these parts
-1. install raspbian packages including the qt one
-2. unzip cv sources
-3. setup pip and virtual env
-4. compile cv
-5. fix rename bug
-6. verify installation
-7. test snippet</p>
-<h2>install raspbian packages including the qt one</h2>
-<pre><code class="language-python">sudo apt-get update
-sudo apt-get upgrade
-sudo rpi-update
-
-sudo reboot
-
-sudo apt-get install build-essential git cmake pkg-config
-sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
-
-sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-sudo apt-get install libxvidcore-dev libx264-dev
-
-sudo apt-get install libgtk2.0-dev
-sudo apt-get install libatlas-base-dev gfortran
-
-sudo apt-get install python2.7-dev python3-dev
-
-sudo apt install qtbase5-dev
+                        <p>OpenCV (Open Source Computer Vision Library) is the industry standard for image processing and computer vision. However, installing it on a Raspberry Pi 3 can be notoriously difficult. While modern versions of Python allow for a simple <code>pip install opencv-python</code>, compiling it from source is still often the best way to get full hardware optimization and support for extra modules.</p>
+<p>In this guide, we provide a streamlined, “painless” workflow for installing OpenCV 3.3.0 with Python 3 support on your Pi.</p>
+<hr/>
+<h2>Step 1: Install Dependencies</h2>
+<p>Before we touch OpenCV, we need to install the various libraries and tools that it relies on for handling images, videos, and graphical windows.</p>
+<pre><code class="language-bash">sudo apt-get update &amp;&amp; sudo apt-get upgrade
+sudo apt-get install build-essential git cmake pkg-config -y
+sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev -y
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev -y
+sudo apt-get install libxvidcore-dev libx264-dev -y
+sudo apt-get install libgtk2.0-dev libatlas-base-dev gfortran -y
+sudo apt-get install python2.7-dev python3-dev qtbase5-dev -y
 </code></pre>
-<h2>unzip cv sources</h2>
-<pre><code class="language-python">cd ~
+<hr/>
+<h2>Step 2: Download OpenCV Source Code</h2>
+<p>We need both the main OpenCV repository and the “contrib” repository, which contains experimental features.</p>
+<pre><code class="language-bash">cd ~
 wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.3.0.zip
 unzip opencv.zip
 
 wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.3.0.zip
 unzip opencv_contrib.zip
 </code></pre>
-<h2>setup pip and virtual env</h2>
-<pre><code class="language-python">wget https://bootstrap.pypa.io/get-pip.py
-sudo python get-pip.py
+<hr/>
+<h2>Step 3: Set Up a Virtual Environment</h2>
+<p>It is highly recommended to install OpenCV inside a virtual environment to keep your global Python installation clean.</p>
+<pre><code class="language-bash">sudo pip install virtualenv virtualenvwrapper
+source ~/.profile
 
-sudo pip install virtualenv virtualenvwrapper
-sudo rm -rf ~/.cache/pip
-</code></pre>
-<p><strong>find python path with</strong></p>
-<pre><code class="language-python">which python
-</code></pre>
-<p><strong>open ~/.profile with</strong></p>
-<pre><code class="language-python">sudo nano ~/.profile
-</code></pre>
-<p><strong>write at the end</strong></p>
-<pre><code class="language-python"># virtualenv and virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export WORKON_HOME=/home/pi/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-</code></pre>
-<p><strong>then</strong></p>
-<pre><code class="language-python">source ~/.profile
-</code></pre>
-<pre><code class="language-python">mkvirtualenv cv -p python3
+# Create the environment
+mkvirtualenv cv -p python3
 workon cv
 pip install numpy
 </code></pre>
-<h2>compile cv</h2>
-<pre><code class="language-python">workon cv
+<hr/>
+<h2>Step 4: Compiling OpenCV (The Long Part)</h2>
+<p>This is where the actual building happens. This process can take 1 to 2 hours depending on your SD card speed.</p>
+<pre><code class="language-bash">cd ~/opencv-3.3.0/
+mkdir build &amp;&amp; cd build
 
-cd ~/opencv-3.3.0/
-mkdir build
-cd build
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D CMAKE_INSTALL_PREFIX=/usr/local \
     -D INSTALL_C_EXAMPLES=OFF \
     -D INSTALL_PYTHON_EXAMPLES=ON \
     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.3.0/modules \
     -D BUILD_EXAMPLES=ON ..
-</code></pre>
-<pre><code class="language-python">make
-</code></pre>
-<pre><code class="language-python">sudo make install
+
+# Start the compilation (use all 4 cores of the Pi 3)
+make -j4
+sudo make install
 sudo ldconfig
-ls -l /usr/local/lib/python3.5/site-packages/
 </code></pre>
-<h2>fix rename bug</h2>
-<pre><code class="language-python">cd /usr/local/lib/python3.5/site-packages/
-
-sudo mv cv2.cpython-35m-arm-linux-gnueabihf.so cv2.so
-
-cd ~/.virtualenvs/cv/lib/python3.5/site-packages/
-
-ln -s /usr/local/lib/python3.5/site-packages/cv2.so cv2.so
-</code></pre>
-<h2><strong>verify installation</strong></h2>
+<hr/>
+<h2>Step 5: Verification</h2>
+<p>To ensure everything worked, activate your environment and try to import the library in Python:</p>
 <pre><code class="language-python">workon cv
-python3
+python
+&gt;&gt;&gt; import cv2
+&gt;&gt;&gt; print(cv2.__version__)
+'3.3.0'
 </code></pre>
-<pre><code class="language-python">&gt;&gt;&gt; import cv2
-&gt;&gt;&gt; cv2.__version__
-</code></pre>
-<p>should be 3.3.0
-test snippet</p>
-<hr />
-<p>still inside the environment. create a new test file called cvtest.py</p>
-<p>write in it :</p>
+<hr/>
+<h2>Bonus: Testing with a USB Webcam</h2>
+<p>Once installed, use this quick script to verify that OpenCV can capture video from a standard USB webcam.</p>
 <pre><code class="language-python">import cv2
-import time
 
-class CameraInst():
-        # Constructor...
-        def __init__(self):
-                fps        = 20.0               # Frames per second...
-                resolution = (640, 480)         # Frame size/resolution...
-                w = 640
-                h = 480
+# 0 is usually the index for the first USB camera
+cap = cv2.VideoCapture(0)
 
-                self.cap = cv2.VideoCapture(0)  # Capture Video...
-                print(&quot;Camera warming up ...&quot;)
-                time.sleep(1)
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
 
-                # Define the codec and create VideoWriter object
-                fourcc = cv2.VideoWriter_fourcc(*&quot;H264&quot;)     # You also can use (*'XVID')
-                self.out = cv2.VideoWriter('output.avi',fourcc, fps, (w, h))
+    # Convert to grayscale for a classic CV look
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-        def captureVideo(self):
-                # Capture
-                self.ret, self.frame = self.cap.read()
-                # Image manipulations come here...
-                self.gray = cv2.cvtColor(self.frame, cv2.COLOR_BGR2GRAY)
-                cv2.imshow('frame',self.gray)
+    cv2.imshow('OpenCV Test', gray)
 
-        def saveVideo(self):
-                # Write the frame
-                self.out.write(self.frame)
+    if cv2.waitKey(1) &amp; 0xFF == ord('q'):
+        break
 
-        def __del__(self):
-                self.cap.release()
-                cv2.destroyAllWindows()
-                print(&quot;Camera disabled and all output windows closed...&quot;)
-
-def main():
-        cam1 = CameraInst()
-
-        while(True):
-                # Display the resulting frames...
-                cam1.captureVideo()    # Live stream of video on screen...
-                cam1.saveVideo()       # Save video to file 'output.avi'...
-                if cv2.waitKey(1) &amp; 0xFF == ord('q'):
-                        break
-
-        cleanUp()
-
-if __name__=='__main__':
-        main()
+cap.release()
+cv2.destroyAllWindows()
 </code></pre>
-<p>run with</p>
-<pre><code class="language-python">python3 cvtest.py
-</code></pre>
-<p>i tetsted it with a usb webcam
-Further notes</p>
-<hr />
-<p>if you are following pyimage search, changing swap size then /etc/dphys-swapfile is a file without extentions, not  a directory</p>
-<p>if you are getting function not implemented don&rsquo;t forget sudo apt install qtbase5-dev</p>
-<p>if you can&rsquo;t open ~/.profile with nano, make sure you put sudo before i.e. sudo nano ~/.profile </p>
-<p>if you are getting</p>
-<blockquote>
-<p>virtualenvwrapper.sh: There was a problem running the initialization hooks.</p>
-<p>If Python could not import the module virtualenvwrapper.hook_loader,
-check that virtualenvwrapper has been installed for
-VIRTUALENVWRAPPER_PYTHON=/usr/bin/python and that PATH is
-set properly.</p>
-</blockquote>
-<p>make sure you set the python path as above (the which python part)</p>
+<h2>Conclusion</h2>
+<p>Installing OpenCV from source on a Raspberry Pi is a badge of honor for any computer vision enthusiast. You now have a high-performance environment ready for facial recognition, object tracking, and much more!</p>
+<h3>Next Steps:</h3>
+<ul>
+<li><a href="https://www.pythonkitchen.com/raspberry-pi-setup-establishing-ssh-connection/">Setting up an SSH connection for remote coding</a></li>
+<li><a href="https://www.pythonkitchen.com/raspberry-pi-setup/">Building a Smart Home Hub with Raspberry Pi</a></li>
+</ul>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2026-02-09 10:30:00" class="text-gray-400 uppercase tracking-wider">February 9, 2026</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/publish-python-package-using-uv-pypi-token">
+                                            <span class="absolute inset-0"></span>
+                                            Publishing a Python Package with uv and a PyPI Token
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Publishing a Python package used to feel like a small battle: setup.py rituals, half-forgotten twine...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2025-02-15 15:40:00" class="text-gray-400 uppercase tracking-wider">February 15, 2025</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/simple-json-parser">
+                                            <span class="absolute inset-0"></span>
+                                            Simple JSON parser without knowing anything beforehands
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Table of Content
+
+Introduction
+Scanning the text
+Looking for specific characters
+Identifying element...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2025-01-16 15:42:02" class="text-gray-400 uppercase tracking-wider">January 16, 2025</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/json-response-gemini-google-genai">
+                                            <span class="absolute inset-0"></span>
+                                            How to get gemini response as json using python and google genai
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Normally you can tune models to return json. But, fortunately, Gemini
+First install the lib
+pip inst...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

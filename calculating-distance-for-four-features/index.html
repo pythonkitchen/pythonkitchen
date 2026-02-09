@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='calculating distance for four features' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Dimensional Euclidean Distance: Calculating Distance for N Features | Python Kitchen</title>
+  <meta name="description" content="In data science and machine learning, measuring the similarity between two points is a foundational task. One of the most common ways to do this is by calculati...">
+  <meta name="keywords" content="math, python, data-science, algorithms, geometry, data science,  machine learning">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/calculating-distance-for-four-features/">
+  <meta property="og:title" content="Multi-Dimensional Euclidean Distance: Calculating Distance for N Features">
+  <meta property="og:description" content="In data science and machine learning, measuring the similarity between two points is a foundational task. One of the most common ways to do this is by calculati...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/calculating-distance-for-four-features/">
+  <meta property="twitter:title" content="Multi-Dimensional Euclidean Distance: Calculating Distance for N Features">
+  <meta property="twitter:description" content="In data science and machine learning, measuring the similarity between two points is a foundational task. One of the most common ways to do this is by calculati...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='data science'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='calculating distance for four features'>
+  <meta name='subtitle' content='Multi-Dimensional Euclidean Distance: Calculating Distance for N Features'>
   <meta name='pageKey' content='calculating-distance-for-four-features'>
-  <meta name='og:title' content='calculating distance for four features'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/calculating-distance-for-four-features'>
-
-  <title>calculating distance for four features</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">calculating distance for four features</p>
+                    <p class="text-3xl" style="font-weight: 600;">Multi-Dimensional Euclidean Distance: Calculating Distance for N Features</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-07-22 03:37:21" class="text-gray-500">July 22, 2018</time>
@@ -163,7 +182,7 @@
                         </a>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
-                            machine learning
+                             machine learning
                         </a>
                         
                     </div>
@@ -183,19 +202,148 @@
                     
                     <br>
                     <article>
-                        <p>if you want to calculate the distance between 4 features coordinates, you do it like that :</p>
-<p>A (1,2,5,1)</p>
-<p>B (7, 1, 3, 0)</p>
+                        <p>In data science and machine learning, measuring the similarity between two points is a foundational task. One of the most common ways to do this is by calculating the <strong>Euclidean Distance</strong>. </p>
+<p>While many beginners learn the formula for 2D points (X and Y), the math stays remarkably similar even as you add more dimensions (features). In this guide, we’ll look at how to calculate distance for 4 features and how to write a generalized Python function for any number of dimensions.</p>
+<hr/>
+<h2>The Formula</h2>
+<p>The Euclidean distance between two points $P$ and $Q$ in $n$-dimensional space is the square root of the sum of the squares of the differences between their coordinates.</p>
+<p>$$Distance = \sqrt{\sum_{i=1}^{n} (Q_i - P_i)^2}$$</p>
+<h3>For 4 Features:</h3>
+<p>If we have Point A $(a_1, a_2, a_3, a_4)$ and Point B $(b_1, b_2, b_3, b_4)$:
+$$Dist = \sqrt{(b_1-a_1)^2 + (b_2-a_2)^2 + (b_3-a_3)^2 + (b_4-a_4)^2}$$</p>
+<hr/>
+<h2>Manual Calculation in Python</h2>
+<p>If you have two specific points, you can calculate the distance using Python’s <code>math.sqrt()</code>:</p>
 <pre><code class="language-python">import math
 
-dist = math.sqrt((7-1)**2+(1-2)**2+(3-5)**2+(0-1)**2)
+# Point A: (Width, Height, Weight, ColorValue)
+A = (1, 2, 5, 1)
 
-print(dist)
+# Point B: (Width, Height, Weight, ColorValue)
+B = (7, 1, 3, 0)
 
-&gt;&gt;&gt; 6.4807 ...
+dist = math.sqrt((7-1)**2 + (1-2)**2 + (3-5)**2 + (0-1)**2)
 
-
+print(f"Distance: {dist:.4f}")
+# Output: 6.4807
 </code></pre>
+<hr/>
+<h2>Creating a Generalized Function</h2>
+<p>In a real project, you don’t want to hardcode the subtraction for every feature. We can write a function that takes two lists of any length and returns the distance.</p>
+<pre><code class="language-python">import math
+
+def calculate_euclidean_distance(p1, p2):
+    if len(p1) != len(p2):
+        raise ValueError("Points must have the same number of dimensions")
+
+    squared_differences = []
+    for i in range(len(p1)):
+        diff = (p1[i] - p2[i]) ** 2
+        squared_differences.append(diff)
+
+    return math.sqrt(sum(squared_differences))
+
+# Example usage with 4 features
+point_x = [10, 20, 15, 5]
+point_y = [12, 18, 14, 8]
+
+result = calculate_euclidean_distance(point_x, point_y)
+print(f"Result: {result}")
+</code></pre>
+<h2>The “Professional” Way: Using NumPy</h2>
+<p>If you are working on a data science project with large datasets, calculating distances in a loop is slow. The <strong>NumPy</strong> library is optimized for these calculations and is much more concise.</p>
+<pre><code class="language-python">import numpy as np
+
+p1 = np.array([1, 2, 5, 1])
+p2 = np.array([7, 1, 3, 0])
+
+# NumPy can subtract entire arrays and calculate the norm in one step
+dist = np.linalg.norm(p1 - p2)
+
+print(f"NumPy Distance: {dist:.4f}")
+</code></pre>
+<h2>Why does this matter?</h2>
+<p>Euclidean distance is the engine behind many popular machine learning algorithms, including:
+1.  <strong>K-Nearest Neighbours (K-NN):</strong> Finding the closest neighbors to a new data point.
+2.  <strong>K-Means Clustering:</strong> Assigning data points to the nearest cluster center.
+3.  <strong>Recommendation Systems:</strong> Finding users with similar tastes (coordinates).</p>
+<h3>Related Posts:</h3>
+<ul>
+<li><a href="https://www.pythonkitchen.com/identifying-home-cutlery-items/">Identifying Cutlery items using K-NN</a></li>
+<li><a href="https://www.pythonkitchen.com/machine-learning-part-11-unpervised-learning/">Machine Learning Part 11: Clustering Basics</a></li>
+</ul>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-23 10:00:00" class="text-gray-400 uppercase tracking-wider">November 23, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/chat-own-data-chatgpt-langchain">
+                                            <span class="absolute inset-0"></span>
+                                            Chat with your own data/text files using chatGPT and LangChain
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        There are many different approaches to chatting with your own data. 
+One way is to upload your PDF t...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-11-13 09:31:20" class="text-gray-400 uppercase tracking-wider">November 13, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/LangChain-understand-production-codebases">
+                                            <span class="absolute inset-0"></span>
+                                            Understand langChain to Quickly Get Started with Production Codebases
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
+If you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-06-28 04:41:51" class="text-gray-400 uppercase tracking-wider">June 28, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/what-is-perceptron-in-deep-learning">
+                                            <span class="absolute inset-0"></span>
+                                            What is Perceptron in Deep Learning
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Deep learning is one of the most useful and trending topics in the current world scenario, which wor...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

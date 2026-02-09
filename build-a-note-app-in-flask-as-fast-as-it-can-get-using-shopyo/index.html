@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='Build A Note App In Flask As Fast As It Can Get (Using Shopyo)' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build A Note App In Flask As Fast As It Can Get (Using Shopyo) | Python Kitchen</title>
+  <meta name="description" content="Shopyo is a framework to get started with Flask really quick. It includes several libraries to get started by default. In this tutorial we will build a simple a...">
+  <meta name="keywords" content=", flask, shopyo">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/build-a-note-app-in-flask-as-fast-as-it-can-get-using-shopyo/">
+  <meta property="og:title" content="Build A Note App In Flask As Fast As It Can Get (Using Shopyo)">
+  <meta property="og:description" content="Shopyo is a framework to get started with Flask really quick. It includes several libraries to get started by default. In this tutorial we will build a simple a...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/build-a-note-app-in-flask-as-fast-as-it-can-get-using-shopyo/">
+  <meta property="twitter:title" content="Build A Note App In Flask As Fast As It Can Get (Using Shopyo)">
+  <meta property="twitter:description" content="Shopyo is a framework to get started with Flask really quick. It includes several libraries to get started by default. In this tutorial we will build a simple a...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='flask'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
   <meta name='subtitle' content='Build A Note App In Flask As Fast As It Can Get (Using Shopyo)'>
   <meta name='pageKey' content='build-a-note-app-in-flask-as-fast-as-it-can-get-using-shopyo'>
-  <meta name='og:title' content='Build A Note App In Flask As Fast As It Can Get (Using Shopyo)'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/build-a-note-app-in-flask-as-fast-as-it-can-get-using-shopyo'>
-
-  <title>Build A Note App In Flask As Fast As It Can Get (Using Shopyo)</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -277,25 +296,25 @@ pip install shopyo==4.4.3
 </code></pre>
 <p>These are files created by default.</p>
 <h1>Writing the first view</h1>
-<p>The <code>info.json</code> file lists some basics about the module, including it&rsquo;s url namespace (module_name) and url prefix</p>
+<p>The <code>info.json</code> file lists some basics about the module, including it’s url namespace (module_name) and url prefix</p>
 <pre><code class="language-python">{
-    &quot;author&quot;: {
-        &quot;mail&quot;: &quot;&quot;,
-        &quot;name&quot;: &quot;&quot;,
-        &quot;website&quot;: &quot;&quot;
+    "author": {
+        "mail": "",
+        "name": "",
+        "website": ""
     },
-    &quot;display_string&quot;: &quot;Notes&quot;,
-    &quot;fa-icon&quot;: &quot;fa fa-store&quot;,
-    &quot;module_name&quot;: &quot;notes&quot;,
-    &quot;type&quot;: &quot;show&quot;,
-    &quot;url_prefix&quot;: &quot;/notes&quot;
+    "display_string": "Notes",
+    "fa-icon": "fa fa-store",
+    "module_name": "notes",
+    "type": "show",
+    "url_prefix": "/notes"
 }
 
 </code></pre>
-<p>Let&rsquo;s change <code>url_prefix</code> to <code>"/"</code></p>
+<p>Let’s change <code>url_prefix</code> to <code>"/"</code></p>
 <pre><code class="language-python">{
     ...,
-    &quot;url_prefix&quot;: &quot;/&quot;
+    "url_prefix": "/"
 }
 
 </code></pre>
@@ -307,20 +326,20 @@ globals()[mhelp.blueprint_str] = mhelp.blueprint
 module_blueprint = globals()[mhelp.blueprint_str]
 
 
-@module_blueprint.route(&quot;/&quot;)
+@module_blueprint.route("/")
 def index():
     return mhelp.info['display_string']
 
 </code></pre>
-<p>Let&rsquo;s change the return string to <code>String from notes app</code></p>
-<pre><code class="language-python">@module_blueprint.route(&quot;/&quot;)
+<p>Let’s change the return string to <code>String from notes app</code></p>
+<pre><code class="language-python">@module_blueprint.route("/")
 def index():
-    return &quot;String from notes app&quot;
+    return "String from notes app"
 
 </code></pre>
 <h1>Running the app</h1>
 <p>Run <code>shopyo rundebug</code> to run the app in debug mode.</p>
-<p>Going to &ldquo;http://127.0.0.1:5000/&rdquo; should return &ldquo;String from notes app&rdquo;</p>
+<p>Going to “http://127.0.0.1:5000/” should return “String from notes app”</p>
 <p>You can learn more about the run command <a href="https://shopyo.readthedocs.io/en/latest/commandline.html#run">here</a>.</p>
 <h1>Creating models</h1>
 <p>Our notes will have a title and a content. In <code>modules/notes/models.py</code> write:</p>
@@ -367,7 +386,7 @@ All Done!
 </code></pre>
 <p>This worked as Shopyo adds a <code>shopyo.db</code> as basic sqlalchemy connection string.</p>
 <h1>Configuring Flask-Admin</h1>
-<p>Now let&rsquo;s configure flask-admin to have a quick CRUD view. Fortunately, Shopyo already has some basics ongoing.</p>
+<p>Now let’s configure flask-admin to have a quick CRUD view. Fortunately, Shopyo already has some basics ongoing.</p>
 <p>First, modify <code>shopyo_admin.py</code> to remove Flask-Login authentications</p>
 <pre><code class="language-python">from flask import redirect
 from flask import request
@@ -387,7 +406,7 @@ class DefaultModelView(flask_admin_sqla.ModelView):
 
     # def inaccessible_callback(self, name, **kwargs):
     #     # redirect to login page if user doesn't have access
-    #     return redirect(url_for(&quot;auth.login&quot;, next=request.url))
+    #     return redirect(url_for("auth.login", next=request.url))
 
 
 class MyAdminIndexView(AdminIndexView):
@@ -396,22 +415,22 @@ class MyAdminIndexView(AdminIndexView):
 
     # def inaccessible_callback(self, name, **kwargs):
     #     # redirect to login page if user doesn't have access
-    #     return redirect(url_for(&quot;auth.login&quot;, next=request.url))
+    #     return redirect(url_for("auth.login", next=request.url))
 
-    @expose(&quot;/&quot;)
+    @expose("/")
     def index(self):
         # if not current_user.is_authenticated and current_user.is_admin:
-        #     return redirect(url_for(&quot;auth.login&quot;))
+        #     return redirect(url_for("auth.login"))
         return super().index()
 # 
-    @expose(&quot;/dashboard&quot;)
+    @expose("/dashboard")
     def indexs(self):
         # if not current_user.is_authenticated and current_user.is_admin:
-        #     return redirect(url_for(&quot;auth.login&quot;))
+        #     return redirect(url_for("auth.login"))
         return super().index()
 
 </code></pre>
-<p>Then in app.py, don&rsquo;t load Flask-Login by commenting it out.</p>
+<p>Then in app.py, don’t load Flask-Login by commenting it out.</p>
 <pre><code class="language-python">def load_extensions(app):
     ...
     # login_manager.init_app(app)
@@ -425,17 +444,17 @@ class MyAdminIndexView(AdminIndexView):
 <pre><code class="language-python">def setup_flask_admin(app):
     admin = Admin(
         app,
-        name=&quot;My App&quot;,
-        template_mode=&quot;bootstrap4&quot;,
+        name="My App",
+        template_mode="bootstrap4",
         index_view=MyAdminIndexView(),
     )
     admin.add_view(ModelView(Note, db.session))
 
 </code></pre>
 <p>Now, navigating to <code>/admin</code> gives</p>
-<p><img alt="Image description" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w3ozigkj23q00n5xsjc9.png" /></p>
-<p>Clicking on note allows you to edit the Note model. Let&rsquo;s add few models!</p>
-<p><img alt="Image description" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/re17hbi920kg48gr6lax.png" />
+<p><img alt="Image description" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w3ozigkj23q00n5xsjc9.png"/></p>
+<p>Clicking on note allows you to edit the Note model. Let’s add few models!</p>
+<p><img alt="Image description" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/re17hbi920kg48gr6lax.png"/>
 Displaying templates
 ====================</p>
 <p>What remains is using displaying the note on our main page.</p>
@@ -443,8 +462,8 @@ Displaying templates
 <pre><code class="language-python">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
     &lt;title&gt;&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -468,19 +487,19 @@ globals()[mhelp.blueprint_str] = mhelp.blueprint
 module_blueprint = globals()[mhelp.blueprint_str]
 
 
-@module_blueprint.route(&quot;/&quot;)
+@module_blueprint.route("/")
 def index():
     notes = Note.query.all()
     return render_template('notes/index.html', notes=notes)
 
 </code></pre>
 <p>Which results in:</p>
-<p><img alt="Image description" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ptx26y6y8yya7zxqqe5v.png" /></p>
+<p><img alt="Image description" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ptx26y6y8yya7zxqqe5v.png"/></p>
 <p>Shopyo also provides some utils like</p>
 <pre><code class="language-python">from shopyo.api.templates import yo_render
 
 ...
-@module_blueprint.route(&quot;/&quot;)
+@module_blueprint.route("/")
 def index():
     notes = Note.query.all()
     context = {
@@ -501,6 +520,76 @@ shopyo rundebug
 </code></pre>
 <p>You can then see how an authed Flask-Admin looks like.</p>
 <p>Hope you enjoy this post!</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2021-02-24 09:40:49" class="text-gray-400 uppercase tracking-wider">February 24, 2021</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/how-implement-beautiful-notifications-flask">
+                                            <span class="absolute inset-0"></span>
+                                            How to implement beautiful notifications in Flask
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Since you already know how to implement notifications, let’s see how to implement beautiful notifica...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2021-02-24 09:29:14" class="text-gray-400 uppercase tracking-wider">February 24, 2021</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/how-implement-notification-flask">
+                                            <span class="absolute inset-0"></span>
+                                            How to implement notification in Flask
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Implementing notifications in Flask goes way beyond using flash. You have to add this snippet in you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2021-02-24 07:05:45" class="text-gray-400 uppercase tracking-wider">February 24, 2021</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/how-to-correctly-use-the-next-parameter-in-login-and-logout-in-flask">
+                                            <span class="absolute inset-0"></span>
+                                            How to correctly use the next parameter in login and logout in Flask
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Here is a sample login and logout route taken from the shopyo web framework. You can learn here how ...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"

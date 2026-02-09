@@ -30,7 +30,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2025-02-15 15:40:00'>
+  <meta name='date' content='2026-02-09 10:30:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -77,18 +77,32 @@
   })(window, document, "clarity", "script", "ejj5ivpuup");
 </script>
 
-  <meta name='venv usage on windows, activate and deactivate' content=''>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Virtual Environments on Windows: A Complete Guide | Python Kitchen</title>
+  <meta name="description" content="If you’re starting multiple Python projects, you will quickly run into a problem: one project needs Version 1.0 of a library, while another needs Version 2.0. I...">
+  <meta name="keywords" content="python, venv, windows, beginners, tutorial, virtual environment">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.pythonkitchen.com/venv-usage-on-windows-activate-and-deactivate/">
+  <meta property="og:title" content="Python Virtual Environments on Windows: A Complete Guide">
+  <meta property="og:description" content="If you’re starting multiple Python projects, you will quickly run into a problem: one project needs Version 1.0 of a library, while another needs Version 2.0. I...">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/venv-usage-on-windows-activate-and-deactivate/">
+  <meta property="twitter:title" content="Python Virtual Environments on Windows: A Complete Guide">
+  <meta property="twitter:description" content="If you’re starting multiple Python projects, you will quickly run into a problem: one project needs Version 1.0 of a library, while another needs Version 2.0. I...">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
   <meta name='category' content='virtual environment'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='revisit-after' content='1 year'>
-  <meta name='subtitle' content='venv usage on windows, activate and deactivate'>
+  <meta name='subtitle' content='Python Virtual Environments on Windows: A Complete Guide'>
   <meta name='pageKey' content='venv-usage-on-windows-activate-and-deactivate'>
-  <meta name='og:title' content='venv usage on windows, activate and deactivate'>
-  <meta name='og:url' content='https://www.pythonkitchen.com/venv-usage-on-windows-activate-and-deactivate'>
-
-  <title>venv usage on windows, activate and deactivate</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -98,6 +112,11 @@
 
 <link rel="stylesheet" href="/css/post.css"> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
 
 </head>
@@ -153,7 +172,7 @@
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">venv usage on windows, activate and deactivate</p>
+                    <p class="text-3xl" style="font-weight: 600;">Python Virtual Environments on Windows: A Complete Guide</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
                         <time datetime="2018-08-10 18:46:37" class="text-gray-500">August 10, 2018</time>
@@ -179,27 +198,130 @@
                     
                     <br>
                     <article>
-                        <p>go on to your project root directory</p>
-<p>first create a virtual environment with syntax</p>
-<p>python3 -m venv <env-name></p>
-<pre><code class="language-python">python3 -m venv niceproject
+                        <p>If you’re starting multiple Python projects, you will quickly run into a problem: one project needs Version 1.0 of a library, while another needs Version 2.0. If you install everything globally, you’ll end up with a broken mess.</p>
+<p>This is where <strong>Virtual Environments (venv)</strong> come in. They allow you to create isolated “bubbles” for each project, ensuring that your dependencies never clash. In this guide, we’ll walk through exactly how to use them on Windows.</p>
+<hr/>
+<h2>1. Creating the Environment</h2>
+<p>Open your Command Prompt or PowerShell and navigate to your project folder. Run the following command:</p>
+<pre><code class="language-bash"># General syntax: python -m venv [folder_name]
+python -m venv .venv
 </code></pre>
-<p>a folder called niceproject will be automatically</p>
-<p>cd into <projectname></p>
-<pre><code class="language-python">cd niceproject
+<p><em>Note: <code>.venv</code> is the standard name for the folder, but you can name it whatever you like (e.g., <code>myenv</code>).</em></p>
+<hr/>
+<h2>2. Activating the Environment</h2>
+<p>Creating the folder isn’t enough; you have to tell your terminal to start using it. The activation command depends on whether you are using the old <strong>Command Prompt (CMD)</strong> or the modern <strong>PowerShell</strong>.</p>
+<h3>For Command Prompt (CMD):</h3>
+<pre><code class="language-cmd">.venv\Scripts\activate
 </code></pre>
-<p>then in the Scripts folder</p>
-<pre><code class="language-python">cd Scripts
+<h3>For PowerShell:</h3>
+<pre><code class="language-powershell">.venv\Scripts\Activate.ps1
 </code></pre>
-<p>then just type</p>
-<pre><code class="language-python">activate
+<p><strong>How do I know it worked?</strong>
+You should see the name of your environment in parentheses at the start of your command prompt line, like this:
+<code>(.venv) C:\Users\Projects\MyProject&gt;</code></p>
+<hr/>
+<h2>3. Installing Packages</h2>
+<p>Once activated, any package you install using <code>pip</code> will be contained entirely within that folder.</p>
+<pre><code class="language-bash">pip install flask
 </code></pre>
-<p>it will activate as there is an activate.bat in the Scripts folder</p>
-<p>pip install what you wish</p>
-<p>then type</p>
-<pre><code class="language-python">deactivate
+<p>If you look inside <code>.venv\Lib\site-packages</code>, you will see Flask and its dependencies sitting right there!</p>
+<hr/>
+<h2>4. Deactivating</h2>
+<p>When you’re done working, or if you want to switch to another project, simply type:</p>
+<pre><code class="language-bash">deactivate
 </code></pre>
-<p>to disactivate the virtualenv</p>
+<p>Your prompt will return to normal, and you will be back in your global Python environment.</p>
+<hr/>
+<h2>Common Issues on Windows</h2>
+<h3>“Running Scripts is Disabled” (PowerShell)</h3>
+<p>If you get a red error in PowerShell saying “Scripts cannot be loaded,” it’s because Windows blocks third-party scripts by default. You can fix this by running this command once as an Administrator:</p>
+<pre><code class="language-powershell">Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+</code></pre>
+<h2>Summary Checklist</h2>
+<ol>
+<li><strong>Create:</strong> <code>python -m venv .venv</code></li>
+<li><strong>Activate:</strong> <code>.venv\Scripts\activate</code></li>
+<li><strong>Use:</strong> <code>pip install ...</code></li>
+<li><strong>Finish:</strong> <code>deactivate</code></li>
+</ol>
+<p>Mastering virtual environments is the first step toward becoming a professional Python developer. It keeps your computer clean and your projects reproducible!</p>
+
+                        <div class="mt-16 border-t border-gray-100 pt-10">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2026-02-09 10:30:00" class="text-gray-400 uppercase tracking-wider">February 9, 2026</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/publish-python-package-using-uv-pypi-token">
+                                            <span class="absolute inset-0"></span>
+                                            Publishing a Python Package with uv and a PyPI Token
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Publishing a Python package used to feel like a small battle: setup.py rituals, half-forgotten twine...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2025-02-15 15:40:00" class="text-gray-400 uppercase tracking-wider">February 15, 2025</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/simple-json-parser">
+                                            <span class="absolute inset-0"></span>
+                                            Simple JSON parser without knowing anything beforehands
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Table of Content
+
+Introduction
+Scanning the text
+Looking for specific characters
+Identifying element...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2025-01-16 15:42:02" class="text-gray-400 uppercase tracking-wider">January 16, 2025</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/json-response-gemini-google-genai">
+                                            <span class="absolute inset-0"></span>
+                                            How to get gemini response as json using python and google genai
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        Normally you can tune models to return json. But, fortunately, Gemini
+First install the lib
+pip inst...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                         <script src="https://utteranc.es/client.js"
         repo="pythonkitchen/blog-comments"
