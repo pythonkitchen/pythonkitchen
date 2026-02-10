@@ -57,6 +57,7 @@ def generate_site():
                      "get_author_info": get_author_info}
     
     generate('sitemap.html', join(settings.OUTPUT_FOLDER, 'sitemap.txt'), context=extra_context)
+    generate('sitemap_xml.html', join(settings.OUTPUT_FOLDER, 'sitemap.xml'), context=extra_context)
     generate('index.html', join(settings.OUTPUT_FOLDER, 'index.html'), context=extra_context)
 
     generate_blog_posts(settings, extra_context, generate)

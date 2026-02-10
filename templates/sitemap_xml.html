@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.pythonkitchen.com/</loc>
+    <priority>1.0</priority>
+    <changefreq>daily</changefreq>
+  </url>
+{% for post in posts %}
+  <url>
+    <loc>https://www.pythonkitchen.com/{{ post['slug'] }}/</loc>
+    <lastmod>{{ post['pub'].split(' ')[0] }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+{% endfor %}
+</urlset>

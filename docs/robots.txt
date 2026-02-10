@@ -53,3 +53,6 @@ Disallow: /
 
 User-agent: PetalBot
 Disallow: /
+
+Sitemap: https://www.pythonkitchen.com/sitemap.xml
+Sitemap: https://www.pythonkitchen.com/sitemap.txt
