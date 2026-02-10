@@ -1,6 +1,6 @@
 title: Legally Free Python Books List
 slug: legally-free-python-books-list
-pub: 2020-01-29 08:45:30
+pub: 2026-02-10 15:00:00
 authors: arj
 tags: book,free,legal,python
 category: books
