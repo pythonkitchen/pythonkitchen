@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.pythonkitchen.com/</loc>
+    <priority>1.0</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/publish-python-package-using-uv-pypi-token/</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/simple-json-parser/</loc>
+    <lastmod>2025-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/json-response-gemini-google-genai/</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/install-azure-cli-mint-22-wilma/</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/add-google-calendar-desklet-linux-mint/</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/create-object-salesforce-using-python/</loc>
+    <lastmod>2024-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/copy-files-aws-ec2/</loc>
+    <lastmod>2024-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-to-ssh-into-aws-ec2/</loc>
+    <lastmod>2024-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/fix-dockererrorsdockerexception-error-fetching-server-api-version-without-using-docker-desktop/</loc>
+    <lastmod>2024-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-to-prevent-openai-and-similar-from-scraping-your-blog/</loc>
+    <lastmod>2024-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-to-run-tencents-hunyuan-video-model-using-python/</loc>
+    <lastmod>2024-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-define-prefect-deployments/</loc>
+    <lastmod>2024-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-solve-django-syntax-error-migrate/</loc>
+    <lastmod>2024-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/why-rye-over-pdm-poetry/</loc>
+    <lastmod>2024-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/oreiller-pillow-alternative/</loc>
+    <lastmod>2024-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/chat-own-data-chatgpt-langchain/</loc>
+    <lastmod>2023-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/LangChain-understand-production-codebases/</loc>
+    <lastmod>2023-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/install-pipx-mint-ubuntu/</loc>
+    <lastmod>2023-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/what-is-perceptron-in-deep-learning/</loc>
+    <lastmod>2023-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/bag-of-words-in-natural-language-processing/</loc>
+    <lastmod>2023-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/word2vec-vectorizer-in-natural-language-processing/</loc>
+    <lastmod>2023-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/tfidf-vectorizers-in-natural-language-processing/</loc>
+    <lastmod>2023-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/linear-algebra-applications-in-machine-learning/</loc>
+    <lastmod>2023-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/linear-algebra-in-recommendation-systems-of-machine-learning/</loc>
+    <lastmod>2023-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/principle-component-analysis-in-machine-learning/</loc>
+    <lastmod>2023-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/beyond-the-basics-unconventional-uses-of-seaborn-heatmaps-for-data-visualization/</loc>
+    <lastmod>2023-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/eigen-decomposition-in-machine-learning/</loc>
+    <lastmod>2023-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/data-scaling-techniques-in-machine-learning/</loc>
+    <lastmod>2023-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/adaboost-vs-naive-bayes-algorithms-in-machine-learning/</loc>
+    <lastmod>2023-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/logistic-regression-vs-k-nearest-neighbors-in-machine-learning/</loc>
+    <lastmod>2023-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/linear-regression-vs-decision-trees-vs-support-vector-machines/</loc>
+    <lastmod>2022-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/10-classification-cost-functions-in-machine-learning/</loc>
+    <lastmod>2022-12-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/relu-activation-function-and-its-variants/</loc>
+    <lastmod>2022-12-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-to-frame-a-machine-learning-problem-design-your-data-science-project/</loc>
+    <lastmod>2022-12-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/blending-algorithms-in-machine-learning/</loc>
+    <lastmod>2022-11-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/choosing-the-right-databaserdbms-analyst/</loc>
+    <lastmod>2022-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/measures-in-statistics-for-data-science/</loc>
+    <lastmod>2022-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/lasso-sparsity/</loc>
+    <lastmod>2022-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/automatic-differentiation-step-by-step/</loc>
+    <lastmod>2022-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/nesterov-accelerated-gradient-nag-optimizer-in-deep-learning/</loc>
+    <lastmod>2022-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/2-brilliant-breakthroughs-in-computational-topology-using-machine-learning/</loc>
+    <lastmod>2022-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/why-was-scipy-misc-removed-and-whats-next/</loc>
+    <lastmod>2022-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/neurojson-a-potential-neuro-imaging-library-for-python/</loc>
+    <lastmod>2022-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/decoding-symmetric-indefinite-matrices-in-python/</loc>
+    <lastmod>2022-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/framework-for-evolution-with-neural-networks/</loc>
+    <lastmod>2022-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/an-overview-of-python-terminal-plotting-libraries/</loc>
+    <lastmod>2022-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-to-have-django-packages-in-flask/</loc>
+    <lastmod>2022-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/p5js-with-flask-socket-io/</loc>
+    <lastmod>2022-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/build-a-note-app-in-flask-as-fast-as-it-can-get-using-shopyo/</loc>
+    <lastmod>2022-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/notes-of-get-your-resources-faster-with-importlib-resources-by-barry-warsaw/</loc>
+    <lastmod>2021-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/integrate-tinymce-5-with-flask/</loc>
+    <lastmod>2021-12-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/python-engineering-articles/</loc>
+    <lastmod>2021-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/python-efl-9/</loc>
+    <lastmod>2021-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/python-efl-8/</loc>
+    <lastmod>2021-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/python-efl-7/</loc>
+    <lastmod>2021-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/python-efl-6/</loc>
+    <lastmod>2021-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/python-efl-5/</loc>
+    <lastmod>2021-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/python-efl-4/</loc>
+    <lastmod>2021-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/python-efl-3/</loc>
+    <lastmod>2021-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/python-efl-2/</loc>
+    <lastmod>2021-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/python-efl-1/</loc>
+    <lastmod>2021-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/why-i-admire-tiango-more-than-fastapi/</loc>
+    <lastmod>2021-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/python-making-imports-callable/</loc>
+    <lastmod>2021-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-to-install-python-efl-on-ubuntu-or-linux-mint/</loc>
+    <lastmod>2021-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/celery-task-asyncresult-no-attribute/</loc>
+    <lastmod>2021-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-to-query-task-by-id-in-celery/</loc>
+    <lastmod>2021-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-to-set-task-id-in-celery/</loc>
+    <lastmod>2021-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/dropzonejs-server-response-chunck-upload/</loc>
+    <lastmod>2021-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/why-choose-flask-over-fastapi/</loc>
+    <lastmod>2021-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/machine-learning-part-12-association-analysis/</loc>
+    <lastmod>2021-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/machine-learning-part-11-unpervised-learning/</loc>
+    <lastmod>2021-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/machine-learning-part-10-naive-bayes/</loc>
+    <lastmod>2021-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/machine-learning-part-9-neural-networks/</loc>
+    <lastmod>2021-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/machine-learning-part-8-support-vector-machines/</loc>
+    <lastmod>2021-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/daily-coding-problem-solution-4/</loc>
+    <lastmod>2021-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/daily-coding-problem-solution-5/</loc>
+    <lastmod>2021-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/daily-coding-problem-solution-3/</loc>
+    <lastmod>2021-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/daily-coding-problem-solution-2/</loc>
+    <lastmod>2021-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/daily-coding-problem-solution-1/</loc>
+    <lastmod>2021-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/chatterbot-google-colab-train-english-corpus/</loc>
+    <lastmod>2021-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/interview-chris-hopkinson-flask-dog-care/</loc>
+    <lastmod>2021-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-implement-beautiful-notifications-flask/</loc>
+    <lastmod>2021-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-implement-notification-flask/</loc>
+    <lastmod>2021-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-prevent-open-redirect-vulnerab-flask/</loc>
+    <lastmod>2021-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-to-define-global-template-variables-in-flask/</loc>
+    <lastmod>2021-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-to-disable-csrf-protection-in-flask-wtf-for-particular-routes/</loc>
+    <lastmod>2021-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-to-use-flask-admin-with-flask-login/</loc>
+    <lastmod>2021-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-to-correctly-use-the-next-parameter-in-login-and-logout-in-flask/</loc>
+    <lastmod>2021-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/zen-of-python-in-depth/</loc>
+    <lastmod>2020-12-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/python-generators-in-depth/</loc>
+    <lastmod>2020-12-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/realtime-cpu-monitor-using-pygame/</loc>
+    <lastmod>2020-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/display-most-frequent-words-python-pygame/</loc>
+    <lastmod>2020-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/python-running-makefile-on-windows/</loc>
+    <lastmod>2020-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/run-flask-linux-only-windows-afpy/</loc>
+    <lastmod>2020-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/shopyo-understand-advanced-flask-app/</loc>
+    <lastmod>2020-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/pyside2-pyqt5-extract-data-from-qformlayout/</loc>
+    <lastmod>2020-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/legally-free-python-books-list/</loc>
+    <lastmod>2020-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/free-python-courses-list/</loc>
+    <lastmod>2020-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/upload-your-package-to-pypi/</loc>
+    <lastmod>2020-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/packaging-an-sqlite-db-included-crud-pyqt5-app-using-pyinstaller/</loc>
+    <lastmod>2019-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/whats-new-in-python-3-9-alpha2/</loc>
+    <lastmod>2019-12-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/pyqt5-pyside2-qtableview-how-to-find-out-if-row-is-selected-and-which-one-in-python/</loc>
+    <lastmod>2019-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/get-pythons-help-function-stored-as-string-just-like-console/</loc>
+    <lastmod>2019-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/string-manipulation-functions-the-top-5-you-forgot-to-pack/</loc>
+    <lastmod>2019-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/dsl-python-new-language-how-to-build-a-css-pre-processor-like-sass-from-scratch-dotdot/</loc>
+    <lastmod>2019-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/machine-learning-part-7-random-forests-explained/</loc>
+    <lastmod>2019-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/machine-learning-part-6-enthropy-and-gain/</loc>
+    <lastmod>2019-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/machine-learning-part-5-mixed-methods/</loc>
+    <lastmod>2019-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/machine-learning-part-4-gradient-descent-and-cost-function/</loc>
+    <lastmod>2019-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/plotting-hotspots-in-mauritius-with-python-and-folium/</loc>
+    <lastmod>2019-01-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/machine-learning-part-3-regression/</loc>
+    <lastmod>2019-01-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/432/</loc>
+    <lastmod>2019-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/supervised-learning/</loc>
+    <lastmod>2019-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/pyqt5-value-cells-selected-row-qtview/</loc>
+    <lastmod>2019-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/machine-learning-part-1-introduction/</loc>
+    <lastmod>2019-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/machine-learning-part-2-supervised/</loc>
+    <lastmod>2019-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/checking-for-prime/</loc>
+    <lastmod>2018-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/reviving-bertrand-russell-through-python/</loc>
+    <lastmod>2018-12-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/armstrong-numbers/</loc>
+    <lastmod>2018-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/how-to-create-your-own-dsldomain-specific-language-in-python/</loc>
+    <lastmod>2018-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/venv-usage-on-windows-activate-and-deactivate/</loc>
+    <lastmod>2018-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/mastering-pythons-regex-part-1-basics/</loc>
+    <lastmod>2018-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/removing-last-columns-of-excel-dataframe-using-pandas-by-index/</loc>
+    <lastmod>2018-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/preparing-an-excel-file-for-analysis-using-pandas/</loc>
+    <lastmod>2018-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/calculating-distance-for-four-features/</loc>
+    <lastmod>2018-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/web-mail-interface-using-pi-and-flask/</loc>
+    <lastmod>2018-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/installing-opencv-on-the-pi3-with-python3-and-usb-webcam/</loc>
+    <lastmod>2018-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/raspberry-pi-setup-establishing-ssh-connection/</loc>
+    <lastmod>2018-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/tkinter-text-widget-tags/</loc>
+    <lastmod>2018-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/raspberry-pi-setup/</loc>
+    <lastmod>2018-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/translating-location-to-map-coordinates/</loc>
+    <lastmod>2018-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/generating-unintelligent-random-maps/</loc>
+    <lastmod>2018-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/game-map-rendering/</loc>
+    <lastmod>2018-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/lines-around-nodes/</loc>
+    <lastmod>2018-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/handling-curly-braces-in-string-formatting-python/</loc>
+    <lastmod>2018-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/identifying-home-cutlery-items/</loc>
+    <lastmod>2018-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/matplotlib-scatter-plot-annotate-set-text-at-label-each-point/</loc>
+    <lastmod>2018-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/building-an-indentation-analyser-in-python-tutorial/</loc>
+    <lastmod>2018-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/data-usage-policy/</loc>
+    <lastmod>2018-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/building-a-lexer-in-python-tutorial/</loc>
+    <lastmod>2018-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/greenberry-new-programming-language/</loc>
+    <lastmod>2018-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/a-fix-to-tkinter-output-not-showing/</loc>
+    <lastmod>2018-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/processing-py-trails-using-oop/</loc>
+    <lastmod>2018-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.pythonkitchen.com/tkinter-tackling-import-for-python-2-and-3/</loc>
+    <lastmod>2018-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
