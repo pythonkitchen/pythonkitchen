@@ -22,11 +22,37 @@ Note: was pythonmembers.club before, so if you have the domain's link, please up
 Let's start! **Click on the titles to view/download the book.**
 
 
+Table of Content
+================
+
+- INTRODUCTORY MATERIALS
+- CONTINUATION
+- PROJECTS-BASED
+- CORRECT WAY
+- INTERNALS
+- SOFTWARE ENGINEERING
+- TDD
+- OOP
+- FUNCTIONAL PROGRAMMING
+- TEXT PROCESSING
+- CRYPTOGRAPHY
+- WEB
+- GAMES
+- DATA STRUCTURES AND ALGORITHMS
+- DATA SCIENCE
+- COMPUTER VISION
+- VISUALISATIONS-FOCUSED
+- DISTRIBUTED SYSTEMS
+- MACHINE LEARNING & DEEP LEARNING
+- NATURAL LANGUAGE PROCESSING
+- PORTING TO PYTHON3
+- MISCELLANEOUS
+
+
 
 
 INTRODUCTORY MATERIALS
 ----------------------
-
 
 
 
@@ -35,7 +61,7 @@ INTRODUCTORY MATERIALS
 
 
 
-Allen Downey
+- Allen Downey
 
 
 
@@ -45,7 +71,7 @@ Allen Downey
 
 
 
- Anand Chitipothu
+- Anand Chitipothu
 
 
 
@@ -60,7 +86,7 @@ Allen Downey
 
 
 
- David Beazley
+- David Beazley
 
 
 
@@ -75,7 +101,7 @@ Allen Downey
 
 
 
- Fabrizio Romano - Packt
+- Fabrizio Romano - Packt
 
 
 
@@ -90,7 +116,7 @@ Learn Python Programming is a quick, thorough, and practical introduction to Pyt
 
 
 
-Charles R. Severance
+- Charles R. Severance
 
 
 
@@ -105,7 +131,7 @@ The goal of this book is to provide an Informatics-oriented introduction to prog
 
 
 
-Dr. Kristian Rother
+- Dr. Kristian Rother
 
 
 
@@ -120,7 +146,7 @@ The perfect introduction for completely new people
 
 
 
-Josh Cogliati
+- Josh Cogliati
 
 
 
@@ -135,7 +161,7 @@ Josh Cogliati
 
 
 
- Pieter Spronck 
+- Pieter Spronck 
 
 
 
@@ -150,7 +176,7 @@ Josh Cogliati
 
 
 
- Brian Heinold 
+- Brian Heinold 
 
 
 
@@ -165,7 +191,7 @@ Josh Cogliati
 
 
 
-Swaroop C H
+- Swaroop C H
 
 
 
@@ -180,7 +206,7 @@ Swaroop C H
 
 
 
- Muhammad Yasoob Ullah Khalid 
+- Muhammad Yasoob Ullah Khalid 
 
 
 
@@ -195,7 +221,7 @@ Swaroop C H
 
 
 
-Roberto Alcina
+- Roberto Alcina
 
 
 
@@ -210,7 +236,7 @@ This book tries to achieve only one thing: Show you a project go from **nothing
 
 
 
-Scott Grant
+- Scott Grant
 
 
 
@@ -225,7 +251,7 @@ Learn Python, Break Python is a hands-on introduction to the Python programming 
 
 
 
- John B. Schneider, Shira Lynn Broschat, Jess Dahmen 
+- John B. Schneider, Shira Lynn Broschat, Jess Dahmen 
 
 
 
@@ -240,7 +266,7 @@ Learn Python, Break Python is a hands-on introduction to the Python programming 
 
 
 
-Kenneth Reitz
+- Kenneth Reitz
 
 
 
@@ -265,7 +291,7 @@ Kenneth Reitz
 
 
 
-Jake VanderPlas - Oreilly
+- Jake VanderPlas - Oreilly
 
 
 
@@ -280,7 +306,7 @@ The book provides a whirlwind tour of some of Python’s essential syntax and se
 
 
 
-Kushal Das (Core Dev)
+- Kushal Das (Core Dev)
 
 
 
@@ -295,7 +321,7 @@ Kushal Das (Core Dev)
 
 
 
- Imad Pasha, Christopher Agostino 
+- Imad Pasha, Christopher Agostino 
 
 
 
@@ -310,7 +336,7 @@ Kushal Das (Core Dev)
 
 
 
- Obi Ike-Nwosu 
+- Obi Ike-Nwosu 
 
 
 
@@ -325,7 +351,7 @@ The python ecosystem is awash with books for beginners but few books target read
 
 
 
- Dave Kuhlman 
+- Dave Kuhlman 
 
 
 
@@ -340,7 +366,7 @@ The python ecosystem is awash with books for beginners but few books target read
 
 
 
- Lisa Tagliaferri 
+- Lisa Tagliaferri 
 
 
 
@@ -361,7 +387,7 @@ CONTINUATION
 
 
 
- Al Sweigart 
+- Al Sweigart 
 
 
 
@@ -376,7 +402,7 @@ More than a mere collection of advanced syntax and masterful tips for writing cl
 
 
 
- Dave Kuhlman 
+- Dave Kuhlman 
 
 
 
@@ -391,7 +417,7 @@ It shines with creating a parser with Plex
 
 
 
- Sundeep Agarwal 
+- Sundeep Agarwal 
 
 
 
@@ -412,7 +438,7 @@ PROJECTS-BASED
 
 
 
- Al Sweigart - No Starch Press
+- Al Sweigart - No Starch Press
 
 
 
@@ -427,7 +453,7 @@ If you've ever spent hours renaming files or updating hundreds of spreadsheet ce
 
 
 
- Al Sweigart - No Starch Press
+- Al Sweigart - No Starch Press
 
 
 
@@ -442,7 +468,7 @@ This book teaches the basics of recursion, exposes the ways it's often poorly ta
 
 
 
- Al Sweigart - No Starch Press
+- Al Sweigart - No Starch Press
 
 
 
@@ -457,7 +483,7 @@ This curated collection of simple Python projects lets you dive right in and mak
 
 
 
-Shantnu Tiwari
+- Shantnu Tiwari
 
 
 
@@ -472,7 +498,7 @@ Video processing DSP, machine learning and Rpi, this book is the next book Pytho
 
 
 
-Chris Meyers
+- Chris Meyers
 
 
 
@@ -493,7 +519,7 @@ CORRECT WAY
 
 
 
-Mike Pirnat
+- Mike Pirnat
 
 
 
@@ -508,7 +534,7 @@ Mike Pirnat
 
 
 
-Dane Hillard 
+- Dane Hillard 
 
 
 
@@ -518,7 +544,7 @@ Dane Hillard
 
 
 
-Internals
+INTERNALS
 ---------
 
 
@@ -529,7 +555,7 @@ Internals
 
 
 
-Obi Ike-Nwosu 
+- Obi Ike-Nwosu 
 
 
 
@@ -550,7 +576,7 @@ SOFTWARE ENGINEERING
 
 
 
-Leonardo Giordani - LeanPub. Also available on [pycabook.com](https://www.pycabook.com/)
+- Leonardo Giordani - LeanPub. Also available on [pycabook.com](https://www.pycabook.com/)
 
 
 
@@ -565,7 +591,7 @@ What is a good software architecture? Why should we bother structuring the code 
 
 
 
-QuantifiedCode
+- QuantifiedCode
 
 
 
@@ -580,7 +606,7 @@ Welcome, fellow Pythoneer! This is a small book of Python **anti-patterns** an
 
 
 
-Bruce Eckel
+- Bruce Eckel
 
 
 
@@ -595,7 +621,7 @@ Python 3 concepts, patterns and idioms. Addressed to the experienced Python prog
 
 
 
-Alexander Shvets, Andrei Boyanov
+- Alexander Shvets, Andrei Boyanov
 
 
 
@@ -610,7 +636,7 @@ Design patterns in Python divided in chapters with example, free on the link. Is
 
 
 
-Brandon Rhodes
+- Brandon Rhodes
 
 
 
@@ -625,7 +651,7 @@ A classic and respected book on DP in the Python community.
 
 
 
-Harry Percival, Bob Gregory
+- Harry Percival, Bob Gregory
 
 
 
@@ -648,7 +674,7 @@ TDD
 
 
 
-Harry Percival
+- Harry Percival
 
 
 
@@ -669,7 +695,7 @@ OOP
 
 
 
-Steve F. Lot
+- Steve F. Lot
 
 
 
@@ -684,7 +710,7 @@ Steve F. Lot
 
 
 
-Ashwin Pajankar, Sushant Garg - LeanPub
+- Ashwin Pajankar, Sushant Garg - LeanPub
 
 
 
@@ -705,7 +731,7 @@ FUNCTIONAL PROGRAMMING
 
 
 
-David Mertz
+- David Mertz
 
 
 
@@ -726,7 +752,7 @@ TEXT PROCESSING
 
 
 
-David Mertz
+- David Mertz
 
 
 
@@ -747,7 +773,7 @@ CRYPTOGRAPHY
 
 
 
-Al Sweigart - No Starch Press
+- Al Sweigart - No Starch Press
 
 
 
@@ -768,7 +794,7 @@ WEB
 
 
 
-Robert Picard
+- Robert Picard
 
 
 
@@ -803,7 +829,7 @@ This tutorial picks up where the previous tutorial left. It includes draft, dele
 
 
 
- Gaston C. Hillar - Packt
+- Gaston C. Hillar - Packt
 
 
 
@@ -818,7 +844,7 @@ This tutorial picks up where the previous tutorial left. It includes draft, dele
 
 
 
-Massimo Di Pierro
+- Massimo Di Pierro
 
 
 
@@ -833,7 +859,7 @@ Massimo Di Pierro
 
 
 
-Miguel Grinberg
+- Miguel Grinberg
 
 
 
@@ -848,7 +874,7 @@ Introduction to web development with Flask. A Flask classic!
 
 
 
-Allen Downey
+- Allen Downey
 
 
 
@@ -863,7 +889,7 @@ Same as Think Data Structures
 
 
 
-Douglas Starnes
+- Douglas Starnes
 
 
 
@@ -884,7 +910,7 @@ GAMES
 
 
 
-Al Sweigart - No Starch Press
+- Al Sweigart - No Starch Press
 
 
 
@@ -899,7 +925,7 @@ Al Sweigart - No Starch Press
 
 
 
-Al Sweigart - No Starch Press
+- Al Sweigart - No Starch Press
 
 
 
@@ -914,7 +940,7 @@ Al Sweigart - No Starch Press
 
 
 
-Sean M. Tracey - The mag Pi
+-Sean M. Tracey - The mag Pi
 
 
 
@@ -929,7 +955,7 @@ Python basics, sounds, physics and alien game, A simple mix.
 
 
 
-Paul Vincent Craven
+- Paul Vincent Craven
 
 
 
@@ -944,7 +970,7 @@ A cheerful guide to Python. Gleeful content. Demos of what students created make
 
 
 
-Jani Tiainen
+- Jani Tiainen
 
 
 
@@ -958,6 +984,26 @@ DATA STRUCTURES AND ALGORITHMS
 ------------------------------
 
 
+###  [Open Data Structures](https://www.aupress.ca/app/uploads/120226_99Z_Morin_2013-Open_Data_Structures.pdf)
+
+- Pat Morin
+
+There are plenty of books that teach introductory data structures. Some
+of them are very good. Most of them cost money, and the vast majority
+of computer science undergraduate students will shell out at least some
+cash on a data structures book.
+
+Several free data structures books are available online. Some are very
+good, but most of them are getting old. The majority of these books became free when their authors and/or publishers decided to stop updating them. Updating these books is usually not possible, for two reasons:
+(1) The copyright belongs to the author and/or publisher, either of whom
+may not allow it. (2) The source code for these books is often not available. That is, the Word, WordPerfect, FrameMaker, or LATEX source for
+the book is not available, and even the version of the software that handles this source may not be available.
+
+The goal of this project is to free undergraduate computer science students from having to pay for an introductory data structures book. I have
+decided to implement this goal by treating this book like an Open Source
+software project. The LATEX source, Java source, and build scripts for the
+book are available to download from the author’s website1 and also, more
+importantly, on a reliable source code management site.2
 
 
 ### [Problem Solving with Algorithms and Data Structures using Python](https://runestone.academy/runestone/books/published/pythonds/index.html)
@@ -965,7 +1011,7 @@ DATA STRUCTURES AND ALGORITHMS
 
 
 
-Brad Miller and David Ranum
+- Brad Miller and David Ranum
 
 
 
@@ -980,7 +1026,7 @@ Brad Miller and David Ranum
 
 
 
-Allen Downey
+- Allen Downey
 
 
 
@@ -997,7 +1043,7 @@ social systems. In particular, it focuses on complex systems, which are systems 
 
 
 
-Allen Downey
+- Allen Downey
 
 
 
@@ -1012,7 +1058,7 @@ Allen Downey
 
 
 
-Massimo Di Pierro
+- Massimo Di Pierro
 
 
 
@@ -1033,7 +1079,7 @@ COMPUTER VISION
 
 
 
- Jan Erik Solem - O'Reilly
+ - Jan Erik Solem - O'Reilly
 
 
 
@@ -1046,7 +1092,31 @@ Cameras are everywhere. Computer vision powers applications like image search, r
 DATA SCIENCE
 ------------
 
+### [Geographic Thinking for Data Scientists](https://geographicdata.science/book/intro.html)
 
+- Sergio Rey
+
+This book provides the tools, the methods, and the theory to meet the challenges of contemporary data science applied to geographic problems and data. Social media, new forms of data, and new computational techniques are revolutionizing social science. In the new world of pervasive, large, frequent, and rapid data, we have new opportunities to understand and analyze the role of geography in everyday life. This book provides the first comprehensive curriculum in geographic data science.
+
+### [Python for Data Analysis](https://wesmckinney.com/book/)
+
+- Wes McKinney
+
+This book is concerned with the nuts and bolts of manipulating, processing, cleaning, and crunching data in Python. My goal is to offer a guide to the parts of the Python programming language and its data-oriented library ecosystem and tools that will equip you to become an effective data analyst. While "data analysis" is in the title of the book, the focus is specifically on Python programming, libraries, and tools as opposed to data analysis methodology. This is the Python programming you need for data analysis.
+
+Sometime after I originally published this book in 2012, people started using the term data science as an umbrella description for everything from simple descriptive statistics to more advanced statistical analysis and machine learning. The Python open source ecosystem for doing data analysis (or data science) has also expanded significantly since then. There are now many other books which focus specifically on these more advanced methodologies. My hope is that this book serves as adequate preparation to enable you to move on to a more domain-specific resource.
+
+### [Elements of Data Science](https://allendowney.github.io/ElementsOfDataScience/index.html)
+
+- Allen Downey
+
+Elements of Data Science is an introduction to data science for people with no programming experience. My goal is to present a small, powerful subset of Python that lets you do real work with data as quickly as possible.
+
+I don’t assume that the reader knows anything about programming, statistics, or data science. When I use a term, I try to define it immediately, and when I use a programming feature, I try to explain it.
+
+This book is in the form of Jupyter notebooks. Jupyter is a software development tool you can run in a web browser, so you don’t have to install any software. A Jupyter notebook is a document that contains text, Python code, and results. So you can read it like a book, but you can also modify the code, run it, develop new programs, and test them.
+
+The notebooks contains exercises where you can practice what you learn. Most of the exercises are meant to be quick, but a few are more substantial.
 
 
 ### [Effective Pandas](https://leanpub.com/effective-pandas)
@@ -1054,7 +1124,7 @@ DATA SCIENCE
 
 
 
-Tom Augspurger
+- Tom Augspurger
 
 
 
@@ -1069,7 +1139,7 @@ Tom Augspurger
 
 
 
-Allen Downey
+- Allen Downey
 
 
 
@@ -1084,7 +1154,7 @@ Allen Downey
 
 
 
- Cam Davidson-Pilon 
+- Cam Davidson-Pilon 
 
 
 
@@ -1099,7 +1169,7 @@ The Bayesian method is the natural approach to inference, yet it is hidden from 
 
 
 
-Allen Downey
+- Allen Downey
 
 
 
@@ -1114,7 +1184,7 @@ Allen Downey
 
 
 
-Allen Downey
+- Allen Downey
 
 
 
@@ -1129,7 +1199,7 @@ Allen Downey
 
 
 
-Ron Zacharski
+- Ron Zacharski
 
 
 
@@ -1144,7 +1214,7 @@ Highly recommended book that takes your hand and explains the maths side of data
 
 
 
-Jake VanderPlas
+- Jake VanderPlas
 
 
 
@@ -1165,7 +1235,7 @@ VISUALISATIONS-FOCUSED
 
 
 
-Nicolas Rougier
+- Nicolas Rougier
 
 
 
@@ -1186,7 +1256,7 @@ DISTRIBUTED SYSTEMS
 
 
 
- Zachary Radtka, Donald Miner - Oreilly
+- Zachary Radtka, Donald Miner - Oreilly
 
 
 
@@ -1207,7 +1277,7 @@ MACHINE LEARNING & DEEP LEARNING
 
 
 
- Yuxi (Hayden) Liu - Packt
+- Yuxi (Hayden) Liu - Packt
 
 
 
@@ -1222,7 +1292,7 @@ MACHINE LEARNING & DEEP LEARNING
 
 
 
-Michael Nielsen
+- Michael Nielsen
 
 
 
@@ -1237,12 +1307,12 @@ The book will teach you about: Neural networks, a beautiful biologically-inspire
 
 
 
- Francois Chollet
+- Francois Chollet
 
 
 
 
- This book was written for anyone who wishes to explore deep learning from scratch or broaden their understanding of deep learning. Whether you’re a practicing machine-learning engineer, a software developer, or a college student, you’ll find value in these pages.
+This book was written for anyone who wishes to explore deep learning from scratch or broaden their understanding of deep learning. Whether you’re a practicing machine-learning engineer, a software developer, or a college student, you’ll find value in these pages.
 
 This book offers a practical, hands-on exploration of deep learning. It avoids mathematical notation, preferring instead to explain quantitative concepts via code snippets and to build practical intuition about the core ideas of machine learning and deep learning.
 
@@ -1259,8 +1329,7 @@ NATURAL LANGUAGE PROCESSING
 
 
 
-
- Rajesh Arumugam and Rajalingappaa Shanmugamani - Packt
+- Rajesh Arumugam and Rajalingappaa Shanmugamani - Packt
 
 
 
@@ -1275,7 +1344,7 @@ NATURAL LANGUAGE PROCESSING
 
 
 
-Steven Bird, Ewan Klein, Edward Loper
+- Steven Bird, Ewan Klein, Edward Loper
 
 
 
@@ -1297,7 +1366,7 @@ PORTING TO PYTHON3
 
 
 
-Lennart Regebro
+- Lennart Regebro
 
 
 
@@ -1318,7 +1387,7 @@ MISCELLANEOUS
 
 
 
- Sat Kumar Tomer 
+- Sat Kumar Tomer 
 
 
 
@@ -1333,7 +1402,7 @@ This book teaches you how to compute rainfall, precipitation, evaporation, River
 
 
 
- Jeff Chang, Brad Chapman, Iddo Friedberg, Thomas Hamelryck, Michiel de Hoon, Peter Cock, Tiago Antao, Eric Talevich, Bartek Wilczy´nski 
+- Jeff Chang, Brad Chapman, Iddo Friedberg, Thomas Hamelryck, Michiel de Hoon, Peter Cock, Tiago Antao, Eric Talevich, Bartek Wilczy´nski 
 
 
 
@@ -1348,7 +1417,7 @@ A BioPython tutorial and cookbook which teaches computational molecular biology 
 
 
 
-Allen Downey
+- Allen Downey
 
 
 
@@ -1363,7 +1432,7 @@ Allen Downey
 
 
 
-Tom D. De Smedt
+- Tom D. De Smedt
 
 
 
@@ -1378,7 +1447,7 @@ A blend of generative art, machine learning, NLP, algorithms and sentiment analy
 
 
 
- Robert Johansson 
+- Robert Johansson 
 
 
 
