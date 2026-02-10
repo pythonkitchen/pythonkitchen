@@ -21,6 +21,13 @@
   </url>
 
   <url>
+    <loc>https://www.pythonkitchen.com/why-nesterov-accelerated-gradient-converges-faster-than-momentum/</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.pythonkitchen.com/simple-json-parser/</loc>
     <lastmod>2025-02-15</lastmod>
     <changefreq>monthly</changefreq>

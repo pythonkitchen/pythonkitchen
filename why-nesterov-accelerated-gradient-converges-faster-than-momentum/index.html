@@ -79,33 +79,30 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Machine Learning Part 10: Naive Bayes Classification | Python Kitchen</title>
-  <meta name="description" content="Naive Bayes is a simple yet powerful classification algorithm based on Bayes’ Theorem. It’s particularly popular for text classification and spam filtering.
-Bay...">
-  <meta name="keywords" content="machine learning, naive bayes, bayes theorem, probability, classification, machine learning">
+  <title>Why Nesterov Accelerated Gradient Converges Faster Than Momentum | Python Kitchen</title>
+  <meta name="description" content="Gradient-based optimization lies at the heart of modern machine learning. From linear regression to deep neural networks, the efficiency of training depends hea...">
+  <meta name="keywords" content="optimization,gradient descent,nag,momentum,deep learning, machine learning, optimization">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://www.pythonkitchen.com/machine-learning-part-10-naive-bayes/">
-  <meta property="og:title" content="Machine Learning Part 10: Naive Bayes Classification">
-  <meta property="og:description" content="Naive Bayes is a simple yet powerful classification algorithm based on Bayes’ Theorem. It’s particularly popular for text classification and spam filtering.
-Bay...">
+  <meta property="og:url" content="https://www.pythonkitchen.com/why-nesterov-accelerated-gradient-converges-faster-than-momentum/">
+  <meta property="og:title" content="Why Nesterov Accelerated Gradient Converges Faster Than Momentum">
+  <meta property="og:description" content="Gradient-based optimization lies at the heart of modern machine learning. From linear regression to deep neural networks, the efficiency of training depends hea...">
   <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://www.pythonkitchen.com/machine-learning-part-10-naive-bayes/">
-  <meta property="twitter:title" content="Machine Learning Part 10: Naive Bayes Classification">
-  <meta property="twitter:description" content="Naive Bayes is a simple yet powerful classification algorithm based on Bayes’ Theorem. It’s particularly popular for text classification and spam filtering.
-Bay...">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/why-nesterov-accelerated-gradient-converges-faster-than-momentum/">
+  <meta property="twitter:title" content="Why Nesterov Accelerated Gradient Converges Faster Than Momentum">
+  <meta property="twitter:description" content="Gradient-based optimization lies at the heart of modern machine learning. From linear regression to deep neural networks, the efficiency of training depends hea...">
   <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <meta name='category' content='machine learning'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='subtitle' content='Machine Learning Part 10: Naive Bayes Classification'>
-  <meta name='pageKey' content='machine-learning-part-10-naive-bayes'>
+  <meta name='subtitle' content='Why Nesterov Accelerated Gradient Converges Faster Than Momentum'>
+  <meta name='pageKey' content='why-nesterov-accelerated-gradient-converges-faster-than-momentum'>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -175,13 +172,17 @@ Bay...">
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Machine Learning Part 10: Naive Bayes Classification</p>
+                    <p class="text-3xl" style="font-weight: 600;">Why Nesterov Accelerated Gradient Converges Faster Than Momentum</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2021-04-07 10:11:56" class="text-gray-500">April 7, 2021</time>
+                        <time datetime="2026-02-03 07:00:00" class="text-gray-500">February 3, 2026</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
                             machine learning
+                        </a>
+                        
+                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                            optimization
                         </a>
                         
                     </div>
@@ -201,57 +202,127 @@ Bay...">
                     
                     <br>
                     <article>
-                        <p>Naive Bayes is a simple yet powerful classification algorithm based on <strong>Bayes’ Theorem</strong>. It’s particularly popular for text classification and spam filtering.</p>
-<h2>Bayes’ Theorem ⚱</h2>
-<p>The heart of this algorithm is Bayes’ Theorem, which describes the probability of an event based on prior knowledge of conditions that might be related to the event.</p>
-<p>$$P(B|A) = \frac{P(A|B) \cdot P(B)}{P(A)}$$</p>
-<p>In machine learning terms, we can think of this as:
-$$P(\text{Class} | \text{Data}) = \frac{P(\text{Data} | \text{Class}) \cdot P(\text{Class})}{P(\text{Data})}$$</p>
-<h3>Why “Naive”?</h3>
-<p>The algorithm is called “Naive” because it assumes that all features are <strong>independent</strong> of each other. In reality, features are often related (e.g., if you see “Machine” and “Learning” in a text, they aren’t independent), but despite this “naive” assumption, the algorithm works surprisingly well!</p>
-<hr/>
-<h2>Example: Are you ill? 🤒</h2>
-<p>Imagine a new rare disease called “Scarius.” You have a fever—what is the probability you actually have Scarius?</p>
+                        <p>Gradient-based optimization lies at the heart of modern machine learning. From linear regression to deep neural networks, the efficiency of training depends heavily on how quickly and stably an optimizer can minimize a loss function. While vanilla gradient descent is conceptually simple, it is often too slow and unstable for practical use. This is why momentum-based methods were introduced.</p>
+<p>Momentum improves convergence by accumulating past gradients, but it still suffers from overshooting and oscillations, especially in ravines and ill-conditioned landscapes. Nesterov Accelerated Gradient (NAG) refines this idea by adding a simple yet powerful lookahead mechanism. In practice and theory, this small modification leads to faster and more stable convergence.</p>
+<p>This article explains <em>why</em> Nesterov Accelerated Gradient converges faster than classical momentum, focusing on intuition, geometry, and optimization dynamics rather than surface-level equations.</p>
+<h1>Table of Content</h1>
+<ol>
+<li>Gradient Descent and the Need for Momentum  </li>
+<li>Classical Momentum: Strengths and Limitations  </li>
+<li>Nesterov Accelerated Gradient: The Key Idea  </li>
+<li>Lookahead Gradients and Error Correction  </li>
+<li>Geometric Intuition Behind Faster Convergence  </li>
+<li>NAG vs Momentum: Side-by-Side Comparison  </li>
+<li>When NAG Helps the Most  </li>
+<li>Common Misconceptions  </li>
+<li>Key Takeaways  </li>
+<li>Conclusion</li>
+</ol>
+<h1>Gradient Descent and the Need for Momentum</h1>
+<p>In standard gradient descent, parameters are updated by moving in the direction of the negative gradient. While this guarantees progress for convex problems under suitable conditions, it is often inefficient in practice.</p>
+<p>Loss landscapes frequently contain:</p>
 <ul>
-<li><strong>P(Scarius):</strong> The probability of having the disease (it’s rare: 0.0001).</li>
-<li><strong>P(Fever | Scarius):</strong> The probability that you have a fever if you have the disease (let’s say 0.96).</li>
-<li><strong>P(Fever):</strong> The probability that any random person has a fever (let’s say 0.1).</li>
+<li>Long, narrow valleys</li>
+<li>High curvature in one direction and low curvature in another</li>
+<li>Noisy gradients in stochastic settings</li>
 </ul>
-<p><strong>Calculation:</strong>
-$$P(\text{Scarius} | \text{Fever}) = \frac{0.96 \cdot 0.0001}{0.1} = 0.00096$$</p>
-<p>Even though you have the symptom, the probability you have this specific rare disease is still less than 0.1%! This shows why considering the “Prior” ($P(B)$) is so important.</p>
-<h2>Summary</h2>
-<p>Naive Bayes is:
-*   <strong>Fast:</strong> It requires a small amount of training data.
-*   <strong>Scalable:</strong> It handles high-dimensional data well.
-*   <strong>Effective:</strong> Great for things like spam detection or sentiment analysis.</p>
-<h2>Exercise</h2>
-<p>Try to derive Bayes’ Theorem using a Venn diagram. It’s a great way to visualize how conditional probability works!</p>
+<p>In such cases, vanilla gradient descent oscillates heavily and makes slow progress along the shallow directions. Momentum was introduced to address exactly this issue by smoothing updates over time.</p>
+<h1>Classical Momentum: Strengths and Limitations</h1>
+<p>Momentum introduces a velocity term that accumulates past gradients. Instead of moving purely based on the current gradient, updates are influenced by a running average of previous gradients.</p>
+<p>This has two major benefits:</p>
+<ol>
+<li>Faster movement along consistent directions</li>
+<li>Reduced oscillations in steep directions</li>
+</ol>
+<p>However, classical momentum has a critical weakness:<br/>
+it evaluates the gradient <strong>at the current position</strong>, even though the update will move the parameters forward due to momentum.</p>
+<p>As a result:</p>
+<ul>
+<li>The optimizer often overshoots the minimum</li>
+<li>Corrections happen <em>after</em> the mistake is made</li>
+<li>Oscillations are reduced but not eliminated</li>
+</ul>
+<p>This delayed correction is precisely where Nesterov Accelerated Gradient improves upon momentum.</p>
+<h1>Nesterov Accelerated Gradient: The Key Idea</h1>
+<p>The defining idea behind NAG is simple:</p>
+<p><strong>Instead of computing the gradient at the current position, compute it at the expected future position.</strong></p>
+<p>That future position is where momentum is about to take the parameters.</p>
+<p>In other words:
+- Momentum says: “Move, then see where you ended up.”
+- NAG says: “Look ahead, then decide how to move.”</p>
+<p>This single change introduces anticipation into the optimization process.</p>
+<h1>Lookahead Gradients and Error Correction</h1>
+<p>In classical momentum, the optimizer realizes it overshot the minimum only <em>after</em> it has already moved too far. The correction comes late.</p>
+<p>With NAG:</p>
+<ul>
+<li>The gradient is evaluated at the lookahead position</li>
+<li>If the optimizer is about to overshoot, the gradient already reflects that</li>
+<li>The update is adjusted <em>before</em> the overshoot occurs</li>
+</ul>
+<p>This early correction leads to:</p>
+<ul>
+<li>Smaller oscillations</li>
+<li>Better alignment with the true descent direction</li>
+<li>More stable convergence near minima</li>
+</ul>
+<p>In effect, NAG behaves like a momentum method with built-in braking.</p>
+<h1>Geometric Intuition Behind Faster Convergence</h1>
+<p>A useful mental model is to imagine rolling a ball down a curved valley.</p>
+<ul>
+<li>Momentum is like a heavy ball that keeps rolling forward even when the slope changes.</li>
+<li>NAG is like a ball whose driver looks ahead and starts turning the wheel early.</li>
+</ul>
+<p>In narrow valleys:</p>
+<ul>
+<li>Momentum oscillates side to side</li>
+<li>NAG anticipates the turn and follows the valley floor more closely</li>
+</ul>
+<p>This tighter trajectory explains why NAG converges faster, especially in problems with ill-conditioned Hessians.</p>
+<h1>NAG vs Momentum: Side-by-Side Comparison</h1>
+<p>Classical Momentum:</p>
+<ul>
+<li>Reacts to gradients at the current position</li>
+<li>Corrects errors after overshooting</li>
+<li>Can oscillate near minima</li>
+</ul>
+<p>Nesterov Accelerated Gradient:</p>
+<ul>
+<li>Uses gradients from the lookahead position</li>
+<li>Corrects errors before they happen</li>
+<li>Produces smoother, more stable updates</li>
+</ul>
+<p>The difference is subtle in equations but significant in optimization behavior.</p>
+<h1>When NAG Helps the Most</h1>
+<p>NAG tends to outperform classical momentum when:</p>
+<ul>
+<li>The loss surface has high curvature</li>
+<li>The problem is poorly conditioned</li>
+<li>Fast convergence is required without excessive tuning</li>
+<li>Training deep neural networks with smooth loss landscapes</li>
+</ul>
+<p>In simple or well-conditioned problems, the difference may be minor, but in deep learning settings it often becomes noticeable.</p>
+<h1>Common Misconceptions</h1>
+<p>-&gt; <em>“NAG is just momentum with a different formula”</em><br/>
+While the equations look similar, the optimization dynamics are fundamentally different due to the lookahead gradient.</p>
+<p>-&gt; <em>“NAG is obsolete because Adam exists”</em><br/>
+Adaptive optimizers solve a different problem. NAG remains highly relevant, especially in theoretical optimization and large-batch training.</p>
+<p>-&gt; <em>“NAG always converges faster”</em><br/>
+Like all optimizers, NAG depends on learning rates and problem structure. It is faster in many but not all cases.</p>
+<h1>Key Takeaways</h1>
+<ol>
+<li>Momentum accelerates gradient descent by accumulating past gradients.</li>
+<li>Classical momentum reacts too late to changes in the loss surface.</li>
+<li>Nesterov Accelerated Gradient computes gradients at a lookahead position.</li>
+<li>This anticipation leads to earlier corrections and smoother trajectories.</li>
+<li>Faster convergence comes from better geometric alignment, not magic.</li>
+</ol>
+<h1>Conclusion</h1>
+<p>Nesterov Accelerated Gradient improves upon classical momentum by introducing foresight into gradient-based optimization. By evaluating gradients at the anticipated future position, NAG corrects overshooting before it happens, resulting in faster and more stable convergence.</p>
+<p>This seemingly small change has profound effects on optimization dynamics, especially in high-dimensional and ill-conditioned problems common in machine learning. Understanding <em>why</em> NAG works provides deeper insight into optimization itself and helps practitioners choose the right tool for efficient training.</p>
 
                         <div class="mt-16 border-t border-gray-100 pt-10">
                             <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
                             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                                
-                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
-                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2026-02-03 07:00:00" class="text-gray-400 uppercase tracking-wider">February 3, 2026</time>
-                                    </div>
-                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
-                                        <a href="/why-nesterov-accelerated-gradient-converges-faster-than-momentum">
-                                            <span class="absolute inset-0"></span>
-                                            Why Nesterov Accelerated Gradient Converges Faster Than Momentum
-                                        </a>
-                                    </h3>
-                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Gradient-based optimization lies at the heart of modern machine learning. From linear regression to ...
-                                    </p>
-                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
-                                        Read article
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
-                                        </svg>
-                                    </div>
-                                </div>
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
@@ -288,6 +359,27 @@ One way is to upload your PDF t...
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
                                         LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
 If you...
+                                    </p>
+                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
+                                        Read article
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
+                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
+                                        <time datetime="2023-02-27 10:10:51" class="text-gray-400 uppercase tracking-wider">February 27, 2023</time>
+                                    </div>
+                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
+                                        <a href="/linear-algebra-applications-in-machine-learning">
+                                            <span class="absolute inset-0"></span>
+                                            Linear Algebra Applications in Machine Learning
+                                        </a>
+                                    </h3>
+                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
+                                        We can take linear algebra as a backbone of machine learning, as almost all the machine learning tec...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article
