@@ -1,4 +1,5 @@
 https://www.pythonkitchen.com/
+https://www.pythonkitchen.com/legally-free-python-books-list/
 https://www.pythonkitchen.com/publish-python-package-using-uv-pypi-token/
 https://www.pythonkitchen.com/simple-json-parser/
 https://www.pythonkitchen.com/json-response-gemini-google-genai/
@@ -95,7 +96,6 @@ https://www.pythonkitchen.com/python-running-makefile-on-windows/
 https://www.pythonkitchen.com/run-flask-linux-only-windows-afpy/
 https://www.pythonkitchen.com/shopyo-understand-advanced-flask-app/
 https://www.pythonkitchen.com/pyside2-pyqt5-extract-data-from-qformlayout/
-https://www.pythonkitchen.com/legally-free-python-books-list/
 https://www.pythonkitchen.com/free-python-courses-list/
 https://www.pythonkitchen.com/upload-your-package-to-pypi/
 https://www.pythonkitchen.com/packaging-an-sqlite-db-included-crud-pyqt5-app-using-pyinstaller/
