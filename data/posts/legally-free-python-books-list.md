@@ -11,16 +11,11 @@ Here is my personal list of legally free Python books. **Warning: Packt free boo
 
 
 
-Some popular listed books like Python Module of the Week is not a book and Tango with Django 1.7 is outdated. Materials which provide only some free chapters are not free books. Docs manuals are docs manuals, you'd have to include a quarter of pypi's packages manuals then. github projects are gihub projects unless it's a book. Mark pilgrim ran away so should we from his book. We don't want some illegal 100+ free list (Mark Lutz books are not free mind you), you could include all Python books hosted on drive then. Python2 is past, we passed over. Fullstackpython's list is a collection of various sites' articles, not a book. Really short books more qualified as leaflets did not make it. Such materials have been deliberately left out. What remains are books that you'll enjoy!
-
-
-
-
-Note: was pythonmembers.club before, so if you have the domain's link, please update
-
+Some popular listed books like Python Module of the Week is not a book and Tango with Django 1.7 is outdated. Materials which provide only some free chapters are not free books. Docs manuals are docs manuals, you'd have to include a quarter of pypi's packages manuals then. github projects are gihub projects unless it's a book. We don't want some illegal 100+ free list (Mark Lutz books are not free mind you), you could include all Python books hosted on drive then. Python2 is past, we passed over. Fullstackpython's list is a collection of various sites' articles, not a book. Really short books more qualified as leaflets did not make it. Such materials have been deliberately left out. What remains are books that you'll enjoy!
 
 Let's start! **Click on the titles to view/download the book.**
 
+Current books: 88
 
 Table of Content
 ================
@@ -56,7 +51,7 @@ INTRODUCTORY MATERIALS
 
 
 
-###  [Think Python](http://greenteapress.com/thinkpython2/thinkpython2.pdf)
+### [Think Python](http://greenteapress.com/thinkpython2/thinkpython2.pdf)
 
 
 
@@ -109,6 +104,13 @@ INTRODUCTORY MATERIALS
 Learn Python Programming is a quick, thorough, and practical introduction to Python - an extremely flexible and powerful programming language that can be applied to many disciplines. You will begin by learning the fundamentals of Python so that you have a rock-solid foundation to build upon. Covers some data science, GUI and web (Django).
 
 
+### [Dive Into Python 3](https://diveintopython3.net/)
+
+- Mark Pilgrim
+
+A book published by Apress covering beginner topics including a special focus on generators and iterators.
+
+Contributed by `u/ou_ryperd`.
 
 
 ### [Python For Everybody](http://do1.dr-chuck.com/pythonlearn/EN_us/pythonlearn.pdf)
@@ -669,7 +671,7 @@ TDD
 
 
 
-###  [Test-Driven Web Development with Python](https://www.obeythetestinggoat.com/pages/book.html)
+### [Test-Driven Web Development with Python](https://www.obeythetestinggoat.com/pages/book.html)
 
 
 
@@ -1272,7 +1274,7 @@ MACHINE LEARNING & DEEP LEARNING
 
 
 
-###  [Python Machine Learning By Example](https://www.packtpub.com/free-ebooks/python-machine-learning-example)
+### [Python Machine Learning By Example](https://www.packtpub.com/free-ebooks/python-machine-learning-example)
 
 
 
