@@ -287,22 +287,6 @@ Learn Python, Break Python is a hands-on introduction to the Python programming 
 
 
 
-
-### [A Whirlwind Tour of Python](https://www.oreilly.com/programming/free/files/a-whirlwind-tour-of-python.pdf)
-
-
-
-
-- Jake VanderPlas - Oreilly
-
-
-
-
-The book provides a whirlwind tour of some of Python’s essential syntax and semantics, built-in data types and structures, function definitions, control flow statements, and other aspects of the language. My aim is that readers will walk away with a solid foundation from which to explore the data science stack just outlined. 
-
-
-
-
 ### [Python For You and Me](https://pymbook.readthedocs.io/en/latest/)
 
 
@@ -512,22 +496,6 @@ Video processing DSP, machine learning and Rpi, this book is the next book Pytho
 
 CORRECT WAY
 -----------
-
-
-
-
-### [How to Make Mistakes in Python](https://www.oreilly.com/programming/free/files/how-to-make-mistakes-in-python.pdf)
-
-
-
-
-- Mike Pirnat
-
-
-
-
- Even the best programmers make mistakes, and experienced programmer Mike Pirnat has made his share during 15+ years with Python. Some have been simple and silly; others were embarrassing and downright costly. In this O’Reilly report, he dissects some of his most memorable blunders, peeling them back layer-by-layer to reveal just what went wrong. 
-
 
 
 
