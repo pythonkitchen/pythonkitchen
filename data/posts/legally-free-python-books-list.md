@@ -491,8 +491,14 @@ Video processing DSP, machine learning and Rpi, this book is the next book Pytho
 
  Python for Fun turns 16 this year. From the first project "Lisp in Python" to the current latest "Binary Trees and Functional Programming", the site is and remains a collection of fairly small projects created mostly for fun. They are aimed at the intermediate programmer; people who know Python and are fairly comfortable with OOP and perhaps a bit of basic recursion. Most programs are quite short, generally a few pages of code and all of the projects are accompanied with a write-up. 
 
+### [Tiny Python Projects](https://tinypythonprojects.com/#/)
 
+- Ken Youens-Clark
 
+	
+Tiny Python Projects is a progression of coding challenges designed to take you from novice to Pythonista. There are 22 programs for you to write that include tests so you know when you have solved the problems correctly. So really you'll be learning Python and how to test programs. We'll also talk about how to parameterize our programs so that they are flexible and documented.
+
+Contributed by `u/liam_darach`
 
 CORRECT WAY
 -----------
@@ -1067,6 +1073,14 @@ DATA SCIENCE
 - Sergio Rey
 
 This book provides the tools, the methods, and the theory to meet the challenges of contemporary data science applied to geographic problems and data. Social media, new forms of data, and new computational techniques are revolutionizing social science. In the new world of pervasive, large, frequent, and rapid data, we have new opportunities to understand and analyze the role of geography in everyday life. This book provides the first comprehensive curriculum in geographic data science.
+
+### [An Introduction to Statistical Learning](https://www.statlearning.com/)
+
+- Gareth James, Daniela Witten, Trevor Hastie,Rob Tibshirani, Jonathan Taylor
+
+As the scale and scope of data collection continue to increase across virtually all fields, statistical learning has become a critical toolkit for anyone who wishes to understand data. An Introduction to Statistical Learning provides a broad and less technical treatment of key topics in statistical learning. This book is appropriate for anyone who wishes to use contemporary tools for data analysis. 
+
+Contributed by `u/Difference_Klutzy`
 
 ### [Python for Data Analysis](https://wesmckinney.com/book/)
 
