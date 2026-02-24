@@ -2,8 +2,9 @@ title: Upload your package to Pypi
 slug: upload-your-package-to-pypi
 pub: 2020-01-07 19:27:36
 authors: arj
-tags: pypi,twine
-category: packaging &amp; distribution
+tags: pypi, packaging, software delivery
+category: devops
+related_posts: publishing-using-uv,rye-package-manager,copy-files-to-aws-ec2
 
 
 To upload your project to Pypi, this assumes you have your setup.py ready

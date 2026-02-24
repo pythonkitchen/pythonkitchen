@@ -2,8 +2,9 @@ title: AdaBoost vs. Naive Bayes Algorithms in Machine Learning
 slug: adaboost-vs-naive-bayes-algorithms-in-machine-learning
 pub: 2023-01-20 07:22:29
 authors: parthshukla
-tags: 
-category: data science,machine learning
+tags: ensemble methods, classification, model comparison
+category: machine learning
+related_posts: blending-algorithms-in-machine-learning,machine-learning-part-10-naive-bayes,logistic-regression-vs-k-nearest-neighbors-in-machine-learning
 
 In machine learning, the algorithm plays a significant role while training and building a successful model. According to the data and its behavior, a proper machine learning algorithm should be selected for a better ad accurate model. Many choices are available in machine learning to use algorithms with hyperparameter tuning, making the algorithm selection process complex and confusing.
 

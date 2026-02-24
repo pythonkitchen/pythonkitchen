@@ -1,10 +1,15 @@
-title: How to define prefect deployments
+title: How to Define Prefect Deployments (2026)
 slug: how-define-prefect-deployments
-pub: 2024-07-03 19:00:00
+pub: 2026-01-03 19:00:00
 authors: arj
-tags: prefect, orchestration, workflow automation
+tags: prefect, automation, devops
 category: data engineering
-related_posts: how-to-define-prefect-deployment,celery-task-asyncresult-no-attribute,how-to-set-task-id-in-celery
+related_posts: define-prefect-deployment,how-to-query-task-by-id-in-celery,celery-task-asyncresult-no-attribute
+
+### TL;DR: Define Prefect Deployments
+*   **What**: Metadata that tells the Prefect server how and when to run a specific flow.
+*   **Method**: Use `.serve()` on a flow object for local long-running processes.
+*   **CLI**: Trigger runs using `prefect deployment run 'name'`.
 
 The [Prefect](https://www.prefect.io/) documentation about deplyments are super vague. This post explains how to add deployments.
 
@@ -151,3 +156,12 @@ If you go to the prefect server you can see:
 
 You can click on the toggle to activate then press the run button or select interval, which can also be defined when serving
 
+### FAQ
+**Q: What is the difference between a Flow and a Deployment?**
+A: A Flow is the logic; a Deployment is the plan for *how* the flow should be executed (schedule, infrastructure, parameters).
+
+**Q: Can I schedule a deployment via code?**
+A: Yes, using the `.serve(..., cron="0 * * * *")` argument or via the UI.
+
+**Q: Where do the logs go?**
+A: Logs are captured by the Prefect server and can be viewed in the UI dashboard shown in the screenshots above.

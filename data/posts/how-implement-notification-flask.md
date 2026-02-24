@@ -2,8 +2,9 @@ title: How to implement notification in Flask
 slug: how-implement-notification-flask
 pub: 2021-02-24 09:29:14
 authors: arj
-tags: 
-category: flask,shopyo
+tags: flask, backend, messaging
+category: web development
+related_posts: how-implement-beautiful-notifications-flask,integrate-tinymce-5-with-flask,p5js-with-flask-socket-io
 
 Implementing notifications in Flask goes way beyond using flash. You have to add this snippet in your templates:
 

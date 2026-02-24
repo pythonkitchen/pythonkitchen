@@ -2,8 +2,9 @@ title: Tile-Based Game Map Rendering with Processing.py
 slug: game-map-rendering
 pub: 2018-05-29 05:20:26
 authors: arj
-tags: python, processing.py, game-dev, tile-map, beginners
-category: canvas theory, processing.py
+tags: graphics, rendering, level design
+category: game development
+related_posts: generating-unintelligent-random-maps,translating-location-to-map-coordinates,display-most-frequent-words-python-pygame
 
 Whether you're building a classic RPG or a puzzle game, **tile-based rendering** is one of the most efficient ways to create large, structured game worlds. Instead of drawing every pixel manually, we divide the world into a grid of "tiles."
 

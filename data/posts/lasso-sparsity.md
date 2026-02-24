@@ -2,8 +2,9 @@ title: Why Does Lasso (L1) Regression Create Sparsity?
 slug: lasso-sparsity
 pub: 2022-11-17 03:14:41
 authors: parthshukla
-tags: lasso regression,sparsity
+tags: regression, regularization, mathematics
 category: machine learning
+related_posts: machine-learning-part-3-regression,principle-component-analysis-in-machine-learning,10-classification-cost-functions-in-machine-learning
 
 The Lasso regression is a [regularization](https://en.wikipedia.org/wiki/Regularization_(mathematics) "regularization") technique and a type of regression that is well-suited for models showing high levels of multicollinearity. It is also known as the L1 regularization technique. This technique is often used when there is a high number of features present in the dataset, as this technique can automatically perform feature selection. [[Read More](https://machinelearningmastery.com/lasso-regression-with-python/ "Read More")]
 

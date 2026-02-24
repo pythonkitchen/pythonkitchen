@@ -2,8 +2,9 @@ title: Python-efl Custom Elementary Widget
 slug: python-efl-9
 pub: 2021-10-22 18:55:51
 authors: arj
-tags: 
-category: python-efl
+tags: efl, enlightenment, series
+category: gui development
+related_posts: python-efl-8,python-efl-7,python-efl-1
 
 Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
 

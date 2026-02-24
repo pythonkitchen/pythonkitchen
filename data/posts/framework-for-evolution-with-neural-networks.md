@@ -2,8 +2,9 @@ title: Biosim4: Framework For Evolution With Neural Networks
 slug: framework-for-evolution-with-neural-networks
 pub: 2022-10-12 12:19:03
 authors: abdulkhan
-tags: 
-category: machine learning
+tags: evolutionary algorithms, neural networks, research
+category: artificial intelligence
+related_posts: machine-learning-part-9-neural-networks,what-is-perceptron-in-deep-learning,how-to-run-tencents-hunyuan-video-model-using-python
 
 **Biosim4** is a project in which there's a 2-dimensional world where creatures with neural brains live in it. They have genomes (complete genetic information) that they pass on from one generation to the next generation, And these creatures have neural network brains that govern their behaviour. This project aims to try setting up the conditions necessary for evolution to occur and then see what happens next. Would the creatures evolve their brains in response to their environment? This article will provide you with detailed information about the code structure, functionality and overall understanding of evolution connecting with neural networks. Note that we won't be seeing an actual simulation here. The best thing to do is to watch the video given above, This article is only for understanding the code structure of this program, But before we read the code, let's brush up on our basics on evolution first!
 

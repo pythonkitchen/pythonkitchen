@@ -2,8 +2,9 @@ title: How to implement beautiful notifications in Flask
 slug: how-implement-beautiful-notifications-flask
 pub: 2021-02-24 09:40:49
 authors: arj
-tags: 
-category: flask,shopyo
+tags: flask, ui/ux, notifications
+category: web development
+related_posts: how-implement-notification-flask,integrate-tinymce-5-with-flask,how-to-define-global-template-variables-in-flask
 
 Since you already know [how to implement notifications](https://www.pythonkitchen.com/how-implement-notification-flask/), let's see how to implement beautiful notifications in Flask.
 

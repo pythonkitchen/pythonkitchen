@@ -2,8 +2,9 @@ title: How to copy files to AWS Ec2
 slug: copy-files-aws-ec2
 pub: 2024-11-05 22:10:00
 authors: arj
-tags: 
-category: devops
+tags: aws, ec2, devops, ssh
+category: cloud computing
+related_posts: how-to-ssh-into-ec2-instance,install-azure-cli-mint-22-wilma,upload-your-package-to-pypi
 
 To copy files to ec2, use the included by default scp tool in linux
 

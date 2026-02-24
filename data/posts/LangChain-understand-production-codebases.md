@@ -2,8 +2,9 @@ title: Understand langChain to Quickly Get Started with Production Codebases
 slug: LangChain-understand-production-codebases
 pub: 2023-11-13 09:31:20
 authors: arj
-tags: 
-category: data science,machine learning
+tags: langchain, software architecture, code analysis
+category: artificial intelligence
+related_posts: chat-own-data-chatgpt-langchain,json-response-google-genai,how-to-run-tencents-hunyuan-video-model-using-python
 
 LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
 If you want to quickly get started with LangChain as maybe like me you have production in front of you, then i hope that this post will help!

@@ -2,8 +2,9 @@ title: Why I Prefer Rye: Rye v/s PDM v/s Poetry
 slug: why-rye-over-pdm-poetry
 pub: 2024-03-14 07:00:00
 authors: arj
-tags: rye
-category: packaging
+tags: rye, package management, toolchain
+category: devops
+related_posts: install-pipx-mint-ubuntu,publishing-using-uv,venv-usage-on-windows-activate-and-deactivate
 
 Rye is impressive both as a package manager and as an onboarding tool for Python projects. I have done quite some workshops/sessions and one main pain point is getting Python up and running. Rye in addition to managing dependencies, also manages Python versions. And, being written in Rust guarantees some out-of-the-world speed. It also imports the cargo experience to Python.
 

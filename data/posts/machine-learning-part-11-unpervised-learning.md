@@ -2,8 +2,9 @@ title: Machine Learning Part 11: Unsupervised Learning and Clustering
 slug: machine-learning-part-11-unpervised-learning
 pub: 2021-04-07 10:12:52
 authors: arj
-tags: machine learning, unsupervised learning, clustering, k-means
+tags: unsupervised learning, clustering, pattern recognition
 category: machine learning
+related_posts: machine-learning-part-12-association-analysis,principle-component-analysis-in-machine-learning,generating-unintelligent-random-maps
 
 So far, we've focused on Supervised Learning. Now, we enter the world of **Unsupervised Learning**, where the machine is given data without any labels and must find patterns on its own.
 

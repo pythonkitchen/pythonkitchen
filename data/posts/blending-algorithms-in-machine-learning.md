@@ -2,8 +2,9 @@ title: Blending Algorithms in Machine Learning
 slug: blending-algorithms-in-machine-learning
 pub: 2022-11-30 12:56:23
 authors: parthshukla
-tags: blending,data science,ensembles,stacking
-category: data science,machine learning
+tags: ensemble learning, model stacking, blending
+category: machine learning
+related_posts: adaboost-vs-naive-bayes-algorithms-in-machine-learning,machine-learning-part-7-random-forests-explained,linear-regression-vs-decision-trees-vs-support-vector-machines
 
 The Ensemble technique is one of the best-performing techniques used in the field of machine learning for getting better results on complex types of datasets. There are many ensemble techniques available that use multiple machine-learning algorithms for training on the same dataset and return great results compared to the single normal machine-learning algorithms.
 

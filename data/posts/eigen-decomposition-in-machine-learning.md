@@ -2,8 +2,9 @@ title: Eigen Decomposition in Machine Learning
 slug: eigen-decomposition-in-machine-learning
 pub: 2023-02-01 11:33:43
 authors: parthshukla
-tags: data science,eigen decomposition,linear algebra
-category: data science,machine learning
+tags: linear algebra, eigenvalues, pca
+category: mathematics
+related_posts: linear-algebra-applications-in-machine-learning,principle-component-analysis-in-machine-learning,decoding-symmetric-indefinite-matrices-in-python
 
 Matrix decomposition in linear algebra is one of the most valuable techniques for reducing the matrix into smaller parts. In matrix decomposition, the eigendecomposition is a fundamental concept that decomposes the matrix in **eigen values and eigen vectors**. This type of **decomposition** technique plays an essential role in techniques like Principle component analysis where there is a need for dimensionality reduction of the data.
 

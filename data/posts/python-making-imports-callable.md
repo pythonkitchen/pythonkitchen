@@ -2,8 +2,9 @@ title: Python: Making Imports Callable
 slug: python-making-imports-callable
 pub: 2021-10-21 17:19:06
 authors: arj
-tags: 
-category: snippets
+tags: metaprogramming, imports, advanced
+category: software engineering
+related_posts: python-generators-in-depth,zen-of-python-in-depth,notes-of-get-your-resources-faster-with-importlib-resources-by-barry-warsaw
 
 I wanted to do
 

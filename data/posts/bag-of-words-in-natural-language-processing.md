@@ -2,8 +2,9 @@ title: Bag of Words (BoW) in NLP: A Deep Dive into Text Vectorization
 slug: bag-of-words-in-natural-language-processing
 pub: 2023-06-28 04:34:20
 authors: parthshukla
-tags: nlp, bag-of-words, vectorization, scikit-learn, python, text-analysis
-category: data science
+tags: text representation, vectorization, basics
+category: nlp
+related_posts: tfidf-vectorizers-in-natural-language-processing,word2vec-vectorizer-in-natural-language-processing,chatterbot-google-colab-train-english-corpus
 
 If you are trying to build a spam filter, a sentiment analyzer, or any machine learning model that processes text, you face an immediate problem: **Machine Learning algorithms cannot understand text.** They only understand numbers.
 

@@ -2,8 +2,9 @@ title: Data Scaling Techniques in Machine Learning
 slug: data-scaling-techniques-in-machine-learning
 pub: 2023-01-26 03:34:30
 authors: parthshukla
-tags: data science,machine learning,scaling
-category: data science,machine learning
+tags: preprocessing, normalization, standardization
+category: machine learning
+related_posts: preparing-an-excel-file-for-analysis-using-pandas,measures-in-statistics-for-data-science,machine-learning-part-1-introduction
 
 Data and its quality affect machine learning models and their accuracy, and the quality of the data can not be well in some types of problems which can be solved by machine learning. Here the scale of the data is also represented as the quality of the data, which needs to be expected while training the machine learning model. If the **scale** of the data is not normal then some techniques are applied to make it of the same scale.
 

@@ -2,8 +2,9 @@ title: Free Python Courses List
 slug: free-python-courses-list
 pub: 2020-01-19 12:19:52
 authors: arj
-tags: 
-category: courses
+tags: learning, resources, collections
+category: education
+related_posts: legally-free-python-books-list,python-engineering-articles,whats-new-in-python-3-9-alpha2
 
 
 Here is a list of Python free courses that i maintain

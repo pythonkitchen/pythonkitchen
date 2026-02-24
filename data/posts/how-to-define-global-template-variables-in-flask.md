@@ -2,8 +2,9 @@ title: How to Define Global Template Variables in Flask
 slug: how-to-define-global-template-variables-in-flask
 pub: 2021-02-24 08:10:13
 authors: arj
-tags: flask,jinja2,templates,context processor
-category: flask
+tags: flask, jinja2, templates
+category: web development
+related_posts: how-to-use-flask-admin-with-flask-login,how-implement-beautiful-notifications-flask,how-to-have-django-packages-in-flask
 
 When building Flask applications, it is very common to reuse the same variables across multiple templates. These may include application-level configuration, branding details, environment flags, or commonly accessed values such as the application name.
 

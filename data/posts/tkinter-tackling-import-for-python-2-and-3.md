@@ -2,8 +2,9 @@ title: How to Import Tkinter in Python 2 and 3: A Cross-Compatibility Guide
 slug: tkinter-tackling-import-for-python-2-and-3
 pub: 2018-04-25 11:52:45
 authors: arj
-tags: python, tkinter, gui, cross-compatibility, python-2-vs-3
-category: gui
+tags: tkinter, compatibility, legacy
+category: gui development
+related_posts: a-fix-to-tkinter-output-not-showing,tkinter-text-widget-tags,packaging-an-sqlite-db-included-crud-pyqt5-app-using-pyinstaller
 
 Tkinter is the standard GUI (Graphical User Interface) package that comes bundled with most Python installations. However, if you are working on a codebase that needs to support both Python 2 and Python 3, or if you are porting an older project, you will quickly run into a common stumbling block: the import naming change.
 

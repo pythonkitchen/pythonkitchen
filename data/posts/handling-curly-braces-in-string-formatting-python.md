@@ -2,8 +2,9 @@ title: How to Escape Curly Braces in Python String Formatting
 slug: handling-curly-braces-in-string-formatting-python
 pub: 2018-05-09 08:35:34
 authors: arj
-tags: python, strings, formatting, coding-tips
-category: language core
+tags: strings, formatting, tips
+category: software engineering
+related_posts: string-manipulation-functions-the-top-5-you-forgot-to-pack,mastering-pythons-regex-part-1-basics,zen-of-python-in-depth
 
 When using Python's string formatting methods, curly braces `{}` are special characters used as placeholders for variables. But what happens when you actually want to print a literal curly brace?
 

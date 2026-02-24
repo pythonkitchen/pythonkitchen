@@ -2,8 +2,9 @@ title: Display Most Frequent Words Using Pygame
 slug: display-most-frequent-words-python-pygame
 pub: 2020-11-24 11:22:02
 authors: arj
-tags: hooman
-category: pygame
+tags: pygame, text processing, visualization
+category: game development
+related_posts: realtime-cpu-monitor-using-pygame,game-map-rendering,processing-py-trails-using-oop
 
 
 ```python

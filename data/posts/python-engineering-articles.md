@@ -2,8 +2,9 @@ title: Python Engineering Articles
 slug: python-engineering-articles
 pub: 2021-11-09 22:49:40
 authors: arj
-tags: 
-category: engineering
+tags: career, architecture, best practices
+category: software engineering
+related_posts: why-choose-flask-over-fastapi,free-python-courses-list,legally-free-python-books-list
 
 This page lists the very best Python engineering articles of the internet, hand-picked to give hours and hours 
 of pure reading joy.

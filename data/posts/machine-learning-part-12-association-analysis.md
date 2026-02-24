@@ -2,8 +2,9 @@ title: Machine Learning Part 12: Association Analysis Explained
 slug: machine-learning-part-12-association-analysis
 pub: 2021-04-07 10:14:26
 authors: arj
-tags: machine learning, unsupervised learning, association analysis, apriori
+tags: market basket analysis, association rules
 category: machine learning
+related_posts: machine-learning-part-11-unpervised-learning,data-scaling-techniques-in-machine-learning,measures-in-statistics-for-data-science
 
 **Association Analysis** is an unsupervised learning technique used to discover interesting relationships hidden in large datasets. It's most famous for its use in "Market Basket Analysis."
 

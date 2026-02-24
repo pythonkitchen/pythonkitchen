@@ -2,8 +2,9 @@ title: Markov Chains in Python: Reviving Bertrand Russell's Prose
 slug: reviving-bertrand-russell-through-python
 pub: 2018-12-28 19:35:04
 authors: arj
-tags: python, markov-chains, probability, natural-language-processing, bertrand-russell
-category: programming problems
+tags: logic, philosophical computing, greenberry
+category: programming languages
+related_posts: greenberry-new-programming-language,dsl-python-new-language-how-to-build-a-css-pre-processor-like-sass-from-scratch-dotdot,zen-of-python-in-depth
 
 Have you ever finished a book by a brilliant author and wished there was just one more chapter? While we can't bring back the great thinkers of the past, we can use **Markov Chains** to imitate their unique literary style. 
 

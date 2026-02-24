@@ -2,8 +2,9 @@ title: How To Have Django Packages in Flask
 slug: how-to-have-django-packages-in-flask
 pub: 2022-08-30 03:43:51
 authors: arj
-tags: app,django,flask,package,shopyo
-category: django,flask,shopyo
+tags: flask, django, ecosystem
+category: web development
+related_posts: why-choose-flask-over-fastapi,shopyo-understand-advanced-flask-app,build-a-note-app-in-flask-as-fast-as-it-can-get-using-shopyo
 
 Django packages in Flask seems like a far-away dream, but [shopyo](https://pypi.org/project/shopyo/) 4.6.0 allows you to install Shopyo apps from pypi.
 

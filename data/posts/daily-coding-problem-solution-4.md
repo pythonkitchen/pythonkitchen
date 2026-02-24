@@ -2,8 +2,9 @@ title: Daily Coding Problem Solution 4
 slug: daily-coding-problem-solution-4
 pub: 2021-03-22 20:03:38
 authors: arj
-tags: 
-category: algorithm and data structures,daily coding problem
+tags: coding challenges, arrays, logic
+category: algorithms
+related_posts: daily-coding-problem-solution-1,daily-coding-problem-solution-2,daily-coding-problem-solution-3
 
 This problem was asked by Stripe.
 

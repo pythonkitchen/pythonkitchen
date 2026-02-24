@@ -2,8 +2,9 @@ title: TF-IDF Explained: Boosting Signal in Text Vectorization
 slug: tfidf-vectorizers-in-natural-language-processing
 pub: 2023-03-13 10:13:01
 authors: parthshukla
-tags: nlp, tf-idf, vectorization, scikit-learn, text-mining
-category: data science
+tags: text mining, tf-idf, feature engineering
+category: nlp
+related_posts: bag-of-words-in-natural-language-processing,word2vec-vectorizer-in-natural-language-processing,chatterbot-google-colab-train-english-corpus
 
 In our [Bag of Words](https://www.pythonkitchen.com/bag-of-words-in-natural-language-processing/) guide, we saw how to turn text into numbers by counting word frequencies. But there is a major flaw in that approach:
 

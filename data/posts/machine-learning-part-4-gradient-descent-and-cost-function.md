@@ -2,8 +2,9 @@ title: Machine Learning Part 4: Gradient Descent and Cost Function
 slug: machine-learning-part-4-gradient-descent-and-cost-function
 pub: 2019-01-24 14:00:21
 authors: arj
-tags: machine learning, gradient descent, cost function, optimization
+tags: optimization, calculus, gradient descent
 category: machine learning
+related_posts: nesterov-accelerated-gradient-nag-optimizer-in-deep-learning,why-nesterov-accelerated-gradient-converges-faster-than-momentum,machine-learning-part-3-regression
 
 In this part, we explore the engine under the hood of most machine learning algorithms: **Optimization**. Specifically, we will look at the **Cost Function** and **Gradient Descent**.
 

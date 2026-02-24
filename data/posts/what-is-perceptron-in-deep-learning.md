@@ -2,8 +2,9 @@ title: What is Perceptron in Deep Learning
 slug: what-is-perceptron-in-deep-learning
 pub: 2023-06-28 04:41:51
 authors: parthshukla
-tags: Deep Learning,perceptron
-category: data science
+tags: perceptrons, history, basics
+category: deep learning
+related_posts: machine-learning-part-9-neural-networks,relu-activation-function-and-its-variants,framework-for-evolution-with-neural-networks
 
 Deep learning is one of the most useful and trending topics in the current world scenario, which works on the concepts of neural networks, computer vision, perceptrons, and many other techniques. Perceptrons are algorithms used for supervised learning processes where the input data is taken, processed by neurons, and then the output is represented.
 

@@ -2,8 +2,9 @@ title: How to install Python-efl on Ubuntu or Linux Mint
 slug: how-to-install-python-efl-on-ubuntu-or-linux-mint
 pub: 2021-10-19 08:51:13
 authors: arj
-tags: 
-category: Uncategorized
+tags: efl, installation, desktop linux
+category: linux
+related_posts: python-efl-1,python-efl-2,install-pipx-mint-ubuntu
 
 Python-efl is the binding for EFL, an awesome and performance-obcessed set of libraries. EFL stands for Enlightment Foundation Libraries. It was started for the [Enlightment](https://www.enlightenment.org/) desktop project and developed into a set of libraries. This tutorial shows how to install python-efl.
 

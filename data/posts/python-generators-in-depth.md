@@ -2,8 +2,9 @@ title: Python Generators:  The In-depth Article You've Always Wanted
 slug: python-generators-in-depth
 pub: 2020-12-10 06:37:27
 authors: arj
-tags: asyncio,concurrency,os
-category: generators
+tags: generators, iterators, performance
+category: software engineering
+related_posts: zen-of-python-in-depth,python-making-imports-callable,string-manipulation-functions-the-top-5-you-forgot-to-pack
 
 Table of contents
 =================

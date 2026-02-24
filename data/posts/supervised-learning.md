@@ -2,6 +2,9 @@ title: Machine Learning part 2: supervised learning
 slug: supervised-learning
 pub: 2019-01-22 07:45:06
 authors: arj
+related_posts: machine-learning-part-2-supervised,linear-regression-vs-decision-trees-vs-support-vector-machines,logistic-regression-vs-k-nearest-neighbors-in-machine-learning
+tags: supervised learning, fundamentals
+category: machine learning
 
 
 

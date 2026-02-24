@@ -2,8 +2,9 @@ title: How to run Tencent's Hunyuan Video model using Python
 slug: how-to-run-tencents-hunyuan-video-model-using-python
 pub: 2024-11-05 20:07:00
 authors: arj
-tags: 
-category: web
+tags: deep learning, generative ai, video models
+category: artificial intelligence
+related_posts: chat-own-data-chatgpt-langchain,LangChain-understand-production-codebases,framework-for-evolution-with-neural-networks
 
 
 ## Table of content

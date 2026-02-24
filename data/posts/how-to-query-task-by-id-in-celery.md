@@ -2,8 +2,9 @@ title: How to query task by id in celery
 slug: how-to-query-task-by-id-in-celery
 pub: 2021-08-15 07:27:43
 authors: arj
-tags: celery
-category: distributed system
+tags: celery, debugging, task management
+category: distributed systems
+related_posts: how-to-set-task-id-in-celery,celery-task-asyncresult-no-attribute,how-to-define-prefect-deployment
 
 Using celery 5.1.2 you can get the task id by the following code snippet:
 

@@ -2,8 +2,9 @@ title: Setting Up Your Raspberry Pi 3: A Step-by-Step OS Installation Guide
 slug: raspberry-pi-setup
 pub: 2018-06-18 11:42:03
 authors: arj
-tags: raspberry-pi, hardware, linux, tutorial, beginners
-category: raspberry pi
+tags: raspberry pi, linux, networking
+category: hardware
+related_posts: raspberry-pi-setup-establishing-ssh-connection,how-to-ssh-into-ec2-instance,installing-opencv-on-the-pi3-with-python3-and-usb-webcam
 
 The Raspberry Pi is a remarkably powerful credit-card-sized computer, but when you first take it out of the box, it’s a "blank slate." It has no operating system and no built-in storage. In this first part of our setup series, we’ll cover how to install the OS and get your Pi up and running.
 

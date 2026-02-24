@@ -2,8 +2,9 @@ title: Learning Flask To Help With Dog Care: Interview With Chris Hopkinson
 slug: interview-chris-hopkinson-flask-dog-care
 pub: 2021-03-19 07:48:24
 authors: arj
-tags: 
-category: flask,interview
+tags: flask, real-world apps, success stories
+category: interviews
+related_posts: why-choose-flask-over-fastapi,shopyo-understand-advanced-flask-app,build-a-note-app-in-flask-as-fast-as-it-can-get-using-shopyo
 
 Chris has been learning Flask to help with Dog Care. He felt Flask would help him in his business activities! Let's have a chat with him!
 

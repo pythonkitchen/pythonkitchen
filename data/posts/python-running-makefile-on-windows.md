@@ -2,8 +2,9 @@ title: Python: Running makefile on windows using git mingw bash
 slug: python-running-makefile-on-windows
 pub: 2020-11-21 07:50:49
 authors: arj
-tags: bash,git,make,makefile,mingw
-category: git
+tags: build tools, windows, gnu make
+category: devops
+related_posts: venv-usage-on-windows-activate-and-deactivate,publishing-using-uv,rye-package-manager
 
 Linux owners configure makefiles so as to have easy commands to perform operations such as `make dependencies` to pip install required packages. Here are the dry simple steps to run makefiles in Python projects on Windows.
 

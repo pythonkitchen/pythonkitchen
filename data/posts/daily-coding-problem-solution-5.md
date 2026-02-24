@@ -2,8 +2,9 @@ title: Daily Coding Problem Solution 5
 slug: daily-coding-problem-solution-5
 pub: 2021-03-22 20:02:41
 authors: arj
-tags: 
-category: algorithm and data structures,daily coding problem
+tags: functional programming, closures, pairs
+category: algorithms
+related_posts: daily-coding-problem-solution-1,daily-coding-problem-solution-2,daily-coding-problem-solution-3
 
 This problem was asked by Jane Street.
 

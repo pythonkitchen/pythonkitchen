@@ -2,8 +2,9 @@ title: Word2Vec: Capturing Meaning in Vector Space
 slug: word2vec-vectorizer-in-natural-language-processing
 pub: 2023-04-13 11:09:08
 authors: parthshukla
-tags: nlp, word2vec, embeddings, gensim, deep-learning
-category: data science
+tags: embeddings, word2vec, deep learning
+category: nlp
+related_posts: bag-of-words-in-natural-language-processing,tfidf-vectorizers-in-natural-language-processing,chatterbot-google-colab-train-english-corpus
 
 Bag of Words and TF-IDF are great, but they suffer from a fatal flaw: they have no concept of **meaning**. To those algorithms, "car" and "automobile" are just as different as "car" and "banana."
 

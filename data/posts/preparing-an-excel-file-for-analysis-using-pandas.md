@@ -2,8 +2,9 @@ title: How to Prepare Excel Files for Data Analysis with Pandas
 slug: preparing-an-excel-file-for-analysis-using-pandas
 pub: 2018-07-22 08:04:25
 authors: arj
-tags: python, pandas, excel, data-science, data-cleaning
-category: data science, pandas
+tags: pandas, data cleaning, excel
+category: data science
+related_posts: removing-last-columns-of-excel-dataframe-using-pandas-by-index,data-scaling-techniques-in-machine-learning,measures-in-statistics-for-data-science
 
 Excel is the world's most popular data tool, but for advanced analysis and machine learning, we often need to move our data into Python. The **Pandas** library makes this incredibly easy, but raw Excel files are often "messy." 
 

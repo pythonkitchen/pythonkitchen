@@ -2,8 +2,9 @@ title: Daily Coding Problem #2: Product of Array Except Self
 slug: daily-coding-problem-solution-2
 pub: 2021-03-22 19:24:08
 authors: arj
-tags: python, algorithms, uber, interview, product-array
-category: algorithm and data structures, daily coding problem
+tags: coding challenges, interview prep
+category: algorithms
+related_posts: daily-coding-problem-solution-1,daily-coding-problem-solution-3,daily-coding-problem-solution-4
 
 This problem was asked by Uber and is a popular variation of array manipulation questions.
 

@@ -2,8 +2,9 @@ title: How to Integrate Tinymce 5 with Flask (with csrf)
 slug: integrate-tinymce-5-with-flask
 pub: 2021-12-09 07:32:00
 authors: arj
-tags: 
-category: flask
+tags: flask, rich text, editor
+category: web development
+related_posts: how-implement-beautiful-notifications-flask,how-implement-notification-flask,p5js-with-flask-socket-io
 
 This article shows how to integrate Tinymce 5 with Flask even including csrf protection!
 

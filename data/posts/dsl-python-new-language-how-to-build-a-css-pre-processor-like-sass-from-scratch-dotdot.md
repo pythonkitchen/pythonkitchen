@@ -2,8 +2,9 @@ title: DSL / Python / New Language: How to build a CSS pre-processor (like SASS)
 slug: dsl-python-new-language-how-to-build-a-css-pre-processor-like-sass-from-scratch-dotdot
 pub: 2019-07-18 15:02:53
 authors: arj
-tags: css,new-language,pre-processor
-category: compiler theory
+tags: dsl, sass, transpilers
+category: programming languages
+related_posts: how-to-create-your-own-dsldomain-specific-language-in-python,greenberry-new-programming-language,building-a-lexer-in-python-tutorial
 
 
 If you are in web development, maybe you've heard of [Sass](https://sass-lang.com/documentation/syntax/comments), [Less](http://lesscss.org), Pug, [Stylus](http://stylus-lang.com) etc. All these are pre-processors. In this tutorial we're going to build nothing less than a functional css pre-processor from scratch with variables and functions. This type of new language is called source-to-source compiled. If you are thrilled, i hope not to disappoint you.

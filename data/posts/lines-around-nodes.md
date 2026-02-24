@@ -2,8 +2,9 @@ title: Building a Dynamic Polygon Drawer in Processing.py
 slug: lines-around-nodes
 pub: 2018-05-28 18:26:55
 authors: arj
-tags: python, processing.py, creative-coding, geometry, algorithms
-category: canvas theory, processing.py
+tags: graphics, geometry, pygame
+category: game development
+related_posts: game-map-rendering,generating-unintelligent-random-maps,translating-location-to-map-coordinates
 
 Have you ever wondered how vector drawing tools allow you to click and create complex shapes? In this tutorial, we will build a simple **Polygon Drawer** using Processing.py. This project is a great way to understand how to manage dynamic lists of coordinates and draw connected paths.
 

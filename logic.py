@@ -101,6 +101,12 @@ def get_posts(settings):
                 
         # Add internal links
         html = add_internal_links(html, posts_metadata, slug)
+
+        try:
+            related_posts = metadata["related_posts"][0].split(',')
+            related_posts = [r.strip() for r in related_posts if r.strip()]
+        except:
+            related_posts = []
                 
         post = {
             "slug": slug,
@@ -110,6 +116,7 @@ def get_posts(settings):
             "title": title,
             "categories": categories,
             "tags": tags,
+            "related_posts": related_posts
         }
         posts.append(post)
 
@@ -223,71 +230,23 @@ def generate_blog_posts(settings, context, generate):
 
 
     for post in posts:
-
-
-
         slug = post["slug"]
-
-
-
         suggested = get_suggested_posts(post, posts)
-
-
-
         
-
-
-
         # If not enough suggested, fill with latest posts
-
-
-
         if len(suggested) < 3:
-
-
-
             for p in posts:
-
-
-
                 if p['slug'] != slug and p not in suggested:
-
-
-
                     suggested.append(p)
-
-
-
                 if len(suggested) >= 3:
-
-
-
                     break
 
-
-
-
-
-
-
         context.update({
-
-
-
             "post": post, 
-
-
-
             "suggested_posts": suggested,
-
-
-
             "path": "../" * 1
-
-
-
         })
-
+        
 
 
 

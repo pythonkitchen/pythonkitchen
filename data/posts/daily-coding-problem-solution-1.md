@@ -2,8 +2,9 @@ title: Daily Coding Problem #1: Two Sum Solution in Python
 slug: daily-coding-problem-solution-1
 pub: 2021-03-22 19:19:57
 authors: arj
-tags: python, algorithms, google, interview, two-sum
-category: algorithm and data structures, daily coding problem
+tags: coding challenges, interview prep, data structures
+category: algorithms
+related_posts: daily-coding-problem-solution-2,daily-coding-problem-solution-3,daily-coding-problem-solution-4
 
 This problem was recently asked by Google and is a classic interview question often referred to as "Two Sum".
 

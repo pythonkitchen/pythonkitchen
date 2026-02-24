@@ -2,8 +2,9 @@ title: Build A Note App In Flask As Fast As It Can Get (Using Shopyo)
 slug: build-a-note-app-in-flask-as-fast-as-it-can-get-using-shopyo
 pub: 2022-04-13 05:37:29
 authors: arj
-tags: 
-category: flask,shopyo
+tags: flask, shopyo, rapid prototyping
+category: web development
+related_posts: shopyo-understand-advanced-flask-app,how-to-use-flask-admin-with-flask-login,how-implement-notification-flask
 
 [Shopyo](https://github.com/shopyo/shopyo/) is a framework to get started with Flask really quick. It includes several libraries to get started by default. In this tutorial we will build a simple app to get started with. We used it for FlaskCon 2021 [[site](https://flaskcon.com/y/2021/#), [codebase](https://github.com/flaskcon/traveller)].
 

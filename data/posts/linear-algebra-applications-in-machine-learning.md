@@ -2,8 +2,9 @@ title: Linear Algebra Applications in Machine Learning
 slug: linear-algebra-applications-in-machine-learning
 pub: 2023-02-27 10:10:51
 authors: parthshukla
-tags: 
-category: data science,machine learning
+tags: linear algebra, machine learning theory, matrices
+category: mathematics
+related_posts: eigen-decomposition-in-machine-learning,linear-algebra-in-recommendation-systems-of-machine-learning,decoding-symmetric-indefinite-matrices-in-python
 
 We can take linear algebra as a backbone of machine learning, as almost all the machine learning techniques and algorithms somehow use linear algebra to some extent. Some famous machine learning techniques like Principle component analysis and matrix factorization are entirely based on linear algebra. Although not only in dimensionality reduction, it is also helpful for some NLP and machine learning algorithms and preprocessing of data applications.
 

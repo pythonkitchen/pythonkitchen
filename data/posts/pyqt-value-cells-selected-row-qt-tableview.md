@@ -2,8 +2,9 @@ title: PyQt5 / PySide2: How to Get Values from a Selected QTableView Row
 slug: pyqt5-value-cells-selected-row-qtview
 pub: 2019-01-21 07:43:27
 authors: arj
-tags: python, pyqt5, pyside2, gui, qtableview
-category: gui
+tags: pyqt, qtableview, data handling
+category: gui development
+related_posts: pyqt5-pyside2-qtableview-how-to-find-out-if-row-is-selected-and-which-one-in-python,pyside2-pyqt5-extract-data-from-qformlayout,a-fix-to-tkinter-output-not-showing
 
 When building desktop applications with PyQt5 or PySide2, the `QTableView` is the go-to widget for displaying spreadsheet-like data. A common requirement is to retrieve the data from a row when a user clicks on it.
 

@@ -2,8 +2,9 @@ title: Nesterov Accelerated Gradient (NAG) Optimizer in Deep Learning
 slug: nesterov-accelerated-gradient-nag-optimizer-in-deep-learning
 pub: 2022-11-11 06:33:09
 authors: parthshukla
-tags: Deep Learning,Nag
-category: data science,machine learning
+tags: optimization, gradient descent, nag
+category: deep learning
+related_posts: why-nesterov-accelerated-gradient-converges-faster-than-momentum,machine-learning-part-4-gradient-descent-and-cost-function,relu-activation-function-and-its-variants
 
 In deep learning, optimizers are the type of function which are used to adjust the parameters of the model. The optimizers are used in deep learning to adjust the weights and biases of the neural networks and reduce the overall loss from the model to achieve higher accuracy. There are many types of optimizers used in deep learning to adjust the best weights and biases for the model in terms of overall loss.
 

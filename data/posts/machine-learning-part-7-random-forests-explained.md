@@ -2,8 +2,9 @@ title: Machine Learning Part 7: Random Forests Explained
 slug: machine-learning-part-7-random-forests-explained
 pub: 2019-02-03 13:00:39
 authors: arj
-tags: machine learning, random forest, ensemble learning, overfitting
+tags: random forests, ensemble methods, decision trees
 category: machine learning
+related_posts: machine-learning-part-6-enthropy-and-gain,machine-learning-part-5-mixed-methods,adaboost-vs-naive-bayes-algorithms-in-machine-learning
 
 While Decision Trees are easy to understand, they have a major weakness: they tend to **overfit** the data. In this post, we'll see how **Random Forests** solve this problem.
 

@@ -2,8 +2,9 @@ title: How to use Flask-admin with Flask-login
 slug: how-to-use-flask-admin-with-flask-login
 pub: 2021-02-24 07:16:19
 authors: arj
-tags: 
-category: flask
+tags: flask, admin interface, security
+category: web development
+related_posts: how-to-correctly-use-the-next-parameter-in-login-and-logout-in-flask,shopyo-understand-advanced-flask-app,how-to-define-global-template-variables-in-flask
 
 Steps:
 

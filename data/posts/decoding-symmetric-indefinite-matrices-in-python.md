@@ -2,8 +2,9 @@ title: Decoding Symmetric Indefinite Matrices In Python
 slug: decoding-symmetric-indefinite-matrices-in-python
 pub: 2022-10-18 06:35:29
 authors: abdulkhan
-tags: 
-category: data science,machine learning
+tags: linear algebra, matrices, numerical computing
+category: mathematics
+related_posts: eigen-decomposition-in-machine-learning,linear-algebra-applications-in-machine-learning,principle-component-analysis-in-machine-learning
 
 This article is a gentle introduction to symmetric indefinite matrices in Python
 

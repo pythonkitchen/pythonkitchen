@@ -2,8 +2,9 @@ title: Securing Flask: Preventing Open Redirect Vulnerabilities
 slug: how-prevent-open-redirect-vulnerab-flask
 pub: 2021-02-24 08:24:00
 authors: arj
-tags: flask, security, python, web-development, owasp
-category: flask, security
+tags: flask, web security, vulnerabilities
+category: security
+related_posts: how-to-correctly-use-the-next-parameter-in-login-and-logout-in-flask,how-to-disable-csrf-protection-in-flask-wtf-for-particular-routes,why-choose-flask-over-fastapi
 
 If your Flask application uses a `next` parameter to redirect users after login, you might be vulnerable to **Open Redirects**.
 

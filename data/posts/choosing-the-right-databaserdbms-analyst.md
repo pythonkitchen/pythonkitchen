@@ -2,8 +2,9 @@ title: Choosing the right database(RDBMS) for Data analyst?
 slug: choosing-the-right-databaserdbms-analyst
 pub: 2022-11-27 10:21:19
 authors: abdulkhan
-tags: analyst,beginner,database
-category: database
+tags: databases, sql, system design
+category: data engineering
+related_posts: packaging-an-sqlite-db-included-crud-pyqt5-app-using-pyinstaller,why-choose-flask-over-fastapi,python-engineering-articles
 
 
 > 

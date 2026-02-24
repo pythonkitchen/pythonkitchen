@@ -2,8 +2,9 @@ title: Beyond the Basics: Unconventional Uses of Seaborn Heatmaps for Data Visua
 slug: beyond-the-basics-unconventional-uses-of-seaborn-heatmaps-for-data-visualization
 pub: 2023-02-14 10:04:35
 authors: abdulkhan
-tags: 
-category: Uncategorized
+tags: seaborn, statistics, heatmaps
+category: data visualization
+related_posts: matplotlib-scatter-plot-annotate-set-text-at-label-each-point,an-overview-of-python-terminal-plotting-libraries,measures-in-statistics-for-data-science
 
 
 Heatmaps can bring your data to life. Versatile and eye-catching. There are many situations where they can highlight important relationships in your data. Specifically, we will discuss how you can use them to visualise.

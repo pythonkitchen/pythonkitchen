@@ -2,8 +2,9 @@ title: Publishing a Python Package with uv and a PyPI Token
 slug: publish-python-package-using-uv-pypi-token
 pub: 2026-02-09 10:30:00
 authors: abdur-rahmaan-janhangeer
-tags: python,packaging,pypi,uv,devops
-category: python,software engineering
+tags: package management, uv, publishing
+category: devops
+related_posts: rye-package-manager,upload-your-package-to-pypi,python-running-makefile-on-windows
 
 Publishing a Python package used to feel like a small battle: setup.py rituals, half-forgotten twine commands, and the anxiety of accidentally pushing a broken release to PyPI. Thankfully, modern tooling has cleaned all of this up.
 

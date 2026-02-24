@@ -2,8 +2,9 @@ title: Creating Smooth Mouse Trails in Processing.py using OOP
 slug: processing-py-trails-using-oop
 pub: 2018-04-26 05:13:45
 authors: arj
-tags: python, processing.py, oop, creative-coding, animation
-category: oop, processing.py
+tags: processing, oop, creative coding
+category: game development
+related_posts: realtime-cpu-monitor-using-pygame,display-most-frequent-words-python-pygame,p5js-with-flask-socket-io
 
 In creative coding, adding a "trail" effect can transform a simple animation into something dynamic and visually appealing. A trail is essentially a visual history of where an object has been. In this post, we’ll explore how to implement this using an **Object-Oriented Programming (OOP)** approach in Processing.py.
 

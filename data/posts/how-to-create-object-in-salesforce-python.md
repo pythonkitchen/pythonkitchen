@@ -2,8 +2,9 @@ title: How to create an object in salesforce using Python
 slug: create-object-salesforce-using-python
 pub: 2024-11-06 05:56:00
 authors: arj
-tags: 
-category: salesforce
+tags: salesforce, api, integration
+category: enterprise software
+related_posts: how-to-ssh-into-ec2-instance,copy-files-to-aws-ec2,upload-your-package-to-pypi
 
 Here's a simple snippet for creating a new custom object in Salesforce in Python.
 

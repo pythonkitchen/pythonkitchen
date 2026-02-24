@@ -2,8 +2,9 @@ title: Machine Learning Part 2: Supervised Learning Explained
 slug: machine-learning-part-2-supervised
 pub: 2019-01-21 07:43:27
 authors: arj
-tags: machine learning, supervised learning, classification, regression, k-nn, logistic-regression
+tags: supervised learning, regression, classification
 category: machine learning
+related_posts: machine-learning-part-1-introduction,machine-learning-part-3-regression,supervised-learning
 
 **Supervised learning** is a fundamental concept in machine learning where we have labelled data available. The machine "learns" from this data, much like a student learning from a teacher who provides the answers during the training process.
 

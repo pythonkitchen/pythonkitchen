@@ -2,8 +2,9 @@ title: Building an Indentation Analyser in Python: A Comprehensive Guide
 slug: building-an-indentation-analyser-in-python-tutorial
 pub: 2018-05-04 08:31:13
 authors: arj
-tags: python, compiler-theory, lexer, tutorial, indentation
-category: compiler theory
+tags: static analysis, indentation, parser theory
+category: programming languages
+related_posts: building-a-lexer-in-python-tutorial,how-to-create-your-own-dsldomain-specific-language-in-python,dsl-python-new-language-how-to-build-a-css-pre-processor-like-sass-from-scratch-dotdot
 
 In many programming languages, like C or Java, scope is defined by curly braces `{}`. However, languages like **Python**, **Pug**, and **Haskell** use a different approach: **Indentation**. 
 

@@ -2,8 +2,9 @@ title: Mastering Tkinter Text Tags: Fixing Overlapping Syntax Highlighting
 slug: tkinter-text-widget-tags
 pub: 2018-06-19 12:00:31
 authors: tim
-tags: python, tkinter, gui, syntax-highlighting, text-editor
-category: editors and ides, gui, oop
+tags: tkinter, ui, rich text
+category: gui development
+related_posts: a-fix-to-tkinter-output-not-showing,tkinter-tackling-import-for-python-2-and-3,display-most-frequent-words-python-pygame
 
 If you've ever tried to build a code editor or a text processor in Tkinter, you've likely used the **Text widget tags**. Tags are incredibly powerful—they allow you to change the color, font, and behavior of specific ranges of text.
 

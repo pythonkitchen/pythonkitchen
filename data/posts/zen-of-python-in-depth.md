@@ -2,8 +2,9 @@ title: The Zen Of Python: A Most In Depth Article
 slug: zen-of-python-in-depth
 pub: 2020-12-23 17:19:28
 authors: arj
-tags: 
-category: zen
+tags: philosophy, clean code, zen of python
+category: software engineering
+related_posts: python-generators-in-depth,python-making-imports-callable,mastering-pythons-regex-part-1-basics
 
 Note: *I wrote a quite complete article on the Zen but for some reason it went down in seo history. I am tired seeing people write 'in-depth' article with commentaries from the top of their head and materials they pulled out of their pockets. I'm publishing the article in here. The commentary part is built from the sayings of Brett Cannon, Guido, Chris Angelico, Nick Coghlan, Raymond Hettinger & co. Warning: read only if you are a fan of Python. Last notes: I do hope learners will get a great glimpse of how the Zen can help them structure their code and give them better insight and foresight. It's a documentation of how practically the Zen is applied in Python decisions.*
 

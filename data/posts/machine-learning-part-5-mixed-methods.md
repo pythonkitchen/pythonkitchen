@@ -2,8 +2,9 @@ title: Machine Learning Part 5: Decision Trees and Mixed Methods
 slug: machine-learning-part-5-mixed-methods
 pub: 2019-01-26 14:01:04
 authors: arj
-tags: machine learning, decision trees, classification, regression, CART
+tags: ensemble methods, complex modeling
 category: machine learning
+related_posts: machine-learning-part-6-enthropy-and-gain,machine-learning-part-7-random-forests-explained,blending-algorithms-in-machine-learning
 
 Some machine learning methods are versatile enough to be used for both **Classification** and **Regression**. These are often called "Mixed Methods."
 

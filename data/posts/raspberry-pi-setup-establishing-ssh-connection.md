@@ -2,8 +2,9 @@ title: Remote Access: How to Establish an SSH Connection to Your Raspberry Pi
 slug: raspberry-pi-setup-establishing-ssh-connection
 pub: 2018-06-20 16:44:45
 authors: arj
-tags: raspberry-pi, ssh, linux, remote-access, networking
-category: raspberry pi
+tags: raspberry pi, ssh, linux
+category: hardware
+related_posts: raspberry-pi-setup,how-to-ssh-into-ec2-instance,web-mail-interface-using-pi-and-flask
 
 One of the greatest features of the Raspberry Pi is that you don't actually need a dedicated monitor or keyboard to use it. Through **SSH (Secure Shell)**, you can control your Pi's terminal from your main laptop, tablet, or even your smartphone. 
 

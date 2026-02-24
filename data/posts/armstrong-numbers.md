@@ -2,8 +2,9 @@ title: Understanding Armstrong Numbers in Python
 slug: armstrong-numbers
 pub: 2018-12-27 19:27:39
 authors: arj
-tags: python, programming-challenge, beginners, math
-category: programming problems
+tags: math, number theory, beginners
+category: algorithms
+related_posts: checking-for-prime,reviving-bertrand-russell-through-python,zen-of-python-in-depth
 
 In this post, we'll explore a classic beginner programming problem: **Armstrong Numbers**.
 

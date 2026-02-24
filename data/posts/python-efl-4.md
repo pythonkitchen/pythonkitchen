@@ -2,8 +2,9 @@ title: Python-efl Displaying Images
 slug: python-efl-4
 pub: 2021-10-22 18:18:51
 authors: arj
-tags: 
-category: python-efl
+tags: efl, enlightenment, series
+category: gui development
+related_posts: python-efl-3,python-efl-5,python-efl-6
 
 Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
 

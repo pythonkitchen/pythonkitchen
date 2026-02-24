@@ -2,8 +2,9 @@ title: Machine Learning Part 1: An Introduction for Beginners
 slug: machine-learning-part-1-introduction
 pub: 2019-01-21 07:43:27
 authors: arj
-tags: machine learning, introduction, data science, statistics
+tags: fundamentals, series, data science
 category: machine learning
+related_posts: machine-learning-part-2-supervised,machine-learning-part-3-regression,how-to-frame-a-machine-learning-problem-design-your-data-science-project
 
 Machine Learning (ML) is one of the most exciting fields in technology today. But what exactly is it? In this introductory series, we will break down the core concepts of ML, starting from the very basics.
 

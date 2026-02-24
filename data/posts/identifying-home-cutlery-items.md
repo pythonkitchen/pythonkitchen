@@ -2,8 +2,9 @@ title: Machine Learning 101: Identifying Kitchen Cutlery with K-NN
 slug: identifying-home-cutlery-items
 pub: 2018-05-08 06:12:23
 authors: arj
-tags: machine-learning, k-nearest-neighbours, beginners, python, data-science
-category: machine learning
+tags: opencv, image recognition, project
+category: computer vision
+related_posts: installing-opencv-on-the-pi3-with-python3-and-usb-webcam,plotting-hotspots-in-mauritius-with-python-and-folium,translating-location-to-map-coordinates
 
 Machine Learning can often feel like a "black box" of complex math and scary terminology like "Tensors" and "Neural Networks." But at its core, Machine Learning is just applied statistics. 
 

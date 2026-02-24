@@ -51,10 +51,30 @@ def get_author_info(key):
             
     return infos[key] # Will still raise KeyError if totally missing
 
+def get_related_posts(post, all_posts):
+    if not post.get('related_posts'):
+        return []
+    
+    posts_map = {p['slug']: p for p in all_posts}
+    related = []
+    for slug in post['related_posts']:
+        if slug in posts_map:
+            related.append(posts_map[slug])
+    
+    # Fill with latest if less than 3
+    if len(related) < 3:
+        for p in all_posts:
+            if p['slug'] != post['slug'] and p not in related:
+                related.append(p)
+            if len(related) >= 3:
+                break
+    return related[:3]
+
 def generate_site():
     extra_context = {"info": settings.info, "posts": get_posts(settings), 
                      "clean_text": clean_text, "format_post_date": format_post_date,
-                     "get_author_info": get_author_info}
+                     "get_author_info": get_author_info,
+                     "get_related_posts": get_related_posts}
     
     generate('sitemap.html', join(settings.OUTPUT_FOLDER, 'sitemap.txt'), context=extra_context)
     generate('sitemap_xml.html', join(settings.OUTPUT_FOLDER, 'sitemap.xml'), context=extra_context)

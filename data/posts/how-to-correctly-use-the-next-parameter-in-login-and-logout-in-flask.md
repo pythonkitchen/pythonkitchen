@@ -2,8 +2,9 @@ title: How to correctly use the next parameter in login and logout in Flask
 slug: how-to-correctly-use-the-next-parameter-in-login-and-logout-in-flask
 pub: 2021-02-24 07:05:45
 authors: arj
-tags: 
-category: flask,shopyo
+tags: flask, authentication, security
+category: web development
+related_posts: how-to-use-flask-admin-with-flask-login,how-prevent-open-redirect-vulnerab-flask,how-implement-notification-flask
 
 Here is a sample login and logout route taken from [the shopyo web framework](https://github.com/Abdur-rahmaanJ/shopyo). You can learn [here](https://www.pythonkitchen.com/how-prevent-open-redirect-vulnerab-flask/) how is get\_safe\_redirect defined and why it is important
 

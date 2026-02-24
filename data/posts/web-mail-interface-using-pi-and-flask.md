@@ -2,8 +2,9 @@ title: Building a Web Mail Client with Flask and Raspberry Pi
 slug: web-mail-interface-using-pi-and-flask
 pub: 2018-07-01 07:32:45
 authors: arj
-tags: python, flask, raspberry-pi, smtplib, web-development
-category: raspberry pi
+tags: flask, raspberry pi, iot
+category: web development
+related_posts: p5js-with-flask-socket-io,installing-opencv-on-the-pi3-with-python3-and-usb-webcam,raspberry-pi-setup
 
 Have you ever wondered how web-based email clients like Gmail or Outlook actually work? At their core, they are web applications that take user input and send it to an email server. In this tutorial, we will build a basic web mail interface using **Flask** and a **Raspberry Pi**.
 

@@ -2,8 +2,9 @@ title: An Overview of Python Terminal Plotting Libraries
 slug: an-overview-of-python-terminal-plotting-libraries
 pub: 2022-09-06 07:07:20
 authors: arj
-tags: cli
-category: Uncategorized
+tags: cli, plotting, libraries
+category: data visualization
+related_posts: matplotlib-scatter-plot-annotate-set-text-at-label-each-point,beyond-the-basics-unconventional-uses-of-seaborn-heatmaps-for-data-visualization,realtime-cpu-monitor-using-pygame
 
 There exist many terminal plotting libraries. In Python there are some 3-4 main ones. In this post we'll have an overview of the libraries.
 

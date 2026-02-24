@@ -2,8 +2,9 @@ title: How To Solve Django Syntax Error On Migrating
 slug: how-solve-django-syntax-error-migrate
 pub: 2024-03-14 16:50:00
 authors: arj
-tags: django
-category: fixes
+tags: django, migrations, debugging
+category: web development
+related_posts: how-to-have-django-packages-in-flask,why-choose-flask-over-fastapi,run-flask-linux-only-windows-afpy
 
 The Django syntax error on migrating is very annoying, specially when you don't find any error when looking for one. This post contains a working solution.
 

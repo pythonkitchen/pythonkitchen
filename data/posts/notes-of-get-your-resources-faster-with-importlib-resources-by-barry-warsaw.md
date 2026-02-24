@@ -2,8 +2,9 @@ title: Notes of Get your resources faster, with importlib.resources by Barry War
 slug: notes-of-get-your-resources-faster-with-importlib-resources-by-barry-warsaw
 pub: 2021-12-12 17:53:11
 authors: arj
-tags: 
-category: packaging
+tags: packaging, performance, importlib
+category: software engineering
+related_posts: python-making-imports-callable,python-generators-in-depth,zen-of-python-in-depth
 
 [Talk](https://www.youtube.com/watch?v=ZsGFU2qh73E) notes
 

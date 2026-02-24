@@ -2,8 +2,9 @@ title: Chatterbot Google Colab Train English Corpus
 slug: chatterbot-google-colab-train-english-corpus
 pub: 2021-03-22 17:39:43
 authors: arj
-tags: 
-category: chatbot
+tags: chatbots, chatterbot, google colab
+category: nlp
+related_posts: bag-of-words-in-natural-language-processing,tfidf-vectorizers-in-natural-language-processing,word2vec-vectorizer-in-natural-language-processing
 
 Here's how to solve the file not found for training chatterbot on Google collab:
 

@@ -2,8 +2,9 @@ title: Creating Your Own Domain Specific Language (DSL) in Python
 slug: how-to-create-your-own-dsldomain-specific-language-in-python
 pub: 2018-09-03 05:50:09
 authors: arj
-tags: python, dsl, compiler-theory, automation, programming
-category: compiler theory
+tags: dsl, parsers, abstractions
+category: programming languages
+related_posts: dsl-python-new-language-how-to-build-a-css-pre-processor-like-sass-from-scratch-dotdot,building-a-lexer-in-python-tutorial,simple-json-parser
 
 Sometimes, a standard CLI tool isn't enough, but a full-blown programming language is overkill. This is where a **Domain Specific Language (DSL)** shines. A DSL is a mini-language designed to solve a very specific problem—think SQL for databases or HTML for web structure.
 

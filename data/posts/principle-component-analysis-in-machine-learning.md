@@ -2,8 +2,9 @@ title: Principle Component Analysis in Machine Learning
 slug: principle-component-analysis-in-machine-learning
 pub: 2023-02-18 03:49:19
 authors: parthshukla
-tags: 
-category: data science,machine learning
+tags: pca, dimensionality reduction, linear algebra
+category: machine learning
+related_posts: eigen-decomposition-in-machine-learning,data-scaling-techniques-in-machine-learning,linear-algebra-applications-in-machine-learning
 
 In machine learning to achieve higher accuracies and performance of the model, the **data quality** plays a major role while enhancing the model. If good quality data with meaningful features are provided to the machine learning model, then the model can be very accurate and reliable with lesser computational powers.
 

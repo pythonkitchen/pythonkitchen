@@ -2,8 +2,9 @@ title: Building a Lexer in Python: A Step-by-Step Tutorial
 slug: building-a-lexer-in-python-tutorial
 pub: 2018-05-01 11:48:58
 authors: arj
-tags: python, compiler-theory, lexer, tutorial, dsl
-category: compiler theory
+tags: compilers, lexing, tokenization
+category: programming languages
+related_posts: building-an-indentation-analyser-in-python-tutorial,how-to-create-your-own-dsldomain-specific-language-in-python,simple-json-parser
 
 Understanding how to build a **lexer** (lexical analyzer) is a rite of passage for many programmers. It opens up a world of possibilities, from creating your own Domain Specific Languages (DSLs) to writing custom configuration parsers. 
 

@@ -2,8 +2,9 @@ title: Linear Algebra in Recommendation Systems of Machine Learning
 slug: linear-algebra-in-recommendation-systems-of-machine-learning
 pub: 2023-02-27 10:07:50
 authors: parthshukla
-tags: linear algebra
-category: data science,machine learning
+tags: recommendation systems, linear algebra, collaborative filtering
+category: machine learning
+related_posts: linear-algebra-applications-in-machine-learning,eigen-decomposition-in-machine-learning,principle-component-analysis-in-machine-learning
 
 Linear algebra in machine learning is one of the essential topics to learn and have an idea about, as it is applicable and plays a critical role in many machine learning applications. Recommendation systems are primary unsupervised machine learning applications industries and companies use to recommend particular things to their customers and audience.
 

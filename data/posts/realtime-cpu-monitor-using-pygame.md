@@ -2,8 +2,9 @@ title: Realtime CPU monitor using PyGame
 slug: realtime-cpu-monitor-using-pygame
 pub: 2020-11-26 14:26:01
 authors: arj
-tags: realtime. cpu
-category: hooman,pygame,realtime
+tags: pygame, systems, visualization
+category: game development
+related_posts: display-most-frequent-words-python-pygame,p5js-with-flask-socket-io,processing-py-trails-using-oop
 
 Here's a realtime CPU monitor using PyGame:
 

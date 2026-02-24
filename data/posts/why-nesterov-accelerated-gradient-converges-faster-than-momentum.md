@@ -2,8 +2,9 @@ title: Why Nesterov Accelerated Gradient Converges Faster Than Momentum
 slug: why-nesterov-accelerated-gradient-converges-faster-than-momentum
 pub: 2026-02-03 07:00:00
 authors: arj
-tags: optimization,gradient descent,nag,momentum,deep learning
-category: machine learning,optimization
+tags: optimization, mathematics, nag
+category: deep learning
+related_posts: nesterov-accelerated-gradient-nag-optimizer-in-deep-learning,machine-learning-part-4-gradient-descent-and-cost-function,relu-activation-function-and-its-variants
 
 Gradient-based optimization lies at the heart of modern machine learning. From linear regression to deep neural networks, the efficiency of training depends heavily on how quickly and stably an optimizer can minimize a loss function. While vanilla gradient descent is conceptually simple, it is often too slow and unstable for practical use. This is why momentum-based methods were introduced.
 

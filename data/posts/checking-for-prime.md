@@ -2,8 +2,9 @@ title: Checking for Prime Numbers in Python
 slug: checking-for-prime
 pub: 2018-12-29 15:00:00
 authors: arj
-tags: python, algorithms, math, primes
-category: programming problems
+tags: math, number theory, fundamentals
+category: algorithms
+related_posts: armstrong-numbers,daily-coding-problem-solution-1,zen-of-python-in-depth
 
 Checking if a number is prime is a fundamental programming task. A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.
 

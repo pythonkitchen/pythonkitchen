@@ -2,8 +2,9 @@ title: Efficient Column Removal in Pandas: Dropping by Index or Range
 slug: removing-last-columns-of-excel-dataframe-using-pandas-by-index
 pub: 2018-07-22 09:19:28
 authors: arj
-tags: python, pandas, dataframe, data-cleaning, beginners
-category: data science, pandas
+tags: pandas, data manipulation, excel
+category: data science
+related_posts: preparing-an-excel-file-for-analysis-using-pandas,data-scaling-techniques-in-machine-learning,measures-in-statistics-for-data-science
 
 When cleaning data in Pandas, we often need to remove columns. While dropping by name (`df.drop(columns=['Name'])`) is common, there are many scenarios where it’s more efficient to drop columns by their **index position**. 
 

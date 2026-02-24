@@ -2,8 +2,9 @@ title: How to solve celery task has no attribute AsyncResult
 slug: celery-task-asyncresult-no-attribute
 pub: 2021-08-15 07:36:53
 authors: arj
-tags: celery
-category: distributed system
+tags: celery, task queues, debugging
+category: distributed systems
+related_posts: how-to-query-task-by-id-in-celery,how-to-set-task-id-in-celery,define-prefect-deployment
 
 I was looking through Grinberg's [tuto](https://blog.miguelgrinberg.com/post/using-celery-with-flask) on celery and flask. I saw querying tasks by
 

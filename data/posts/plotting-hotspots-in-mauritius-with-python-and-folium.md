@@ -2,8 +2,9 @@ title: Plotting Hotspots in Mauritius with Python and Folium
 slug: plotting-hotspots-in-mauritius-with-python-and-folium
 pub: 2019-01-23 08:01:11
 authors: arj
-tags: folium,plotting
-category: data science,geospatial
+tags: gis, mapping, folium
+category: data visualization
+related_posts: translating-location-to-map-coordinates,game-map-rendering,generating-unintelligent-random-maps
 
 
 geo plotting has never been so easy. thanks dhrumil patel!

@@ -2,8 +2,9 @@ title: How to Annotate Each Point in a Matplotlib Scatter Plot
 slug: matplotlib-scatter-plot-annotate-set-text-at-label-each-point
 pub: 2018-05-08 04:32:11
 authors: arj
-tags: python, matplotlib, data-visualization, pandas, plotting
-category: data science
+tags: matplotlib, plotting, data analysis
+category: data visualization
+related_posts: beyond-the-basics-unconventional-uses-of-seaborn-heatmaps-for-data-visualization,an-overview-of-python-terminal-plotting-libraries,plotting-hotspots-in-mauritius-with-python-and-folium
 
 One of the most frequent questions when working with Matplotlib is: **"How do I label each point in my scatter plot?"** 
 

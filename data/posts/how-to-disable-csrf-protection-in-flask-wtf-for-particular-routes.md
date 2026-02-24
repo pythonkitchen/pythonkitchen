@@ -2,8 +2,9 @@ title: How to disable csrf protection for particular routes in Flask-wtf
 slug: how-to-disable-csrf-protection-in-flask-wtf-for-particular-routes
 pub: 2021-02-24 07:52:33
 authors: arj
-tags: 
-category: flask
+tags: flask, wtforms, csrf
+category: security
+related_posts: how-prevent-open-redirect-vulnerab-flask,how-to-correctly-use-the-next-parameter-in-login-and-logout-in-flask,run-flask-linux-only-windows-afpy
 
 Flask-wtf recommends using `@csrf.exempt` to disable csrf protection for particular routes as in the case of APIs.
 

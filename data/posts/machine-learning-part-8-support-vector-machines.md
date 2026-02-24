@@ -2,8 +2,9 @@ title: Machine Learning Part 8: Support Vector Machines (SVM)
 slug: machine-learning-part-8-support-vector-machines
 pub: 2021-04-07 10:08:14
 authors: arj
-tags: machine learning, svm, classification, hyperplane, kernel-trick
+tags: svm, kernel methods, classification
 category: machine learning
+related_posts: logistic-regression-vs-k-nearest-neighbors-in-machine-learning,linear-regression-vs-decision-trees-vs-support-vector-machines,machine-learning-part-9-neural-networks
 
 Support Vector Machines (SVM) are powerful supervised learning models used for classification and regression. In this post, we'll break down the geometry and logic behind them.
 

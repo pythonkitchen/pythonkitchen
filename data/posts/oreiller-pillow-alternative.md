@@ -2,7 +2,9 @@ title: Oreiller: A Python Pillow Alternative
 slug: oreiller-pillow-alternative 
 pub: 2024-03-06 09:00:00
 authors: arj 
-tags: category: pillow
+tags: image processing, library, pillow
+related_posts: matplotlib-scatter-plot-annotate-set-text-at-label-each-point,beyond-the-basics-unconventional-uses-of-seaborn-heatmaps-for-data-visualization,plotting-hotspots-in-mauritius-with-python-and-folium
+category: computer vision
 
 Really, oreiller is the french word for a pillow.
 

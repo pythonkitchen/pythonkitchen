@@ -2,8 +2,9 @@ title: Get Python's help() function stored as string just like console
 slug: get-pythons-help-function-stored-as-string-just-like-console
 pub: 2019-07-24 19:36:53
 authors: arj
-tags: help,pydoc,python
-category: docs,standard library
+tags: introspection, metaprogramming, documentation
+category: software engineering
+related_posts: zen-of-python-in-depth,python-generators-in-depth,python-making-imports-callable
 
 
 Python's help function lets you see the help message written for you by the developer. It is particularly useful in IDLE / shell to inspect modules and explore.

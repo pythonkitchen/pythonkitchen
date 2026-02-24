@@ -2,8 +2,9 @@ title: How to fix docker.errors.DockerException: Error while fetching server API
 slug: fix-dockererrorsdockerexception-error-fetching-server-api-version-without-using-docker-desktop
 pub: 2024-11-05 21:34:00
 authors: arj
-tags: 
-category: docker
+tags: docker, troubleshooting, linux
+category: devops
+related_posts: venv-usage-on-windows-activate-and-deactivate,install-pipx-mint-ubuntu,rye-package-manager
 
 If you use Docker and get it running while using Docker Desktop, you might run into this error:
 

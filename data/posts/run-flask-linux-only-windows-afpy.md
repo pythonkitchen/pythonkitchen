@@ -2,8 +2,9 @@ title: How to run a Flask Linux-only  App on Windows - The AFPy Site
 slug: run-flask-linux-only-windows-afpy
 pub: 2020-11-09 09:41:13
 authors: arj
-tags: flask,windows
-category: flask
+tags: flask, linux, portability
+category: web development
+related_posts: how-to-disable-csrf-protection-in-flask-wtf-for-particular-routes,why-choose-flask-over-fastapi,how-to-have-django-packages-in-flask
 
 There are in the Python world many Flask Linux-only apps. However in many case, with some twerking we can make them work on Windows. We'll take the case of the AFPy site.
 

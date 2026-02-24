@@ -2,8 +2,9 @@ title: Coordinate Systems: Converting Screen Space to Map Space
 slug: translating-location-to-map-coordinates
 pub: 2018-06-06 06:10:46
 authors: arj
-tags: python, processing.py, game-dev, math, coordinates
-category: canvas theory, processing.py
+tags: gis, graphics, logic
+category: game development
+related_posts: game-map-rendering,generating-unintelligent-random-maps,plotting-hotspots-in-mauritius-with-python-and-folium
 
 When building a tile-based game, you constantly need to translate between two different worlds:
 1.  **Screen Space:** The actual pixel coordinates on your monitor (e.g., the mouse is at `x: 342, y: 156`).

@@ -2,8 +2,9 @@ title: 2 Brilliant Breakthroughs in Computational Topology Using Machine Learnin
 slug: 2-brilliant-breakthroughs-in-computational-topology-using-machine-learning
 pub: 2022-10-21 09:31:20
 authors: abdulkhan
-tags: 
-category: data science,machine learning
+tags: topology, research, computational math
+category: machine learning
+related_posts: machine-learning-part-1-introduction,framework-for-evolution-with-neural-networks,eigen-decomposition-in-machine-learning
 
 Topology is a classical branch of mathematics, born essentially from **Euler's studies** in the XVII century. It deals with the abstract notion of shape and geometry. The last decades were characterized by a renewed interest in topology and topology-based tools, due to the birth of computational topology and Spatial Data Analysis (SDA). Successful applications of computational topology to data analysis boosted a renewed interest in that field, and Spatial data analysis (SDA) has earned a prominent place in contemporary research, as a rich family of algorithms and methods from computational topology, e.g. Morse theory or persistent homology, to analyze and visualize data. Focusing on image analysis, in low dimensions (typically 2 or 3), techniques from SDA are used to extract and classify geometric features, e.g. level sets or integral lines. In this survey, I focus specifically on **persistent homology**, because I found this technique really promising with respect to the interplay with Machine Learning/Deep Learning.
 

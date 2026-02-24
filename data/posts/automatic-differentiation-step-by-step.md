@@ -2,8 +2,9 @@ title: Auto-differentiation and Autograd explained step by step
 slug: automatic-differentiation-step-by-step
 pub: 2022-11-15 14:34:00
 authors: abdulkhan
-tags: pythonmembers.club
-category: algorithm and data structures,data science,machine learning
+tags: calculus, autograd, deep learning theory
+category: mathematics
+related_posts: machine-learning-part-4-gradient-descent-and-cost-function,eigen-decomposition-in-machine-learning,relu-activation-function-and-its-variants
 
 We will understand what is automatic differentiation for absolute beginners, although this concept requires a fair amount of theoretical understanding of derivatives and the chain rule, But don't worry I will try to explain in a very practical way, and we will build our knowledge one concept at a time and the end you will be able to compute painful calculus functions in seconds, This concept took me 7 - 8 days to comprehensively understand the importance and use cases in machine learning, so don't feel overwhelmed if you don't understand it even in your 10th attempted, Know this we are automating something which takes months for math graduate to understand!.
 

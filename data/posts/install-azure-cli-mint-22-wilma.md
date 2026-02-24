@@ -2,7 +2,9 @@ title: How to Install Azure Cli on Linux Mint 22 / Wilma
 slug: install-azure-cli-mint-22-wilma
 pub: 2025-01-08 15:54:02
 authors: arj
-tags: azure
+tags: azure, devops, linux
+related_posts: install-pipx-mint-ubuntu,how-to-ssh-into-ec2-instance,add-google-calendar-to-linux-mint
+category: cloud computing
 
 
 Follow any installing azure cli on Linux mint tutorial, but, on the step below add noble main instead of something as generic as jammy main. [See comparison](https://linuxmint.com/download_all.php)

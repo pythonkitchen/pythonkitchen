@@ -2,8 +2,9 @@ title: How to integrate P5JS with Flask-SocketIO
 slug: p5js-with-flask-socket-io
 pub: 2022-04-15 20:37:03
 authors: arj
-tags: 
-category: flask
+tags: flask, websockets, creative coding
+category: web development
+related_posts: how-implement-notification-flask,integrate-tinymce-5-with-flask,web-mail-interface-using-pi-and-flask
 
 P5Js is an implementation of processing.org's library in JavaSript. It can be thought of as a canvas management library. Integrating such a library with a common backend like Flask unlocks amazing opportunities. Canvas is even better if sockets.io is involved for real-time events. This post shows how to integrate these 3 libraries using flask-socketio.
 

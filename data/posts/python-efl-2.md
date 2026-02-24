@@ -2,8 +2,9 @@ title: Python-efl Weight Hints Callback
 slug: python-efl-2
 pub: 2021-10-22 18:07:40
 authors: arj
-tags: 
-category: python-efl
+tags: efl, enlightenment, gui series
+category: gui development
+related_posts: python-efl-1,python-efl-3,python-efl-4
 
 Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
 

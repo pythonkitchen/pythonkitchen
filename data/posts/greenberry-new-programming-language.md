@@ -2,8 +2,9 @@ title: Case Study: Building greenBerry, a New Programming Language in Python
 slug: greenberry-new-programming-language
 pub: 2018-05-01 10:38:55
 authors: tim
-tags: python, programming-languages, greenBerry, software-development, projects
-category: projects
+tags: language design, interpreter, greenberry
+category: programming languages
+related_posts: dsl-python-new-language-how-to-build-a-css-pre-processor-like-sass-from-scratch-dotdot,reviving-bertrand-russell-through-python,building-a-lexer-in-python-tutorial
 
 What does it take to create a programming language from scratch? While many think of complex C++ compilers, you can actually build a functional (though simple) language using Python. This is the story of **greenBerry**.
 

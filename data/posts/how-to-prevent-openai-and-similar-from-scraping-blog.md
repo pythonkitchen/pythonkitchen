@@ -2,8 +2,9 @@ title: How to prevent OpenAi and similar from scraping your blog
 slug: how-to-prevent-openai-and-similar-from-scraping-your-blog
 pub: 2024-11-05 21:27:00
 authors: arj
-tags: 
-category: web
+tags: scraping, robots.txt, seo
+category: security
+related_posts: python-engineering-articles,why-choose-flask-over-fastapi,whats-new-in-python-3-9-alpha2
 
 
 If you want to disable OpenAi or similar crawlers from harvesting your data, create a file called robots.txt at the root of your domain.

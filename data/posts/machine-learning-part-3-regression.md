@@ -2,8 +2,9 @@ title: Machine Learning Part 3: Understanding Regression
 slug: machine-learning-part-3-regression
 pub: 2019-01-23 07:38:19
 authors: arj
-tags: machine learning, regression, linear regression, algorithms
+tags: regression, modeling, mathematics
 category: machine learning
+related_posts: machine-learning-part-4-gradient-descent-and-cost-function,linear-regression-vs-decision-trees-vs-support-vector-machines,machine-learning-part-2-supervised
 
 In the previous parts, we introduced machine learning and supervised learning. Today, we focus on one of the two main pillars of supervised learning: **Regression**.
 

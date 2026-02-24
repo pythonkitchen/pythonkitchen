@@ -2,8 +2,9 @@ title: ReLU Activation Function and Its Variants
 slug: relu-activation-function-and-its-variants
 pub: 2022-12-13 11:23:46
 authors: parthshukla
-tags: activations functions,relu
-category: machine learning
+tags: neural networks, activation functions, relu
+category: deep learning
+related_posts: what-is-perceptron-in-deep-learning,nesterov-accelerated-gradient-nag-optimizer-in-deep-learning,machine-learning-part-9-neural-networks
 
 Activation functions in deep learning are the functions that decide the output from node or hidden layers from a given set of inputs in neural networks. There are many activation functions used in deep learning but among all of them rectified linear unit or ReLU is the widely used activation function in almost all deep learning neural networks.
 

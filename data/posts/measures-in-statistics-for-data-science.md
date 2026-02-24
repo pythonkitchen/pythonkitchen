@@ -2,8 +2,9 @@ title: Measures in Statistics for Data Science
 slug: measures-in-statistics-for-data-science
 pub: 2022-11-24 03:17:11
 authors: parthshukla
-tags: data science,measures,statistics
-category: data science
+tags: statistics, data science, probability
+category: mathematics
+related_posts: 10-classification-cost-functions-in-machine-learning,data-scaling-techniques-in-machine-learning,calculating-distance-for-four-features
 
 Statistics is a critical component of data science and machine learning algorithms. Almost all the machine learning algorithms use mathematics in the backend, which is linear algebra and statistics. Learning and understanding the core intuition and the working mechanisms of any machine learning algorithm requires a core knowledge of statistics.
 

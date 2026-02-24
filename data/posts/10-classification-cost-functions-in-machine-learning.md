@@ -2,8 +2,9 @@ title: 10 Classification Cost Functions in Machine Learning
 slug: 10-classification-cost-functions-in-machine-learning
 pub: 2022-12-23 04:48:15
 authors: parthshukla
-tags: accuracy,classifications,cost functions,data science,machine learning
-category: data science,machine learning
+tags: classification, cost functions, evaluation metrics
+category: machine learning
+related_posts: logistic-regression-vs-k-nearest-neighbors-in-machine-learning,measures-in-statistics-for-data-science,adaboost-vs-naive-bayes-algorithms-in-machine-learning
 
 Cost functions in machine learning measure the performance of the machine learning algorithm trained on a particular dataset. By measuring the cost function or cost for a specific model, we can easily measure the error of the machine-learning model trained. There are many types of cost functions, from which depending on the problem statement the single or multiple cost function can be chosen to measure the model's performance.
 

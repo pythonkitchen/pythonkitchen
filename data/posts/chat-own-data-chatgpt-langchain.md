@@ -2,8 +2,9 @@ title: Chat with your own data/text files using chatGPT and LangChain
 slug: chat-own-data-chatgpt-langchain
 pub: 2023-11-23 10:00:00
 authors: arj
-tags: langchain
-category: data science,machine learning
+tags: llm, langchain, openai, rag
+category: artificial intelligence
+related_posts: LangChain-understand-production-codebases,json-response-google-genai,how-to-run-tencents-hunyuan-video-model-using-python
 
 There are many different approaches to chatting with your own data. 
 One way is to upload your PDF to the OpenAi chatGPT cloud. 

@@ -2,8 +2,9 @@ title: How to get server response from DropzoneJs for chunk uploads
 slug: dropzonejs-server-response-chunck-upload
 pub: 2021-08-13 08:47:49
 authors: arj
-tags: javascript
-category: Uncategorized
+tags: flask, javascript, file uploads
+category: web development
+related_posts: build-a-note-app-in-flask-as-fast-as-it-can-get-using-shopyo,shopyo-understand-advanced-flask-app,integrate-tinymce-5-with-flask
 
 After much struggling, here's the magical formula we got for getting the server response back for chunck uploads:
 

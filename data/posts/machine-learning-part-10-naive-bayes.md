@@ -2,8 +2,9 @@ title: Machine Learning Part 10: Naive Bayes Classification
 slug: machine-learning-part-10-naive-bayes
 pub: 2021-04-07 10:11:56
 authors: arj
-tags: machine learning, naive bayes, bayes theorem, probability, classification
+tags: probabilistic models, bayesian, classification
 category: machine learning
+related_posts: adaboost-vs-naive-bayes-algorithms-in-machine-learning,machine-learning-part-1-introduction,supervised-learning
 
 Naive Bayes is a simple yet powerful classification algorithm based on **Bayes' Theorem**. It's particularly popular for text classification and spam filtering.
 

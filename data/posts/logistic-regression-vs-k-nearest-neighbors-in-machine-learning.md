@@ -2,8 +2,9 @@ title: Logistic Regression vs. K Nearest Neighbors in Machine Learning
 slug: logistic-regression-vs-k-nearest-neighbors-in-machine-learning
 pub: 2023-01-16 13:10:39
 authors: parthshukla
-tags: 
-category: data science,machine learning
+tags: classification, comparison, statistics
+category: machine learning
+related_posts: linear-regression-vs-decision-trees-vs-support-vector-machines,machine-learning-part-8-support-vector-machines,adaboost-vs-naive-bayes-algorithms-in-machine-learning
 
 In machine learning, using an appropriate algorithm according to the behavior of the data and its pattern is an essential thing to achieve higher accuracies and accurate performing models. Many machine learning algorithms can be used for almost all types of problem statements in machine learning. The best-performing among them can be selected based on performance and accuracy.
 

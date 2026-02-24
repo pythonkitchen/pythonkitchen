@@ -2,8 +2,9 @@ title: The Ultimate Guide to Installing OpenCV on Raspberry Pi 3
 slug: installing-opencv-on-the-pi3-with-python3-and-usb-webcam
 pub: 2018-06-20 17:59:15
 authors: arj
-tags: python, opencv, raspberry-pi, computer-vision, tutorial
-category: computer vision, raspberry pi
+tags: opencv, raspberry pi, iot
+category: computer vision
+related_posts: raspberry-pi-setup,plotting-hotspots-in-mauritius-with-python-and-folium,identifying-home-cutlery-items
 
 OpenCV (Open Source Computer Vision Library) is the industry standard for image processing and computer vision. However, installing it on a Raspberry Pi 3 can be notoriously difficult. While modern versions of Python allow for a simple `pip install opencv-python`, compiling it from source is still often the best way to get full hardware optimization and support for extra modules.
 

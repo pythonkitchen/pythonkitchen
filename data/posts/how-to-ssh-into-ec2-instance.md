@@ -2,8 +2,9 @@ title: How to SSH into AWS EC2 instance
 slug: how-to-ssh-into-aws-ec2
 pub: 2024-11-05 22:05:00
 authors: arj
-tags: 
-category: devops
+tags: aws, ec2, devops, ssh
+category: cloud computing
+related_posts: copy-files-to-aws-ec2,raspberry-pi-setup-establishing-ssh-connection,install-azure-cli-mint-22-wilma
 
 ## Table of Contents
 

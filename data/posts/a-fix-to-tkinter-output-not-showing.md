@@ -2,8 +2,9 @@ title: Troubleshooting Tkinter: Why is My GUI Output Not Showing?
 slug: a-fix-to-tkinter-output-not-showing
 pub: 2018-04-29 21:08:30
 authors: arj
-tags: python, tkinter, gui, debugging, programming-tips
-category: gui
+tags: tkinter, debugging, desktop apps
+category: gui development
+related_posts: tkinter-tackling-import-for-python-2-and-3,tkinter-text-widget-tags,packaging-an-sqlite-db-included-crud-pyqt5-app-using-pyinstaller
 
 Tkinter is the most common way for beginners to start building GUIs in Python. It’s powerful, but it can be frustrating when you write your code, run it, and... nothing happens. Or perhaps the window appears, but it's completely empty.
 

@@ -2,7 +2,9 @@ title: How to get gemini response as json using python and google genai
 slug: json-response-gemini-google-genai
 pub: 2025-01-16 15:42:02
 authors: arj
-tags: ai
+tags: gemini, generative ai, apis
+related_posts: chat-own-data-chatgpt-langchain,LangChain-understand-production-codebases,simple-json-parser
+category: artificial intelligence
 
 
 Normally you can tune models to return json. But, fortunately, Gemini

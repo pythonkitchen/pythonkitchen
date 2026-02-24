@@ -2,7 +2,9 @@ title: Add Google Calendar Desklet To Linux Mint 22
 slug: add-google-calendar-desklet-linux-mint
 pub: 2024-12-18 16:42:02
 authors: arj
-tags: linux
+tags: productivity, calendar, desktop integration
+related_posts: install-azure-cli-mint-22-wilma,install-pipx-mint-ubuntu,venv-usage-on-windows-activate-and-deactivate
+category: linux
 
 
 [Google Calendar Desklet](https://cinnamon-spices.linuxmint.com/desklets/view/35) is a Python-packaged desklet app for Linux.

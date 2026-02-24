@@ -2,8 +2,9 @@ title: Python Virtual Environments on Windows: A Complete Guide
 slug: venv-usage-on-windows-activate-and-deactivate
 pub: 2018-08-10 18:46:37
 authors: arj
-tags: python, venv, windows, beginners, tutorial
-category: virtual environment
+tags: virtual environments, windows, workflow
+category: devops
+related_posts: python-running-makefile-on-windows,rye-package-manager,install-pipx-mint-ubuntu
 
 If you're starting multiple Python projects, you will quickly run into a problem: one project needs Version 1.0 of a library, while another needs Version 2.0. If you install everything globally, you'll end up with a broken mess.
 

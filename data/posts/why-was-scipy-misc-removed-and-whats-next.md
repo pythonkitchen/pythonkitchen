@@ -2,8 +2,9 @@ title: Why was "scipy.misc" removed, and what's next?
 slug: why-was-scipy-misc-removed-and-whats-next
 pub: 2022-10-18 06:44:17
 authors: abdulkhan
-tags: 
+tags: scipy, ecosystem, updates
 category: data science
+related_posts: whats-new-in-python-3-9-alpha2,python-engineering-articles,free-python-courses-list
 
 Miscellaneous routines in scipy included convenient functions. This article cover the removal of this feature.
 

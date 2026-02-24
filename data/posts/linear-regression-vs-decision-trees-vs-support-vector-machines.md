@@ -2,8 +2,9 @@ title: Linear Regression vs. Decision Trees vs. Support Vector Machines
 slug: linear-regression-vs-decision-trees-vs-support-vector-machines
 pub: 2022-12-31 05:37:17
 authors: parthshukla
-tags: 
-category: Uncategorized
+tags: algorithms, classification, comparison
+category: machine learning
+related_posts: logistic-regression-vs-k-nearest-neighbors-in-machine-learning,machine-learning-part-3-regression,machine-learning-part-8-support-vector-machines
 
 Machine Learning algorithms are one of the most important things to decide during model training and building. All the datasets and problem statements related to that in machine learning are not the same and can have different patterns and complexity. In such cases, selecting the best suitable machine learning algorithms becomes a significant step of model building.
 

@@ -2,8 +2,9 @@ title: Multi-Dimensional Euclidean Distance: Calculating Distance for N Features
 slug: calculating-distance-for-four-features
 pub: 2018-07-22 03:37:21
 authors: arj
-tags: math, python, data-science, algorithms, geometry
-category: data science, machine learning
+tags: statistics, distance metrics, geometry
+category: data science
+related_posts: measures-in-statistics-for-data-science,principle-component-analysis-in-machine-learning,data-scaling-techniques-in-machine-learning
 
 In data science and machine learning, measuring the similarity between two points is a foundational task. One of the most common ways to do this is by calculating the **Euclidean Distance**. 
 

@@ -2,8 +2,9 @@ title: Daily Coding Problem Solution 3
 slug: daily-coding-problem-solution-3
 pub: 2021-03-22 19:48:55
 authors: arj
-tags: 
-category: algorithm and data structures,daily coding problem,games
+tags: coding challenges, binary trees, serialization
+category: algorithms
+related_posts: daily-coding-problem-solution-1,daily-coding-problem-solution-2,daily-coding-problem-solution-4
 
 This problem was asked by Google.
 

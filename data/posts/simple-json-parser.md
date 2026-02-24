@@ -2,8 +2,9 @@ title: Simple JSON parser without knowing anything beforehands
 slug: simple-json-parser
 pub: 2025-02-15 15:40:00
 authors: arj
-tags: 
-category: programming problems
+tags: parsers, json, fundamentals
+category: programming languages
+related_posts: building-a-lexer-in-python-tutorial,how-to-create-your-own-dsldomain-specific-language-in-python,json-response-google-genai
 
 Table of Content
 ================

@@ -2,8 +2,9 @@ title: NeuroJSON: A Potential Neuro-Imaging Library For Python
 slug: neurojson-a-potential-neuro-imaging-library-for-python
 pub: 2022-10-18 06:40:24
 authors: abdulkhan
-tags: 
-category: data science,machine learning
+tags: data formats, neuroimaging, library design
+category: neuroscience
+related_posts: json-response-google-genai,simple-json-parser,python-engineering-articles
 
 NeuroJson, founded by [Qianqian Fang](https://mail.python.org/archives/users/b550f259b878424ba22e0e86de457b1e/), is an open-source project which aims to create easy-to-adopt, easy-to-extend, and preferably human-readable data formats to help disseminate and exchange **Neuro-imaging data** (and scientific data in general). It primarily uses JSON and binary JSON (specifically, UBJSON [UBJSON](https://ubjson.org/) derived [Binary JSON](https://json.nlohmann.me/features/binary_formats/bjdata/) format) as the underlying data exchange files.
 

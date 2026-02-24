@@ -2,8 +2,9 @@ title: Legally Free Python Books List (2026)
 slug: legally-free-python-books-list
 pub: 2026-02-10 15:00:00
 authors: arj
-tags: book,free,legal,python
-category: books
+tags: books, learning, collections
+category: education
+related_posts: free-python-courses-list,python-engineering-articles,whats-new-in-python-3-9-alpha2
 
 
 Here is my personal list of legally free Python books. **Warning: Packt free books are highly unreliable, what can be free today can no longer be free tomorrow They were included as they are free at the time of writing this post. Similarly is Oreilly's case. The two publishing houses have been annotated as necessary.** In case of no longer free or broken links please mail me at `arj.python at gmail dot com` to update article. I have to thank the internet who took the pain to point these resources to me. I have skimmed through the contents to producs a list of legally free Python books of value. Here's how i evaluated books (you might not agree, but that's my personal take on it):

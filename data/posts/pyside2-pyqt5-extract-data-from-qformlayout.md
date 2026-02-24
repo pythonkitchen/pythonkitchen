@@ -2,8 +2,9 @@ title: Pyside2 / PyQt5 Extract Data From QFormLayout
 slug: pyside2-pyqt5-extract-data-from-qformlayout
 pub: 2020-02-09 10:16:21
 authors: arj
-tags: gui,layout
-category: pyqt5,pyside
+tags: pyside, pyqt, forms
+category: gui development
+related_posts: pyqt5-pyside2-qtableview-how-to-find-out-if-row-is-selected-and-which-one-in-python,pyqt-value-cells-selected-row-qt-tableview,a-fix-to-tkinter-output-not-showing
 
 
 

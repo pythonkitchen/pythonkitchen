@@ -2,8 +2,9 @@ title: Procedural Generation Basics: Random Map Generation in Python
 slug: generating-unintelligent-random-maps
 pub: 2018-06-01 05:32:02
 authors: arj
-tags: python, processing.py, game-dev, procedural-generation, algorithms
-category: canvas theory, processing.py
+tags: procedural generation, maps, logic
+category: game development
+related_posts: game-map-rendering,translating-location-to-map-coordinates,plotting-hotspots-in-mauritius-with-python-and-folium
 
 In game development, **Procedural Generation** is the technique of using algorithms to create game content automatically rather than manually. While complex games like *Minecraft* or *No Man's Sky* use sophisticated noise functions, we can start by learning the most basic form: **Random Value Filling**.
 

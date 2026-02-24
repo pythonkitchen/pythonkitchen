@@ -2,8 +2,9 @@ title: Python-efl A Window
 slug: python-efl-1
 pub: 2021-10-22 18:02:40
 authors: arj
-tags: 
-category: python-efl
+tags: efl, enlightenment, series
+category: gui development
+related_posts: python-efl-2,python-efl-3,how-to-install-python-efl-on-ubuntu-or-linux-mint
 
 Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
 

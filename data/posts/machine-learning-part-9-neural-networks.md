@@ -2,8 +2,9 @@ title: Machine Learning Part 9: An Introduction to Neural Networks
 slug: machine-learning-part-9-neural-networks
 pub: 2021-04-07 10:10:40
 authors: arj
-tags: machine learning, neural networks, perceptron, deep learning, ai
-category: machine learning
+tags: neural networks, architectures, backpropagation
+category: deep learning
+related_posts: what-is-perceptron-in-deep-learning,relu-activation-function-and-its-variants,framework-for-evolution-with-neural-networks
 
 Neural Networks are the backbone of modern Artificial Intelligence, powering everything from face recognition to self-driving cars. In this post, we'll explore the basic building block of a neural network: the **Perceptron**.
 

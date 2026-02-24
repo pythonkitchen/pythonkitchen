@@ -2,8 +2,9 @@ title: Machine Learning Part 6: Entropy and Information Gain
 slug: machine-learning-part-6-enthropy-and-gain
 pub: 2019-01-29 05:55:06
 authors: arj
-tags: machine learning, entropy, information gain, decision trees, math
+tags: information theory, decision trees, entropy
 category: machine learning
+related_posts: machine-learning-part-7-random-forests-explained,machine-learning-part-5-mixed-methods,linear-regression-vs-decision-trees-vs-support-vector-machines
 
 In the previous post, we saw how Decision Trees split data based on "purity." But how do we measure this purity mathematically? This is where **Entropy** and **Information Gain** come in.
 

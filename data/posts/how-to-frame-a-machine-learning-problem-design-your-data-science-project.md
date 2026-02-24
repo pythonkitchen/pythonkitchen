@@ -2,8 +2,9 @@ title: How to Frame a Machine Learning Problem | Design Your Data Science Projec
 slug: how-to-frame-a-machine-learning-problem-design-your-data-science-project
 pub: 2022-12-09 06:45:58
 authors: parthshukla
-tags: data science,framing,machine learning,ml project
-category: data science,machine learning
+tags: project management, problem framing, strategy
+category: data science
+related_posts: machine-learning-part-1-introduction,supervised-learning,measures-in-statistics-for-data-science
 
 Machine learning is the concept that a computer program can learn and adapt to new data without human intervention. It is a sub-field of artificial intelligence that keeps a computer's built-in algorithms current regardless of changes in the worldwide economy. Currently, most companies and agencies are using machine-learning techniques to solve their business problem, these machine-learning techniques are capable of solving almost all kinds of real-world problems occurring in the industry.
 

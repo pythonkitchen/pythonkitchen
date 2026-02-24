@@ -2,8 +2,9 @@ title: Mastering Python's Regex: Part 1 - The Basics
 slug: mastering-pythons-regex-part-1-basics
 pub: 2018-08-03 20:04:02
 authors: arj
-tags: python, regex, programming, search, patterns
-category: regex
+tags: regex, string processing, patterns
+category: software engineering
+related_posts: string-manipulation-functions-the-top-5-you-forgot-to-pack,handling-curly-braces-in-string-formatting-python,zen-of-python-in-depth
 
 Regular Expressions, or **Regex**, are often seen as a "dark art" by beginning programmers. At first glance, they look like a jumble of bizarre symbols and incomprehensible strings. However, once you understand the basic logic, Regex becomes one of the most powerful tools in your coding arsenal.
 
