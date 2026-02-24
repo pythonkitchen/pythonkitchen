@@ -28,7 +28,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2026-02-10 15:00:00'>
+  <meta name='date' content='2026-02-24 18:00:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -74,38 +74,29 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Python-efl Weight Hints Callback | Python Kitchen</title>
-  <meta name="description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-Callback demo
-'''
-Abdur-Ramaan Janhang...">
-  <meta name="keywords" content="efl, enlightenment, gui series, gui development">
+  <title>Python EFL: Layouts, Weight Hints, and Callbacks (2026) | Python Kitchen</title>
+  <meta name="description" content="Mastering widget alignment and user interaction is crucial for any GUI application. This Python EFL tutorial explains how to use Weight Hints, Boxes, and Callba...">
+  <meta name="keywords" content="efl, enlightenment, gui series, layouts, callbacks, python tutorial, gui development">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.pythonkitchen.com/python-efl-2/">
-  <meta property="og:title" content="Python-efl Weight Hints Callback">
-  <meta property="og:description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-Callback demo
-'''
-Abdur-Ramaan Janhang...">
+  <meta property="og:title" content="Python EFL: Layouts, Weight Hints, and Callbacks (2026)">
+  <meta property="og:description" content="Mastering widget alignment and user interaction is crucial for any GUI application. This Python EFL tutorial explains how to use Weight Hints, Boxes, and Callba...">
   <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://www.pythonkitchen.com/python-efl-2/">
-  <meta property="twitter:title" content="Python-efl Weight Hints Callback">
-  <meta property="twitter:description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-Callback demo
-'''
-Abdur-Ramaan Janhang...">
+  <meta property="twitter:title" content="Python EFL: Layouts, Weight Hints, and Callbacks (2026)">
+  <meta property="twitter:description" content="Mastering widget alignment and user interaction is crucial for any GUI application. This Python EFL tutorial explains how to use Weight Hints, Boxes, and Callba...">
   <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <meta name='category' content='gui development'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='subtitle' content='Python-efl Weight Hints Callback'>
+  <meta name='subtitle' content='Python EFL: Layouts, Weight Hints, and Callbacks (2026)'>
   <meta name='pageKey' content='python-efl-2'>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
@@ -176,10 +167,10 @@ Abdur-Ramaan Janhang...">
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Python-efl Weight Hints Callback</p>
+                    <p class="text-3xl" style="font-weight: 600;">Python EFL: Layouts, Weight Hints, and Callbacks (2026)</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2021-10-22 18:07:40" class="text-gray-500">October 22, 2021</time>
+                        <time datetime="2026-02-24 11:00:00" class="text-gray-500">February 24, 2026</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
                             gui development
@@ -202,63 +193,119 @@ Abdur-Ramaan Janhang...">
                     
                     <br>
                     <article>
-                        <p>Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.</p>
-<p>Callback demo</p>
-<pre><code class="language-python">'''
-Abdur-Ramaan Janhangeer
-Updated from Jeff Hoogland's tutos
-for Python3.9 and Python-elf 1.25.0
-
-https://www.toolbox.com/tech/operating-systems/blogs/py-efl-tutorial-2-weight-hints-031215/
-'''
-
-import efl.elementary as elm
+                        <p>Mastering widget alignment and user interaction is crucial for any GUI application. This Python EFL tutorial explains how to use <strong>Weight Hints</strong>, <strong>Boxes</strong>, and <strong>Callbacks</strong> to create responsive layouts and interactive buttons. If you’re new to the series, start with our <a href="https://www.pythonkitchen.com/python-efl-1/">first window tutorial</a>.</p>
+<h3>TL;DR: Layout &amp; Interaction Summary</h3>
+<ul>
+<li><strong>Box Widget</strong>: A container used to pack multiple widgets (labels, buttons) together.</li>
+<li><strong>Weight Hints</strong>: Tell EFL how to distribute space among widgets.</li>
+<li><strong>Callbacks</strong>: Functions that trigger when a user interacts with a widget (e.g., clicking a button).</li>
+<li><strong>Core Goal</strong>: Create a window with a label and a button that exits the app.</li>
+</ul>
+<hr/>
+<h2>Understanding EFL Layout Logic</h2>
+<p>In Python EFL, widgets don’t just sit on the screen; they belong to containers. The most common container is the <strong>Box</strong>, which can arrange items horizontally or vertically.</p>
+<h3>What are Weight Hints?</h3>
+<p>Weight hints (<code>size_hint_weight</code>) are values ranging from 0.0 to 1.0. They define how much extra space a widget should take up. Using <code>EVAS_HINT_EXPAND</code> (which equals 1.0) ensures the widget expands to fill the available area.</p>
+<hr/>
+<h2>Implementation Example: Labels and Buttons</h2>
+<p>This script demonstrates packing a Label and a Button into a Box, then connecting the button to an exit callback.</p>
+<pre><code class="language-python">import efl.elementary as elm
 from efl.elementary.box import Box
 from efl.elementary.button import Button
 from efl.elementary.label import Label
 from efl.elementary.window import StandardWindow
 from efl.evas import EVAS_HINT_EXPAND
 
+# Expansion constant for cleaner code
 EXPAND_BOTH = EVAS_HINT_EXPAND, EVAS_HINT_EXPAND
-
 
 class MainWindow(StandardWindow):
     def __init__(self):
-        StandardWindow.__init__(self, "ex1", "Good Bye Elementary", size=(300, 200))
+        StandardWindow.__init__(self, "ex2", "Interaction Demo", size=(300, 200))
         self.callback_delete_request_add(lambda o: elm.exit())
+
+        # 1. Create a Label
         our_label = Label(self)
         our_label.size_hint_weight = EXPAND_BOTH
         our_label.text = "Hello Elementary!"
         our_label.show()
 
+        # 2. Create a Button with a Callback
         our_button = Button(self)
         our_button.size_hint_weight = EXPAND_BOTH
-        our_button.text = "Good Bye Elementary!"
+        our_button.text = "Click to Exit"
         our_button.callback_clicked_add(self.button_pressed)
         our_button.show()
 
+        # 3. Create a Box container and pack widgets
         our_box = Box(self)
         our_box.size_hint_weight = EXPAND_BOTH
         our_box.pack_end(our_label)
         our_box.pack_end(our_button)
         our_box.show()
 
+        # 4. Add the Box to the window
         self.resize_object_add(our_box)
 
     def button_pressed(self, btn):
+        # This function runs when the button is clicked
+        print("Exit button clicked!")
         elm.exit()
-
 
 if __name__ == "__main__":
     elm.init()
     gui = MainWindow()
     gui.show()
     elm.run()
-    elm.shutdown()
-
-
-
 </code></pre>
+<hr/>
+<h2>Structured Data: Layout Options</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Box</strong></td>
+<td style="text-align: left;">Linear container</td>
+<td style="text-align: left;"><code>our_box.pack_end(widget)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Weight Hint</strong></td>
+<td style="text-align: left;">Expansion logic</td>
+<td style="text-align: left;"><code>widget.size_hint_weight = 1.0, 1.0</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Alignment</strong></td>
+<td style="text-align: left;">Positioning logic</td>
+<td style="text-align: left;"><code>widget.size_hint_align = 0.5, 0.5</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Callback</strong></td>
+<td style="text-align: left;">Event handling</td>
+<td style="text-align: left;"><code>widget.callback_clicked_add(func)</code></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>Frequently Asked Questions (FAQ)</h2>
+<h3>What is the difference between <code>pack_start</code> and <code>pack_end</code>?</h3>
+<p><code>pack_start</code> adds the widget to the beginning of the list (top or left), while <code>pack_end</code> adds it to the end (bottom or right).</p>
+<h3>Why doesn’t my widget fill the whole window?</h3>
+<p>Make sure you have set the <code>size_hint_weight</code> to <code>EXPAND_BOTH</code> and added the widget (or its container) to the window using <code>resize_object_add</code>.</p>
+<h3>Can I nest Boxes inside Boxes?</h3>
+<p>Yes. You can pack a horizontal Box inside a vertical Box to create complex grid-like layouts without using a formal Grid widget.</p>
+<hr/>
+<h3>Key Takeaways</h3>
+<ul>
+<li>Use <strong>Boxes</strong> for simple linear layouts.</li>
+<li><strong>Weight hints</strong> are essential for responsive resizing.</li>
+<li><strong>Callbacks</strong> bridge the gap between the UI and your Python logic.</li>
+</ul>
 
                         <div class="mt-16 border-t border-gray-100 pt-10">
                             <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
@@ -266,16 +313,16 @@ if __name__ == "__main__":
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2021-10-22 18:02:40" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                        <time datetime="2026-02-24 10:00:00" class="text-gray-400 uppercase tracking-wider">February 24, 2026</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
                                         <a href="/python-efl-1">
                                             <span class="absolute inset-0"></span>
-                                            Python-efl A Window
+                                            Python EFL Tutorial: Creating Your First Window (2026)
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from...
+                                        Looking to build desktop applications with the Enlightenment Foundation Libraries? This Python EFL t...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article
@@ -287,16 +334,16 @@ if __name__ == "__main__":
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2021-10-22 18:12:13" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                        <time datetime="2026-02-24 12:00:00" class="text-gray-400 uppercase tracking-wider">February 24, 2026</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
                                         <a href="/python-efl-3">
                                             <span class="absolute inset-0"></span>
-                                            Python-efl Align Hints
+                                            Python EFL: Advanced Align Hints and Weight Control (2026)
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from...
+                                        Positioning widgets precisely is the difference between a amateur tool and a professional applicatio...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article
@@ -308,16 +355,16 @@ if __name__ == "__main__":
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2021-10-22 18:18:51" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                        <time datetime="2026-02-24 13:00:00" class="text-gray-400 uppercase tracking-wider">February 24, 2026</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
                                         <a href="/python-efl-4">
                                             <span class="absolute inset-0"></span>
-                                            Python-efl Displaying Images
+                                            Python EFL: Displaying and Selecting Images (2026)
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from...
+                                        Looking for a high-performance way to display images in a Python GUI? This Python EFL tutorial cover...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article

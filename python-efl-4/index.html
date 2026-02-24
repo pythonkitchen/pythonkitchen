@@ -28,7 +28,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2026-02-10 15:00:00'>
+  <meta name='date' content='2026-02-24 18:00:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -74,38 +74,29 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Python-efl Displaying Images | Python Kitchen</title>
-  <meta name="description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-'''
-Abdur-Ramaan Janhangeer
-Updated fr...">
-  <meta name="keywords" content="efl, enlightenment, series, gui development">
+  <title>Python EFL: Displaying and Selecting Images (2026) | Python Kitchen</title>
+  <meta name="description" content="Looking for a high-performance way to display images in a Python GUI? This Python EFL tutorial covers the Image widget and the FileselectorButton, allowing you ...">
+  <meta name="keywords" content="efl, enlightenment, gui series, images, python tutorial, desktop apps, gui development">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.pythonkitchen.com/python-efl-4/">
-  <meta property="og:title" content="Python-efl Displaying Images">
-  <meta property="og:description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-'''
-Abdur-Ramaan Janhangeer
-Updated fr...">
+  <meta property="og:title" content="Python EFL: Displaying and Selecting Images (2026)">
+  <meta property="og:description" content="Looking for a high-performance way to display images in a Python GUI? This Python EFL tutorial covers the Image widget and the FileselectorButton, allowing you ...">
   <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://www.pythonkitchen.com/python-efl-4/">
-  <meta property="twitter:title" content="Python-efl Displaying Images">
-  <meta property="twitter:description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-'''
-Abdur-Ramaan Janhangeer
-Updated fr...">
+  <meta property="twitter:title" content="Python EFL: Displaying and Selecting Images (2026)">
+  <meta property="twitter:description" content="Looking for a high-performance way to display images in a Python GUI? This Python EFL tutorial covers the Image widget and the FileselectorButton, allowing you ...">
   <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <meta name='category' content='gui development'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='subtitle' content='Python-efl Displaying Images'>
+  <meta name='subtitle' content='Python EFL: Displaying and Selecting Images (2026)'>
   <meta name='pageKey' content='python-efl-4'>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
@@ -176,10 +167,10 @@ Updated fr...">
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Python-efl Displaying Images</p>
+                    <p class="text-3xl" style="font-weight: 600;">Python EFL: Displaying and Selecting Images (2026)</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2021-10-22 18:18:51" class="text-gray-500">October 22, 2021</time>
+                        <time datetime="2026-02-24 13:00:00" class="text-gray-500">February 24, 2026</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
                             gui development
@@ -202,7 +193,20 @@ Updated fr...">
                     
                     <br>
                     <article>
-                        <p>Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.</p>
+                        <p>Looking for a high-performance way to display images in a Python GUI? This Python EFL tutorial covers the <code>Image</code> widget and the <code>FileselectorButton</code>, allowing you to build applications that can view and change images dynamically. Python-EFL is a wrapper around the Enlightenment GUI kit, designed for speed and visual richness.</p>
+<h3>TL;DR: Image Handling Summary</h3>
+<ul>
+<li><strong>Image Widget</strong>: Used to display static or dynamic image files.</li>
+<li><strong>File Selector</strong>: A built-in button that opens a native file picker.</li>
+<li><strong>Key Methods</strong>: <code>file_set()</code> to load images and <code>tooltip_text_set()</code> for metadata.</li>
+<li><strong>Supported Formats</strong>: Common formats include PNG, JPG, and GIF.</li>
+</ul>
+<hr/>
+<h2>What is Python EFL?</h2>
+<p><strong>Python EFL</strong> is a set of Python bindings for the Enlightenment Foundation Libraries. It is particularly well-suited for developers who need to build “modern” looking applications that are extremely light on system resources, making it a favorite for Linux desktop and IoT development.</p>
+<hr/>
+<h2>Example 1: Simple Image Display</h2>
+<p>This first example shows the most basic way to load and display a PNG file in a standard window.</p>
 <pre><code class="language-python">'''
 Abdur-Ramaan Janhangeer
 Updated from Jeff Hoogland's tutos
@@ -240,9 +244,10 @@ if __name__ == "__main__":
     gui.show()
     elm.run()
 
-
 </code></pre>
-<p>Select image</p>
+<hr/>
+<h2>Example 2: Interactive Image Selection</h2>
+<p>In this version, we add a <code>FileselectorButton</code> that allows the user to browse their computer and update the displayed image.</p>
 <pre><code class="language-python">import os
 import efl.elementary as elm
 from efl.elementary.window import StandardWindow
@@ -293,8 +298,22 @@ if __name__ == "__main__":
     gui = MainWindow()
     gui.show()
     elm.run()
-
 </code></pre>
+<hr/>
+<h2>Frequently Asked Questions (FAQ)</h2>
+<h3>What image formats does Python EFL support?</h3>
+<p>EFL uses the Evas library, which supports common formats like PNG, JPEG, GIF, SVG, and TIFF. It can also support specialized formats depending on the loader modules installed on your system.</p>
+<h3>How do I scale an image?</h3>
+<p>By default, the <code>Image</code> widget will respect the <code>size_hint_weight</code> and <code>size_hint_align</code> of its container. You can use <code>our_image.fill_outside_set(True)</code> or <code>aspect_fixed_set(True)</code> to control how the image scales within its allocated space.</p>
+<h3>Can I load images from a URL?</h3>
+<p>While the <code>file_set</code> method is typically used for local files, you can use the <code>requests</code> library to download an image to a temporary file and then load it into the widget.</p>
+<hr/>
+<h3>Key Takeaways</h3>
+<ul>
+<li>The <strong>Image</strong> widget is the primary way to handle graphics in EFL.</li>
+<li><strong>FileselectorButton</strong> simplifies user-driven file interactions.</li>
+<li>Always validate file extensions before attempting to load a new image into the UI.</li>
+</ul>
 
                         <div class="mt-16 border-t border-gray-100 pt-10">
                             <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
@@ -302,16 +321,16 @@ if __name__ == "__main__":
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2021-10-22 18:12:13" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                        <time datetime="2026-02-24 12:00:00" class="text-gray-400 uppercase tracking-wider">February 24, 2026</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
                                         <a href="/python-efl-3">
                                             <span class="absolute inset-0"></span>
-                                            Python-efl Align Hints
+                                            Python EFL: Advanced Align Hints and Weight Control (2026)
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from...
+                                        Positioning widgets precisely is the difference between a amateur tool and a professional applicatio...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article
@@ -323,16 +342,16 @@ if __name__ == "__main__":
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2021-10-22 18:31:59" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                        <time datetime="2026-02-24 14:00:00" class="text-gray-400 uppercase tracking-wider">February 24, 2026</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
                                         <a href="/python-efl-5">
                                             <span class="absolute inset-0"></span>
-                                            Python-efl Naviframe
+                                            Python EFL: Managing Views with Naviframe (2026)
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from...
+                                        Need to manage multiple views or screens in your Python application? This Python EFL tutorial introd...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article
@@ -344,16 +363,16 @@ if __name__ == "__main__":
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2021-10-22 18:37:03" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                        <time datetime="2026-02-24 15:00:00" class="text-gray-400 uppercase tracking-wider">February 24, 2026</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
                                         <a href="/python-efl-6">
                                             <span class="absolute inset-0"></span>
-                                            Python-efl Elm Extensions
+                                            Python EFL: Extending UI with Elm Extensions (2026)
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from...
+                                        Want to speed up your Python EFL development? This tutorial introduces Elm Extensions, a library tha...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article

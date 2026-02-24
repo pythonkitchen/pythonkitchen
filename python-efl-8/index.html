@@ -28,7 +28,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2026-02-10 15:00:00'>
+  <meta name='date' content='2026-02-24 18:00:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -74,38 +74,29 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Python-efl Generic List | Python Kitchen</title>
-  <meta name="description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-'''
-Abdur-Ramaan Janhangeer
-Updated fr...">
-  <meta name="keywords" content="efl, enlightenment, series, gui development">
+  <title>Python EFL: Scalable GUIs with Generic List (Genlist) (2026) | Python Kitchen</title>
+  <meta name="description" content="Handling thousands of UI elements without slowing down your app? This Python EFL tutorial introduces the Genlist (Generic List) widget. Unlike the standard List...">
+  <meta name="keywords" content="efl, enlightenment, gui series, genlist, performance, python tutorial, gui development">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.pythonkitchen.com/python-efl-8/">
-  <meta property="og:title" content="Python-efl Generic List">
-  <meta property="og:description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-'''
-Abdur-Ramaan Janhangeer
-Updated fr...">
+  <meta property="og:title" content="Python EFL: Scalable GUIs with Generic List (Genlist) (2026)">
+  <meta property="og:description" content="Handling thousands of UI elements without slowing down your app? This Python EFL tutorial introduces the Genlist (Generic List) widget. Unlike the standard List...">
   <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://www.pythonkitchen.com/python-efl-8/">
-  <meta property="twitter:title" content="Python-efl Generic List">
-  <meta property="twitter:description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-'''
-Abdur-Ramaan Janhangeer
-Updated fr...">
+  <meta property="twitter:title" content="Python EFL: Scalable GUIs with Generic List (Genlist) (2026)">
+  <meta property="twitter:description" content="Handling thousands of UI elements without slowing down your app? This Python EFL tutorial introduces the Genlist (Generic List) widget. Unlike the standard List...">
   <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <meta name='category' content='gui development'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='subtitle' content='Python-efl Generic List'>
+  <meta name='subtitle' content='Python EFL: Scalable GUIs with Generic List (Genlist) (2026)'>
   <meta name='pageKey' content='python-efl-8'>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
@@ -176,10 +167,10 @@ Updated fr...">
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Python-efl Generic List</p>
+                    <p class="text-3xl" style="font-weight: 600;">Python EFL: Scalable GUIs with Generic List (Genlist) (2026)</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2021-10-22 18:53:49" class="text-gray-500">October 22, 2021</time>
+                        <time datetime="2026-02-24 17:00:00" class="text-gray-500">February 24, 2026</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
                             gui development
@@ -202,7 +193,20 @@ Updated fr...">
                     
                     <br>
                     <article>
-                        <p>Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.</p>
+                        <p>Handling thousands of UI elements without slowing down your app? This Python EFL tutorial introduces the <strong>Genlist</strong> (Generic List) widget. Unlike the standard List widget, Genlist is designed for massive datasets using a virtualization pattern that only renders items currently visible on the screen.</p>
+<h3>TL;DR: Genlist Summary</h3>
+<ul>
+<li><strong>Genlist</strong>: A high-performance, virtualized list widget.</li>
+<li><strong>GenlistItemClass</strong>: A template class that defines how items look and behave.</li>
+<li><strong>GenlistItem</strong>: The data object that populates the list.</li>
+<li><strong>Best For</strong>: Large data sets (1,000+ items), custom row layouts, and complex mobile-style lists.</li>
+</ul>
+<hr/>
+<h2>Defining the Genlist Widget</h2>
+<p>The <strong>Genlist</strong> is the “heavy duty” list widget in the Elementary toolkit. It works by decoupling the data from the UI representation. Instead of creating 5,000 widgets for 5,000 items, Genlist creates only enough widgets to fill the screen and reuses them as the user scrolls. This makes it incredibly efficient for system memory and CPU.</p>
+<hr/>
+<h2>Code Example: Implementing a Basic Genlist</h2>
+<p>This example shows how to create a <code>GenlistItemClass</code> to define row text and how to populate the <code>Genlist</code> container.</p>
 <pre><code class="language-python">'''
 Abdur-Ramaan Janhangeer
 Updated from Jeff Hoogland's tutos
@@ -292,8 +296,22 @@ if __name__ == "__main__":
     gui = MainWindow()
     gui.show()
     elm.run()
-
 </code></pre>
+<hr/>
+<h2>Frequently Asked Questions (FAQ)</h2>
+<h3>Is Genlist hard to use compared to List?</h3>
+<p>It has a slightly steeper learning curve because you must define a “class” for the items, but this structure makes your code much more maintainable and scalable in the long run.</p>
+<h3>Can I have different styles of items in the same list?</h3>
+<p>Yes. You can create multiple <code>GenlistItemClass</code> instances (e.g., one for headers, one for content) and assign them to different <code>GenlistItem</code> objects as you append them.</p>
+<h3>Does Genlist support swipe gestures?</h3>
+<p>Yes. EFL was designed with mobile interfaces in mind (it powers the Tizen OS), so Genlist has built-in support for kinetic scrolling and flick gestures.</p>
+<hr/>
+<h3>Key Takeaways</h3>
+<ul>
+<li>Use <strong>Genlist</strong> for any list that might grow significantly in size.</li>
+<li>The <strong>GenlistItemClass</strong> is where you define logic for labels, icons, and state.</li>
+<li>Always prefer Genlist over standard List for professional-grade Python applications.</li>
+</ul>
 
                         <div class="mt-16 border-t border-gray-100 pt-10">
                             <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
@@ -301,16 +319,16 @@ if __name__ == "__main__":
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2021-10-22 18:47:44" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                        <time datetime="2026-02-24 16:00:00" class="text-gray-400 uppercase tracking-wider">February 24, 2026</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
                                         <a href="/python-efl-7">
                                             <span class="absolute inset-0"></span>
-                                            Python-efl Lists
+                                            Python EFL: Building Standard and Searchable Lists (2026)
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from...
+                                        Need to display a large amount of selectable data in your app? This Python EFL tutorial covers the L...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article
@@ -322,16 +340,16 @@ if __name__ == "__main__":
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2021-10-22 18:55:51" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                        <time datetime="2026-02-24 18:00:00" class="text-gray-400 uppercase tracking-wider">February 24, 2026</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
                                         <a href="/python-efl-9">
                                             <span class="absolute inset-0"></span>
-                                            Python-efl Custom Elementary Widget
+                                            Python EFL: Building Custom Elementary Widgets (2026)
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from...
+                                        Want to create unique UI components tailored to your app’s needs? This Python EFL tutorial teaches y...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article
@@ -343,16 +361,16 @@ if __name__ == "__main__":
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2021-10-22 18:02:40" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                        <time datetime="2026-02-24 10:00:00" class="text-gray-400 uppercase tracking-wider">February 24, 2026</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
                                         <a href="/python-efl-1">
                                             <span class="absolute inset-0"></span>
-                                            Python-efl A Window
+                                            Python EFL Tutorial: Creating Your First Window (2026)
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from...
+                                        Looking to build desktop applications with the Enlightenment Foundation Libraries? This Python EFL t...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article

@@ -28,7 +28,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2026-02-10 15:00:00'>
+  <meta name='date' content='2026-02-24 18:00:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -74,38 +74,29 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Python-efl A Window | Python Kitchen</title>
-  <meta name="description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-Simple window
-Be sure to read first:
-H...">
-  <meta name="keywords" content="efl, enlightenment, series, gui development">
+  <title>Python EFL Tutorial: Creating Your First Window (2026) | Python Kitchen</title>
+  <meta name="description" content="Looking to build desktop applications with the Enlightenment Foundation Libraries? This Python EFL tutorial provides a step-by-step guide to creating your first...">
+  <meta name="keywords" content="efl, enlightenment, gui development, python tutorial, desktop apps, gui development">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.pythonkitchen.com/python-efl-1/">
-  <meta property="og:title" content="Python-efl A Window">
-  <meta property="og:description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-Simple window
-Be sure to read first:
-H...">
+  <meta property="og:title" content="Python EFL Tutorial: Creating Your First Window (2026)">
+  <meta property="og:description" content="Looking to build desktop applications with the Enlightenment Foundation Libraries? This Python EFL tutorial provides a step-by-step guide to creating your first...">
   <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://www.pythonkitchen.com/python-efl-1/">
-  <meta property="twitter:title" content="Python-efl A Window">
-  <meta property="twitter:description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-Simple window
-Be sure to read first:
-H...">
+  <meta property="twitter:title" content="Python EFL Tutorial: Creating Your First Window (2026)">
+  <meta property="twitter:description" content="Looking to build desktop applications with the Enlightenment Foundation Libraries? This Python EFL tutorial provides a step-by-step guide to creating your first...">
   <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <meta name='category' content='gui development'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='subtitle' content='Python-efl A Window'>
+  <meta name='subtitle' content='Python EFL Tutorial: Creating Your First Window (2026)'>
   <meta name='pageKey' content='python-efl-1'>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
@@ -176,10 +167,10 @@ H...">
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Python-efl A Window</p>
+                    <p class="text-3xl" style="font-weight: 600;">Python EFL Tutorial: Creating Your First Window (2026)</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2021-10-22 18:02:40" class="text-gray-500">October 22, 2021</time>
+                        <time datetime="2026-02-24 10:00:00" class="text-gray-500">February 24, 2026</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
                             gui development
@@ -202,52 +193,121 @@ H...">
                     
                     <br>
                     <article>
-                        <p>Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.</p>
-<p>Simple window</p>
-<p>Be sure to read first:</p>
-<p><a href="https://www.pythonkitchen.com/how-to-install-python-efl-on-ubuntu-or-linux-mint/">How to install Python-efl on Ubuntu or Linux Mint</a></p>
-<pre><code class="language-python">'''
-Abdur-Ramaan Janhangeer
-Updated from Jeff Hoogland's tutos
-for Python3.9 and Python-elf 1.25.0
-
-https://www.toolbox.com/tech/operating-systems/blogs/py-efl-tutorial-1-hello-elementary-022415/
-'''
-import efl.elementary as elm
+                        <p>Looking to build desktop applications with the Enlightenment Foundation Libraries? This Python EFL tutorial provides a step-by-step guide to creating your first GUI window using the Elementary module. Python EFL is a powerful wrapper around the Enlightenment GUI kit, known for its performance and low resource usage.</p>
+<h3>TL;DR: Quick Start Guide</h3>
+<ul>
+<li><strong>Prerequisite</strong>: Install Python EFL on your system.</li>
+<li><strong>Goal</strong>: Create a standard window with a “Hello World” label.</li>
+<li><strong>Key Modules</strong>: <code>efl.elementary</code> for high-level widgets.</li>
+<li><strong>Best For</strong>: Lightweight, high-performance desktop applications.</li>
+</ul>
+<hr/>
+<h2>What is Python EFL?</h2>
+<p><strong>Python EFL</strong> is a set of Python bindings for the Enlightenment Foundation Libraries (EFL). It allows developers to create visually rich and high-performance graphical user interfaces (GUIs) using Python. Unlike heavier frameworks, EFL is designed to be efficient on everything from mobile devices to high-end desktops.</p>
+<h3>Comparison: Python EFL vs. Other Frameworks</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Python EFL</th>
+<th style="text-align: left;">Tkinter</th>
+<th style="text-align: left;">PyQt/PySide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Performance</strong></td>
+<td style="text-align: left;">High (C-based)</td>
+<td style="text-align: left;">Low/Moderate</td>
+<td style="text-align: left;">Moderate/High</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Visuals</strong></td>
+<td style="text-align: left;">Rich/Themable</td>
+<td style="text-align: left;">Basic/Native</td>
+<td style="text-align: left;">Modern/Native</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resource Usage</strong></td>
+<td style="text-align: left;">Very Low</td>
+<td style="text-align: left;">Low</td>
+<td style="text-align: left;">Moderate/High</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Best For</strong></td>
+<td style="text-align: left;">IoT &amp; Desktops</td>
+<td style="text-align: left;">Simple Tools</td>
+<td style="text-align: left;">Complex Apps</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>Building Your First Window</h2>
+<p>Before diving into the code, ensure you have the environment ready. If you haven’t installed the libraries yet, check our guide on <a href="https://www.pythonkitchen.com/how-to-install-python-efl-on-ubuntu-or-linux-mint/">How to install Python-efl on Ubuntu or Linux Mint</a>.</p>
+<h3>The Code</h3>
+<p>The following example demonstrates how to initialize Elementary, create a <code>StandardWindow</code>, and add a <code>Label</code> widget.</p>
+<pre><code class="language-python">import efl.elementary as elm
 from efl.elementary.label import Label
 from efl.elementary.window import StandardWindow
 from efl.evas import EVAS_HINT_EXPAND
 
+# Utility constant for widget expansion
 EXPAND_BOTH = EVAS_HINT_EXPAND, EVAS_HINT_EXPAND
-
 
 class MainWindow(StandardWindow):
     def __init__(self):
+        # Create a standard window with name, title, and size
         StandardWindow.__init__(self, "ex1", "Hello Elementary", size=(300, 200))
+
+        # Set exit callback when the window is closed
         self.callback_delete_request_add(lambda o: elm.exit())
+
+        # Add a Label widget
         label = Label(self)
         label.size_hint_weight = EXPAND_BOTH
         label.text = "Hello Elementary!"
         label.show()
-        self.resize_object_add(label)
 
+        # Add the label to the window's internal resize list
+        self.resize_object_add(label)
 
 if __name__ == "__main__":
     elm.init()
     gui = MainWindow()
     gui.show()
     elm.run()
-
 </code></pre>
-<p>Note: elm.shutdown is no longer needed as per the docs which says</p>
-<pre><code class="language-python">        .. versionchanged:: 1.14
-
-            The Python module calls this function when it is exiting so you
-            should no longer have any need to call this manually. Calling it does
-            not carry any penalty though.
-
-</code></pre>
-<p>Updated from Jeff Hoogland’s tutos</p>
+<h3>Key Components Explained</h3>
+<ol>
+<li><strong><code>elm.init()</code></strong>: Initializes the Elementary library.</li>
+<li><strong><code>StandardWindow</code></strong>: A high-level window class that provides common features like a title bar.</li>
+<li><strong><code>callback_delete_request_add</code></strong>: Connects the window’s close button to the exit function.</li>
+<li><strong><code>size_hint_weight</code></strong>: Determines how the widget expands within its container.</li>
+<li><strong><code>elm.run()</code></strong>: Starts the main event loop.</li>
+</ol>
+<hr/>
+<h2>Common Errors &amp; Fixes</h2>
+<ul>
+<li><strong>Error</strong>: <code>ModuleNotFoundError: No module named 'efl'</code></li>
+<li><strong>Fix</strong>: Ensure Python EFL is installed via your package manager (e.g., <code>apt install python3-efl</code>).</li>
+<li><strong>Error</strong>: Window opens and immediately closes.</li>
+<li><strong>Fix</strong>: Verify that <code>elm.run()</code> is called at the end of your script.</li>
+</ul>
+<hr/>
+<h2>Frequently Asked Questions (FAQ)</h2>
+<h3>Is Python EFL better than Tkinter?</h3>
+<p>Python EFL offers better performance and more advanced theming capabilities, making it ideal for resource-constrained systems or custom-designed interfaces. Tkinter is better for simple, native-looking internal tools.</p>
+<h3>Do I need to call <code>elm.shutdown()</code>?</h3>
+<p>As of version 1.14, the Python module automatically handles cleanup on exit. You no longer need to call <code>elm.shutdown()</code> manually, though doing so carries no penalty.</p>
+<h3>Can I run Python EFL on Windows?</h3>
+<p>While primarily developed for Linux and BSD systems, it is possible to run EFL on Windows via WSL or specific ports, though the Linux experience is significantly more stable.</p>
+<hr/>
+<h3>Key Takeaways</h3>
+<ul>
+<li>Python EFL provides a high-performance alternative to traditional GUI frameworks.</li>
+<li>The <code>elementary</code> module is the recommended way to build modern interfaces.</li>
+<li>Always use <code>elm.init()</code> and <code>elm.run()</code> to manage the application lifecycle.</li>
+</ul>
 
                         <div class="mt-16 border-t border-gray-100 pt-10">
                             <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
@@ -255,16 +315,16 @@ if __name__ == "__main__":
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2021-10-22 18:07:40" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                        <time datetime="2026-02-24 11:00:00" class="text-gray-400 uppercase tracking-wider">February 24, 2026</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
                                         <a href="/python-efl-2">
                                             <span class="absolute inset-0"></span>
-                                            Python-efl Weight Hints Callback
+                                            Python EFL: Layouts, Weight Hints, and Callbacks (2026)
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from...
+                                        Mastering widget alignment and user interaction is crucial for any GUI application. This Python EFL ...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article
@@ -276,16 +336,16 @@ if __name__ == "__main__":
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2021-10-22 18:12:13" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                        <time datetime="2026-02-24 12:00:00" class="text-gray-400 uppercase tracking-wider">February 24, 2026</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
                                         <a href="/python-efl-3">
                                             <span class="absolute inset-0"></span>
-                                            Python-efl Align Hints
+                                            Python EFL: Advanced Align Hints and Weight Control (2026)
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from...
+                                        Positioning widgets precisely is the difference between a amateur tool and a professional applicatio...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article

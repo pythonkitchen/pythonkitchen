@@ -28,7 +28,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2026-02-10 15:00:00'>
+  <meta name='date' content='2026-02-24 18:00:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -74,32 +74,29 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Python-efl Elm Extensions | Python Kitchen</title>
-  <meta name="description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-To follow this tutorial, download/clon...">
-  <meta name="keywords" content="efl, enlightenment, series, gui development">
+  <title>Python EFL: Extending UI with Elm Extensions (2026) | Python Kitchen</title>
+  <meta name="description" content="Want to speed up your Python EFL development? This tutorial introduces Elm Extensions, a library that provides simplified versions of common widgets like button...">
+  <meta name="keywords" content="efl, enlightenment, gui series, extensions, popup, python tutorial, gui development">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.pythonkitchen.com/python-efl-6/">
-  <meta property="og:title" content="Python-efl Elm Extensions">
-  <meta property="og:description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-To follow this tutorial, download/clon...">
+  <meta property="og:title" content="Python EFL: Extending UI with Elm Extensions (2026)">
+  <meta property="og:description" content="Want to speed up your Python EFL development? This tutorial introduces Elm Extensions, a library that provides simplified versions of common widgets like button...">
   <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://www.pythonkitchen.com/python-efl-6/">
-  <meta property="twitter:title" content="Python-efl Elm Extensions">
-  <meta property="twitter:description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-To follow this tutorial, download/clon...">
+  <meta property="twitter:title" content="Python EFL: Extending UI with Elm Extensions (2026)">
+  <meta property="twitter:description" content="Want to speed up your Python EFL development? This tutorial introduces Elm Extensions, a library that provides simplified versions of common widgets like button...">
   <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <meta name='category' content='gui development'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='subtitle' content='Python-efl Elm Extensions'>
+  <meta name='subtitle' content='Python EFL: Extending UI with Elm Extensions (2026)'>
   <meta name='pageKey' content='python-efl-6'>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
@@ -170,10 +167,10 @@ To follow this tutorial, download/clon...">
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Python-efl Elm Extensions</p>
+                    <p class="text-3xl" style="font-weight: 600;">Python EFL: Extending UI with Elm Extensions (2026)</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2021-10-22 18:37:03" class="text-gray-500">October 22, 2021</time>
+                        <time datetime="2026-02-24 15:00:00" class="text-gray-500">February 24, 2026</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
                             gui development
@@ -196,8 +193,27 @@ To follow this tutorial, download/clon...">
                     
                     <br>
                     <article>
-                        <p>Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.</p>
-<p>To follow this tutorial, download/clone <a href="https://github.com/BodhiDev/python3-elm-extensions">this repo</a> and pip install it</p>
+                        <p>Want to speed up your Python EFL development? This tutorial introduces <strong>Elm Extensions</strong>, a library that provides simplified versions of common widgets like buttons, popups, and about windows. By using these extensions, you can write less boilerplate code while maintaining the high performance of the Enlightenment Foundation Libraries.</p>
+<h3>TL;DR: Extensions Summary</h3>
+<ul>
+<li><strong>StandardButton</strong>: A wrapper that handles common click events with less code.</li>
+<li><strong>StandardPopup</strong>: A quick way to show alert messages to the user.</li>
+<li><strong>Dependency</strong>: Requires the <code>python3-elm-extensions</code> library.</li>
+<li><strong>Best For</strong>: Rapid prototyping and consistent UI components.</li>
+</ul>
+<hr/>
+<h2>What are Elm Extensions?</h2>
+<p><strong>Elm Extensions</strong> (Elementary Extensions) are a set of helper classes built on top of the standard <code>efl.elementary</code> widgets. They are designed to automate repetitive tasks, such as setting up callbacks or managing basic popup logic, making Python EFL more accessible for developers used to higher-level frameworks.</p>
+<h3>Prerequisite</h3>
+<p>To follow this tutorial, you need to install the extensions library:</p>
+<pre><code class="language-bash"># Clone and install
+git clone https://github.com/BodhiDev/python3-elm-extensions
+cd python3-elm-extensions
+pip install .
+</code></pre>
+<hr/>
+<h2>Code Example: Buttons and Popups</h2>
+<p>This example demonstrates how to use the <code>StandardButton</code> to trigger a <code>StandardPopup</code> with just a few lines of code.</p>
 <pre><code class="language-python">'''
 Abdur-Ramaan Janhangeer
 Updated from Jeff Hoogland's tutos
@@ -288,9 +304,22 @@ if __name__ == "__main__":
     gui = MainWindow()
     gui.show()
     elm.run()
-
-
 </code></pre>
+<hr/>
+<h2>Frequently Asked Questions (FAQ)</h2>
+<h3>Are Elm Extensions part of the official Python EFL package?</h3>
+<p>No, they are a community-maintained library (originally by Jeff Hoogland) that provides a higher-level abstraction layer. You must install them separately.</p>
+<h3>Can I mix standard Elementary widgets with Extensions?</h3>
+<p>Yes. Extensions are subclasses of standard widgets, so they are fully compatible with any other EFL component.</p>
+<h3>Is there an extension for complex layouts?</h3>
+<p>The library includes an <code>AboutWindow</code> class which is a pre-configured template for application credits, but for general layouts, you should still use standard <code>Box</code>, <code>Grid</code>, or <code>Table</code> widgets.</p>
+<hr/>
+<h3>Key Takeaways</h3>
+<ul>
+<li><strong>Efficiency</strong>: Extensions reduce the amount of code needed for standard UI patterns.</li>
+<li><strong>Standardization</strong>: They help maintain a consistent look and feel across your application.</li>
+<li><strong>Modernized</strong>: This updated 2026 version ensures support for the latest Python distributions.</li>
+</ul>
 
                         <div class="mt-16 border-t border-gray-100 pt-10">
                             <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
@@ -298,16 +327,16 @@ if __name__ == "__main__":
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2021-10-22 18:31:59" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                        <time datetime="2026-02-24 14:00:00" class="text-gray-400 uppercase tracking-wider">February 24, 2026</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
                                         <a href="/python-efl-5">
                                             <span class="absolute inset-0"></span>
-                                            Python-efl Naviframe
+                                            Python EFL: Managing Views with Naviframe (2026)
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from...
+                                        Need to manage multiple views or screens in your Python application? This Python EFL tutorial introd...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article
@@ -319,16 +348,16 @@ if __name__ == "__main__":
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2021-10-22 18:47:44" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                        <time datetime="2026-02-24 16:00:00" class="text-gray-400 uppercase tracking-wider">February 24, 2026</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
                                         <a href="/python-efl-7">
                                             <span class="absolute inset-0"></span>
-                                            Python-efl Lists
+                                            Python EFL: Building Standard and Searchable Lists (2026)
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from...
+                                        Need to display a large amount of selectable data in your app? This Python EFL tutorial covers the L...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article
@@ -340,16 +369,16 @@ if __name__ == "__main__":
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2021-10-22 18:53:49" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                        <time datetime="2026-02-24 17:00:00" class="text-gray-400 uppercase tracking-wider">February 24, 2026</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
                                         <a href="/python-efl-8">
                                             <span class="absolute inset-0"></span>
-                                            Python-efl Generic List
+                                            Python EFL: Scalable GUIs with Generic List (Genlist) (2026)
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from...
+                                        Handling thousands of UI elements without slowing down your app? This Python EFL tutorial introduces...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article

@@ -28,7 +28,7 @@
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
-  <meta name='date' content='2026-02-10 15:00:00'>
+  <meta name='date' content='2026-02-24 18:00:00'>
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
@@ -74,38 +74,29 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Python-efl Custom Elementary Widget | Python Kitchen</title>
-  <meta name="description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-'''
-Abdur-Ramaan Janhangeer
-Updated fr...">
-  <meta name="keywords" content="efl, enlightenment, series, gui development">
+  <title>Python EFL: Building Custom Elementary Widgets (2026) | Python Kitchen</title>
+  <meta name="description" content="Want to create unique UI components tailored to your app’s needs? This Python EFL tutorial teaches you how to build Custom Widgets by subclassing existing Eleme...">
+  <meta name="keywords" content="efl, enlightenment, gui series, custom widgets, oop, python tutorial, gui development">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.pythonkitchen.com/python-efl-9/">
-  <meta property="og:title" content="Python-efl Custom Elementary Widget">
-  <meta property="og:description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-'''
-Abdur-Ramaan Janhangeer
-Updated fr...">
+  <meta property="og:title" content="Python EFL: Building Custom Elementary Widgets (2026)">
+  <meta property="og:description" content="Want to create unique UI components tailored to your app’s needs? This Python EFL tutorial teaches you how to build Custom Widgets by subclassing existing Eleme...">
   <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://www.pythonkitchen.com/python-efl-9/">
-  <meta property="twitter:title" content="Python-efl Custom Elementary Widget">
-  <meta property="twitter:description" content="Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
-'''
-Abdur-Ramaan Janhangeer
-Updated fr...">
+  <meta property="twitter:title" content="Python EFL: Building Custom Elementary Widgets (2026)">
+  <meta property="twitter:description" content="Want to create unique UI components tailored to your app’s needs? This Python EFL tutorial teaches you how to build Custom Widgets by subclassing existing Eleme...">
   <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
 
   <meta name='category' content='gui development'>
   <meta name='coverage' content='Worldwide'>
   <meta name='distribution' content='Global'>
   <meta name='rating' content='General'>
-  <meta name='subtitle' content='Python-efl Custom Elementary Widget'>
+  <meta name='subtitle' content='Python EFL: Building Custom Elementary Widgets (2026)'>
   <meta name='pageKey' content='python-efl-9'>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
@@ -176,10 +167,10 @@ Updated fr...">
         <div class="p-8 pl-12">
             <div class="ml-2">
                 <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Python-efl Custom Elementary Widget</p>
+                    <p class="text-3xl" style="font-weight: 600;">Python EFL: Building Custom Elementary Widgets (2026)</p>
                     <br>
                     <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2021-10-22 18:55:51" class="text-gray-500">October 22, 2021</time>
+                        <time datetime="2026-02-24 18:00:00" class="text-gray-500">February 24, 2026</time>
                         
                         <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
                             gui development
@@ -202,7 +193,20 @@ Updated fr...">
                     
                     <br>
                     <article>
-                        <p>Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.</p>
+                        <p>Want to create unique UI components tailored to your app’s needs? This Python EFL tutorial teaches you how to build <strong>Custom Widgets</strong> by subclassing existing Elementary components. By encapsulating multiple widgets into a single class, you can create reusable, maintainable UI elements for any Enlightenment-based application.</p>
+<h3>TL;DR: Custom Widget Summary</h3>
+<ul>
+<li><strong>Encapsulation</strong>: Grouping multiple widgets (like a Frame and an Image) into a single object.</li>
+<li><strong>Subclassing</strong>: Inheriting from base classes like <code>Frame</code>, <code>Box</code>, or <code>Button</code>.</li>
+<li><strong>Reusability</strong>: Write the widget logic once and reuse it across multiple windows or projects.</li>
+<li><strong>Best For</strong>: Creating specialized components like custom media players, dashboard cards, or complex form fields.</li>
+</ul>
+<hr/>
+<h2>Defining Custom Widgets in EFL</h2>
+<p>A <strong>Custom Widget</strong> in Python EFL is simply a Python class that inherits from a standard Elementary widget class. By overriding the <code>__init__</code> method, you can add internal sub-widgets, set default properties, and define new methods. This object-oriented approach is the best practice for building scalable and professional GUI applications.</p>
+<hr/>
+<h2>Code Example: The PictureFrame Widget</h2>
+<p>This example demonstrates a custom <code>PictureFrame</code> widget that automatically includes an <code>Image</code> inside a <code>Frame</code>, with a helper method to update the image file.</p>
 <pre><code class="language-python">'''
 Abdur-Ramaan Janhangeer
 Updated from Jeff Hoogland's tutos
@@ -258,9 +262,22 @@ if __name__ == "__main__":
     GUI.show()
     elm.run()
     elm.shutdown()
-
-
 </code></pre>
+<hr/>
+<h2>Frequently Asked Questions (FAQ)</h2>
+<h3>Should I inherit from <code>Box</code> or <code>Table</code> for my custom widget?</h3>
+<p>If your widget is a container for many smaller widgets, inherit from <strong>Box</strong> (for linear layouts) or <strong>Table</strong> (for grids). If you just want to add a border and title around a single widget, inherit from <strong>Frame</strong>.</p>
+<h3>Can I define custom callbacks?</h3>
+<p>Yes. You can use standard Python event patterns or use the <code>callback_add</code> system to define new signals that other parts of your application can listen to.</p>
+<h3>Is there a performance hit for custom widgets?</h3>
+<p>No. Because these are standard Python classes and the sub-widgets are native C-based objects, the overhead is negligible. It is actually more efficient than manually recreating the same layout multiple times.</p>
+<hr/>
+<h3>Key Takeaways</h3>
+<ul>
+<li><strong>Inheritance</strong> allows you to extend the functionality of base EFL widgets.</li>
+<li><strong><code>content_set</code></strong> is used by containers like Frame to hold their primary child widget.</li>
+<li>Custom widgets make your GUI code cleaner and more modular.</li>
+</ul>
 
                         <div class="mt-16 border-t border-gray-100 pt-10">
                             <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
@@ -268,16 +285,16 @@ if __name__ == "__main__":
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2021-10-22 18:53:49" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                        <time datetime="2026-02-24 17:00:00" class="text-gray-400 uppercase tracking-wider">February 24, 2026</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
                                         <a href="/python-efl-8">
                                             <span class="absolute inset-0"></span>
-                                            Python-efl Generic List
+                                            Python EFL: Scalable GUIs with Generic List (Genlist) (2026)
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from...
+                                        Handling thousands of UI elements without slowing down your app? This Python EFL tutorial introduces...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article
@@ -289,16 +306,16 @@ if __name__ == "__main__":
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2021-10-22 18:47:44" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                        <time datetime="2026-02-24 16:00:00" class="text-gray-400 uppercase tracking-wider">February 24, 2026</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
                                         <a href="/python-efl-7">
                                             <span class="absolute inset-0"></span>
-                                            Python-efl Lists
+                                            Python EFL: Building Standard and Searchable Lists (2026)
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from...
+                                        Need to display a large amount of selectable data in your app? This Python EFL tutorial covers the L...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article
@@ -310,16 +327,16 @@ if __name__ == "__main__":
                                 
                                 <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg transition-colors duration-200 hover:bg-gray-50 border border-gray-200 hover:border-indigo-300">
                                     <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2021-10-22 18:02:40" class="text-gray-400 uppercase tracking-wider">October 22, 2021</time>
+                                        <time datetime="2026-02-24 10:00:00" class="text-gray-400 uppercase tracking-wider">February 24, 2026</time>
                                     </div>
                                     <h3 class="text-lg font-semibold leading-6 text-gray-900">
                                         <a href="/python-efl-1">
                                             <span class="absolute inset-0"></span>
-                                            Python-efl A Window
+                                            Python EFL Tutorial: Creating Your First Window (2026)
                                         </a>
                                     </h3>
                                     <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from...
+                                        Looking to build desktop applications with the Enlightenment Foundation Libraries? This Python EFL t...
                                     </p>
                                     <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
                                         Read article
