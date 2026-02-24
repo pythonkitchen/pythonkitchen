@@ -1,13 +1,28 @@
-title: Python-efl Naviframe
+title: Python EFL: Managing Views with Naviframe (2026)
 slug: python-efl-5
-pub: 2021-10-22 18:31:59
+pub: 2026-02-24 14:00:00
 authors: arj
-tags: efl, enlightenment, series
+tags: efl, enlightenment, gui series, navigation, naviframe, python tutorial
 category: gui development
 related_posts: python-efl-4,python-efl-6,python-efl-7
 
-Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
+Need to manage multiple views or screens in your Python application? This Python EFL tutorial introduces the `Naviframe` widget, a powerful layout manager that acts like a stack of screens. It is the standard way to handle "forward" and "backward" navigation in modern Enlightenment-based interfaces.
 
+### TL;DR: Navigation Summary
+- **Naviframe**: A container that holds a stack of "items" (widgets).
+- **Push Logic**: Add a new screen to the top of the stack using `item_simple_push()`.
+- **Pop Logic**: Remove the current screen to go back to the previous one.
+- **Best For**: Multi-step forms, wizards, and mobile-style application flows.
+
+---
+
+## Defining the Naviframe Entity
+The **Naviframe** is one of the most versatile widgets in the Elementary toolkit. It handles the transition between different pieces of content, often automatically providing a title bar and a "back" button depending on how it is configured. This makes it ideal for building complex applications that need to stay organized within a single window.
+
+---
+
+## Code Example: Pushing Multiple Views
+In this tutorial, we create a basic interface with buttons that "push" different widgets (an image and a label) onto the Naviframe stack.
 
 ```python
 '''
@@ -86,6 +101,24 @@ if __name__ == "__main__":
     gui = MainWindow()    
     gui.show()    
     elm.run()
-
 ```
 
+---
+
+## Frequently Asked Questions (FAQ)
+
+### Can I pop items from the Naviframe programmatically?
+Yes. You can use `self.nf.item_pop()` to remove the top item from the stack and return to the previous view.
+
+### Does Naviframe support transitions?
+By default, Naviframe uses the theme's standard transition (often a slide or fade). You can customize this by changing the Elementary theme or using specific transition hints.
+
+### Can a widget belong to more than one Naviframe item?
+No. A widget can only have one parent. If you try to push a widget that is already in the Naviframe (or elsewhere), it will be moved from its current location to the top of the stack.
+
+---
+
+### Key Takeaways
+- Use **Naviframe** for screen-based navigation.
+- `item_simple_push()` is the easiest way to add content.
+- It automatically manages visibility, so you don't have to call `hide()` or `show()` on individual screens.

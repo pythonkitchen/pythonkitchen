@@ -1,13 +1,28 @@
-title: Python-efl Lists
+title: Python EFL: Building Standard and Searchable Lists (2026)
 slug: python-efl-7
-pub: 2021-10-22 18:47:44
+pub: 2026-02-24 16:00:00
 authors: arj
-tags: efl, enlightenment, series
+tags: efl, enlightenment, gui series, lists, widgets, python tutorial
 category: gui development
 related_posts: python-efl-6,python-efl-8,python-efl-9
 
-Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
+Need to display a large amount of selectable data in your app? This Python EFL tutorial covers the `List` widget and the `SearchableList` extension. Lists are foundational for navigation menus, file browsers, and settings panels in any GUI application.
 
+### TL;DR: List Widget Summary
+- **Basic List**: A simple vertical scrollable container for text items.
+- **Searchable List**: An extended widget that adds a filter bar to find items quickly.
+- **Interactivity**: Use the `activated` callback to detect when a user clicks an item.
+- **Best For**: Menus or data sets with fewer than 100 items.
+
+---
+
+## Defining the List Widget
+The **Elementary List** is a widget used to display a sequence of items. It supports scrolling, multiple selection modes, and various styles. While the basic list is perfect for simple choices, the `SearchableList` from the Elm Extensions library adds an integrated entry widget to filter results in real-time.
+
+---
+
+## Example 1: Creating a Standard List
+This code initializes a list, populates it with a variety of grocery items, and shows a popup when an item is selected.
 
 ```python
 '''
@@ -92,12 +107,12 @@ if __name__ == "__main__":
     gui = MainWindow()
     gui.show()
     elm.run()
-
 ```
 
+---
 
-Searcheable list
-
+## Example 2: Adding Search Functionality
+By using the `SearchableList` extension, you can allow users to filter the list instantly as they type.
 
 ```python
 import efl.elementary as elm
@@ -174,6 +189,24 @@ if __name__ == "__main__":
     gui = MainWindow()
     gui.show()
     elm.run()
-
 ```
 
+---
+
+## Frequently Asked Questions (FAQ)
+
+### When should I use `List` vs `Genlist`?
+Use **List** for simple collections of strings or basic icons. Use **Genlist** (Generic List) when you have thousands of items or need custom complex layouts for each row, as Genlist uses data-object virtualization for better performance.
+
+### How do I enable multiple selection?
+You can set `our_list.multi_select_set(True)` to allow users to select more than one item at a time.
+
+### Can I add images to list items?
+Yes. The `item_append` method can take an image object as an argument to display an icon next to the text.
+
+---
+
+### Key Takeaways
+- Lists are the most efficient way to handle sequential user choices.
+- `our_list.go()` is required after appending items to trigger the layout update.
+- Use extensions like `SearchableList` to improve UX for larger data sets.

@@ -1,13 +1,28 @@
-title: Python-efl Displaying Images
+title: Python EFL: Displaying and Selecting Images (2026)
 slug: python-efl-4
-pub: 2021-10-22 18:18:51
+pub: 2026-02-24 13:00:00
 authors: arj
-tags: efl, enlightenment, series
+tags: efl, enlightenment, gui series, images, python tutorial, desktop apps
 category: gui development
 related_posts: python-efl-3,python-efl-5,python-efl-6
 
-Python-EFL is a wrapper around the Enlightenment GUI kit. This series of tutorials is an update from the original author.
+Looking for a high-performance way to display images in a Python GUI? This Python EFL tutorial covers the `Image` widget and the `FileselectorButton`, allowing you to build applications that can view and change images dynamically. Python-EFL is a wrapper around the Enlightenment GUI kit, designed for speed and visual richness.
 
+### TL;DR: Image Handling Summary
+- **Image Widget**: Used to display static or dynamic image files.
+- **File Selector**: A built-in button that opens a native file picker.
+- **Key Methods**: `file_set()` to load images and `tooltip_text_set()` for metadata.
+- **Supported Formats**: Common formats include PNG, JPG, and GIF.
+
+---
+
+## What is Python EFL?
+**Python EFL** is a set of Python bindings for the Enlightenment Foundation Libraries. It is particularly well-suited for developers who need to build "modern" looking applications that are extremely light on system resources, making it a favorite for Linux desktop and IoT development.
+
+---
+
+## Example 1: Simple Image Display
+This first example shows the most basic way to load and display a PNG file in a standard window.
 
 ```python
 '''
@@ -47,12 +62,12 @@ if __name__ == "__main__":
     gui.show()
     elm.run()
 
-
 ```
 
+---
 
-Select image
-
+## Example 2: Interactive Image Selection
+In this version, we add a `FileselectorButton` that allows the user to browse their computer and update the displayed image.
 
 ```python
 import os
@@ -105,6 +120,24 @@ if __name__ == "__main__":
     gui = MainWindow()
     gui.show()
     elm.run()
-
 ```
 
+---
+
+## Frequently Asked Questions (FAQ)
+
+### What image formats does Python EFL support?
+EFL uses the Evas library, which supports common formats like PNG, JPEG, GIF, SVG, and TIFF. It can also support specialized formats depending on the loader modules installed on your system.
+
+### How do I scale an image?
+By default, the `Image` widget will respect the `size_hint_weight` and `size_hint_align` of its container. You can use `our_image.fill_outside_set(True)` or `aspect_fixed_set(True)` to control how the image scales within its allocated space.
+
+### Can I load images from a URL?
+While the `file_set` method is typically used for local files, you can use the `requests` library to download an image to a temporary file and then load it into the widget.
+
+---
+
+### Key Takeaways
+- The **Image** widget is the primary way to handle graphics in EFL.
+- **FileselectorButton** simplifies user-driven file interactions.
+- Always validate file extensions before attempting to load a new image into the UI.
