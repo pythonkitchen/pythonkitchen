@@ -1069,7 +1069,7 @@ Experienced developers interested in miscellaneous.
 
 ---
 
-## Frequently Asked Questions (FAQ)
+<h2 id="faq">Frequently Asked Questions (FAQ)</h2>
 
 ### Are these books really free and legal?
 Yes. Every book in this list is either released under a Creative Commons license, made free by the author on their website, or offered as a legal "free tier" by publishers like No Starch Press or Manning.
