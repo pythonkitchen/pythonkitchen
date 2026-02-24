@@ -28,6 +28,13 @@
   </url>
 
   <url>
+    <loc>https://www.pythonkitchen.com/how-define-prefect-deployments/</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.pythonkitchen.com/simple-json-parser/</loc>
     <lastmod>2025-02-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -442,13 +449,6 @@
 
   <url>
     <loc>https://www.pythonkitchen.com/python-efl-1/</loc>
-    <lastmod>2021-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.pythonkitchen.com/why-i-admire-tiango-more-than-fastapi/</loc>
     <lastmod>2021-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
