@@ -47,12 +47,26 @@ def add_internal_links(html_content, posts_metadata, current_slug):
                     
     return str(soup)
 
+def lazy_load_images(html_content):
+    """Add loading=lazy + decoding=async to article <img> tags for Core Web Vitals."""
+    soup = BeautifulSoup(html_content, 'html.parser')
+    for img in soup.find_all('img'):
+        if not img.get('loading'):
+            img['loading'] = 'lazy'
+        if not img.get('decoding'):
+            img['decoding'] = 'async'
+    return str(soup)
+
 def _slugify_heading(text):
     """Must match the algorithm in docs/js/site.js (anchors)."""
     s = (text or '').lower().strip()
     s = re.sub(r'[^\w\s-]', '', s)
     s = re.sub(r'\s+', '-', s)
     return s[:80]
+
+def slugify(text):
+    """Slugify a category/tag label for use in URLs."""
+    return _slugify_heading(text)
 
 def build_toc(html_content, max_items=24, skip_title=None):
     """Extract h1/h2/h3 headings into a list of {id, text, level} for the sidebar TOC.
@@ -129,6 +143,9 @@ def get_posts(settings):
         # Add internal links
         html = add_internal_links(html, posts_metadata, slug)
 
+        # Lazy-load images for Core Web Vitals
+        html = lazy_load_images(html)
+
         try:
             related_posts = metadata["related_posts"][0].split(',')
             related_posts = [r.strip() for r in related_posts if r.strip()]
@@ -142,6 +159,7 @@ def get_posts(settings):
             "pub": date,
             "title": title,
             "categories": categories,
+            "category_slugs": [slugify(c) for c in categories],
             "tags": tags,
             "related_posts": related_posts
         }
