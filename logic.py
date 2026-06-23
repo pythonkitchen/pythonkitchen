@@ -8,10 +8,10 @@ import re
 
 def add_internal_links(html_content, posts_metadata, current_slug):
     soup = BeautifulSoup(html_content, 'html.parser')
-    
+
     # Sort titles by length (longest first) to avoid partial matches
     sorted_posts = sorted(posts_metadata, key=lambda x: len(x['title']), reverse=True)
-    
+
     # Track which titles we've already linked in this post to avoid multiple links to same post
     linked_slugs = set()
     linked_slugs.add(current_slug)
@@ -46,6 +46,33 @@ def add_internal_links(html_content, posts_metadata, current_slug):
                     break # Move to next post title
                     
     return str(soup)
+
+def _slugify_heading(text):
+    """Must match the algorithm in docs/js/site.js (anchors)."""
+    s = (text or '').lower().strip()
+    s = re.sub(r'[^\w\s-]', '', s)
+    s = re.sub(r'\s+', '-', s)
+    return s[:80]
+
+def build_toc(html_content, max_items=24, skip_title=None):
+    """Extract h1/h2/h3 headings into a list of {id, text, level} for the sidebar TOC.
+
+    Some posts use Setext-style headings (==== / ----) which render as h1/h2,
+    so h1 is included. skip_title lets us drop a heading that merely repeats
+    the post title.
+    """
+    soup = BeautifulSoup(html_content, 'html.parser')
+    toc = []
+    for h in soup.find_all(['h1', 'h2', 'h3']):
+        text = h.get_text(strip=True)
+        if not text:
+            continue
+        if skip_title and text.lower() == skip_title.lower():
+            continue
+        toc.append({'id': _slugify_heading(text), 'text': text, 'level': int(h.name[1])})
+        if len(toc) >= max_items:
+            break
+    return toc
 
 def get_posts(settings):
     posts = []

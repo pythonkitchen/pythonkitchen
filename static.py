@@ -8,6 +8,7 @@ from jamstack.api.template import generate
 from datetime import datetime
 from logic import generate_blog_posts
 from logic import get_posts
+from logic import build_toc
 import calendar 
 import toml
 import os
@@ -27,6 +28,11 @@ def format_post_date(date):
     month = calendar.month_name[dateobj.month]
     day = dateobj.day
     return f'{month} {day}, {year}'
+
+def reading_time(html, wpm=220):
+    words = len(clean_text(html).split())
+    mins = max(1, round(words / wpm))
+    return f'{mins} min read'
 
 def get_author_info(key):
     infos = {}
@@ -74,7 +80,10 @@ def generate_site():
     extra_context = {"info": settings.info, "posts": get_posts(settings), 
                      "clean_text": clean_text, "format_post_date": format_post_date,
                      "get_author_info": get_author_info,
-                     "get_related_posts": get_related_posts}
+                     "get_related_posts": get_related_posts,
+                     "reading_time": reading_time,
+                     "build_toc": build_toc,
+                     "year": datetime.now().year}
     
     generate('sitemap.html', join(settings.OUTPUT_FOLDER, 'sitemap.txt'), context=extra_context)
     generate('sitemap_xml.html', join(settings.OUTPUT_FOLDER, 'sitemap.xml'), context=extra_context)
@@ -86,7 +95,11 @@ def generate_site():
 def serve_files(port, watch):
     server = Server()
     for x in watch.split('|'):
-        server.watch(x, func=generate_site)
+        # Static assets live in the output folder; only refresh the browser on change.
+        if x.startswith(settings.OUTPUT_FOLDER):
+            server.watch(x)
+        else:
+            server.watch(x, func=generate_site)
     try:
         server.serve(root=settings.OUTPUT_FOLDER, port=port)
     except KeyboardInterrupt:
@@ -96,7 +109,7 @@ def serve_files(port, watch):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Project manager.')
     parser.add_argument('--serve', action='store_true', help='Serve files for livewatch')
-    parser.add_argument('--watch', type=str, default='*.py|templates|templates/sections', help='Files/Folders to watch')
+    parser.add_argument('--watch', type=str, default='*.py|templates|templates/sections|docs/css|docs/js', help='Files/Folders to watch')
     parser.add_argument('--port', type=int, default=8000, help='Port to serve')
     args = parser.parse_args()
 
