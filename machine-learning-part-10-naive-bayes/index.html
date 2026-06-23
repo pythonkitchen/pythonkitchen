@@ -1,30 +1,34 @@
 <!doctype html>
-<html lang="EN">
+<html lang="EN" class="scroll-smooth">
 <head>
+  <!-- Apply theme before paint to avoid flash -->
+  <script>
+    (function () {
+      try {
+        var k = 'pk-theme', s = localStorage.getItem(k);
+        var d = s ? s === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (d) document.documentElement.classList.add('dark');
+      } catch (e) {}
+    })();
+  </script>
+
   <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="DH1Rs7wCZAKJtQ" async></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset='UTF-8'>
   <meta name='keywords' content='python, machine learning'>
-
   <meta name='subject' content='Python / Machine Learning articles'>
   <meta name='copyright' content='pythonkitchen.com'>
   <meta name='language' content='EN'>
   <meta name='robots' content='index,follow'>
-  <meta name='revised' content='Wednesday, August 30thth, 2023, 13:30 pm'>
   <meta name='abstract' content=''>
   <meta name='topic' content='python'>
   <meta name='summary' content=''>
   <meta name='Classification' content='Education'>
   <meta name='author' content='PythonKitchen, email@hotmail.com'>
-  <meta name='designer' content=''>
   <meta name='reply-to' content='email@hotmail.com'>
-  <meta name='owner' content=''>
   <meta name='url' content='https://www.pythonkitchen.com'>
   <meta name='identifier-URL' content='https://www.pythonkitchen.com'>
   <meta name='directory' content='submission'>
-  
-  
   <meta name='target' content='all'>
   <meta name='HandheldFriendly' content='True'>
   <meta name='MobileOptimized' content='320'>
@@ -32,53 +36,68 @@
   <meta name='DC.title' content='Quality Python articles'>
   <meta name='ResourceLoaderDynamicStyles' content=''>
   <meta name='medium' content='blog'>
-  <!-- <meta name='verify-v1' content='dV1r/ZJJdDEI++fKJ6iDEl6o+TMNtSu0kv18ONeqM0I='>
-  <meta name='y_key' content='1e39c508e0d87750'> -->
-  
-  <meta http-equiv='Expires' content='0'>
-  <meta http-equiv='Pragma' content='no-cache'>
-  <meta http-equiv='Cache-Control' content='no-cache'>
   <meta http-equiv='imagetoolbar' content='no'>
   <meta http-equiv='x-dns-prefetch-control' content='off'>
-
-  
   <meta name='og:type' content='blog'>
   <meta name='og:site_name' content='PythonKitchen'>
 
-  <link rel="shortcut icon" href="/assets/logo.png" /> 
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
+  <link rel="shortcut icon" href="/assets/logo.png" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            py: { yellow: '#FFD43B', blue: '#306998', dark: '#0b1120' },
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { font-family: 'Inter', system-ui, sans-serif; }
+    .focus-ring:focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; border-radius: 6px; }
+    #reading-progress {
+      transform-origin: 0 50%; transform: scaleX(0);
+      transition: transform .1s linear;
+    }
   </style>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4895581427484601" crossorigin="anonymous"></script>
-  
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161612035-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4895581427484601" crossorigin="anonymous"></script>
 
-  gtag('config', 'UA-161612035-3');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161612035-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-161612035-3');
+  </script>
 
-<script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "ejj5ivpuup");
-</script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ejj5ivpuup");
+  </script>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Machine Learning Part 10: Naive Bayes Classification | Python Kitchen</title>
   <meta name="description" content="Naive Bayes is a simple yet powerful classification algorithm based on Bayes’ Theorem. It’s particularly popular for text classification and spam filtering.
 Bay...">
   <meta name="keywords" content="probabilistic models, bayesian, classification, machine learning">
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.pythonkitchen.com/machine-learning-part-10-naive-bayes/">
@@ -102,87 +121,154 @@ Bay...">
   <meta name='subtitle' content='Machine Learning Part 10: Naive Bayes Classification'>
   <meta name='pageKey' content='machine-learning-part-10-naive-bayes'>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
 
-<!-- and it's easy to individually load additional languages -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+  <link rel="stylesheet" href="/css/post.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<link rel="stylesheet" href="/css/post.css"> 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFas9aVVUsq" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"></script>
 
 </head>
-<body class="bg-gray-50">
+<body class="bg-white text-gray-800 dark:bg-py-dark dark:text-gray-200 antialiased selection:bg-py-yellow/40">
 
-<nav class="bg-white border-gray-200 dark:bg-gray-900">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="/" class="flex items-center">
-          <img src="/assets/logo.png" class="h-8 mr-3" alt="PythonKitchen Logo" 
-            style="width: 50px !important; height: 50px !important;"/>
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PythonKitchen</span>
-      </a>
-      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
-      </button>
-      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-          <li>
-            <a href="/" 
-            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
-            Home</a>
-          </li>
-          <li>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnP_IW4nK95hv-eBDIlxHb5E5DeOniFWBi9YmxlHZARLJDAQ/viewform" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-              Write</a>
-          </li>
-          <li>
-            <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-              Contact</a>
-          </li>
-          <!-- <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-          </li> -->
-        </ul>
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-indigo-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm">Skip to content</a>
+
+  <!-- Reading progress -->
+  <div id="reading-progress" class="fixed top-0 left-0 right-0 h-[3px] z-[60] bg-indigo-600"></div>
+
+  <header class="sticky top-0 z-50 border-b border-gray-200/70 bg-white/80 dark:border-gray-800/70 dark:bg-py-dark/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-py-dark/60">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Primary">
+      <div class="flex h-16 items-center justify-between">
+        <a href="/" class="flex items-center gap-2.5 focus-ring">
+          <img src="/assets/logo.png" class="h-9 w-9 rounded-lg" alt="PythonKitchen logo" />
+          <span class="text-lg font-bold tracking-tight text-gray-900 dark:text-white">PythonKitchen</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-1">
+          <a href="/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition focus-ring" aria-current="page">Home</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnP_IW4nK95hv-eBDIlxHb5E5DeOniFWBi9YmxlHZARLJDAQ/viewform" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition focus-ring">Write</a>
+          <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition focus-ring">Contact</a>
+
+          <button data-theme-toggle type="button" aria-pressed="false" aria-label="Toggle dark mode"
+            class="ml-2 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-indigo-600 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-indigo-400 transition focus-ring">
+            <svg class="dark:hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="hidden dark:block h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+
+        <div class="flex md:hidden items-center gap-2">
+          <button data-theme-toggle type="button" aria-pressed="false" aria-label="Toggle dark mode"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 transition focus-ring">
+            <svg class="dark:hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="hidden dark:block h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <button data-nav-toggle type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 transition focus-ring">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
       </div>
-    </div>
+
+      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 dark:border-gray-800">
+        <div class="space-y-1 py-3">
+          <a href="/" class="block rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-indigo-400">Home</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnP_IW4nK95hv-eBDIlxHb5E5DeOniFWBi9YmxlHZARLJDAQ/viewform" class="block rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-indigo-400">Write</a>
+          <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-indigo-400">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+  
+
+
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14">
+  <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-indigo-600 dark:hover:text-indigo-400">Home</a>
+    <span aria-hidden="true">/</span>
+    <span class="truncate">Machine Learning Part 10: Naive Bayes Classifica</span>
   </nav>
-  
-  
 
-<div class="p-8">
+  <div class="mt-6 flex flex-wrap items-center gap-2 text-xs">
+    
+    <span class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">machine learning</span>
+    
+    
+    <span class="rounded-full bg-gray-100 px-3 py-1.5 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">#probabilistic models, bayesian, classification</span>
+    
+  </div>
 
+  <h1 class="mt-4 text-3xl sm:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight">
+    Machine Learning Part 10: Naive Bayes Classification
+  </h1>
+
+  <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
+    <time datetime="2021-04-07 10:11:56">April 7, 2021</time>
+    <span class="text-gray-300 dark:text-gray-600">&middot;</span>
+    <span>1 min read</span>
+    
+    
+    <span class="text-gray-300 dark:text-gray-600">&middot;</span>
+    <span class="inline-flex items-center gap-2">
+      <img src="https://github.com/Abdur-rahmaanJ.png?size=40" alt="" class="h-6 w-6 rounded-full bg-gray-100">
+      <span class="font-medium text-gray-700 dark:text-gray-300">Abdur-Rahmaan Janhangeer</span>
+    </span>
+    
+  </div>
 </div>
 
-<div class="grid grid-cols-4">
-    <div class="col-span-3">
-        <div class="p-8 pl-12">
-            <div class="ml-2">
-                <div class=" bg-white rounded-lg shadow-lg" style="padding: 4vw !important;">
-                    <p class="text-3xl" style="font-weight: 600;">Machine Learning Part 10: Naive Bayes Classification</p>
-                    <br>
-                    <div class="flex items-center gap-x-4 text-xs">
-                        <time datetime="2021-04-07 10:11:56" class="text-gray-500">April 7, 2021</time>
-                        
-                        <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600">
-                            machine learning
-                        </a>
-                        
-                    </div>
-                    <br>
-                    <article>
-                        <p>Naive Bayes is a simple yet powerful classification algorithm based on <strong>Bayes’ Theorem</strong>. It’s particularly popular for text classification and spam filtering.</p>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 grid grid-cols-1 lg:grid-cols-12 gap-10">
+  
+  <aside class="hidden lg:block lg:col-span-3">
+    <div class="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto pr-2">
+      <p class="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-3">On this page</p>
+      <nav id="toc" class="space-y-1 border-l border-gray-200 dark:border-gray-800">
+        
+        <a href="#bayes-theorem-" data-toc="bayes-theorem-"
+           class="block border-l-2 -ml-px border-transparent py-1 pl-3 text-sm leading-5 text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition ">
+          Bayes’ Theorem ⚱
+        </a>
+        
+        <a href="#why-naive" data-toc="why-naive"
+           class="block border-l-2 -ml-px border-transparent py-1 pl-3 text-sm leading-5 text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition pl-5 text-[13px]">
+          Why “Naive”?
+        </a>
+        
+        <a href="#example-are-you-ill-" data-toc="example-are-you-ill-"
+           class="block border-l-2 -ml-px border-transparent py-1 pl-3 text-sm leading-5 text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition ">
+          Example: Are you ill? 🤒
+        </a>
+        
+        <a href="#summary" data-toc="summary"
+           class="block border-l-2 -ml-px border-transparent py-1 pl-3 text-sm leading-5 text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition ">
+          Summary
+        </a>
+        
+        <a href="#exercise" data-toc="exercise"
+           class="block border-l-2 -ml-px border-transparent py-1 pl-3 text-sm leading-5 text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition ">
+          Exercise
+        </a>
+        
+      </nav>
+
+      <a href="https://leanpub.com/c/flask-masterclass" target="_blank" rel="noopener"
+         class="mt-8 block rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 p-4 hover:border-indigo-300 dark:hover:border-indigo-700 transition group">
+        <img id="side-img" src="/assets/flaskcoursefree.png" alt="Free Flask Course" class="w-full rounded-lg">
+        <p class="mt-2 text-sm font-semibold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">Free Flask Course &rarr;</p>
+      </a>
+    </div>
+  </aside>
+  
+
+  <div class="lg:col-span-9">
+    <article class="prose max-w-none">
+      <p>Naive Bayes is a simple yet powerful classification algorithm based on <strong>Bayes’ Theorem</strong>. It’s particularly popular for text classification and spam filtering.</p>
 <h2>Bayes’ Theorem ⚱</h2>
 <p>The heart of this algorithm is Bayes’ Theorem, which describes the probability of an event based on prior knowledge of conditions that might be related to the event.</p>
 <p>$$P(B|A) = \frac{P(A|B) \cdot P(B)}{P(A)}$$</p>
@@ -208,164 +294,120 @@ $$P(\text{Scarius} | \text{Fever}) = \frac{0.96 \cdot 0.0001}{0.1} = 0.00096$$</
 *   <strong>Effective:</strong> Great for things like spam detection or sentiment analysis.</p>
 <h2>Exercise</h2>
 <p>Try to derive Bayes’ Theorem using a Venn diagram. It’s a great way to visualize how conditional probability works!</p>
+    </article>
 
-                        <div class="mt-16 border-t border-gray-100 pt-10">
-                            
-                                
-                                <div class="flex flex-col sm:flex-row items-center gap-x-6 gap-y-4 p-6 bg-gray-50 rounded-xl mb-8">
-                                    <img src="https://github.com/Abdur-rahmaanJ.png?size=40" alt="" class="h-16 w-16 rounded-full object-cover">
-                                    <div class="flex-1 text-center sm:text-left">
-                                        <p class="text-sm font-semibold text-indigo-600 mb-1">Written by</p>
-                                        <h3 class="text-xl font-bold text-gray-900">
-                                            <a href="https://www.linkedin.com/in/appinv/" style="border:none !important; text-decoration:none !important;">Abdur-Rahmaan Janhangeer</a>
-                                        </h3>
-                                        <p class="text-sm text-gray-500 mb-3">Chef</p>
-                                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                            Python author of 9+ years having worked for Python companies around the world
-                                        </p>
-                                        <div class="flex justify-center sm:justify-start gap-x-4">
-                                            
-                                            <a href="https://www.linkedin.com/in/appinv/" class="text-gray-400" target="_blank" style="border:none !important; text-decoration:none !important;">
-                                                <span class="sr-only">LinkedIn</span>
-                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                                            </a>
-                                            
-                                            
-                                            <a href="https://github.com/Abdur-rahmaanJ" class="text-gray-400" target="_blank" style="border:none !important; text-decoration:none !important;">
-                                                <span class="sr-only">GitHub</span>
-                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.082.824-.26.824-.578 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 3.124 1.305 3.887.997.108-.775.52-1.305.865-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                                            </a>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            
+    <div class="mt-16 pt-10 border-t border-gray-100 dark:border-gray-800">
+        
+        
+        <div class="flex flex-col sm:flex-row items-center gap-x-6 gap-y-4 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl mb-8">
+          <img src="https://github.com/Abdur-rahmaanJ.png?size=40" alt="" class="h-12 w-12 rounded-full object-cover ring-2 ring-white dark:ring-gray-900">
+          <div class="flex-1 text-center sm:text-left">
+            <p class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 mb-1">Written by</p>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+              <a href="https://www.linkedin.com/in/appinv/" class="hover:underline">Abdur-Rahmaan Janhangeer</a>
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Chef</p>
+            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">Python author of 9+ years having worked for Python companies around the world</p>
+            <div class="flex justify-center sm:justify-start gap-x-4">
+              
+              <a href="https://www.linkedin.com/in/appinv/" class="text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </a>
+              
+              
+              <a href="https://github.com/Abdur-rahmaanJ" class="text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.082.824-.26.824-.578 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 3.124 1.305 3.887.997.108-.775.52-1.305.865-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+              
+            </div>
+          </div>
+        </div>
+        
 
-                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 mb-6">Suggested Posts</h2>
-                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                                
-                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg">
-                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2023-01-20 07:22:29" class="text-gray-400 uppercase tracking-wider">January 20, 2023</time>
-                                    </div>
-                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
-                                        <a href="/adaboost-vs-naive-bayes-algorithms-in-machine-learning">
-                                            <span class="absolute inset-0"></span>
-                                            AdaBoost vs. Naive Bayes Algorithms in Machine Learning
-                                        </a>
-                                    </h3>
-                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        In machine learning, the algorithm plays a significant role while training and building a successful...
-                                    </p>
-                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
-                                        Read article
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
-                                        </svg>
-                                    </div>
-                                </div>
-                                
-                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg">
-                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2019-01-21 07:43:27" class="text-gray-400 uppercase tracking-wider">January 21, 2019</time>
-                                    </div>
-                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
-                                        <a href="/machine-learning-part-1-introduction">
-                                            <span class="absolute inset-0"></span>
-                                            Machine Learning Part 1: An Introduction for Beginners
-                                        </a>
-                                    </h3>
-                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Machine Learning (ML) is one of the most exciting fields in technology today. But what exactly is it...
-                                    </p>
-                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
-                                        Read article
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
-                                        </svg>
-                                    </div>
-                                </div>
-                                
-                                <div class="group relative flex flex-col items-start justify-between p-6 bg-white rounded-lg">
-                                    <div class="flex items-center gap-x-2 text-[10px] mb-4">
-                                        <time datetime="2019-01-22 07:45:06" class="text-gray-400 uppercase tracking-wider">January 22, 2019</time>
-                                    </div>
-                                    <h3 class="text-lg font-semibold leading-6 text-gray-900">
-                                        <a href="/supervised-learning">
-                                            <span class="absolute inset-0"></span>
-                                            Machine Learning part 2: supervised learning
-                                        </a>
-                                    </h3>
-                                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-gray-500">
-                                        Machine Learning
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">Keep reading</h2>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          
+          <a href="/adaboost-vs-naive-bayes-algorithms-in-machine-learning" class="group block rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-lg">
+            <time datetime="2023-01-20 07:22:29" class="text-xs text-gray-400 uppercase tracking-wider">January 20, 2023</time>
+            <h3 class="mt-2 text-base font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">AdaBoost vs. Naive Bayes Algorithms in Machine Learning</h3>
+            <p class="mt-2 line-clamp-2 text-sm leading-6 text-gray-500 dark:text-gray-400">In machine learning, the algorithm plays a significant role while training and building a successful&hellip;</p>
+            <span class="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-indigo-600 dark:text-indigo-400">
+              Read article
+              <svg class="h-3 w-3 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          
+          <a href="/machine-learning-part-1-introduction" class="group block rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-lg">
+            <time datetime="2019-01-21 07:43:27" class="text-xs text-gray-400 uppercase tracking-wider">January 21, 2019</time>
+            <h3 class="mt-2 text-base font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">Machine Learning Part 1: An Introduction for Beginners</h3>
+            <p class="mt-2 line-clamp-2 text-sm leading-6 text-gray-500 dark:text-gray-400">Machine Learning (ML) is one of the most exciting fields in technology today. But what exactly is it&hellip;</p>
+            <span class="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-indigo-600 dark:text-indigo-400">
+              Read article
+              <svg class="h-3 w-3 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          
+          <a href="/supervised-learning" class="group block rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-lg">
+            <time datetime="2019-01-22 07:45:06" class="text-xs text-gray-400 uppercase tracking-wider">January 22, 2019</time>
+            <h3 class="mt-2 text-base font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">Machine Learning part 2: supervised learning</h3>
+            <p class="mt-2 line-clamp-2 text-sm leading-6 text-gray-500 dark:text-gray-400">Machine Learning
 ♡ supervised learning
 ♡ unsupervised learning
 ♡ reinforcement learning
-#2 supervise...
-                                    </p>
-                                    <div class="mt-4 flex items-center text-xs font-semibold text-indigo-600">
-                                        Read article
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="9 5l7 7-7 7" />
-                                        </svg>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-
-                        <script src="https://utteranc.es/client.js"
-        repo="pythonkitchen/blog-comments"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-                    </article>
-                
-                  </div>
-                
-            </div>
-        </div>
-        
-    </div>
-    <div class="col-span-1">
-        <div class="p-8 pl-12">
-            <div class="ml-2">
-                <div class=" bg-white rounded-lg shadow-lg" style="padding: 5px">
-                    <article>
-                        <a  target="_blank" href="https://leanpub.com/c/flask-masterclass">
-                            <img id="side-img" src="/assets/flaskcoursefree.png" style="width: 100% !important">
-                        </a>
-                        Free Flask Course
-                    </article>
-                    </div>
-                    
-                    
-            </div>
+#2 supervise&hellip;</p>
+            <span class="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-indigo-600 dark:text-indigo-400">
+              Read article
+              <svg class="h-3 w-3 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          
         </div>
 
-        
+        <div class="mt-14">
+          <script src="https://utteranc.es/client.js"
+            repo="pythonkitchen/blog-comments"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+          </script>
+        </div>
     </div>
   </div>
+</div>
 
+  </main>
 
+  <footer class="border-t border-gray-200 dark:border-gray-800 mt-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+        <a href="/" class="flex items-center gap-2.5">
+          <img src="/assets/logo.png" class="h-8 w-8 rounded-lg" alt="" />
+          <span class="text-base font-bold text-gray-900 dark:text-white">PythonKitchen</span>
+        </a>
+        <nav class="flex items-center gap-6 text-sm" aria-label="Footer">
+          <a href="/" class="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition">Home</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnP_IW4nK95hv-eBDIlxHb5E5DeOniFWBi9YmxlHZARLJDAQ/viewform" class="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition">Write</a>
+          <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition">Contact</a>
+        </nav>
+        <p class="text-xs text-gray-400 dark:text-gray-500">&copy; 2026 PythonKitchen. Quality Python authorship.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
+  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 <script>hljs.highlightAll();</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 <script type="text/javascript">
-    var img = jQuery("img");
-
-img.each(function() {
-   var element = jQuery(this);
-   var a = jQuery("<a />", {href: element.attr("src"), "data-lightbox": "test"});
-
-   element.wrap(a);
-});
-
-    $("#side-img").parent().removeAttr( "data-lightbox" ).attr("href","https://leanpub.com/c/flask-masterclass").attr("target","_blank");
+  var img = jQuery("article.prose img");
+  img.each(function() {
+    var element = jQuery(this);
+    var a = jQuery("<a />", {href: element.attr("src"), "data-lightbox": "post"});
+    element.wrap(a);
+  });
+  jQuery("#side-img").parent().removeAttr("data-lightbox").attr("href", "https://leanpub.com/c/flask-masterclass").attr("target", "_blank");
 </script>
 
 </body>
