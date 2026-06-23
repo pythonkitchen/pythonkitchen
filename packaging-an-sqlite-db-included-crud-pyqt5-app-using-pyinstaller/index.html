@@ -118,6 +118,38 @@
   <meta name='subtitle' content='Packaging An Sqlite db-included CRUD PyQt5 app using PyInstaller'>
   <meta name='pageKey' content='packaging-an-sqlite-db-included-crud-pyqt5-app-using-pyinstaller'>
 
+  <link rel="canonical" href="https://www.pythonkitchen.com/packaging-an-sqlite-db-included-crud-pyqt5-app-using-pyinstaller/">
+
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.pythonkitchen.com/packaging-an-sqlite-db-included-crud-pyqt5-app-using-pyinstaller/"},
+    "headline": "Packaging An Sqlite db-included CRUD PyQt5 app using PyInstaller",
+    "description": "The Python programmer\u2019s journey inevitably leads him to one of the black belts of the industry: packaging and distribution. But, particularly in Python, distrib",
+    "image": "https://www.pythonkitchen.com/assets/banner.png",
+    "datePublished": "2019-12-31",
+    "dateModified": "2019-12-31",
+    "wordCount": 1355,
+    "author": [{"@type": "Person","name": "Abdur-Rahmaan Janhangeer"}],
+    "publisher": {"@type": "Organization","name": "PythonKitchen","logo": {"@type": "ImageObject","url": "https://www.pythonkitchen.com/assets/logo.png"}},
+    "keywords": "pyqt5, packaging, sqlite, desktop, gui development"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem","position": 1,"name": "Home","item": "https://www.pythonkitchen.com/"},
+      {"@type": "ListItem","position": 2,"name": "gui development","item": "https://www.pythonkitchen.com/category/gui-development/"},
+      {"@type": "ListItem","position": 3,"name": "Packaging An Sqlite db-included CRUD PyQt5 app using PyInstaller","item": "https://www.pythonkitchen.com/packaging-an-sqlite-db-included-crud-pyqt5-app-using-pyinstaller/"}
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
@@ -189,12 +221,14 @@
   <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400" aria-label="Breadcrumb">
     <a href="/" class="hover:text-indigo-600 dark:hover:text-indigo-400">Home</a>
     <span aria-hidden="true">/</span>
+    <a href="/category/gui-development/" class="hover:text-indigo-600 dark:hover:text-indigo-400">gui development</a>
+    <span aria-hidden="true">/</span>
     <span class="truncate">Packaging An Sqlite db-included CRUD PyQt5 app u</span>
   </nav>
 
   <div class="mt-6 flex flex-wrap items-center gap-2 text-xs">
     
-    <span class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">gui development</span>
+    <a href="/category/gui-development/" class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition">gui development</a>
     
     
     <span class="rounded-full bg-gray-100 px-3 py-1.5 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">#pyqt5, packaging, sqlite, desktop</span>
@@ -325,7 +359,7 @@
 <p>base.py contains some SqlAlchemy configurations</p>
 <p>main.spec is the pyinstaller specifications file</p>
 <h2>App &amp; Code</h2>
-<p><img alt="" src="https://www.pythonmembers.club/wp-content/uploads/2019/12/main_screen.jpg"/>The app we’ll be building</p>
+<p><img alt="" decoding="async" loading="lazy" src="https://www.pythonmembers.club/wp-content/uploads/2019/12/main_screen.jpg"/>The app we’ll be building</p>
 <p>It features the minimum working mechanism a CRUD app should have. Let’s see what each file contains</p>
 <h2>base.py</h2>
 <pre><code class="language-python">import sys

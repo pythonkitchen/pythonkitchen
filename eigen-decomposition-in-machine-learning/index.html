@@ -118,6 +118,38 @@
   <meta name='subtitle' content='Eigen Decomposition in Machine Learning'>
   <meta name='pageKey' content='eigen-decomposition-in-machine-learning'>
 
+  <link rel="canonical" href="https://www.pythonkitchen.com/eigen-decomposition-in-machine-learning/">
+
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.pythonkitchen.com/eigen-decomposition-in-machine-learning/"},
+    "headline": "Eigen Decomposition in Machine Learning",
+    "description": "Matrix decomposition in linear algebra is one of the most valuable techniques for reducing the matrix into smaller parts. In matrix decomposition, the eigendeco",
+    "image": "https://www.pythonkitchen.com/assets/banner.png",
+    "datePublished": "2023-02-01",
+    "dateModified": "2023-02-01",
+    "wordCount": 1051,
+    "author": [{"@type": "Person","name": "Parth Shukla"}],
+    "publisher": {"@type": "Organization","name": "PythonKitchen","logo": {"@type": "ImageObject","url": "https://www.pythonkitchen.com/assets/logo.png"}},
+    "keywords": "linear algebra, eigenvalues, pca, mathematics"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem","position": 1,"name": "Home","item": "https://www.pythonkitchen.com/"},
+      {"@type": "ListItem","position": 2,"name": "mathematics","item": "https://www.pythonkitchen.com/category/mathematics/"},
+      {"@type": "ListItem","position": 3,"name": "Eigen Decomposition in Machine Learning","item": "https://www.pythonkitchen.com/eigen-decomposition-in-machine-learning/"}
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
@@ -189,12 +221,14 @@
   <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400" aria-label="Breadcrumb">
     <a href="/" class="hover:text-indigo-600 dark:hover:text-indigo-400">Home</a>
     <span aria-hidden="true">/</span>
+    <a href="/category/mathematics/" class="hover:text-indigo-600 dark:hover:text-indigo-400">mathematics</a>
+    <span aria-hidden="true">/</span>
     <span class="truncate">Eigen Decomposition in Machine Learning</span>
   </nav>
 
   <div class="mt-6 flex flex-wrap items-center gap-2 text-xs">
     
-    <span class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">mathematics</span>
+    <a href="/category/mathematics/" class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition">mathematics</a>
     
     
     <span class="rounded-full bg-gray-100 px-3 py-1.5 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">#linear algebra, eigenvalues, pca</span>
@@ -319,7 +353,7 @@
 <h1>Eigen Values and Eigen Vectors</h1>
 <p>In matrix operations, some of the <strong>linear transformations</strong> are applied to the data, to convey the data into the right format or in case of analyzing it. Now as we know that eigen values and eigen vectors are also part of the matrix, so whenever the linear transformation will be applied to the matrix, the values and direction of the vectors in the matrix can change. But some of the vectors are there whose direction does not change, only the magnitude can be changed.</p>
 <p>Basically, eigenvectors are those vectors whose direction does not change after applying the linear transformation, the values of the <strong>magnitude</strong> only changes. And the eigenvalues are the values or the coefficient with which the value of the vector changes.</p>
-<p><img alt="" src="/assets/ed1.jpg"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/ed1.jpg"/>
 <a href="https://www.google.com/search?q=eigen+values+and+eigen+vectors+img&amp;rlz=1C1CHBD_enIN933IN933&amp;sxsrf=AJOqlzV17WsKybgOPhWzhEKqoR6LmYQcGg:1675040453445&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwjs4dj5i-78AhWu7jgGHXe0AvQQ_AUoAnoECAIQBA&amp;biw=1220&amp;bih=547&amp;dpr=1.12#imgrc=sc0AR-N2iuLZHM" title="Image Source">Image Source</a></p>
 <blockquote>
 <p>AV = Lambda V</p>

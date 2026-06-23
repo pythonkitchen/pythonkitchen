@@ -118,6 +118,38 @@
   <meta name='subtitle' content='Auto-differentiation and Autograd explained step by step'>
   <meta name='pageKey' content='automatic-differentiation-step-by-step'>
 
+  <link rel="canonical" href="https://www.pythonkitchen.com/automatic-differentiation-step-by-step/">
+
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.pythonkitchen.com/automatic-differentiation-step-by-step/"},
+    "headline": "Auto-differentiation and Autograd explained step by step",
+    "description": "We will understand what is automatic differentiation for absolute beginners, although this concept requires a fair amount of theoretical understanding of deriva",
+    "image": "https://www.pythonkitchen.com/assets/banner.png",
+    "datePublished": "2022-11-15",
+    "dateModified": "2022-11-15",
+    "wordCount": 1478,
+    "author": [{"@type": "Person","name": "Abdul Khan"}],
+    "publisher": {"@type": "Organization","name": "PythonKitchen","logo": {"@type": "ImageObject","url": "https://www.pythonkitchen.com/assets/logo.png"}},
+    "keywords": "calculus, autograd, deep learning theory, mathematics"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem","position": 1,"name": "Home","item": "https://www.pythonkitchen.com/"},
+      {"@type": "ListItem","position": 2,"name": "mathematics","item": "https://www.pythonkitchen.com/category/mathematics/"},
+      {"@type": "ListItem","position": 3,"name": "Auto-differentiation and Autograd explained step by step","item": "https://www.pythonkitchen.com/automatic-differentiation-step-by-step/"}
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
@@ -189,12 +221,14 @@
   <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400" aria-label="Breadcrumb">
     <a href="/" class="hover:text-indigo-600 dark:hover:text-indigo-400">Home</a>
     <span aria-hidden="true">/</span>
+    <a href="/category/mathematics/" class="hover:text-indigo-600 dark:hover:text-indigo-400">mathematics</a>
+    <span aria-hidden="true">/</span>
     <span class="truncate">Auto-differentiation and Autograd explained step</span>
   </nav>
 
   <div class="mt-6 flex flex-wrap items-center gap-2 text-xs">
     
-    <span class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">mathematics</span>
+    <a href="/category/mathematics/" class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition">mathematics</a>
     
     
     <span class="rounded-full bg-gray-100 px-3 py-1.5 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">#calculus, autograd, deep learning theory</span>
@@ -299,7 +333,7 @@
 <p><em>A derivative is the instantaneous rate of change.</em></p>
 <p>I will try to help you understand the derivative with an example provided.</p>
 <p>Let’s say we have a graph x2.</p>
-<p><img alt="" src="https://qph.cf2.quoracdn.net/main-qimg-78715523fe6ed2e94c18fc96fb333ae9-lq"/></p>
+<p><img alt="" decoding="async" loading="lazy" src="https://qph.cf2.quoracdn.net/main-qimg-78715523fe6ed2e94c18fc96fb333ae9-lq"/></p>
 <blockquote>
 <p>d/dx [x^2] = 2x</p>
 </blockquote>
@@ -313,14 +347,14 @@ If we plug in the x value of 2 into the derivative function, we get 4.</p>
 <blockquote>
 <p>m=ΔyΔx</p>
 </blockquote>
-<p><img alt="" src="https://qph.cf2.quoracdn.net/main-qimg-99c8ad7d4050fd06e8a9231015581e6c-lq"/></p>
+<p><img alt="" decoding="async" loading="lazy" src="https://qph.cf2.quoracdn.net/main-qimg-99c8ad7d4050fd06e8a9231015581e6c-lq"/></p>
 <p>The problem with finding the slope of a singular point is that the change in y and the change in x is 0.</p>
 <blockquote>
 <p>m=0/0</p>
 </blockquote>
 <p>m is undefined, but that does not always mean that it doesn’t exist. We just have to try a different way. Newton and Leibniz created a different way to calculate slopes.</p>
 <p>(If you don’t understand limits then you probably should study up on those before you start learning about derivatives)</p>
-<p><img alt="Autograd" src="//qph.cf2.quoracdn.net/main-qimg-41de61230502525630a1ac2c11535f1c-lq"/> “Autograd”)</p>
+<p><img alt="Autograd" decoding="async" loading="lazy" src="//qph.cf2.quoracdn.net/main-qimg-41de61230502525630a1ac2c11535f1c-lq"/> “Autograd”)</p>
 <p>This is the limit definition of a derivative.</p>
 <p>As h approaches 0, the change in y and x approaches 0.</p>
 <p>I’ll do this with the function provided.</p>
@@ -337,7 +371,7 @@ If we plug in the x value of 2 into the derivative function, we get 4.</p>
 <h1>The Chain Rule</h1>
 <p>The rule applied for finding the derivative of the composite function (e.g. cos 2x, log 2x, etc.) is basically known as the chain rule. It is also called the composite function rule.</p>
 <p>I understand the chain rule concept in this way:
-<img alt="" src="https://qph.cf2.quoracdn.net/main-qimg-12a3a28a9283c105d116dd22ca9e474e"/></p>
+<img alt="" decoding="async" loading="lazy" src="https://qph.cf2.quoracdn.net/main-qimg-12a3a28a9283c105d116dd22ca9e474e"/></p>
 <p>Our objective is to go from A to C, we can either go directly and if it’s not possible we have to go to a different point B which allows access to point C. Depending on the situation there can be more points B, D, and E….which we have to pass through in order to reach C.</p>
 <p>So I think, for this situation, I can write</p>
 <blockquote>

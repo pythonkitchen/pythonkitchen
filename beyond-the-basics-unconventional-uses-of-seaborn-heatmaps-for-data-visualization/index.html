@@ -118,6 +118,38 @@
   <meta name='subtitle' content='Beyond the Basics: Unconventional Uses of Seaborn Heatmaps for Data Visualization'>
   <meta name='pageKey' content='beyond-the-basics-unconventional-uses-of-seaborn-heatmaps-for-data-visualization'>
 
+  <link rel="canonical" href="https://www.pythonkitchen.com/beyond-the-basics-unconventional-uses-of-seaborn-heatmaps-for-data-visualization/">
+
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.pythonkitchen.com/beyond-the-basics-unconventional-uses-of-seaborn-heatmaps-for-data-visualization/"},
+    "headline": "Beyond the Basics: Unconventional Uses of Seaborn Heatmaps for Data Visualization",
+    "description": "Heatmaps can bring your data to life. Versatile and eye-catching. There are many situations where they can highlight important relationships in your data. Speci",
+    "image": "https://www.pythonkitchen.com/assets/banner.png",
+    "datePublished": "2023-02-14",
+    "dateModified": "2023-02-14",
+    "wordCount": 748,
+    "author": [{"@type": "Person","name": "Abdul Khan"}],
+    "publisher": {"@type": "Organization","name": "PythonKitchen","logo": {"@type": "ImageObject","url": "https://www.pythonkitchen.com/assets/logo.png"}},
+    "keywords": "seaborn, statistics, heatmaps, data visualization"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem","position": 1,"name": "Home","item": "https://www.pythonkitchen.com/"},
+      {"@type": "ListItem","position": 2,"name": "data visualization","item": "https://www.pythonkitchen.com/category/data-visualization/"},
+      {"@type": "ListItem","position": 3,"name": "Beyond the Basics: Unconventional Uses of Seaborn Heatmaps for Data Visualization","item": "https://www.pythonkitchen.com/beyond-the-basics-unconventional-uses-of-seaborn-heatmaps-for-data-visualization/"}
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
@@ -189,12 +221,14 @@
   <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400" aria-label="Breadcrumb">
     <a href="/" class="hover:text-indigo-600 dark:hover:text-indigo-400">Home</a>
     <span aria-hidden="true">/</span>
+    <a href="/category/data-visualization/" class="hover:text-indigo-600 dark:hover:text-indigo-400">data visualization</a>
+    <span aria-hidden="true">/</span>
     <span class="truncate">Beyond the Basics: Unconventional Uses of Seabor</span>
   </nav>
 
   <div class="mt-6 flex flex-wrap items-center gap-2 text-xs">
     
-    <span class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">data visualization</span>
+    <a href="/category/data-visualization/" class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition">data visualization</a>
     
     
     <span class="rounded-full bg-gray-100 px-3 py-1.5 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">#seaborn, statistics, heatmaps</span>
@@ -261,7 +295,7 @@
   <div class="lg:col-span-9">
     <article class="prose max-w-none">
       <p>Heatmaps can bring your data to life. Versatile and eye-catching. There are many situations where they can highlight important relationships in your data. Specifically, we will discuss how you can use them to visualise.</p>
-<p><a href="http://www.researchgate.net/profile/Lorenzo-Dallolio-3/publication/346527505/figure/fig3/AS:963908756070403@1606825164803/Heatmap-of-Pearson-correlation-between-38-features-extracted-from-PPG-four-covariates.png" title="Correlation"><img alt="Correlation" src="https://www.researchgate.net/profile/Lorenzo-Dallolio-3/publication/346527505/figure/fig3/AS:963908756070403@1606825164803/Heatmap-of-Pearson-correlation-between-38-features-extracted-from-PPG-four-covariates.png" title="Correlation"/></a></p>
+<p><a href="http://www.researchgate.net/profile/Lorenzo-Dallolio-3/publication/346527505/figure/fig3/AS:963908756070403@1606825164803/Heatmap-of-Pearson-correlation-between-38-features-extracted-from-PPG-four-covariates.png" title="Correlation"><img alt="Correlation" decoding="async" loading="lazy" src="https://www.researchgate.net/profile/Lorenzo-Dallolio-3/publication/346527505/figure/fig3/AS:963908756070403@1606825164803/Heatmap-of-Pearson-correlation-between-38-features-extracted-from-PPG-four-covariates.png" title="Correlation"/></a></p>
 <p><em>2 Unusual Applications of Heatmaps in Data Science temperature changes, Topographic heatmap</em></p>
 <h1>Table of contents :</h1>
 <ol>
@@ -271,13 +305,13 @@
 </ol>
 <h1>What are Heatmaps?</h1>
 <p>Let’s start by discussing what heatmaps are and why they are so useful. You can see an example in Figure 1. We have variable 1 on the y-axis. In this case, variable 1 can take on different 4 values. That is “V1–1” is the first value for variable 1. Similarly, we have variable 2 on the y-axis. There is also a 3rd variable. That is the value within each of the cells. The colour of each cell is determined by the value of this variable.</p>
-<p><a href="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*5rXFpjSndFsmCKjYiN2GNw.png" title="Correalation Fig-1"><img alt="Correalation Fig-1" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*5rXFpjSndFsmCKjYiN2GNw.png" title="Correalation Fig-1"/></a></p>
+<p><a href="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*5rXFpjSndFsmCKjYiN2GNw.png" title="Correalation Fig-1"><img alt="Correalation Fig-1" decoding="async" loading="lazy" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*5rXFpjSndFsmCKjYiN2GNw.png" title="Correalation Fig-1"/></a></p>
 <p>Heatmaps are an incredible tool to visualize complex variable relationships in a 2D format. By using colors to represent various values, we can highlight the most important aspects of the relationship and make them easy to understand.</p>
 <p>However, it’s important to note that heatmaps are not without their limitations. For instance, variable 1 and variable 2 must be either discrete or categorical. If they are continuous, they should be grouped appropriately. Variable 3 must also be continuous to produce meaningful results.</p>
 <p>Don’t worry if this all sounds a bit overwhelming. We will explore five essential heatmaps that will help you make the most of this powerful tool. So buckle up and get ready to take your data visualization game to the next level!</p>
 <h2>1) Temperature changes through time</h2>
 <p>Similar to the last heatmap, we use this one to visualise time-series data. Except now, we show how a continuous variable changes through time. In Figure 4, you can see average global temperatures through time. There is a reading for every month from 1900 to 2016. You can clearly see the impact of climate change in the later months. Perhaps we have taken the term heatmap a bit too literally.
-<a href="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*g-oufizLZBf3GmT2TBdwjw.png" title="Heatmap Correlation Fig-2"><img alt="Heatmap Correlation Fig-2" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*g-oufizLZBf3GmT2TBdwjw.png" title="Heatmap Correlation Fig-2"/></a></p>
+<a href="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*g-oufizLZBf3GmT2TBdwjw.png" title="Heatmap Correlation Fig-2"><img alt="Heatmap Correlation Fig-2" decoding="async" loading="lazy" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*g-oufizLZBf3GmT2TBdwjw.png" title="Heatmap Correlation Fig-2"/></a></p>
 <p>Here is the code!</p>
 <pre><code class="language-python">df = pd.read_csv("../data/monthly_csv.csv")
 
@@ -325,7 +359,7 @@ plt.ylabel('Month',fontsize=22)
 <pre><code class="language-python"># Plot surface, this is without any customization.
 plot = ax.plot_surface(X=X, Y=Y, Z=afm_data, cmap='YlGnBu_r', vmin=0, vmax=200)`
 </code></pre>
-<p><img alt="cc" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*hqyBqmAzTgvJJlPQP27uvA.png" title="cc"/></p>
+<p><img alt="cc" decoding="async" loading="lazy" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*hqyBqmAzTgvJJlPQP27uvA.png" title="cc"/></p>
 <p>Here is an example code :</p>
 <pre><code class="language-python"># Create meshgrid
 X, Y = np.meshgrid(np.linspace(0, 2, len(afm_data)), np.linspace(0, 2, len(afm_data)))
@@ -358,9 +392,9 @@ ax.set_zlim(50, 200)
 plot = ax.plot_surface(X=X, Y=Y, Z=afm_data, cmap='YlGnBu_r', vmin=0, vmax=200) 
 
 </code></pre>
-<p><img alt="cnt3" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*GVYJCJ3DyVO9TbnpUhSM5Q.png" title="cnt3"/></p>
+<p><img alt="cnt3" decoding="async" loading="lazy" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*GVYJCJ3DyVO9TbnpUhSM5Q.png" title="cnt3"/></p>
 <p>Here is a real-life contour map of Norway based on population:</p>
-<p><img alt="Norway Contour map based on population" src="https://media.licdn.com/dms/image/C4E22AQFoYFiHDNBxgw/feedshare-shrink_800/0/1672661902249?e=1679529600&amp;v=beta&amp;t=j1W6PeWrEDMnMLQOP67Gx4gE2driOKBR54EhXGiitx8" title="Norway Contour map based on population"/></p>
+<p><img alt="Norway Contour map based on population" decoding="async" loading="lazy" src="https://media.licdn.com/dms/image/C4E22AQFoYFiHDNBxgw/feedshare-shrink_800/0/1672661902249?e=1679529600&amp;v=beta&amp;t=j1W6PeWrEDMnMLQOP67Gx4gE2driOKBR54EhXGiitx8" title="Norway Contour map based on population"/></p>
     </article>
 
     <div class="mt-16 pt-10 border-t border-gray-100 dark:border-gray-800">

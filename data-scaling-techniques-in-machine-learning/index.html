@@ -118,6 +118,38 @@
   <meta name='subtitle' content='Data Scaling Techniques in Machine Learning'>
   <meta name='pageKey' content='data-scaling-techniques-in-machine-learning'>
 
+  <link rel="canonical" href="https://www.pythonkitchen.com/data-scaling-techniques-in-machine-learning/">
+
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.pythonkitchen.com/data-scaling-techniques-in-machine-learning/"},
+    "headline": "Data Scaling Techniques in Machine Learning",
+    "description": "Data and its quality affect machine learning models and their accuracy, and the quality of the data can not be well in some types of problems which can be solve",
+    "image": "https://www.pythonkitchen.com/assets/banner.png",
+    "datePublished": "2023-01-26",
+    "dateModified": "2023-01-26",
+    "wordCount": 1089,
+    "author": [{"@type": "Person","name": "Parth Shukla"}],
+    "publisher": {"@type": "Organization","name": "PythonKitchen","logo": {"@type": "ImageObject","url": "https://www.pythonkitchen.com/assets/logo.png"}},
+    "keywords": "preprocessing, normalization, standardization, machine learning"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem","position": 1,"name": "Home","item": "https://www.pythonkitchen.com/"},
+      {"@type": "ListItem","position": 2,"name": "machine learning","item": "https://www.pythonkitchen.com/category/machine-learning/"},
+      {"@type": "ListItem","position": 3,"name": "Data Scaling Techniques in Machine Learning","item": "https://www.pythonkitchen.com/data-scaling-techniques-in-machine-learning/"}
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
@@ -189,12 +221,14 @@
   <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400" aria-label="Breadcrumb">
     <a href="/" class="hover:text-indigo-600 dark:hover:text-indigo-400">Home</a>
     <span aria-hidden="true">/</span>
+    <a href="/category/machine-learning/" class="hover:text-indigo-600 dark:hover:text-indigo-400">machine learning</a>
+    <span aria-hidden="true">/</span>
     <span class="truncate">Data Scaling Techniques in Machine Learning</span>
   </nav>
 
   <div class="mt-6 flex flex-wrap items-center gap-2 text-xs">
     
-    <span class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">machine learning</span>
+    <a href="/category/machine-learning/" class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition">machine learning</a>
     
     
     <span class="rounded-full bg-gray-100 px-3 py-1.5 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">#preprocessing, normalization, standardization</span>
@@ -313,7 +347,7 @@
 <h1>Standardization</h1>
 <p>Standardization is a technique where every sta point is taken, and a mathematical formula is applied to transform the particular data point.</p>
 <p>This technique is also known as the mean centralization technique, as after applying this technique, the mean of the data points is <strong>0</strong>, and the standard deviation of the data is <strong>1</strong>.</p>
-<p><img alt="" src="/assets/ds2-300x125.png"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/ds2-300x125.png"/>
 <a href="https://www.google.com/search?q=standardization+formula&amp;rlz=1C1CHBD_enIN933IN933&amp;sxsrf=AJOqlzURVqJHGB12q7-XL3RhUz382aNCXg:1673833807943&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwi-hKTs_Mr8AhWyVHwKHZ15B8MQ_AUoAXoECAEQAw&amp;biw=1220&amp;bih=547&amp;dpr=1.12#imgrc=VeeioC_xQ7SaAM" title="Image Source">Image Source</a></p>
 <p>Here, </p>
 <blockquote>
@@ -332,7 +366,7 @@
 4. Robust Scaling</p>
 <h2>Min-Max Scaling</h2>
 <p>Min-max scaling is a normalization technique when we know the uppermost and lowermost limit of the data points’ values. This transformation technique converts the data points into new values ranging from <strong>0 to 1</strong>.</p>
-<p><img alt="" src="/assets/ds3-300x76.png"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/ds3-300x76.png"/>
 <a href="https://www.google.com/search?q=min+max+scaling+formula&amp;rlz=1C1CHBD_enIN933IN933&amp;sxsrf=AJOqlzXP-mfS1O1DYPYT7biyUjqGBjXKMw:1673834302230&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwj15_zX_sr8AhVD7TgGHYVHA_YQ_AUoAXoECAEQAw&amp;biw=1220&amp;bih=547&amp;dpr=1.12#imgrc=LfU210iNThIcvM&amp;imgdii=mbkvPAkidevLTM" title="Image Source">Image Source</a></p>
 <p>Here, </p>
 <blockquote>
@@ -344,7 +378,7 @@
 <p>As we can see in the above image, the maximum and minimum value of the data is taken, and a new data point is generated, which will have a value between <strong>0 and 1</strong>.</p>
 <h2>Mean Normalization</h2>
 <p>Mean normalization is also a normalization technique that uses the mean of the data while transforming the data point into its new value. The mean normalization is the same as the min-max scaling techniques, which differs when it uses the mean of the data distribution instead of the data’s minimum value in the formula’s numerator.</p>
-<p><img alt="" src="/assets/ds4-300x67.png"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/ds4-300x67.png"/>
 <a href="https://www.google.com/search?q=mean+normalization%27+scaling+formula&amp;tbm=isch&amp;ved=2ahUKEwio5-Le_sr8AhX0itgFHTg_CMMQ2-cCegQIABAA&amp;oq=mean+normalization%27+scaling+formula&amp;gs_lcp=CgNpbWcQAzoECCMQJzoHCAAQgAQQGFCqC1jrH2CUJ2gAcAB4AIAB5AGIAbYbkgEGMC4xOS4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&amp;sclient=img&amp;ei=TK_EY6iRHfSV4t4PuP6gmAw&amp;bih=547&amp;biw=1220&amp;rlz=1C1CHBD_enIN933IN933#imgrc=qclWWPviPA85fM" title="Image Source">Image Source</a></p>
 <p>Here,</p>
 <blockquote>
@@ -357,7 +391,7 @@
 <p>As we can see in the above image, the mean of the data is used instead of the minimum value of the data; hence, the mean normalization transforms the data points values between <strong>-1 and 1</strong>.</p>
 <h2>Max Absolute Scaling</h2>
 <p>Max absolute scaling is a normalization technique that uses the absolute value of the maximum value of the dataset. This technique is not much used as the other methods are mostly enough to transform the data into its normal distribution.</p>
-<p><img alt="" src="/assets/ds5.png"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/ds5.png"/>
 <a href="https://www.google.com/search?q=max+abs+normalization%27+scaling+formula&amp;tbm=isch&amp;ved=2ahUKEwiC5pLX_8r8AhU_k9gFHShDBYQQ2-cCegQIABAA&amp;oq=max+abs+normalization%27+scaling+formula&amp;gs_lcp=CgNpbWcQAzoECCMQJ1CID1jmFmDNF2gAcAB4AIAB1wGIAagKkgEFMC42LjGYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&amp;sclient=img&amp;ei=SLDEY4KiOL-m4t4PqIaVoAg&amp;bih=547&amp;biw=1220&amp;rlz=1C1CHBD_enIN933IN933#imgrc=regMugh1tyYfAM&amp;imgdii=Sv4g-rOsqBNwuM" title="Image Source">Image Source</a></p>
 <p>Here, </p>
 <blockquote>
@@ -368,7 +402,7 @@
 <h2>Robust Scaling</h2>
 <p>As the name suggests, robust scaling is a type of data scaling technique that is very robust to the outliers and is used in case of the data having outliers. This technique transforms the data into its normal distribution without having the effect of outliers and their values.</p>
 <p>This technique uses the Interquartile range and median of the data, which makes it <strong>robust to the outliers</strong>.</p>
-<p><img alt="" src="/assets/ds6-300x149.png"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/ds6-300x149.png"/>
 <a href="https://www.google.com/search?q=robust+normalization%27+scaling+formula&amp;tbm=isch&amp;ved=2ahUKEwiMoc2tgcv8AhWChNgFHTt8BM8Q2-cCegQIABAA&amp;oq=robust+normalization%27+scaling+formula&amp;gs_lcp=CgNpbWcQAzoECCMQJ1DiBVioD2C-EmgAcAB4AIAB1AGIAdwFkgEFMC4zLjGYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&amp;sclient=img&amp;ei=CrLEY4z0KIKJ4t4Pu_iR-Aw&amp;bih=547&amp;biw=1220&amp;rlz=1C1CHBD_enIN933IN933#imgrc=6w8NlMSYUqFxoM&amp;imgdii=7p6nM4AWejSyjM" title="Image Source">Image Source</a></p>
 <p>As we can see in the above image, the technique uses the median in its numerator and the IQR in its denominator, making it robust to the outliers as the median and IQR do not have any relationship with outliers and their value in any way.</p>
 <h1>Key Takeaways</h1>

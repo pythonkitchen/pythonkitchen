@@ -118,6 +118,38 @@
   <meta name='subtitle' content='Principle Component Analysis in Machine Learning'>
   <meta name='pageKey' content='principle-component-analysis-in-machine-learning'>
 
+  <link rel="canonical" href="https://www.pythonkitchen.com/principle-component-analysis-in-machine-learning/">
+
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.pythonkitchen.com/principle-component-analysis-in-machine-learning/"},
+    "headline": "Principle Component Analysis in Machine Learning",
+    "description": "In machine learning to achieve higher accuracies and performance of the model, the data quality plays a major role while enhancing the model. If good quality da",
+    "image": "https://www.pythonkitchen.com/assets/banner.png",
+    "datePublished": "2023-02-18",
+    "dateModified": "2023-02-18",
+    "wordCount": 1042,
+    "author": [{"@type": "Person","name": "Parth Shukla"}],
+    "publisher": {"@type": "Organization","name": "PythonKitchen","logo": {"@type": "ImageObject","url": "https://www.pythonkitchen.com/assets/logo.png"}},
+    "keywords": "pca, dimensionality reduction, linear algebra, machine learning"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem","position": 1,"name": "Home","item": "https://www.pythonkitchen.com/"},
+      {"@type": "ListItem","position": 2,"name": "machine learning","item": "https://www.pythonkitchen.com/category/machine-learning/"},
+      {"@type": "ListItem","position": 3,"name": "Principle Component Analysis in Machine Learning","item": "https://www.pythonkitchen.com/principle-component-analysis-in-machine-learning/"}
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
@@ -189,12 +221,14 @@
   <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400" aria-label="Breadcrumb">
     <a href="/" class="hover:text-indigo-600 dark:hover:text-indigo-400">Home</a>
     <span aria-hidden="true">/</span>
+    <a href="/category/machine-learning/" class="hover:text-indigo-600 dark:hover:text-indigo-400">machine learning</a>
+    <span aria-hidden="true">/</span>
     <span class="truncate">Principle Component Analysis in Machine Learning</span>
   </nav>
 
   <div class="mt-6 flex flex-wrap items-center gap-2 text-xs">
     
-    <span class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">machine learning</span>
+    <a href="/category/machine-learning/" class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition">machine learning</a>
     
     
     <span class="rounded-full bg-gray-100 px-3 py-1.5 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">#pca, dimensionality reduction, linear algebra</span>
@@ -310,7 +344,7 @@
 <p>As we know that the higher dimensionality of the data is a curse for the model in some ways, then it is necessary to reduce the dimensionality of the data in order to achieve higher <strong>accuracies</strong> and a <strong>reliable model</strong>; Still, we can not directly drop some of the features from the dataset as all the features can contain some values of the dataset which can not be missed.</p>
 <p>In such cases the principle component analysis comes to the rescue; it is a technique that is used for reducing the dimensionality of the data without losing the essence of the data and without losing any of the information from the dataset.</p>
 <p>Principle component analysis or the PCA creates the principle components or vectors that represent the same data in <strong>lower dimensions</strong>, and vectors are used for training the model further.</p>
-<p><img alt="" src="/assets/pcaimg-300x175.jpg"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/pcaimg-300x175.jpg"/>
 <a href="https://towardsdatascience.com/pca-clearly-explained-how-when-why-to-use-it-and-feature-importance-a-guide-in-python-7c274582c37e" title="Image Source">Image Source</a></p>
 <p>As we can see in the above image, we have a dataset with three dimensions, X1, X2, and X3. Now here if we want to visualize the data we need to plot the data in 3 axes of the three features, but we can use principle component analysis or PCA which will reduce the dimension of the data by converting its features to only two principle components or principal vectors <strong>PC1 and PC2</strong>. Once the data is reduced to the lower dimensions now, the data can be visualized by plotting it to only two dimensions, PC1 and PC2.</p>
 <h1>How Does PCA Works?</h1>

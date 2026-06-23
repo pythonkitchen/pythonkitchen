@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="EN" class="scroll-smooth">
+<head>
+  <!-- Apply theme before paint to avoid flash -->
+  <script>
+    (function () {
+      try {
+        var k = 'pk-theme', s = localStorage.getItem(k);
+        var d = s ? s === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (d) document.documentElement.classList.add('dark');
+      } catch (e) {}
+    })();
+  </script>
+
+  <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="DH1Rs7wCZAKJtQ" async></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name='keywords' content='python, machine learning'>
+  <meta name='subject' content='Python / Machine Learning articles'>
+  <meta name='copyright' content='pythonkitchen.com'>
+  <meta name='language' content='EN'>
+  <meta name='robots' content='index,follow'>
+  <meta name='abstract' content=''>
+  <meta name='topic' content='python'>
+  <meta name='summary' content=''>
+  <meta name='Classification' content='Education'>
+  <meta name='author' content='PythonKitchen, email@hotmail.com'>
+  <meta name='reply-to' content='email@hotmail.com'>
+  <meta name='url' content='https://www.pythonkitchen.com'>
+  <meta name='identifier-URL' content='https://www.pythonkitchen.com'>
+  <meta name='directory' content='submission'>
+  <meta name='target' content='all'>
+  <meta name='HandheldFriendly' content='True'>
+  <meta name='MobileOptimized' content='320'>
+  <meta name='date' content='2026-02-24 18:00:00'>
+  <meta name='DC.title' content='Quality Python articles'>
+  <meta name='ResourceLoaderDynamicStyles' content=''>
+  <meta name='medium' content='blog'>
+  <meta http-equiv='imagetoolbar' content='no'>
+  <meta http-equiv='x-dns-prefetch-control' content='off'>
+  <meta name='og:type' content='blog'>
+  <meta name='og:site_name' content='PythonKitchen'>
+
+  <link rel="shortcut icon" href="/assets/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            py: { yellow: '#FFD43B', blue: '#306998', dark: '#0b1120' },
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { font-family: 'Inter', system-ui, sans-serif; }
+    .focus-ring:focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; border-radius: 6px; }
+    #reading-progress {
+      transform-origin: 0 50%; transform: scaleX(0);
+      transition: transform .1s linear;
+    }
+  </style>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4895581427484601" crossorigin="anonymous"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161612035-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-161612035-3');
+  </script>
+
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ejj5ivpuup");
+  </script>
+
+  <title>artificial intelligence articles | Python Kitchen</title>
+  <meta name="description" content="Browse all 5 Python artificial intelligence articles on Python Kitchen. Tutorials, guides, and deep dives.">
+  <link rel="canonical" href="https://www.pythonkitchen.com/category/artificial-intelligence/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.pythonkitchen.com/category/artificial-intelligence/">
+  <meta property="og:title" content="artificial intelligence articles | Python Kitchen">
+  <meta property="og:description" content="Browse all Python artificial intelligence articles on Python Kitchen.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "artificial intelligence articles",
+    "url": "https://www.pythonkitchen.com/category/artificial-intelligence/",
+    "description": "All Python artificial intelligence articles on Python Kitchen.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem","position": 1,"name": "Home","item": "https://www.pythonkitchen.com/"},
+        {"@type": "ListItem","position": 2,"name": "artificial intelligence","item": "https://www.pythonkitchen.com/category/artificial-intelligence/"}
+      ]
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-white text-gray-800 dark:bg-py-dark dark:text-gray-200 antialiased selection:bg-py-yellow/40">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-indigo-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm">Skip to content</a>
+
+  <!-- Reading progress -->
+  <div id="reading-progress" class="fixed top-0 left-0 right-0 h-[3px] z-[60] bg-indigo-600"></div>
+
+  <header class="sticky top-0 z-50 border-b border-gray-200/70 bg-white/80 dark:border-gray-800/70 dark:bg-py-dark/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-py-dark/60">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Primary">
+      <div class="flex h-16 items-center justify-between">
+        <a href="/" class="flex items-center gap-2.5 focus-ring">
+          <img src="/assets/logo.png" class="h-9 w-9 rounded-lg" alt="PythonKitchen logo" />
+          <span class="text-lg font-bold tracking-tight text-gray-900 dark:text-white">PythonKitchen</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-1">
+          <a href="/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition focus-ring" aria-current="page">Home</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnP_IW4nK95hv-eBDIlxHb5E5DeOniFWBi9YmxlHZARLJDAQ/viewform" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition focus-ring">Write</a>
+          <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition focus-ring">Contact</a>
+
+          <button data-theme-toggle type="button" aria-pressed="false" aria-label="Toggle dark mode"
+            class="ml-2 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-indigo-600 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-indigo-400 transition focus-ring">
+            <svg class="dark:hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="hidden dark:block h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+
+        <div class="flex md:hidden items-center gap-2">
+          <button data-theme-toggle type="button" aria-pressed="false" aria-label="Toggle dark mode"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 transition focus-ring">
+            <svg class="dark:hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="hidden dark:block h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <button data-nav-toggle type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 transition focus-ring">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 dark:border-gray-800">
+        <div class="space-y-1 py-3">
+          <a href="/" class="block rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-indigo-400">Home</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnP_IW4nK95hv-eBDIlxHb5E5DeOniFWBi9YmxlHZARLJDAQ/viewform" class="block rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-indigo-400">Write</a>
+          <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-indigo-400">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+  
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16">
+  <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-indigo-600 dark:hover:text-indigo-400">Home</a>
+    <span aria-hidden="true">/</span>
+    <span class="text-gray-700 dark:text-gray-300">Category</span>
+    <span aria-hidden="true">/</span>
+    <span class="truncate font-medium text-gray-900 dark:text-white">artificial intelligence</span>
+  </nav>
+
+  <h1 class="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white capitalize">
+    artificial intelligence
+  </h1>
+  <p class="mt-3 text-lg text-gray-600 dark:text-gray-300">
+    5 articles in this category.
+  </p>
+</div>
+
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+  
+  <div class="mb-10 flex flex-wrap gap-2">
+    
+    <a href="/category/gui-development/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">gui development</a>
+    
+    <a href="/category/education/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">education</a>
+    
+    <a href="/category/devops/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">devops</a>
+    
+    <a href="/category/deep-learning/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">deep learning</a>
+    
+    <a href="/category/data-engineering/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">data engineering</a>
+    
+    <a href="/category/programming-languages/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">programming languages</a>
+    
+    <a href="/category/artificial-intelligence/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">artificial intelligence</a>
+    
+    <a href="/category/cloud-computing/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">cloud computing</a>
+    
+    <a href="/category/linux/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">linux</a>
+    
+    <a href="/category/enterprise-software/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">enterprise software</a>
+    
+    <a href="/category/security/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">security</a>
+    
+    <a href="/category/web-development/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">web development</a>
+    
+    <a href="/category/computer-vision/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">computer vision</a>
+    
+    <a href="/category/nlp/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">nlp</a>
+    
+    <a href="/category/mathematics/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">mathematics</a>
+    
+    <a href="/category/machine-learning/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">machine learning</a>
+    
+    <a href="/category/data-visualization/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">data visualization</a>
+    
+    <a href="/category/data-science/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">data science</a>
+    
+    <a href="/category/neuroscience/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">neuroscience</a>
+    
+    <a href="/category/software-engineering/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">software engineering</a>
+    
+    <a href="/category/distributed-systems/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">distributed systems</a>
+    
+    <a href="/category/algorithms/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">algorithms</a>
+    
+    <a href="/category/interviews/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">interviews</a>
+    
+    <a href="/category/game-development/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">game development</a>
+    
+    <a href="/category/hardware/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">hardware</a>
+    
+    <a href="/category/legal/" class="rounded-full border border-gray-200 dark:border-gray-800 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">legal</a>
+    
+  </div>
+  
+
+  <div class="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+    
+    <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
+      <a href="/json-response-gemini-google-genai" class="absolute inset-0 z-10 rounded-2xl" aria-label="How to get gemini response as json using python and google genai"></a>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <time datetime="2025-01-16 15:42:02" class="text-gray-500 dark:text-gray-400">January 16, 2025</time>
+        
+        <span class="rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">artificial intelligence</span>
+        
+      </div>
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">How to get gemini response as json using python and google genai</h3>
+      <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">Normally you can tune models to return json. But, fortunately, Gemini
+First install the lib
+pip install google-genai
+
+Here is a snippet i used to receive JSON &hellip;</p>
+      <div class="mt-auto pt-6">
+        
+        
+        <div class="flex items-center gap-x-3">
+          <img src="https://github.com/Abdur-rahmaanJ.png?size=40" alt="" class="h-9 w-9 rounded-full bg-gray-100" loading="lazy" decoding="async">
+          <div class="text-sm leading-5">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Abdur-Rahmaan Janhangeer</p>
+            <p class="text-gray-500 dark:text-gray-400">Chef</p>
+          </div>
+        </div>
+        
+      </div>
+    </article>
+    
+    <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
+      <a href="/how-to-run-tencents-hunyuan-video-model-using-python" class="absolute inset-0 z-10 rounded-2xl" aria-label="How to run Tencent&#39;s Hunyuan Video model using Python"></a>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <time datetime="2024-11-05 20:07:00" class="text-gray-500 dark:text-gray-400">November 5, 2024</time>
+        
+        <span class="rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">artificial intelligence</span>
+        
+      </div>
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">How to run Tencent's Hunyuan Video model using Python</h3>
+      <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">Table of content
+
+What is HunYuan Video model?
+How does it differ from competitors?
+Architectural novelties
+How to install
+How to run?
+Doc&hellip;</p>
+      <div class="mt-auto pt-6">
+        
+        
+        <div class="flex items-center gap-x-3">
+          <img src="https://github.com/Abdur-rahmaanJ.png?size=40" alt="" class="h-9 w-9 rounded-full bg-gray-100" loading="lazy" decoding="async">
+          <div class="text-sm leading-5">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Abdur-Rahmaan Janhangeer</p>
+            <p class="text-gray-500 dark:text-gray-400">Chef</p>
+          </div>
+        </div>
+        
+      </div>
+    </article>
+    
+    <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
+      <a href="/chat-own-data-chatgpt-langchain" class="absolute inset-0 z-10 rounded-2xl" aria-label="Chat with your own data/text files using chatGPT and LangChain"></a>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <time datetime="2023-11-23 10:00:00" class="text-gray-500 dark:text-gray-400">November 23, 2023</time>
+        
+        <span class="rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">artificial intelligence</span>
+        
+      </div>
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">Chat with your own data/text files using chatGPT and LangChain</h3>
+      <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">There are many different approaches to chatting with your own data. 
+One way is to upload your PDF to the OpenAi chatGPT cloud. 
+This comes with several limitations such as data being deleted or um&hellip;</p>
+      <div class="mt-auto pt-6">
+        
+        
+        <div class="flex items-center gap-x-3">
+          <img src="https://github.com/Abdur-rahmaanJ.png?size=40" alt="" class="h-9 w-9 rounded-full bg-gray-100" loading="lazy" decoding="async">
+          <div class="text-sm leading-5">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Abdur-Rahmaan Janhangeer</p>
+            <p class="text-gray-500 dark:text-gray-400">Chef</p>
+          </div>
+        </div>
+        
+      </div>
+    </article>
+    
+    <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
+      <a href="/LangChain-understand-production-codebases" class="absolute inset-0 z-10 rounded-2xl" aria-label="Understand langChain to Quickly Get Started with Production Codebases"></a>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <time datetime="2023-11-13 09:31:20" class="text-gray-500 dark:text-gray-400">November 13, 2023</time>
+        
+        <span class="rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">artificial intelligence</span>
+        
+      </div>
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">Understand langChain to Quickly Get Started with Production Codebases</h3>
+      <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">LangChain is a superb library to productionize LLMs. It has few concepts which make it great.
+If you want to quickly get started with LangChain as maybe like me you have production in front of you,&hellip;</p>
+      <div class="mt-auto pt-6">
+        
+        
+        <div class="flex items-center gap-x-3">
+          <img src="https://github.com/Abdur-rahmaanJ.png?size=40" alt="" class="h-9 w-9 rounded-full bg-gray-100" loading="lazy" decoding="async">
+          <div class="text-sm leading-5">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Abdur-Rahmaan Janhangeer</p>
+            <p class="text-gray-500 dark:text-gray-400">Chef</p>
+          </div>
+        </div>
+        
+      </div>
+    </article>
+    
+    <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
+      <a href="/framework-for-evolution-with-neural-networks" class="absolute inset-0 z-10 rounded-2xl" aria-label="Biosim4: Framework For Evolution With Neural Networks"></a>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <time datetime="2022-10-12 12:19:03" class="text-gray-500 dark:text-gray-400">October 12, 2022</time>
+        
+        <span class="rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">artificial intelligence</span>
+        
+      </div>
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">Biosim4: Framework For Evolution With Neural Networks</h3>
+      <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">Biosim4 is a project in which there’s a 2-dimensional world where creatures with neural brains live in it. They have genomes (complete genetic information) that they pass on from o&hellip;</p>
+      <div class="mt-auto pt-6">
+        
+        
+        <div class="flex items-center gap-x-3">
+          <img src="https://github.com/abdullium.png?size=40" alt="" class="h-9 w-9 rounded-full bg-gray-100" loading="lazy" decoding="async">
+          <div class="text-sm leading-5">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Abdul Khan</p>
+            <p class="text-gray-500 dark:text-gray-400">Data scientist</p>
+          </div>
+        </div>
+        
+      </div>
+    </article>
+    
+  </div>
+</section>
+
+  </main>
+
+  <footer class="border-t border-gray-200 dark:border-gray-800 mt-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+        <a href="/" class="flex items-center gap-2.5">
+          <img src="/assets/logo.png" class="h-8 w-8 rounded-lg" alt="" />
+          <span class="text-base font-bold text-gray-900 dark:text-white">PythonKitchen</span>
+        </a>
+        <nav class="flex items-center gap-6 text-sm" aria-label="Footer">
+          <a href="/" class="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition">Home</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnP_IW4nK95hv-eBDIlxHb5E5DeOniFWBi9YmxlHZARLJDAQ/viewform" class="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition">Write</a>
+          <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition">Contact</a>
+        </nav>
+        <p class="text-xs text-gray-400 dark:text-gray-500">&copy; 2026 PythonKitchen. Quality Python authorship.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
+  
+</body>
+</html>

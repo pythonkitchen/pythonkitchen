@@ -118,6 +118,38 @@
   <meta name='subtitle' content='NeuroJSON: A Potential Neuro-Imaging Library For Python'>
   <meta name='pageKey' content='neurojson-a-potential-neuro-imaging-library-for-python'>
 
+  <link rel="canonical" href="https://www.pythonkitchen.com/neurojson-a-potential-neuro-imaging-library-for-python/">
+
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.pythonkitchen.com/neurojson-a-potential-neuro-imaging-library-for-python/"},
+    "headline": "NeuroJSON: A Potential Neuro-Imaging Library For Python",
+    "description": "NeuroJson, founded by Qianqian Fang, is an open-source project which aims to create easy-to-adopt, easy-to-extend, and preferably human-readable data formats to",
+    "image": "https://www.pythonkitchen.com/assets/banner.png",
+    "datePublished": "2022-10-18",
+    "dateModified": "2022-10-18",
+    "wordCount": 839,
+    "author": [{"@type": "Person","name": "Abdul Khan"}],
+    "publisher": {"@type": "Organization","name": "PythonKitchen","logo": {"@type": "ImageObject","url": "https://www.pythonkitchen.com/assets/logo.png"}},
+    "keywords": "data formats, neuroimaging, library design, neuroscience"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem","position": 1,"name": "Home","item": "https://www.pythonkitchen.com/"},
+      {"@type": "ListItem","position": 2,"name": "neuroscience","item": "https://www.pythonkitchen.com/category/neuroscience/"},
+      {"@type": "ListItem","position": 3,"name": "NeuroJSON: A Potential Neuro-Imaging Library For Python","item": "https://www.pythonkitchen.com/neurojson-a-potential-neuro-imaging-library-for-python/"}
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
@@ -189,12 +221,14 @@
   <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400" aria-label="Breadcrumb">
     <a href="/" class="hover:text-indigo-600 dark:hover:text-indigo-400">Home</a>
     <span aria-hidden="true">/</span>
+    <a href="/category/neuroscience/" class="hover:text-indigo-600 dark:hover:text-indigo-400">neuroscience</a>
+    <span aria-hidden="true">/</span>
     <span class="truncate">NeuroJSON: A Potential Neuro-Imaging Library For</span>
   </nav>
 
   <div class="mt-6 flex flex-wrap items-center gap-2 text-xs">
     
-    <span class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">neuroscience</span>
+    <a href="/category/neuroscience/" class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition">neuroscience</a>
     
     
     <span class="rounded-full bg-gray-100 px-3 py-1.5 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">#data formats, neuroimaging, library design</span>
@@ -292,7 +326,7 @@
  They compared the parsing speed of various formats in
 Python, MATLAB, and JS. The uncompressed UBJData (BMSHraw) reported a loading speed that was nearly as fast as reading a raw binary dump, and internally compressed UBJData (BMSHz) gives the best balance between small file sizes and loading speed,</p>
 <p>Results</p>
-<p><img alt="Test Results" src="https://pbs.twimg.com/media/FRPEdLGWYAEJe80?format=png&amp;name=large"/>
+<p><img alt="Test Results" decoding="async" loading="lazy" src="https://pbs.twimg.com/media/FRPEdLGWYAEJe80?format=png&amp;name=large"/>
 Testing <code>UBJson(jdata.jdb)</code> VS <code>NumPy.npy</code> File size</p>
 <hr/>
 <p>A quick comparison of output file sizes with a 1000x1000 unitary diagonal matrix. I wanted to test and compare these formats against each other on my own PC.
@@ -328,7 +362,7 @@ Here’s the code!</p>
 * Simple structure lends itself to easy reimplementation whenever needed
 * Existing implementations for multiple languages
 * <code>.npy</code> files with time: 0.13 seconds, This is by far the fastest method of loading data.</p>
-<p><a href="https://towardsdatascience.com/what-is-npy-files-and-why-you-should-use-them-603373c78883#:~:text=npy%20files%20with%20time:%200.13,method%20of%20loading%20in%20data.">Refer to:</a><img alt="enter image description here" src="https://miro.medium.com/max/738/1*xwpjjSdZwiOMnPJtdp9L2w.png"/>
+<p><a href="https://towardsdatascience.com/what-is-npy-files-and-why-you-should-use-them-603373c78883#:~:text=npy%20files%20with%20time:%200.13,method%20of%20loading%20in%20data.">Refer to:</a><img alt="enter image description here" decoding="async" loading="lazy" src="https://miro.medium.com/max/738/1*xwpjjSdZwiOMnPJtdp9L2w.png"/>
 <strong>Cons:</strong>
 * Non-appendable, only possible by using <a href="https://pypi.org/project/npy-append-array/">Third-party_packages</a> that comprises processing speed.</p>
 <ul>
@@ -337,7 +371,7 @@ Here’s the code!</p>
 </li>
 <li>
 <p>No data compression available(Only file), This Leads to big bulky files. For example:
-<img alt="enter image description here" src="https://raw.githubusercontent.com/Abdullium/Data_Analysis/main/Screenshot%202022-09-15%20173041.png"/></p>
+<img alt="enter image description here" decoding="async" loading="lazy" src="https://raw.githubusercontent.com/Abdullium/Data_Analysis/main/Screenshot%202022-09-15%20173041.png"/></p>
 </li>
 <li>
 <p>Only support a single NumPy array data type and does not support other metadata</p>

@@ -118,6 +118,38 @@
   <meta name='subtitle' content='10 Classification Cost Functions in Machine Learning'>
   <meta name='pageKey' content='10-classification-cost-functions-in-machine-learning'>
 
+  <link rel="canonical" href="https://www.pythonkitchen.com/10-classification-cost-functions-in-machine-learning/">
+
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.pythonkitchen.com/10-classification-cost-functions-in-machine-learning/"},
+    "headline": "10 Classification Cost Functions in Machine Learning",
+    "description": "Cost functions in machine learning measure the performance of the machine learning algorithm trained on a particular dataset. By measuring the cost function or ",
+    "image": "https://www.pythonkitchen.com/assets/banner.png",
+    "datePublished": "2022-12-23",
+    "dateModified": "2022-12-23",
+    "wordCount": 1078,
+    "author": [{"@type": "Person","name": "Parth Shukla"}],
+    "publisher": {"@type": "Organization","name": "PythonKitchen","logo": {"@type": "ImageObject","url": "https://www.pythonkitchen.com/assets/logo.png"}},
+    "keywords": "classification, cost functions, evaluation metrics, machine learning"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem","position": 1,"name": "Home","item": "https://www.pythonkitchen.com/"},
+      {"@type": "ListItem","position": 2,"name": "machine learning","item": "https://www.pythonkitchen.com/category/machine-learning/"},
+      {"@type": "ListItem","position": 3,"name": "10 Classification Cost Functions in Machine Learning","item": "https://www.pythonkitchen.com/10-classification-cost-functions-in-machine-learning/"}
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
@@ -189,12 +221,14 @@
   <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400" aria-label="Breadcrumb">
     <a href="/" class="hover:text-indigo-600 dark:hover:text-indigo-400">Home</a>
     <span aria-hidden="true">/</span>
+    <a href="/category/machine-learning/" class="hover:text-indigo-600 dark:hover:text-indigo-400">machine learning</a>
+    <span aria-hidden="true">/</span>
     <span class="truncate">10 Classification Cost Functions in Machine Lear</span>
   </nav>
 
   <div class="mt-6 flex flex-wrap items-center gap-2 text-xs">
     
-    <span class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">machine learning</span>
+    <a href="/category/machine-learning/" class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition">machine learning</a>
     
     
     <span class="rounded-full bg-gray-100 px-3 py-1.5 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">#classification, cost functions, evaluation metrics</span>
@@ -317,7 +351,7 @@
 </ol>
 <h1>1. Confusion Matrix</h1>
 <p>A confusion matrix is an instrumental measurement to observe the way the model performs wrong or right. It is a matrix that compares several predictions for each class correctly and incorrectly classified by the model.</p>
-<p><img alt="" src="/assets/cf1-300x213.png"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/cf1-300x213.png"/>
 <a href="https://www.google.com/search?q=confusion+matrix&amp;rlz=1C1CHBD_enIN933IN933&amp;sxsrf=ALiCzsb8jCeGI8Mc9Cw69H3Ig9myXijILg:1666928546808&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwjU15ffgIL7AhXk83MBHTLiDfUQ_AUoAXoECAEQAw&amp;biw=1220&amp;bih=579&amp;dpr=1.12#imgrc=d3aGGrkwCqhD9M" title="Image Source">Image Source</a></p>
 <p>In the confusion matrix, there are mainly 4 measurements of terms related to the model’s error, using which we can measure the model’s performance in different ways.</p>
 <p><strong>I. True Positive (TP)</strong>: The number of positive observations the model correctly classified as positive.</p>
@@ -327,20 +361,20 @@
 <h1>2. Accuracy Score</h1>
 <p>The accuracy score is the ratio of correctly classified predictions and the total predictions done by the model trained.</p>
 <p>It is the most widely used cost function used in classification problems.</p>
-<p><img alt="" src="/assets/cf2-300x83.png"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/cf2-300x83.png"/>
 <a href="https://www.google.com/search?q=accuracy+score+formula&amp;tbm=isch&amp;ved=2ahUKEwiYlueMgIL7AhUVidgFHRD9Bk4Q2-cCegQIABAA&amp;oq=accuracy+score+formula&amp;gs_lcp=CgNpbWcQAzIFCAAQgAQyBwgAEIAEEBgyBwgAEIAEEBg6BAgjECc6BggAEAcQHjoGCAAQCBAeOgQIABAeOgYIABAFEB5QlgdY4g5gvA9oAHAAeACAAZECiAHXC5IBBTAuNi4ymAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&amp;sclient=img&amp;ei=9k5bY5jDApWS4t4PkPqb8AQ&amp;bih=579&amp;biw=1220&amp;rlz=1C1CHBD_enIN933IN933#imgrc=BCmX-OWh3P-rjM" title="Image Source">Image Source</a></p>
 <p>In some cases, the accuracy score is not an idea cost function for measuring the model’s performance. e.g., e.g.le working on any healthcare project, if the accuracy is 99%, it will still not be considered the best performing model, and there should not be any risk related to human life.</p>
 <h1>3. Precision Score</h1>
 <p>Precision Score is the ratio of a correctly classified pass or fails prediction with the sum of a pass or failure prediction.</p>
 <p>The main aim of a precision score is to reduce the wrong prediction, i.e., false positive and false negative.</p>
 <p>Precision in classification problems is referred to as quality. Higher accuracy means the model returns quality results, and most of the results from the model are good in quality and uthentic. </p>
-<p><img alt="" src="/assets/cf3-300x76.png"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/cf3-300x76.png"/>
 <a href="https://miro.medium.com/max/1068/1*EXa-_699fntpUoRjZeqAFQ.jpeg" title="Image Source">Image Source</a></p>
 <p>Example: If the model predicts the express mail as spam, but it is not spam, then it is considered a false negative.</p>
 <h1>4. Recall Score</h1>
 <p>Recall Score is the correctly predicted pass or fail value ratio by its total receipt or fail predictions.</p>
 <p>Recall score in classification is referred to as the quantity, which states that higher recalls mean the model return most of the relevant results. Whether it is appropriate or irrelevant, results are also returned.</p>
-<p><img alt="" src="/assets/cf4.png"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/cf4.png"/>
 <a href="https://miro.medium.com/max/1068/1*EXa-_699fntpUoRjZeqAFQ.jpeg" title="Image Source">Image Source</a></p>
 <h1>5. F-Beta Score</h1>
 <p>The F-Beta score is the harmonic mean of the precision and recall score. Where the B (beta) parameters define the recall weight in the combined score.</p>
@@ -349,35 +383,35 @@
 <p>B = 0: Only precision.</p>
 <p>B = Infinity: Only Recall.</p>
 </blockquote>
-<p><img alt="" src="/assets/cf5-300x80.png"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/cf5-300x80.png"/>
 <a href="https://miro.medium.com/max/1068/1*EXa-_699fntpUoRjZeqAFQ.jpeg" title="Image Source">Image Source</a></p>
 <h1>6. Sensitivity</h1>
 <p>Sensitivity is a metric that is used to evaluate the ability f the model to predict the true positive of all available categories.</p>
 <p>It is the ratio of predicted positive values by the sum of predicted positive values and falsely predicted negative values.</p>
 <p>A Higher sensitivity test means that there are few false negative results.</p>
-<p><img alt="" src="/assets/cf6-300x35.png"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/cf6-300x35.png"/>
 <a href="https://miro.medium.com/max/576/1*RWwHcEAgsd-yAs7UhRLuVg.png" title="Image Source">Image Source</a></p>
 <h1>7. Specificity</h1>
 <p>Specificity is the performance of a model to predict the true negatives correctly.</p>
 <p>A higher specificity test means that there are few false positive results.</p>
 <p>It is the ratio of indeed predicted negative values and the sum of actual expected negative values and falsely precited positive values.</p>
-<p><img alt="" src="/assets/cf7-300x36.png"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/cf7-300x36.png"/>
 <a href="https://miro.medium.com/max/576/1*RWwHcEAgsd-yAs7UhRLuVg.png" title="Image Source">Image Source</a></p>
 <h1>8. Positive Predicted Values (PPV)</h1>
 <p>Positive predicted values are the proportion of positive predicted values which are true positives.</p>
 <p>It is the ratio of true positives by the true and false positive predicted values in the model.</p>
-<p><img alt="" src="/assets/cf8-300x23.png"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/cf8-300x23.png"/>
 <a href="https://thebiologynotes.com/wp-content/uploads/2021/12/Positive-and-Negative-Predictive-Value-Definition-and-Significance.webp" title="Image Source">Image Source</a></p>
 <h1>9. Negative Predicted Values (NPV)</h1>
 <p>Negative predicted values are the proportion of negative predicted values which are true negatives.</p>
 <p>It is the ratio of true negatives by the true and false negative predicted values in the model.</p>
-<p><img alt="" src="/assets/cf9-300x27.png"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/cf9-300x27.png"/>
 <a href="https://thebiologynotes.com/wp-content/uploads/2021/12/Positive-and-Negative-Predictive-Value-Definition-and-Significance.webp" title="Image Source">Image Source</a></p>
 <h1>10. ROC-AUC Curve</h1>
 <p>In classification problems, it is necessary to rely on multiple metrics to confirm whether a model is performing better. The receiver operating characteristics or ROC curve is a plot of True Positive rates vs. True negative rates. It is also called that it is a plot between sensitivity and (1-specificity).</p>
 <p>The area Under the Curve or AUC can be referred to as the ROC curve’s summary, with values between 0 and 1. The value 1 of AUC means that the classifier performs very well and makes no mistakes. In contrast, while the value 0 for AUC, the prediction phase implies that the classifier predicts the values very severely, for example, positive as negatives and negatives as positives.</p>
 <p>The ROC-AUC Curve can be plotted for the different machine-learning algorithms to compare the results from the prediction phase.</p>
-<p><img alt="" src="/assets/cf10-300x206.webp"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/cf10-300x206.webp"/>
 <a href="https://www.analyticsvidhya.com/blog/2020/06/auc-roc-curve-machine-learning/" title="Image Source">Image Source</a></p>
 <h1>Conclusion</h1>
 <p>In this article, we discussed the nine most widely used cost functions in classification problems and the maths working behind them. Knowledge about these classification cost functions will help one to understand and evaluate the classification model in different ways for better model building.</p>

@@ -118,6 +118,38 @@
   <meta name='subtitle' content='2 Brilliant Breakthroughs in Computational Topology Using Machine Learning'>
   <meta name='pageKey' content='2-brilliant-breakthroughs-in-computational-topology-using-machine-learning'>
 
+  <link rel="canonical" href="https://www.pythonkitchen.com/2-brilliant-breakthroughs-in-computational-topology-using-machine-learning/">
+
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.pythonkitchen.com/2-brilliant-breakthroughs-in-computational-topology-using-machine-learning/"},
+    "headline": "2 Brilliant Breakthroughs in Computational Topology Using Machine Learning",
+    "description": "Topology is a classical branch of mathematics, born essentially from Euler\u2019s studies in the XVII century. It deals with the abstract notion of shape and geometr",
+    "image": "https://www.pythonkitchen.com/assets/banner.png",
+    "datePublished": "2022-10-21",
+    "dateModified": "2022-10-21",
+    "wordCount": 1573,
+    "author": [{"@type": "Person","name": "Abdul Khan"}],
+    "publisher": {"@type": "Organization","name": "PythonKitchen","logo": {"@type": "ImageObject","url": "https://www.pythonkitchen.com/assets/logo.png"}},
+    "keywords": "topology, research, computational math, machine learning"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem","position": 1,"name": "Home","item": "https://www.pythonkitchen.com/"},
+      {"@type": "ListItem","position": 2,"name": "machine learning","item": "https://www.pythonkitchen.com/category/machine-learning/"},
+      {"@type": "ListItem","position": 3,"name": "2 Brilliant Breakthroughs in Computational Topology Using Machine Learning","item": "https://www.pythonkitchen.com/2-brilliant-breakthroughs-in-computational-topology-using-machine-learning/"}
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
@@ -189,12 +221,14 @@
   <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400" aria-label="Breadcrumb">
     <a href="/" class="hover:text-indigo-600 dark:hover:text-indigo-400">Home</a>
     <span aria-hidden="true">/</span>
+    <a href="/category/machine-learning/" class="hover:text-indigo-600 dark:hover:text-indigo-400">machine learning</a>
+    <span aria-hidden="true">/</span>
     <span class="truncate">2 Brilliant Breakthroughs in Computational Topol</span>
   </nav>
 
   <div class="mt-6 flex flex-wrap items-center gap-2 text-xs">
     
-    <span class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">machine learning</span>
+    <a href="/category/machine-learning/" class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition">machine learning</a>
     
     
     <span class="rounded-full bg-gray-100 px-3 py-1.5 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">#topology, research, computational math</span>
@@ -301,21 +335,21 @@
 <h1>Persistent homology: history and basic notions</h1>
 <p>Algebraic topology is a branch of mathematics using tools from abstract algebra to study and characterize topological spaces. The basic aim is to find an algebraic invariant able to classify topological spaces up to homeomorphism. Persistent Homology bridges algebraic topology with the Morse theory core idea: exploring topological attributes of an object in an evolutionary context.</p>
 <h1>Evaluating basic notions of persistent homology</h1>
-<p><img alt="" src="https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80"/></p>
+<p><img alt="" decoding="async" loading="lazy" src="https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80"/></p>
 <p>In order to understand the core idea of persistent homology, it is necessary to be familiar with the basics of algebraic topology. A simplicial complex is the standard algebraic object used to represent shapes of any dimension; simplices are its building blocks.</p>
 <p><strong>Def</strong>. A <em>k-simplex</em> is the <em>k-dimensional convex</em> hull of <em>k+1</em> vertices. The convex hull of any nonempty subset of the <em>k+1</em> vertices is called a <strong>face</strong> of the simplex.</p>
 <p>A simplicial complex <strong>K</strong> is a set built from 0-dimensional simplices (0-simplices or points), 1- dimensional simplices (line segments), 2-simplices (triangles), 3-simplices (tetrahedra), and so on. The dimension of <strong>K</strong> is defined as the largest dimension of any simplex in it. To be a simplicial complex, <strong>K</strong> should satisfy the following conditions.</p>
 <p><strong>Def</strong>. A simplicial complex <strong>K</strong> is a set of simplices such that:
  - Every face of a simplex is also a simplex of K; 
  - The intersection of any two simplices 1 and 2 in K is either a face of both 1 and 2 or the empty set.</p>
-<p><a href="https://media-exp1.licdn.com/dms/image/C4D22AQHTYIFTu0SiwQ/feedshare-shrink_800/0/1666103639880?e=1669248000&amp;v=beta&amp;t=GQjCth6HiDBXYPHrtJysqvsEIvTCX9oQBSezJiTZOHM"><img alt="" src="https://media-exp1.licdn.com/dms/image/C4D22AQHTYIFTu0SiwQ/feedshare-shrink_800/0/1666103639880?e=1669248000&amp;v=beta&amp;t=GQjCth6HiDBXYPHrtJysqvsEIvTCX9oQBSezJiTZOHM"/></a></p>
+<p><a href="https://media-exp1.licdn.com/dms/image/C4D22AQHTYIFTu0SiwQ/feedshare-shrink_800/0/1666103639880?e=1669248000&amp;v=beta&amp;t=GQjCth6HiDBXYPHrtJysqvsEIvTCX9oQBSezJiTZOHM"><img alt="" decoding="async" loading="lazy" src="https://media-exp1.licdn.com/dms/image/C4D22AQHTYIFTu0SiwQ/feedshare-shrink_800/0/1666103639880?e=1669248000&amp;v=beta&amp;t=GQjCth6HiDBXYPHrtJysqvsEIvTCX9oQBSezJiTZOHM"/></a></p>
 <p>These conditions allow defining the boundary operator, which is fundamental to define the homology, an algebraic object computable (via linear algebra) for <strong>K</strong> that accounts for the number of connected components, holes, voids, etc. The boundary of a k-simplex is the formal sum of the (k-1)-dimensional faces. For example, the boundary of a triangle {,} of vertices, and is given by the sum of the edges
 More formally </p>
 <blockquote>
 <p>({0,… , }) = ∑(k^i0 −1) {0, … , ^, … Vk} )</p>
 </blockquote>
 <h2>History</h2>
-<p><img alt="" src="https://studiousguy.com/wp-content/uploads/2021/12/Leonhard-Euler.jpg"/></p>
+<p><img alt="" decoding="async" loading="lazy" src="https://studiousguy.com/wp-content/uploads/2021/12/Leonhard-Euler.jpg"/></p>
 <p>Frosini, Ferri and collaborators</p>
 <ul>
 <li><a href="http://www.dm.unibo.it/~frosini/pdf/Discrete_computation_of_size_functions.pdf" title="Discrete computation of certain sizes">Discrete computation of certain sizes</a> ,</li>
@@ -328,7 +362,7 @@ More formally </p>
 <h1>New Trends: Persistent homology In Machine Learning</h1>
 <p>The idea of allowing Machine Learning to learn topological information has been explored most frequently by feature engineering, looking at some predefined standard features conveying topological information. Persistent homology, as concerns data analysis, is a versatile method: there is no restriction to apply to any particular kind of data (such as images, sensor measurements, time-series, graphs, etc.). When we want to analyze an image, a shape, or a dataset generally</p>
 <h2>Topological Layers</h2>
-<p><img alt="" src="https://wallpaperbat.com/img/220053-how-artists-can-set-up-their-own-neural-network.jpg"/></p>
+<p><img alt="" decoding="async" loading="lazy" src="https://wallpaperbat.com/img/220053-how-artists-can-set-up-their-own-neural-network.jpg"/></p>
 <p>In the last five years(approx.), many research groups defined and implemented topological layers to exploit topological features in deep learning pipelines. <a href="https://dl.acm.org/doi/10.5555/3294771.3294927" title="Hofer et al.">Hofer et al.</a> First developed a technique to input persistence diagrams into neural networks by introducing their own topological layer, able to learn a task-optimal representation during training. He proposes a differentiable Topology Layer that computes persistent homology, based on level-set filtrations and edge-based filtrations. It is publicly available and its implementation is based on PyTorch. A note: this layer may be placed at the beginning of a deep network and, using the fact that our input layer is differentiable, it can be used to perform adversarial attacks (gradient attack), i.e. cause a trained neural network to misclassify input.</p>
 <p><a href="https://proceedings.mlr.press/v108/carriere20a.html" title="PersLay"><strong>PersLay</strong></a> is one of the first neural network layers, designed to handle persistence diagrams. It is based on a general framework for diagram vectorization: maybe the simplest way to generate a permutation-invariant and differentiable feature map is to turn each point of the persistence diagram into a vector, and then sum over all such vectors to eventually get a single vector. This is the core idea of Perslay: depending on the way the diagram points are turned into vectors and on the permutation-invariant operation that is being used, one can show that one can compute persistence images, persistence landscapes, and persistence silhouettes as particular instances of Perslay.</p>
 <p>Very recently Kwangho Kim, Manzil Zaheer, and Joon Kim the authors propose <a href="https://papers.nips.cc/paper/2020/hash/b803a9254688e259cde2ec0361c8abe4-Abstract.html" title="PLLAY"><strong>PLLAY</strong></a>, a layer based on the weighted persistence landscapes. They show a tight stability bound that does not depend on the input complexity; therefore PLLAY is less prone to extreme topological distortions. Importantly, they provide guarantees of the differentiability of PLLAY with respect to the layer’s input: hence, such a layer may be placed anywhere in the network.</p>
@@ -339,7 +373,7 @@ to generate 25 measuring functions for the automatic retrieval of trademark imag
 <p><strong>2010 Skraba, P.Ovsjanikova -</strong> persistence-based clustering and the Heat Kernel Signature function are combined to achieve a multi-scale isometry invariant segmentation of deformable shapes.</p>
 <p><strong>Turner, K.Mukherjee -</strong> Demonstrated how persistent homology may be used to represent shapes and execute operations such as computing distances between shapes or classifying and modeling shapes and surfaces. Persistence descriptors have been used also statistical shape analysis.</p>
 <h2>Signal processing and time series analysis</h2>
-<p><img alt="" src="https://img.freepik.com/premium-photo/network-panel-switch-cable-data-center_34448-300.jpg?w=996"/>
+<p><img alt="" decoding="async" loading="lazy" src="https://img.freepik.com/premium-photo/network-panel-switch-cable-data-center_34448-300.jpg?w=996"/>
 Even if persistent homology originates in the context of image and shapes analysis, due to its versatility it was successfully and largely applied in signal processing and analysis. Indeed persistent homology provides efficient tools to denoise and analyzes both homogeneous and heterogeneous time series, and many researchers exploited topological features.</p>
 <p><strong>Perea and Harer</strong> used a sliding window approach to obtain a point cloud from a time series; the point cloud is then analyzed looking at periodicity as the repetition of patterns, quantifying this recurrence as the degree of circularity/roundness in the generated point cloud. This approach has applied data from gene expression and physiology, astronomical data, and weather.</p>
 <p><strong>Y. Umeda</strong> - proposed a novel approach for the classification of volatile time series: SDA is used to extract the structure of attractors, resulting in efficiency for both chaotic and non-chaotic time series, achieving performances improved of 18.5% compared to conventional approaches</p>

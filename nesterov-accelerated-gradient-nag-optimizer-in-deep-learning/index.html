@@ -118,6 +118,38 @@
   <meta name='subtitle' content='Nesterov Accelerated Gradient (NAG) Optimizer in Deep Learning'>
   <meta name='pageKey' content='nesterov-accelerated-gradient-nag-optimizer-in-deep-learning'>
 
+  <link rel="canonical" href="https://www.pythonkitchen.com/nesterov-accelerated-gradient-nag-optimizer-in-deep-learning/">
+
+  
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.pythonkitchen.com/nesterov-accelerated-gradient-nag-optimizer-in-deep-learning/"},
+    "headline": "Nesterov Accelerated Gradient (NAG) Optimizer in Deep Learning",
+    "description": "In deep learning, optimizers are the type of function which are used to adjust the parameters of the model. The optimizers are used in deep learning to adjust t",
+    "image": "https://www.pythonkitchen.com/assets/banner.png",
+    "datePublished": "2022-11-11",
+    "dateModified": "2022-11-11",
+    "wordCount": 1172,
+    "author": [{"@type": "Person","name": "Parth Shukla"}],
+    "publisher": {"@type": "Organization","name": "PythonKitchen","logo": {"@type": "ImageObject","url": "https://www.pythonkitchen.com/assets/logo.png"}},
+    "keywords": "optimization, gradient descent, nag, deep learning"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem","position": 1,"name": "Home","item": "https://www.pythonkitchen.com/"},
+      {"@type": "ListItem","position": 2,"name": "deep learning","item": "https://www.pythonkitchen.com/category/deep-learning/"},
+      {"@type": "ListItem","position": 3,"name": "Nesterov Accelerated Gradient (NAG) Optimizer in Deep Learning","item": "https://www.pythonkitchen.com/nesterov-accelerated-gradient-nag-optimizer-in-deep-learning/"}
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
@@ -189,12 +221,14 @@
   <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400" aria-label="Breadcrumb">
     <a href="/" class="hover:text-indigo-600 dark:hover:text-indigo-400">Home</a>
     <span aria-hidden="true">/</span>
+    <a href="/category/deep-learning/" class="hover:text-indigo-600 dark:hover:text-indigo-400">deep learning</a>
+    <span aria-hidden="true">/</span>
     <span class="truncate">Nesterov Accelerated Gradient (NAG) Optimizer in</span>
   </nav>
 
   <div class="mt-6 flex flex-wrap items-center gap-2 text-xs">
     
-    <span class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">deep learning</span>
+    <a href="/category/deep-learning/" class="rounded-full bg-indigo-50 px-3 py-1.5 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition">deep learning</a>
     
     
     <span class="rounded-full bg-gray-100 px-3 py-1.5 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300">#optimization, gradient descent, nag</span>
@@ -309,7 +343,7 @@ In short, NAG is an optimization technique that is similar to momentum optimizat
 <p>dL/dW = derivative of loss with respect to weight</p>
 </blockquote>
 <p>In the case of the momentum optimization function, the formula would be</p>
-<p><img alt="" src="/assets/nag1-1-300x69.png"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/nag1-1-300x69.png"/>
 <a href="https://towardsdatascience.com/learning-parameters-part-2-a190bef2d12" title="Image Source">Image Source</a></p>
 <p>Here the weight update will happen with momentum, where the oscillations of epochs need to converge to the solution can be reduced by tuning the decay factor (Y).
 So here the new weight would be the value obtained from the velocity term subtracted from the old weight. where the velocity term is the form that provides momentum to the optimizer.
@@ -318,14 +352,14 @@ So by wicking the formula of momentum gradient, we can easily achieve the Nester
 In momentum, the update of the weight is basically calculated with two terms, momentum t that point and past velocity at a single time, but in the case of Nesterov accelerated gradient the weight update is calculated stepwise, basically the weight update will occur first according to the history of velocity and then the gradient at that particular point in step 2.
 So basically, in momentum both of the steps will occur simultaneously whereas in the Nesterov gradient both of the steps will occur step by step and because of this the Nesterov accelerated gradient always performs better than the momentum gradient optimization technique.
 The formula for the NAG optimizer is</p>
-<p><img alt="" src="/assets/nag2-1-300x78.png"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/nag2-1-300x78.png"/>
 <a href="https://towardsdatascience.com/learning-parameters-part-2-a190bef2d12" title="Image Source">Image Source</a></p>
 <p>As we can see in the formula of the Nesterov gradient, the weight update will occur according to acceleration and the formula for final weight update represents an accelerated term which is a stepwise execution of the history velocity term and the gradient at a particular point.
 The update formula is very similar to the momentum term, just an additional term of look ahead. look ahead is a term that represents the point where we will reach after the jump from the momentum term. mathematically the look ahead term is a term that is obtained by the substation of old weight and the momentum after the first jump.</p>
 <h1>Why Nag is Faster?</h1>
 <p>In the case of the momentum optimization technique, the jump or weight update occur as a result of 2 terms with a single step which is the history of the momentum term and normal gradient at a particular point. Due to this we will surely cross the minima point and will reach the other side of the minima, again there will be a need for some more epochs to come back to the minima point.
 But in the case of the Nesterov gradient optimization technique, the weight update will occur in two steps, in the first step the weight update will occur due to the history of momentum and in the second step, the weight update will occur due to the look-ahead term. So here the minima point will not be crossed and there will be a need for less number of epochs, which will make training fast.</p>
-<p><img alt="" src="/assets/nag3-300x298.png"/>
+<p><img alt="" decoding="async" loading="lazy" src="/assets/nag3-300x298.png"/>
 <a href="https://www.google.com/search?q=momentum+and+nag+graph+optimization&amp;rlz=1C1CHBD_enIN933IN933&amp;sxsrf=ALiCzsbjYjvWrbLCsNenYHcfpxemvdzngQ:1666497486019&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwiy_bD1uvX6AhUv-jgGHbuzCmgQ_AUoAXoECAIQAw&amp;biw=1220&amp;bih=579&amp;dpr=1.12#imgrc=hokcjp3fue-_NM" title="Image Source">Image Source</a></p>
 <h1>Implementation of Nag: Code</h1>
 <p>There is not any specific class in Keras to implement NAG Optimiser but we can use the Nesterov parameter by using the parameters available in other optimizers.</p>

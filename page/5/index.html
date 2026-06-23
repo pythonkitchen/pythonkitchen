@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="EN" class="scroll-smooth">
+<head>
+  <!-- Apply theme before paint to avoid flash -->
+  <script>
+    (function () {
+      try {
+        var k = 'pk-theme', s = localStorage.getItem(k);
+        var d = s ? s === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (d) document.documentElement.classList.add('dark');
+      } catch (e) {}
+    })();
+  </script>
+
+  <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="DH1Rs7wCZAKJtQ" async></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name='keywords' content='python, machine learning'>
+  <meta name='subject' content='Python / Machine Learning articles'>
+  <meta name='copyright' content='pythonkitchen.com'>
+  <meta name='language' content='EN'>
+  <meta name='robots' content='index,follow'>
+  <meta name='abstract' content=''>
+  <meta name='topic' content='python'>
+  <meta name='summary' content=''>
+  <meta name='Classification' content='Education'>
+  <meta name='author' content='PythonKitchen, email@hotmail.com'>
+  <meta name='reply-to' content='email@hotmail.com'>
+  <meta name='url' content='https://www.pythonkitchen.com'>
+  <meta name='identifier-URL' content='https://www.pythonkitchen.com'>
+  <meta name='directory' content='submission'>
+  <meta name='target' content='all'>
+  <meta name='HandheldFriendly' content='True'>
+  <meta name='MobileOptimized' content='320'>
+  <meta name='date' content='2022-11-24 03:17:11'>
+  <meta name='DC.title' content='Quality Python articles'>
+  <meta name='ResourceLoaderDynamicStyles' content=''>
+  <meta name='medium' content='blog'>
+  <meta http-equiv='imagetoolbar' content='no'>
+  <meta http-equiv='x-dns-prefetch-control' content='off'>
+  <meta name='og:type' content='blog'>
+  <meta name='og:site_name' content='PythonKitchen'>
+
+  <link rel="shortcut icon" href="/assets/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            py: { yellow: '#FFD43B', blue: '#306998', dark: '#0b1120' },
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { font-family: 'Inter', system-ui, sans-serif; }
+    .focus-ring:focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; border-radius: 6px; }
+    #reading-progress {
+      transform-origin: 0 50%; transform: scaleX(0);
+      transition: transform .1s linear;
+    }
+  </style>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4895581427484601" crossorigin="anonymous"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161612035-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-161612035-3');
+  </script>
+
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ejj5ivpuup");
+  </script>
+
+  <title>Python Kitchen | Quality Python Programming Articles and Tutorials</title>
+  <meta name="description" content="Explore high-quality Python tutorials, machine learning insights, and programming tips at Python Kitchen. Bringing quality authorship to the community.">
+  <meta name="keywords" content="python, programming, machine learning, data science, flask, tutorials">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.pythonkitchen.com/">
+  <meta property="og:title" content="Python Kitchen | Quality Python Programming Articles">
+  <meta property="og:description" content="Explore high-quality Python tutorials, machine learning insights, and programming tips at Python Kitchen.">
+  <meta property="og:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.pythonkitchen.com/">
+  <meta property="twitter:title" content="Python Kitchen | Quality Python Programming Articles">
+  <meta property="twitter:description" content="Explore high-quality Python tutorials, machine learning insights, and programming tips at Python Kitchen.">
+  <meta property="twitter:image" content="https://www.pythonkitchen.com/assets/banner.png">
+
+  <meta name='coverage' content='Worldwide'>
+  <meta name='distribution' content='Global'>
+  <meta name='rating' content='General'>
+  <meta name='pageKey' content='home'>
+
+  <link rel="canonical" href="https://www.pythonkitchen.com/page/5/">
+  <meta name="robots" content="noindex,follow">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "PythonKitchen",
+    "url": "https://www.pythonkitchen.com/",
+    "description": "Quality Python programming articles and tutorials.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.pythonkitchen.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-white text-gray-800 dark:bg-py-dark dark:text-gray-200 antialiased selection:bg-py-yellow/40">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-indigo-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm">Skip to content</a>
+
+  <!-- Reading progress -->
+  <div id="reading-progress" class="fixed top-0 left-0 right-0 h-[3px] z-[60] bg-indigo-600"></div>
+
+  <header class="sticky top-0 z-50 border-b border-gray-200/70 bg-white/80 dark:border-gray-800/70 dark:bg-py-dark/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-py-dark/60">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Primary">
+      <div class="flex h-16 items-center justify-between">
+        <a href="/" class="flex items-center gap-2.5 focus-ring">
+          <img src="/assets/logo.png" class="h-9 w-9 rounded-lg" alt="PythonKitchen logo" />
+          <span class="text-lg font-bold tracking-tight text-gray-900 dark:text-white">PythonKitchen</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-1">
+          <a href="/" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition focus-ring" aria-current="page">Home</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnP_IW4nK95hv-eBDIlxHb5E5DeOniFWBi9YmxlHZARLJDAQ/viewform" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition focus-ring">Write</a>
+          <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition focus-ring">Contact</a>
+
+          <button data-theme-toggle type="button" aria-pressed="false" aria-label="Toggle dark mode"
+            class="ml-2 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-100 hover:text-indigo-600 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-indigo-400 transition focus-ring">
+            <svg class="dark:hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="hidden dark:block h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+
+        <div class="flex md:hidden items-center gap-2">
+          <button data-theme-toggle type="button" aria-pressed="false" aria-label="Toggle dark mode"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 transition focus-ring">
+            <svg class="dark:hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="hidden dark:block h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <button data-nav-toggle type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800 transition focus-ring">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 dark:border-gray-800">
+        <div class="space-y-1 py-3">
+          <a href="/" class="block rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-indigo-400">Home</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnP_IW4nK95hv-eBDIlxHb5E5DeOniFWBi9YmxlHZARLJDAQ/viewform" class="block rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-indigo-400">Write</a>
+          <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="block rounded-lg px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-indigo-400">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+  
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 -z-10 dark:opacity-30">
+    <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-indigo-200/50 blur-3xl dark:bg-indigo-900/40"></div>
+    <div class="absolute -top-10 right-0 h-72 w-72 rounded-full bg-py-yellow/30 blur-3xl dark:bg-py-yellow/10"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10 sm:pt-24 sm:pb-14">
+    <p class="text-sm font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">Python &middot; Machine Learning</p>
+    <h1 class="mt-4 text-4xl sm:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+      From the kitchen
+    </h1>
+    <p class="mt-5 max-w-2xl text-lg sm:text-xl leading-8 text-gray-600 dark:text-gray-300">
+      Quality, author-led articles on Python &amp; machine learning. Learn how to eat through topics, calmly, deeply, and without the noise.
+    </p>
+    <div class="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-gray-500 dark:text-gray-400">
+      <span class="inline-flex items-center gap-2">
+        <svg class="h-4 w-4 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        145 articles
+      </span>
+      <span class="inline-flex items-center gap-2">
+        <svg class="h-4 w-4 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Community authors
+      </span>
+      <span class="inline-flex items-center gap-2">
+        <svg class="h-4 w-4 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v6M12 22v-6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M22 12h-6"/></svg>
+        Always free
+      </span>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+  <div class="flex items-end justify-between mb-10">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">More from the kitchen</h2>
+      <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Fresh articles, served often.</p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+    
+    
+    <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
+      <a href="measures-in-statistics-for-data-science" class="absolute inset-0 z-10 rounded-2xl" aria-label="Measures in Statistics for Data Science"></a>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <time datetime="2022-11-24 03:17:11" class="text-gray-500 dark:text-gray-400">November 24, 2022</time>
+        
+        <a href="/category/mathematics/" class="relative z-20 rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">mathematics</a>
+        
+      </div>
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
+        Measures in Statistics for Data Science
+      </h3>
+      <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
+        Statistics is a critical component of data science and machine learning algorithms. Almost all the machine learning algorithms use mathematics in the backend, which is linear algebra and statistics&hellip;
+      </p>
+      <div class="mt-auto pt-6">
+        
+        
+        <div class="flex items-center gap-x-3">
+          <img src="https://github.com/ParthShukla211.png?size=40" alt="" class="h-9 w-9 rounded-full bg-gray-100">
+          <div class="text-sm leading-5">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Parth Shukla</p>
+            <p class="text-gray-500 dark:text-gray-400">Ml wizard</p>
+          </div>
+        </div>
+        
+      </div>
+    </article>
+    
+    <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
+      <a href="lasso-sparsity" class="absolute inset-0 z-10 rounded-2xl" aria-label="Why Does Lasso (L1) Regression Create Sparsity?"></a>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <time datetime="2022-11-17 03:14:41" class="text-gray-500 dark:text-gray-400">November 17, 2022</time>
+        
+        <a href="/category/machine-learning/" class="relative z-20 rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">machine learning</a>
+        
+      </div>
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
+        Why Does Lasso (L1) Regression Create Sparsity?
+      </h3>
+      <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
+        The Lasso regression is a regularization technique and a type of regression that is well-suited for m&hellip;
+      </p>
+      <div class="mt-auto pt-6">
+        
+        
+        <div class="flex items-center gap-x-3">
+          <img src="https://github.com/ParthShukla211.png?size=40" alt="" class="h-9 w-9 rounded-full bg-gray-100">
+          <div class="text-sm leading-5">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Parth Shukla</p>
+            <p class="text-gray-500 dark:text-gray-400">Ml wizard</p>
+          </div>
+        </div>
+        
+      </div>
+    </article>
+    
+    <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
+      <a href="automatic-differentiation-step-by-step" class="absolute inset-0 z-10 rounded-2xl" aria-label="Auto-differentiation and Autograd explained step by step"></a>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <time datetime="2022-11-15 14:34:00" class="text-gray-500 dark:text-gray-400">November 15, 2022</time>
+        
+        <a href="/category/mathematics/" class="relative z-20 rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">mathematics</a>
+        
+      </div>
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
+        Auto-differentiation and Autograd explained step by step
+      </h3>
+      <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
+        We will understand what is automatic differentiation for absolute beginners, although this concept requires a fair amount of theoretical understanding of derivatives and the chain rule, But don’t w&hellip;
+      </p>
+      <div class="mt-auto pt-6">
+        
+        
+        <div class="flex items-center gap-x-3">
+          <img src="https://github.com/abdullium.png?size=40" alt="" class="h-9 w-9 rounded-full bg-gray-100">
+          <div class="text-sm leading-5">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Abdul Khan</p>
+            <p class="text-gray-500 dark:text-gray-400">Data scientist</p>
+          </div>
+        </div>
+        
+      </div>
+    </article>
+    
+    <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
+      <a href="nesterov-accelerated-gradient-nag-optimizer-in-deep-learning" class="absolute inset-0 z-10 rounded-2xl" aria-label="Nesterov Accelerated Gradient (NAG) Optimizer in Deep Learning"></a>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <time datetime="2022-11-11 06:33:09" class="text-gray-500 dark:text-gray-400">November 11, 2022</time>
+        
+        <a href="/category/deep-learning/" class="relative z-20 rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">deep learning</a>
+        
+      </div>
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
+        Nesterov Accelerated Gradient (NAG) Optimizer in Deep Learning
+      </h3>
+      <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
+        In deep learning, optimizers are the type of function which are used to adjust the parameters of the model. The optimizers are used in deep learning to adjust the weights and biases of the neural n&hellip;
+      </p>
+      <div class="mt-auto pt-6">
+        
+        
+        <div class="flex items-center gap-x-3">
+          <img src="https://github.com/ParthShukla211.png?size=40" alt="" class="h-9 w-9 rounded-full bg-gray-100">
+          <div class="text-sm leading-5">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Parth Shukla</p>
+            <p class="text-gray-500 dark:text-gray-400">Ml wizard</p>
+          </div>
+        </div>
+        
+      </div>
+    </article>
+    
+    <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
+      <a href="2-brilliant-breakthroughs-in-computational-topology-using-machine-learning" class="absolute inset-0 z-10 rounded-2xl" aria-label="2 Brilliant Breakthroughs in Computational Topology Using Machine Learning"></a>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <time datetime="2022-10-21 09:31:20" class="text-gray-500 dark:text-gray-400">October 21, 2022</time>
+        
+        <a href="/category/machine-learning/" class="relative z-20 rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">machine learning</a>
+        
+      </div>
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
+        2 Brilliant Breakthroughs in Computational Topology Using Machine Learning
+      </h3>
+      <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
+        Topology is a classical branch of mathematics, born essentially from Euler’s studies in the XVII century. It deals with the abstract notion of shape and geometry. The last decades &hellip;
+      </p>
+      <div class="mt-auto pt-6">
+        
+        
+        <div class="flex items-center gap-x-3">
+          <img src="https://github.com/abdullium.png?size=40" alt="" class="h-9 w-9 rounded-full bg-gray-100">
+          <div class="text-sm leading-5">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Abdul Khan</p>
+            <p class="text-gray-500 dark:text-gray-400">Data scientist</p>
+          </div>
+        </div>
+        
+      </div>
+    </article>
+    
+    <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
+      <a href="why-was-scipy-misc-removed-and-whats-next" class="absolute inset-0 z-10 rounded-2xl" aria-label="Why was &#34;scipy.misc&#34; removed, and what&#39;s next?"></a>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <time datetime="2022-10-18 06:44:17" class="text-gray-500 dark:text-gray-400">October 18, 2022</time>
+        
+        <a href="/category/data-science/" class="relative z-20 rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">data science</a>
+        
+      </div>
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
+        Why was "scipy.misc" removed, and what's next?
+      </h3>
+      <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
+        Miscellaneous routines in scipy included convenient functions. This article cover the removal of this feature.
+Table of content
+
+Why was _Miscellaneous routines_ r&hellip;
+      </p>
+      <div class="mt-auto pt-6">
+        
+        
+        <div class="flex items-center gap-x-3">
+          <img src="https://github.com/abdullium.png?size=40" alt="" class="h-9 w-9 rounded-full bg-gray-100">
+          <div class="text-sm leading-5">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Abdul Khan</p>
+            <p class="text-gray-500 dark:text-gray-400">Data scientist</p>
+          </div>
+        </div>
+        
+      </div>
+    </article>
+    
+    <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
+      <a href="neurojson-a-potential-neuro-imaging-library-for-python" class="absolute inset-0 z-10 rounded-2xl" aria-label="NeuroJSON: A Potential Neuro-Imaging Library For Python"></a>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <time datetime="2022-10-18 06:40:24" class="text-gray-500 dark:text-gray-400">October 18, 2022</time>
+        
+        <a href="/category/neuroscience/" class="relative z-20 rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">neuroscience</a>
+        
+      </div>
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
+        NeuroJSON: A Potential Neuro-Imaging Library For Python
+      </h3>
+      <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
+        NeuroJson, founded by Qianqian Fang, is an open-source project which aims to create easy-to-adopt, easy-to-ext&hellip;
+      </p>
+      <div class="mt-auto pt-6">
+        
+        
+        <div class="flex items-center gap-x-3">
+          <img src="https://github.com/abdullium.png?size=40" alt="" class="h-9 w-9 rounded-full bg-gray-100">
+          <div class="text-sm leading-5">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Abdul Khan</p>
+            <p class="text-gray-500 dark:text-gray-400">Data scientist</p>
+          </div>
+        </div>
+        
+      </div>
+    </article>
+    
+    <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
+      <a href="decoding-symmetric-indefinite-matrices-in-python" class="absolute inset-0 z-10 rounded-2xl" aria-label="Decoding Symmetric Indefinite Matrices In Python"></a>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <time datetime="2022-10-18 06:35:29" class="text-gray-500 dark:text-gray-400">October 18, 2022</time>
+        
+        <a href="/category/mathematics/" class="relative z-20 rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">mathematics</a>
+        
+      </div>
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
+        Decoding Symmetric Indefinite Matrices In Python
+      </h3>
+      <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
+        This article is a gentle introduction to symmetric indefinite matrices in Python
+Table of content
+
+What are symmetric indefinite matrices andwhere are they used?
+Imple&hellip;
+      </p>
+      <div class="mt-auto pt-6">
+        
+        
+        <div class="flex items-center gap-x-3">
+          <img src="https://github.com/abdullium.png?size=40" alt="" class="h-9 w-9 rounded-full bg-gray-100">
+          <div class="text-sm leading-5">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Abdul Khan</p>
+            <p class="text-gray-500 dark:text-gray-400">Data scientist</p>
+          </div>
+        </div>
+        
+      </div>
+    </article>
+    
+    <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
+      <a href="framework-for-evolution-with-neural-networks" class="absolute inset-0 z-10 rounded-2xl" aria-label="Biosim4: Framework For Evolution With Neural Networks"></a>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <time datetime="2022-10-12 12:19:03" class="text-gray-500 dark:text-gray-400">October 12, 2022</time>
+        
+        <a href="/category/artificial-intelligence/" class="relative z-20 rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">artificial intelligence</a>
+        
+      </div>
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
+        Biosim4: Framework For Evolution With Neural Networks
+      </h3>
+      <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
+        Biosim4 is a project in which there’s a 2-dimensional world where creatures with neural brains live in it. They have genomes (complete genetic information) that they pass on from o&hellip;
+      </p>
+      <div class="mt-auto pt-6">
+        
+        
+        <div class="flex items-center gap-x-3">
+          <img src="https://github.com/abdullium.png?size=40" alt="" class="h-9 w-9 rounded-full bg-gray-100">
+          <div class="text-sm leading-5">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Abdul Khan</p>
+            <p class="text-gray-500 dark:text-gray-400">Data scientist</p>
+          </div>
+        </div>
+        
+      </div>
+    </article>
+    
+    <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
+      <a href="an-overview-of-python-terminal-plotting-libraries" class="absolute inset-0 z-10 rounded-2xl" aria-label="An Overview of Python Terminal Plotting Libraries"></a>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <time datetime="2022-09-06 07:07:20" class="text-gray-500 dark:text-gray-400">September 6, 2022</time>
+        
+        <a href="/category/data-visualization/" class="relative z-20 rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">data visualization</a>
+        
+      </div>
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
+        An Overview of Python Terminal Plotting Libraries
+      </h3>
+      <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
+        There exist many terminal plotting libraries. In Python there are some 3-4 main ones. In this post we’ll have an overview of the libraries.
+a&hellip;
+      </p>
+      <div class="mt-auto pt-6">
+        
+        
+        <div class="flex items-center gap-x-3">
+          <img src="https://github.com/Abdur-rahmaanJ.png?size=40" alt="" class="h-9 w-9 rounded-full bg-gray-100">
+          <div class="text-sm leading-5">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Abdur-Rahmaan Janhangeer</p>
+            <p class="text-gray-500 dark:text-gray-400">Chef</p>
+          </div>
+        </div>
+        
+      </div>
+    </article>
+    
+    <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
+      <a href="how-to-have-django-packages-in-flask" class="absolute inset-0 z-10 rounded-2xl" aria-label="How To Have Django Packages in Flask"></a>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <time datetime="2022-08-30 03:43:51" class="text-gray-500 dark:text-gray-400">August 30, 2022</time>
+        
+        <a href="/category/web-development/" class="relative z-20 rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">web development</a>
+        
+      </div>
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
+        How To Have Django Packages in Flask
+      </h3>
+      <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
+        Django packages in Flask seems like a far-away dream, but shopyo 4.6.0 allows you to install Shopyo apps from pypi.
+What is Shopyo?
+Sh&hellip;
+      </p>
+      <div class="mt-auto pt-6">
+        
+        
+        <div class="flex items-center gap-x-3">
+          <img src="https://github.com/Abdur-rahmaanJ.png?size=40" alt="" class="h-9 w-9 rounded-full bg-gray-100">
+          <div class="text-sm leading-5">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Abdur-Rahmaan Janhangeer</p>
+            <p class="text-gray-500 dark:text-gray-400">Chef</p>
+          </div>
+        </div>
+        
+      </div>
+    </article>
+    
+    <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
+      <a href="p5js-with-flask-socket-io" class="absolute inset-0 z-10 rounded-2xl" aria-label="How to integrate P5JS with Flask-SocketIO"></a>
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <time datetime="2022-04-15 20:37:03" class="text-gray-500 dark:text-gray-400">April 15, 2022</time>
+        
+        <a href="/category/web-development/" class="relative z-20 rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">web development</a>
+        
+      </div>
+      <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
+        How to integrate P5JS with Flask-SocketIO
+      </h3>
+      <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
+        P5Js is an implementation of processing.org’s library in JavaSript. It can be thought of as a canvas management library. Integrating such a library with a common backend like Flask unlocks amazing &hellip;
+      </p>
+      <div class="mt-auto pt-6">
+        
+        
+        <div class="flex items-center gap-x-3">
+          <img src="https://github.com/Abdur-rahmaanJ.png?size=40" alt="" class="h-9 w-9 rounded-full bg-gray-100">
+          <div class="text-sm leading-5">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">Abdur-Rahmaan Janhangeer</p>
+            <p class="text-gray-500 dark:text-gray-400">Chef</p>
+          </div>
+        </div>
+        
+      </div>
+    </article>
+    
+  </div>
+
+  
+  <nav class="mt-16 flex items-center justify-center gap-2" aria-label="Pagination">
+    
+    <a href="/page/4/" class="inline-flex items-center gap-1 rounded-lg border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+      Prev
+    </a>
+    
+
+    
+      
+      <a href="/" class="inline-flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-800 px-3.5 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">1</a>
+      
+    
+      
+      <a href="/page/2/" class="inline-flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-800 px-3.5 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">2</a>
+      
+    
+      
+      <a href="/page/3/" class="inline-flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-800 px-3.5 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">3</a>
+      
+    
+      
+      <a href="/page/4/" class="inline-flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-800 px-3.5 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">4</a>
+      
+    
+      
+      <span class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-3.5 py-2 text-sm font-semibold text-white" aria-current="page">5</span>
+      
+    
+      
+      <a href="/page/6/" class="inline-flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-800 px-3.5 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">6</a>
+      
+    
+      
+      <a href="/page/7/" class="inline-flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-800 px-3.5 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">7</a>
+      
+    
+      
+      <a href="/page/8/" class="inline-flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-800 px-3.5 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">8</a>
+      
+    
+      
+      <a href="/page/9/" class="inline-flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-800 px-3.5 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">9</a>
+      
+    
+      
+      <a href="/page/10/" class="inline-flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-800 px-3.5 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">10</a>
+      
+    
+      
+      <a href="/page/11/" class="inline-flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-800 px-3.5 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">11</a>
+      
+    
+      
+      <a href="/page/12/" class="inline-flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-800 px-3.5 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">12</a>
+      
+    
+      
+      <a href="/page/13/" class="inline-flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-800 px-3.5 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">13</a>
+      
+    
+
+    
+    <a href="/page/6/" class="inline-flex items-center gap-1 rounded-lg border border-gray-200 dark:border-gray-800 px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+      Next
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+    
+  </nav>
+  
+</section>
+
+  </main>
+
+  <footer class="border-t border-gray-200 dark:border-gray-800 mt-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+        <a href="/" class="flex items-center gap-2.5">
+          <img src="/assets/logo.png" class="h-8 w-8 rounded-lg" alt="" />
+          <span class="text-base font-bold text-gray-900 dark:text-white">PythonKitchen</span>
+        </a>
+        <nav class="flex items-center gap-6 text-sm" aria-label="Footer">
+          <a href="/" class="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition">Home</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnP_IW4nK95hv-eBDIlxHb5E5DeOniFWBi9YmxlHZARLJDAQ/viewform" class="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition">Write</a>
+          <a href="https://forms.gle/gf1p1Aitw9M9m8Zy5" class="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition">Contact</a>
+        </nav>
+        <p class="text-xs text-gray-400 dark:text-gray-500">&copy; 2026 PythonKitchen. Quality Python authorship.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
+  
+</body>
+</html>
