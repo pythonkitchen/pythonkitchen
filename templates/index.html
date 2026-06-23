@@ -78,7 +78,7 @@
 {% if posts and (not page or page == 1) %}
 {% set featured = posts[0] %}
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-  <a href="{{ featured['slug'] }}" class="group block focus-ring rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/50 dark:hover:shadow-indigo-950/30 transition-all duration-300 overflow-hidden" data-reveal>
+  <a href="/{{ featured['slug'] }}" class="group block focus-ring rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/50 dark:hover:shadow-indigo-950/30 transition-all duration-300 overflow-hidden" data-reveal>
     <div class="grid lg:grid-cols-5 gap-0">
       <div class="lg:col-span-3 p-7 sm:p-10">
         <div class="flex items-center gap-3 text-xs">
@@ -126,7 +126,7 @@
     {% set grid_posts = posts[1:] if (not page or page == 1) else posts %}
     {% for post in grid_posts %}
     <article class="group relative flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-xl hover:shadow-indigo-100/40 dark:hover:shadow-indigo-950/30" data-reveal>
-      <a href="{{ post['slug'] }}" class="absolute inset-0 z-10 rounded-2xl" aria-label="{{ post['title']|e }}"></a>
+      <a href="/{{ post['slug'] }}" class="absolute inset-0 z-10 rounded-2xl" aria-label="{{ post['title']|e }}"></a>
       <div class="flex flex-wrap items-center gap-2 text-xs">
         <time datetime="{{ post['pub'] }}" class="text-gray-500 dark:text-gray-400">{{ format_post_date(post["pub"]) }}</time>
         {% for category in post["categories"] %}
