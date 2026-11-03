@@ -1,4 +1,5 @@
 https://www.pythonkitchen.com/
+https://www.pythonkitchen.com/implementing-bubble-sort-in-python/
 https://www.pythonkitchen.com/python-efl-9/
 https://www.pythonkitchen.com/python-efl-8/
 https://www.pythonkitchen.com/python-efl-7/
@@ -114,8 +115,8 @@ https://www.pythonkitchen.com/machine-learning-part-3-regression/
 https://www.pythonkitchen.com/supervised-learning/
 https://www.pythonkitchen.com/432/
 https://www.pythonkitchen.com/pyqt5-value-cells-selected-row-qtview/
-https://www.pythonkitchen.com/machine-learning-part-2-supervised/
 https://www.pythonkitchen.com/machine-learning-part-1-introduction/
+https://www.pythonkitchen.com/machine-learning-part-2-supervised/
 https://www.pythonkitchen.com/checking-for-prime/
 https://www.pythonkitchen.com/reviving-bertrand-russell-through-python/
 https://www.pythonkitchen.com/armstrong-numbers/

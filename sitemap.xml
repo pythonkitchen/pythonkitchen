@@ -7,6 +7,13 @@
   </url>
 
   <url>
+    <loc>https://www.pythonkitchen.com/implementing-bubble-sort-in-python/</loc>
+    <lastmod>2026-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.pythonkitchen.com/python-efl-9/</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -812,14 +819,14 @@
   </url>
 
   <url>
-    <loc>https://www.pythonkitchen.com/machine-learning-part-2-supervised/</loc>
+    <loc>https://www.pythonkitchen.com/machine-learning-part-1-introduction/</loc>
     <lastmod>2019-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.pythonkitchen.com/machine-learning-part-1-introduction/</loc>
+    <loc>https://www.pythonkitchen.com/machine-learning-part-2-supervised/</loc>
     <lastmod>2019-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1021,6 +1028,12 @@
     <priority>0.8</priority>
   </url>
 
+
+  <url>
+    <loc>https://www.pythonkitchen.com/category/algorithm/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
   <url>
     <loc>https://www.pythonkitchen.com/category/gui-development/</loc>
