@@ -1,6 +1,6 @@
 title: Implementing Bubble Sort in Python
 slug: implementing-bubble-sort-in-python
-pub: 2026-11-28
+pub: 2026-11-28 16:42:02
 authors: arj
 tags: algorithm
 category: algorithm
